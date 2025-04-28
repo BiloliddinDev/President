@@ -4,10 +4,10 @@ import {NewsCard} from "@/components/shared/news-card/news-card";
 import {newsItem} from "@/constants/news-item";
 import {FC} from "react";
 
-export const News: FC = () => {
+export const News: FC<{title : string}> = ({title}) => {
     return (
         <div className={"relative "}>
-            <SectionTitle className={"container"} text={"News"}/>
+            <SectionTitle className={"container"} text={`${title}`}/>
             <Carousel
                 opts={{
                     align: "start",

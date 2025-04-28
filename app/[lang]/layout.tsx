@@ -15,20 +15,16 @@ export const metadata: Metadata = {
     description: "the best",
 };
 
-export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({ children, }: Readonly<{children: React.ReactNode;}>) {
     return (
         <html suppressHydrationWarning={true} lang="en">
-        <body
+           <body
             className={`${inter.className} antialiased`}
-        >
-        <Navbar/>
-        {children}
-        <Footer/>
-        </body>
+           >
+            <Navbar/>
+                {children}
+            <Footer/>
+           </body>
         </html>
     );
 }

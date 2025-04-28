@@ -11,7 +11,7 @@ export default function Home() {
                 <Showcase/>
             </section>
             <section className="mt-[100px]">
-                <News/>
+                <News title={"News"}/>
             </section>
             <section className="mt-[100px]">
                 <About title={"About"}/>
@@ -21,6 +21,9 @@ export default function Home() {
             </section>
             <section className={"mt-[100px]"}>
                 <Collections/>
+            </section>
+            <section className="mt-[100px]">
+                <News title={"President stories"}/>
             </section>
         </>
 

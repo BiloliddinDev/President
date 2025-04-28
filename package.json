@@ -16,6 +16,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.9.2",
     "i18next": "^25.0.1",
     "install": "^0.13.0",
     "lucide-react": "^0.503.0",
@@ -26,6 +27,7 @@
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "sharp": "^0.34.1",
     "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {

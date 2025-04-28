@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import { Button } from "@/components/ui/button";
-import { imageLoader } from '@/lib/imageLoader';
+import {FC} from 'react';
+import {Button} from "@/components/ui/button";
+import {imageLoader} from '@/lib/imageLoader';
 
 export const Showcase: FC = () => {
     const backgroundImageUrl = imageLoader({
