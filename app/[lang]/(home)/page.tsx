@@ -25,6 +25,7 @@ export default function Home() {
             <section className="mt-[100px]">
                 <News title={"President stories"}/>
             </section>
+            ,
         </>
 
     );
