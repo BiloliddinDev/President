@@ -21,7 +21,7 @@ export const ProductVideos: FC<{ title: string }> = ({ title }) => {
         }}
         className="m-0 p-0 mt-12 relative"
       >
-        <CarouselContent className=" container">
+        <CarouselContent className="relative container">
           {productItem.map((item) => {
             return (
               <CarouselItem

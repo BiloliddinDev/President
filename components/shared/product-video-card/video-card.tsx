@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import { ProductVideoProps } from "@/interface/product-videos-type/product-video";
 
 const ProductVideoCard: React.FC<{ productItem: ProductVideoProps }> = ({
@@ -9,18 +9,21 @@ const ProductVideoCard: React.FC<{ productItem: ProductVideoProps }> = ({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const handleMouseEnter = () => {
-    videoRef.current?.play();
-    setIsPlaying(true);
-  };
-
-  const handleMouseLeave = () => {
+  const handleMouseEnter = useCallback(() => {
     if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
+      videoRef.current.play().catch(() => {});
+      setIsPlaying(true);
+    }
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
     }
     setIsPlaying(false);
-  };
+  }, []);
 
   return (
     <div
@@ -33,9 +36,11 @@ const ProductVideoCard: React.FC<{ productItem: ProductVideoProps }> = ({
         className="w-full h-full object-cover"
         src={productItem.video}
         muted
-        preload="auto"
+        preload="metadata" // better than "auto" for performance
         playsInline
-      />
+      >
+        Your browser does not support the video tag.
+      </video>
 
       {!isPlaying && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity">
