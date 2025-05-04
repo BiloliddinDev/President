@@ -5,7 +5,7 @@ import {Category} from "@/app/[lang]/(home)/components/category";
 import {Collections} from "@/app/[lang]/(home)/components/collections";
 import {ProductVideos} from "./components/productVideos";
 import {SupportForm} from "@/app/[lang]/(home)/components/support-form";
-
+import Location from "./components/location";
 export default function Home() {
     return (
         <>
@@ -32,6 +32,9 @@ export default function Home() {
             </section>
             <section className="mt-[100px] bg-[#F6F6F6] py-8">
                 <SupportForm/>
+            </section>
+            <section className="mt-[100px] bg-[#F6F6F6] py-8">
+                <Location/>
             </section>
         </>
     );
