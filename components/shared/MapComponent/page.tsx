@@ -7,20 +7,20 @@ import 'leaflet/dist/leaflet.css';
 import { locations } from '@/constants/locations';
 import Image from '@/public/images/location.png';
 
-// Rasm - public ichida bo‘lishi kerak
+
 const icon = L.icon({
   iconUrl: Image.src,
   iconSize: [40, 40],
   iconAnchor: [20, 40],
 });
 
-// 🔄 Xarita markazini yangilovchi komponent
+
 function ChangeView({ position }: { position: [number, number] }) {
   const map = useMap();
 
   useEffect(() => {
     if (position) {
-      map.flyTo(position, 5); // zoom 5 bilan "uchib boradi"
+      map.flyTo(position, 5);
     }
   }, [position]);
 
@@ -46,7 +46,7 @@ export default function MapComponent({ selectedLocation }: { selectedLocation?: 
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <ZoomControl position="topright" />
       
-      {/* 🔁 Agar location tanlangan bo‘lsa, xarita o‘sha joyga siljiydi */}
+     
       {selectedLocation && <ChangeView position={selectedLocation} />}
 
       {locations.map((loc, idx) => (
