@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState, useCallback } from "react";
+import React, { useRef, useState } from "react";
 import { ProductVideoProps } from "@/interface/product-videos-type/product-video";
 
 const ProductVideoCard: React.FC<{ productItem: ProductVideoProps }> = ({
@@ -9,25 +9,32 @@ const ProductVideoCard: React.FC<{ productItem: ProductVideoProps }> = ({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const handleMouseEnter = useCallback(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {});
-      setIsPlaying(true);
-    }
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
+  const handleMouseEnter: React.MouseEventHandler<
+    HTMLDivElement
+  > = async () => {
     const video = videoRef.current;
-    if (video) {
+    if (video && video.paused) {
+      try {
+        await video.play();
+        setIsPlaying(true);
+      } catch (err) {
+        console.error("Video play error:", err);
+      }
+    }
+  };
+
+  const handleMouseLeave: React.MouseEventHandler<HTMLDivElement> = () => {
+    const video = videoRef.current;
+    if (video && !video.paused) {
       video.pause();
       video.currentTime = 0;
+      setIsPlaying(false);
     }
-    setIsPlaying(false);
-  }, []);
+  };
 
   return (
     <div
-      className="relative w-[285px] h-[420px] overflow-hidden rounded-lg cursor-pointer"
+      className="relative w-[290px] h-[420px] overflow-hidden rounded-lg cursor-pointer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -36,12 +43,9 @@ const ProductVideoCard: React.FC<{ productItem: ProductVideoProps }> = ({
         className="w-full h-full object-cover"
         src={productItem.video}
         muted
-        preload="metadata" // better than "auto" for performance
+        preload="auto"
         playsInline
-      >
-        Your browser does not support the video tag.
-      </video>
-
+      />
       {!isPlaying && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity">
           <div className="w-12 h-12 bg-white/50 rounded-full flex items-center justify-center">
