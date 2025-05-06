@@ -9,12 +9,13 @@ import {Input} from "@/components/ui/input"
 import {Button} from "@/components/ui/button"
 import {Eye, EyeOff} from "lucide-react"
 import Link from "next/link"
-// import Google from "@/public/svg/googole.svg"
+import Google from "@/public/svg/googole.svg"
 import {LoginSchema} from "@/interface/auth-schema/login-schema";
+import Image from "next/image";
 
 type LoginFormValues = z.infer<typeof LoginSchema>
 
-export const LoginForm = () => {
+export default function LoginForm() {
     const [showPassword, setShowPassword] = useState(false)
 
     const form = useForm<LoginFormValues>({
@@ -80,7 +81,7 @@ export const LoginForm = () => {
                             )}
                         />
                         <div className="text-right text-sm">
-                            <Link href="/forgot-password" className="text-gray-600 hover:underline">
+                            <Link href="/auth/forget-password" className="text-gray-600 hover:underline">
                                 Forgot password?
                             </Link>
                         </div>
@@ -88,14 +89,12 @@ export const LoginForm = () => {
                             Login
                         </Button>
                         <Button variant="outline" className="w-full flex items-center justify-center gap-2">
-                            {/*<Google/>*/}
+                            <Image src={Google} alt={"Google Logo"} width={20} height={20} className="size-4"/>
                             Continue with Google
                         </Button>
                         <p className="text-center text-sm text-gray-500">
-                            Don&apos;t have an account?{" "}
-                            <Link href="/signup" className="hover:underline text-gray-800">
-                                Sign up
-                            </Link>
+                            Don&#39;t have an account ?
+                            <Link href="/auth/sign-up"> Sign up</Link>
                         </p>
                     </form>
                 </Form>
