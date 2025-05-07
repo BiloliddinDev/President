@@ -9,7 +9,7 @@ import {Textarea} from "@/components/ui/textarea"
 import {Button} from "@/components/ui/button"
 import {SectionTitle} from "@/components/ui/sectionTitle"
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select"
-import {SupportSchema} from "@/lib/support-schema";
+import {SupportSchema} from "@/interface/support-schema/support-schema";
 
 
 type SupportFormValues = z.infer<typeof SupportSchema>
