@@ -6,7 +6,7 @@ export default function NotFound() {
             <div className="flex justify-start items-start gap-96">
                 <div
                     className="text-center justify-start text-gray-900 text-5xl font-normal font-['Inter'] leading-[60px]">404
-                    Error
+                    Error Page 
                 </div>
             </div>
             <div className="inline-flex flex-col justify-start items-start gap-7">
