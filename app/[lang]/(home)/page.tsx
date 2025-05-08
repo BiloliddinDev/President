@@ -5,7 +5,6 @@ import {Category} from "@/app/[lang]/(home)/components/category";
 import {Collections} from "@/app/[lang]/(home)/components/collections";
 import {ProductVideos} from "./components/productVideos";
 import {SupportForm} from "@/app/[lang]/(home)/components/support-form";
-import Location from "./components/location";
 import AnimatedSection from "@/components/animation-section/animation-section"
 
 
@@ -28,7 +27,7 @@ export default function Home() {
                 </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
-                <AnimatedSection animation={"fade-left"} >
+                <AnimatedSection animation={"fade-left"}>
                     <Category/>
                 </AnimatedSection>
             </section>
@@ -45,7 +44,6 @@ export default function Home() {
                 <SupportForm/>
             </section>
             <section className="mt-[20px]  ">
-                <Location/>
             </section>
         </>
     );
