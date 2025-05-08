@@ -8,6 +8,8 @@ import Basket from "@/public/svg/basket.svg";
 import Globe from "@/public/svg/glob.svg";
 import { Headroom } from "@/components/shared/headroom/Headroom";
 import Link from "next/link";
+import NavbarModal from "../navbar-modal";
+import ShopModalContent from "@/components/shared/modalContents/shopModal";
 
 export const Navbar = () => {
   return (
@@ -23,7 +25,17 @@ export const Navbar = () => {
                 }
                 key={link.id}
               >
-                {link.name}
+                {link.name === "Shop" ? (
+                  <NavbarModal
+                    title={link.name}
+                    side="left"
+                    sheetTitle={link.name}
+                  >
+                    <ShopModalContent />
+                  </NavbarModal>
+                ) : (
+                  link.name
+                )}
               </div>
             ))}
           </div>
