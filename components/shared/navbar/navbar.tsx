@@ -10,6 +10,7 @@ import { Headroom } from "@/components/shared/headroom/Headroom";
 import Link from "next/link";
 import NavbarModal from "../navbar-modal";
 import ShopModalContent from "@/components/shared/modalContents/shopModal";
+import DiscoverModalContent from "../modalContents/discoverModal";
 
 export const Navbar = () => {
   return (
@@ -25,13 +26,17 @@ export const Navbar = () => {
                 }
                 key={link.id}
               >
-                {link.name === "Shop" ? (
+                {link.name === "Shop" || link.name === "Discover" ? (
                   <NavbarModal
                     title={link.name}
                     side="left"
                     sheetTitle={link.name}
                   >
-                    <ShopModalContent />
+                    {link.name === "Shop" ? (
+                      <ShopModalContent />
+                    ) : (
+                      <DiscoverModalContent />
+                    )}
                   </NavbarModal>
                 ) : (
                   link.name
