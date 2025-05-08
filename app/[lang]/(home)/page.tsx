@@ -12,7 +12,7 @@ export default function Home() {
     return (
         <>
             <section>
-                <AnimatedSection>
+                <AnimatedSection >
                     <Showcase/>
                 </AnimatedSection>
             </section>
