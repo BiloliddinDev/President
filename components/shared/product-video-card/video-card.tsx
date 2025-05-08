@@ -45,7 +45,9 @@ const ProductVideoCard: React.FC<{ productItem: ProductVideoProps }> = ({
         muted
         preload="auto"
         playsInline
+        suppressHydrationWarning
       />
+
       {!isPlaying && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity">
           <div className="w-12 h-12 bg-white/50 rounded-full flex items-center justify-center">

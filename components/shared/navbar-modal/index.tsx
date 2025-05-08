@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import {
   Sheet,
   SheetContent,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
@@ -18,9 +17,6 @@ const NavbarModal: FC<NavbarModalProps> = ({
     <Sheet>
       <SheetTrigger>{title}</SheetTrigger>
       <SheetContent side={side}>
-        {/* <SheetHeader>
-          <SheetTitle>{sheetTitle}</SheetTitle>
-        </SheetHeader> */}
         <div className="ml-[3.75rem] mt-10">
           <SheetTitle className="pb-1.5">{sheetTitle}</SheetTitle>
           {children}
