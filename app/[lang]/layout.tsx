@@ -35,7 +35,7 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
     const language: { lang: string } = await params;
 
     return (
-        <html lang={language.lang}>
+        <html suppressHydrationWarning={true} lang={language.lang}>
         <head>
             <title>President</title>
             <link rel="icon" type="image/png" sizes="32x32" href={favicon.src}/>
