@@ -6,20 +6,31 @@ import {Collections} from "@/app/[lang]/(home)/components/collections";
 import {ProductVideos} from "./components/productVideos";
 import {SupportForm} from "@/app/[lang]/(home)/components/support-form";
 import Location from "./components/location";
+import AnimatedSection from "@/components/animation-section/animation-section"
+
+
 export default function Home() {
     return (
         <>
             <section>
-                <Showcase/>
+                <AnimatedSection>
+                    <Showcase/>
+                </AnimatedSection>
             </section>
             <section className="mt-[100px]">
-                <News title={"News"}/>
+                <AnimatedSection animation={"fade-right"}>
+                    <News title={"News"}/>
+                </AnimatedSection>
             </section>
             <section className="mt-[100px]">
-                <About title={"About"}/>
+                <AnimatedSection animation={"fade-left"}>
+                    <About title={"About"}/>
+                </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
-                <Category/>
+                <AnimatedSection animation={"fade-left"} >
+                    <Category/>
+                </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
                 <Collections/>
