@@ -11,6 +11,7 @@ import Link from "next/link";
 import NavbarModal from "../navbar-modal";
 import ShopModalContent from "@/components/shared/modalContents/shopModal";
 import DiscoverModalContent from "../modalContents/discoverModal";
+import ChangeLangModal from "../modalContents/changeLangModal";
 
 export const Navbar = () => {
   return (
@@ -51,7 +52,13 @@ export const Navbar = () => {
               <Image src={Profile} alt="Profile icon" />
             </Link>
             <Image src={Basket} alt="Basket icon" />
-            <Image src={Globe} alt="Globe icon" />
+
+            <NavbarModal
+              side="right"
+              title={<Image src={Globe} alt="Globe icon" />}
+            >
+              <ChangeLangModal />
+            </NavbarModal>
           </div>
         </div>
       </nav>
