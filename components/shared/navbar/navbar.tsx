@@ -12,6 +12,7 @@ import NavbarModal from "../navbar-modal";
 import ShopModalContent from "@/components/shared/modalContents/shopModal";
 import DiscoverModalContent from "../modalContents/discoverModal";
 import ChangeLangModal from "../modalContents/changeLangModal";
+import SearchModal from "../modalContents/searchModal";
 
 export const Navbar = () => {
   return (
@@ -46,7 +47,13 @@ export const Navbar = () => {
             ))}
           </div>
           <div className="flex items-center gap-8">
-            <Image src={Search} alt="Search icon" />
+            <NavbarModal
+              side="top"
+              title={<Image src={Search} alt="Search icon" />}
+            >
+              <SearchModal />
+            </NavbarModal>
+
             <Image src={Heart} alt="Heart icon" />
             <Link href={"/auth/sign-in"}>
               <Image src={Profile} alt="Profile icon" />
