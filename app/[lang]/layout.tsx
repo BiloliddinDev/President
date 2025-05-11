@@ -5,7 +5,7 @@ import {Navbar} from "@/components/shared/navbar/navbar";
 import {Footer} from "@/components/shared/footer/footer";
 import favicon from "@/public/svg/favicon.svg"
 import {Metadata} from "next";
-import {LoadingComponent} from "@/components/shared/loading-component/loading-component";
+
 
 
 const inter = Inter({
@@ -43,11 +43,11 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
             <link rel="icon" type="image/png" sizes="16x16" href={favicon.src}/>
         </head>
         <body className={inter.className}>
-        <Suspense fallback={<LoadingComponent/>}>
+        
             <Navbar/>
             {children}
             <Footer/>
-        </Suspense>
+       
         </body>
         </html>
     );

@@ -23,13 +23,13 @@ export default function LocationPage() {
   ];
 
   useEffect(() => {
-    // Add Leaflet CSS
+   
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'https://unpkg.com/leaflet@1.9.3/dist/leaflet.css';
     document.head.appendChild(link);
 
-    // Load Leaflet JS
+    
     const script = document.createElement('script');
     script.src = 'https://unpkg.com/leaflet@1.9.3/dist/leaflet.js';
     script.onload = () => {
@@ -61,7 +61,7 @@ export default function LocationPage() {
           .bindPopup(loc.name)
       );
 
-      // Fix resize issue
+      
       setTimeout(() => {
         map.invalidateSize();
       }, 100);

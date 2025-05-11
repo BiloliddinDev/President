@@ -1,31 +1,25 @@
+'use client';
 import {Button} from "@/components/ui/button";
+import { useRouter } from 'next/navigation';
 
 export default function NotFound() {
+      const router = useRouter();
     return (
-        <div className="container flex  justify-center items-center gap-[100px] h-screen">
-            <div className="flex justify-start items-start gap-96">
-                <div
-                    className="text-center justify-start text-gray-900 text-5xl font-normal font-['Inter'] leading-[60px]">404
-                    Error Page 
-                </div>
-            </div>
-            <div className="inline-flex flex-col justify-start items-start gap-7">
-                <div className="self-stretch flex flex-col justify-start items-start gap-3.5">
-                    <div
-                        className="self-stretch justify-start text-gray-900 text-xl font-medium font-['Inter'] leading-loose">Sorry,
-                        we could not find the page you were looking for.
-                    </div>
-                    <div
-                        className="w-[568px] justify-start text-gray-900 text-lg font-medium font-['Inter'] leading-7">It
-                        may have been removed, changed or is temporarily unavailable. Please return to our home page to
-                        continue browsing our site or discover the products selected for you.
-                    </div>
-                </div>
-                <div data-state="Default" data-type="default"
-                     className="w-64 px-4 py-2 bg-slate-900 rounded inline-flex justify-center items-center gap-2.5">
-                  <Button>Go to Home</Button>
-                </div>
-            </div>
-        </div>
+       <div className="flex flex-col justify-center items-center h-screen text-center ">
+      <div className=" flex gap-[500px] ">
+        <h1 className="font-inter font-normal text-[48px] leading-[60px] tracking-[-0.02em] text-[#0E1422]">404 Error</h1>
+       <div className='w-[550px] flex flex-col gap-4 '>
+         <p className="font-inter font-medium text-[20px] leading-[30px] tracking-normal text-[#0E1422]">
+         Sorry, we couldn't find the page you were looking for.
+        </p>
+         <p className="font-inter font-medium text-[18px] leading-[28px] tracking-normal text-[#0E1422]">
+It may have been removed, changed or is temporarily unavailable. Please return to our home page to continue browsing our site or discover the products selected for you.
+        </p>
+        <Button onClick={() => router.push('/')} className="mt-4 bg-[#00093F]">
+          Visit our Homepage
+        </Button>
+       </div>
+      </div>
+    </div>
     );
 }
