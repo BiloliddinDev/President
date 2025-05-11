@@ -54,7 +54,7 @@ export default function BusinessGiftsCarousel() {
               ))}
             </CarouselContent>
            
-            <CarouselNext className="right-5 w-[44px] h-[44px]" />
+            <CarouselNext className="right-5 w-[45px] h-[45px]" />
           </Carousel>
         </div>
         
