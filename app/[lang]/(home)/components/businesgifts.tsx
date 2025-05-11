@@ -29,8 +29,8 @@ export default function BusinessGiftsCarousel() {
       </h2>
       
       <div className="flex flex-col lg:flex-row gap-15">
-        {/* Carousel Section with fixed height */}
-        <div className="lg:w-[50%] h-[550px]"> {/* Fixed height container */}
+        
+        <div className="lg:w-[50%] h-[550px]"> 
           <Carousel
             plugins={[plugin.current]}
             className="w-full h-full" 
@@ -58,7 +58,7 @@ export default function BusinessGiftsCarousel() {
           </Carousel>
         </div>
         
-        {/* Text Content Section */}
+        
         <div className="lg:w-[50%] flex flex-col justify-center gap-3 pr-1 2xl:pr-[200px]">
           <h3 className="font-inter font-semibold text-2xl md:text-3xl lg:text-4xl text-[#0E1422] mb-4">
             President Business Gifts
