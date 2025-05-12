@@ -21,7 +21,6 @@ export default function RegisterForm() {
     const [showPassword, setShowPassword] = useState(false)
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
-
     const form = useForm<RegisterFormValues>({
         resolver: zodResolver(RegisterSchema),
         defaultValues: {
@@ -51,7 +50,7 @@ export default function RegisterForm() {
                             name="fullName"
                             render={({field}) => (
                                 <FormItem>
-                                    <FormLabel>Name</FormLabel>
+                                    <FormLabel>Full Name</FormLabel>
                                     <FormControl>
                                         <Input type="text" placeholder="Your full name" {...field} />
                                     </FormControl>
@@ -129,15 +128,11 @@ export default function RegisterForm() {
                                 </FormItem>
                             )}
                         />
-
                         <Button type="submit" className="w-full">Sign in</Button>
-
-
                         <Button variant="outline" className="w-full flex items-center justify-center gap-2">
                             <Image src={Google} alt={"Google Logo"} width={20} height={20} className="size-4"/>
                             Continue with Google
                         </Button>
-
                         <div className="text-center text-sm text-gray-500">
                             Already have an account ?
                             <Link href="/auth/sign-in" className="text-gray-800 hover:underline">
