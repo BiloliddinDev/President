@@ -22,8 +22,8 @@ const SearchModal = () => {
         <Input className="w-xl" type="search" placeholder="Search" />
       </div>
       <div className="my-5 py-5 px-2.5">
-        <SheetTitle className="text-lg">Product suggestion</SheetTitle>
-        <div className="flex justify-between gap-20 container">
+        <SheetTitle className="text-lg mb-8">Product suggestion</SheetTitle>
+        <div className="flex justify-between gap-[160px] container">
           <Carousel
             className="max-w-4xl"
             opts={{
@@ -33,7 +33,7 @@ const SearchModal = () => {
           >
             <CarouselContent className="m-0 p-0 relative">
               {productCardItems.map((item) => (
-                <CarouselItem className="basis-[25%]" key={item.id}>
+                <CarouselItem className="basis-[33%]" key={item.id}>
                   <ProductCard
                     id={item.id}
                     name={item.name}
@@ -47,7 +47,7 @@ const SearchModal = () => {
             <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full z-40" />
             <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full z-40" />
           </Carousel>
-          <div className="basis-1/3">
+          <div className="basis-1/3 ">
             <SheetTitle>Categories</SheetTitle>
             {categoryModalItems.map((item) => (
               <div

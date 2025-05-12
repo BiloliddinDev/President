@@ -7,14 +7,14 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 const ProductCard: FC<ProductCardProps> = ({ imgUrl, name, status, price }) => {
   return (
-    <Card>
-      <CardHeader>
+    <Card className="shadow-none p-0 border-none">
+      <CardHeader className="p-0 m-0">
         <div>
           <Image src={Heart} alt="Heart icon" className="float-right" />
         </div>
       </CardHeader>
-      <CardContent>
-        <Image src={imgUrl} alt="product img" className="w-[255px]" />
+      <CardContent className="p-0 m-0">
+        <Image src={imgUrl} alt="product img" />
         <Badge variant="outline" className="my-[16px]">
           {status}
         </Badge>
