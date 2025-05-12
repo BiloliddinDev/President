@@ -38,7 +38,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "constants/shop-modal-item.tsz"  ],
   "exclude": [
     "node_modules"
   ]
