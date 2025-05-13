@@ -60,11 +60,6 @@ jobs:
           static_site_generator: next
           enablement: true
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: './out'
           
       - name: Restore cache
         uses: actions/cache@v4
