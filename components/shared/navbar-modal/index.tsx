@@ -15,7 +15,7 @@ const NavbarModal: FC<NavbarModalProps> = ({
 }) => {
   return (
     <Sheet>
-      <SheetTrigger>{title}</SheetTrigger>
+      <SheetTrigger className={'cursor-pointer'}>{title}</SheetTrigger>
       <SheetContent side={side}>
         <div className="ml-[3.75rem] mt-10">
           <SheetTitle className="pb-1.5">{sheetTitle}</SheetTitle>
