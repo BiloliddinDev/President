@@ -34,11 +34,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "svgr.d.ts",
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-, "constants/shop-modal-item.tsz"  ],
+    "constants/shop-modal-item.tsx"
+  ],
   "exclude": [
     "node_modules"
   ]

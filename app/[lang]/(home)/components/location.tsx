@@ -2,9 +2,9 @@
 
 import dynamic from 'next/dynamic';
 import {useState} from 'react';
-import Image from 'next/image';
-import MapMarker from '@/public/svg/mapmarker.svg';
 import {SectionTitle} from '@/components/ui/sectionTitle';
+import MapLocationIcon from "@/components/icon/map-location-icon";
+import React from 'react';
 
 const MapComponent = dynamic(() => import('@/components/shared/map-component/map-component'), {
     ssr: false,
@@ -24,7 +24,7 @@ const branches: Branch[] = [
 ];
 
 export default function LocationPage() {
-    const [selectedPosition, setSelectedPosition] = useState<[number, number] | null>(null);
+    const [selectedPosition, setSelectedPosition] = useState<[number, number]>([branches[0].lat, branches[0].lng]);
 
     const handleGoTo = (lat: number, lng: number) => {
         setSelectedPosition([lat, lng]);
@@ -50,7 +50,7 @@ export default function LocationPage() {
                             onClick={() => handleGoTo(branch.lat, branch.lng)}
                             className="flex items-center gap-1 font-inter text-[12px]  transition cursor-pointer"
                         >
-                            <Image src={MapMarker} alt={`Map marker for ${branch.name}`}/>
+                            <MapLocationIcon/>
                             {branch.name}
                         </button>
                     ))}
@@ -59,4 +59,3 @@ export default function LocationPage() {
         </div>
     );
 }
-

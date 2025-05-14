@@ -15,7 +15,7 @@ export default function Home() {
         <>
             <section>
                 {/*<AnimatedSection>*/}
-                <Showcase/>
+                    <Showcase/>
                 {/*</AnimatedSection>*/}
             </section>
             <section className="mt-[100px]">
@@ -45,7 +45,7 @@ export default function Home() {
             <section className="mt-[100px] bg-[#F6F6F6] py-8">
                 <SupportForm/>
             </section>
-             <section className="mt-[100px]  ">
+            <section className="mt-[100px]  ">
                 <BusinessGifts/>
             </section>
             <section className="mt-[100px]  ">

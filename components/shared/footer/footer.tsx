@@ -1,12 +1,14 @@
+"use client"
+
 import {Button} from "@/components/ui/button";
-import {Logo} from "@/components/ui/logo";
+import {FooterLogo} from "@/components/ui/logo";
 
 export const Footer = () => {
     return (
         <footer className={"container"}>
             <div className={"flex justify-between mt-[100px] mb-4 items-start pb-11 border-b-[1px] border-gray-200"}>
                 <div className={"flex flex-col items-start gap-6"}>
-                    <Logo/>
+                    <FooterLogo/>
                     <p className={"text-gray-600 text-sm font-normal  leading-normal"}>President Business Gifts is not
                         just a <br/> premium gift brand </p>
                     <Button>Read more</Button>
