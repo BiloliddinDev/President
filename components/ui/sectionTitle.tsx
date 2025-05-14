@@ -1,17 +1,13 @@
-import { HTMLAttributes } from 'react';
+import {HTMLAttributes} from 'react';
 
 interface SectionTitleProps extends HTMLAttributes<HTMLDivElement> {
     text: string;
 }
 
-export const SectionTitle = ({ 
-    text, 
-    className ,
-    ...props 
-}: SectionTitleProps) => {
+export const SectionTitle = ({text, className, ...props}: SectionTitleProps) => {
     return (
-        <div 
-            className={`${className} text-gray-900 text-2xl font-medium  uppercase `}
+        <div
+            className={`${className} text-primary text-5xl font-normal uppercase font-title`}
             {...props}
         >
             {text}

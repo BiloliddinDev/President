@@ -1,3 +1,5 @@
+"use client"
+
 import {Logo} from "@/components/ui/logo";
 import {navbarLinks} from "@/constants/navbar";
 import Image from "next/image";
@@ -5,7 +7,6 @@ import Search from "@/public/svg/search.svg";
 import Heart from "@/public/svg/heart.svg";
 import Profile from "@/public/svg/profile.svg";
 import Basket from "@/public/svg/basket.svg";
-import Globe from "@/public/svg/glob.svg";
 import {Headroom} from "@/components/shared/headroom/Headroom";
 import Link from "next/link";
 import NavbarModal from "../navbar-modal";
@@ -62,7 +63,7 @@ export const Navbar = () => {
 
                         <NavbarModal
                             side="right"
-                            title={<Image src={Globe} alt="Globe icon"/>}
+                            title={<p className={"text-white text-lg font-normal"}>UZ($)</p>}
                         >
                             <ChangeLangModal/>
                         </NavbarModal>

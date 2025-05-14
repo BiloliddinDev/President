@@ -1,31 +1,35 @@
-// app/[lang]/500/page.tsx
-
 'use client';
 
-
-import { useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/button';
+import {useRouter} from 'next/navigation';
+import {Button} from '@/components/ui/button';
 
 export default function ServerErrorPage() {
-  const router = useRouter();
+    const router = useRouter();
 
-  
-  return (
-    <div className="flex flex-col justify-center items-center h-screen text-center ">
-      <div className=" flex gap-[500px] ">
-        <h1 className="font-inter font-normal text-[48px] leading-[60px] tracking-[-0.02em] text-[#0E1422]">404 Error </h1>
-       <div className='w-[501px] flex flex-col gap-4'>
-         <p className="font-inter font-medium text-[20px] leading-[30px] tracking-normal text-[#0E1422]">
-        Sorry, we couldn't find the page you were looking for.
-        </p>
-         <p className="font-inter font-medium text-[18px] leading-[28px] tracking-normal text-[#0E1422]">
-       It may have been removed, changed or is temporarily unavailable.Please return to our home page to continue browsing our site or discover the products selected for you.
-        </p>
-        <Button onClick={() => router.push('/')} className="mt-4 bg-[#00093F]">
-          Visit our Homepage
-        </Button>
-       </div>
-      </div>
-    </div>
-  );
+    return (
+        <div className="min-h-screen flex items-center justify-center px-4">
+            <div className="text-center max-w-2xl">
+                <h1 className="text-[80px] sm:text-[100px] md:text-[120px] lg:text-[150px] font-bold text-primary mb-6">
+                    404
+                </h1>
+
+                <p className="text-xl sm:text-2xl font-semibold text-muted-foreground mb-4">
+                    Sorry, we couldn’t find the page you were looking for.
+                </p>
+
+                <p className="sm:text-lg text-muted-foreground mb-8 px-2 sm:px-0">
+                    It may have been removed, changed, or is temporarily unavailable.
+                    Please return to our homepage to continue browsing or discover other content.
+                </p>
+
+                <Button
+                    onClick={() => router.push('/')}
+                    variant="default"
+                    
+                >
+                    Visit our Homepage
+                </Button>
+            </div>
+        </div>
+    );
 }

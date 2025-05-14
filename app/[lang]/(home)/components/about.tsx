@@ -14,7 +14,8 @@ export const About: FC<AboutType> = ({title}) => {
             <div className={"container"}>
                 <SectionTitle text={title}/>
                 <div className={"mt-12 flex items-center gap-12 justify-between"}>
-                    <Image src={AboutImage} alt={"President Business Gifts is not just a premium gift brand"}/>
+                    <Image src={AboutImage.src} width={550} height={550}
+                           alt={"President Business Gifts is not just a premium gift brand"}/>
                     <div className={"max-w-[480px]"}>
                         <h2 className={" text-primary mb-5 text-3xl font-semibold"}>President Business Gifts</h2>
                         <p className={" text-gray-600 mb-5 text-xl font-normal"}>President Business Gifts is not just a
