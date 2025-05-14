@@ -1,6 +1,7 @@
 // next.config.js
 import {NextConfig} from "next";
 
+
 const nextConfig = {
     webpack(config : NextConfig) {
         config.module.rules.push({
@@ -8,6 +9,7 @@ const nextConfig = {
             issuer: /\.[jt]sx?$/,
             use: ['@svgr/webpack'],
         })
+
 
         return config
     },
