@@ -12,7 +12,7 @@ const DiscoverModalContent = () => {
             ${item.id === 9 ? "mt-10" : "my-5"}`}
           key={item.id}
         >
-          <Link href="/"> {item.name}</Link>
+          <Link href={item.linkSrc}> {item.name}</Link>
         </div>
       ))}
     </div>
