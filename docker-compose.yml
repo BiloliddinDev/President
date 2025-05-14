@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  president-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: president-container # Specify the container name here
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "8000:8000" # Expose port 3000
+    networks:
+      - president-network
+    restart: unless-stopped
+
+networks:
+  president-network:
+    driver: bridge
