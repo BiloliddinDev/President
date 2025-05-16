@@ -1,10 +1,11 @@
 import {FC} from 'react';
 import {Button} from "@/components/ui/button";
 import {imageLoader} from "@/lib/imageLoader";
+import  showcaseImage from "@/public/images/showcase-image.png";
 
 export const Showcase: FC = () => {
     const backgroundImageUrl = imageLoader({
-        src: "https://www.montblanc.com/content/images/cms/ycm/resource/blob/856100/aa02ab27ae6b90f2e9085bf45059bdf4/global-header-1920x840-data.png/w1349.jpg",
+        src: `${showcaseImage.src}`,
         width: 1250,
         quality: 100,
     });
@@ -15,11 +16,11 @@ export const Showcase: FC = () => {
             style={{
                 backgroundImage: `
           linear-gradient(to bottom, 
-            rgba(0,0,0,0.4), 
-            rgba(0,0,0,0.1),
-            rgba(0,0,0,0.1),
-            rgba(0,0,0,0.4)
-          ),
+                     rgba(0,0,0,0.7),  
+                     rgba(0,0,0,0.3),  
+                     rgba(0,0,0,0.3),  
+                     rgba(0,0,0,0.7)     
+),
           url('${backgroundImageUrl}')
         `
             }}

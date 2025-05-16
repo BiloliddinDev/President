@@ -1,10 +1,9 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import {useState} from 'react';
+import React, {useState} from 'react';
 import {SectionTitle} from '@/components/ui/sectionTitle';
 import MapLocationIcon from "@/components/icon/map-location-icon";
-import React from 'react';
 
 const MapComponent = dynamic(() => import('@/components/shared/map-component/map-component'), {
     ssr: false,
@@ -23,8 +22,9 @@ const branches: Branch[] = [
     {lat: 55.7558, lng: 37.6173, name: 'Moscow, Russia'},
 ];
 
+
 export default function LocationPage() {
-    const [selectedPosition, setSelectedPosition] = useState<[number, number]>([branches[0].lat, branches[0].lng]);
+    const [selectedPosition, setSelectedPosition] = useState<[number, number] | null>(null);
 
     const handleGoTo = (lat: number, lng: number) => {
         setSelectedPosition([lat, lng]);
