@@ -10,7 +10,7 @@ export default function CategoryPage() {
     return (
         <div className={"container !mt-22"}>
             <BreadcrumbDynamic/>
-            <Image className={"my-8"} src={Images.src} alt={"shops Image section"}/>
+            <Image className={"my-8"} width={1200} height={400} src={Images.src} alt={"shops Image section"}/>
             <div>
                 <h2 className={"text-primary text-xl font-medium leading-loose"}>Exclusive Novelty Gifts from President
                     Business Gifts</h2>

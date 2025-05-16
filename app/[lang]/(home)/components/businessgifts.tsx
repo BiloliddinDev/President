@@ -5,6 +5,8 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import Artel from "@/public/svg/artel.svg";
 import {Carousel, CarouselContent, CarouselItem, CarouselNext,} from "@/components/ui/carousel";
+import {SectionTitle} from "@/components/ui/sectionTitle";
+import {Button} from "@/components/ui/button";
 
 const images = [
     Artel,
@@ -17,14 +19,11 @@ export default function BusinessGiftsCarousel() {
     const plugin = useRef(Autoplay({delay: 3000, stopOnInteraction: false}));
 
     return (
-        <div className="w-full h-auto ">
-            <h2 className="font-inter font-medium text-2xl md:text-3xl uppercase text-[#0E1422] mb-8 ml-5">
-                Service for your brand
-            </h2>
+        <div className="w-full">
+            <SectionTitle className={"container !mb-7"} text={"Service for your brand"}/>
 
             <div className="flex flex-col lg:flex-row gap-15">
-
-                <div className="lg:w-[50%] h-[550px]">
+                <div className="">
                     <Carousel
                         plugins={[plugin.current]}
                         className="w-full h-full"
@@ -34,7 +33,7 @@ export default function BusinessGiftsCarousel() {
                         <CarouselContent>
                             {images.map((image, index) => (
                                 <CarouselItem key={index}>
-                                    <div className="p-2 h-[550px]">
+                                    <div className="h-[550px] !border-r-0">
                                         <Image
                                             src={image}
                                             alt={`President Business Gift ${index + 1}`}
@@ -53,20 +52,15 @@ export default function BusinessGiftsCarousel() {
                 </div>
 
 
-                <div className="lg:w-[50%] flex flex-col justify-center gap-3 pr-1 2xl:pr-[200px]">
-                    <h3 className="font-inter font-semibold text-2xl md:text-3xl lg:text-4xl text-[#0E1422] mb-4">
-                        President Business Gifts
-                    </h3>
-                    <p className="font-inter font-normal text-base md:text-lg lg:text-xl text-[#5C5F6A] mb-6 leading-relaxed">
+                <div className="">
+                   <h2 className="text-primary mb-5 text-5xl font-normal font-title">President Business Gifts</h2>
+                    <p className="text-gray-600 text-xl font-normal font-description ">
                         President Business Gifts is not just a premium gift brand — it is a unique fusion of national
                         identity and contemporary aesthetics. Inspired by the historical heritage, cultural richness,
                         and artisanal traditions of the Uzbek people, we blend them seamlessly with modern design and
                         the highest standards of quality.
                     </p>
-                    <button
-                        className="w-[180px] h-[50px] border border-[#0E1422] hover:bg-[#0E1422] hover:text-white transition-colors duration-300 flex items-center justify-center cursor-pointer">
-                        <span className="font-inter font-medium">Read more</span>
-                    </button>
+                   <Button variant={"secondary"}>Read more</Button>
                 </div>
             </div>
         </div>
