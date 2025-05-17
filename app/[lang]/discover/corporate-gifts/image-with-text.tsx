@@ -1,15 +1,8 @@
-import Image, { StaticImageData } from "next/image";
+import { ImageWithTextProps } from "@/interface/discover/img-with-text";
+import Image from "next/image";
 import React, { FC } from "react";
 
-interface Props {
-  imgSrc: StaticImageData | string;
-  title: string;
-  subtitle: string;
-  alt: string;
-  orderText: string;
-  orderImg: string;
-}
-const ImageWithText: FC<Props> = ({
+const ImageWithText: FC<ImageWithTextProps> = ({
   imgSrc,
   title,
   subtitle,
