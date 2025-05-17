@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "President",
         description: "President Business Gifts is not just a premium gift brand — it is a unique fusion of national identity and contemporary aesthetics. Inspired by the historical heritage, cultural richness, and artisanal traditions of the Uzbek people, we blend them seamlessly with modern design and the highest standards of quality.",
-        url: "https://president.uz/",
+        url: "https://president.io/",
         siteName: "President",
         locale: "en",
         type: "website",
