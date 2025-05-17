@@ -11,7 +11,7 @@ import AccordionWithImg from "./components/accordion-with-img";
 
 const AboutUs = () => {
   return (
-    <div className="container max-w-screen-xl mx-auto px-2 md:px-4 mt-16 md:mt-20">
+    <div className="container max-w-screen-xl mx-auto px-2 md:px-4 mt-16 md:!mt-20">
       <div className="py-4 md:py-5">
         <BreadcrumbDynamic />
       </div>
