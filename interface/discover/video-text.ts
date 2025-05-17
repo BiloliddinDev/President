@@ -1,6 +1,6 @@
 export interface VideoWithTextProps {
   videoSrc: string;
-  productType: string;
+  productType?: string;
   description: string;
   textInfo: string;
   className?: string;

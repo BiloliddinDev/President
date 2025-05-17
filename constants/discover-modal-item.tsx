@@ -3,7 +3,7 @@ export const discoverModalItems = [
   { id: 2, linkSrc: "/", name: "President B2B" },
   { id: 3, linkSrc: "/discover/fine-watchmaking", name: "Fine Watchmaking" },
   { id: 4, linkSrc: "/", name: "Care & Services" },
-  { id: 5, linkSrc: "/", name: "Corporate gifts" },
+  { id: 5, linkSrc: "/discover/corporate-gifts", name: "Corporate gifts" },
   { id: 6, linkSrc: "/", name: "Journal" },
   { id: 9, linkSrc: "/", name: "Contact us" },
   { id: 8, linkSrc: "/", name: "Customer Sevice" },
