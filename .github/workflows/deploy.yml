@@ -27,7 +27,7 @@ jobs:
             exit 0
           elif [ -f "${{ github.workspace }}/package.json" ]; then
             echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "installer=ci" >> $GITHUB_OUTPUT
+            echo "installer=install" >> $GITHUB_OUTPUT
             echo "builder=run build" >> $GITHUB_OUTPUT
             exit 0
           else
@@ -48,7 +48,8 @@ jobs:
 
       - name: 🔧 Clean install deps and rebuild native modules
         run: |
-          ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.installer }}
+          rm -rf node_modules package-lock.json .next
+          ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.installer }} --include=optional
           npm rebuild sharp lightningcss
 
       - name: 🚧 Build Next.js app
