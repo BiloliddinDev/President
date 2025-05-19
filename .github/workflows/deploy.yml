@@ -72,14 +72,16 @@ jobs:
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
           GIT_REPO: ${{ github.repository }}
         run: |
+
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          ssh-keygen -y -f ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
 
           ssh $SERVER_USER@$SERVER_IP << 'EOF'
             set -e
-
+            ssh -T git@github.com
             # Clone or pull repo
             if [ -d "$DEPLOY_PATH/.git" ]; then
               echo "📥 Pulling latest repository..."
