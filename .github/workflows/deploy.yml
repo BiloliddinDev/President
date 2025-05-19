@@ -69,7 +69,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
-          DEPLOY_PATH: "/var/www/president/"
+          DEPLOY_LOCATION: "/var/www/president/"
           GIT_REPO: ${{ github.repository }}
         run: |
 
@@ -82,18 +82,18 @@ jobs:
 
           ssh $SERVER_USER@$SERVER_IP << 'EOF'
             set -e
-            
+            echo $DEPLOY_PATH
             # Clone or pull repo
-            if [ -d "$DEPLOY_PATH/.git" ]; then
+            if [ -d "/var/www/president/.git" ]; then
               echo "📥 Pulling latest repository..."
-              cd $DEPLOY_PATH
+              cd /var/www/president/
               git pull origin main
             else
-              echo "📦 Cloning repository... to ($DEPLOY_PATH)"
-              git clone git@github.com:$GIT_REPO.git $DEPLOY_PATH
+              echo "📦 Cloning repository... to ()"
+              git clone git@github.com:$GIT_REPO.git /var/www/president/
             fi
 
-            cd $DEPLOY_PATH
+            cd /var/www/president/
 
             # Install Docker if missing
             if ! command -v docker &> /dev/null; then
