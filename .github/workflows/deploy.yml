@@ -1,18 +1,12 @@
-# Sample workflow for building and deploying a Next.js site to GitHub Pages
-#
-# To get started with Next.js see: https://nextjs.org/docs/getting-started
-#
+# Sample workflow for building and deploying a Next.js site to a remote server via Docker and SSH
+
 name: Deploy Next.js site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
   pull_request:
-    branches:
-      - main
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
@@ -22,118 +16,106 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Detect package manager
         id: detect-package-manager
         run: |
           if [ -f "${{ github.workspace }}/yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
-            echo "command=install" >> $GITHUB_OUTPUT
-            echo "runner=yarn" >> $GITHUB_OUTPUT
+            echo "installer=install" >> $GITHUB_OUTPUT
+            echo "builder=build" >> $GITHUB_OUTPUT
             exit 0
           elif [ -f "${{ github.workspace }}/package.json" ]; then
             echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "command=ci" >> $GITHUB_OUTPUT
-            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+            echo "installer=install" >> $GITHUB_OUTPUT
+            echo "builder=run build" >> $GITHUB_OUTPUT
             exit 0
           else
             echo "Unable to determine package manager"
             exit 1
           fi
-      - name: Setup Node
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
 
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            .next/cache
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-      - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
+      - name: 📦 Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential
 
-  # Deployment job
+      - name: 🔧 Clean install deps and rebuild native modules
+        run: |
+          rm -rf node_modules package-lock.json .next
+          ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.installer }} --include=optional
+          npm rebuild sharp lightningcss
+
+      - name: 🚧 Build Next.js app
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.builder }}
+
+  # Deploy job
   deploy:
     runs-on: ubuntu-latest
     needs: build-and-test
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
-        
-      - name: Deploy to Server via SSH and Docker
-        env: 
+
+      - name: 🚀 Deploy to Server via SSH and Docker
+        env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
           GIT_REPO: ${{ github.repository }}
-
         run: |
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H $SERVER_IP >> ~/.ssh/knowm_hosts
+          ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
 
-          #SSH and run  Docker build & deploy
-          ssh $SERVER_USER@$SERVER_IP << EOF
-            set -e 
-            if [-d "$DEPLOY_PATH/.git" ]; then
-              echo "Pulling latest repository..."
+          ssh $SERVER_USER@$SERVER_IP << 'EOF'
+            set -e
+
+            # Clone or pull repo
+            if [ -d "$DEPLOY_PATH/.git" ]; then
+              echo "📥 Pulling latest repository..."
               cd $DEPLOY_PATH
-              git pull  origin main
-            else 
-              echo "Cloning repository..."
+              git pull origin main
+            else
+              echo "📦 Cloning repository..."
               git clone git@github.com:$GIT_REPO.git $DEPLOY_PATH
             fi
 
             cd $DEPLOY_PATH
 
-            # Check if Docker is installed
+            # Install Docker if missing
             if ! command -v docker &> /dev/null; then
-              echo "Docker not found. Installing Docker..."
+              echo "🐳 Installing Docker..."
               curl -fsSL https://get.docker.com -o get-docker.sh
               sudo sh get-docker.sh
-              sudo usermod -aG docker $USER
             fi
-            
+
             echo "✅ Docker is installed"
 
+            # Install Docker Compose if missing
             if ! command -v docker-compose &> /dev/null; then
-              echo "Docker Compose not found. Installing Docker Compose..."
+              echo "🧩 Installing Docker Compose..."
               sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
               sudo chmod +x /usr/local/bin/docker-compose
             fi
-            
+
             echo "✅ Docker Compose is installed"
 
-            # STOP running containers
-            docker-compose down | true
-
-            # Build and deploy fresh
-            docker-compose build
+            # Stop and rebuild containers
+            docker-compose down || true
+            docker-compose build --pull
             docker-compose up -d
 
-            # Verify docker is running by status
+            echo "✅ Docker containers up and running!"
             docker-compose ps
-            echo "Deployment completed at $(date)"
-            echo "🚀 Deployed and running with Docker Compose!"
+            echo "🚀 Deployment completed at $(date)"
           EOF
-
-            
-            
-        
-      
-        
