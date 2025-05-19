@@ -83,8 +83,6 @@ jobs:
           ssh $SERVER_USER@$SERVER_IP << 'EOF'
             set -e
             
-            ssh -T git@github.com
-            
             # Clone or pull repo
             if [ -d "$DEPLOY_PATH/.git" ]; then
               echo "📥 Pulling latest repository..."
