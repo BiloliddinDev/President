@@ -78,6 +78,8 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
+          
+          ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP echo "SSH connection successful"
 
           ssh $SERVER_USER@$SERVER_IP << 'EOF'
             set -e
