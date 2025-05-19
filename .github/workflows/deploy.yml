@@ -82,14 +82,14 @@ jobs:
 
           ssh $SERVER_USER@$SERVER_IP << 'EOF'
             set -e
-            echo $DEPLOY_PATH
+            
             # Clone or pull repo
             if [ -d "/var/www/president/.git" ]; then
               echo "📥 Pulling latest repository..."
               cd /var/www/president/
               git pull origin main
             else
-              echo "📦 Cloning repository... to ()"
+              echo "📦 Cloning repository... $GIT_REPO"
               git clone git@github.com:$GIT_REPO.git /var/www/president/
             fi
 
