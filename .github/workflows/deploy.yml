@@ -90,7 +90,7 @@ jobs:
               git pull origin main
             else
               echo "📦 Cloning repository... $GIT_REPO"
-              git clone git@github.com:$GIT_REPO.git /var/www/president/
+              git clone git@github.com:BiloliddinDev/President.git /var/www/president/
             fi
 
             cd /var/www/president/
