@@ -48,7 +48,6 @@ jobs:
 
       - name: 🔧 Clean install deps and rebuild native modules
         run: |
-          rm -rf node_modules package-lock.json .next
           ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.installer }}
           npm rebuild sharp lightningcss
 
