@@ -10,8 +10,7 @@ import DiscoverModalContent from "../modalContents/discoverModal";
 import ChangeLangModal from "../modalContents/changeLangModal";
 import SearchModal from "../modalContents/searchModal";
 import SearchIcon from "@/components/icon/search-icon";
-import {Profile} from "@/components/shared/profile";
-import IconComponent from "@/components/shared/icon-view";
+import IconComponent from "@/components/icon/icon-view";
 
 export const Navbar = () => {
     return (
@@ -62,7 +61,7 @@ export const Navbar = () => {
                         <IconComponent className={"hover:text-primary"} name="like"/>
                         <IconComponent className={"hover:text-primary"} name="basket"/>
                         <Link href={"/auth/sign-in"}>
-                            <Profile/>
+                            <IconComponent className={"hover:text-primary"} name="profile"/>
                         </Link>
                     </div>
                 </div>

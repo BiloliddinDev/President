@@ -5,6 +5,7 @@ import {LoadingComponent} from "@/components/shared/loading-component/loading-co
 import {Footer} from "@/components/shared/footer/footer";
 import {Navbar} from "@/components/shared/navbar/navbar";
 import localFont from 'next/font/local'
+import {InitGeoCookie} from "@/lib/get-userlocation";
 
 
 const microsoftHimalaya = localFont({
@@ -16,7 +17,7 @@ const microsoftHimalaya = localFont({
 const manropeFont = localFont({
     src: "../fonts/manrope-variable.ttf",
     variable: "--font-manrope"
-    
+
 })
 
 
@@ -59,6 +60,7 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
             {children}
             <Footer/>
         </Suspense>
+        <InitGeoCookie/>
         </body>
         </html>
     );
