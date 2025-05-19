@@ -19,50 +19,65 @@ jobs:
   # Build job
   build-and-test:
     runs-on: ubuntu-latest
+    # steps:
+    #   - name: Checkout
+    #     uses: actions/checkout@v4
+    #   - name: Detect package manager
+    #     id: detect-package-manager
+    #     run: |
+    #       if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+    #         echo "manager=yarn" >> $GITHUB_OUTPUT
+    #         echo "command=install" >> $GITHUB_OUTPUT
+    #         echo "runner=yarn" >> $GITHUB_OUTPUT
+    #         exit 0
+    #       elif [ -f "${{ github.workspace }}/package.json" ]; then
+    #         echo "manager=npm" >> $GITHUB_OUTPUT
+    #         echo "installer=ci" >> $GITHUB_OUTPUT
+    #         echo "builder=run build" >> $GITHUB_OUTPUT
+    #         echo "cleaner=cache clean" >> $GITHUB_OUTPUT
+    #         exit 0
+    #       else
+    #         echo "Unable to determine package manager"
+    #         exit 1
+    #       fi
+    #   - name: Setup Node
+    #     uses: actions/setup-node@v4
+    #     with:
+    #       node-version: "20"
+    #       cache: ${{ steps.detect-package-manager.outputs.manager }}
+
+    #   - name: Clear npm cache
+    #     if: steps.detect-package-manager.outputs.manager == 'npm'
+    #     run: ${{ steps.detect-package-manager.outputs.manager }} ${{steps.detect-package-manager.outputs.cleaner }} --force
+        
+    #   - name: Install dependencies
+    #     run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.installer }}
+
+    #   - name: Rebuild the lightingcss
+    #     run: ${{ steps.detect-package-manager.outputs.manager }} rebuild
+        
+    #   - name: Build with Next js app
+    #     run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.builder }}
+        
+    #   - name: Upload artifact
+    #     uses: actions/upload-pages-artifact@v3
+    #     with:
+    #       path: ./out
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
-      - name: Detect package manager
-        id: detect-package-manager
-        run: |
-          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
-            echo "manager=yarn" >> $GITHUB_OUTPUT
-            echo "command=install" >> $GITHUB_OUTPUT
-            echo "runner=yarn" >> $GITHUB_OUTPUT
-            exit 0
-          elif [ -f "${{ github.workspace }}/package.json" ]; then
-            echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "installer=ci" >> $GITHUB_OUTPUT
-            echo "builder=run build" >> $GITHUB_OUTPUT
-            echo "cleaner=cache clean" >> $GITHUB_OUTPUT
-            exit 0
-          else
-            echo "Unable to determine package manager"
-            exit 1
-          fi
-      - name: Setup Node
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          node-version: '20'
+          cache: 'npm'
 
-      - name: Clear npm cache
-        if: steps.detect-package-manager.outputs.manager == 'npm'
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{steps.detect-package-manager.outputs.cleaner }} --force
-        
-      - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.installer }}
+      - name: Install Dependencies
+        run: npm ci
 
-      - name: Rebuild the lightingcss
-        run: ${{ steps.detect-package-manager.outputs.manager }} rebuild
-        
-      - name: Build with Next js app
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.builder }}
-        
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
+      - name: Build Check
+        run: npm run build
 
   # Deployment job
   deploy:
