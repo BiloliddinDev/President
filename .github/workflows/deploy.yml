@@ -83,7 +83,16 @@ jobs:
 
           ssh $SERVER_USER@$SERVER_IP << 'EOF'
             set -e
+            
             ssh -T git@github.com
+            
+            # 🔐 Trust GitHub as SSH source
+            mkdir -p ~/.ssh
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+      
+            # 🧪 Debug GitHub SSH access
+            ssh -T git@github.com || echo "GitHub SSH check failed, continuing..."
+            
             # Clone or pull repo
             if [ -d "$DEPLOY_PATH/.git" ]; then
               echo "📥 Pulling latest repository..."
