@@ -51,27 +51,15 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y build-essential
           
-      # - name: Clear npm cache
-        # if: steps.detect-package-manager.outputs.manager == 'npm'
-        # run: ${{ steps.detect-package-manager.outputs.manager }} ${{steps.detect-package-manager.outputs.cleaner }} --force
-        
       - name: 🔧 Clean install deps and rebuild native modules
         run: |
           rm -rf node_modules package-lock.json .next
           npm install --include=optional
           npm rebuild sharp lightningcss
           
-      # - name: Install dependencies
-      #   run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.installer }}
-        
       - name: Build with Next js app
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.builder }}
         
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
-
   # Deployment job
   deploy:
     runs-on: ubuntu-latest
