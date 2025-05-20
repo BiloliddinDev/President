@@ -4,6 +4,7 @@ import Pen from "@/public/images/Pen.png";
 import { BreadcrumbDynamic } from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import { careServicesItems } from "@/constants/care-services-items";
 import IconComponent from "@/components/shared/icon-view";
+import Link from "next/link";
 const CareAndServices = () => {
   return (
     <div className="container max-w-screen-xl mx-auto px-2 md:px-4 mt-16 md:!mt-20">
@@ -19,15 +20,18 @@ const CareAndServices = () => {
         </h5>
         <div className="flex gap-5 justify-between flex-wrap md:flex-nowrap">
           {careServicesItems.map((item) => (
-            <div
+            <Link
+              className="block"
               key={item.id}
-              className="w-full px-9 py-7 flex items-center justify-between rounded gap-6 outline-1 outline-offset-[-1px] outline-gray-200"
+              href={`/discover/care-services/${item.serviceType.toLowerCase()}`}
             >
-              <p className="text-sm font-medium leading-tight">
-                {item.serviceType}
-              </p>
-              <IconComponent name={item.iconName} />
-            </div>
+              <div className="w-full px-9 py-7 flex items-center justify-between rounded gap-6 outline-1 outline-offset-[-1px] outline-gray-200">
+                <p className="text-sm font-medium leading-tight">
+                  {item.serviceType}
+                </p>
+                <IconComponent name={item.iconName} />
+              </div>
+            </Link>
           ))}
         </div>
       </div>

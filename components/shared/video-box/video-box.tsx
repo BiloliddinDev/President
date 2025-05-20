@@ -1,7 +1,7 @@
 "use client";
-import PlayBtnIcon from "@/components/icon/playBtnIcon";
 import { VideoBoxProps } from "@/interface/discover/video-box";
 import React, { FC, useRef, useState } from "react";
+import IconComponent from "../icon-view";
 
 const VideoBox: FC<VideoBoxProps> = ({
   videoSrc,
@@ -54,7 +54,7 @@ const VideoBox: FC<VideoBoxProps> = ({
             className="absolute inset-0 flex items-center justify-center bg-black/40 hover:bg-black/60 transition-colors"
             onClick={handlePlay}
           >
-            <PlayBtnIcon />
+            <IconComponent name="play" />
           </button>
         )}
       </div>
