@@ -17,14 +17,12 @@ const microsoftHimalaya = localFont({
 const manropeFont = localFont({
     src: "../fonts/manrope-variable.ttf",
     variable: "--font-manrope"
-
 })
 
 
 interface RootLayoutProps {
     children: React.ReactNode;
     params: Promise<{ lang: string }>;
-
 }
 
 export const metadata: Metadata = {
@@ -56,7 +54,7 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
         </head>
         <body className={`${microsoftHimalaya.className} ${manropeFont.className}`}>
         <Suspense fallback={<LoadingComponent/>}>
-            <Navbar/>
+            <Navbar lang={language.lang}/>
             {children}
             <Footer/>
         </Suspense>

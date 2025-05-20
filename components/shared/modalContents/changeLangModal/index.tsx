@@ -16,7 +16,7 @@ const ChangeLangModal = () => {
         const newLocale = {country, region};
         Cookies.set("country", JSON.stringify(newLocale));
         setActiveLocale(newLocale);
-    };
+    }; 
 
     return (
         <div className="p-4">

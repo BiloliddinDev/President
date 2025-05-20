@@ -7,6 +7,7 @@ import {ProductsCard} from "@/components/shared/products-cards/products-card";
 import {Button} from "@/components/ui/button";
 
 export default function CategoryPage() {
+
     return (
         <div className={"container !mt-22"}>
             <BreadcrumbDynamic/>
