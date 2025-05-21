@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {defaultCountryList} from "@/lib/get-userlocation";
 import Cookies from "js-cookie";
+import {Check} from "lucide-react";
+import LocaleSwitcher from "@/components/shared/locale-switcher/locale-switcher";
 
 const ChangeLangModal = () => {
     const [activeLocale, setActiveLocale] = useState<{ country: string, region: string } | null>(null);
@@ -16,26 +18,41 @@ const ChangeLangModal = () => {
         const newLocale = {country, region};
         Cookies.set("country", JSON.stringify(newLocale));
         setActiveLocale(newLocale);
-    }; 
+    };
 
     return (
-        <div className="p-4">
-            <h2 className="text-xl mb-4">Select another location</h2>
-            <div className="grid gap-2">
-                {defaultCountryList.map((country) => (
-                    <button
-                        key={country.id}
-                        onClick={() => handleLocaleChange(country.country, country.region)}
-                        className={`p-2 rounded-md ${
-                            activeLocale?.country === country.country
-                                ? "bg-blue-500 text-white"
-                                : "bg-gray-100"
-                        }`}
-                    >
-                        {country.region}
-                    </button>
-                ))}
+        <div className="flex flex-col gap-14 h-full text-primary text-base font-medium leading-normal">
+            <div>
+                <h2 className={'text-primary text-base font-medium leading-normal mb-5'}>Change language</h2>
+                <ul className={"flex flex-col w-full gap-7"}>
+                    {defaultCountryList.map((country) => (
+                        <li
+                            key={country.id}
+                            onClick={() => handleLocaleChange(country.country, country.region)}
+                            className={`text-primary w-[220px] text-base font-normal leading-normal flex items-center justify-between cursor-pointer `}
+                        >
+                            {country.country} <span>{activeLocale?.country === country.country && <Check />}</span>
+                        </li>
+                    ))}
+                </ul>
             </div>
+
+            <div>
+                <h2 className={'text-primary text-base font-medium leading-normal mb-5'}>Change language</h2>
+                {/*<ul className={"flex flex-col w-full gap-7"}>*/}
+                {/*    {defaultCountryList.map((country) => (*/}
+                {/*        <li*/}
+                {/*            key={country.id}*/}
+                {/*            onClick={() => handleLocaleChange(country.country, country.region)}*/}
+                {/*            className={`text-primary w-[220px] text-base font-normal leading-normal flex items-center justify-between cursor-pointer `}*/}
+                {/*        >*/}
+                {/*            {country.country} <span>{activeLocale?.country === country.country && <Check />}</span>*/}
+                {/*        </li>*/}
+                {/*    ))}*/}
+                {/*</ul>*/}
+                <LocaleSwitcher/>
+            </div>
+
         </div>
     );
 };
