@@ -1,6 +1,7 @@
 import React, {FC, useRef, useState} from "react";
 import {Sheet, SheetContent, SheetTitle, SheetTrigger,} from "@/components/ui/sheet";
 import {NavbarModalProps} from "@/interface/navbar-modals-type";
+import {ChevronDown} from "lucide-react";
 
 const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children,}) => {
 
@@ -25,7 +26,7 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children,})
                 onMouseLeave={handleMouseLeave}
                 className="relative z-50"
             >
-                <SheetTrigger className="cursor-pointer">{title}</SheetTrigger>
+                <SheetTrigger className="text-zinc-500 hover:text-white transition-all !outline-0  cursor-pointer flex items-center gap-1">{title} <ChevronDown/></SheetTrigger>
                 <SheetContent
                     side={side}
                     onMouseEnter={handleMouseEnter}

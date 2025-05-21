@@ -1,17 +1,16 @@
 import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
-import {productsItem} from "@/components/ui/product-items";
 import SortAndViewToggleWrapper from "@/components/shared/sort-View-toggle/sort-viewtoggle";
+import Image from "next/image";
+import {productsItem} from "@/components/ui/product-items";
 import {ProductsCard} from "@/components/shared/products-cards/products-card";
 import {Button} from "@/components/ui/button";
-import CategoryCarousel from "@/app/[lang]/shops/components/category-carusel/category-carusel";
-import {categoryItem} from "@/constants/category-item";
+import Images from "@/public/images/shops.png"
 
-export default function CategoryPage({params}: { params: { category: string } }) {
-
+export default function NewsPage() {
     return (
         <div className={"container !mt-22"}>
             <BreadcrumbDynamic/>
-            <h4 className="text-primary text-sm font-normal capitalize leading-tight mt-10 mb-2.5">{params.category}</h4>
+            <Image className={"my-8"} width={1200} height={400} src={Images.src} alt={"shops Image section"}/>
             <div>
                 <h2 className={"text-primary text-xl font-medium leading-loose"}>Exclusive Novelty Gifts from President
                     Business Gifts</h2>
@@ -19,8 +18,6 @@ export default function CategoryPage({params}: { params: { category: string } })
                     of
                     alpine-themed pouches and cool fragrances at President Business Gifts! Dive into our unique
                     collection and snag the perfect gift before you buy… Read more</p>
-
-                <CategoryCarousel categories={categoryItem}/>
                 <SortAndViewToggleWrapper itemLength={productsItem.length}>
                     {productsItem.map((product) => (
                         <ProductsCard
@@ -40,7 +37,3 @@ export default function CategoryPage({params}: { params: { category: string } })
         </div>
     )
 }
-
-
-
-  
