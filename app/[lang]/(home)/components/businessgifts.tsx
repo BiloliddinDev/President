@@ -19,11 +19,11 @@ export default function BusinessGiftsCarousel() {
     const plugin = useRef(Autoplay({delay: 3000, stopOnInteraction: false}));
 
     return (
-        <div className="w-full">
+        <div className="w-full ">
             <SectionTitle className={"container !mb-7"} text={"Service for your brand"}/>
 
-            <div className="flex flex-col lg:flex-row gap-15">
-                <div className="">
+            <div className="flex flex-col lg:flex-row gap-20 bg-neutral-100">
+                <div className="w-[50%]">
                     <Carousel
                         plugins={[plugin.current]}
                         className="w-full h-full"
@@ -39,8 +39,7 @@ export default function BusinessGiftsCarousel() {
                                             alt={`President Business Gift ${index + 1}`}
                                             width={800}
                                             height={500}
-                                            className="rounded-lg object-cover w-full h-full"
-                                            style={{objectFit: "cover"}}
+                                            className="object-cover w-full h-full"
                                         />
                                     </div>
                                 </CarouselItem>
@@ -52,9 +51,9 @@ export default function BusinessGiftsCarousel() {
                 </div>
 
 
-                <div className="">
-                    <h2 className="text-primary mb-5 text-5xl font-normal font-title">President Business Gifts</h2>
-                    <p className="text-gray-600 text-xl font-normal font-description ">
+                <div className="w-[50%]">
+                    <h2 className="text-primary mb-5 text-5xl font-normal font-title mt-[75px]">President Business Gifts</h2>
+                    <p className="text-gray-600 text-xl w-[480px]  font-normal font-description mb-5">
                         President Business Gifts is not just a premium gift brand — it is a unique fusion of national
                         identity and contemporary aesthetics. Inspired by the historical heritage, cultural richness,
                         and artisanal traditions of the Uzbek people, we blend them seamlessly with modern design and

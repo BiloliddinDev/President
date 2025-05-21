@@ -1,16 +1,18 @@
 "use client";
 
 import {usePathname} from "next/navigation";
-import Link from "next/link";
 import {i18n} from "@/lib/i18n-config";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import Cookies from "js-cookie";
+import {Check} from "lucide-react";
 
 export default function LocaleSwitcher() {
     const pathName = usePathname();
+    const [activeLocale, setActiveLocale] = useState<string>();
 
     const saveLang = async (lang: "uz" | "ru" | "en") => {
         Cookies.set("NEXT_LOCALE", lang, { expires: 365 });
+        setActiveLocale(lang);
     };
 
     const redirectedPathName = (locale: string) => {
@@ -22,32 +24,28 @@ export default function LocaleSwitcher() {
 
     useEffect(() => {
         const segments = pathName.split("/");
-
-        if (segments[1] === "uz" || segments[1] === "ru") {
-            const f = async () => {
-                await saveLang(segments[1] as "uz" | "ru" | "en");
-            };
-            f();
+        if (segments[1] === "uz" || segments[1] === "ru" || segments[1] === "en") {
+            setActiveLocale(segments[1]);
         }
     }, [pathName]);
 
-    const handleClick = async (lang: "uz" | "ru" | "en") => {
-        await saveLang(lang);
+    const handleLocaleChange = async (locale: "uz" | "ru" | "en") => {
+        await saveLang(locale);
+        window.location.href = redirectedPathName(locale);
     };
 
     return (
-        <div>
+        <ul className="flex flex-col w-full gap-7">
             {i18n.locales.map((locale) => (
-                <div className="cursor-pointer p-0" key={locale}>
-                    <Link
-                        className="px-2 py-1.5 w-full block"
-                        href={redirectedPathName(locale)}
-                        onClick={() => handleClick(locale)}
-                    >
-                        {locale.toUpperCase()}
-                    </Link>
-                </div>
+                <li
+                    key={locale}
+                    onClick={() => handleLocaleChange(locale)}
+                    className="text-primary w-[220px] text-base font-normal leading-normal flex items-center justify-between cursor-pointer"
+                >
+                    {locale.toUpperCase()}
+                    <span>{activeLocale === locale && <Check />}</span>
+                </li>
             ))}
-        </div>
+        </ul>
     );
 }

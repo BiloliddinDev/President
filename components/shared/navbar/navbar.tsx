@@ -49,20 +49,20 @@ export const Navbar = ({lang}: { lang: string }) => {
                     <div className="flex items-center gap-8 ">
                         <SearchModal
                             side="top"
-                            title={<SearchIcon className={'text-white'}/>}
+                            title={<SearchIcon className={'text-white mt-3'}/>}
                         >
                             <SearchModalData/>
                         </SearchModal>
                         <NavbarModal
                             side="right"
-                            title={<p className={"text-white text-lg font-normal"}>{`${lang}($)`}</p>}
+                            title={<p className={"text-white text-lg font-normal"}>{`${lang.toUpperCase()}($)`}</p>}
                         >
                             <ChangeLangModal/>
                         </NavbarModal>
-                        <IconComponent  name="like"/>
-                        <IconComponent  name="basket"/>
+                        <IconComponent name="like"/>
+                        <IconComponent name="basket"/>
                         <Link href={"/auth/sign-in"}>
-                            <IconComponent  name="profile"/>
+                            <IconComponent name="profile"/>
                         </Link>
                     </div>
                 </div>

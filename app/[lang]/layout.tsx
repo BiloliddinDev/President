@@ -54,7 +54,9 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
         </head>
         <body className={`${microsoftHimalaya.className} ${manropeFont.className}`}>
         <Suspense fallback={<LoadingComponent/>}>
-            <Navbar lang={language.lang}/>
+           <header>
+               <Navbar lang={language.lang}/>
+           </header>
             {children}
             <Footer/>
         </Suspense>

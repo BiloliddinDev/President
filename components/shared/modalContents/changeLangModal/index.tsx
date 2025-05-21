@@ -24,6 +24,11 @@ const ChangeLangModal = () => {
         <div className="flex flex-col gap-14 h-full text-primary text-base font-medium leading-normal">
             <div>
                 <h2 className={'text-primary text-base font-medium leading-normal mb-5'}>Change language</h2>
+                <LocaleSwitcher/>
+            </div>
+            
+            <div>
+                <h2 className={'text-primary text-base font-medium leading-normal mb-5'}>Select another location</h2>
                 <ul className={"flex flex-col w-full gap-7"}>
                     {defaultCountryList.map((country) => (
                         <li
@@ -31,28 +36,11 @@ const ChangeLangModal = () => {
                             onClick={() => handleLocaleChange(country.country, country.region)}
                             className={`text-primary w-[220px] text-base font-normal leading-normal flex items-center justify-between cursor-pointer `}
                         >
-                            {country.country} <span>{activeLocale?.country === country.country && <Check />}</span>
+                            {country.region} <span>{activeLocale?.country === country.country && <Check />}</span>
                         </li>
                     ))}
                 </ul>
             </div>
-
-            <div>
-                <h2 className={'text-primary text-base font-medium leading-normal mb-5'}>Change language</h2>
-                {/*<ul className={"flex flex-col w-full gap-7"}>*/}
-                {/*    {defaultCountryList.map((country) => (*/}
-                {/*        <li*/}
-                {/*            key={country.id}*/}
-                {/*            onClick={() => handleLocaleChange(country.country, country.region)}*/}
-                {/*            className={`text-primary w-[220px] text-base font-normal leading-normal flex items-center justify-between cursor-pointer `}*/}
-                {/*        >*/}
-                {/*            {country.country} <span>{activeLocale?.country === country.country && <Check />}</span>*/}
-                {/*        </li>*/}
-                {/*    ))}*/}
-                {/*</ul>*/}
-                <LocaleSwitcher/>
-            </div>
-
         </div>
     );
 };
