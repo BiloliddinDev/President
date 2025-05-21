@@ -16,7 +16,7 @@ export const IconList: IconList[] = [
     {
         name: "like",
         icon: `
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 16" fill="none">
               <path d="M10.0048 15L2.791 8.55129C-1.12955 4.68258 4.63333 -2.74663 10.0048 3.26384C15.3763 -2.74663 21.1141 4.70729 17.22 8.55129L10.0048 15Z" stroke="white" stroke-width="1.42857" stroke-linecap="round" stroke-linejoin="round"/>
            </svg>
         `
@@ -24,11 +24,27 @@ export const IconList: IconList[] = [
     {
         name: "profile",
         icon: `
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 18 20" fill="none">
             <path
                 d="M17 19C17 17.6044 17 16.9067 16.8278 16.3389C16.44 15.0605 15.4395 14.06 14.1611 13.6722C13.5933 13.5 12.8956 13.5 11.5 13.5H6.5C5.10444 13.5 4.40665 13.5 3.83886 13.6722C2.56045 14.06 1.56004 15.0605 1.17224 16.3389C1 16.9067 1 17.6044 1 19M13.5 5.5C13.5 7.98528 11.4853 10 9 10C6.51472 10 4.5 7.98528 4.5 5.5C4.5 3.01472 6.51472 1 9 1C11.4853 1 13.5 3.01472 13.5 5.5Z"
                 stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         `
+    },
+    {
+        name: "search",
+        icon: `
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+                d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+        </svg>
+    `
     }
+
+
 ];

@@ -27,7 +27,6 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children,})
             >
                 <SheetTrigger className="cursor-pointer">{title}</SheetTrigger>
                 <SheetContent
-                    className="top-[86.5px]"
                     side={side}
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}

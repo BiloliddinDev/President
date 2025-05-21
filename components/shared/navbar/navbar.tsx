@@ -9,8 +9,11 @@ import ShopModalContent from "@/components/shared/modalContents/shopModal";
 import DiscoverModalContent from "../modalContents/discoverModal";
 import ChangeLangModal from "../modalContents/changeLangModal";
 import IconComponent from "@/components/icon/icon-view";
+import SearchModal from "@/components/shared/search-modal";
+import SearchModalData from "@/components/shared/modalContents/searchModal";
+import {SearchIcon} from "lucide-react";
 
-export const Navbar = ({lang} : {lang: string}) => {
+export const Navbar = ({lang}: { lang: string }) => {
     return (
         <Headroom>
             <nav className="fixed w-full p-5  z-50 ">
@@ -43,23 +46,23 @@ export const Navbar = ({lang} : {lang: string}) => {
                         ))}
                     </div>
                     <Logo/>
-                    <div className="flex items-center gap-8">
-                        {/*<SearchModal*/}
-                        {/*    side="top"*/}
-                        {/*    title={<SearchIcon/>}*/}
-                        {/*>*/}
-                        {/*    <SearchModal/>*/}
-                        {/*</SearchModal>*/}
+                    <div className="flex items-center gap-8 ">
+                        <SearchModal
+                            side="top"
+                            title={<SearchIcon className={'text-white'}/>}
+                        >
+                            <SearchModalData/>
+                        </SearchModal>
                         <NavbarModal
                             side="right"
                             title={<p className={"text-white text-lg font-normal"}>{`${lang}($)`}</p>}
                         >
                             <ChangeLangModal/>
                         </NavbarModal>
-                        <IconComponent className={"hover:text-primary"} name="like"/>
-                        <IconComponent className={"hover:text-primary"} name="basket"/>
+                        <IconComponent  name="like"/>
+                        <IconComponent  name="basket"/>
                         <Link href={"/auth/sign-in"}>
-                            <IconComponent className={"hover:text-primary"} name="profile"/>
+                            <IconComponent  name="profile"/>
                         </Link>
                     </div>
                 </div>

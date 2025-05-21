@@ -1,22 +1,27 @@
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious,} from "@/components/ui/carousel";
 import {Input} from "@/components/ui/input";
-import {Logo} from "@/components/ui/logo";
-import {SheetTitle} from "@/components/ui/sheet";
+import {FooterLogo} from "@/components/ui/logo";
+import {SheetClose, SheetTitle} from "@/components/ui/sheet";
 import {categoryModalItems} from "@/constants/category-item";
 import {productCardItems} from "@/constants/product-card-item";
 import Link from "next/link";
 import React from "react";
 import ProductCard from "@/components/shared/product-card";
+import {X} from "lucide-react";
 
-const SearchModal = () => {
+const SearchModalData = () => {
     return (
         <div className="pb-20">
-            <div className="flex gap-[204px]">
-                <Logo/>
+            <div className="container flex items-center justify-between">
+                <FooterLogo/>
                 <Input className="w-xl" type="search" placeholder="Search"/>
+                <SheetClose className="rounded-sm  cursor-pointer opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-secondary">
+                    <X className="h-6 w-6" />
+                    <span className="sr-only ">Close</span>
+                </SheetClose>
             </div>
-            <div className="my-5 py-5 px-2.5">
-                <SheetTitle className="text-lg mb-8">Product suggestion</SheetTitle>
+            <div className=" container">
+                <SheetTitle className="text-lg my-8">Product suggestion</SheetTitle>
                 <div className="flex justify-between gap-[160px] container">
                     <Carousel
                         className="max-w-4xl"
@@ -60,4 +65,4 @@ const SearchModal = () => {
     );
 };
 
-export default SearchModal;
+export default SearchModalData;
