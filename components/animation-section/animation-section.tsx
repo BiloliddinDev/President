@@ -14,8 +14,14 @@ interface AnimatedSectionProps {
     className?: string
 }
 
-export default function AnimatedSection({ children,  animation = 'fade-up', delay = 0,   once = true, className = ''}: AnimatedSectionProps) {
-    
+export default function AnimatedSection({
+                                            children,
+                                            animation = 'fade-up',
+                                            delay = 0,
+                                            once = true,
+                                            className = ''
+                                        }: AnimatedSectionProps) {
+
     const {ref, inView} = useInView({threshold: 0.2})
     const [hasViewed, setHasViewed] = useState(false)
 
@@ -33,7 +39,7 @@ export default function AnimatedSection({ children,  animation = 'fade-up', dela
                 return {opacity: 0, x: 40}
             case 'scale':
                 return {opacity: 0, scale: 0.9}
-            default: 
+            default:
                 return {opacity: 0, y: 40}
         }
     }

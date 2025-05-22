@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import React, { useState } from "react";
 import { SectionTitle } from "@/components/ui/sectionTitle";
-import IconComponent from "@/components/shared/icon-view";
+import IconComponent from "@/components/icon/icon-view";
 
 const MapComponent = dynamic(
   () => import("@/components/shared/map-component/map-component"),

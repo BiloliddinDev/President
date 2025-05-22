@@ -1,7 +1,7 @@
 "use client";
+import IconComponent from "@/components/icon/icon-view";
 import { VideoBoxProps } from "@/interface/discover/video-box";
 import React, { FC, useRef, useState } from "react";
-import IconComponent from "../icon-view";
 
 const VideoBox: FC<VideoBoxProps> = ({
   videoSrc,

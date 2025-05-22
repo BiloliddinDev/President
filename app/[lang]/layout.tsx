@@ -5,6 +5,7 @@ import {LoadingComponent} from "@/components/shared/loading-component/loading-co
 import {Footer} from "@/components/shared/footer/footer";
 import {Navbar} from "@/components/shared/navbar/navbar";
 import localFont from 'next/font/local'
+import {InitGeoCookie} from "@/lib/get-userlocation";
 
 
 const microsoftHimalaya = localFont({
@@ -16,14 +17,12 @@ const microsoftHimalaya = localFont({
 const manropeFont = localFont({
     src: "../fonts/manrope-variable.ttf",
     variable: "--font-manrope"
-    
 })
 
 
 interface RootLayoutProps {
     children: React.ReactNode;
     params: Promise<{ lang: string }>;
-
 }
 
 export const metadata: Metadata = {
@@ -55,10 +54,13 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
         </head>
         <body className={`${microsoftHimalaya.className} ${manropeFont.className}`}>
         <Suspense fallback={<LoadingComponent/>}>
-            <Navbar/>
+           <header>
+               <Navbar lang={language.lang}/>
+           </header>
             {children}
             <Footer/>
         </Suspense>
+        <InitGeoCookie/>
         </body>
         </html>
     );

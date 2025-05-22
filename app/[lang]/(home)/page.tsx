@@ -14,9 +14,9 @@ export default function Home() {
     return (
         <>
             <section>
-                {/*<AnimatedSection>*/}
+                <AnimatedSection className={"h-screen"}>
                     <Showcase/>
-                {/*</AnimatedSection>*/}
+                </AnimatedSection>
             </section>
             <section className="mt-[100px]">
                 <AnimatedSection animation={"fade-right"}>

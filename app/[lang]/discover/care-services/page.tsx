@@ -3,8 +3,8 @@ import React from "react";
 import Pen from "@/public/images/Pen.png";
 import { BreadcrumbDynamic } from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import { careServicesItems } from "@/constants/care-services-items";
-import IconComponent from "@/components/shared/icon-view";
 import Link from "next/link";
+import IconComponent from "@/components/icon/icon-view";
 const CareAndServices = () => {
   return (
     <div className="container max-w-screen-xl mx-auto px-2 md:px-4 mt-16 md:!mt-20">
