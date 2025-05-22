@@ -21,11 +21,11 @@ const CareAndServices = () => {
         <div className="flex gap-5 justify-between flex-wrap md:flex-nowrap">
           {careServicesItems.map((item) => (
             <Link
-              className="block"
+              className="block w-full h-full hover:shadow-md"
               key={item.id}
               href={`/discover/care-services/${item.serviceType.toLowerCase()}`}
             >
-              <div className="w-full px-9 py-7 flex items-center justify-between rounded gap-6 outline-1 outline-offset-[-1px] outline-gray-200">
+              <div className=" px-9 py-7 flex items-center justify-between rounded gap-6 outline-1 outline-offset-[-1px] outline-gray-200">
                 <p className="text-sm font-medium leading-tight">
                   {item.serviceType}
                 </p>
