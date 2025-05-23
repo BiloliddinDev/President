@@ -4,10 +4,13 @@ import {useRef} from 'react'
 import {Button} from "@/components/ui/button"
 import {ChevronLeft, ChevronRight} from "lucide-react"
 import {CategoryCard} from '@/components/shared/category-card/category-card'
-import {CategoryCardType} from "@/interface/category-type/category-model";
+import {CategoryCardType} from "@/interface/category-type/category-model"
 
+interface CategoryCarouselProps {
+    categories: CategoryCardType[]
+}
 
-export default function CategoryCarousel({categories}: { categories: CategoryCardType[] }) {
+export default function CategoryCarousel({categories}: CategoryCarouselProps) {
     const scrollRef = useRef<HTMLDivElement>(null)
 
     const scroll = (direction: 'left' | 'right') => {
@@ -22,19 +25,13 @@ export default function CategoryCarousel({categories}: { categories: CategoryCar
 
     return (
         <div className="w-full">
-            <div className={"flex justify-between mb-5"}>
+            <div className="flex justify-between mb-5">
                 <h2 className="text-xl font-semibold mb-4">Categories</h2>
                 <div>
-                    <Button
-                        variant="ghost"
-                        onClick={() => scroll('left')}
-                    >
-                        <ChevronLeft className={"h-5 w-5 "}/>
+                    <Button variant="ghost" onClick={() => scroll('left')}>
+                        <ChevronLeft className="h-5 w-5"/>
                     </Button>
-                    <Button
-                        variant="ghost"
-                        onClick={() => scroll('right')}
-                    >
+                    <Button variant="ghost" onClick={() => scroll('right')}>
                         <ChevronRight/>
                     </Button>
                 </div>
