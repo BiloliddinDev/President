@@ -6,12 +6,23 @@ import {Button} from "@/components/ui/button";
 import CategoryCarousel from "@/app/[lang]/shops/components/category-carusel/category-carusel";
 import {categoryItem} from "@/constants/category-item";
 
-export default function CategoryPage({params}: { params: { category: string } }) {
+interface CategoryPageProps {
+    params: Promise<
+        {
+            lang: string;
+            category: string;
+        }
+    >
+}
+
+
+export default async function CategoryPage({params}: CategoryPageProps) {
+    const category = await params.then((params) => params.category)
 
     return (
         <div className={"container !mt-22"}>
             <BreadcrumbDynamic/>
-            <h4 className="text-primary text-sm font-normal capitalize leading-tight mt-10 mb-2.5">{params.category}</h4>
+            <h4 className="text-primary text-sm font-normal capitalize leading-tight mt-10 mb-2.5">{category}</h4>
             <div>
                 <h2 className={"text-primary text-xl font-medium leading-loose"}>Exclusive Novelty Gifts from President
                     Business Gifts</h2>
