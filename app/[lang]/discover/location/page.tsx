@@ -36,7 +36,10 @@ const DiscoverLocation = () => {
         {contactInfo.map((item) => (
           <a target="_blank" key={item.id} className="block" href={item.href}>
             <div className="flex gap-4">
-              <IconComponent name={item.icon} />
+              <IconComponent
+                name={item.icon}
+                className="text-gray-500 hover:text-red-400"
+              />
               <div className="leading-tight">
                 <p className="text-sm font-medium">{item.title}</p>
                 <p className="text-zinc-500 text-sm font-medium">

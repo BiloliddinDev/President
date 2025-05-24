@@ -1,6 +1,6 @@
 "use client";
 
-import { Logo } from "@/components/ui/logo";
+import { FooterLogo } from "@/components/ui/logo";
 import { navbarLinks } from "@/constants/navbar";
 import { Headroom } from "@/components/shared/headroom/Headroom";
 import Link from "next/link";
@@ -44,11 +44,15 @@ export const Navbar = ({ lang }: { lang: string }) => {
               </div>
             ))}
           </div>
-          <Logo />
+          <FooterLogo />
           <div className="flex items-center gap-8 ">
             <SearchModal
               side="top"
-              title={<SearchIcon className={"text-white mt-3"} />}
+              title={
+                <SearchIcon
+                  className={"text-zinc-500 hover:text-zinc-600 mt-3"}
+                />
+              }
             >
               <SearchModalData />
             </SearchModal>
@@ -56,16 +60,33 @@ export const Navbar = ({ lang }: { lang: string }) => {
               side="right"
               title={
                 <p
-                  className={"text-white text-lg font-normal"}
+                  className={
+                    "text-zinc-500 hover:text-zinc-600 text-lg font-normal"
+                  }
                 >{`${lang.toUpperCase()}($)`}</p>
               }
             >
               <ChangeLangModal />
             </NavbarModal>
-            <IconComponent name="like" />
-            <IconComponent name="basket" />
+            <IconComponent
+              name="like"
+              width={24}
+              height={24}
+              classNames="text-zinc-500 hover:text-zinc-600 duration-200"
+            />
+            <IconComponent
+              name="basket"
+              width={24}
+              height={24}
+              classNames="text-zinc-500 hover:text-zinc-600 duration-200"
+            />
             <Link href={"/auth/sign-in"}>
-              <IconComponent name="profile" />
+              <IconComponent
+                name="profile"
+                width={24}
+                height={24}
+                classNames="text-zinc-500 hover:text-zinc-600 duration-200"
+              />
             </Link>
           </div>
         </div>
