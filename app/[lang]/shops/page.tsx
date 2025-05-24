@@ -2,6 +2,7 @@
 import {useEffect} from "react"
 import {useRouter} from "next/navigation"
 
+
 export default function ShopsPage() {
     const router = useRouter()
 
@@ -9,5 +10,5 @@ export default function ShopsPage() {
         router.push("/shops/news")
     }, [router])
 
-    return null
+    return null;
 }
