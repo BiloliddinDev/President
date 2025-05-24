@@ -1,6 +1,6 @@
 import { BreadcrumbDynamic } from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import React from "react";
-import Catalog from "../catalog/catalog";
+import Catalog from "../components/catalog";
 const JournalPage = () => {
   return (
     <div className="container max-w-screen-xl mx-auto px-2 md:px-4 mt-16 md:!mt-20">

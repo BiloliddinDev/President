@@ -7,5 +7,5 @@ export const discoverModalItems = [
   { id: 6, linkSrc: "/discover/journal", name: "Journal" },
   { id: 9, linkSrc: "/", name: "Contact us" },
   { id: 8, linkSrc: "/", name: "Customer Sevice" },
-  { id: 7, linkSrc: "/", name: "Location" },
+  { id: 7, linkSrc: "/discover/location", name: "Location" },
 ];
