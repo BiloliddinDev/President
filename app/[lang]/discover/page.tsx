@@ -1,7 +1,14 @@
-import React from "react";
+"use client"
+import {useEffect} from "react"
+import {useRouter} from "next/navigation"
 
-const Discover = () => {
-  return <div>Discover</div>;
-};
 
-export default Discover;
+export default function DiscoverPage() {
+    const router = useRouter()
+
+    useEffect(() => {
+        router.push("/discover/about-us")
+    }, [router])
+
+    return null;
+}
