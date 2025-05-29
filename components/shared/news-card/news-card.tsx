@@ -13,8 +13,8 @@ export const NewsCard: FC<{ newsItem: NewsCardProps }> = ({newsItem}) => {
                    alt={newsItem.text}/>
             <h4 className={"self-stretch justify-start text-gray-800 text-xl font-medium mt-2.5 leading-9"}>{newsItem?.text}</h4>
             <p className={'self-stretch justify-start text-gray-600 text-base font-medium leading-7 mb-6'}>{newsItem?.description}</p>
-            <Link href={`new/${newsItem.text}`} passHref={true} className={`self-stretch justify-start`}>
-                <Button variant={"secondary"}>View Now</Button>
+            <Link href={`/new/${newsItem.text}`} passHref={true} className={`self-stretch justify-start`}>
+                <Button variant={"secondary"}>See more</Button>
             </Link>
         </div>
     )

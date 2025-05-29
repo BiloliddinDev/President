@@ -7,6 +7,7 @@ import Artel from "@/public/images/brand.png";
 import {Carousel, CarouselContent, CarouselItem, CarouselNext,} from "@/components/ui/carousel";
 import {SectionTitle} from "@/components/ui/sectionTitle";
 import {Button} from "@/components/ui/button";
+import Link from "next/link";
 
 const images = [
     Artel,
@@ -52,14 +53,17 @@ export default function BusinessGiftsCarousel() {
 
 
                 <div className="w-[50%]">
-                    <h2 className="text-primary mb-5 text-5xl font-normal font-title mt-[75px]">President Business Gifts</h2>
+                    <h2 className="text-primary mb-5 text-5xl font-normal font-title mt-[75px]">President Business
+                        Gifts</h2>
                     <p className="text-gray-600 text-xl w-[480px]  font-normal font-description mb-5">
                         President Business Gifts is not just a premium gift brand — it is a unique fusion of national
                         identity and contemporary aesthetics. Inspired by the historical heritage, cultural richness,
                         and artisanal traditions of the Uzbek people, we blend them seamlessly with modern design and
                         the highest standards of quality.
                     </p>
-                    <Button variant={"secondary"}>Read more</Button>
+                    <Link href={"/discover/b2b-service"} className={'mt-4'}>
+                        <Button variant={"secondary"}>Read more</Button>
+                    </Link>
                 </div>
             </div>
         </div>

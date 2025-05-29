@@ -1,5 +1,6 @@
 import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import Link from "next/link";
+import {B2bCard} from "@/app/[lang]/discover/components/b2b-card/b2b-card";
 
 export default function B2BPage() {
     return (
@@ -17,7 +18,9 @@ export default function B2BPage() {
             </div>
 
             <div>
-                {/*<B2bCard className={"mt-[100px]"}/>*/}
+                <B2bCard className={"mt-[100px]"}/>
+                <B2bCard className={"mt-[100px]"}/>
+                <B2bCard className={"mt-[100px]"}/>
             </div>
         </div>
     )

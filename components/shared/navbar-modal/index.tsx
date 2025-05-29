@@ -40,16 +40,22 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children,})
                         <SheetTitle className="pb-1.5">{sheetTitle}</SheetTitle>
                         <div className={'flex flex-col justify-between h-full'}>
                             {children}
-                            <div>
-                                {navbarContent.map((item) => (
-                                    <div
-                                        className={`text-sm font-normal leading-[1.5rem] cursor-pointer ${item.id === 9 ? "mt-10" : "my-5"}`}
-                                        key={item.id}
-                                    >
-                                        <Link href={item.linkSrc}> {item.name}</Link>
+                            {
+                                title === "Shop" || title === "Discover" ? (
+                                    <div>
+                                        {navbarContent.map((item) => (
+                                            <div
+                                                className={`text-sm font-normal leading-[1.5rem] cursor-pointer ${
+                                                    item.id === 9 ? "mt-10" : "my-5"
+                                                }`}
+                                                key={item.id}
+                                            >
+                                                <Link href={item.linkSrc}>{item.name}</Link>
+                                            </div>
+                                        ))}
                                     </div>
-                                ))}
-                            </div>
+                                ) : null
+                            }
                         </div>
                     </div>
 
