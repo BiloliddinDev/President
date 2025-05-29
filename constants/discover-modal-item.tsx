@@ -5,5 +5,5 @@ export const discoverModalItems = [
     {id: 4, linkSrc: "/discover/care-services", name: "Care & Services"},
     {id: 5, linkSrc: "/discover/corporate-gifts", name: "Corporate gifts"},
     {id: 6, linkSrc: "/discover/journal", name: "Journal"},
-   
+  
 ];
