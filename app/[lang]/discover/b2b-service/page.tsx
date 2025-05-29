@@ -1,7 +1,6 @@
 import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import Link from "next/link";
 
-
 export default function B2BPage() {
     return (
         <div className={"container !mt-21"}>
@@ -15,6 +14,12 @@ export default function B2BPage() {
                         encouragement for any business occasion.</p>
                     <Link className={"underline "} href={"#"}>Contact us for enquiries</Link>
                 </div>
+            </div>
+
+            <div>
+                <B2bCard className={"mt-[100px]"}/>
+                <B2bCard className={"mt-[100px]"}/>
+                <B2bCard className={"mt-[100px]"}/>
             </div>
         </div>
     )

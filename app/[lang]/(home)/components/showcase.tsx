@@ -2,6 +2,7 @@ import {FC} from 'react';
 import {Button} from "@/components/ui/button";
 import {imageLoader} from "@/lib/imageLoader";
 import  showcaseImage from "@/public/images/showcase-image.png";
+import Link from "next/link";
 
 export const Showcase: FC = () => {
     const backgroundImageUrl = imageLoader({
@@ -32,7 +33,9 @@ export const Showcase: FC = () => {
                 <p className="w-64 mb-12 justify-start text-white text-base font-normal tracking-wide">
                     New Styles In Refined Colours
                 </p>
-                <Button aria-busy={true} variant={"outline"}>Shop now</Button>
+                    <Link href={"/shops/news"}>
+                        <Button aria-busy={true} variant={"outline"}>Shop now</Button>
+                    </Link>
             </div>
         </div>
     );

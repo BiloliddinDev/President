@@ -3,6 +3,7 @@ import Image from "next/image";
 import {Button} from "@/components/ui/button";
 import AboutImage from "@/public/images/About.png"
 import {FC} from "react";
+import Link from "next/link";
 
 interface AboutType {
     title: string
@@ -23,7 +24,7 @@ export const About: FC<AboutType> = ({title}) => {
                             Inspired by the historical heritage, cultural richness, and artisanal traditions of the
                             Uzbek people, we blend them seamlessly with modern design and the highest standards of
                             quality.</p>
-                        <Button variant={"secondary"}>Read more</Button>
+                       <Link href={"/discover/about-us"}> <Button variant={"secondary"}>Read more</Button></Link>
                     </div>
                 </div>
             </div>

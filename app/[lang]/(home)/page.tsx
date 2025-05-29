@@ -25,7 +25,7 @@ export default function Home() {
             </section>
             <section className="mt-[100px]">
                 <AnimatedSection animation={"fade-left"}>
-                    <About title={"About"}/>
+                    <About title={"About us"}/>
                 </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
