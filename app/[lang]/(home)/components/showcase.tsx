@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Button } from "@/components/ui/button";
 import { imageLoader } from "@/lib/imageLoader";
 import showcaseImage from "@/public/images/showcase-image.png";
+import Link from "next/link";
 
 export const Showcase: FC = () => {
   const backgroundImageUrl = imageLoader({
@@ -20,15 +21,17 @@ export const Showcase: FC = () => {
       }}
     >
       <div className="container">
-        <h1 className="w-[400px] mb-3 justify-center text-white text-xl  md:text-6xl font-normal font-title">
+        <h1 className="w-[400px] mb-3 justify-center text-white text-6xl font-normal font-title">
           Bags & Leather Goods
         </h1>
         <p className="w-64 mb-12 justify-start text-white text-base font-normal tracking-wide">
           New Styles In Refined Colours
         </p>
-        <Button aria-busy={true} variant={"outline"} className="w-full">
-          Shop now
-        </Button>
+        <Link href={"/shops/news"}>
+          <Button aria-busy={true} variant={"outline"}>
+            Shop now
+          </Button>
+        </Link>
       </div>
     </div>
   );
