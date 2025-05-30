@@ -17,7 +17,7 @@ export const Navbar = ({ lang }: { lang: string }) => {
   return (
     <Headroom>
       <nav className="fixed w-full p-5  z-50 ">
-        <div className="container flex justify-between ">
+        <div className="container hidden md:flex justify-between ">
           <div className="flex  items-center gap-14">
             {navbarLinks.map((link) => (
               <div

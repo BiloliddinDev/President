@@ -11,7 +11,7 @@ export const NewsCard: FC<{ newsItem: NewsCardProps }> = ({ newsItem }) => {
         src={newsItem.images.src}
         width={500}
         height={500}
-        className={"w-80 md:w-full h-[430px] object-cover"}
+        className={"w-96 md:w-full h-[430px] object-cover"}
         alt={newsItem.text}
       />
       <h4
