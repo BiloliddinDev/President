@@ -4,7 +4,7 @@ type MessageType = "Contact Us" | "Booking" | "Support";
 
 interface SendTelegramMessageOptions {
     type: MessageType;
-    fields: Record<string, string | boolean>; 
+    fields: Record<string, string | boolean>;
 }
 
 export const sendTelegramMessage = async ({type, fields,}: SendTelegramMessageOptions): Promise<boolean> => {
@@ -45,7 +45,7 @@ export const sendTelegramMessage = async ({type, fields,}: SendTelegramMessageOp
         }
     } catch (error) {
         console.error("Telegram error:", error);
-        toast.error("⚠️ Something went wrong. Try again later.");
+        toast.error("⚠️ Something went wrong. Try again later !");
         return false;
     }
 };
