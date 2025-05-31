@@ -17,7 +17,7 @@ export default function Home() {
           <Showcase />
         </AnimatedSection>
       </section>
-      <section className="mt-[100px]">
+      <section className="mt-10 md:mt-[100px]">
         <AnimatedSection animation={"fade-right"}>
           <News title={"News"} />
         </AnimatedSection>

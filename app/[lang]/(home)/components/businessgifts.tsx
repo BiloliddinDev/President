@@ -26,8 +26,8 @@ export default function BusinessGiftsCarousel() {
         text={"Service for your brand"}
       />
 
-      <div className="flex flex-col lg:flex-row md:gap-20 bg-neutral-100">
-        <div className="md:w-[50%]">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20 bg-neutral-100">
+        <div className="">
           <Carousel
             plugins={[plugin.current]}
             className="w-full h-full"
@@ -55,7 +55,7 @@ export default function BusinessGiftsCarousel() {
         </div>
 
         <div className="container">
-          <div className="w-full md:w-[50%] ">
+          <div className="">
             <h2 className="text-primary mb-5 text-lg md:text-5xl font-normal font-title mt-5 md:mt-[75px]">
               President Business Gifts
             </h2>
