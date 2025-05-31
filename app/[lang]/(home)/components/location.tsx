@@ -35,8 +35,8 @@ export default function LocationPage() {
   };
 
   return (
-    <div className="w-full h-auto flex flex-col gap-4 overflow-x-hidden">
-      <div className="w-full max-w-[1200px] m-auto">
+    <div className="w-full h-auto flex flex-col gap-4 overflow-x-hidden container">
+      <div className="w-full max-w-[1200px] m-auto ">
         <SectionTitle text="Locations" />
       </div>
 

@@ -18,7 +18,7 @@ export const News: FC<{ title: string }> = ({ title }) => {
           slidesToScroll: 1,
           containScroll: "trimSnaps",
         }}
-        className="m-0 p-0 mt-12 relative"
+        className="m-0 p-0 mt-5 md:mt-12 relative"
       >
         <CarouselContent className="m-0 p-0 relative">
           {newsItem.map((newsItem) => (
