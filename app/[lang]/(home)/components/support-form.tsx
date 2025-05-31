@@ -10,6 +10,7 @@ import {Button} from "@/components/ui/button"
 import {SectionTitle} from "@/components/ui/sectionTitle"
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select"
 import {SupportSchema} from "@/interface/support-schema/support-schema";
+import {sendTelegramMessage} from "@/lib/sendTelegramMessage";
 
 
 type SupportFormValues = z.infer<typeof SupportSchema>
@@ -26,9 +27,22 @@ export const SupportForm = () => {
         },
     })
 
-    const onSubmit = (data: SupportFormValues) => {
-        console.log("Submitted data:", data)
-    }
+    const onSubmit = async (data: SupportFormValues) => {
+        const success = await sendTelegramMessage({
+            type: "Support",
+            fields: data,
+        });
+
+        if (success) {
+            form.reset({
+                username: "",
+                phone: "",
+                email: "",
+                productsType: "",
+                comments: "",
+            });
+        }
+    };
 
     return (
         <div className="container py-12">

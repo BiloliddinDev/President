@@ -10,6 +10,8 @@ import {Button} from "@/components/ui/button"
 import {FaqsSchema} from "@/interface/service-schema/faqs-schema";
 import {Checkbox} from "@/components/ui/checkbox";
 import Link from "next/link";
+import {sendTelegramMessage} from "@/lib/sendTelegramMessage";
+
 
 type FormValues = z.infer<typeof FaqsSchema>
 
@@ -26,9 +28,25 @@ export default function FaqsForm() {
         },
     })
 
-    const onSubmit = (data: FormValues) => {
-        console.log("Submitted:", data)
-    }
+
+    const onSubmit = async (data: FormValues) => {
+        const success = await sendTelegramMessage({
+            type: "Contact Us",
+            fields: data,
+        });
+
+        if (success) {
+            form.reset({
+                fullName: "",
+                phone: "",
+                email: "",
+                comment: "",
+                social: "",
+                agree: false,
+            });
+        }
+    };
+
 
     return (
 
@@ -93,8 +111,10 @@ export default function FaqsForm() {
                     />
                     <div className={'mt-5 text-sm font-medium  leading-tight'}>
                         We would like to keep you updated with our latest news and provide you with exclusive benefits.
-                        If you wish to opt-out of receiving marketing <br/> information, please check the box below. <br/> Your
-                        information is safe with Montblanc. Consult our <Link className={"underline"} href={"#"}>Privacy Policy</Link> for further information
+                        If you wish to opt-out of receiving marketing <br/> information, please check the box
+                        below. <br/> Your
+                        information is safe with Montblanc. Consult our <Link className={"underline"} href={"#"}>Privacy
+                        Policy</Link> for further information
                     </div>
                 </div>
                 <div className="md:col-span-2 flex items-start gap-2 mt-2">

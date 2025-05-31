@@ -2,7 +2,7 @@ import {NextRequest, NextResponse} from "next/server";
 import fs from "fs";
 
 const ApiKeys = [
-    "CBTcx6AYxbJL8jZsuMUenu33", "yHac4GPy3Ngmizi5jFfJbWTr", "hTVA12Ymb7oWx82SyD5Nrn4W"
+    // "CBTcx6AYxbJL8jZsuMUenu33", "yHac4GPy3Ngmizi5jFfJbWTr", "hTVA12Ymb7oWx82SyD5Nrn4W"
 ];
 
 export async function POST(req: NextRequest) {
@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
         const response = await fetch("https://api.remove.bg/v1.0/removebg", {
             method: "POST",
             headers: {
-                "X-Api-Key": ApiKeys[errorcount],
+                "X-Api-Key": `${process.env.NEXT_PUBLIC_REMOVE_BG}`,
             },
             body: removeBgFormData,
         });
@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
                 const retryResponse = await fetch("https://api.remove.bg/v1.0/removebg", {
                     method: "POST",
                     headers: {
-                        "X-Api-Key": ApiKeys[errorcount],
+                        "X-Api-Key": `${process.env.NEXT_PUBLIC_REMOVE_BG}`,
                     },
                     body: removeBgFormData,
                 });
