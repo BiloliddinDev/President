@@ -6,6 +6,8 @@ services:
     container_name: president-container # Specify the container name here
     environment:
       - NODE_ENV=production
+    env_file:
+      - .env.local
     ports:
       - "3000:3000" # Expose port 3000
     networks:

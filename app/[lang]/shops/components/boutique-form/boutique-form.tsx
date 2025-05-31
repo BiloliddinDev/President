@@ -9,6 +9,7 @@ import {Input} from "@/components/ui/input"
 import {Textarea} from "@/components/ui/textarea"
 import {Button} from "@/components/ui/button"
 import Link from "next/link";
+import {sendTelegramMessage} from "@/lib/sendTelegramMessage";
 
 type FormValues = z.infer<typeof BoutiqueSchema>
 
@@ -26,9 +27,24 @@ export default function BoutiqueForm() {
         },
     })
 
-    const onSubmit = (data: FormValues) => {
-        console.log("Submitted:", data)
-    }
+    const onSubmit = async (data: FormValues) => {
+        const success = await sendTelegramMessage({
+            type: "Booking",
+            fields: data,
+        });
+
+        if (success) {
+            form.reset({
+                fullName: "",
+                phone: "",
+                email: "",
+                location: "",
+                date: "",
+                time: "",
+                comment: "",
+            });
+        }
+    };
 
     return (
 
