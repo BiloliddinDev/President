@@ -34,7 +34,7 @@ const ProductVideoCard: React.FC<{ productItem: ProductVideoProps }> = ({
 
   return (
     <div
-      className="relative w-[290px] h-[420px] overflow-hidden rounded-lg cursor-pointer"
+      className="relative w-[290px] h-[420px] overflow-hidden rounded-lg cursor-pointer "
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
