@@ -1,11 +1,11 @@
 import React, {FC, useRef, useState} from "react";
 import {Sheet, SheetContent, SheetTitle, SheetTrigger,} from "@/components/ui/sheet";
 import {NavbarModalProps} from "@/interface/navbar-modals-type";
-import {ChevronDown} from "lucide-react";
 import Link from "next/link";
 import {navbarContent} from "@/constants/navbar";
+import {ChevronDown} from "lucide-react";
 
-const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children,}) => {
+const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, textColorClass}) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -29,8 +29,15 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children,})
                 className="relative z-50"
             >
                 <SheetTrigger
-                    className="text-zinc-500 hover:text-white transition-all !outline-0  cursor-pointer flex items-center gap-1">{title}
-                    <ChevronDown/></SheetTrigger>
+                    className={`transition-all !outline-0 cursor-pointer flex items-center gap-1`}
+                >
+                    {title}
+                    {title === 'Shop' || title === 'Discover' ? (
+                        <ChevronDown className={`w-4 h-4 transition-colors duration-200 ${textColorClass}`}/>
+                    ) : null}
+
+                </SheetTrigger>
+
                 <SheetContent
                     side={side}
                     onMouseEnter={handleMouseEnter}
@@ -63,7 +70,8 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children,})
                 </SheetContent>
             </div>
         </Sheet>
-    );
+    )
+        ;
 };
 
 export default NavbarModal;
