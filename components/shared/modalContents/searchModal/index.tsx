@@ -18,14 +18,13 @@ import { X } from "lucide-react";
 const SearchModalData = () => {
   const [isDesktop, setIsDesktop] = useState(false);
 
-  // Ekran o‘lchamini tekshirish
   useEffect(() => {
     const checkScreen = () => {
       setIsDesktop(window.innerWidth >= 768);
     };
 
-    checkScreen(); // sahifa yuklanganda
-    window.addEventListener("resize", checkScreen); // o‘lcham o‘zgarganda
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
 
     return () => window.removeEventListener("resize", checkScreen);
   }, []);

@@ -53,7 +53,9 @@ const MobileNavbar = () => {
           />
         </div>
 
-        {searchInputOpen && <SearchModalData />}
+        <div suppressHydrationWarning>
+          {searchInputOpen && <SearchModalData />}
+        </div>
       </div>
 
       {open && (
