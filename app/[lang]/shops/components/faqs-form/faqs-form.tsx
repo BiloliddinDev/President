@@ -10,7 +10,7 @@ import {Button} from "@/components/ui/button"
 import {FaqsSchema} from "@/interface/service-schema/faqs-schema";
 import {Checkbox} from "@/components/ui/checkbox";
 import Link from "next/link";
-import {sendTelegramMessage} from "@/lib/sendTelegramMessage";
+import {sendTelegramMessage} from "@/lib/send-telegram-message";
 
 
 type FormValues = z.infer<typeof FaqsSchema>

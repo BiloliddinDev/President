@@ -100,18 +100,22 @@ export const Navbar = ({lang}: { lang: string }) => {
                             <ChangeLangModal/>
                         </NavbarModal>
 
-                        <IconComponent
-                            name="like"
-                            width={24}
-                            height={24}
-                            classNames={`${textColorClass} ${hoverTextColorClass} duration-200`}
-                        />
-                        <IconComponent
-                            name="basket"
-                            width={24}
-                            height={24}
-                            classNames={`${textColorClass} ${hoverTextColorClass} duration-200`}
-                        />
+                        <Link href={'/like'}>
+                            <IconComponent
+                                name="like"
+                                width={24}
+                                height={24}
+                                classNames={`${textColorClass} ${hoverTextColorClass} duration-200`}
+                            />
+                        </Link>
+                       <Link href={"/basket"}>
+                           <IconComponent
+                               name="basket"
+                               width={24}
+                               height={24}
+                               classNames={`${textColorClass} ${hoverTextColorClass} duration-200`}
+                           />
+                       </Link>
                         <Link href={"/auth/sign-in"}>
                             <IconComponent
                                 name="profile"

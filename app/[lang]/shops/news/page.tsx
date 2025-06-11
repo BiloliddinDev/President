@@ -22,11 +22,7 @@ export default function NewsPage() {
                     {productsItem.map((product) => (
                         <ProductsCard
                             key={product.id}
-                            image={product.image.src}
-                            text={product.title}
-                            like={product.isFavorite}
-                            isNewArrival={product.isNewArrival}
-                            price={product.price}
+                            productData={product}
                         />
                     ))}
                 </SortAndViewToggleWrapper>

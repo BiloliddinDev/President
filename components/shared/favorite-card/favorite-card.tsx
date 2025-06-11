@@ -5,9 +5,11 @@ import {Heart, Trash} from "lucide-react";
 interface FavoriteCardProps {
     image: StaticImageData;
     text: string;
+    onRemove: () => void;
+    price?: number;
 }
 
-export default function FavoriteCard({image, text}: FavoriteCardProps) {
+export default function FavoriteCard({image, text, onRemove, price}: FavoriteCardProps) {
     return (
         <div className="flex flex-col gap-5">
             <div className="relative">
@@ -19,17 +21,28 @@ export default function FavoriteCard({image, text}: FavoriteCardProps) {
                         height={320}
                         className="w-full h-80 object-cover"
                     />
-                    <Heart className="absolute top-0 right-0 cursor-pointer"/>
+                    <Heart
+                        className="absolute top-3 right-3 w-5 h-5 fill-red-500 text-red-500"
+                    />
                 </div>
                 <div className="mt-4">
                     <h3 className="text-lg text-gray-900 font-inter">{text}</h3>
+                    {price && (
+                        <p className="text-sm text-gray-500 mt-1">
+                            ${price.toFixed(2)}
+                        </p>
+                    )}
                 </div>
             </div>
 
             <div className="flex gap-4">
-                <Button variant={"secondary"}>Add to cart</Button>
-                <Button variant={"secondary"} className={" p-0 flex items-center justify-center"}>
-                    <Trash/>
+                <Button variant="secondary">Add to cart</Button>
+                <Button
+                    onClick={onRemove}
+                    variant="secondary"
+                    className="p-0 w-10 h-10 flex items-center justify-center"
+                >
+                    <Trash className="w-5 h-5"/>
                 </Button>
             </div>
         </div>
