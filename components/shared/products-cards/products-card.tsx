@@ -16,7 +16,7 @@ export const ProductsCard = ({ productData }: ProductsCardProps) => {
         <div className="group relative flex flex-col rounded-lg transition hover:shadow-md bg-white pb-2">
             <button
                 onClick={() => toggleWishlist(productData)}
-                className="absolute right-3 top-3 z-40 text-gray-500 cursor-pointer hover:text-red-500 transition">
+                className="absolute right-3 top-3 z-40 text-gray-500 cursor-pointer hover:text-primary transition">
                 <Heart
                     className={`w-5 h-5`}
                 />

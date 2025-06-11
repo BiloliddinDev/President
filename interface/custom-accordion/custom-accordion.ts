@@ -1,6 +1,8 @@
+import { ReactNode } from "react";
+
 export interface AccordionProps {
   accordionTrigger: string;
-  accordionContent: string;
+  accordionContent: string | ReactNode;
   itemValue: string;
   className?: string;
   accordionContentStyles?: string;

@@ -8,6 +8,7 @@ interface IconComponentProps extends HTMLAttributes<HTMLDivElement> {
   classNames?: string;
   width?: number;
   height?: number;
+  onClick?: () => void;
 }
 
 export default function IconComponent({
@@ -15,6 +16,7 @@ export default function IconComponent({
   classNames,
   width,
   height,
+  onClick,
 }: IconComponentProps) {
   const iconHtml = useMemo(() => {
     const found = IconList.find((item) => item.name === name);
@@ -22,8 +24,9 @@ export default function IconComponent({
   }, [name]);
 
   return (
-    <div className={classNames}>
+    <div className={classNames} onClick={onClick}>
       <span
+        className="hover:duration-300"
         style={{
           display: "flex",
           alignItems: "center",
