@@ -21,7 +21,6 @@ export const Navbar = ({ lang }: { lang: string }) => {
   const isHome = pathname === `/${lang}` || pathname === `/${lang}/`;
   const [scrolled, setScrolled] = useState(false);
 
-  // Scroll behavior for home
   useEffect(() => {
     if (!isHome) return;
 
@@ -47,7 +46,7 @@ export const Navbar = ({ lang }: { lang: string }) => {
     <Headroom>
       {/* Desktop Navbar */}
       <nav
-        className={`fixed w-full md:p-5 z-50 transition-colors duration-300 ${navClasses}`}
+        className={`fixed w-full md:p-5 z-40 transition-colors duration-300 ${navClasses}`}
       >
         <div className="container hidden md:flex justify-between items-center">
           <div className="flex items-center gap-14">
@@ -125,10 +124,8 @@ export const Navbar = ({ lang }: { lang: string }) => {
             </Link>
           </div>
         </div>
+        <MobileNavbar />
       </nav>
-
-      {/* Mobile Navbar */}
-      <MobileNavbar />
     </Headroom>
   );
 };

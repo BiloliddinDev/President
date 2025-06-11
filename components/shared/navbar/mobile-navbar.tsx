@@ -17,7 +17,6 @@ const MobileNavbar = () => {
 
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const handleOpen = () => setOpen(!open);
-  // Hide menu on outside click
   useEffect(() => {
     if (!open) return;
 
@@ -35,7 +34,7 @@ const MobileNavbar = () => {
   }, [open]);
 
   return (
-    <div className="bg-white p-5 md:hidden w-screen " ref={mobileMenuRef}>
+    <div className="bg-white p-5 md:hidden w-screen" ref={mobileMenuRef}>
       <div className="flex justify-between items-center">
         <FooterLogo />
         <IconComponent onClick={handleOpen} name={open ? "close" : "burger"} />
