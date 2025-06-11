@@ -44,11 +44,11 @@ export const categoryItem = [
 ];
 
 export const categoryModalItems = [
-  { id: 1, name: "Souvenirs" },
+  { id: 1, name: "Souviners" },
   { id: 2, name: "Luxury Pens" },
   { id: 3, name: "Leather" },
   { id: 4, name: "Accessories" },
-  { id: 5, name: "Jewelry" },
+  { id: 5, name: "Jewelery" },
   { id: 6, name: "Bags" },
   { id: 7, name: "Safes" },
   { id: 8, name: "Accessories" },

@@ -1,358 +1,223 @@
 "use client";
 
-import {Button} from "@/components/ui/button";
-import {FooterLogo} from "@/components/ui/logo";
+import IconComponent from "@/components/icon/icon-view";
+import { Button } from "@/components/ui/button";
+import { FooterLogo } from "@/components/ui/logo";
+import {
+  companyList,
+  newProductsList,
+  supportList,
+} from "@/constants/footer-lists";
+import Link from "next/link";
+import CustomAccordion from "../custom-accordion/custom-accordion";
 
 export const Footer = () => {
-    return (
-        <footer className={"container"}>
-            <div
-                className={
-                    "flex flex-wrap md:flex-nowrap flex-col sm:flex-row  justify-between mt-[100px] mb-4 items-start pb-11 border-b-[1px] border-gray-200"
-                }
-            >
-                <div className={"flex flex-col items-start gap-6"}>
-                    <FooterLogo/>
-                    <p className={"text-gray-600 text-sm font-normal  leading-normal"}>
-                        President Business Gifts is not just a <br/> premium gift brand. President Business <br/> Gifts is not just
-                        a premium gift brand. <br/> President Business Gifts is not just a <br/> premium gift brand.
-                    </p>
-                    <Button>Read more</Button>
+  return (
+    <footer className={"container"}>
+      <div
+        className={
+          "flex flex-wrap md:flex-nowrap flex-col sm:flex-row  justify-between mt-[100px] mb-4 items-start pb-11 border-b-[1px] border-gray-200"
+        }
+      >
+        <div className={"flex flex-col items-start gap-6 mb-5"}>
+          <FooterLogo />
+          <p
+            className={
+              " w-full md:max-w-[278px] text-gray-600 text-sm font-normal  leading-normal "
+            }
+          >
+            President Business Gifts is not just a premium gift brand. President
+            Business Gifts is not just a premium gift brand. President Business
+            Gifts is not just a premium gift brand.
+          </p>
+          <Button className="self-center">Read more</Button>
+        </div>
 
-                </div>
-                <ul className={"flex flex-col items-start"}>
-                    <h2
-                        className={
-                            "text-gray-500 text-sm  font-medium leading-normal mb-[40px] mt-20 md:mt-0"
-                        }
-                    >
-                        SUPPORT
-                    </h2>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Customer Service
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Returns & Refunds
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Delivery
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        FAQs
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Book an appointments
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        President B2B
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Corporate Gifts
-                    </li>
-                </ul>
-                <ul className={"flex flex-col items-start"}>
-                    <h2
-                        className={
-                            "text-gray-500 text-sm font-medium leading-normal mb-[40px] mt-20 md:mt-0"
-                        }
-                    >
-                        COMPANY
-                    </h2>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        About us
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Care & Services
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Fine Watchmaking
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Journal
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Location
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Contact us
-                    </li>
-                </ul>
-                <ul className={"flex flex-col items-start"}>
-                    <h2
-                        className={
-                            "text-gray-500 text-sm font-medium leading-normal mb-[40px] mt-20 md:mt-0"
-                        }
-                    >
-                        New Products
-                    </h2>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Gifts
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Watches
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Accessories
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Follow your Order
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Souviners
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Safes
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Bags
-                    </li>
-                    <li
-                        className={"text-gray-600 text-sm mb-4 font-medium leading-normal"}
-                    >
-                        Jewelery
-                    </li>
-                </ul>
-                <ul className={"flex flex-col items-start"}>
-                    <h2
-                        className={
-                            "text-gray-500 text-sm font-medium leading-normal mb-[40px] mt-10 md:mt-0"
-                        }
-                    >
-                        ACCEPTED PAYMENTS
-                    </h2>
-                    <div className={"flex flex-wrap md:flex-nowrap  items-center gap-4"}>
-                        <div>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="31"
-                                height="32"
-                                viewBox="0 0 31 32"
-                                fill="none"
-                            >
-                                <g clipPath="url(#clip0_227_1234)">
-                                    <path
-                                        d="M15.017 22.85C13.3637 24.2432 11.27 25.005 9.108 25C4.078 25 0 20.97 0 16C0 11.03 4.078 7.00002 9.108 7.00002C11.363 7.00002 13.426 7.81002 15.017 9.15002C16.67 7.75705 18.7633 6.99526 20.925 7.00002C25.955 7.00002 30.033 11.03 30.033 16C30.033 20.97 25.955 25 20.925 25C18.7633 25.0048 16.67 24.243 15.017 22.85Z"
-                                        fill="#ED0006"
-                                    />
-                                    <path
-                                        d="M15.017 22.85C16.0186 22.0115 16.8242 20.9636 17.377 19.7801C17.9299 18.5966 18.2166 17.3063 18.217 16C18.217 13.257 16.975 10.8 15.017 9.15002C16.67 7.75705 18.7633 6.99526 20.925 7.00002C25.955 7.00002 30.033 11.03 30.033 16C30.033 20.97 25.955 25 20.925 25C18.7633 25.0048 16.67 24.243 15.017 22.85Z"
-                                        fill="#F9A000"
-                                    />
-                                    <path
-                                        d="M15.017 22.85C16.975 21.2 18.217 18.743 18.217 16C18.217 13.257 16.975 10.8 15.017 9.15002C14.0154 9.98856 13.2098 11.0365 12.657 12.22C12.1041 13.4035 11.8174 14.6938 11.817 16C11.817 18.743 13.058 21.2 15.017 22.85Z"
-                                        fill="#FF5E00"
-                                    />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_227_1234">
-                                        <rect width="30.033" height="32" fill="white"/>
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </div>
-                        <div>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="57"
-                                height="32"
-                                viewBox="0 0 57 32"
-                                fill="none"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    clipRule="evenodd"
-                                    d="M10.2242 10L5.0332 21.826H11.2482L12.0182 19.941H13.7792L14.5502 21.827H21.3902V20.387L22.0002 21.827H25.5402L26.1492 20.357V21.827H40.3762L42.1062 19.99L43.7262 21.827L51.0332 21.842L45.8252 15.946L51.0332 10H43.8392L42.1552 11.803L40.5862 10H25.1092L23.7792 13.053L22.4202 10H16.2192V11.39L15.5292 10H10.2262H10.2242ZM11.4272 11.68H14.4572L17.9002 19.699V11.679H21.2192L23.8792 17.429L26.3292 11.679H29.6332V20.166H27.6232L27.6072 13.516L24.6772 20.166H22.8802L19.9352 13.516V20.166H15.8012L15.0182 18.263H10.7832L10.0012 20.164H7.7872L11.4272 11.679V11.68ZM39.6402 11.68H31.4702V20.16H39.5132L42.1062 17.35L44.6052 20.16H47.2172L43.4202 15.945L47.2172 11.679H44.7182L42.1382 14.458L39.6402 11.679V11.68ZM12.9002 13.115L11.5062 16.505H14.2942L12.9012 13.115H12.9002ZM33.4872 14.985V13.435H38.5852L40.8092 15.912L38.4862 18.404H33.4872V16.712H37.9442V14.986H33.4872V14.985Z"
-                                    fill="#016FD0"
-                                />
-                            </svg>
-                        </div>
-                        <div>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="43"
-                                height="32"
-                                viewBox="0 0 43 32"
-                                fill="none"
-                            >
-                                <g clipPath="url(#clip0_227_1238)">
-                                    <path
-                                        d="M27.5152 9.00008C28.5601 8.99548 29.5961 9.19135 30.5672 9.57708L30.1042 12.5031L29.7962 12.3601C29.0033 11.9927 28.1358 11.8147 27.2622 11.8401C25.9192 11.8401 25.3162 12.4311 25.3022 13.0081C25.3022 13.6431 26.0322 14.0611 27.2222 14.6811C29.1822 15.6471 30.0902 16.8291 30.0772 18.3711C30.0492 21.1841 27.7252 23.0001 24.1552 23.0001C22.6292 22.9851 21.1592 22.6531 20.3612 22.2791L20.8372 19.2361L21.2852 19.4531C22.3912 19.9581 23.1192 20.1731 24.4772 20.1731C25.4572 20.1731 26.5072 19.7551 26.5202 18.8481C26.5202 18.2561 26.0732 17.8241 24.7572 17.1601C23.4692 16.5111 21.7472 15.4301 21.7752 13.4841C21.7892 10.8451 24.1552 9.00008 27.5152 9.00008ZM14.8312 22.7981H18.2332L20.3612 9.24608H16.9592L14.8312 22.7981Z"
-                                        fill="#00579F"
-                                    />
-                                    <path
-                                        fillRule="evenodd"
-                                        clipRule="evenodd"
-                                        d="M39.2882 9.24608H36.6572C35.8452 9.24608 35.2292 9.49108 34.8782 10.3701L29.8252 22.7981H33.3952L34.1092 20.7651H38.4772C38.5752 21.2411 38.8832 22.7981 38.8832 22.7981H42.0332L39.2882 9.24608ZM35.0882 17.9961L36.4482 14.2061C36.4412 14.2161 36.4862 14.0901 36.5522 13.9011C36.6502 13.6211 36.7952 13.2081 36.8952 12.9081L37.1322 14.0751C37.1322 14.0751 37.7772 17.3191 37.9172 17.9971H35.0892L35.0882 17.9961Z"
-                                        fill="#00579F"
-                                    />
-                                    <path
-                                        d="M8.6572 18.4871L11.9892 9.24608H15.5872L10.2392 22.7841H6.6412L3.5892 10.9321C5.7452 12.1001 7.6772 14.4501 8.2932 16.6121L8.6572 18.4871Z"
-                                        fill="#00579F"
-                                    />
-                                    <path
-                                        d="M5.5632 9.24608H0.0892034L0.0332031 9.51908C4.3032 10.6441 7.1312 13.3551 8.2932 16.6131L7.1032 10.3851C6.9072 9.51908 6.3052 9.27508 5.5632 9.24508V9.24608Z"
-                                        fill="#FAA61A"
-                                    />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_227_1238">
-                                        <rect
-                                            width="42"
-                                            height="32.0001"
-                                            fill="white"
-                                            transform="translate(0.0332031)"
-                                        />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </div>
-                    </div>
-                    <h2
-                        className={
-                            "text-gray-500 text-sm font-medium leading-normal mb-[40px] mt-20 md:mt-20"
-                        }
-                    >
-                        SOCIAL MEDIA
-                    </h2>
-                    <ul className={"flex gap-6 flex-wrap md:flex-nowrap"}>
-                       
-                        <li>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 20 20"
-                                fill="none"
-                            >
-                                <g clipPath="url(#clip0_227_1200)">
-                                    <path
-                                        d="M5.4822 6.76748C5.65636 6.21498 6.13053 5.55331 6.47386 5.38415C6.62636 5.30915 6.7397 5.29248 7.1097 5.29248C7.5447 5.29248 7.56636 5.29665 7.6797 5.40915C7.75303 5.48831 7.95303 5.91415 8.24053 6.60248C8.48386 7.19415 8.6847 7.69831 8.6847 7.72498C8.6847 7.84665 8.44053 8.23331 8.1622 8.55998C7.97053 8.78248 7.85803 8.95165 7.85803 9.01248C7.85803 9.06915 7.9972 9.32998 8.17136 9.58748C8.59303 10.2183 9.37136 11.0008 9.9772 11.4016C10.4505 11.715 11.2955 12.1241 11.4647 12.1241C11.5914 12.1241 11.8222 11.8975 12.2914 11.3058C12.483 11.0666 12.653 10.8933 12.718 10.88C12.7747 10.8625 12.9139 10.8841 13.0264 10.9275C13.353 11.0541 15.0022 11.8583 15.0897 11.9366C15.2589 12.0933 15.1205 12.99 14.8672 13.355C14.4805 13.9216 13.3755 14.4041 12.648 14.33C12.118 14.2733 10.8647 13.86 10.0505 13.4725C9.00636 12.9725 7.90553 12.0583 7.01386 10.9408C6.5047 10.305 5.99136 9.53081 5.7697 9.06915C5.4697 8.44331 5.36053 7.95998 5.39053 7.40248C5.40386 7.16331 5.4472 6.87665 5.4822 6.76748Z"
-                                        fill="#5C5F6A"
-                                    />
-                                    <path
-                                        fillRule="evenodd"
-                                        clipRule="evenodd"
-                                        d="M0.505133 7.91657C1.31847 3.7424 4.6468 0.633232 8.9243 0.0498989C9.5118 -0.0334345 11.161 -0.0067678 11.731 0.0882322C12.3268 0.193232 13.1143 0.397399 13.5976 0.579899C16.791 1.76823 19.1501 4.51323 19.8193 7.81573C20.111 9.25657 20.046 10.9449 19.6501 12.3632C18.706 15.7216 15.9643 18.3674 12.5576 19.2116C10.3385 19.7599 8.00597 19.5199 5.90513 18.5366L5.39097 18.2932L2.70263 19.1507C1.22763 19.6207 0.00846667 19.9949 0.000133333 19.9857C-0.0082 19.9774 0.375133 18.8066 0.857633 17.3924L1.73263 14.8124L1.3793 14.1124C0.400133 12.1407 0.100133 10.0082 0.5043 7.9149L0.505133 7.91657ZM18.1485 7.57657C17.2918 4.44323 14.5676 2.0549 11.361 1.6199C9.6118 1.3849 7.96263 1.65073 6.4443 2.41657C2.76347 4.27823 1.0093 8.53407 2.33597 12.3807C2.50597 12.8724 2.96263 13.7991 3.24597 14.2249L3.4718 14.5649L2.96763 16.0441C2.79237 16.5465 2.62402 17.0512 2.46263 17.5582C2.46263 17.5799 3.16263 17.3716 4.01597 17.1016C4.54208 16.9307 5.06988 16.7652 5.5993 16.6049C5.61763 16.6049 5.7868 16.6966 5.9743 16.8049C7.99763 18.0107 10.521 18.2716 12.7968 17.5149C14.1089 17.0784 15.2906 16.32 16.2339 15.3089C17.1773 14.2979 17.8521 13.0665 18.1968 11.7274C18.531 10.3621 18.5144 8.93451 18.1485 7.5774V7.57657Z"
-                                        fill="#5C5F6A"
-                                    />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_227_1200">
-                                        <rect width="20" height="20" fill="white"/>
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </li>
-                        <li>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 20 20"
-                                fill="none"
-                            >
-                                <path
-                                    d="M9.99731 4.86903C7.15795 4.86903 4.86644 7.16058 4.86644 10C4.86644 12.8394 7.15795 15.131 9.99731 15.131C12.8367 15.131 15.1282 12.8394 15.1282 10C15.1282 7.16058 12.8367 4.86903 9.99731 4.86903ZM9.99731 13.3348C8.16111 13.3348 6.66262 11.8362 6.66262 10C6.66262 8.16376 8.16111 6.66525 9.99731 6.66525C11.8335 6.66525 13.332 8.16376 13.332 10C13.332 11.8362 11.8335 13.3348 9.99731 13.3348ZM15.3383 3.46308C14.6754 3.46308 14.14 3.99845 14.14 4.66139C14.14 5.32434 14.6754 5.8597 15.3383 5.8597C16.0013 5.8597 16.5366 5.32684 16.5366 4.66139C16.5368 4.50397 16.5059 4.34806 16.4458 4.20259C16.3856 4.05711 16.2974 3.92493 16.1861 3.81362C16.0748 3.70231 15.9426 3.61405 15.7971 3.5539C15.6516 3.49375 15.4957 3.46289 15.3383 3.46308ZM19.9989 10C19.9989 8.61907 20.0114 7.25064 19.9338 5.87221C19.8563 4.27113 19.4911 2.85017 18.3203 1.67938C17.147 0.506085 15.7286 0.14334 14.1275 0.065788C12.7466 -0.0117644 11.3782 0.000744113 9.99981 0.000744113C8.61891 0.000744113 7.25051 -0.0117644 5.8721 0.065788C4.27105 0.14334 2.85012 0.508587 1.67935 1.67938C0.506076 2.85267 0.143338 4.27113 0.0657868 5.87221C-0.0117642 7.25314 0.000744099 8.62157 0.000744099 10C0.000744099 11.3784 -0.0117642 12.7494 0.0657868 14.1278C0.143338 15.7289 0.508578 17.1498 1.67935 18.3206C2.85262 19.4939 4.27105 19.8567 5.8721 19.9342C7.25301 20.0118 8.62141 19.9993 9.99981 19.9993C11.3807 19.9993 12.7491 20.0118 14.1275 19.9342C15.7286 19.8567 17.1495 19.4914 18.3203 18.3206C19.4936 17.1473 19.8563 15.7289 19.9338 14.1278C20.0139 12.7494 19.9989 11.3809 19.9989 10ZM17.7974 15.899C17.6148 16.3543 17.3947 16.6945 17.0419 17.0448C16.6892 17.3975 16.3515 17.6176 15.8962 17.8003C14.5803 18.3231 11.4558 18.2055 9.99731 18.2055C8.53885 18.2055 5.4118 18.3231 4.09593 17.8028C3.64064 17.6201 3.30041 17.4 2.95018 17.0473C2.59745 16.6945 2.37731 16.3568 2.19469 15.9015C1.67434 14.5831 1.79192 11.4585 1.79192 10C1.79192 8.54151 1.67434 5.4144 2.19469 4.09851C2.37731 3.6432 2.59745 3.30298 2.95018 2.95274C3.30291 2.6025 3.64064 2.37985 4.09593 2.19723C5.4118 1.67688 8.53885 1.79446 9.99731 1.79446C11.4558 1.79446 14.5828 1.67688 15.8987 2.19723C16.354 2.37985 16.6942 2.6 17.0444 2.95274C17.3972 3.30548 17.6173 3.6432 17.7999 4.09851C18.3203 5.4144 18.2027 8.54151 18.2027 10C18.2027 11.4585 18.3203 14.5831 17.7974 15.899Z"
-                                    fill="#5C5F6A"
-                                />
-                            </svg>
-                        </li>
-                        <li>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="10"
-                                height="20"
-                                viewBox="0 0 10 20"
-                                fill="none"
-                            >
-                                <path
-                                    d="M9.34541 11.1651L9.86359 7.57337H6.6212V5.24169C6.6212 4.25835 7.07432 3.30085 8.52618 3.30085H10V0.242501C10 0.242501 8.66337 0 7.38476 0C4.71386 0 2.9688 1.72001 2.9688 4.83502V7.57254H0V11.1651H2.96801V19.8484C4.17832 20.0505 5.41089 20.0505 6.6212 19.8484V11.1651H9.34541Z"
-                                    fill="#5C5F6A"
-                                />
-                            </svg>
-                        </li>
-                        <li>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 20 20"
-                                fill="none"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    clipRule="evenodd"
-                                    d="M1.37487 9.6352C6.7432 7.29603 10.3232 5.75436 12.1149 5.00936C17.229 2.88186 18.2915 2.5127 18.9849 2.5002C19.1365 2.49686 19.4774 2.53436 19.6982 2.71353C19.884 2.8652 19.9357 3.06936 19.9599 3.2127C19.9849 3.35603 20.0149 3.68186 19.9907 3.9377C19.714 6.84936 18.5149 13.916 17.9049 17.1777C17.6465 18.5577 17.1382 19.0202 16.6465 19.066C15.5765 19.1644 14.764 18.3594 13.7282 17.6802C12.1074 16.6177 11.1924 15.956 9.61903 14.9194C7.8007 13.721 8.97903 13.0627 10.0157 11.986C10.2865 11.7044 14.999 7.41853 15.0899 7.02937C15.1015 6.98103 15.1115 6.8002 15.004 6.70436C14.8957 6.60853 14.7374 6.64103 14.6232 6.66686C14.4599 6.70436 11.8707 8.41603 6.85487 11.8019C6.11987 12.306 5.45403 12.5519 4.85737 12.5394C4.19987 12.5252 2.93487 12.1677 1.99487 11.8619C0.841533 11.4869 -0.0751337 11.2885 0.00486635 10.6519C0.046533 10.3202 0.5032 9.98103 1.37487 9.6352Z"
-                                    fill="#5C5F6A"
-                                />
-                            </svg>
-                        </li>
-                        <li>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                            >
-                                <path
-                                    d="M10 15L15.19 12L10 9V15ZM21.56 7.17C21.69 7.64 21.78 8.27 21.84 9.07C21.91 9.87 21.94 10.56 21.94 11.16L22 12C22 14.19 21.84 15.8 21.56 16.83C21.31 17.73 20.73 18.31 19.83 18.56C19.36 18.69 18.5 18.78 17.18 18.84C15.88 18.91 14.69 18.94 13.59 18.94L12 19C7.81 19 5.2 18.84 4.17 18.56C3.27 18.31 2.69 17.73 2.44 16.83C2.31 16.36 2.22 15.73 2.16 14.93C2.09 14.13 2.06 13.44 2.06 12.84L2 12C2 9.81 2.16 8.2 2.44 7.17C2.69 6.27 3.27 5.69 4.17 5.44C4.64 5.31 5.5 5.22 6.82 5.16C8.12 5.09 9.31 5.06 10.41 5.06L12 5C16.19 5 18.8 5.16 19.83 5.44C20.73 5.69 21.31 6.27 21.56 7.17Z"
-                                    fill="#5C5F6A"
-                                />
-                            </svg>
-                        </li>
-                    </ul>
-                </ul>
-            </div>
-            <p
+        <div className={"hidden md:flex flex-col items-start"}>
+          <h2
+            className={
+              "text-gray-500 text-sm  font-medium leading-normal mb-[40px]"
+            }
+          >
+            SUPPORT
+          </h2>
+          <ul>
+            {supportList.map((item) => (
+              <li
+                key={item.id}
                 className={
-                    "text-gray-600 text-sm font-normal leading-normal text-center pb-6"
+                  " text-gray-600 text-sm mb-4 font-medium leading-normal"
                 }
-            >
-                © 2025 President Business Gifts. All rights reserved.
-            </p>
-        </footer>
-    );
+              >
+                <Link href={item.link}>{item.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <CustomAccordion
+          className="block md:hidden"
+          accordionTrigger="Support"
+          accordionTriggerStyles="text-gray-500 text-sm  font-medium leading-normal uppercase"
+          itemValue="item"
+          accordionContent={
+            <ul>
+              {supportList.map((item) => (
+                <li
+                  key={item.id}
+                  className={
+                    "text-gray-600 text-sm mb-4 font-medium leading-normal"
+                  }
+                >
+                  <Link href={item.link}>{item.name}</Link>
+                </li>
+              ))}
+            </ul>
+          }
+        />
+        <div className={"hidden md:flex flex-col items-start"}>
+          <h2
+            className={
+              "text-gray-500 text-sm font-medium leading-normal mb-[40px]"
+            }
+          >
+            COMPANY
+          </h2>
+          <ul>
+            {companyList.map((item) => (
+              <li
+                key={item.id}
+                className={
+                  "text-gray-600 text-sm mb-4 font-medium leading-normal"
+                }
+              >
+                <Link href={item.link}>{item.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <CustomAccordion
+          className="block md:hidden"
+          accordionTrigger="company"
+          accordionTriggerStyles="text-gray-500 text-sm  font-medium leading-normal uppercase"
+          itemValue="item"
+          accordionContent={
+            <ul>
+              {companyList.map((item) => (
+                <li
+                  key={item.id}
+                  className={
+                    "text-gray-600 text-sm mb-4 font-medium leading-normal"
+                  }
+                >
+                  <Link href={item.link}>{item.name}</Link>
+                </li>
+              ))}
+            </ul>
+          }
+        />
+        <div className={"hidden md:flex  flex-col items-start"}>
+          <h2
+            className={
+              "text-gray-500 text-sm font-medium leading-normal mb-[40px]"
+            }
+          >
+            New Products
+          </h2>
+
+          <ul>
+            {newProductsList.map((item) => (
+              <li
+                key={item.id}
+                className={
+                  "text-gray-600 text-sm mb-4 font-medium leading-normal"
+                }
+              >
+                <Link href={item.link}>{item.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <CustomAccordion
+          className="block md:hidden"
+          accordionTrigger="New products"
+          accordionTriggerStyles="text-gray-500 text-sm  font-medium leading-normal uppercase"
+          itemValue="item"
+          accordionContent={
+            <ul className="">
+              {newProductsList.map((item) => (
+                <li
+                  key={item.id}
+                  className={
+                    "text-gray-600 text-sm mb-4 font-medium leading-normal"
+                  }
+                >
+                  <Link href={item.link}>{item.name}</Link>
+                </li>
+              ))}
+            </ul>
+          }
+        />
+        <div className={"flex flex-col items-start"}>
+          <h2
+            className={
+              "text-gray-500 text-sm font-medium leading-normal my-5 md:mb-[40px]"
+            }
+          >
+            ACCEPTED PAYMENTS
+          </h2>
+          <div className={"flex flex-wrap md:flex-nowrap  items-center gap-4"}>
+            <div>
+              <IconComponent name="mastercard" />
+            </div>
+            <div>
+              <IconComponent name="amex" />
+            </div>
+            <div>
+              <IconComponent name="visa" />
+            </div>
+          </div>
+          <a
+            href="tel:+998712030500"
+            className="font-xl my-5 text-gray-500 hover:text-black"
+          >
+            {" "}
+            +998 71 203 05 00
+          </a>
+          <h2
+            className={
+              "text-gray-500 text-sm font-medium leading-normal mb-5 md:mb-[40px]"
+            }
+          >
+            SOCIAL MEDIA
+          </h2>
+          <ul className={"flex gap-6 flex-wrap md:flex-nowrap"}>
+            <li>
+              <IconComponent name="whatsapp" />
+            </li>
+            <li>
+              <IconComponent name="instagram" />
+            </li>
+            <li>
+              <IconComponent name="facebook" />
+            </li>
+            <li>
+              <IconComponent name="telegram" />
+            </li>
+            <li>
+              <IconComponent name="youtube" />
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p
+        className={
+          "text-gray-600 text-sm font-normal leading-normal text-center pb-6"
+        }
+      >
+        © 2025 President Business Gifts. All rights reserved.
+      </p>
+    </footer>
+  );
 };
 
 //
