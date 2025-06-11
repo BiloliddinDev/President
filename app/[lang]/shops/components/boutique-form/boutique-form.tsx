@@ -9,7 +9,7 @@ import {Input} from "@/components/ui/input"
 import {Textarea} from "@/components/ui/textarea"
 import {Button} from "@/components/ui/button"
 import Link from "next/link";
-import {sendTelegramMessage} from "@/lib/sendTelegramMessage";
+import {sendTelegramMessage} from "@/lib/send-telegram-message";
 
 type FormValues = z.infer<typeof BoutiqueSchema>
 

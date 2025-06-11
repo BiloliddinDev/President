@@ -6,7 +6,7 @@ import FaqsForm from "@/app/[lang]/shops/components/faqs-form/faqs-form";
 export default function FaqsPage() {
     return (
         <div>
-            <div className={"container !mt-22"}>
+            <div className={"container !mt-32"}>
                 <BreadcrumbDynamic/>
             </div>
             <Image width={1000} height={330} className={"w-full h-[330px] object-cover mt-8 mb-20"} src={ServicesImage}

@@ -10,7 +10,7 @@ import {Button} from "@/components/ui/button"
 import {SectionTitle} from "@/components/ui/sectionTitle"
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select"
 import {SupportSchema} from "@/interface/support-schema/support-schema";
-import {sendTelegramMessage} from "@/lib/sendTelegramMessage";
+import {sendTelegramMessage} from "@/lib/send-telegram-message";
 
 
 type SupportFormValues = z.infer<typeof SupportSchema>

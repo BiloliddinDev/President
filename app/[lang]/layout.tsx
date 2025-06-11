@@ -3,7 +3,7 @@ import React, { Suspense } from "react";
 import { Metadata } from "next";
 import { LoadingComponent } from "@/components/shared/loading-component/loading-component";
 import { Footer } from "@/components/shared/footer/footer";
-import { Navbar } from "@/components/shared/navbar/navbar";
+import {Navbar}  from "@/components/shared/navbar/navbar";
 import localFont from "next/font/local";
 import { InitGeoCookie } from "@/lib/get-userlocation";
 import { Toaster } from "@/components/ui/sonner";
