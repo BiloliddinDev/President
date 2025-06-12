@@ -4,7 +4,7 @@ type MessageType = "Contact Us" | "Booking" | "Support";
 
 interface SendTelegramMessageOptions {
     type: MessageType;
-    fields: Record<string, string | boolean>;
+    fields: Record<string, string | boolean >;
 }
 
 export const sendTelegramMessage = async ({type, fields,}: SendTelegramMessageOptions): Promise<boolean> => {

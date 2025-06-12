@@ -19,10 +19,9 @@ interface Branch {
 }
 
 const branches: Branch[] = [
-  { lat: 41.2995, lng: 69.2401, name: "Tashkent, Uzbekistan" },
-  { lat: 39.9208, lng: 32.8541, name: "Ankara, Turkey" },
-  { lat: 48.8566, lng: 2.3522, name: "Paris, France" },
-  { lat: 55.7558, lng: 37.6173, name: "Moscow, Russia" },
+  { lat: 41.2667445, lng: 69.2483314, name: "Tashkent, Kichik halqa yo'li, 2/A" },
+  { lat: 41.308340, lng: 69.269253, name: "Toshkent, TSUM, Islam Karimov ko‘chasi, 17", },
+ 
 ];
 
 export default function LocationPage() {
@@ -49,7 +48,7 @@ export default function LocationPage() {
           Branches
         </h3>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[#5C5F6A] w-full max-w-md">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[#5C5F6A] w-full max-w-lg">
           {branches.map((branch, index) => (
             <button
               key={index}

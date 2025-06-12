@@ -7,13 +7,13 @@ export const SupportSchema = z.object({
     phone: z.string().min(10, {
         message: "Phone must be at least 10 characters.",
     }),
-    email: z.string().min(10, {
-        message: "Email must be at least 10 characters.",
-    }),
-    productsType: z.string().nonempty({
-        message: "Products Type must be at least 10 characters.",
-    }),
-    comments: z.string().min(10, {
-        message: "Comments must be at least 10 characters.",
-    })
+    // email: z.string().min(10, {
+    //     message: "Email must be at least 10 characters.",
+    // }),
+    // productsType: z.string().nonempty({
+    //     message: "Products Type must be at least 10 characters.",
+    // }),
+    // comments: z.string().min(10, {
+    //     message: "Comments must be at least 10 characters.",
+    // })
 })
