@@ -13,9 +13,7 @@ export default function Home() {
   return (
     <>
       <section>
-        <AnimatedSection className={"md:h-screen"}>
           <Showcase />
-        </AnimatedSection>
       </section>
       <section className="mt-10 md:mt-[100px]">
         <AnimatedSection animation={"fade-right"}>
@@ -50,7 +48,7 @@ export default function Home() {
       <section className="mt-[100px]  ">
         <Location />
       </section>
-      <section className="mt-[20px]  "></section>
+     
     </>
   );
 }

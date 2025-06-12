@@ -1,17 +1,19 @@
 "use client"
 
-import {z} from "zod"
-import {useForm} from "react-hook-form"
-import {zodResolver} from "@hookform/resolvers/zod"
-import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage,} from "@/components/ui/form"
-import {Input} from "@/components/ui/input"
-import {Textarea} from "@/components/ui/textarea"
-import {Button} from "@/components/ui/button"
-import {SectionTitle} from "@/components/ui/sectionTitle"
-import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select"
-import {SupportSchema} from "@/interface/support-schema/support-schema";
-import {sendTelegramMessage} from "@/lib/send-telegram-message";
-
+import { z } from "zod"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import {
+    Form, FormControl, FormField, FormItem,
+    FormLabel, FormMessage
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { SectionTitle } from "@/components/ui/sectionTitle"
+import { SupportSchema } from "@/interface/support-schema/support-schema"
+import { sendTelegramMessage } from "@/lib/send-telegram-message"
+import Image from "next/image"
+import  supportIMage from  "@/public/images/news2.png"
 
 type SupportFormValues = z.infer<typeof SupportSchema>
 
@@ -21,9 +23,6 @@ export const SupportForm = () => {
         defaultValues: {
             username: "",
             phone: "",
-            email: "",
-            productsType: "",
-            comments: "",
         },
     })
 
@@ -31,112 +30,70 @@ export const SupportForm = () => {
         const success = await sendTelegramMessage({
             type: "Support",
             fields: data,
-        });
+        })
 
         if (success) {
-            form.reset({
-                username: "",
-                phone: "",
-                email: "",
-                productsType: "",
-                comments: "",
-            });
+            form.reset({ username: "", phone: "" })
         }
-    };
+    }
 
     return (
-        <div className="container py-12">
-            <SectionTitle className={"mb-[50px]"} text="We support you!"/>
-            <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="grid md:grid-cols-3 gap-y-[30px] gap-x-[26px]">
-                    <FormField
-                        control={form.control}
-                        name="username"
-                        render={({field}) => (
-                            <FormItem>
-                                <FormLabel>Full name</FormLabel>
-                                <FormControl>
-                                    <Input placeholder="Full name" {...field} />
-                                </FormControl>
-                                <FormMessage/>
-                            </FormItem>
-                        )}
-                    />
+        <div className="container py-16" id={"support"}>
+            <SectionTitle className="mb-12" text="We support you!" />
 
-                    <FormField
-                        control={form.control}
-                        name="email"
-                        render={({field}) => (
-                            <FormItem>
-                                <FormLabel>Email</FormLabel>
-                                <FormControl>
-                                    <Input placeholder="Email" {...field} />
-                                </FormControl>
-                                <FormMessage/>
-                            </FormItem>
-                        )}
-                    />
+            <div className="grid md:grid-cols-2 gap-10 items-center bg-white  rounded-[4px] p-8 md:p-12">
+                <div>
+                    <Form {...form}>
+                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                            <FormField
+                                control={form.control}
+                                name="username"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel className="text-lg">Full Name</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter your full name" className="w-full   md:max-w-10/12" {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
 
-                    <FormField
-                        control={form.control}
-                        name="comments"
-                        render={({field}) => (
-                            <FormItem className="md:row-span-2">
-                                <FormLabel>Comment</FormLabel>
-                                <FormControl>
-                                    <Textarea placeholder="Your comment..." className="h-[136px]" {...field} />
-                                </FormControl>
-                                <FormMessage/>
-                            </FormItem>
-                        )}
-                    />
+                            <FormField
+                                control={form.control}
+                                name="phone"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel className="text-lg">Phone Number</FormLabel>
+                                        <FormControl>
+                                            <Input placeholder="Enter your phone number" className=" w-full md:max-w-10/12"  {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
 
-                    <FormField
-                        control={form.control}
-                        name="phone"
-                        render={({field}) => (
-                            <FormItem>
-                                <FormLabel>Phone</FormLabel>
-                                <FormControl>
-                                    <Input placeholder="Phone number" {...field} />
-                                </FormControl>
-                                <FormMessage/>
-                            </FormItem>
-                        )}
-                    />
+                            <Button type="submit" className="w-full md:w-auto">
+                                 Send Message
+                            </Button>
+                        </form>
+                    </Form>
+                </div>
 
-                    <FormField
-                        control={form.control}
-                        name="productsType"
-                        render={({field}) => (
-                            <FormItem>
-                                <FormLabel>Product type</FormLabel>
-                                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                    <FormControl>
-                                        <SelectTrigger className={"w-full"}>
-                                            <SelectValue placeholder="Select product type"/>
-                                        </SelectTrigger>
-                                    </FormControl>
-                                    <SelectContent>
-                                        <SelectItem value="blankets">Blankets</SelectItem>
-                                        <SelectItem value="pillows">Pillows</SelectItem>
-                                        <SelectItem value="others">Others</SelectItem>
-                                    </SelectContent>
-                                </Select>
-                                <FormMessage/>
-                            </FormItem>
-                        )}
+                {/* Right side image with text */}
+                <div className="text-center md:text-left">
+                    <Image
+                        src={supportIMage}
+                        alt="Support"
+                        width={520}
+                        height={400}
+                        className="mx-auto md:mx-0 rounded-xl"
                     />
-                    <div className="md:col-span-3 flex justify-between items-center mt-6">
-                        <div className="text-slate-900 text-md font-normal  leading-loose">Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        </div>
-                        <Button type="submit" variant={"default"}>
-                            Send
-                        </Button>
-                    </div>
-                </form>
-            </Form>
+                    <p className="mt-6 text-slate-600 text-md">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    </p>
+                </div>
+            </div>
         </div>
     )
 }

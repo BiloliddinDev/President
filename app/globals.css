@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
+* {
+    scroll-behavior: smooth;
+}
+
 /* Custom variant for dark mode */
 @custom-variant dark (&:is(.dark *));
 
@@ -17,6 +22,7 @@
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
     --primary: oklch(0.185 0.102 263.739);
+    --gold: oklch(0.78 0.11 85.2);
     --primary-foreground: oklch(0.985 0 0);
     --secondary: oklch(0.97 0 0);
     --secondary-foreground: oklch(0.205 0 0);
@@ -61,6 +67,7 @@
     --color-destructive: var(--destructive);
 
     --color-primary: var(--primary);
+    --color-gold : var(--gold);
     --color-primary-foreground: var(--primary-foreground);
     --color-secondary: var(--secondary);
     --color-secondary-foreground: var(--secondary-foreground);
@@ -109,6 +116,8 @@ body {
 
 /* Dark mode overrides */
 .dark {
+    /* ... boshqa mavjud dark mode ranglar ... */
+    --gold: oklch(0.6686 0.1337 78.0299);
     --background: oklch(0.145 0 0);
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.205 0 0);
@@ -162,4 +171,9 @@ body {
 ::-webkit-scrollbar {
     width: 0;
     height: 0;
+}
+
+
+.leaflet-touch .leaflet-control-attribution {
+    display: none !important;
 }
