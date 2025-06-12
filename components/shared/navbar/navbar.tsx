@@ -1,6 +1,6 @@
 "use client";
 
-import { FooterLogo, Logo } from "@/components/ui/logo";
+import { FooterLogo} from "@/components/ui/logo";
 import { navbarLinks } from "@/constants/navbar";
 import { Headroom } from "@/components/shared/headroom/Headroom";
 import Link from "next/link";
