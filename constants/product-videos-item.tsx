@@ -1,37 +1,45 @@
-export const productItem = [
+
+export const productItem =[
   {
     id: 0,
-    video:
-      "https://cdn6.fireworktv.com/medias/2025/2/26/1740578855-cfpvrymo/watermarked/720/MTB_MB199404_T4009_V3030_B0002.mp4",
+    instaLink:"https://www.instagram.com/reel/DIbQcGgIaih/?igsh=bTR1NzZuMzV5d3pu",
+    video:"/videos/vid1.mp4",
+
   },
   {
     id: 1,
-    video:
-      "https://cdn5.fireworktv.com/medias/2025/3/13/1741878371-xgesmriv/watermarked/720/MTB_MB199455_T4009_V3030_B0002.mp4",
+    instaLink: "https://www.instagram.com/reel/DJTiET9gXEg/?igsh=MWxsMmR1bHJrajJ4bw==",
+    video:"/videos/vid3.mp4",
   },
   {
     id: 2,
-    video:
-      "https://cdn5.fireworktv.com/medias/2025/3/13/1741878017-mqhpkxwg/watermarked/720/MTB_MB199409_T4009_V3030_B0002.mp4",
+    instaLink: "https://www.instagram.com/reel/DJd-mNhg6WP/?igsh=M3VudHZodGdiMTBr",
+    video:"/videos/vid2.mp4",
+
   },
   {
     id: 3,
-    video:
-      "https://cdn6.fireworktv.com/medias/2025/3/13/1741878371-xvnsaoet/watermarked/720/MTB_MB199457_T4009_V3030_B0002.mp4",
+    instaLink: "https://www.instagram.com/reel/DJ4OcPqoBm-/?utm_source=ig_web_copy_link&igsh=MXV6eGVsMDlmZDhvaQ==",
+    video: "videos/vid4.mp4"
   },
   {
     id: 4,
-    video:
-      "https://cdn5.fireworktv.com/medias/2025/3/13/1741878017-ejbzcnak/watermarked/720/MTB_MB199433_T4009_V3030_B0002.mp4",
+    instaLink: "https://www.instagram.com/reel/DKMCQN_oBrZ/?utm_source=ig_web_copy_link&igsh=ODAzbnlvNnZmN3My",
+    video: "videos/vid5.mp4"
+
   },
   {
     id: 5,
-    video:
-      "https://cdn5.fireworktv.com/medias/2025/3/13/1741878371-gvwcsuam/watermarked/720/MTB_MB199459_T4009_V3030_B0002.mp4",
+    instaLink: "https://www.instagram.com/reel/DJ4OcPqoBm-/?igsh=MXV6eGVsMDlmZDhvaQ==",
+
+    video: "videos/vid2.mp4"
+
   },
   {
     id: 6,
-    video:
-      "https://cdn4.fireworktv.com/medias/2025/3/13/1741878371-gibyuasp/watermarked/720/MTB_MB199453_T4009_V3030_B0002.mp4",
+    instaLink: "https://www.instagram.com/reel/DJjgCRCIg78/?igsh=MTZsbmJ0dDgwNXUwZA==",
+
+    video: "videos/vid1.mp4"
+
   },
 ];

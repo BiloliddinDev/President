@@ -33,36 +33,38 @@ const ProductVideoCard: React.FC<{ productItem: ProductVideoProps }> = ({
   };
 
   return (
-    <div
-      className="relative w-[290px] h-[420px] overflow-hidden rounded-lg cursor-pointer "
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <video
-        ref={videoRef}
-        className="w-full h-full object-cover"
-        src={productItem.video}
-        muted
-        preload="auto"
-        playsInline
-        suppressHydrationWarning
-      />
+   <a href={productItem.instaLink} className={"block"} target={"_blank"}>
+     <div
+         className="relative w-[290px] h-[420px] overflow-hidden rounded-lg cursor-pointer "
+         onMouseEnter={handleMouseEnter}
+         onMouseLeave={handleMouseLeave}
+     >
+       <video
+           ref={videoRef}
+           className="w-full h-full object-cover"
+           src={productItem.video}
+           muted
+           preload="auto"
+           playsInline
+           suppressHydrationWarning
+       />
 
-      {!isPlaying && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity">
-          <div className="w-12 h-12 bg-white/50 rounded-full flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8 text-white ml-1"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M6 4l10 6-10 6V4z" />
-            </svg>
-          </div>
-        </div>
-      )}
-    </div>
+       {!isPlaying && (
+           <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity">
+             <div className="w-12 h-12 bg-white/50 rounded-full flex items-center justify-center">
+               <svg
+                   xmlns="http://www.w3.org/2000/svg"
+                   className="w-8 h-8 text-white ml-1"
+                   fill="currentColor"
+                   viewBox="0 0 20 20"
+               >
+                 <path d="M6 4l10 6-10 6V4z" />
+               </svg>
+             </div>
+           </div>
+       )}
+     </div>
+   </a>
   );
 };
 
