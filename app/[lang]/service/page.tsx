@@ -9,7 +9,7 @@ export default function ServicePage() {
 
     return (
         <div>
-            <div className={"container !mt-22"}>
+            <div className={"container md:!mt-26 !mt-42"}>
                 <BreadcrumbDynamic/>
             </div>
             <Image
@@ -24,7 +24,7 @@ export default function ServicePage() {
                     Customer Services
                 </div>
                 <div
-                    className={"flex flex-wrap  items-center md:justify-between gap-4"}
+                    className={"flex gap-5 justify-between flex-wrap md:flex-nowrap"}
                 >
                     {serviceItems.map((service) => (
                         <ServiceCard

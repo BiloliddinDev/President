@@ -1,5 +1,6 @@
 import IconComponent from "@/components/icon/icon-view";
 import Link from "next/link";
+import React from "react";
 
 export const ServiceCard = ({
   text,
@@ -11,18 +12,17 @@ export const ServiceCard = ({
   link: string;
 }) => {
   return (
-    <Link href={`service/${link}`}>
-      <div
-        data-property-1="Default"
-        className="px-4.5 md:px-9 md:py-7 bg-white rounded outline  outline-offset-[-1px] outline-gray-200 flex flex-col md:flex-row justify-center  md:justify-start items-center gap-4 md:gap-6 min-h-[161px] "
+      <Link
+          className="block w-full  hover:shadow-md"
+          key={text}
+          href={`service/${link}`}
       >
-        <div className="w-32 justify-start text-primary text-sm font-medium font-['Inter'] leading-tight order-1 md:order-0 text-center">
-          {text}
-        </div>
-        <div className="w-14 h-14 relative order-0 md:order-1">
+        <div className=" px-9 py-7 min-h-[7.25rem] flex items-center justify-between rounded gap-6 outline-1 outline-offset-[-1px] outline-gray-200">
+          <p className="text-sm font-medium leading-tight">
+            {text}
+          </p>
           <IconComponent name={iconName} />
         </div>
-      </div>
-    </Link>
+      </Link>
   );
 };

@@ -4,9 +4,9 @@ import {B2bCard} from "@/app/[lang]/discover/components/b2b-card/b2b-card";
 
 export default function B2BPage() {
     return (
-        <div className={"container !mt-21"}>
+        <div className={"container md:!mt-26 !mt-42"}>
             <BreadcrumbDynamic/>
-            <div className={"flex justify-between items-center mt-16 "}>
+            <div className={"flex justify-between items-center mt-10 "}>
                 <h2 className={"text-lg whitespace-pre-wrap"}>President Business Gifts B2B</h2>
                 <div className={"w-1/2"}>
                     <p className={"text-sm mb-5"}>Corporate gifts are the perfect opportunity to show appreciation,

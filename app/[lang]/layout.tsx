@@ -71,7 +71,7 @@ export default async function RootLayout({
           <header>
             <Navbar lang={language.lang} />
           </header>
-          <main className="pt-14 md:pt-0">{children}</main>
+          <main>{children}</main>
           <Footer />
           <Toaster />
         </Suspense>

@@ -11,10 +11,10 @@ export default function LikePage() {
 
     return (
         <div>
-            <div className="container !mt-32">
+            <div className="container md:!mt-26 !mt-42">
                 <BreadcrumbDynamic />
                 <SectionTitle 
-                    className={`mt-12 mb-20 !text-4xl !font-['Inter']`} 
+                    className={`mt-12 mb-10 !text-4xl !font-['Inter']`} 
                     text="My Favorite"
                 />
             </div>

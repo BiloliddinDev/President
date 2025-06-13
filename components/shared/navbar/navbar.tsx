@@ -18,7 +18,7 @@ export const Navbar = ({lang}: { lang: string }) => {
   
     return (
             <nav
-                className={`fixed w-full md:p-3 z-60 transition-colors duration-300 bg-neutral-100 shadow`}
+                className={`fixed top-0 l-0 w-full md:p-3 z-60 transition-colors duration-300 bg-neutral-100 shadow`}
             >
                 <div className="container hidden md:flex justify-between items-center">
                     <div className="flex items-center gap-14">

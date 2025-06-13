@@ -11,7 +11,7 @@ export const SectionTitle = ({
 }: SectionTitleProps) => {
   return (
     <div
-      className={`${className} text-primary  text-xl md:text-5xl font-normal uppercase font-title`}
+      className={`${className} text-primary  text-4xl md:text-5xl font-normal uppercase font-title`}
       {...props}
     >
       {text}

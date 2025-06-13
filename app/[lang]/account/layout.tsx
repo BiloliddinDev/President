@@ -13,7 +13,7 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
     const lang = await params?.then(res => res.lang);
     return (
         <div >
-            <div className={"container !mt-22"}>
+            <div className={"container md:!mt-26 !mt-42"}>
                 <BreadcrumbDynamic/>
                 <SectionTitle className={"mt-10 mb-20"} text={"My account"}/>
             </div>

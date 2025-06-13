@@ -8,7 +8,7 @@ import DiscoverMap from "@/app/[lang]/location/components/discover-map";
 
 const DiscoverLocation = () => {
     return (
-        <div className="container max-w-screen-xl mx-auto px-2 md:px-4 mt-16  md:!mt-20">
+        <div className="container max-w-screen-xl mx-auto px-2 md:px-4  md:!mt-26 !mt-42">
             <div className="py-4 md:py-8">
                 <BreadcrumbDynamic/>
             </div>

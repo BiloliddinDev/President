@@ -22,7 +22,7 @@ export default function FavoriteCard({image, text, onRemove, price}: FavoriteCar
                         className="w-full h-80 object-cover"
                     />
                     <Heart
-                        className="absolute top-3 right-3 w-5 h-5 fill-red-500 text-red-500"
+                        className="absolute top-3 right-3 w-5 h-5 fill-primary text-primary"
                     />
                 </div>
                 <div className="mt-4">
