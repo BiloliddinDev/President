@@ -8,8 +8,10 @@ import { imageLoader } from "@/lib/imageLoader";
 import img1 from "@/public/images/showcase-image.png";
 import img2 from "@/public/images/services2.png";
 import img3 from "@/public/images/showcase.png";
+import img4 from "@/public/images/pen2.jpg";
 
-const images = [img1, img2, img3];
+
+const images = [img1, img2, img3 , img4];
 
 export const Showcase: FC = () => {
     const [current, setCurrent] = useState(0);
@@ -30,7 +32,7 @@ export const Showcase: FC = () => {
     }, [current]);
 
     return (
-        <div className="relative h-[500px] md:h-[755px] overflow-hidden">
+        <div className="relative  h-screen shadow-2xl overflow-hidden">
             <AnimatePresence mode="sync">
                 <motion.div
                     key={current}
@@ -48,7 +50,9 @@ export const Showcase: FC = () => {
                 />
             </AnimatePresence>
 
-            <div className="relative z-10 h-full w-full flex flex-col justify-end bg-black/30 py-8 px-4 md:pb-[90px]">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-[1]" />
+
+            <div className="relative z-10 h-full w-full flex flex-col justify-end py-8 px-4 md:pb-[90px]">
                 <div className="container">
                     <h1 className="w-full md:w-[400px] mb-1.5 md:mb-3 text-white text-3xl md:text-6xl font-normal font-title">
                         Bags & Leather Goods

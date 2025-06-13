@@ -32,8 +32,8 @@ const DiscoverService = () => {
   ];
 
   return (
-    <div className="container mx-auto px-2 md:px-4 mt-16 md:!mt-20">
-      <div className="py-4 md:py-8">
+    <div className="container mx-auto px-2 md:px-4  md:!mt-26 !mt-42">
+      <div className="mb-10">
         <BreadcrumbDynamic />
       </div>
       <div className="-mx-[calc((100vw-100%)/2)] w-screen mb-28">

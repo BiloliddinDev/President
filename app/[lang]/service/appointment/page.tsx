@@ -6,10 +6,10 @@ import BoutiqueForm from "@/app/[lang]/shops/components/boutique-form/boutique-f
 export default function AppointmentPage() {
     return (
         <div>
-            <div className={"container !mt-22"}>
+            <div className={"container md:!mt-26 !mt-42"}>
                 <BreadcrumbDynamic/>
             </div>
-            <Image width={1000} height={330} className={"w-full h-[330px] object-cover mt-8 mb-20"} src={ServicesImage}
+            <Image width={1000} height={330} className={"w-full h-[330px] object-cover mt-10 mb-20"} src={ServicesImage}
                    alt={'ServicesImage'}/>
 
             <div className="container ">

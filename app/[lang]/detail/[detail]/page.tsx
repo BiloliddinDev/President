@@ -54,7 +54,7 @@ export default function ProductDetailPage() {
         }
     };
     return (
-        <div className="container !mt-31">
+        <div className="container md:!mt-26 !mt-42">
             <BreadcrumbDynamic/>
 
             <div className="w-full flex items-start justify-center gap-24 mt-10">

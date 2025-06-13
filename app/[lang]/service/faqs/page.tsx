@@ -9,11 +9,11 @@ export default function DiscoverService() {
 
 
     return (
-        <div className="container mx-auto px-2 md:px-4 mt-16 md:!mt-20">
-            <div className="py-4 md:py-8">
+        <div className="container md:!mt-26 !mt-42">
+            <div className={"container !mt-15"}>
                 <BreadcrumbDynamic/>
             </div>
-            <div className="-mx-[calc((100vw-100%)/2)] w-screen mb-28">
+            <div className="-mx-[calc((100vw-100%)/2)] mt-10 w-screen mb-28">
                 <Image src={Pen2} alt="a pen"/>
             </div>
             <p className="text-lg font-medium">Writing instruments</p>
