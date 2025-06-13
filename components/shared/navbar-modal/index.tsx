@@ -26,7 +26,7 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children}) 
             <div
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                className="relative z-50"
+                className="relative z-40"
             >
                 <SheetTrigger
                     className="transition-all !outline-0 text-sm font-medium cursor-pointer flex flex-row-reverse items-center gap-2 group"
@@ -50,6 +50,7 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children}) 
                     className={'w-[350px]'}
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
+                    className={'top-[86px]'}
                 >
                 <div className="ml-[3.75rem] mt-10 h-full py-10">
                         <SheetTitle className="pb-1.5 pt-6">{sheetTitle}</SheetTitle>

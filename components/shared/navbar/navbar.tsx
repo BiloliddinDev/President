@@ -2,6 +2,7 @@
 
 import {FooterLogo} from "@/components/ui/logo";
 import {navbarLinks} from "@/constants/navbar";
+
 import Link from "next/link";
 import NavbarModal from "@/components/shared/navbar-modal";
 import ShopModalContent from "@/components/shared/modalContents/shopModal";
