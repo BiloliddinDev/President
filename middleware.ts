@@ -19,11 +19,9 @@ export async function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
 
 
-    // Homepage va create page pathlarini tekshirish
     const isHomePath = pathname === "/" || pathname === "/uz" || pathname === "/ru" || pathname === "/en";
     const isCreatePath = pathname.includes("/create");
     
-    // Agar homepage yoki create page bo'lmasa, create page ga redirect qilish
     if (!isHomePath && !isCreatePath) {
         const locale = getLocale(request);
         const cookieLocale = request.cookies.get("lang")?.value;
@@ -35,7 +33,6 @@ export async function middleware(request: NextRequest) {
 
     }
 
-    // Til uchun redirect logikasi
     const pathnameIsMissingLocale = i18n.locales.every(
         (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
     );
@@ -43,7 +40,6 @@ export async function middleware(request: NextRequest) {
     if (pathnameIsMissingLocale) {
         const locale = getLocale(request);
         const cookieLocale = request.cookies.get("lang")?.value;
-        // Agar bu create path bo'lsa, to'g'ri locale bilan create path ga yo'naltirish
         if (pathname === "/create") {
             const redirectUrl = new URL(
                 `/${cookieLocale ?? locale ?? i18n.defaultLocale}/create`,
@@ -51,7 +47,6 @@ export async function middleware(request: NextRequest) {
             );
             return NextResponse.redirect(redirectUrl);
         }
-        // Boshqa holatlarda odatiy locale redirect
         const redirectUrl = new URL(
             `/${cookieLocale ?? locale ?? i18n.defaultLocale}${
                 pathname.startsWith("/") ? "" : "/"
