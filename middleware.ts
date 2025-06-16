@@ -18,6 +18,7 @@ function getLocale(request: NextRequest): string | undefined {
 export async function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
 
+
     // Homepage va create page pathlarini tekshirish
     const isHomePath = pathname === "/" || pathname === "/uz" || pathname === "/ru" || pathname === "/en";
     const isCreatePath = pathname.includes("/create");
@@ -31,6 +32,7 @@ export async function middleware(request: NextRequest) {
             request.url
         );
         return NextResponse.redirect(redirectUrl);
+
     }
 
     // Til uchun redirect logikasi
