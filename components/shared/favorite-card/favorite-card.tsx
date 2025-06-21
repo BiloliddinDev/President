@@ -3,7 +3,7 @@ import {Button} from "@/components/ui/button";
 import {Heart, Trash} from "lucide-react";
 
 interface FavoriteCardProps {
-    image: StaticImageData;
+    image: StaticImageData | string;
     text: string;
     onRemove?: () => void;
     price?: number;
