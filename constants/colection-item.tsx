@@ -5,26 +5,27 @@ import CollectionImage3 from "@/public/images/colection-item3.png"
 export const CollectionItem = [
     {
         id: 1,
-        title: "Sartorial Trio Messenger",
-        price: "$300.00",
+        title: "Soat O’zbekiston",
+        price: "250$",
         image: CollectionImage1
     },
     {
         id: 2,
-        title: "Set with the Meisterstück",
-        price: "$300.00",
+        title: "Soat President",
+        price: "360$",
         image: CollectionImage2
     },
     {
         id: 3,
-        title: "Extreme 3.0 Cabin Trolley",
-        price: "$350.00",
+        title: "Sumka",
+        price: "$220",
         image: CollectionImage3
     },
+    
     {
         id: 4,
-        title: "Sartorial Trio Messenger",
-        price: "$300.00",
+        title: "Portmone",
+        price: "40$",
         image: CollectionImage1
     },
     {

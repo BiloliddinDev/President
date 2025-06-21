@@ -54,11 +54,13 @@ export const Showcase: FC = () => {
 
             <div className="relative z-10 h-full w-full flex flex-col justify-end py-8 px-4 md:pb-[90px]">
                 <div className="container">
-                    <h1 className="w-full md:w-[400px] mb-1.5 md:mb-3 text-white text-3xl md:text-6xl font-normal font-title">
-                        Bags & Leather Goods
+                    <h1 className="w-full md:w-[550px] mb-1.5 md:mb-3 text-white text-3xl md:text-6xl font-normal font-title">
+                        Biznesmenlar va rahbarlar uchun premium va
+                        eksklyuziv sovg‘alar
                     </h1>
-                    <p className="w-64 mb-5 md:mb-12 text-white text-base font-normal tracking-wide">
-                        New Styles In Refined Colours
+                    <p className="w-64 md:w-[600px] mb-5 md:mb-12 text-white text-base font-normal tracking-wide">
+                        Gerbli soatlar, charm buyumlar, aksessuarlar va milliy
+                        suvenirlar — cheklangan va brendlangan variantlarda
                     </p>
                     <Link href="#support">
                         <Button variant="outline" className="w-full sm:w-52 bg-gold hover:bg-gold/90 text-white border-none hover:text-white/90 h-12 rounded-[12px]">

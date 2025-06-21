@@ -23,7 +23,7 @@ export default function BusinessGiftsCarousel() {
     <div className="w-full ">
       <SectionTitle
         className={"container !mb-7"}
-        text={"Service for your brand"}
+        text={"Korporativ sovgʻalar"}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20 bg-neutral-100">
@@ -57,14 +57,15 @@ export default function BusinessGiftsCarousel() {
         <div className="container">
           <div className="">
             <h2 className="text-primary mb-5 text-lg md:text-5xl font-normal font-title mt-5 md:mt-[75px]">
-              President Business Gifts
+              Korporativ sovg‘alar
             </h2>
-            <p className="text-gray-600 text-base md:text-xl max-w-[353px] md:w-[480px]  font-normal font-description mb-5">
-              President Business Gifts is not just a premium gift brand — it is
-              a unique fusion of national identity and contemporary aesthetics.
-              Inspired by the historical heritage, cultural richness, and
-              artisanal traditions of the Uzbek people, we blend them seamlessly
-              with modern design and the highest standards of quality.
+            <p className="text-gray-600 text-base md:text-xl max-w-[353px] md:w-[4580px]  font-normal font-description mb-5">
+              Biz logotipingiz tushirilgan korporativ sovg‘alar bilan ham shug‘ullanamiz  — soatlar,charm
+              toʻplam, bloknotlar, ruchkalar va boshqa  suvenirlar.
+              Biz allaqachon banklar, kompaniyalar va davlat
+              tashkilotlari bilan hamkorlik qilganmiz —
+              sovg‘alarni ehtiyojga mos tanlab, brendlash va
+              qadoqlashni to‘liq amalga oshiramiz
             </p>
             <Link href={"/discover/b2b-service"} className={"mt-4"}>
               <Button variant={"secondary"} className="mb-10 md:mb-0 max-w-44">

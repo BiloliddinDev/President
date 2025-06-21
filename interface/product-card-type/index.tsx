@@ -4,7 +4,7 @@ export interface ProductCardProps {
     id: number;
     title: string;
     price: number;
-    imgUrl: StaticImageData;
+    imgUrl: StaticImageData | string;
     isNewArrival: boolean;
     isFavorite: boolean;
 }

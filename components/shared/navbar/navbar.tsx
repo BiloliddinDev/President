@@ -11,7 +11,7 @@ import ChangeLangModal from "../modalContents/changeLangModal";
 import IconComponent from "@/components/icon/icon-view";
 import SearchModal from "@/components/shared/search-modal";
 import SearchModalData from "@/components/shared/modalContents/searchModal";
-import {SearchIcon} from "lucide-react";
+import {Heart, Search, SearchIcon, ShoppingCart, User} from "lucide-react";
 import MobileNavbar from "./mobile-navbar";
 
 export const Navbar = ({lang}: { lang: string }) => {
@@ -52,9 +52,7 @@ export const Navbar = ({lang}: { lang: string }) => {
                         <SearchModal
                             side="top"
                             title={
-                                <SearchIcon
-                                    className={`text-primary !hover:text-zinc-300 mt-3 transition-colors duration-200`}
-                                />
+                                <Search width={24} height={24} className={`text-primary !hover:text-zinc-300 mt-3 transition-colors duration-200`} />
                             }
                         >
                             <SearchModalData />
@@ -74,28 +72,15 @@ export const Navbar = ({lang}: { lang: string }) => {
                         </NavbarModal>
 
                         <Link href={'/like'}>
-                            <IconComponent
-                                name="like"
-                                width={24}
-                                height={24}
-                                classNames={`text-primary !hover:text-zinc-300 duration-200`}
-                            />
+                            <Heart  width={24}  height={24}  className={`text-primary !hover:text-zinc-300 duration-200`} />
                         </Link>
                         <Link href={"/basket"}>
-                            <IconComponent
-                                name="basket"
-                                width={24}
-                                height={24}
-                                classNames={`text-primary !hover:text-zinc-300 duration-200`}
-                            />
+                           
+                            <ShoppingCart width={24} height={24} className="text-primary !hover:text-zinc-300 duration-200" />
                         </Link>
                         <Link href={"/auth/sign-in"}>
-                            <IconComponent
-                                name="profile"
-                                width={24}
-                                height={24}
-                                classNames={`text-primary !hover:text-zinc-300 duration-200`}
-                            />
+                            <User width={24} height={24} className="text-primary !hover:text-zinc-300 duration-200" />
+                           
                         </Link>
                     </div>
                 </div>

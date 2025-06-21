@@ -1,19 +1,16 @@
 "use client"
 
-import { z } from "zod"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import {
-    Form, FormControl, FormField, FormItem,
-    FormLabel, FormMessage
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { SectionTitle } from "@/components/ui/sectionTitle"
-import { SupportSchema } from "@/interface/support-schema/support-schema"
-import { sendTelegramMessage } from "@/lib/send-telegram-message"
+import {z} from "zod"
+import {useForm} from "react-hook-form"
+import {zodResolver} from "@hookform/resolvers/zod"
+import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form"
+import {Input} from "@/components/ui/input"
+import {Button} from "@/components/ui/button"
+import {SectionTitle} from "@/components/ui/sectionTitle"
+import {SupportSchema} from "@/interface/support-schema/support-schema"
+import {sendTelegramMessage} from "@/lib/send-telegram-message"
 import Image from "next/image"
-import  supportIMage from  "@/public/images/news2.png"
+import supportIMage from "@/public/images/news2.png"
 
 type SupportFormValues = z.infer<typeof SupportSchema>
 
@@ -33,14 +30,13 @@ export const SupportForm = () => {
         })
 
         if (success) {
-            form.reset({ username: "", phone: "" })
+            form.reset({username: "", phone: ""})
         }
     }
 
     return (
         <div className="container py-16" id={"support"}>
-            <SectionTitle className="mb-12" text="We support you!" />
-
+            <SectionTitle className="mb-12" text="So'rov qoldiring"/>
             <div className="grid md:grid-cols-2 gap-10 items-center bg-white  rounded-[4px] p-8 md:p-12">
                 <div>
                     <Form {...form}>
@@ -48,13 +44,14 @@ export const SupportForm = () => {
                             <FormField
                                 control={form.control}
                                 name="username"
-                                render={({ field }) => (
+                                render={({field}) => (
                                     <FormItem>
-                                        <FormLabel className="text-lg">Full Name</FormLabel>
+                                        <FormLabel className="text-lg">Ism</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="Enter your full name" className="w-full   md:max-w-10/12" {...field} />
+                                            <Input placeholder="Ismingizni yozing"
+                                                   className="w-full   md:max-w-10/12" {...field} />
                                         </FormControl>
-                                        <FormMessage />
+                                        <FormMessage/>
                                     </FormItem>
                                 )}
                             />
@@ -62,19 +59,20 @@ export const SupportForm = () => {
                             <FormField
                                 control={form.control}
                                 name="phone"
-                                render={({ field }) => (
+                                render={({field}) => (
                                     <FormItem>
-                                        <FormLabel className="text-lg">Phone Number</FormLabel>
+                                        <FormLabel className="text-lg">Telefon raqam</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="Enter your phone number" className=" w-full md:max-w-10/12"  {...field} />
+                                            <Input placeholder="Telefon raqamingizni kiriting"
+                                                   className=" w-full md:max-w-10/12"  {...field} />
                                         </FormControl>
-                                        <FormMessage />
+                                        <FormMessage/>
                                     </FormItem>
                                 )}
                             />
 
                             <Button type="submit" className="w-full md:w-auto">
-                                 Send Message
+                                So’rovni yuborish
                             </Button>
                         </form>
                     </Form>
@@ -90,10 +88,13 @@ export const SupportForm = () => {
                         className="mx-auto md:mx-0 rounded-xl"
                     />
                     <p className="mt-6 text-slate-600 text-md">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                        Menejerimiz sizga qo‘ng‘iroq
+                        qilib, mahsulotlarimiz haqida
+                        batafsil tushuntirib beradi
                     </p>
                 </div>
             </div>
         </div>
     )
 }
+

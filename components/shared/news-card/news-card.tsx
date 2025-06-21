@@ -33,7 +33,7 @@ export const NewsCard: FC<{ newsItem: NewsCardProps }> = ({ newsItem }) => {
         passHref={true}
         className={`self-stretch justify-start`}
       >
-        <Button variant={"secondary"}>View Now</Button>
+        <Button variant={"secondary"}>Hoziroq sotib olish</Button>
       </Link>
     </div>
   );

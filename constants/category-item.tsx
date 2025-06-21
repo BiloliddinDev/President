@@ -3,44 +3,44 @@ import category from "@/public/images/category1.png";
 export const categoryItem = [
   {
     id: 1,
-    text: "Luxury Pens",
+    text: "Hadya qutilari",
     images: category,
   },
   {
     id: 2,
-    text: "Notebooks",
+    text: "Sumkalar va charm buyumla",
     images: category,
   },
   {
     id: 3,
-    text: "Writing Sets",
+    text: "Soatlar",
     images: category,
   },
   {
     id: 4,
-    text: "Leather Goods",
+    text: "Papkalar va bloknotlar",
     images: category,
   },
   {
     id: 5,
-    text: "Desk Accessories",
+    text: "Premium ruchkalar",
     images: category,
   },
   {
     id: 6,
-    text: "Gift Collections",
+    text: "Sovgʻa uchun suvenirlar",
     images: category,
   },
-  {
-    id: 7,
-    text: "Limited Editions",
-    images: category,
-  },
-  {
-    id: 8,
-    text: "Ink & Refills",
-    images: category,
-  },
+  // {
+  //   id: 7,
+  //   text: "Limited Editions",
+  //   images: category,
+  // },
+  // {
+  //   id: 8,
+  //   text: "Ink & Refills",
+  //   images: category,
+  // },
 ];
 
 export const categoryModalItems = [
