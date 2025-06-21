@@ -5,7 +5,7 @@ import {Heart, Trash} from "lucide-react";
 interface FavoriteCardProps {
     image: StaticImageData;
     text: string;
-    onRemove: () => void;
+    onRemove?: () => void;
     price?: number;
 }
 

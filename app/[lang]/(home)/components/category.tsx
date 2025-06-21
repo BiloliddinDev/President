@@ -6,10 +6,10 @@ import { FC } from "react";
 export const Category: FC = () => {
   return (
     <div className={"container"}>
-      <SectionTitle text={"Categories"} />
+      <SectionTitle text={"Kategoriyalar"} />
       <div
         className={
-          "grid mt-5 md:mt-14 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          "grid mt-5 md:mt-14 grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4"
         }
       >
         {categoryItem.map((category) => (

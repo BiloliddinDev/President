@@ -19,19 +19,19 @@ export async function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
 
 
-    const isHomePath = pathname === "/" || pathname === "/uz" || pathname === "/ru" || pathname === "/en";
-    const isCreatePath = pathname.includes("/create");
-    
-    if (!isHomePath && !isCreatePath) {
-        const locale = getLocale(request);
-        const cookieLocale = request.cookies.get("lang")?.value;
-        const redirectUrl = new URL(
-            `/${cookieLocale ?? locale ?? i18n.defaultLocale}/create`,
-            request.url
-        );
-        return NextResponse.redirect(redirectUrl);
-
-    }
+    // const isHomePath = pathname === "/" || pathname === "/uz" || pathname === "/ru" || pathname === "/en";
+    // const isCreatePath = pathname.includes("/create");
+    //
+    // if (!isHomePath && !isCreatePath) {
+    //     const locale = getLocale(request);
+    //     const cookieLocale = request.cookies.get("lang")?.value;
+    //     const redirectUrl = new URL(
+    //         `/${cookieLocale ?? locale ?? i18n.defaultLocale}/create`,
+    //         request.url
+    //     );
+    //     return NextResponse.redirect(redirectUrl);
+    //
+    // }
 
     const pathnameIsMissingLocale = i18n.locales.every(
         (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`

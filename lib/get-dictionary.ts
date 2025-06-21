@@ -18,3 +18,5 @@ export const getLangText = (
 ): string => {
     return lang === "uz" ? textUz : lang === "ru" ? textRu : textEn;
 };
+
+

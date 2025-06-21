@@ -25,7 +25,7 @@ export const Collections: FC = () => {
         />
       </div>
       <div className="w-full container  md:w-1/2">
-        <SectionTitle className={" mb-10 md:mb-[75px]"} text={"Collections"} />
+        <SectionTitle className={" mb-10 md:mb-[75px]"} text={"Toʻplamlar"} />
         <Carousel
           opts={{
             align: "start",

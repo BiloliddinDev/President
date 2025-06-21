@@ -5,31 +5,31 @@ import  Images3 from  '@/public/images/news3.png'
 export  const  newsItem = [
     {
         id : 1,
-        text : "Men's wristwatch",
+        text : "Milliy uslubdagi soatlar",
         description : "President business gifts",
         images : Images1
     },
     {
         id : 2,
-        text : "Men's wristwatch",
+        text : "Noyob suvenirlar",
         description : "President business gifts",
         images : Images2
     },
     {
         id : 3,
-        text : "Men's wristwatch",
+        text : "Charm toʻplam",
         description : "President business gifts",
         images : Images3
     },
     {
         id : 4,
-        text : "Men's wristwatch",
+        text : "Yozish uchun toʻplam",
         description : "President business gifts",
         images : Images1
     },
     {
         id : 5,
-        text : "Men's wristwatch",
+        text : "Korporativ sovgʻalar",
         description : "President business gifts",
         images : Images2
     },
