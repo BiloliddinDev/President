@@ -3,7 +3,10 @@
 import React, { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-import Artel from "@/public/images/brand.png";
+import image1 from  "@/public/images/news1.png"
+import image2 from  "@/public/images/news2.png"
+import  image3 from  "@/public/images/news3.png"
+import  image4 from  "@/public/images/news4.png"
 import {
   Carousel,
   CarouselContent,
@@ -14,7 +17,7 @@ import { SectionTitle } from "@/components/ui/sectionTitle";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const images = [Artel, Artel, Artel, Artel];
+const images = [image1, image2, image3 , image4];
 
 export default function BusinessGiftsCarousel() {
   const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
@@ -31,6 +34,7 @@ export default function BusinessGiftsCarousel() {
           <Carousel
             plugins={[plugin.current]}
             className="w-full h-full"
+            inert={true}
             onMouseEnter={() => plugin.current.stop()}
             onMouseLeave={() => plugin.current.reset()}
           >
