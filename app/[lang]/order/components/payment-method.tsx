@@ -8,7 +8,7 @@ export default function PaymentMethod() {
 
     return (
         <div className="space-y-2">
-            <h3 className="text-lg font-medium">Payment Method</h3>
+            <h3 className="text-lg font-medium">Payment Method {method}</h3>
             <RadioGroup defaultValue="cash" onValueChange={setMethod}>
                 <div className="flex items-center space-x-2">
                     <RadioGroupItem value="cash" id="cash" />

@@ -1,4 +1,4 @@
-import {Button, buttonVariants} from "@/components/ui/button";
+import {buttonVariants} from "@/components/ui/button";
 import Link from "next/link";
 import {cn} from "@/lib/utils";
 
@@ -24,14 +24,14 @@ export default function BasketRightSection() {
                     <span>Скидка</span>
                     <span className="font-semibold">10 000 сум</span>
                 </div>
-                <hr />
+                <hr/>
                 <div className="flex justify-between text-lg font-semibold">
                     <span>Итого:</span>
                     <span>112 000 000 сум</span>
                 </div>
             </div>
-            
-            <Link className={cn(buttonVariants({variant:  'default'}) , 'w-full')} href={"/order"}>
+
+            <Link className={cn(buttonVariants({variant: 'default'}), 'w-full')} href={"/order"}>
                 Оформить заказ
             </Link>
 
