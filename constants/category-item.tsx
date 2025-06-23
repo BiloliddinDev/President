@@ -1,35 +1,40 @@
-import category from "@/public/images/category1.png";
+import category1 from "@/public/images/category1.png";
+import category2 from  "@/public/images/category2.png"
+import category3 from "@/public/images/category3.png"
+import category4 from "@/public/images/category4.png"
+import category5  from  "@/public/images/category5.png"
+import category6 from  "@//public/images/category6.png"
 
 export const categoryItem = [
   {
     id: 1,
     text: "Hadya qutilari",
-    images: category,
+    images: category1,
   },
   {
     id: 2,
     text: "Sumkalar va charm buyumla",
-    images: category,
+    images: category2,
   },
   {
     id: 3,
     text: "Soatlar",
-    images: category,
+    images: category3,
   },
   {
     id: 4,
     text: "Papkalar va bloknotlar",
-    images: category,
+    images: category4,
   },
   {
     id: 5,
     text: "Premium ruchkalar",
-    images: category,
+    images: category5,
   },
   {
     id: 6,
     text: "Sovgʻa uchun suvenirlar",
-    images: category,
+    images: category6,
   },
   // {
   //   id: 7,

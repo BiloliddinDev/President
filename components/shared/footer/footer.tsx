@@ -30,7 +30,7 @@ export const Footer = () => {
             Business Gifts is not just a premium gift brand. President Business
             Gifts is not just a premium gift brand.
           </p>
-          <Button className="self-center md:self-start ">Login in</Button>
+          <Button className="self-center md:self-start ">Sign up</Button>
         </div>
 
         <div className={"hidden md:flex flex-col items-start"}>

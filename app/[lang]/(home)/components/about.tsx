@@ -20,7 +20,7 @@ export const About: FC<AboutType> = ({title}) => {
                     <Image
                         src={AboutImage.src}
                         alt={"President Business Gifts is not just a premium gift brand"}
-                        className="!w-[265px] !h-[245px] md:w-[600px] md:h-[600px]"
+                        className="w-[265px] h-[245px] md:w-[600px] md:h-[600px] object-cover"
                         width={600}
                         height={600}
                     />

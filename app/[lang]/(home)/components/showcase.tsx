@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { imageLoader } from "@/lib/imageLoader";
-import img1 from "@/public/images/showcase-image.png";
-import img2 from "@/public/images/services2.png";
-import img3 from "@/public/images/showcase.png";
-import img4 from "@/public/images/pen2.jpg";
+import img1 from "@/public/images/showcase4.png";
+import img2 from "@/public/images/showcase3.png";
+import img3 from "@/public/images/showcase2.png";
+import img4 from "@/public/images/showcase1.png";
 
 
 const images = [img1, img2, img3 , img4];

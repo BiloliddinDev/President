@@ -1,6 +1,8 @@
 import  Images1 from  '@/public/images/news1.png'
 import  Images2 from  '@/public/images/news2.png'
 import  Images3 from  '@/public/images/news3.png'
+import  Images4 from  '@/public/images/news4.png'
+import  Images5 from  '@/public/images/news5.png'
 
 export  const  newsItem = [
     {
@@ -25,18 +27,18 @@ export  const  newsItem = [
         id : 4,
         text : "Yozish uchun toʻplam",
         description : "President business gifts",
-        images : Images1
+        images : Images4
     },
     {
         id : 5,
         text : "Korporativ sovgʻalar",
         description : "President business gifts",
-        images : Images2
+        images : Images5
     },
     {
         id : 6,
         text : "Men's wristwatch",
         description : "President business gifts",
-        images : Images3
+        images : Images1
     }
 ];
