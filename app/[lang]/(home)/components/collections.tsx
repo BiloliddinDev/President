@@ -45,9 +45,11 @@ export const Collections: FC = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <Button variant={"secondary"} className={"mt-16 w-full md:max-w-52"}>
-            Shop now
-          </Button>
+         <a href={"/public/docs/President_Business_Gifts.pdf"} download>
+             <Button variant={"secondary"} className={"mt-16 w-full md:max-w-52"}>
+                 Download Collection
+             </Button>
+         </a>
         </Carousel>
       </div>
     </div>
