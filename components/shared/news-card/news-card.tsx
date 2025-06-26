@@ -11,7 +11,7 @@ export const NewsCard: FC<{ newsItem: NewsCardProps }> = ({ newsItem }) => {
         src={newsItem.images.src}
         width={500}
         height={500}
-        className={"w-96 md:w-full h-[430px] object-cover"}
+        className={"w-96 md:w-full h-[430px] "}
         alt={newsItem.text}
       />
       <h4
@@ -33,7 +33,7 @@ export const NewsCard: FC<{ newsItem: NewsCardProps }> = ({ newsItem }) => {
         passHref={true}
         className={`self-stretch justify-start`}
       >
-        <Button variant={"secondary"}>View Now</Button>
+        <Button variant={"secondary"}>Hoziroq sotib olish</Button>
       </Link>
     </div>
   );

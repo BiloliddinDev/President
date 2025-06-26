@@ -8,9 +8,9 @@ import Images from "@/public/images/shops.png"
 
 export default function NewsPage() {
     return (
-        <div className={"container !mt-22"}>
+        <div className={"container md:!mt-26 !mt-42"}>
             <BreadcrumbDynamic/>
-            <Image className={"my-8"} width={1200} height={400} src={Images.src} alt={"shops Image section"}/>
+            <Image className={"my-10"} width={1200} height={400} src={Images.src} alt={"shops Image section"}/>
             <div>
                 <h2 className={"text-primary text-xl font-medium leading-loose"}>Exclusive Novelty Gifts from President
                     Business Gifts</h2>

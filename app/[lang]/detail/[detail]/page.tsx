@@ -7,6 +7,7 @@ import {Button} from "@/components/ui/button";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import {StaticImageData} from "next/image";
 import {Heart, Share2} from "lucide-react";
+import {useBasketStore} from "@/lib/set-basket.storage";
 
 type MediaType = {
     type: "image" | "video";
@@ -39,6 +40,7 @@ const product = {
 
 export default function ProductDetailPage() {
     // const { toggleWishlist } = useWishlistStore()
+    const addToBasket = useBasketStore(state => state.addToBasket);
 
     const handleShare = () => {
         const shareData = {
@@ -54,7 +56,7 @@ export default function ProductDetailPage() {
         }
     };
     return (
-        <div className="container !mt-31">
+        <div className="container md:!mt-26 !mt-42">
             <BreadcrumbDynamic/>
 
             <div className="w-full flex items-start justify-center gap-24 mt-10">
@@ -71,7 +73,14 @@ export default function ProductDetailPage() {
                     </div>
                     <p className="text-xl font-medium">${product.price.toFixed(2)}</p>
 
-                    <Button className="w-full mt-4">Add to cart</Button>
+                    <Button onClick={() => addToBasket({
+                        id: Number(product.id),
+                        title: product.name,
+                        price: product.price,
+                        imgUrl: product.mediaData[0].src,
+                        isNewArrival: false,
+                        isFavorite: false
+                    })} className="w-full mt-4">Add to cart</Button>
 
                     <p className="text-gray-700 text-sm mt-7">{product.text}</p>
 

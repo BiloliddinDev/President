@@ -21,11 +21,11 @@ export const Collections: FC = () => {
           alt="Collection Left Image"
           width={500}
           height={500}
-          className="object-contain w-full"
+          className="object-contain w-full "
         />
       </div>
       <div className="w-full container  md:w-1/2">
-        <SectionTitle className={" mb-10 md:mb-[75px]"} text={"Collections"} />
+        <SectionTitle className={" mb-10 md:mb-[75px]"} text={"Toʻplamlar"} />
         <Carousel
           opts={{
             align: "start",

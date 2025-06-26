@@ -16,7 +16,7 @@ export default async function CategoryPage({params}: CategoryPageProps) {
     const categoryParam: { lang: string, category: string } = await params;
 
     return (
-        <div className="container !mt-22">
+        <div className="container md:!mt-26 !mt-42">
             <BreadcrumbDynamic/>
             <h4 className="text-primary text-sm font-normal capitalize leading-tight mt-10 mb-2.5">
                 {categoryParam.category}

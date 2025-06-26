@@ -18,21 +18,19 @@ function getLocale(request: NextRequest): string | undefined {
 export async function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
 
-    // Check if the path is public (home page)
-    const isPublicPath = pathname === "/" || pathname === "/uz" || pathname === "/ru" || pathname === "/en";
 
-    // Add your authentication check here
-    const isAuthenticated = request.cookies.get("auth_token"); // auth_token nomli cookie borligini tekshirish
+    const isHomePath = pathname === "/" || pathname === "/uz" || pathname === "/ru" || pathname === "/en";
+    const isCreatePath = pathname.includes("/create");
 
-    if (!isPublicPath && !isAuthenticated) {
-        // Agar authenticated bo'lmasa va public path bo'lmasa, home page ga redirect qilish
+    if (!isHomePath && !isCreatePath) {
         const locale = getLocale(request);
         const cookieLocale = request.cookies.get("lang")?.value;
         const redirectUrl = new URL(
-            `/${cookieLocale ?? locale ?? i18n.defaultLocale}`,
+            `/${cookieLocale ?? locale ?? i18n.defaultLocale}/create`,
             request.url
         );
         return NextResponse.redirect(redirectUrl);
+
     }
 
     const pathnameIsMissingLocale = i18n.locales.every(
@@ -42,6 +40,13 @@ export async function middleware(request: NextRequest) {
     if (pathnameIsMissingLocale) {
         const locale = getLocale(request);
         const cookieLocale = request.cookies.get("lang")?.value;
+        if (pathname === "/create") {
+            const redirectUrl = new URL(
+                `/${cookieLocale ?? locale ?? i18n.defaultLocale}/create`,
+                request.url
+            );
+            return NextResponse.redirect(redirectUrl);
+        }
         const redirectUrl = new URL(
             `/${cookieLocale ?? locale ?? i18n.defaultLocale}${
                 pathname.startsWith("/") ? "" : "/"

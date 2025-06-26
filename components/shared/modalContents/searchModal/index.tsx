@@ -24,7 +24,7 @@ const SearchModalData = () => {
     }, []);
 
     return (
-        <div className="pb-20">
+        <div className="pb-20 w-full">
             {isDesktop && (
                 <div className="container flex flex-wrap items-center justify-between">
                     <FooterLogo/>

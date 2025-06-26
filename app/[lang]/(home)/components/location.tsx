@@ -36,7 +36,7 @@ export default function LocationPage() {
   return (
     <div className="w-full h-auto flex flex-col gap-4 overflow-x-hidden container">
       <div className="w-full max-w-[1200px] m-auto ">
-        <SectionTitle text="Locations" />
+        <SectionTitle text="Filiallar" />
       </div>
 
       <div className="w-full max-w-[1200px] h-[400px] m-auto rounded-md overflow-hidden">
@@ -45,7 +45,7 @@ export default function LocationPage() {
 
       <div className="w-full max-w-[1200px] m-auto mt-3 flex flex-col gap-[20px]">
         <h3 className="text-primary text-xl font-medium  capitalize">
-          Branches
+            Manzillar
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[#5C5F6A] w-full max-w-lg">

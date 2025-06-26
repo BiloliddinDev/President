@@ -24,7 +24,7 @@ export function BreadcrumbDynamic() {
   );
 
   return (
-    <Breadcrumb className="pt-8">
+    <Breadcrumb >
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink href="/">President business gifts</BreadcrumbLink>

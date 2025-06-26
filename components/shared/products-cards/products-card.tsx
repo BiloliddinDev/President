@@ -7,13 +7,14 @@ import { ProductCardProps } from "@/interface/product-card-type";
 
 interface ProductsCardProps {
     productData: ProductCardProps;
+    className?: string;
 }
 
-export const ProductsCard = ({ productData }: ProductsCardProps) => {
+export const ProductsCard = ({ productData , className   }: ProductsCardProps) => {
     const { toggleWishlist } = useWishlistStore()
 
     return (
-        <div className="group relative flex flex-col rounded-lg transition hover:shadow-md bg-white pb-2">
+        <div className={`${className} group relative flex flex-col rounded-lg transition hover:shadow-md bg-white pb-2`}>
             <button
                 onClick={() => toggleWishlist(productData)}
                 className="absolute right-3 top-3 z-40 text-gray-500 cursor-pointer hover:text-primary transition">
@@ -23,7 +24,7 @@ export const ProductsCard = ({ productData }: ProductsCardProps) => {
             </button>
             <div className="relative w-full pt-[100%] mb-4 bg-neutral-100 rounded-[4px] py-4">
                 <Image
-                    src={productData.imgUrl.src}
+                    src={productData.imgUrl}
                     alt={productData.title}
                     fill
                     className="object-contain"

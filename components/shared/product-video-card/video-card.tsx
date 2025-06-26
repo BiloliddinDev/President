@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { ProductVideoProps } from "@/interface/product-videos-type/product-video";
+import Link from "next/link";
 
 const ProductVideoCard: React.FC<{ productItem: ProductVideoProps }> = ({
   productItem,
@@ -33,15 +34,15 @@ const ProductVideoCard: React.FC<{ productItem: ProductVideoProps }> = ({
   };
 
   return (
-   <a href={productItem.instaLink} className={"block"} target={"_blank"}>
+   <Link href={productItem.instaLink} className={"block"} target={"_blank"}>
      <div
-         className="relative w-[290px] h-[420px] overflow-hidden rounded-lg cursor-pointer "
+         className="relative  overflow-hidden rounded-[4px] cursor-pointer "
          onMouseEnter={handleMouseEnter}
          onMouseLeave={handleMouseLeave}
      >
        <video
            ref={videoRef}
-           className="w-full h-full object-cover"
+           className="w-full h-[420px] object-cover"
            src={productItem.video}
            muted
            preload="auto"
@@ -64,7 +65,7 @@ const ProductVideoCard: React.FC<{ productItem: ProductVideoProps }> = ({
            </div>
        )}
      </div>
-   </a>
+   </Link>
   );
 };
 

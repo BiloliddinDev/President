@@ -5,11 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { imageLoader } from "@/lib/imageLoader";
-import img1 from "@/public/images/showcase-image.png";
-import img2 from "@/public/images/services2.png";
-import img3 from "@/public/images/showcase.png";
+import img1 from "@/public/images/showcase4.png";
+import img2 from "@/public/images/showcase3.png";
+import img3 from "@/public/images/showcase2.png";
+import img4 from "@/public/images/showcase1.png";
 
-const images = [img1, img2, img3];
+
+const images = [img1, img2, img3 , img4];
 
 export const Showcase: FC = () => {
     const [current, setCurrent] = useState(0);
@@ -30,7 +32,7 @@ export const Showcase: FC = () => {
     }, [current]);
 
     return (
-        <div className="relative h-[500px] md:h-[755px] overflow-hidden">
+        <div className="relative  h-screen shadow-2xl overflow-hidden">
             <AnimatePresence mode="sync">
                 <motion.div
                     key={current}
@@ -48,13 +50,17 @@ export const Showcase: FC = () => {
                 />
             </AnimatePresence>
 
-            <div className="relative z-10 h-full w-full flex flex-col justify-end bg-black/30 py-8 px-4 md:pb-[90px]">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-[1]" />
+
+            <div className="relative z-10 h-full w-full flex flex-col justify-end py-8 px-4 md:pb-[90px]">
                 <div className="container">
-                    <h1 className="w-full md:w-[400px] mb-1.5 md:mb-3 text-white text-3xl md:text-6xl font-normal font-title">
-                        Bags & Leather Goods
+                    <h1 className="w-full md:w-[550px] mb-1.5 md:mb-3 text-white text-3xl md:text-6xl font-normal font-title">
+                        Biznesmenlar va rahbarlar uchun premium va
+                        eksklyuziv sovg‘alar
                     </h1>
-                    <p className="w-64 mb-5 md:mb-12 text-white text-base font-normal tracking-wide">
-                        New Styles In Refined Colours
+                    <p className="w-64 md:w-[600px] mb-5 md:mb-12 text-white text-base font-normal tracking-wide">
+                        Gerbli soatlar, charm buyumlar, aksessuarlar va milliy
+                        suvenirlar — cheklangan va brendlangan variantlarda
                     </p>
                     <Link href="#support">
                         <Button variant="outline" className="w-full sm:w-52 bg-gold hover:bg-gold/90 text-white border-none hover:text-white/90 h-12 rounded-[12px]">

@@ -8,8 +8,8 @@ import PresidentWatch from "@/public/images/president-watch.png";
 import CommonWatchSection from "../components/common-watch";
 const CorporateGifts = () => {
   return (
-    <div className="container max-w-screen-xl mx-auto px-2 md:px-4 mt-16 md:!mt-20">
-      <div className="py-4 md:py-8">
+    <div className="container max-w-screen-xl mx-auto px-2 md:px-4  md:!mt-26 !mt-42 ">
+      <div className="mb-10">
         <BreadcrumbDynamic />
       </div>
       <CommonHeader
