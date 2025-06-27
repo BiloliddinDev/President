@@ -4,41 +4,89 @@ import  Images3 from  '@/public/images/news3.png'
 import  Images4 from  '@/public/images/news4.png'
 import  Images5 from  '@/public/images/news5.png'
 
-export  const  newsItem = [
+export const newsItem = [
     {
-        id : 1,
-        text : "Milliy uslubdagi soatlar",
-        description : "President business gifts",
-        images : Images1
+        id: 1,
+        text: {
+            uz: "Milliy uslubdagi soatlar",
+            ru: "Часы в национальном стиле",
+            en: "Watches in national style",
+        },
+        description: {
+            uz: "Prezident darajasidagi biznes sovgʻalar",
+            ru: "Бизнес-подарки на президентском уровне",
+            en: "President-level business gifts",
+        },
+        images: Images1,
     },
     {
-        id : 2,
-        text : "Noyob suvenirlar",
-        description : "President business gifts",
-        images : Images2
+        id: 2,
+        text: {
+            uz: "Noyob suvenirlar",
+            ru: "Уникальные сувениры",
+            en: "Unique souvenirs",
+        },
+        description: {
+            uz: "Prezident darajasidagi biznes sovgʻalar",
+            ru: "Бизнес-подарки на президентском уровне",
+            en: "President-level business gifts",
+        },
+        images: Images2,
     },
     {
-        id : 3,
-        text : "Charm toʻplam",
-        description : "President business gifts",
-        images : Images3
+        id: 3,
+        text: {
+            uz: "Charm toʻplam",
+            ru: "Набор из кожи",
+            en: "Leather gift set",
+        },
+        description: {
+            uz: "Prezident darajasidagi biznes sovgʻalar",
+            ru: "Бизнес-подарки на президентском уровне",
+            en: "President-level business gifts",
+        },
+        images: Images3,
     },
     {
-        id : 4,
-        text : "Yozish uchun toʻplam",
-        description : "President business gifts",
-        images : Images4
+        id: 4,
+        text: {
+            uz: "Yozish uchun toʻplam",
+            ru: "Письменный набор",
+            en: "Writing set",
+        },
+        description: {
+            uz: "Prezident darajasidagi biznes sovgʻalar",
+            ru: "Бизнес-подарки на президентском уровне",
+            en: "President-level business gifts",
+        },
+        images: Images4,
     },
     {
-        id : 5,
-        text : "Korporativ sovgʻalar",
-        description : "President business gifts",
-        images : Images5
+        id: 5,
+        text: {
+            uz: "Korporativ sovgʻalar",
+            ru: "Корпоративные подарки",
+            en: "Corporate gifts",
+        },
+        description: {
+            uz: "Prezident darajasidagi biznes sovgʻalar",
+            ru: "Бизнес-подарки на президентском уровне",
+            en: "President-level business gifts",
+        },
+        images: Images5,
     },
     {
-        id : 6,
-        text : "Men's wristwatch",
-        description : "President business gifts",
-        images : Images1
-    }
+        id: 6,
+        text: {
+            uz: "Erkaklar bilaguzugi soati",
+            ru: "Мужские наручные часы",
+            en: "Men's wristwatch",
+        },
+        description: {
+            uz: "Prezident darajasidagi biznes sovgʻalar",
+            ru: "Бизнес-подарки на президентском уровне",
+            en: "President-level business gifts",
+        },
+        images: Images1,
+    },
 ];

@@ -1,9 +1,23 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "leaflet/dist/leaflet.css";
 
 
 * {
     scroll-behavior: smooth;
+}
+
+html[lang="ru"] .showcase-title {
+    font-size: 2.5rem; 
+    max-width: 580px;
+    font-family: "Microsoft Himalaya", serif;
+}
+
+
+
+html[lang="ru"] .section-title {
+    font-size: 2rem;
+    font-family: "Microsoft Himalaya", serif;
 }
 
 /* Custom variant for dark mode */
@@ -67,7 +81,7 @@
     --color-destructive: var(--destructive);
 
     --color-primary: var(--primary);
-    --color-gold : var(--gold);
+    --color-gold: var(--gold);
     --color-primary-foreground: var(--primary-foreground);
     --color-secondary: var(--secondary);
     --color-secondary-foreground: var(--secondary-foreground);

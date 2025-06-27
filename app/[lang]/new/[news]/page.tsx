@@ -16,7 +16,7 @@ interface NewsPageProps {
 }
 
 
-export default async function News({params}: NewsPageProps ) {
+export default async function News({params}: NewsPageProps) {
 
     const News = await params.then((params) => params.news)
 
@@ -47,7 +47,7 @@ export default async function News({params}: NewsPageProps ) {
 
             <div className={"container grid grid-cols-3 gap-5 !mt-20 gap-y-10"}>
                 {newsItem.map((newsItem) => (
-                    <NewsCard key={newsItem.id} newsItem={newsItem}/>
+                    <NewsCard key={newsItem.id} newsItem={newsItem} lang={"uz"} entitle={""}/>
                 ))}
             </div>
         </div>

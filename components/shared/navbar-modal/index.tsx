@@ -1,3 +1,5 @@
+"use client"
+
 import React, {FC, useRef, useState} from "react";
 import {Sheet, SheetContent, SheetTitle, SheetTrigger,} from "@/components/ui/sheet";
 import {NavbarModalProps} from "@/interface/navbar-modals-type";
@@ -5,7 +7,7 @@ import Link from "next/link";
 import {navbarContent} from "@/constants/navbar";
 
 
-const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children}) => {
+const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, lang}) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -22,14 +24,14 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children}) 
     };
 
     return (
-        <Sheet  modal={false} open={isOpen}>
+        <Sheet modal={false} open={isOpen}>
             <div
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 className="relative z-40"
             >
                 <SheetTrigger
-                    className="transition-all !outline-0 text-sm font-medium cursor-pointer flex flex-row-reverse items-center gap-2 group"
+                    className="transition-all !outline-0 text-[17px] font-normal  font-description cursor-pointer flex flex-row-reverse items-center gap-2 group"
                 >
                     {title}
 
@@ -44,20 +46,19 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children}) 
                 </SheetTrigger>
 
 
-
                 <SheetContent
                     side={side}
                     className={'w-[350px]'}
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                 >
-                <div className="ml-[3.75rem] mt-10 h-full py-10">
+                    <div className="ml-[3.75rem] mt-10 h-full py-10">
                         <SheetTitle className="pb-1.5 pt-6">{sheetTitle}</SheetTitle>
                         <div className={'flex flex-col justify-between h-full pb-5'}>
                             {children}
                             {
                                 title === "Shop" || title === "Discover" ? (
-                                    <div >
+                                    <div>
                                         {navbarContent.map((item) => (
                                             <div
                                                 className={`text-sm font-normal leading-[1.5rem] cursor-pointer ${
@@ -65,7 +66,7 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children}) 
                                                 }`}
                                                 key={item.id}
                                             >
-                                                <Link href={item.linkSrc}>{item.name}</Link>
+                                                <Link href={item.linkSrc}>{item.name[lang]}</Link>
                                             </div>
                                         ))}
                                     </div>
@@ -81,3 +82,4 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children}) 
 };
 
 export default NavbarModal;
+

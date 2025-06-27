@@ -65,12 +65,12 @@ const MobileNavbar = () => {
               {
                 value: "shops",
                 label: "Shops",
-                content: <ShopModalContent />,
+                content: <ShopModalContent lang={"ru"} />,
               },
               {
                 value: "discover",
                 label: "Discover",
-                content: <DiscoverModalContent />,
+                content: <DiscoverModalContent lang={'ru'} />,
               },
             ]}
           />
