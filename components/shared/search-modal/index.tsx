@@ -2,9 +2,11 @@ import React, {FC} from "react";
 import {Sheet, SheetContent, SheetTitle, SheetTrigger,} from "@/components/ui/sheet";
 import {NavbarModalProps} from "@/interface/navbar-modals-type";
 
-const SearchModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children,}) => {
+const SearchModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, lang,}) => {
+
+    console.log(lang)
     return (
-        <Sheet >
+        <Sheet>
             <div className="relative z-60 ">
                 <SheetTrigger className="">{title}</SheetTrigger>
                 <SheetContent className={"z-[100]"} side={side}>

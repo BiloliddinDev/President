@@ -1,3 +1,69 @@
 {
-  "title" : "Presitend En Json "
+  "showcase": {
+    "title": "Premium va eksklyuziv sovg'alar",
+    "description": "Gerbli soatlar, charm buyumlar, aksessuarlar va milliy suvenirlar — cheklangan va brendlangan variantlarda",
+    "button": "So'rov qoldirish"
+  },
+  "news": {
+    "title": "Assortiment",
+    "newArrival": "Hoziroq sotib olish"
+  },
+  "about": {
+    "title": "Biz haqimizda",
+    "subtitle": "President Business Gifts — Sizning o'rningizda so'zlaydigan sovg'alar",
+    "description": "Biz deyarli 10 yildan beri maqom, hurmat va didni ifodalovchi sovg'alarni yaratib kelmoqdamiz. Bizning assortimentda biznesmenlar, rahbarlar, hamkorlar va hurmatli xodimlar uchun hamma narsa mavjud: eksklyuziv VIP to'plamlardan tortib butun jamoa uchun korporativ yechimlargacha. Bu shunchaki sovg'alar emas — bu xotirada qoladigan e'tibor belgilaridir.",
+    "imageAlt": "President Business Gifts bu shunchaki premium sovg'alar brendi emas"
+  },
+  "category": {
+    "title": "Kategoriyalar"
+  },
+  "collections": {
+    "title": "Toʻplamlar"
+  },
+  "productVideos": {
+    "title": "Mahsulot Videolari"
+  },
+  "support": {
+    "title": "So'rov qoldiring",
+    "supportform": "Menejerimiz sizga qo'ng'iroq qilib, mahsulotlarimiz haqida batafsil tushuntirib beradi",
+    "form": {
+      "name": {
+        "label": "Ism",
+        "placeholder": "Ismingizni yozing"
+      },
+      "phone": {
+        "label": "Telefon raqam",
+        "placeholder": "Telefon raqamingizni kiriting"
+      },
+      "submit": "So'rovni yuborish"
+    },
+    "messages": {
+      "required": "Bu maydon to'ldirilishi shart",
+      "min": "Kamida {min} ta belgi bo'lishi kerak",
+      "max": "{max} ta belgidan oshmasligi kerak",
+      "invalid": "Noto'g'ri format",
+      "success": "✅ Xabaringiz muvaffaqiyatli yuborildi!",
+      "error": "❌ Xabar yuborilmadi. Iltimos, qayta urinib ko'ring.",
+      "serverError": "⚠️ Xatolik yuz berdi. Keyinroq qayta urinib ko'ring!"
+    }
+  },
+  "corporategifts": {
+    "title": "Korporativ sovg'alar",
+    "text": "Biz logotipingiz tushirilgan korporativ sovg‘alar bilan ham shug‘ullanamiz — soatlar,charm toʻplam, bloknotlar, ruchkalar va boshqa suvenirlar. Biz allaqachon banklar, kompaniyalar va davlat tashkilotlari bilan hamkorlik qilganmiz — sovg‘alarni ehtiyojga mos tanlab, brendlash va qadoqlashni to‘liq amalga oshiramiz",
+    "btn": "Batafsil ma’lumot"
+  },
+  "location": {
+    "title": "Filiallar",
+    "text": "Manzillar"
+  },
+  "footer": {
+    "footerDescription": "President Business Gifts shunchaki premium sovg'a brendi emas. President Business Gifts shunchaki premium sovg'a brendi emas. President Business Gifts shunchaki premium sovg'a brendi emas.",
+    "signUp": "Ro'yxatdan o'tish",
+    "support": "QO'LLAB-QUVVATLASH",
+    "company": "KOMPANIYA",
+    "newProducts": "Yangi mahsulotlar",
+    "acceptedPayments": "QABUL QILINADIGAN TO'LOVLAR",
+    "socialMedia": "IJTIMOIY TARMOQLAR",
+    "copyright": "© 2025 President Business Gifts. Barcha huquqlar himoyalangan."
+  }
 }

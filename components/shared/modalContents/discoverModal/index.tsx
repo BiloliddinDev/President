@@ -2,7 +2,12 @@ import { discoverModalItems } from "@/constants/discover-modal-item";
 import Link from "next/link";
 import React from "react";
 
-const DiscoverModalContent = () => {
+
+interface DiscoverModalProps {
+  lang : "uz" | "ru" | 'en'
+}
+
+const DiscoverModalContent = ({lang} : DiscoverModalProps) => {
   return (
     <div>
       {discoverModalItems.map((item) => (
@@ -12,7 +17,7 @@ const DiscoverModalContent = () => {
             ${item.id === 9 ? "mt-10" : "my-5"}`}
           key={item.id}
         >
-          <Link href={item.linkSrc}> {item.name}</Link>
+          <Link href={item.linkSrc}> {item.name[lang]}</Link>
         </div>
       ))}
     </div>

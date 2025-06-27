@@ -1,16 +1,20 @@
 import ProductVideoCard from "@/components/shared/product-video-card/video-card";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-} from "@/components/ui/carousel";
-import { SectionTitle } from "@/components/ui/sectionTitle";
-import { productItem } from "@/constants/product-videos-item";
+import {Carousel, CarouselContent, CarouselItem,} from "@/components/ui/carousel";
+import {SectionTitle} from "@/components/ui/sectionTitle";
+import {productItem} from "@/constants/product-videos-item";
 
-export const ProductVideos = ({ title }: { title: string }) => {
+interface ProductVideosProps {
+    dictionary: {
+        productVideos: {
+            title: string;
+        };
+    };
+}
+
+export const ProductVideos = ({dictionary}: ProductVideosProps) => {
     return (
         <div className="relative">
-            <SectionTitle className="container" text={title} />
+            <SectionTitle className="container" text={dictionary.productVideos.title} />
 
             {/* Carousel */}
             <div className="relative mt-5 md:mt-12 overflow-x-hidden">
@@ -37,7 +41,7 @@ export const ProductVideos = ({ title }: { title: string }) => {
                     h-[450px]
                   "
                                 >
-                                    <ProductVideoCard productItem={item} />
+                                    <ProductVideoCard productItem={item}/>
                                 </CarouselItem>
                             ))}
                         </CarouselContent>

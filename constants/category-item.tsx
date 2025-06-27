@@ -1,51 +1,65 @@
 import category1 from "@/public/images/category1.png";
-import category2 from  "@/public/images/category2.png"
-import category3 from "@/public/images/category3.png"
-import category4 from "@/public/images/category4.png"
-import category5  from  "@/public/images/category5.png"
-import category6 from  "@//public/images/category6.png"
+import category2 from "@/public/images/category2.png";
+import category3 from "@/public/images/category3.png";
+import category4 from "@/public/images/category4.png";
+import category5 from "@/public/images/category5.png";
+import category6 from "@/public/images/category6.png";
 
 export const categoryItem = [
   {
     id: 1,
-    text: "Hadya qutilari",
+    text: {
+      uz: "Hadya qutilari",
+      ru: "Подарочные наборы",
+      en: "Gift boxes",
+    },
     images: category1,
   },
   {
     id: 2,
-    text: "Sumkalar va charm buyumla",
+    text: {
+      uz: "Sumkalar va charm buyumlar",
+      ru: "Сумки и изделия из кожи",
+      en: "Bags and leather goods",
+    },
     images: category2,
   },
   {
     id: 3,
-    text: "Soatlar",
+    text: {
+      uz: "Soatlar",
+      ru: "Часы",
+      en: "Watches",
+    },
     images: category3,
   },
   {
     id: 4,
-    text: "Papkalar va bloknotlar",
+    text: {
+      uz: "Papkalar va bloknotlar",
+      ru: "Папки и блокноты",
+      en: "Folders and notebooks",
+    },
     images: category4,
   },
   {
     id: 5,
-    text: "Premium ruchkalar",
+    text: {
+      uz: "Premium ruchkalar",
+      ru: "Премиальные ручки",
+      en: "Premium pens",
+    },
     images: category5,
   },
   {
     id: 6,
-    text: "Sovgʻa uchun suvenirlar",
+    text: {
+      uz: "Sovgʻa uchun suvenirlar",
+      ru: "Сувенирные подарки",
+      en: "Gift souvenirs",
+    },
     images: category6,
   },
-  // {
-  //   id: 7,
-  //   text: "Limited Editions",
-  //   images: category,
-  // },
-  // {
-  //   id: 8,
-  //   text: "Ink & Refills",
-  //   images: category,
-  // },
 ];
 
 export const categoryModalItems = [
