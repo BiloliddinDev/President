@@ -91,7 +91,7 @@ jobs:
               git pull origin main
             else
               echo "📦 Cloning repository... $GIT_REPO"
-              git clone git@github.com:BiloliddinDev/President.git $DEPLOY_DIR
+              git clone git@github-front.com:BiloliddinDev/President.git $DEPLOY_DIR
             fi
 
             cd $DEPLOY_DIR
