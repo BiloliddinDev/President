@@ -18,7 +18,8 @@
     "title": "Категории"
   },
   "collections": {
-    "title": "Коллекции"
+    "title": "Коллекции",
+    "newArrival": "Заказать сейчас"
   },
   "productVideos": {
     "title": "Видеоролики о продуктах"
@@ -57,7 +58,7 @@
     "text": "Адреса"
   },
   "footer": {
-    "footerDescription": "President Business Gifts - это не просто премиальный бренд подарков. President Business Gifts - это не просто премиальный бренд подарков. President Business Gifts - это не просто премиальный бренд подарков.",
+    "footerDescription": "President Business Gifts — это\nне просто бренд. Это искусство\nдарить с достоинством. Всё, что\nподчеркивает статус и внимание\nк деталям.\n",
     "signUp": "Регистрация",
     "support": "ПОДДЕРЖКА",
     "company": "КОМПАНИЯ",

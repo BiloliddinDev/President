@@ -6,12 +6,13 @@ import {CollectionCard} from "@/components/shared/collection-card/collection-car
 import {CollectionType} from "@/interface/collection-type/collection-type";
 import {CollectionItem} from "@/constants/colection-item";
 import {SectionTitle} from "@/components/ui/sectionTitle";
-import {Button} from "@/components/ui/button";
+import {SupportFormModal} from "@/components/shared/form-modal/form.modal";
 
 interface CollectionsProps {
     dictionary: {
         collections: {
-            title: string;
+            title: string,
+            "newArrival": string
         };
     };
     lang: "uz" | "ru" | "en";
@@ -43,16 +44,17 @@ export const Collections: FC<CollectionsProps> = ({dictionary, lang}) => {
                         {CollectionItem.map((item: CollectionType) => (
                             <CarouselItem
                                 key={item.id}
-                                className="m-0 p-0 min-w-48"
+                                className="m-0 p-0 min-w-48 mb-16"
                                 style={{flex: "0 0 40%"}}
                             >
                                 <CollectionCard lang={lang} newsItem={item}/>
                             </CarouselItem>
                         ))}
                     </CarouselContent>
-                    <Button variant={"secondary"} className={"mt-16 w-full md:max-w-52"}>
-                        Shop now
-                    </Button>
+                    {/*<Button variant={"secondary"} className={"mt-16 w-full md:max-w-52"}>*/}
+                    {/*    {dictionary.collections.newArrival}*/}
+                    {/*</Button>*/}
+                    <SupportFormModal  lang={lang} btnText={dictionary.collections.newArrival}/>
                     <CarouselNext className="absolute right-[100px] top-1/2 -translate-y-1/2 translate-x-full z-40"/>
                 </Carousel>
             </div>

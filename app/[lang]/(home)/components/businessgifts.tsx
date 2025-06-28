@@ -7,8 +7,7 @@ import image1 from "@/public/images/corparative-image.jpg"
 
 import {Carousel, CarouselContent, CarouselItem,} from "@/components/ui/carousel";
 import {SectionTitle} from "@/components/ui/sectionTitle";
-import {Button} from "@/components/ui/button";
-import Link from "next/link";
+import {SupportFormModal} from "@/components/shared/form-modal/form.modal";
 
 const images = [image1];
 
@@ -33,7 +32,7 @@ export default function BusinessGiftsCarousel({dictionary}: BusinessGiftsCarouse
                 text={dictionary.corporategifts.title}
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20 bg-neutral-100">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20  bg-neutral-100">
                 <div className="">
                     <Carousel
                         plugins={[plugin.current]}
@@ -70,11 +69,14 @@ export default function BusinessGiftsCarousel({dictionary}: BusinessGiftsCarouse
                         <p className="text-gray-600 text-base md:text-xl max-w-[353px] md:w-[500]  font-normal font-description mb-5">
                             {dictionary.corporategifts.text}
                         </p>
-                        <Link href={"/discover/b2b-service"} className={"mt-4"}>
-                            <Button variant={"secondary"} className="mb-10 md:mb-0 max-w-44">
-                                {dictionary.corporategifts.btn}
-                            </Button>
-                        </Link>
+                        {/*<Link href={"/discover/b2b-service"} className={"mt-4"}>*/}
+                        {/*    <Button variant={"secondary"} className="mb-10 md:mb-0 max-w-44">*/}
+                        {/*        {dictionary.corporategifts.btn}*/}
+                        {/*    </Button>*/}
+                        {/*</Link>*/}
+                        <div className="mb-10 md:mb-0 max-w-44">
+                            <SupportFormModal btnText={dictionary.corporategifts.btn}/>
+                        </div>
                     </div>
                 </div>
             </div>
