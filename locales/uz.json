@@ -18,7 +18,8 @@
     "title": "Kategoriyalar"
   },
   "collections": {
-    "title": "Toʻplamlar"
+    "title": "Toʻplamlar",
+    "newArrival": "Hoziroq sotib olish"
   },
   "productVideos": {
     "title": "Mahsulot Videolari"
@@ -57,7 +58,7 @@
     "text": "Manzillar"
   },
   "footer": {
-    "footerDescription": "President Business Gifts shunchaki premium sovg'a brendi emas. President Business Gifts shunchaki premium sovg'a brendi emas. President Business Gifts shunchaki premium sovg'a brendi emas.",
+    "footerDescription": "President Business Gifts — bu\nshunchaki brend emas. Bu — e’tibor\nva obro‘ni namoyon etadigan sovg‘a\nsan’ati. Har bir mahsulot — bu\nmaqom va detallarga bo‘lgan\nhurmat.\n",
     "signUp": "Ro'yxatdan o'tish",
     "support": "QO'LLAB-QUVVATLASH",
     "company": "KOMPANIYA",

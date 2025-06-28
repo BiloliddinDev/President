@@ -6,7 +6,7 @@
   },
   "news": {
     "title": "Assortment",
-    "newArrival": "Buy now"
+    "newArrival": "coming soon"
   },
   "about": {
     "title": "About us",
@@ -18,7 +18,8 @@
     "title": "Categories"
   },
   "collections": {
-    "title": "Collections"
+    "title": "Collections",
+    "newArrival": "coming soon"
   },
   "productVideos": {
     "title": "Product Videos"
@@ -57,7 +58,7 @@
     "text": "Addresses"
   },
   "footer": {
-    "footerDescription": "President Business Gifts is not just a premium gift brand. President Business Gifts is not just a premium gift brand. President Business Gifts is not just a premium gift brand.",
+    "footerDescription": "President Business Gifts is not just a brand. It is the art of gift giving that reflects attention and prestige. Each product is a symbol of status and respect for detail.",
     "signUp": "Sign up",
     "support": "SUPPORT",
     "company": "COMPANY",

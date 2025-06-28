@@ -11,27 +11,27 @@ export const navbarContent = [
         id: 9,
         linkSrc: "/contact",
         name: {
-            uz: "Biz bilan bog'lanish",
-            ru: "Свяжитесь с нами",
-            en: "Contact us"
+            uz: "Aloqa",
+            ru: "Контакты",
+            en: "Contacts us"
         }
     },
     {
         id: 8,
         linkSrc: "/service",
         name: {
-            uz: "Mijozlar xizmati",
-            ru: "Обслуживание клиентов",
-            en: "Customer Service"
+            uz: "Individual buyurtma",
+            ru: "Индивидуальный заказ",
+            en: "Custom service"
         }
     },
     {
         id: 7,
         linkSrc: "/location",
         name: {
-            uz: "Manzil",
-            ru: "Локация",
-            en: "Location"
+            uz: "Filiallar joylashuvi",
+            ru: "Локации филиалов",
+            en: "Branch locations"
         }
     },
 ];
