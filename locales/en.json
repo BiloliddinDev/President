@@ -66,5 +66,11 @@
     "acceptedPayments": "ACCEPTED PAYMENTS",
     "socialMedia": "SOCIAL MEDIA",
     "copyright": "© 2025 President Business Gifts. All rights reserved."
+  },
+  "createpage": {
+    "title": "Coming Soon",
+    "description": "We are building something extraordinary for you. Our full website experience is launching soon.",
+    "returnMessage": "Please return to our homepage in the meantime.",
+    "buttonText": "Visit our Homepage"
   }
 }

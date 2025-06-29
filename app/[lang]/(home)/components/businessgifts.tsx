@@ -32,8 +32,8 @@ export default function BusinessGiftsCarousel({dictionary}: BusinessGiftsCarouse
                 text={dictionary.corporategifts.title}
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20  bg-neutral-100">
-                <div className="">
+            <div className="flex md:flex-row flex-col  md:gap-20  bg-neutral-100">
+                <div className=" w-full md:w-[45%]">
                     <Carousel
                         plugins={[plugin.current]}
                         className="w-full h-full"
@@ -61,7 +61,7 @@ export default function BusinessGiftsCarousel({dictionary}: BusinessGiftsCarouse
                     </Carousel>
                 </div>
 
-                <div className="">
+                <div className=" w-full md:w-[50%] container">
                     <div className="w-full">
                         <h2 className="text-primary mb-5 text-lg md:text-5xl font-normal font-title mt-5 md:mt-[75px]">
                             {dictionary.corporategifts.title}
@@ -74,7 +74,7 @@ export default function BusinessGiftsCarousel({dictionary}: BusinessGiftsCarouse
                         {/*        {dictionary.corporategifts.btn}*/}
                         {/*    </Button>*/}
                         {/*</Link>*/}
-                        <div className="mb-10 md:mb-0 max-w-44">
+                        <div className="mb-10 md:mb-0 max-w-44 ">
                             <SupportFormModal btnText={dictionary.corporategifts.btn}/>
                         </div>
                     </div>
