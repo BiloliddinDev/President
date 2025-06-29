@@ -1,64 +1,63 @@
-import type {NextRequest} from "next/server";
-import {NextResponse} from "next/server";
-import {i18n} from "./lib/i18n-config";
-import {match as matchLocale} from "@formatjs/intl-localematcher";
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
+import { i18n } from "./lib/i18n-config";
+import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
 function getLocale(request: NextRequest): string | undefined {
-    const negotiatorHeaders: Record<string, string> = {};
-    request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
+  const negotiatorHeaders: Record<string, string> = {};
+  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
-    const locales = i18n.locales.slice();
-    const languages = new Negotiator({headers: negotiatorHeaders}).languages(
-        locales
-    );
-    return matchLocale(languages, locales, i18n.defaultLocale);
+  const locales = i18n.locales.slice();
+  const languages = new Negotiator({ headers: negotiatorHeaders }).languages(
+    locales
+  );
+  return matchLocale(languages, locales, i18n.defaultLocale);
 }
 
 export async function middleware(request: NextRequest) {
-    const pathname = request.nextUrl.pathname;
+  const pathname = request.nextUrl.pathname;
 
+  // const isHomePath = pathname === "/" || pathname === "/uz" || pathname === "/ru" || pathname === "/en";
+  // const isCreatePath = pathname.includes("/create");
 
-    const isHomePath = pathname === "/" || pathname === "/uz" || pathname === "/ru" || pathname === "/en";
-    const isCreatePath = pathname.includes("/create");
+  // if (!isHomePath && !isCreatePath) {
+  //     const locale = getLocale(request);
+  //     const cookieLocale = request.cookies.get("lang")?.value;
+  //     const redirectUrl = new URL(
+  //         `/${cookieLocale ?? locale ?? i18n.defaultLocale}/create`,
+  //         request.url
+  //     );
+  //     return NextResponse.redirect(redirectUrl);
 
-    if (!isHomePath && !isCreatePath) {
-        const locale = getLocale(request);
-        const cookieLocale = request.cookies.get("lang")?.value;
-        const redirectUrl = new URL(
-            `/${cookieLocale ?? locale ?? i18n.defaultLocale}/create`,
-            request.url
-        );
-        return NextResponse.redirect(redirectUrl);
+  // }
 
+  const pathnameIsMissingLocale = i18n.locales.every(
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  );
+
+  if (pathnameIsMissingLocale) {
+    const locale = getLocale(request);
+    const cookieLocale = request.cookies.get("lang")?.value;
+    if (pathname === "/create") {
+      const redirectUrl = new URL(
+        `/${cookieLocale ?? locale ?? i18n.defaultLocale}/create`,
+        request.url
+      );
+      return NextResponse.redirect(redirectUrl);
     }
-
-    const pathnameIsMissingLocale = i18n.locales.every(
-        (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+    const redirectUrl = new URL(
+      `/${cookieLocale ?? locale ?? i18n.defaultLocale}${
+        pathname.startsWith("/") ? "" : "/"
+      }${pathname}`,
+      request.url
     );
+    return NextResponse.redirect(redirectUrl);
+  }
 
-    if (pathnameIsMissingLocale) {
-        const locale = getLocale(request);
-        const cookieLocale = request.cookies.get("lang")?.value;
-        if (pathname === "/create") {
-            const redirectUrl = new URL(
-                `/${cookieLocale ?? locale ?? i18n.defaultLocale}/create`,
-                request.url
-            );
-            return NextResponse.redirect(redirectUrl);
-        }
-        const redirectUrl = new URL(
-            `/${cookieLocale ?? locale ?? i18n.defaultLocale}${
-                pathname.startsWith("/") ? "" : "/"
-            }${pathname}`,
-            request.url
-        );
-        return NextResponse.redirect(redirectUrl);
-    }
-
-    return NextResponse.next();
+  return NextResponse.next();
 }
 
 export const config = {
-    matcher: ["/((?!api|_next/static|_next/image|favicon.ico|videos/).*)"],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|videos/).*)"],
 };
