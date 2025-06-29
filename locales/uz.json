@@ -66,5 +66,11 @@
     "acceptedPayments": "QABUL QILINADIGAN TO'LOVLAR",
     "socialMedia": "IJTIMOIY TARMOQLAR",
     "copyright": "© 2025 President Business Gifts. Barcha huquqlar himoyalangan."
+  },
+  "createpage": {
+    "title": "Tez kunda",
+    "description": "Biz siz uchun ajoyib narsani yaratmoqdamiz. Bizning to'liq veb-sayt tajribamiz tez kunda ishga tushiriladi.",
+    "returnMessage": "Vaqtincha bosh sahifamizga qaytib turing.",
+    "buttonText": "Bosh sahifaga tashrif buyuring"
   }
 }
