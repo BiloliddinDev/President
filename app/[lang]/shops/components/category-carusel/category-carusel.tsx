@@ -43,7 +43,7 @@ export default function CategoryCarousel({categories}: CategoryCarouselProps) {
                 >
                     {categories.map((item) => (
                         <div key={item.id} className="w-[200px] h-[200px] flex-shrink-0">
-                            <CategoryCard category={item}/>
+                            <CategoryCard category={item} lang={"uz"}/>
                         </div>
                     ))}
                 </div>

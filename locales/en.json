@@ -1,3 +1,76 @@
 {
-  "title" : "Presitend Uz Json "
+  "showcase": {
+    "title": "Premium and exclusive gifts",
+    "description": "Heraldic watches, leather goods, accessories and national souvenirs — in limited and branded versions",
+    "button": "Submit request"
+  },
+  "news": {
+    "title": "Assortment",
+    "newArrival": "coming soon"
+  },
+  "about": {
+    "title": "About us",
+    "subtitle": "President Business Gifts — gifts that speak for you",
+    "description": "For almost 10 years, we have been creating gifts that express status, respect, and taste. Our assortment has everything for businessmen, executives, partners, and respected employees: from exclusive VIP sets to corporate solutions for the entire team. These are not just gifts — these are tokens of attention that remain in memory.",
+    "imageAlt": "President Business Gifts is not just a premium gift brand"
+  },
+  "category": {
+    "title": "Categories"
+  },
+  "collections": {
+    "title": "Collections",
+    "newArrival": "coming soon"
+  },
+  "productVideos": {
+    "title": "Product Videos"
+  },
+  "support": {
+    "title": "Leave a request",
+    "supportform": "Our manager will call you and explain our products in detail",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter your name"
+      },
+      "phone": {
+        "label": "Phone number",
+        "placeholder": "Enter your phone number"
+      },
+      "submit": "Send request"
+    },
+    "messages": {
+      "required": "This field is required",
+      "min": "Must be at least {min} characters",
+      "max": "Must be less than {max} characters",
+      "invalid": "Invalid format",
+      "success": "✅ Your message has been sent successfully!",
+      "error": "❌ Failed to send the message. Please try again.",
+      "serverError": "⚠️ Something went wrong. Try again later!"
+    }
+  },
+  "corporategifts": {
+    "title": "Corporate gifts",
+    "text": "We also deal with corporate gifts with your logo - watches, leather sets, notebooks, pens and other souvenirs. We have already cooperated with banks, companies and government organizations - we select gifts according to their needs, carry out full branding and packaging",
+    "btn": "Read more"
+  },
+  "location": {
+    "title": "Branches",
+    "text": "Addresses"
+  },
+  "footer": {
+    "footerDescription": "President Business Gifts is not just a brand. It is the art of gift giving that reflects attention and prestige. Each product is a symbol of status and respect for detail.",
+    "signUp": "Sign up",
+    "support": "SUPPORT",
+    "company": "COMPANY",
+    "newProducts": "New Products",
+    "acceptedPayments": "ACCEPTED PAYMENTS",
+    "socialMedia": "SOCIAL MEDIA",
+    "copyright": "© 2025 President Business Gifts. All rights reserved."
+  },
+  "createpage": {
+    "title": "Coming Soon",
+    "description": "We are building something extraordinary for you. Our full website experience is launching soon.",
+    "returnMessage": "Please return to our homepage in the meantime.",
+    "buttonText": "Visit our Homepage"
+  }
 }

@@ -13,7 +13,7 @@ import SearchModalData from "@/components/shared/modalContents/searchModal";
 import {Heart, Search, ShoppingCart, User} from "lucide-react";
 import MobileNavbar from "./mobile-navbar";
 
-export const Navbar = ({lang}: { lang: string }) => {
+export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
 
     return (
         <nav
@@ -24,18 +24,19 @@ export const Navbar = ({lang}: { lang: string }) => {
                     {navbarLinks.map((link) => (
                         <div
                             key={link.id}
-                            className={`text-primary !hover:text-zinc-300 text-sm font-medium leading-normal cursor-pointer transition-colors duration-200`}
+                            className={`text-primary !hover:text-zinc-300  text-2xl  font-bold leading-normal cursor-pointer transition-colors duration-200`}
                         >
                             {["Shop", "Discover"].includes(link.name) ? (
                                 <NavbarModal
                                     title={link.name}
                                     side="left"
                                     sheetTitle={link.name}
+                                    lang={lang}
                                 >
                                     {link.name === "Shop" ? (
-                                        <ShopModalContent/>
+                                        <ShopModalContent lang={lang}/>
                                     ) : (
-                                        <DiscoverModalContent/>
+                                        <DiscoverModalContent lang={lang}/>
                                     )}
                                 </NavbarModal>
                             ) : (
@@ -49,16 +50,18 @@ export const Navbar = ({lang}: { lang: string }) => {
 
                 <div className="flex items-center gap-8">
                     <SearchModal
+                        lang={lang}
                         side="top"
                         title={
                             <Search width={24} height={24}
-                                    className={`text-primary !hover:text-zinc-300 mt-3 transition-colors duration-200`}/>
+                                    className={`text-primary !hover:text-zinc-300 mt-2.5 transition-colors duration-200`}/>
                         }
                     >
                         <SearchModalData/>
                     </SearchModal>
 
                     <NavbarModal
+                        lang={lang}
                         side="right"
                         title={
                             <p

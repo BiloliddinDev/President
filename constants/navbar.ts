@@ -7,7 +7,31 @@ export const navbarLinks = [
 
 
 export const navbarContent = [
-    {id: 9, linkSrc: "/contact", name: "Contact us"},
-    {id: 8, linkSrc: "/service", name: "Customer Sevice"},
-    {id: 7, linkSrc: "/location", name: "Location"},
-]
+    {
+        id: 9,
+        linkSrc: "/contact",
+        name: {
+            uz: "Aloqa",
+            ru: "Контакты",
+            en: "Contacts us"
+        }
+    },
+    {
+        id: 8,
+        linkSrc: "/service",
+        name: {
+            uz: "Individual buyurtma",
+            ru: "Индивидуальный заказ",
+            en: "Custom service"
+        }
+    },
+    {
+        id: 7,
+        linkSrc: "/location",
+        name: {
+            uz: "Filiallar joylashuvi",
+            ru: "Локации филиалов",
+            en: "Branch locations"
+        }
+    },
+];

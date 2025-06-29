@@ -18,7 +18,7 @@ import Cookies from 'js-cookie'
 const links = [
     {href: '/account', label: 'Account detail'},
     {href: '/account/favorite', label: 'My favorite'},
-    {href: '/account/order', label: 'Order'},
+    {href: '/account/order-schema', label: 'Order'},
     {href: '/account/change-password', label: 'Change password'},
     {href: '/account/change-email', label: 'Change email'},
 ]
