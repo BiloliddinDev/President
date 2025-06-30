@@ -1,6 +1,6 @@
 import {FC} from "react";
 import Image from "next/image";
-import {Carousel, CarouselContent, CarouselItem, CarouselNext,} from "@/components/ui/carousel";
+import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious,} from "@/components/ui/carousel";
 import CollectionImage from "@/public/images/colection-left.png";
 import {CollectionCard} from "@/components/shared/collection-card/collection-card";
 import {CollectionType} from "@/interface/collection-type/collection-type";
@@ -54,7 +54,9 @@ export const Collections: FC<CollectionsProps> = ({dictionary, lang}) => {
                     {/*<Button variant={"secondary"} className={"mt-16 w-full md:max-w-52"}>*/}
                     {/*    {dictionary.collections.newArrival}*/}
                     {/*</Button>*/}
-                    <SupportFormModal  lang={lang} btnText={dictionary.collections.newArrival}/>
+                    <SupportFormModal lang={lang} btnText={dictionary.collections.newArrival}/>
+                    <CarouselPrevious
+                        className="absolute right-[100px] top-1/2 -translate-y-1/2 translate-x-full z-40"/>
                     <CarouselNext className="absolute right-[100px] top-1/2 -translate-y-1/2 translate-x-full z-40"/>
                 </Carousel>
             </div>

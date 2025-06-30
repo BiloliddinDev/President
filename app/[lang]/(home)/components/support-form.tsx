@@ -10,7 +10,7 @@ import {createSupportSchema, type SupportFormValues} from "@/interface/support-s
 import {sendTelegramMessage} from "@/lib/send-telegram-message"
 import {toast} from "sonner"
 import Image from "next/image"
-import supportImage from "@/public/images/news2.png"
+import supportImage from "@/public/images/supportimage.jpg"
 
 interface SupportFormProps {
     dictionary: {

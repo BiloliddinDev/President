@@ -1,8 +1,18 @@
-// app/icons/icon-list.ts
-
 export const navbarLinks = [
-    {id: 1, name: "Shop"},
-    {id: 2, name: "Discover"},
+    {
+        id: 1, name: {
+            'en': "Shop",
+            'ru': 'Коллекции ',
+            "uz": "Kolleksiyalar"
+        }
+    },
+    {
+        id: 2, name: {
+            "en": "Discover",
+            "ru": "Узнать больше",
+            'uz': 'Ko\'proq bilish\n'
+        }
+    },
 ];
 
 

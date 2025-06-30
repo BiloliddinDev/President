@@ -1,13 +1,13 @@
 "use client"
 
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import {useForm} from "react-hook-form"
 import {zodResolver} from "@hookform/resolvers/zod"
 import {z} from "zod"
-import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger,} from "@/components/ui/dialog"
+import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from "@/components/ui/dialog"
 import {Input} from "@/components/ui/input"
 import {Button} from "@/components/ui/button"
-import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage,} from "@/components/ui/form"
+import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form"
 import {toast} from "sonner"
 import {sendTelegramMessage} from "@/lib/send-telegram-message"
 
@@ -16,6 +16,7 @@ type Lang = 'uz' | 'ru' | 'en'
 interface SupportFormModalProps {
     lang?: Lang
     btnText?: string
+    autoOpen?: boolean
 }
 
 const texts = {
@@ -31,6 +32,7 @@ const texts = {
         serverError: "Server xatosi",
         required: "Maydon to‘ldirilishi kerak",
         min: "Minimal uzunlik noto‘g‘ri",
+        description: "Mahsulotlarimiz haqida ko'proq bilmoqchimisiz?\nIsmingiz va telefon raqamingizni qoldiring, biz siz bilan bog'lanib, sizga xabar beramiz:"
     },
     ru: {
         title: "Отправить запрос",
@@ -44,6 +46,7 @@ const texts = {
         serverError: "Ошибка сервера",
         required: "Поле обязательно",
         min: "Минимальная длина недопустима",
+        description: "Хотите узнать больше о наших товарах?\nОставьте имя и номер телефона — и мы свяжемся с вами, чтобы рассказать:"
     },
     en: {
         title: "Send Request",
@@ -57,10 +60,15 @@ const texts = {
         serverError: "Server error",
         required: "This field is required",
         min: "Minimum length is invalid",
+        description: 'Want to know more about our products?\nLeave your name and phone number and we will contact you to tell you:'
     },
 }
 
-export function SupportFormModal({lang = 'uz', btnText = "So‘rov yuborish"}: SupportFormModalProps) {
+export function SupportFormModal({
+                                     lang = 'uz',
+                                     btnText = "So‘rov yuborish",
+                                     autoOpen = false
+                                 }: SupportFormModalProps) {
     const [open, setOpen] = useState(false)
     const t = texts[lang]
 
@@ -97,14 +105,30 @@ export function SupportFormModal({lang = 'uz', btnText = "So‘rov yuborish"}: S
         }
     }
 
+
+    useEffect(() => {
+        if (!autoOpen) return
+
+        const alreadyShown = sessionStorage.getItem("supportModalShown")
+        if (!alreadyShown) {
+            const timer = setTimeout(() => {
+                setOpen(true)
+                sessionStorage.setItem("supportModalShown", "true")
+            }, 15000)
+
+            return () => clearTimeout(timer)
+        }
+    }, [autoOpen])
+
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <Button variant={"secondary"}>{btnText}</Button>
+                <Button variant="secondary">{btnText}</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
                     <DialogTitle>{t.title}</DialogTitle>
+                    <p>{t.description}</p>
                 </DialogHeader>
 
                 <Form {...form}>
@@ -122,6 +146,7 @@ export function SupportFormModal({lang = 'uz', btnText = "So‘rov yuborish"}: S
                                 </FormItem>
                             )}
                         />
+
                         <FormField
                             control={form.control}
                             name="phone"

@@ -36,7 +36,7 @@ export const NewsCard: FC<{ newsItem: NewsCardProps, entitle: string, lang: "uz"
             {/*    passHref={true}*/}
             {/*    className={`self-stretch justify-start`}*/}
             {/*>*/}
-            <SupportFormModal lang={lang} btnText={entitle}/>
+            <SupportFormModal autoOpen lang={lang} btnText={entitle}/>
             {/*</Link>*/}
         </div>
     );
