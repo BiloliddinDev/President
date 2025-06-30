@@ -35,7 +35,7 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, l
                 >
                     {title}
 
-                    {(title === 'Shop' || title === 'Discover') && (
+                    {(sheetTitle === 'Shop' || sheetTitle === 'Discover') && (
                         <span
                             className={`w-1.5 h-1.5 rounded-full bg-black transition-opacity ${
                                 isOpen ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
@@ -57,7 +57,7 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, l
                         <div className={'flex flex-col justify-between h-full pb-5'}>
                             {children}
                             {
-                                title === "Shop" || title === "Discover" ? (
+                                sheetTitle === "Shop" || sheetTitle === "Discover" ? (
                                     <div>
                                         {navbarContent.map((item) => (
                                             <div

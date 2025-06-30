@@ -1,6 +1,4 @@
-import Link from "next/link";
-import {cn} from "@/lib/utils";
-import {buttonVariants} from "@/components/ui/button";
+import {Button} from "@/components/ui/button";
 
 export default function OrderSummary() {
     return (
@@ -30,10 +28,11 @@ export default function OrderSummary() {
                     <span>112 000 000 сум</span>
                 </div>
             </div>
-
-            <Link className={cn(buttonVariants({variant: 'default'}), 'w-full')} href={"/order"}>
+            
+            <Button variant={"default"} type="submit" className={'w-full'}
+            >
                 Перейти к оплату
-            </Link>
+            </Button>
 
             <div className="flex items-center gap-2 text-sm text-gray-600">
                 <span>Служба доставки в течение 2–3 дней.</span>

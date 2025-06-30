@@ -26,21 +26,21 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
                             key={link.id}
                             className={`text-primary !hover:text-zinc-300  text-2xl  font-bold leading-normal cursor-pointer transition-colors duration-200`}
                         >
-                            {["Shop", "Discover"].includes(link.name) ? (
+                            {["Shop", "Discover"].includes(link.name.en) ? (
                                 <NavbarModal
-                                    title={link.name}
+                                    title={link.name[lang]}
                                     side="left"
-                                    sheetTitle={link.name}
+                                    sheetTitle={link.name["en"]}
                                     lang={lang}
                                 >
-                                    {link.name === "Shop" ? (
+                                    {link.name.en === "Shop" ? (
                                         <ShopModalContent lang={lang}/>
                                     ) : (
                                         <DiscoverModalContent lang={lang}/>
                                     )}
                                 </NavbarModal>
                             ) : (
-                                link.name
+                                link.name.en
                             )}
                         </div>
                     ))}

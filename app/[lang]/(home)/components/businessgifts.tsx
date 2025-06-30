@@ -75,7 +75,7 @@ export default function BusinessGiftsCarousel({dictionary}: BusinessGiftsCarouse
                         {/*    </Button>*/}
                         {/*</Link>*/}
                         <div className="mb-10 md:mb-0 max-w-44 ">
-                            <SupportFormModal btnText={dictionary.corporategifts.btn}/>
+                            <SupportFormModal btnText={dictionary.corporategifts.btn} />
                         </div>
                     </div>
                 </div>
