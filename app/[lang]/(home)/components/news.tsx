@@ -1,4 +1,4 @@
-import {Carousel, CarouselContent, CarouselItem, CarouselNext,} from "@/components/ui/carousel";
+import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious,} from "@/components/ui/carousel";
 import {SectionTitle} from "@/components/ui/sectionTitle";
 import {NewsCard} from "@/components/shared/news-card/news-card";
 import {newsItem} from "@/constants/news-item";
@@ -34,11 +34,11 @@ export const News: FC<NewsProps> = ({dictionary, lang}) => {
                             key={newsItem.id}
                             style={{flex: "0 0 35%"}}
                         >
-                            <NewsCard  newsItem={newsItem} entitle={dictionary.news.newArrival} lang={lang}/>
+                            <NewsCard newsItem={newsItem} entitle={dictionary.news.newArrival} lang={lang}/>
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                {/*<CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full z-40" />*/}
+                <CarouselPrevious className="absolute left-[100px] top-1/2 -translate-y-1/2 -translate-x-full z-40"/>
                 <CarouselNext className="absolute right-[100px] top-1/2 -translate-y-1/2 translate-x-full z-40"/>
             </Carousel>
             {/*<div className={"container grid grid-cols-3 gap-5 !mt-20 gap-y-10"}>*/}
