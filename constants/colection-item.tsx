@@ -9,19 +9,19 @@ export const CollectionItem = [
     {
         id: 1,
         title: {
-            uz: "Hadya qutilari",
-            ru: "Подарочные наборы",
-            en: "Gift boxes",
+            "uz": "Soat UZB",
+            "ru": "Часы UZB",
+            "en": "UZB Watch"
         },
-        price: "250$",
+        price: "$450",
         image: CollectionImage1
     },
     {
         id: 2,
         title: {
-            uz: "Sovgʻa uchun suvenirlar",
-            ru: "Сувенирные подарки",
-            en: "Gift souvenirs",
+            "uz": "Sumka",
+            "ru": "Сумка",
+            "en": "Bag"
         },
         price: "360$",
         image: CollectionImage2
@@ -29,42 +29,42 @@ export const CollectionItem = [
     {
         id: 3,
         title: {
-            uz: "Papkalar va bloknotlar",
-            ru: "Папки и блокноты",
-            en: "Folders and notebooks",
+            "uz": "Klatch",
+            "ru": "Клатч",
+            "en": "Clutch"
         },
-        price: "$220",
+        price: "$140",
         image: CollectionImage3
     },
 
     {
         id: 4,
         title: {
-            uz: "Premium ruchkalar",
-            ru: "Премиальные ручки",
-            en: "Premium pens",
+            "uz": "Shaxmat jamlanmasi",
+            "ru": "Шахматный набор",
+            "en": "Chess set"
         },
-        price: "40$",
+        price: "$1200",
         image: CollectionImage4
     },
     {
         id: 5,
         title: {
-            uz: "Sumkalar va charm buyumlar",
-            ru: "Сумки и изделия из кожи",
-            en: "Bags and leather goods",
+            uz: "Yangi O'zbekiston plaketka",
+            ru: "Новая табличка Узбекистана",
+            en: "New Uzbekistan plaque",
         },
-        price: "$300.00",
+        price: "$220",
         image: CollectionImage5
     },
     {
         id: 6,
         title: {
-            uz: "Soatlar",
-            ru: "Часы",
-            en: "Watches",
+            uz: "Sherdor ramkasi ",
+            ru: "Рамка Шердора",
+            en: "Sherdor frame",
         },
-        price: "$300.00",
+        price: "$425",
         image: CollectionImage6
     },
 ]
