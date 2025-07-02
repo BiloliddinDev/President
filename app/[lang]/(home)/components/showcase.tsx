@@ -5,10 +5,10 @@ import {AnimatePresence, motion} from "framer-motion";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {imageLoader} from "@/lib/imageLoader";
-import img1 from "@/public/images/showcase4.png";
-import img2 from "@/public/images/showcase3.png";
+import img1 from "@/public/images/showcase4.jpg";
+import img2 from "@/public/images/showcase3.jpg";
 import img3 from "@/public/images/showcase2.png";
-import img4 from "@/public/images/showcase1.png";
+import img4 from "@/public/images/showcase1.jpg";
 import "@/app/globals.css";
 
 

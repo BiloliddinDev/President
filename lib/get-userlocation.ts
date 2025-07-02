@@ -15,6 +15,4 @@ export function InitGeoCookie() {
 
 export const defaultCountryList = [
     {id: 16, region: "Tashkent", country: "UZ"},
-    {id: 2, region: 'North America', country: 'US'},
-    {id: 3, region: 'Asia', country: 'CN'},
 ];
