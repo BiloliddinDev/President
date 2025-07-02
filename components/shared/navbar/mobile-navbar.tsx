@@ -8,7 +8,7 @@ import ShopModalContent from "@/components/shared/modalContents/shopModal";
 import DiscoverModalContent from "../modalContents/discoverModal";
 import ChangeLangModal from "../modalContents/changeLangModal";
 
-const MobileNavbar = () => {
+const MobileNavbar = ({lang} : {lang : "uz" | "ru" | "en"}) => {
     const [open, setOpen] = useState<boolean>(false);
     // const [searchInputOpen, setSearchInputOpen] = useState<boolean>(false);
 
@@ -71,7 +71,7 @@ const MobileNavbar = () => {
                             },
                         ]}
                     />
-                    <ChangeLangModal/>
+                    <ChangeLangModal lang={lang}/>
                 </div>
             )}
         </div>
