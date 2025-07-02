@@ -1,7 +1,7 @@
-import type { NextRequest } from "next/server";
-import { NextResponse } from "next/server";
-import { i18n, Locale } from "./lib/i18n-config";
-import { match as matchLocale } from "@formatjs/intl-localematcher";
+import type {NextRequest} from "next/server";
+import {NextResponse} from "next/server";
+import {i18n, Locale} from "./lib/i18n-config";
+import {match as matchLocale} from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
 function getLocale(request: NextRequest): Locale {
@@ -14,7 +14,7 @@ function getLocale(request: NextRequest): Locale {
     request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
     const locales = [...i18n.locales];
-    const languages = new Negotiator({ headers: negotiatorHeaders }).languages(locales);
+    const languages = new Negotiator({headers: negotiatorHeaders}).languages(locales);
 
     try {
         return matchLocale(languages, locales, i18n.defaultLocale) as Locale;
@@ -39,8 +39,18 @@ export async function middleware(request: NextRequest) {
 
     if (!isLocaleInPath) {
         const locale = getLocale(request);
-        const response = NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
+        const newPathname = pathname === "/" ? `/${locale}` : `/${locale}/create`;
+        const response = NextResponse.redirect(new URL(newPathname, request.url));
         response.cookies.set("lang", locale);
+        return response;
+    }
+
+    const isHomePage = segments.length === 2;
+    const isCreatePage = segments.length === 3 && segments[2] === 'create';
+
+    if (!isHomePage && !isCreatePage) {
+        const response = NextResponse.redirect(new URL(`/${firstSegment}/create`, request.url));
+        response.cookies.set("lang", firstSegment);
         return response;
     }
 
