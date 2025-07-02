@@ -88,7 +88,7 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
                     </Link>
                 </div>
             </div>
-            <MobileNavbar/>
+            <MobileNavbar lang={lang}/>
         </nav>
     );
 };
