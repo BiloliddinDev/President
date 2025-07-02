@@ -71,7 +71,7 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
                             </p>
                         }
                     >
-                        <ChangeLangModal/>
+                        <ChangeLangModal lang={lang} />
                     </NavbarModal>
 
                     <Link href={'/like'}>

@@ -1,4 +1,8 @@
 {
+  "navbar": {
+    "changelangg": "Tilni o'zgartirish",
+    "changelocale": "Boshqa joyni tanlang"
+  },
   "showcase": {
     "title": "Premium va eksklyuziv sovg'alar",
     "description": "Gerbli soatlar, charm buyumlar, aksessuarlar va milliy suvenirlar — cheklangan va brendlangan variantlarda",

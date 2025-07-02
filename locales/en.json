@@ -1,4 +1,8 @@
 {
+  "navbar": {
+    "changelangg": "Change language",
+    "changelocale": "Select another location"
+  },
   "showcase": {
     "title": "Premium and exclusive gifts",
     "description": "Heraldic watches, leather goods, accessories and national souvenirs — in limited and branded versions",
