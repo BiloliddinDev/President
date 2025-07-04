@@ -2,7 +2,7 @@ import {Button} from "@/components/ui/button";
 
 export default function OrderSummary() {
     return (
-        <div className="w-full max-w-sm border rounded-[4px] p-6 space-y-4 text-gray-800">
+        <div className="w-full max-w-sm h-[340px] border rounded-[4px] p-6 space-y-4 text-gray-800">
             <h2 className="text-lg font-semibold">Детали вашего заказа</h2>
 
             <div className="space-y-2">

@@ -1,13 +1,33 @@
 "use client";
 
+import {useState} from "react";
 import {useFormContext} from "react-hook-form";
-import {FormControl, FormField, FormItem, FormLabel, FormMessage,} from "@/components/ui/form";
+import {FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import {Input} from "@/components/ui/input";
-import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger,} from "@/components/ui/dialog";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog";
 import {Button} from "@/components/ui/button";
+import dynamic from "next/dynamic";
+
+const LeafletMap = dynamic(() => import("./map-modal"), {ssr: false});
 
 const AddressForm = () => {
-    const {control} = useFormContext();
+    const {control, setValue, getValues} = useFormContext();
+    const [isOpen, setIsOpen] = useState(false);
+    const [tempPosition, setTempPosition] = useState(getValues("address.location"));
+
+    const handleSave = () => {
+        if (tempPosition) {
+            setValue("address.location", tempPosition);
+            setIsOpen(false); 
+        }
+    };
 
     return (
         <div className="p-6 rounded-[4px] border">
@@ -18,7 +38,7 @@ const AddressForm = () => {
             <div className="space-y-5">
                 <FormField
                     control={control}
-                    name="address"
+                    name="address.text"
                     render={({field}) => (
                         <FormItem>
                             <FormLabel className="text-sm">Куда доставить заказ?</FormLabel>
@@ -33,7 +53,7 @@ const AddressForm = () => {
                     )}
                 />
 
-                <Dialog>
+                <Dialog open={isOpen} onOpenChange={setIsOpen}>
                     <DialogTrigger asChild>
                         <Button type="button" variant="outline" className="w-full">
                             Обозначение по карте
@@ -42,10 +62,20 @@ const AddressForm = () => {
                     <DialogContent className="max-w-4xl">
                         <DialogHeader>
                             <DialogTitle>Выберите точку на карте</DialogTitle>
+                            <DialogDescription>
+                                Нажмите на нужное место на карте для выбора адреса.
+                            </DialogDescription>
                         </DialogHeader>
-                        <div
-                            className="w-full h-[400px] bg-gray-100 rounded-md flex items-center justify-center text-muted-foreground">
-                            Тут будет карта
+
+                        <LeafletMap 
+                            position={tempPosition} 
+                            setPosition={setTempPosition}
+                        />
+
+                        <div className="flex justify-end pt-4">
+                            <Button onClick={handleSave} type="button">
+                                Save Location
+                            </Button>
                         </div>
                     </DialogContent>
                 </Dialog>

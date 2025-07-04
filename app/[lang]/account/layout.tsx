@@ -18,7 +18,7 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
                 <SectionTitle className={"mt-10 mb-20"} text={"My account"}/>
             </div>
             <div className={'bg-neutral-100 py-10'}>
-                <div className={"flex container gap-25"}>
+                <div className={"flex flex-col md:flex-row container gap-25"}>
                     <AccountSidebar lang={lang}/>
                     <div className={"w-full"}>{children}</div>
                 </div>

@@ -10,8 +10,9 @@ import DiscoverModalContent from "../modalContents/discoverModal";
 import ChangeLangModal from "../modalContents/changeLangModal";
 import SearchModal from "@/components/shared/search-modal";
 import SearchModalData from "@/components/shared/modalContents/searchModal";
-import {Heart, Search, ShoppingCart, User} from "lucide-react";
+import {Heart, Search, ShoppingCart} from "lucide-react";
 import MobileNavbar from "./mobile-navbar";
+import UserDropdown from "@/components/shared/user-dropdown/user-dropdown";
 
 export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
 
@@ -71,7 +72,7 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
                             </p>
                         }
                     >
-                        <ChangeLangModal lang={lang} />
+                        <ChangeLangModal lang={lang}/>
                     </NavbarModal>
 
                     <Link href={'/like'}>
@@ -82,10 +83,7 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
                         <ShoppingCart width={24} height={24}
                                       className="text-primary !hover:text-zinc-300 duration-200"/>
                     </Link>
-                    <Link href={"/auth/sign-in"}>
-                        <User width={24} height={24} className="text-primary !hover:text-zinc-300 duration-200"/>
-
-                    </Link>
+                    <UserDropdown/>
                 </div>
             </div>
             <MobileNavbar lang={lang}/>

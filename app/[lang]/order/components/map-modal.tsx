@@ -1,79 +1,53 @@
-// "use client";
-//
-// import {Dialog, DialogContent, DialogHeader, DialogTitle} from "@/components/ui/dialog";
-// import {useEffect, useRef, useState} from "react";
-// import {MapContainer, Marker, TileLayer, useMapEvents} from "react-leaflet";
-// import L from "leaflet";
-// import "leaflet/dist/leaflet.css";
-//
-// const markerIcon = new L.Icon({
-//     iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-//     iconSize: [25, 41],
-//     iconAnchor: [12, 41],
-// });
-//
-// function LocationSelector({onSelect}: { onSelect: (lat: number, lng: number) => void }) {
-//     useMapEvents({
-//         click(e) {
-//             onSelect(e.latlng.lat, e.latlng.lng);
-//         },
-//     });
-//     return null;
-// }
-//
-// export function MapModal({
-//                              open,
-//                              setOpen,
-//                              onLocationSelect,
-//                          }: {
-//     open: boolean;
-//     setOpen: (val: boolean) => void;
-//     onLocationSelect: (lat: number, lng: number) => void;
-// }) {
-//     const [marker, setMarker] = useState<{ lat: number; lng: number } | null>(null);
-//     const mapRef = useRef<any>(null);
-//
-//     const handleSelect = (lat: number, lng: number) => {
-//         setMarker({lat, lng});
-//         onLocationSelect(lat, lng);
-//         setOpen(false);
-//     };
-//
-//     // Bu useEffect modal ochilgandan keyin Leafletga "resize" signal yuboradi
-//     useEffect(() => {
-//         if (open && mapRef.current) {
-//             setTimeout(() => {
-//                 mapRef.current.invalidateSize();
-//             }, 200); // biroz kutib, modal ochilganidan keyin
-//         }
-//     }, [open]);
-//
-//     return (
-//         <Dialog open={open} onOpenChange={setOpen}>
-//             <DialogContent className="p-0 overflow-hidden max-w-4xl w-full h-[600px] flex flex-col">
-//                 <DialogHeader className="p-4 border-b">
-//                     <DialogTitle>Выберите местоположение</DialogTitle>
-//                 </DialogHeader>
-//
-//                 <div className="flex-1 relative">
-//                     <MapContainer
-//                         center={[41.3111, 69.2797]}
-//                         zoom={13}
-//                         scrollWheelZoom={true}
-//                         className="h-full w-full z-0"
-//                         whenCreated={(mapInstance) => {
-//                             mapRef.current = mapInstance;
-//                         }}
-//                     >
-//                         <TileLayer
-//                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
-//                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-//                         />
-//                         <LocationSelector onSelect={handleSelect}/>
-//                         {marker && <Marker position={[marker.lat, marker.lng]} icon={markerIcon}/>}
-//                     </MapContainer>
-//                 </div>
-//             </DialogContent>
-//         </Dialog>
-//     );
-// }
+"use client";
+
+import {MapContainer, Marker, TileLayer, useMapEvents} from "react-leaflet";
+import L, {LatLng} from "leaflet";
+import "leaflet/dist/leaflet.css";
+import Logo from "@/public/svg/PresidentLogo.svg";
+
+const customIcon = L.icon({
+    iconUrl: Logo.src,
+    iconSize: [30, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [0, -30],
+});
+
+
+const LocationSelector = ({onSelect}: { onSelect: (pos: LatLng) => void }) => {
+    useMapEvents({
+        click(e) {
+            onSelect(e.latlng);
+        },
+    });
+    return null;
+};
+
+const LeafletMap = ({position, setPosition,}: {
+    position: { lat: number; lng: number } | null;
+    setPosition: (pos: { lat: number; lng: number }) => void;
+}) => {
+    const defaultCenter = {
+        lat: 41.311081,
+        lng: 69.240562,
+    };
+
+    return (
+        <div className="h-[400px] w-full">
+            <MapContainer
+                center={position || defaultCenter}
+                zoom={13}
+                scrollWheelZoom
+                style={{height: "100%", width: "100%"}}
+            >
+                <TileLayer
+                    attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <LocationSelector onSelect={setPosition}/>
+                {position && <Marker position={position} icon={customIcon}/>}
+            </MapContainer>
+        </div>
+    );
+};
+
+export default LeafletMap;

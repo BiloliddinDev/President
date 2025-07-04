@@ -23,9 +23,8 @@ export default function ChangePasswordPage() {
     };
 
     return (
-        <div className="container max-w-2xl">
+        <div className={"w-full md:max-w-[500px]"}>
             <AccountTitle text="Change Password"/>
-
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 mt-7">
                     <FormField

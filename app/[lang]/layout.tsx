@@ -9,6 +9,7 @@ import {InitGeoCookie} from "@/lib/get-userlocation";
 import {Toaster} from "@/components/ui/sonner";
 import AuthSessionProvider from "@/provider/auth-session-provider";
 import Script from "next/script";
+import Image from "next/image";
 
 const microsoftHimalaya = localFont({
     src: "../fonts/microsoft-himalaya.ttf",
@@ -117,7 +118,7 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
 
         {/* Facebook Pixel (noscript) */}
         <noscript>
-            <img
+            <Image
                 height="1"
                 width="1"
                 style={{display: 'none'}}
@@ -129,7 +130,7 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
         {/* Yandex Metrika (noscript) */}
         <noscript>
             <div>
-                <img
+                <Image
                     src="https://mc.yandex.ru/watch/103167645"
                     style={{position: 'absolute', left: '-9999px'}}
                     alt=""

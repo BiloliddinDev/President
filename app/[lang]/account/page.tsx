@@ -25,10 +25,10 @@ export default function AccountPage() {
         console.log("Login data:", data)
     }
     return (
-        <div className={""}>
+        <div className={"w-full md:max-w-[500px]"}>
             <AccountTitle text={"Account detail"}/>
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className={"space-y-4 w-[500px] mt-7"}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className={"space-y-4  mt-7"}>
                     <FormField
                         control={form.control}
                         name="name"

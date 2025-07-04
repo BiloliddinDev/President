@@ -12,6 +12,7 @@ import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/
 import {RegisterSchema} from "@/interface/auth-schema/register-schema"
 import Image from "next/image";
 import Google from "@/public/svg/googole.svg";
+import {signIn} from "next-auth/react";
 
 
 type RegisterFormValues = z.infer<typeof RegisterSchema>
@@ -129,7 +130,8 @@ export default function RegisterForm() {
                             )}
                         />
                         <Button type="submit" className="w-full">Sign in</Button>
-                        <Button variant="outline" className="w-full flex items-center justify-center gap-2">
+                        <Button onClick={() => signIn("google", {callbackUrl: "/"})} variant="outline"
+                                className="w-full flex items-center justify-center gap-2">
                             <Image src={Google} alt={"Google Logo"} width={20} height={20} className="size-4"/>
                             Continue with Google
                         </Button>
