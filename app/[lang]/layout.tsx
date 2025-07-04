@@ -1,15 +1,14 @@
 import "../globals.css";
-import React, {Suspense} from "react";
-import {Metadata} from "next";
-import {LoadingComponent} from "@/components/shared/loading-component/loading-component";
-import {Footer} from "@/components/shared/footer/footer";
-import {Navbar} from "@/components/shared/navbar/navbar";
+import React, { Suspense } from "react";
+import { Metadata } from "next";
+import { LoadingComponent } from "@/components/shared/loading-component/loading-component";
+import { Footer } from "@/components/shared/footer/footer";
+import { Navbar } from "@/components/shared/navbar/navbar";
 import localFont from "next/font/local";
-import {InitGeoCookie} from "@/lib/get-userlocation";
-import {Toaster} from "@/components/ui/sonner";
+import { InitGeoCookie } from "@/lib/get-userlocation";
+import { Toaster } from "@/components/ui/sonner";
 import AuthSessionProvider from "@/provider/auth-session-provider";
 import Script from "next/script";
-import Image from "next/image";
 
 const microsoftHimalaya = localFont({
     src: "../fonts/microsoft-himalaya.ttf",
@@ -41,19 +40,19 @@ export const metadata: Metadata = {
     },
 };
 
-export default async function RootLayout({children, params}: RootLayoutProps) {
+export default async function RootLayout({ children, params }: RootLayoutProps) {
     const language: { lang: "en" | "ru" | "uz" } = await params;
 
     return (
         <html suppressHydrationWarning={true} lang={language.lang}>
         <head>
             {/* Favicon & Metadata */}
-            <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"/>
-            <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-            <link rel="shortcut icon" href="/favicon.ico"/>
-            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-            <meta name="apple-mobile-web-app-title" content="President"/>
-            <link rel="manifest" href="/site.webmanifest"/>
+            <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+            <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+            <link rel="shortcut icon" href="/favicon.ico" />
+            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+            <meta name="apple-mobile-web-app-title" content="President" />
+            <link rel="manifest" href="/site.webmanifest" />
             <title>President</title>
 
             {/* Google Tag Manager */}
@@ -106,48 +105,45 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
         </head>
 
         <body className={`${microsoftHimalaya.className} ${manropeFont.className}`}>
-        {/* Google Tag Manager (noscript) */}
         <noscript>
             <iframe
                 src="https://www.googletagmanager.com/ns.html?id=GTM-M29WJW77"
                 height="0"
                 width="0"
-                style={{display: 'none', visibility: 'hidden'}}
+                style={{ display: 'none', visibility: 'hidden' }}
             ></iframe>
         </noscript>
 
-        {/* Facebook Pixel (noscript) */}
         <noscript>
-            <Image
+            <img
                 height="1"
                 width="1"
-                style={{display: 'none'}}
+                style={{ display: 'none' }}
                 src="https://www.facebook.com/tr?id=2145985465879209&ev=PageView&noscript=1"
                 alt=""
             />
         </noscript>
 
-        {/* Yandex Metrika (noscript) */}
         <noscript>
             <div>
-                <Image
+                <img
                     src="https://mc.yandex.ru/watch/103167645"
-                    style={{position: 'absolute', left: '-9999px'}}
+                    style={{ position: 'absolute', left: '-9999px' }}
                     alt=""
                 />
             </div>
         </noscript>
 
         <AuthSessionProvider>
-            <Suspense fallback={<LoadingComponent/>}>
+            <Suspense fallback={<LoadingComponent />}>
                 <header>
-                    <Navbar lang={language.lang}/>
+                    <Navbar lang={language.lang} />
                 </header>
                 <main>{children}</main>
-                <Footer lang={language.lang}/>
-                <Toaster/>
+                <Footer lang={language.lang} />
+                <Toaster />
             </Suspense>
-            <InitGeoCookie/>
+            <InitGeoCookie />
         </AuthSessionProvider>
         </body>
         </html>

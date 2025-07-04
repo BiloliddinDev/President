@@ -12,7 +12,7 @@ import Link from "next/link"
 import Google from "@/public/svg/googole.svg"
 import {LoginSchema} from "@/interface/auth-schema/login-schema";
 import Image from "next/image";
-import {signIn} from "next-auth/react";
+import { signIn } from "next-auth/react";
 
 
 type LoginFormValues = z.infer<typeof LoginSchema>
