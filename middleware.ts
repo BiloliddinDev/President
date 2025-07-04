@@ -39,8 +39,18 @@ export async function middleware(request: NextRequest) {
 
     if (!isLocaleInPath) {
         const locale = getLocale(request);
-        const response = NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
+        const newPathname = pathname === "/" ? `/${locale}` : `/${locale}/create`;
+        const response = NextResponse.redirect(new URL(newPathname, request.url));
         response.cookies.set("lang", locale);
+        return response;
+    }
+
+    const isHomePage = segments.length === 2;
+    const isCreatePage = segments.length === 3 && segments[2] === 'create';
+
+    if (!isHomePage && !isCreatePage) {
+        const response = NextResponse.redirect(new URL(`/${firstSegment}/create`, request.url));
+        response.cookies.set("lang", firstSegment);
         return response;
     }
 
