@@ -1,11 +1,15 @@
-// next.config.js
-
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'standalone',
-    turbopack: {
-       
+    experimental: {
+        appDir: true,
     },
-}
+    output: 'standalone',
+    images: {
+        domains: [
+            "www.facebook.com",
+            "mc.yandex.ru",
+        ],
+    },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
