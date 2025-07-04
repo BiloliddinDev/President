@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
 import Link from 'next/link'
-import {usePathname, useRouter} from 'next/navigation'
+import {usePathname} from 'next/navigation'
 import clsx from 'clsx'
 import {useState} from 'react'
 import {
@@ -13,37 +13,34 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
-import Cookies from 'js-cookie'
+import {signOut} from "next-auth/react"
 
 const links = [
     {href: '/account', label: 'Account detail'},
     {href: '/account/favorite', label: 'My favorite'},
-    {href: '/account/order-schema', label: 'Order'},
+    {href: '/account/order', label: 'Order'},
     {href: '/account/change-password', label: 'Change password'},
     {href: '/account/change-email', label: 'Change email'},
 ]
 
 export default function AccountSidebar({lang}: { lang: string | undefined }) {
     const pathname = usePathname()
-    const router = useRouter()
     const [showLogoutModal, setShowLogoutModal] = useState(false)
     const normalizedPathname = pathname?.replace(`/${lang}`, '') || ''
 
     const handleLogout = () => {
-        Cookies.remove('token')
-        Cookies.remove('user')
-        router.push('/')
+        signOut({callbackUrl: '/'})
     }
 
     return (
         <>
-            <div className="w-full max-w-[200px] flex flex-col gap-2">
+            <div className="w-full md:max-w-[200px] flex md:flex-col gap-2 overflow-x-auto whitespace-nowrap">
                 {links.map((link) => (
                     <Link
                         key={link.href}
                         href={pathname?.startsWith('/ru') ? `/ru${link.href}` : link.href}
                         className={clsx(
-                            'px-4 py-2 rounded-md text-sm font-medium',
+                            'px-4 py-2 rounded-md text-sm font-medium min-w-max',
                             normalizedPathname === link.href
                                 ? 'bg-gray-200 text-black'
                                 : 'text-gray-600 hover:bg-gray-100'

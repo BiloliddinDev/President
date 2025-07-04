@@ -12,6 +12,8 @@ import Link from "next/link"
 import Google from "@/public/svg/googole.svg"
 import {LoginSchema} from "@/interface/auth-schema/login-schema";
 import Image from "next/image";
+import {signIn} from "next-auth/react";
+
 
 type LoginFormValues = z.infer<typeof LoginSchema>
 
@@ -88,8 +90,13 @@ export default function LoginForm() {
                         <Button type="submit" variant={"default"} className={"w-full"}>
                             Login
                         </Button>
-                        <Button variant="outline" className="w-full flex items-center justify-center gap-2">
-                            <Image src={Google} alt={"Google Logo"} width={20} height={20} className="size-4"/>
+                        <Button
+                            variant="outline"
+                            type="button"
+                            onClick={() => signIn("google", {callbackUrl: "/"})}
+                            className="w-full flex items-center justify-center gap-2"
+                        >
+                            <Image src={Google} alt="Google Logo" width={20} height={20} className="size-4"/>
                             Continue with Google
                         </Button>
                         <p className="text-center text-sm text-gray-500">

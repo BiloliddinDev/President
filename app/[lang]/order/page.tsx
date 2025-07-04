@@ -6,15 +6,54 @@ import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcru
 import AddressForm from "@/app/[lang]/order/components/delivery-method";
 import OrderSummary from "@/app/[lang]/order/components/order-summary";
 import {OrderFormData, OrderSchema} from "@/interface/order-schema/order-schema";
+import CheckoutForm from "@/app/[lang]/order/components/checkout-form";
+import OrderedProducts from "@/app/[lang]/order/components/order-produc-list";
+import ProductImage from "@/public/images/b2b-image.png"
+import ProductImage2 from '@/public/images/colection-item1.png'
 
 
 export default function OrderPage() {
+
+
     const methods = useForm<OrderFormData>({
         resolver: zodResolver(OrderSchema),
         defaultValues: {
-            address: "",
+            address: {
+                text: "",
+                location: {
+                    lat: 41.3,
+                    lng: 69.2,
+                },
+            },
+            userInformation: {
+                name: "",
+                secondname: "",
+                phone: "",
+                secondPhone: "",
+            },
         }
     });
+
+
+    const products = [
+        {
+            id: "1",
+            title: "Кеды мужские adidas Breaknet 2.0",
+            article: "ID0443A01--10--",
+            description: "Чёрный, 32” дюм",
+            price: 12000000,
+            image: ProductImage
+        },
+        {
+            id: "2",
+            title: "Кеды мужские adidas Breaknet 2.0",
+            article: "ID0443A01--10--",
+            description: "Чёрный, 32” дюм",
+            price: 12000000,
+            image: ProductImage2
+        },
+    ];
+
 
     const onSubmit = (data: OrderFormData) => {
         console.log('All form data:', data);
@@ -36,6 +75,9 @@ export default function OrderPage() {
                     <div className="container flex justify-between gap-10 !mt-5">
                         <div className={'w-full'}>
                             <AddressForm/>
+                            <OrderedProducts products={products}/>
+                            <CheckoutForm/>
+
                         </div>
                         <OrderSummary/>
                     </div>

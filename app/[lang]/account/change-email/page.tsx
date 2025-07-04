@@ -28,7 +28,7 @@ export default function ChangeEmailPage() {
     };
 
     return (
-        <div className="container max-w-2xl">
+        <div className={"w-full md:max-w-[500px]"}>
             <AccountTitle text="Change Email"/>
 
             <Form {...form}>
