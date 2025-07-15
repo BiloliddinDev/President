@@ -13,12 +13,35 @@ import SearchModalData from "@/components/shared/modalContents/searchModal";
 import {Heart, Search, ShoppingCart} from "lucide-react";
 import MobileNavbar from "./mobile-navbar";
 import UserDropdown from "@/components/shared/user-dropdown/user-dropdown";
+import {useEffect, useState} from "react";
+import {getAllLanguage} from "@/service/navbar-service/lang.service";
+import {CountryType, LanguageType} from "@/interface/language&country-type/language-type";
+import {getAllCountry} from "@/service/navbar-service/country.service";
+import Cookies from "js-cookie";
 
 export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
+    const [languages, setLanguages] = useState<LanguageType[]>([]);
+    const [county, setCountry] = useState<CountryType[]>([]);
+    const cookiescountry = Cookies.get('country')
+
+    useEffect(() => {
+        const fetchLang = async () => {
+            const data = await getAllLanguage();
+            setLanguages(data);
+        };
+        fetchLang().then().catch().finally();
+
+        const fetchCounty = async () => {
+            const data = await getAllCountry();
+            setCountry(data);
+        };
+        fetchCounty().then().catch().finally();
+    }, [cookiescountry]);
+
 
     return (
         <nav
-            className={`fixed top-0 l-0 w-full md:p-3 z-60 transition-colors duration-300 bg-neutral-100 shadow`}
+            className={`fixed top-0 left-0 w-full md:p-3 z-60 transition-colors duration-300 bg-neutral-100 shadow`}
         >
             <div className="container hidden md:flex justify-between items-center">
                 <div className="flex items-center gap-14">
@@ -72,7 +95,7 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
                             </p>
                         }
                     >
-                        <ChangeLangModal lang={lang}/>
+                        <ChangeLangModal lang={lang} languages={languages} county={county}/>
                     </NavbarModal>
 
                     <Link href={'/like'}>

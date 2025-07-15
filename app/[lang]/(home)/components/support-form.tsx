@@ -52,26 +52,44 @@ export const SupportForm = ({dictionary}: SupportFormProps) => {
             phone: "",
         },
     })
-    
-    
-        
+
+
+
 
     const onSubmit = async (data: SupportFormValues) => {
         try {
             const success = await sendTelegramMessage({
                 type: "Support",
                 fields: data,
-            })
+            });
+
+            const crmRes = await fetch('/api/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: data.username,
+                    phone: data.phone,
+                }),
+            });
+
+            const crmData = await crmRes.json();
+
+            if (!crmRes.ok || !crmData.success) {
+                throw new Error(crmData.message || 'AmoCRMga yuborishda xatolik');
+            }
 
             if (success) {
-                toast.success(dictionary.support.messages.success)
-                form.reset()
+                toast.success(dictionary.support.messages.success);
+                form.reset();
             } else {
-                toast.error(dictionary.support.messages.error)
+                toast.error(dictionary.support.messages.error);
             }
+
         } catch (error) {
-            console.error("Form submission error:", error)
-            toast.error(dictionary.support.messages.serverError)
+            console.error("Form submission error:", error);
+            toast.error(dictionary.support.messages.serverError);
         }
     }
 
