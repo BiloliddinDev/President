@@ -11,7 +11,7 @@ interface NewsProps {
             newArrival: string;
         };
     };
-    lang: "uz" | "ru" | "en";
+    lang: "uz" | "ru" | "en" 
 }
 
 

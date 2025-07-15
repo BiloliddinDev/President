@@ -1,0 +1,83 @@
+{
+  "navbar": {
+    "changelangg": "Dili dəyiş",
+    "changelocale": "Başqa yer seçin"
+  },
+  "showcase": {
+    "title": "Premium və eksklüziv hədiyyələr",
+    "description": "Heraldik saatlar, dəri məmulatları, aksesuarlar və milli suvenirlər — məhdud və markalı versiyalarda",
+    "button": "Sorğu göndər"
+  },
+  "news": {
+    "title": "Assortiment",
+    "newArrival": "tezliklə"
+  },
+  "about": {
+    "title": "Haqqımızda",
+    "subtitle": "President Business Gifts — sizin yerinizə danışan hədiyyələr",
+    "description": "Demək olar ki, 10 ildir ki, biz statusu, hörməti və zövqü ifadə edən hədiyyələr yaradırıq. Bizim assortimentdə biznesmenlər, rəhbərlər, tərəfdaşlar və dəyərli əməkdaşlar üçün hər şey var: eksklüziv VIP dəstlərdən tutmuş bütün komanda üçün korporativ həllərə qədər. Bunlar sadəcə hədiyyə deyil — bunlar yadda qalan diqqət simvollarıdır.",
+    "imageAlt": "President Business Gifts sadəcə premium hədiyyə brendi deyil"
+  },
+  "category": {
+    "title": "Kateqoriyalar"
+  },
+  "collections": {
+    "title": "Kolleksiyalar",
+    "newArrival": "tezliklə"
+  },
+  "productVideos": {
+    "title": "Məhsul videoları"
+  },
+  "support": {
+    "title": "Sorğu göndərin",
+    "supportform": "Menecerimiz sizə zəng edəcək və məhsullarımızı ətraflı izah edəcək",
+    "form": {
+      "name": {
+        "label": "Ad",
+        "placeholder": "Adınızı daxil edin"
+      },
+      "phone": {
+        "label": "Telefon nömrəsi",
+        "placeholder": "Telefon nömrənizi daxil edin"
+      },
+      "submit": "Sorğu göndər"
+    },
+    "messages": {
+      "required": "Bu sahə mütləq doldurulmalıdır",
+      "min": "Ən azı {min} simvol olmalıdır",
+      "max": "Ən çox {max} simvol olmalıdır",
+      "invalid": "Yanlış format",
+      "success": "✅ Mesajınız uğurla göndərildi!",
+      "error": "❌ Mesaj göndərilə bilmədi. Zəhmət olmasa, yenidən cəhd edin.",
+      "serverError": "⚠️ Xəta baş verdi. Zəhmət olmasa, sonra yenidən cəhd edin!"
+    }
+  },
+  "corporategifts": {
+    "title": "Korporativ hədiyyələr",
+    "text": "Biz həmçinin loqotipinizlə korporativ hədiyyələr — saatlar, dəri dəstləri, qeyd dəftərləri, qələmlər və digər suvenirlər təqdim edirik. Artıq banklar, şirkətlər və dövlət təşkilatları ilə əməkdaşlıq etmişik — onların ehtiyaclarına uyğun hədiyyələr seçir, tam brendləmə və qablaşdırma edirik",
+    "btn": "Daha ətraflı"
+  },
+  "location": {
+    "title": "Filiallar",
+    "text": "Ünvanlar"
+  },
+  "footer": {
+    "footerDescription": "President Business Gifts sadəcə bir brend deyil. Bu, diqqət və nüfuzu əks etdirən hədiyyəvermə sənətidir. Hər bir məhsul status və detallara hörmətin simvoludur.",
+    "signUp": "Abunə ol",
+    "support": "DƏSTƏK",
+    "company": "ŞİRKƏT",
+    "newProducts": "Yeni məhsullar",
+    "acceptedPayments": "QƏBUL OLUNAN ÖDƏMƏLƏR",
+    "socialMedia": "SOSİAL ŞƏBƏKƏLƏR",
+    "copyright": "© 2025 President Business Gifts. Bütün hüquqlar qorunur."
+  },
+  "createpage": {
+    "title": "Tezliklə",
+    "description": "Sizin üçün qeyri-adi bir şey hazırlayırıq. Saytımızın tam versiyası tezliklə istifadəyə veriləcək.",
+    "returnMessage": "Hələlik ana səhifəmizə qayıdın.",
+    "buttonText": "Ana səhifəyə keç"
+  }
+}
+
+
+

@@ -1,51 +1,65 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { i18n } from "@/lib/i18n-config";
-import { useEffect, useState } from "react";
+import {usePathname} from "next/navigation";
+import {useEffect, useState} from "react";
 import Cookies from "js-cookie";
-import { Check } from "lucide-react";
+import {Check} from "lucide-react";
+import {LanguageType} from "@/interface/language&country-type/language-type";
 
-export default function LocaleSwitcher() {
-  const pathName = usePathname();
-  const [activeLocale, setActiveLocale] = useState<string>();
+interface Props {
+    languages: LanguageType[];
+}
 
-  const saveLang = async (lang: "uz" | "ru" | "en") => {
-    Cookies.set("NEXT_LOCALE", lang, { expires: 365 });
-    setActiveLocale(lang);
-  };
+export default function LocaleSwitcher({languages}: Props) {
+    const pathName = usePathname();
+    const [activeLocale, setActiveLocale] = useState<string>("");
 
-  const redirectedPathName = (locale: string) => {
-    if (!pathName) return "/";
-    const segments = pathName.split("/");
-    segments[1] = locale;
-    return segments.join("/");
-  };
+    const normalizedLanguages = languages.map((lang) => ({
+        ...lang,
+        code: lang.code.toLowerCase(),
+    }));
 
-  useEffect(() => {
-    const segments = pathName.split("/");
-    if (segments[1] === "uz" || segments[1] === "ru" || segments[1] === "en") {
-      setActiveLocale(segments[1]);
-    }
-  }, [pathName]);
+    useEffect(() => {
+        const cookieLocale = Cookies.get("lang")?.toLowerCase();
+        if (cookieLocale && ["uz", "ru", "en", 'tj', 'az'].includes(cookieLocale)) {
+            
+            setActiveLocale(cookieLocale);
+            
+        } else {
+            const segments = pathName.split("/");
+            const urlLocale = segments[1]?.toLowerCase();
+            if (["uz", "ru", "en", "tj", "az"].includes(urlLocale)) {
+                setActiveLocale(urlLocale);
+                Cookies.set("lang", urlLocale, {expires: 365});
+            }
+        }
+    }, [pathName]);
 
-  const handleLocaleChange = async (locale: "uz" | "ru" | "en") => {
-    await saveLang(locale);
-    window.location.href = redirectedPathName(locale);
-  };
+    const redirectedPathName = (locale: string) => {
+        const segments: string[] = pathName.split("/");
+        segments[1] = locale;
+        return segments.join("/");
+    };
 
-  return (
-    <ul className="flex flex-col w-full gap-7">
-      {i18n.locales.map((locale) => (
-        <li
-          key={locale}
-          onClick={() => handleLocaleChange(locale)}
-          className="text-primary px-4 md:px-0 md:w-[220px] text-base font-normal leading-normal flex items-center justify-between cursor-pointer"
-        >
-          {locale.toUpperCase()}
-          <span>{activeLocale === locale && <Check />}</span>
-        </li>
-      ))}
-    </ul>
-  );
+    const handleLocaleChange = (locale: string) => {
+        const lower = locale.toLowerCase();
+        Cookies.set("lang", lower, {expires: 365});
+        setActiveLocale(lower);
+        window.location.href = redirectedPathName(lower);
+    };
+
+    return (
+        <ul className="flex flex-col w-full gap-7">
+            {normalizedLanguages.map((lang) => (
+                <li
+                    key={lang.code}
+                    onClick={() => handleLocaleChange(lang.code)}
+                    className="text-primary px-4 md:px-0 md:w-[220px] text-base font-normal leading-normal flex items-center justify-between cursor-pointer hover:text-zinc-500 transition"
+                >
+                    {lang.name} ({lang.code})
+                    <span>{activeLocale === lang.code && <Check size={18}/>}</span>
+                </li>
+            ))}
+        </ul>
+    );
 }

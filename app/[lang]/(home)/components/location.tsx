@@ -1,9 +1,11 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {SectionTitle} from "@/components/ui/sectionTitle";
 import IconComponent from "@/components/icon/icon-view";
+import {getAllLanguage} from "@/service/navbar-service/lang.service";
+import {getAllCountry} from "@/service/navbar-service/country.service";
 
 const MapComponent = dynamic(
     () => import("@/components/shared/map-component/map-component"),
@@ -62,6 +64,14 @@ export default function LocationPage({dictionary, lang}: LocationProps) {
         setSelectedPosition([lat, lng]);
     };
 
+    // useEffect(() => {
+    //     const fetchLocation = async () => {
+    //         const data = await getLocation();
+    //         setCountry(data);
+    //     };
+    //     fetchLocation().then().catch().finally();
+    // }, []);
+    
     return (
         <div className="w-full h-auto flex flex-col gap-4 overflow-x-hidden container">
             <div className="w-full max-w-[1200px] m-auto ">
@@ -69,7 +79,7 @@ export default function LocationPage({dictionary, lang}: LocationProps) {
             </div>
 
             <div className="w-full max-w-[1200px] h-[400px] m-auto rounded-md overflow-hidden">
-                <MapComponent lang={lang} selectedPosition={selectedPosition} />
+                <MapComponent lang={lang} selectedPosition={selectedPosition}/>
             </div>
 
             <div className="w-full max-w-[1200px] m-auto mt-3 flex flex-col gap-[20px]">
