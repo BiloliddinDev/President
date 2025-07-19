@@ -8,9 +8,9 @@ interface CountryCookie {
     code: string;
 }
 
-export const getLocation = async () => {
+export const getCategoryModal = async () => {
     const countryString = Cookies.get("country");
-    const langString = Cookies.get("lang");
+    const langString = Cookies.get("lang")?.toUpperCase();
     let countryCode = null;
 
     if (countryString) {
@@ -23,8 +23,9 @@ export const getLocation = async () => {
     }
 
     if (countryCode) {
-        return fetcherClient(`/api/v1/translations/page/LOCATION?language=${langString?.toUpperCase()}&country=${countryCode}`);
+        // return fetcherClient(`/api/v1/category/all_by_language?languageCode=${langString}&countryCode=${countryCode}&withChildren=false`);
+        return fetcherClient(`/api/v1/category/all_root_by_country?countryCode=${countryCode}&withChildren=false`);
              }
-
+            
 }
 

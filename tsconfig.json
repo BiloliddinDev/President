@@ -35,7 +35,7 @@
     ".next/types/**/*.ts",
     "svgr.d.ts",
     "constants/shop-modal-item.tsx"
-  ],
+, "service/home-service/.service.ts"  ],
   "exclude": [
     "node_modules"
   ]

@@ -10,7 +10,8 @@ export const CollectionItem = [
         id: 1,
         title: {
             "uz": "Soat UZB",
-            "ru": "Часы UZB",
+            "ru": "Коллекции “President”",
+            // "ru": "Часы UZB",
             "en": "UZB Watch"
         },
         price: "$450",
@@ -20,7 +21,8 @@ export const CollectionItem = [
         id: 2,
         title: {
             "uz": "Sumka",
-            "ru": "Сумка",
+            "ru": "Летние коллекции",
+            // "ru": "Сумка",
             "en": "Bag"
         },
         price: "360$",
@@ -30,7 +32,8 @@ export const CollectionItem = [
         id: 3,
         title: {
             "uz": "Klatch",
-            "ru": "Клатч",
+            "ru": "Коллекции для путешествий",
+            // "ru": "Клатч",
             "en": "Clutch"
         },
         price: "$140",

@@ -1,3 +1,4 @@
+
 import {SectionTitle} from "@/components/ui/sectionTitle";
 import Image from "next/image";
 import AboutImage from "@/public/images/About.png";
@@ -5,10 +6,12 @@ import {AboutService} from "@/service/home-service/about.service";
 import {AboutType} from "@/interface/about-type/about-type";
 
 
+
 export async function About() {
 
     const AboutData: AboutType = await AboutService() as AboutType
-
+    
+    console.log("ABOUT",AboutData)
     return (
         <div className="bg-gradient-to-l from-neutral-100 to-white/0 py-10">
             <div className="container">

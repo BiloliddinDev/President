@@ -35,20 +35,33 @@ const AboutUs = () => {
       <InformationWithImg
         imgSource={BlackBags}
         imgAlt="black bags"
-        infoText="Be it writing instruments, leather, watches, accessories or our youngest
-        category of new technologies, our master craftsmen work diligently to
-        pour their hearts and souls into every step of the creation."
-      />
+        // infoText="Be it writing instruments, leather, watches, accessories or our youngest
+        // category of new technologies, our master craftsmen work diligently to
+        // pour their hearts and souls into every step of the creation."
+     infoText="Сегодня у нас уже три фирменных шоурума в
+Центральной Азии: два из них расположены в
+самом сердце Ташкента (Узбекистан), а ещё
+один — в Душанбе, столице Таджикистана. В
+ближайших планах — открытие нового
+шоурума в Баку, столице Азербайджана."
+     />
       <AccordionWithImg />
       <div className="pb-12 md:pb-24">
         <InformationWithImg
           imgSource={watch2}
           textStyles="font-normal text-gray-800"
           imgAlt="a watch"
-          infoText=" The international mentality of our 3 pioneering founders of the maison
-        continues to be a strong legacy of the brand to this day. Our writing
-        instruments are completed in Hamburg, our leather goods in Florence and
-        our timepieces in Switzerland."
+        //   infoText=" The international mentality of our 3 pioneering founders of the maison
+        // continues to be a strong legacy of the brand to this day. Our writing
+        // instruments are completed in Hamburg, our leather goods in Florence and
+        // our timepieces in Switzerland."
+        infoText="Мы стремительно расширяем своё присутствие
+и уверенно выходим на новые рынки. Мы не
+останавливаемся на достигнутом — с каждым
+днём бренд “President Business Gifts”становится
+всё более узнаваемым. Совсем скоро о нас
+узнает весь мир."
+        
         />
       </div>
     </div>

@@ -28,17 +28,17 @@ export default async function Home({params}: HomePageProps) {
             </section>
             <section className="mt-10 md:mt-[100px]">
                 <AnimatedSection animation={"fade-right"}>
-                    <News dictionary={dictionary} lang={HomePageParam.lang}/>
+{/* done */}          <News dictionary={dictionary} lang={HomePageParam.lang}/>
                 </AnimatedSection>
             </section>
             <section className="mt-[100px]">
                 <AnimatedSection animation={"fade-left"}>
-                    <About/>
+{/* done */}         <About/>
                 </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
                 <AnimatedSection animation={"fade-left"}>
-                    <Category dictionary={dictionary} lang={HomePageParam.lang}/>
+{/* done */}        <Category dictionary={dictionary} lang={HomePageParam.lang}/>
                 </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
@@ -51,13 +51,13 @@ export default async function Home({params}: HomePageProps) {
                 {/*<News />*/}
             </section>
             <section className="mt-[100px] bg-[#F6F6F6] py-8">
-                <SupportForm dictionary={dictionary} lang={HomePageParam.lang}/>
+{/* done */}       <SupportForm dictionary={dictionary}/>
             </section>
             <section className="mt-[100px]  ">
-                <BusinessGifts dictionary={dictionary}/>
+{/* done */}       <BusinessGifts dictionary={dictionary}/>
             </section>
             <section className="mt-[100px]  ">
-                <Location dictionary={dictionary} lang={HomePageParam.lang}/>
+{/* done */}       <Location lang={HomePageParam.lang} dictionary={dictionary}/> 
             </section>
 
         </>

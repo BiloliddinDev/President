@@ -1,8 +1,10 @@
+"use client"
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious,} from "@/components/ui/carousel";
 import {SectionTitle} from "@/components/ui/sectionTitle";
 import {NewsCard} from "@/components/shared/news-card/news-card";
 import {newsItem} from "@/constants/news-item";
-import {FC} from "react";
+import {FC, useEffect, useState} from "react";
+import { getNews } from "@/service/home-service/news.service";
 
 interface NewsProps {
     dictionary: {
@@ -14,8 +16,23 @@ interface NewsProps {
     lang: "uz" | "ru" | "en" 
 }
 
+interface NewsType{
+
+}
 
 export const News: FC<NewsProps> = ({dictionary, lang}) => {
+const [news,setNews] =useState()
+    
+    useEffect(() => {
+        const fetchNews = async () => {
+            const data = await getNews();
+          setNews(data);
+        };
+        fetchNews().then().catch().finally();
+    }, []);
+
+    //news olib kelindi
+console.log("news",news)
     return (
         <div className={"relative "}>
             <SectionTitle className={"container"} text={`${dictionary.news.title}`}/>

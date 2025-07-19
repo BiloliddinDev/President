@@ -1,0 +1,1 @@
+export type LangType="uz" | "ru" | "en" | "tj" | "az"

@@ -1,6 +1,7 @@
 import {FC} from "react";
 import Image from "next/image";
 import {CategoryCardType} from "@/interface/category-type/category-model";
+import { CategoryDataType } from "@/app/[lang]/(home)/components/category";
 
 
 export const CategoryCard: FC<{ category: CategoryCardType , lang : 'uz' | "ru" | "en" }> = ({category , lang}) => {

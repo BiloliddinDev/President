@@ -7,5 +7,6 @@ import {showcaseService} from "@/service/home-service/showcase.service";
 export async function Showcase() {
 
     const DataLayer: ShowcaseDataFrom = await showcaseService() as ShowcaseDataFrom
+    console.log(DataLayer)
     return <ShowcaseAnimation DataLayer={DataLayer}></ShowcaseAnimation>
 };

@@ -5,7 +5,6 @@ import {navbarLinks} from "@/constants/navbar";
 
 import Link from "next/link";
 import NavbarModal from "@/components/shared/navbar-modal";
-import ShopModalContent from "@/components/shared/modalContents/shopModal";
 import DiscoverModalContent from "../modalContents/discoverModal";
 import ChangeLangModal from "../modalContents/changeLangModal";
 import SearchModal from "@/components/shared/search-modal";
@@ -18,6 +17,8 @@ import {getAllLanguage} from "@/service/navbar-service/lang.service";
 import {CountryType, LanguageType} from "@/interface/language&country-type/language-type";
 import {getAllCountry} from "@/service/navbar-service/country.service";
 import Cookies from "js-cookie";
+// import { ShopModalContent } from "../modalContents/shopModal";
+import  ShopModalContent  from "../modalContents/shopModal";
 
 export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
     const [languages, setLanguages] = useState<LanguageType[]>([]);
@@ -109,7 +110,7 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
                     <UserDropdown/>
                 </div>
             </div>
-            <MobileNavbar lang={lang}/>
+            <MobileNavbar lang={lang} languages={languages} county={county}/>
         </nav>
     );
 };

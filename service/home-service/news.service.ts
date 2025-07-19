@@ -8,9 +8,8 @@ interface CountryCookie {
     code: string;
 }
 
-export const getLocation = async () => {
+export const getNews = async () => {
     const countryString = Cookies.get("country");
-    const langString = Cookies.get("lang");
     let countryCode = null;
 
     if (countryString) {
@@ -23,8 +22,7 @@ export const getLocation = async () => {
     }
 
     if (countryCode) {
-        return fetcherClient(`/api/v1/translations/page/LOCATION?language=${langString?.toUpperCase()}&country=${countryCode}`);
+        return fetcherClient(`/api/v1/news/all_news_by_country?countryCode=${countryCode}`);
              }
-
 }
 
