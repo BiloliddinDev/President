@@ -3,16 +3,20 @@
 import {useEffect, useMemo, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import {imageLoader} from "@/lib/imageLoader";
-import img1 from "@/public/images/showcase4.jpg";
-import img2 from "@/public/images/showcase3.jpg";
-import img3 from "@/public/images/showcase2.png";
-import img4 from "@/public/images/showcase1.jpg";
+// import img1 from "@/public/images/showcase4.jpg";
+// import img2 from "@/public/images/showcase3.jpg";
+// import img3 from "@/public/images/showcase2.png";
+// import img4 from "@/public/images/showcase1.png";
+import images1 from "@/public/images/clock-show-case.jpg";
+import  images2 from  '@/public/images/souvenir.jpg'
+import  images3 from  '@/public/images/koja-sumka.jpg'
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {ShowcaseDataFrom} from "@/interface/showcase-type/showcase-type";
 
 
-const images = [img1, img2, img3, img4];
+const images = [images1, images2, images3];
+// const images = [img1, img2, img3, img4];
 
 
 export default function ShowcaseAnimation({DataLayer}: {
@@ -35,7 +39,7 @@ export default function ShowcaseAnimation({DataLayer}: {
             quality: 100,
         });
     }, [current]);
-
+console.log("showcase", DataLayer)
     return (
         <div className="relative h-screen shadow-2xl overflow-hidden">
             <AnimatePresence mode="sync">

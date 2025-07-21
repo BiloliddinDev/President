@@ -1,7 +1,7 @@
 import CustomAccordion from "@/components/shared/custom-accordion/custom-accordion";
 import { discoverAboutItems } from "@/constants/discover-items";
 import React from "react";
-import WatchMaker from "@/public/images/watchmaker.png";
+import WatchMaker from "@/public/images/home-page-aboutUs.jpg";
 import Image from "next/image";
 
 const AccordionWithImg = () => {

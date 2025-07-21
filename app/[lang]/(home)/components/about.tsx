@@ -1,9 +1,14 @@
 
 import {SectionTitle} from "@/components/ui/sectionTitle";
 import Image from "next/image";
-import AboutImage from "@/public/images/About.png";
+// import AboutImage from "@/public/images/home-page-aboutUs.jpg";
+// import AboutImage from "@/public/images/koja-home-page.png";
+// import AboutImage from "@/public/images/Mech2.jpg";
+import watch1 from "@/public/images/about-detail1.jpg";
 import {AboutService} from "@/service/home-service/about.service";
 import {AboutType} from "@/interface/about-type/about-type";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 
 
@@ -18,7 +23,7 @@ export async function About() {
                 <SectionTitle text={AboutData["about.title"]}/>
                 <div className="mt-12 flex flex-wrap items-center gap-12 justify-center md:justify-between">
                     <Image
-                        src={AboutImage.src}
+                        src={watch1.src}
                         alt={AboutData["about.imageAlt"]}
                         className="w-[265px] h-[245px] md:w-[600px] md:h-[600px] object-cover"
                         width={600}
@@ -31,6 +36,10 @@ export async function About() {
                         <p className="text-gray-600 mb-5 text-base md:text-xl font-normal">
                             {AboutData["about.description"]}
                         </p>
+                        {/* /discover/about-us */}
+                        <Link href={`/discover/about-us`}>
+                               <Button variant={"secondary"} className={"mt-5 w-full md:max-w-52"}>Подробнее</Button>
+                        </Link>
                     </div>
                 </div>
             </div>

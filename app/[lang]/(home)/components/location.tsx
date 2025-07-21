@@ -4,8 +4,8 @@ import dynamic from "next/dynamic";
 import React, {useEffect, useState} from "react";
 import {SectionTitle} from "@/components/ui/sectionTitle";
 import IconComponent from "@/components/icon/icon-view";
-import {getAllLanguage} from "@/service/navbar-service/lang.service";
-import {getAllCountry} from "@/service/navbar-service/country.service";
+// import {getAllLanguage} from "@/service/navbar-service/lang.service";
+// import {getAllCountry} from "@/service/navbar-service/country.service";
 import { getLocation } from "@/service/home-service/location.service";
 
 const MapComponent = dynamic(
@@ -26,7 +26,11 @@ interface Branch {
 }
 
 interface LocationProps {
-    dictionary:any
+    dictionary:{
+        location: {
+            title: string;
+            text: string
+        };}
     lang: "uz" | "ru" | "en";
 }
 interface LocationType{
@@ -69,7 +73,7 @@ export default function LocationPage({dictionary, lang}: LocationProps) {
     useEffect(() => {
         const fetchLocation = async () => {
             const data:LocationType = await getLocation();
-           data ?? setLocation({text:data["location.text"], title:data["location.title"]});
+            setLocation({text:data["location.text"], title:data["location.title"]});
         };
         fetchLocation().then().catch().finally();
 

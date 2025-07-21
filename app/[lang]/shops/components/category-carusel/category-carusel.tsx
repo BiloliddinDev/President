@@ -4,11 +4,11 @@ import {useRef} from 'react'
 import {Button} from "@/components/ui/button"
 import {ChevronLeft, ChevronRight} from "lucide-react"
 import {CategoryCard} from '@/components/shared/category-card/category-card'
-import {CategoryCardType} from "@/interface/category-type/category-model"
+// import {CategoryCardType} from "@/interface/category-type/category-model"
 import { CategoryDataType } from '@/app/[lang]/(home)/components/category'
 
 interface CategoryCarouselProps {
-    categories: CategoryCardType[]
+    categories: CategoryDataType[]
     lang:"uz" | "ru" | "en"
 }
 
@@ -24,9 +24,11 @@ export default function CategoryCarousel({categories,lang}: CategoryCarouselProp
             })
         }
     }
+    console.log("carousel",categories)
 
     return (
         <div className="w-full">
+            
             <div className="flex justify-between mb-5">
                 <h2 className="text-xl font-semibold mb-4">Categories</h2>
                 <div>
@@ -43,7 +45,7 @@ export default function CategoryCarousel({categories,lang}: CategoryCarouselProp
                     ref={scrollRef}
                     className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth"
                 >
-                    {categories.map((item) => (
+                    {categories.length > 0 && categories.map((item) => (
                         <div key={item.id} className="w-[200px] h-[200px] flex-shrink-0">
                             <CategoryCard category={item} lang={lang}/>
                         </div>

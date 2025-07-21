@@ -1,16 +1,17 @@
 import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
-// import {productsItem} from "@/components/ui/product-items";
+import {productsItem} from "@/components/ui/product-items";
 import SortAndViewToggleWrapper from "@/components/shared/sort-View-toggle/sort-viewtoggle";
-// import {ProductsCard} from "@/components/shared/products-cards/products-card";
+import {ProductsCard} from "@/components/shared/products-cards/products-card";
 import {Button} from "@/components/ui/button";
 import CategoryCarousel from "@/app/[lang]/shops/components/category-carusel/category-carusel";
-import {categoryItem} from "@/constants/category-item";
+// import {categoryItem} from "@/constants/category-item";
 import { CategoryDataType } from "../../(home)/components/category";
 import { CategoryService } from "@/service/home-service/category.service";
 import { CategoryChildService } from "@/service/category-service/category-child.service";
-import ProductPage from "./components/Products";
+// import ProductPage from "./components/Products";
 
 interface CategoryPageProps {
+    // params: { lang: "uz" | "ru" | "en", category: string };
     params: Promise<{ lang: "uz" | "ru" | "en", category: string }>;
 
 }
@@ -30,16 +31,18 @@ export default async function CategoryPage({params}: CategoryPageProps) {
         };
       }
       
+      const parentId=splitCategory(categoryParam.category).id
+      const categoryName=splitCategory(categoryParam.category).name
       const CategoryData:CategoryDataType[] = await CategoryService()  as CategoryDataType[]
     
-    //   const CategoryChildData:CategoryDataType[] = await CategoryChildService({parentId:splitCategory(categoryParam.category).id})  as CategoryDataType[]
+      const CategoryChildData:CategoryDataType[] = await CategoryChildService(parentId)  as CategoryDataType[]
       
-    //   console.log("category",CategoryData, CategoryChildData)
+      console.log("category",CategoryData, CategoryChildData)
     return (
         <div className="container md:!mt-26 !mt-42">
-            <BreadcrumbDynamic url={splitCategory(categoryParam.category).name}/>
+            <BreadcrumbDynamic url={categoryName}/>
             <h4 className="text-primary text-sm font-normal capitalize leading-tight mt-10 mb-2.5">
-                {splitCategory(categoryParam.category).name}
+                {categoryName}
             </h4>
             <div>
                 <h2 className="text-primary text-xl font-medium leading-loose">
@@ -51,15 +54,15 @@ export default async function CategoryPage({params}: CategoryPageProps) {
                     Dive into our unique collection and snag the perfect gift before you buy… Read more
                 </p>
 
-                <CategoryCarousel categories={categoryItem} lang={categoryParam.lang}/>
-                {/* <SortAndViewToggleWrapper itemLength={productsItem.length}>
+                <CategoryCarousel categories={CategoryChildData} lang={categoryParam.lang}/>
+                <SortAndViewToggleWrapper itemLength={productsItem.length}>
                     {productsItem.map((product) => (
                         <ProductsCard
                             key={product.id}
                             productData={product}
                         />
                     ))}
-                </SortAndViewToggleWrapper> */}
+                </SortAndViewToggleWrapper>
                 {/* <ProductPage parentId={splitCategory(categoryParam.category).id} lang={categoryParam.lang}/> */}
                 <div className="flex justify-center mt-11">
                     <Button className="border-primary" variant="outline">

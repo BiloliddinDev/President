@@ -8,7 +8,7 @@ interface CountryCookie {
     code: string;
 }
 
-export async function CategoryChildService(parentId:{parentId:string}) {
+export async function CategoryChildService(parentId:string) {
     
     const cookieStore = await cookies();
 

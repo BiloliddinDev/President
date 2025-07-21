@@ -23,4 +23,7 @@ export interface ShowcaseDataFrom {
     'collections.title': string,
     'category.title': string,
     'navbar.changeLanguage': string
+    'product.image1':any
+    'product.image2':any
+    'product.image3':any
 }

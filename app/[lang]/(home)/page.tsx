@@ -54,7 +54,7 @@ export default async function Home({params}: HomePageProps) {
 {/* done */}       <SupportForm dictionary={dictionary}/>
             </section>
             <section className="mt-[100px]  ">
-{/* done */}       <BusinessGifts dictionary={dictionary}/>
+{/* done */}       <BusinessGifts />
             </section>
             <section className="mt-[100px]  ">
 {/* done */}       <Location lang={HomePageParam.lang} dictionary={dictionary}/> 

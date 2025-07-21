@@ -7,7 +7,7 @@ import {FC, useEffect, useState} from "react";
 import { getNews } from "@/service/home-service/news.service";
 
 interface NewsProps {
-    dictionary: {
+    dictionary?: {
         news: {
             title: string;
             newArrival: string;
@@ -16,11 +16,8 @@ interface NewsProps {
     lang: "uz" | "ru" | "en" 
 }
 
-interface NewsType{
 
-}
-
-export const News: FC<NewsProps> = ({dictionary, lang}) => {
+export const News: FC<NewsProps> = ({ lang}) => {
 const [news,setNews] =useState()
     
     useEffect(() => {
@@ -35,7 +32,8 @@ const [news,setNews] =useState()
 console.log("news",news)
     return (
         <div className={"relative "}>
-            <SectionTitle className={"container"} text={`${dictionary.news.title}`}/>
+            <SectionTitle className={"container"} text={`Новинки`}/>
+            {/* <SectionTitle className={"container"} text={`${dictionary.news.title}`}/> */}
             <Carousel
                 opts={{
                     align: "start",
@@ -51,7 +49,8 @@ console.log("news",news)
                             key={newsItem.id}
                             style={{flex: "0 0 35%"}}
                         >
-                            <NewsCard newsItem={newsItem} entitle={dictionary.news.newArrival} lang={lang}/>
+                            <NewsCard newsItem={newsItem}  lang={lang}/>
+                            {/* <NewsCard newsItem={newsItem} entitle={dictionary.news.newArrival} lang={lang}/> */}
                         </CarouselItem>
                     ))}
                 </CarouselContent>

@@ -104,7 +104,7 @@ export default function FaqsForm() {
                             <FormItem>
                                 <FormLabel>Комментарий / Вопрос</FormLabel>
                                 <FormControl><Textarea rows={4}
-                                                    //    placeholder="Type your message here" {...field} 
+                                                       placeholder="Введите ваше сообщение здесь" {...field} 
                                                        /></FormControl>
                                 <FormMessage/>
                             </FormItem>

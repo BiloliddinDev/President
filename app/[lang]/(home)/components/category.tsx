@@ -1,8 +1,10 @@
 import { CategoryCard } from "@/components/shared/category-card/category-card";
 import { SectionTitle } from "@/components/ui/sectionTitle";
-import { categoryItem } from "@/constants/category-item";
+// import { categoryItem } from "@/constants/category-item";
 import { CategoryService } from "@/service/home-service/category.service";
-import { FC } from "react";
+// import { Languages } from "lucide-react";
+import Link from "next/link";
+// import { FC } from "react";
 
 interface CategoryProps {
     dictionary: {
@@ -15,8 +17,38 @@ interface CategoryProps {
 interface Translation {
     name: string
     description: string
-    code: string
+    code: "UZ" |"RU" | "EN"
   }
+
+  type MediaUsageType = "IMAGE_CONTENT" | "VIDEO_CONTENT" | "DOCUMENT_CONTENT";
+  type MediaType = "IMAGE" | "VIDEO" | "DOCUMENT";
+  type AccessLevel = "PUBLIC" | "PRIVATE";
+  
+  interface MediaFile {
+    id: string;
+    accessLevel: AccessLevel;
+    contentType: string;
+    fileName: string;
+    originalFileName: string;
+    filePath: string;
+    fileSize: number;
+    image: boolean;
+    video: boolean;
+    mediaType: MediaType;
+    mediaUsageType: MediaUsageType;
+    metaData: {
+      height: number | null;
+      width: number | null;
+      order: number;
+      type: string;
+    };
+    ownerId: number;
+    ownerType: "CATEGORY" | "PRODUCT" | string;
+    uploadedAt: string;
+    updatedAt: string;
+  }
+  
+
 
 export interface CategoryDataType {
     id: number
@@ -33,7 +65,7 @@ export interface CategoryDataType {
       UZ: string
     }
     translation: Translation[]
-    mediaFiles: string[]
+    mediaFiles: MediaFile[]
   }
 
 export async function Category({ dictionary, lang }:CategoryProps){
@@ -41,17 +73,20 @@ export async function Category({ dictionary, lang }:CategoryProps){
     const CategoryData:CategoryDataType[] = await CategoryService()  as CategoryDataType[]
     
     console.log("category",CategoryData)
-
+   
     return (
         <div className="container">
             <SectionTitle text={dictionary.category.title} />
             <div className="grid mt-5 md:mt-14 grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-                {categoryItem.map((category) => (
-                    <CategoryCard 
-                        key={category.id} 
-                        category={category} 
-                        lang={lang}
-                    />
+                {CategoryData.map((category) => (
+                   <Link
+                   key={category.id}
+                   href={`/shops/${category.nameMap?.EN}${category.id}`}
+                 > <CategoryCard 
+                      key={category.id} 
+                      category={category} 
+                      lang={lang}
+                    /></Link>
                 ))}
             </div>
         </div>

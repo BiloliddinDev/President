@@ -1,10 +1,15 @@
 import { BreadcrumbDynamic } from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import Image from "next/image";
 import React from "react";
-import DiscoverWatch from "@/public/images/discoverWatch.png";
-import BackDiscoverWatch from "@/public/images/discoverWatchBack.png";
+// import DiscoverWatch from "@/public/images/discoverWatch.png";
+// import BackDiscoverWatch from "@/public/images/discoverWatchBack.png";
+// import BlackBags from "@/public/images/Bag.jpg";
 import BlackBags from "@/public/images/bags.png";
-import watch2 from "@/public/images/watch2.png";
+import watch1 from "@/public/images/about-detail1.jpg";
+import watch2 from "@/public/images/about-detail2.png";
+import watch3 from "@/public/images/about-detail3.jpg";
+// import map from "@/public/images/about-detail-map.jpg";
+// import watch2 from "@/public/images/watch2.png";
 import DiscoverAboutHeader from "./components/discover-aboutus-header";
 import InformationWithImg from "./components/informationWithImg";
 import AccordionWithImg from "./components/accordion-with-img";
@@ -19,14 +24,14 @@ const AboutUs = () => {
       <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 ">
         <div className="w-full md:w-1/2">
           <Image
-            src={DiscoverWatch}
+            src={watch1}
             alt="Discover watch"
             className="w-full h-auto object-contain"
           />
         </div>
         <div className="w-full md:w-1/2">
           <Image
-            src={BackDiscoverWatch}
+            src={watch2}
             alt="Back of the watch"
             className="w-full h-auto object-contain"
           />
@@ -48,7 +53,7 @@ const AboutUs = () => {
       <AccordionWithImg />
       <div className="pb-12 md:pb-24">
         <InformationWithImg
-          imgSource={watch2}
+          imgSource={watch3}
           textStyles="font-normal text-gray-800"
           imgAlt="a watch"
         //   infoText=" The international mentality of our 3 pioneering founders of the maison

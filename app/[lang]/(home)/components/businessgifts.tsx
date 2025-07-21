@@ -1,30 +1,31 @@
 
-import Image1 from "@/public/images/corparative-image.jpg";
+import Image1 from "@/public/images/home-page-corporative-box.jpg";
+
 import { SectionTitle } from "@/components/ui/sectionTitle";
 import { SupportFormModal } from "@/components/shared/form-modal/form.modal";
 import AutoplayCarousel from "@/components/shared/corporative-gifts/AutoplayCarousel";
-import { LangType } from "@/interface/lang/lang-type";
+// import { LangType } from "@/interface/lang/lang-type";
 import { CorporateService } from "@/service/home-service/corporate-gifts.service";
 
 const images = [Image1];
 
-interface BusinessGiftsCarouselProps {
-  dictionary: {
-    corporategifts: {
-      title: string;
-      text: string;
-      btn: string;
-    };
-  };
-  lang?: LangType
-}
+// interface BusinessGiftsCarouselProps {
+//   dictionary: {
+//     corporategifts: {
+//       title: string;
+//       text: string;
+//       btn: string;
+//     };
+//   };
+//   lang?: LangType
+// }
 
 export interface CorporativeGifts {
     "corporate.gifts.btn":string,
     "corporate.gifts.text":string
     }
 
-export default async function BusinessGiftsCarousel({ dictionary }: BusinessGiftsCarouselProps) {
+export default async function BusinessGiftsCarousel() {
 
     const CorporativeGiftsData:CorporativeGifts = await CorporateService() as CorporativeGifts
     console.log("corporative gifts",CorporativeGiftsData)
@@ -46,7 +47,8 @@ export default async function BusinessGiftsCarousel({ dictionary }: BusinessGift
             <h2 className="text-primary mb-5 text-lg md:text-5xl font-normal font-title mt-5 md:mt-[75px]">
               {/* {dictionary.corporategifts.title} */}President Business Gifts
             </h2>
-            <p className="text-gray-600 text-base md:text-xl max-w-[353px] md:w-[500] font-normal font-description mb-5">
+            <p className="text-gray-600 text-base md:text-xl max-w-[500px] md:w-[800] font-normal font-description mb-5">
+            {/* <p className="text-gray-600 text-base md:text-xl max-w-[353px] md:w-[500] font-normal font-description mb-5"> */}
               {/* {dictionary.corporategifts.text} */}
               {/* { CorporativeGiftsData["corporate.gifts.text"]} */}
               “President Business Gifts” создаёт индивидуальные подарки, которые подчёркивают стиль и ценности вашей компании. Мы разрабатываем премиальные решения по вашему продукту или логотипу — от дизайна до упаковки Каждое изделие — это часть вашего имиджа, воплощённая в безупречном исполнении.

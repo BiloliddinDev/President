@@ -27,6 +27,8 @@ export async function CategoryService() {
         }
     }
 
-const url=`/api/v1/category/all_by_language?languageCode=${lang}&countryCode=${countryCode}&withChildren=false`
+// const url=`/api/v1/category/all_by_language?languageCode=${lang}&countryCode=${countryCode}&withChildren=false`
+const url=`/api/v1/category/all_root_by_country?countryCode=UZ&withChildren=false`
+
     return await fetcher(url);
 }

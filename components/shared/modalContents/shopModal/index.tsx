@@ -31,7 +31,7 @@ const ShopModalContent = ({lang}: shopModalProps) => {
                      ${item.id === 9 ? "mt-10" : "my-5"}`}
                     key={item.id}
                 >
-                    <Link href={`/shops/${item.nameMap[getLangKey(lang)]}${item.id}`}>
+                    <Link href={`/shops/${item.nameMap.EN}${item.id}`}>
                         {item.nameMap[getLangKey(lang)]}
                     </Link>
                 </div>

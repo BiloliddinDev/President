@@ -2,9 +2,13 @@ import { BreadcrumbDynamic } from "@/components/shared/breadcrumb-dynamic/breadc
 import React from "react";
 import CommonHeader from "../components/common-header";
 import ImageWithText from "./image-with-text";
-import Wallet from "@/public/images/wallet.png";
-import Souviner from "@/public/images/souviner.png";
-import PresidentWatch from "@/public/images/president-watch.png";
+// import Wallet from "@/public/images/wallet.png";
+// import Souviner from "@/public/images/souviner.png";
+// import PresidentWatch from "@/public/images/president-watch.png";
+import bag from "@/public/images/corporative-detail-bag.jpg";
+import box from "@/public/images/corporative-detail-box.jpg";
+// import medal from "@/public/images/corporative-detail-medal.jpg";
+import souvenir from "@/public/images/corporative-detail-souvenir.jpg";
 import CommonWatchSection from "../components/common-watch";
 const CorporateGifts = () => {
   return (
@@ -23,7 +27,7 @@ const CorporateGifts = () => {
       <ImageWithText
         orderText="order-1"
         orderImg="order-2"
-        imgSrc={Wallet}
+        imgSrc={bag}
         alt="wallet"
         title="Персонализация: знак особого внимания"
         // title="Personalization options"
@@ -38,7 +42,7 @@ subtitle="Мы предлагаем тонкую и элегантную
       <ImageWithText
         orderText="order-2"
         orderImg="order-1"
-        imgSrc={Souviner}
+        imgSrc={souvenir}
         alt="souviner"
         title="Как выбрать правильный подарок"
         // title="Finding the right business gift"
@@ -53,7 +57,7 @@ subtitle="Мы предлагаем тонкую и элегантную
       <ImageWithText
         orderText="order-1"
         orderImg="order-2"
-        imgSrc={PresidentWatch}
+        imgSrc={box}
         alt="president watch"
         // title="Gift for special occasions"
         // subtitle="From company milestones, important business deals to anniversaries or special occasions, pay tribute to the meaning behind these occasions."
