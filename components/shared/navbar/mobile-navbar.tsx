@@ -4,11 +4,15 @@ import CustomTabs from "../tabs/custom-tabs";
 import {FooterLogo} from "@/components/ui/logo";
 import IconComponent from "@/components/icon/icon-view";
 
-import ShopModalContent from "@/components/shared/modalContents/shopModal";
 import DiscoverModalContent from "../modalContents/discoverModal";
 import ChangeLangModal from "../modalContents/changeLangModal";
+import { CountryType, LanguageType } from "@/interface/language&country-type/language-type";
+import ShopModalContent from "../modalContents/shopModal";
 
-const MobileNavbar = ({lang} : {lang : "uz" | "ru" | "en"}) => {
+const MobileNavbar = ({lang,languages, county} : 
+    {lang : "uz" | "ru" | "en",
+    languages: LanguageType[],
+    county: CountryType[]}) => {
     const [open, setOpen] = useState<boolean>(false);
     // const [searchInputOpen, setSearchInputOpen] = useState<boolean>(false);
 
@@ -71,7 +75,7 @@ const MobileNavbar = ({lang} : {lang : "uz" | "ru" | "en"}) => {
                             },
                         ]}
                     />
-                    <ChangeLangModal lang={lang}/>
+                    <ChangeLangModal lang={lang} languages={languages} county={county}/>
                 </div>
             )}
         </div>

@@ -2,33 +2,33 @@ export const discoverAboutItems = [
   {
     id: 1,
     value: "item-1",
-    accordionTrigger: "Philosophy",
-    accordionContent: "Yes. It adheres to the WAI-ARIA design pattern.",
+    accordionTrigger: "Традиции",
+    accordionContent: "Слияние ремесла и национального наследия. Мы сохраняем и переосмысляем культурные символы, создавая изделия, в которых живёт дух времени и уважение к корням.",
   },
   {
     id: 2,
     value: "item-2",
-    accordionTrigger: "Tradition",
-    accordionContent: "tell smth..",
+    accordionTrigger: "История",
+    accordionContent: "Подарок как продолжение вашей истории. Каждое изделие President рассказывает о достижениях, заслугах и важнейших моментах жизни владельца — с достоинством и глубоким смыслом.",
   },
   {
     id: 3,
     value: "item-3",
-    accordionTrigger: "Storytelling",
-    accordionContent: "tell smth...",
+    accordionTrigger: "Элегантность",
+    accordionContent: "Совершенство в каждой детали. Наши изделия отличаются изысканным стилем и безупречным исполнением. Эстетика, утонченность и престиж в каждой форме и линии.",
   },
   {
     id: 4,
     value: "item-4",
-    accordionTrigger: "Elegance",
-    accordionContent: "tell smth...",
+    accordionTrigger: "Наследие ",
+    accordionContent: "Создаём ценности, которые переживут поколения. Наши подарки остаются значимыми и спустя годы. Это не мимолётные сувениры, а семейные реликвии, несущие память и гордость.",
   },
-  {
-    id: 5,
-    value: "item-4",
-    accordionTrigger: "Preservation",
-    accordionContent: "tell smth...",
-  },
+  // {
+  //   id: 5,
+  //   value: "item-4",
+  //   accordionTrigger: "Preservation",
+  //   accordionContent: "tell smth...",
+  // },
 ];
 
 export const contactInfo = [

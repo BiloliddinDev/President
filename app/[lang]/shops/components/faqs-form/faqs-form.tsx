@@ -47,7 +47,6 @@ export default function FaqsForm() {
         }
     };
 
-
     return (
 
         <Form {...form} >
@@ -57,7 +56,7 @@ export default function FaqsForm() {
                     name="fullName"
                     render={({field}) => (
                         <FormItem>
-                            <FormLabel>Full name</FormLabel>
+                            <FormLabel>Имя</FormLabel>
                             <FormControl><Input {...field} /></FormControl>
                             <FormMessage/>
                         </FormItem>
@@ -68,7 +67,7 @@ export default function FaqsForm() {
                     name="phone"
                     render={({field}) => (
                         <FormItem>
-                            <FormLabel>Phone number</FormLabel>
+                            <FormLabel>Телефон</FormLabel>
                             <FormControl><Input {...field} /></FormControl>
                             <FormMessage/>
                         </FormItem>
@@ -90,7 +89,8 @@ export default function FaqsForm() {
                     name="social"
                     render={({field}) => (
                         <FormItem>
-                            <FormLabel>Location</FormLabel>
+                            <FormLabel>Контакт в мессенджерах (например, WhatsApp, Telegram)</FormLabel>
+                            {/* <FormLabel>Location</FormLabel> */}
                             <FormControl><Input {...field} /></FormControl>
                             <FormMessage/>
                         </FormItem>
@@ -102,19 +102,23 @@ export default function FaqsForm() {
                         name="comment"
                         render={({field}) => (
                             <FormItem>
-                                <FormLabel>Comment</FormLabel>
+                                <FormLabel>Комментарий / Вопрос</FormLabel>
                                 <FormControl><Textarea rows={4}
-                                                       placeholder="Type your message here" {...field} /></FormControl>
+                                                       placeholder="Введите ваше сообщение здесь" {...field} 
+                                                       /></FormControl>
                                 <FormMessage/>
                             </FormItem>
                         )}
                     />
                     <div className={'mt-5 text-sm font-medium  leading-tight'}>
-                        We would like to keep you updated with our latest news and provide you with exclusive benefits.
+                        {/* We would like to keep you updated with our latest news and provide you with exclusive benefits.
                         If you wish to opt-out of receiving marketing <br/> information, please check the box
                         below. <br/> Your
                         information is safe with Montblanc. Consult our <Link className={"underline"} href={"#"}>Privacy
-                        Policy</Link> for further information
+                        Policy</Link> for further information */}
+                        Мы хотели бы держать вас в курсе наших последних новостей и предоставлять вам эксклюзивные преимущества. Если вы хотите отказаться от получения маркетинговой
+информации, пожалуйста, установите флажок ниже.
+С Montblanc ваша информация в безопасности. Для получения дополнительной информации ознакомьтесь с нашей <Link className={"underline"} href={"#"}>Политикой конфиденциальности</Link>  
                     </div>
                 </div>
                 <div className="md:col-span-2 flex items-start gap-2 mt-2">
@@ -130,7 +134,9 @@ export default function FaqsForm() {
                                     />
                                 </FormControl>
                                 <div className="text-sm text-gray-600">
-                                    I do not wish to receive exclusive benefits or information about products.
+                                    {/* I do not wish to receive exclusive benefits or information about products. */}
+                                    Я не хочу получать эксклюзивные предложения или информацию о
+                                    продуктах.
                                 </div>
                             </FormItem>
                         )}
@@ -139,7 +145,7 @@ export default function FaqsForm() {
 
                 <div className="md:col-span-2 mt-4">
                     <Button type="submit" variant={"default"}>
-                        Send
+                    Отправить
                     </Button>
                 </div>
             </form>

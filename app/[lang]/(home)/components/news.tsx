@@ -1,24 +1,39 @@
+"use client"
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious,} from "@/components/ui/carousel";
 import {SectionTitle} from "@/components/ui/sectionTitle";
 import {NewsCard} from "@/components/shared/news-card/news-card";
 import {newsItem} from "@/constants/news-item";
-import {FC} from "react";
+import {FC, useEffect, useState} from "react";
+import { getNews } from "@/service/home-service/news.service";
 
 interface NewsProps {
-    dictionary: {
+    dictionary?: {
         news: {
             title: string;
             newArrival: string;
         };
     };
-    lang: "uz" | "ru" | "en";
+    lang: "uz" | "ru" | "en" 
 }
 
 
-export const News: FC<NewsProps> = ({dictionary, lang}) => {
+export const News: FC<NewsProps> = ({ lang}) => {
+const [news,setNews] =useState()
+    
+    useEffect(() => {
+        const fetchNews = async () => {
+            const data = await getNews();
+          setNews(data);
+        };
+        fetchNews().then().catch().finally();
+    }, []);
+
+    //news olib kelindi
+console.log("news",news)
     return (
         <div className={"relative "}>
-            <SectionTitle className={"container"} text={`${dictionary.news.title}`}/>
+            <SectionTitle className={"container"} text={`Новинки`}/>
+            {/* <SectionTitle className={"container"} text={`${dictionary.news.title}`}/> */}
             <Carousel
                 opts={{
                     align: "start",
@@ -34,7 +49,8 @@ export const News: FC<NewsProps> = ({dictionary, lang}) => {
                             key={newsItem.id}
                             style={{flex: "0 0 35%"}}
                         >
-                            <NewsCard newsItem={newsItem} entitle={dictionary.news.newArrival} lang={lang}/>
+                            <NewsCard newsItem={newsItem}  lang={lang}/>
+                            {/* <NewsCard newsItem={newsItem} entitle={dictionary.news.newArrival} lang={lang}/> */}
                         </CarouselItem>
                     ))}
                 </CarouselContent>

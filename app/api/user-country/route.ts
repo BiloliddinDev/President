@@ -5,8 +5,8 @@ export async function GET() {
     const data = await res.json();
 
     const locationData = {
-        region: data.region,
-        country: data.country
+        name: data.region,
+        code: data.country
     };
 
     const response = NextResponse.json({data: locationData});

@@ -4,22 +4,45 @@ import SortAndViewToggleWrapper from "@/components/shared/sort-View-toggle/sort-
 import {ProductsCard} from "@/components/shared/products-cards/products-card";
 import {Button} from "@/components/ui/button";
 import CategoryCarousel from "@/app/[lang]/shops/components/category-carusel/category-carusel";
-import {categoryItem} from "@/constants/category-item";
+// import {categoryItem} from "@/constants/category-item";
+import { CategoryDataType } from "../../(home)/components/category";
+import { CategoryService } from "@/service/home-service/category.service";
+import { CategoryChildService } from "@/service/category-service/category-child.service";
+// import ProductPage from "./components/Products";
 
 interface CategoryPageProps {
-    params: Promise<{ lang: string, category: string }>;
+    // params: { lang: "uz" | "ru" | "en", category: string };
+    params: Promise<{ lang: "uz" | "ru" | "en", category: string }>;
 
 }
 
 export default async function CategoryPage({params}: CategoryPageProps) {
 
-    const categoryParam: { lang: string, category: string } = await params;
+    const categoryParam: { lang: "uz" | "ru" | "en", category: string } = await params;
 
+    function splitCategory(category: string): { name: string; id: string } {
+        const match = category.match(/^(.+?)(\d+)$/);
+        if (!match) {
+          return { name: category, id: "" }; // fallback
+        }
+        return {
+          name: match[1], // so‘z qismi
+          id: match[2],   // raqam qismi
+        };
+      }
+      
+      const parentId=splitCategory(categoryParam.category).id
+      const categoryName=splitCategory(categoryParam.category).name
+      const CategoryData:CategoryDataType[] = await CategoryService()  as CategoryDataType[]
+    
+      const CategoryChildData:CategoryDataType[] = await CategoryChildService(parentId)  as CategoryDataType[]
+      
+      console.log("category",CategoryData, CategoryChildData)
     return (
         <div className="container md:!mt-26 !mt-42">
-            <BreadcrumbDynamic/>
+            <BreadcrumbDynamic url={categoryName}/>
             <h4 className="text-primary text-sm font-normal capitalize leading-tight mt-10 mb-2.5">
-                {categoryParam.category}
+                {categoryName}
             </h4>
             <div>
                 <h2 className="text-primary text-xl font-medium leading-loose">
@@ -31,7 +54,7 @@ export default async function CategoryPage({params}: CategoryPageProps) {
                     Dive into our unique collection and snag the perfect gift before you buy… Read more
                 </p>
 
-                <CategoryCarousel categories={categoryItem}/>
+                <CategoryCarousel categories={CategoryChildData} lang={categoryParam.lang}/>
                 <SortAndViewToggleWrapper itemLength={productsItem.length}>
                     {productsItem.map((product) => (
                         <ProductsCard
@@ -40,6 +63,7 @@ export default async function CategoryPage({params}: CategoryPageProps) {
                         />
                     ))}
                 </SortAndViewToggleWrapper>
+                {/* <ProductPage parentId={splitCategory(categoryParam.category).id} lang={categoryParam.lang}/> */}
                 <div className="flex justify-center mt-11">
                     <Button className="border-primary" variant="outline">
                         See more

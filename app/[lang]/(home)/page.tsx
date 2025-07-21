@@ -13,7 +13,6 @@ import {getDictionary} from "@/lib/get-dictionary";
 
 interface HomePageProps {
     params: Promise<{ lang: "uz" | "ru" | "en", category: string }>;
-
 }
 
 export default async function Home({params}: HomePageProps) {
@@ -21,24 +20,25 @@ export default async function Home({params}: HomePageProps) {
     const HomePageParam: { lang: "uz" | "ru" | "en", category: string } = await params;
     const dictionary = await getDictionary(HomePageParam.lang);
 
+
     return (
         <>
             <section>
-                <Showcase dictionary={dictionary} lang={HomePageParam.lang}/>
+                <Showcase/>
             </section>
             <section className="mt-10 md:mt-[100px]">
                 <AnimatedSection animation={"fade-right"}>
-                    <News dictionary={dictionary} lang={HomePageParam.lang}/>
+{/* done */}          <News dictionary={dictionary} lang={HomePageParam.lang}/>
                 </AnimatedSection>
             </section>
             <section className="mt-[100px]">
                 <AnimatedSection animation={"fade-left"}>
-                    <About dictionary={dictionary}/>
+{/* done */}         <About/>
                 </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
                 <AnimatedSection animation={"fade-left"}>
-                    <Category dictionary={dictionary} lang={HomePageParam.lang}/>
+{/* done */}        <Category dictionary={dictionary} lang={HomePageParam.lang}/>
                 </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
@@ -47,17 +47,17 @@ export default async function Home({params}: HomePageProps) {
             <section className="mt-[100px]">
                 <ProductVideos dictionary={dictionary}/>
             </section>
-            {/*<section className="mt-[100px]">*/}
-            {/*    <News title={"President stories"}/>*/}
-            {/*</section>*/}
+            <section className="mt-[100px]">
+                {/*<News />*/}
+            </section>
             <section className="mt-[100px] bg-[#F6F6F6] py-8">
-                <SupportForm dictionary={dictionary} lang={HomePageParam.lang}/>
+{/* done */}       <SupportForm dictionary={dictionary}/>
             </section>
             <section className="mt-[100px]  ">
-                <BusinessGifts dictionary={dictionary}/>
+{/* done */}       <BusinessGifts />
             </section>
             <section className="mt-[100px]  ">
-                <Location dictionary={dictionary} lang={HomePageParam.lang}/>
+{/* done */}       <Location lang={HomePageParam.lang} dictionary={dictionary}/> 
             </section>
 
         </>

@@ -1,11 +1,13 @@
 import {FC} from "react";
 import {NewsCardProps} from "@/interface/news-model.ts/news.models";
 import Image from "next/image";
-import {SupportFormModal} from "@/components/shared/form-modal/form.modal";
+// import {SupportFormModal} from "@/components/shared/form-modal/form.modal";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
-export const NewsCard: FC<{ newsItem: NewsCardProps, entitle: string, lang: "uz" | "ru" | 'en' }> = ({
+export const NewsCard: FC<{ newsItem: NewsCardProps, lang: "uz" | "ru" | 'en' }> = ({
                                                                                                          newsItem,
-                                                                                                         entitle,
+                                                                                                        //  entitle,
                                                                                                          lang
                                                                                                      }) => {
     return (
@@ -31,13 +33,14 @@ export const NewsCard: FC<{ newsItem: NewsCardProps, entitle: string, lang: "uz"
             >
                 {newsItem?.description[lang]}
             </p>
-            {/*<Link*/}
-            {/*    href={`new/${newsItem.text[lang]}`}*/}
-            {/*    passHref={true}*/}
-            {/*    className={`self-stretch justify-start`}*/}
-            {/*>*/}
-            <SupportFormModal autoOpen lang={lang} btnText={entitle}/>
-            {/*</Link>*/}
+            <Link
+              href={`/new/${newsItem.text[lang]}`}
+              passHref={true}
+              className={`self-stretch justify-start`}
+            > 
+            <Button variant={"secondary"} className={" w-full md:max-w-52"}>Подробнее</Button>
+            {/* <SupportFormModal autoOpen lang={lang} btnText={entitle}/> */}
+            </Link>
         </div>
     );
 };
