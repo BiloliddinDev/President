@@ -56,7 +56,7 @@ export default async function BusinessGiftsCarousel() {
               “President Business Gifts” создаёт индивидуальные подарки, которые подчёркивают стиль и ценности вашей компании. Мы разрабатываем премиальные решения по вашему продукту или логотипу — от дизайна до упаковки Каждое изделие — это часть вашего имиджа, воплощённая в безупречном исполнении.
             </p>
             <div className="mb-10 md:mb-0 max-w-44">
-            <Link href={`/discover/about-us`}>
+            <Link href={`/discover/corporate-gifts`}>
                     <Button variant={"secondary"} className={"mt-5 w-full md:max-w-52"}>Подробнее</Button>
             </Link>
               {/* <SupportFormModal btnText= { CorporativeGiftsData["corporate.gifts.btn"]} /> */}

@@ -1,7 +1,8 @@
 import {FC} from "react";
 import Image from "next/image";
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious,} from "@/components/ui/carousel";
-import CollectionImage from "@/public/images/colection-left.png";
+import CollectionImage from "@/public/images/collections-home-page.jpg";
+// import CollectionImage from "@/public/images/colection-left.png";
 import {CollectionCard} from "@/components/shared/collection-card/collection-card";
 import {CollectionType} from "@/interface/collection-type/collection-type";
 import {CollectionItem} from "@/constants/colection-item";
@@ -31,7 +32,7 @@ export const Collections: FC<CollectionsProps> = ({dictionary, lang}) => {
                 />
             </div>
             <div className="w-full container  md:w-1/2">
-                <SectionTitle className={" mb-10 md:mb-[75px]"} text={dictionary.collections.title}/>
+                <SectionTitle className={" mb-10 md:mb-[75px]"} text={"Летние коллекции"}/>
                 <Carousel
                     opts={{
                         align: "start",

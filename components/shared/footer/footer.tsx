@@ -131,11 +131,11 @@ export const Footer = async ({lang}: FooterProps) => {
                         {FooterData["footer.social"]}
                     </h2>
                     <ul className={"flex gap-6 flex-wrap md:flex-nowrap"}>
-                        <li><IconComponent name="whatsapp"/></li>
-                        <li><IconComponent name="instagram"/></li>
-                        <li><IconComponent name="facebook"/></li>
-                        <li><IconComponent name="telegram"/></li>
-                        <li><IconComponent name="youtube"/></li>
+                        {/* <Link href={``}><IconComponent name="whatsapp"/></Link> */}
+                        <Link href={`https://www.instagram.com/president.business.gifts?igsh=MW45a3ZnN2Vwdm9rNQ==`}><IconComponent name="instagram"/></Link>
+                        <Link href={`https://www.facebook.com/people/President-Business-Gifts/100091796298789/?mibextid=wwXIfr&rdid=kdYkZRY0MUbI19se&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1B2YEhKnKd%2F%3Fmibextid%3DwwXIfr`}><IconComponent name="facebook"/></Link>
+                        <Link href={`https://t.me/presidentbusinessgifts`}><IconComponent name="telegram"/></Link>
+                         <Link href={`https://youtube.com/@presidentbusinessgifts?si=9plEH9E4yiYpSzvF`}><IconComponent name="youtube"/></Link>
                     </ul>
                 </div>
             </div>
