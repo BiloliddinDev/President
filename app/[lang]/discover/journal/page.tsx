@@ -10,7 +10,9 @@ const JournalPage = () => {
           
          <div className={"mt-10"}>
              <SectionTitle text={"Journal"}/>
-             <p className={"text-primary text-sm max-w-2xl mt-5"}>President Business Gifts is not just a premium gift brand — it is a unique fusion of national identity and contemporary aesthetics. Inspired by the historical heritage, cultural richness, and artisanal traditions of the Uzbek people, we blend them seamlessly with modern design and the highest standards of quality.
+             <p className={"text-primary text-sm max-w-2xl mt-5"}>
+              {/* President Business Gifts is not just a premium gift brand — it is a unique fusion of national identity and contemporary aesthetics. Inspired by the historical heritage, cultural richness, and artisanal traditions of the Uzbek people, we blend them seamlessly with modern design and the highest standards of quality. */}
+              President Business Gifts — это не просто бренд премиальных подарков, а уникальное сочетание национальной идентичности и совремённой эстетики. Вдохновляясь историческим наследием, культурным богатством и ремесленными традициями узбекского народа, мы гармонично объединяем их с современным дизайном и высочайшими стандартами качества.
              </p>
          </div>
       </div>

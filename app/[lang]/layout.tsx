@@ -128,6 +128,8 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
         <noscript>
             <div>
                 <Image
+                width="1"
+                height="1"
                     src="https://mc.yandex.ru/watch/103167645"
                     style={{position: 'absolute', left: '-9999px'}}
                     alt=""
