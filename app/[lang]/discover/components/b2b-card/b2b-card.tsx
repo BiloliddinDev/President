@@ -44,6 +44,7 @@ export const B2bCard = ({className, image, top, right, size}: B2bCardProps) => {
             setProcessedImage(imageUrl);
         } catch (error) {
             console.error("Upload error:", error);
+            console.log(processedImage)
         } finally {
             setUploading(false);
         }
