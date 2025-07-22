@@ -8,8 +8,8 @@ interface CountryCookie {
     code: string;
 }
 
-export async function CategoryService() {
-
+export async function SummerCollectionService() {
+    
     const cookieStore = await cookies();
 
     const lang = cookieStore.get('lang')?.value.toUpperCase() || 'EN';
@@ -27,8 +27,7 @@ export async function CategoryService() {
         }
     }
 
-
-    const url = `/api/v1/category/root_by_locale_with_media?languageCode=${lang}&countryCode=${countryCode}`
+const url=`/api/v1/collections/by_id_and_country?collectionId=3&country_code=${countryCode}`
 
     return await fetcher(url);
 }

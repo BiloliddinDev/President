@@ -2,7 +2,7 @@ export const navbarLinks = [
     {
         id: 1, name: {
             'en': "Shop",
-            'ru': 'Коллекции ',
+            'ru': 'Коллекции',
             "uz": "Kolleksiyalar"
         }
     },

@@ -61,7 +61,7 @@ const MobileNavbar = ({lang,languages, county} :
             {open && (
                 <div className="mt-4 space-y-6">
                     <CustomTabs
-                        tabtriggerClasses="min-w-[168px]"
+                        identifier="min-w-[168px]"
                         tabs={[
                             {
                                 value: "shops",

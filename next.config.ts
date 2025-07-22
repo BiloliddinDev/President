@@ -8,7 +8,7 @@ const nextConfig = {
         domains: [
             "www.facebook.com",
             "mc.yandex.ru",
-           'admin.presidentgift.com',
+           "admin.presidentgift.com",
         ],
     },
 };

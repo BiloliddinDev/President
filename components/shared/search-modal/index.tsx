@@ -10,7 +10,7 @@ const SearchModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, l
                 <SheetTrigger className="">{title}</SheetTrigger>
                 <SheetContent className={"z-[100]"} side={side}>
 
-                    <div className="ml-[3.75rem] mt-10">
+                    <div className="mt-10">
                         <SheetTitle className="pb-1.5">{sheetTitle}</SheetTitle>
                         {children}
                     </div>
