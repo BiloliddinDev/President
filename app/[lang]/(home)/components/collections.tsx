@@ -1,12 +1,15 @@
-import {FC} from "react";
+// import {FC} from "react";
 import Image from "next/image";
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious,} from "@/components/ui/carousel";
-import CollectionImage from "@/public/images/colection-left.png";
+import CollectionImage from "@/public/images/collections-home-page.jpg";
+// import CollectionImage from "@/public/images/colection-left.png";
 import {CollectionCard} from "@/components/shared/collection-card/collection-card";
-import {CollectionType} from "@/interface/collection-type/collection-type";
-import {CollectionItem} from "@/constants/colection-item";
+// import {CollectionType} from "@/interface/collection-type/collection-type";
+// import {CollectionItem} from "@/constants/colection-item";
 import {SectionTitle} from "@/components/ui/sectionTitle";
 import {SupportFormModal} from "@/components/shared/form-modal/form.modal";
+// import { SummerCollectionService } from "@/service/home-service/summer-collection.service";
+import {  ProductDto, summerCollectionsItems } from "@/constants/summer-collections-items";
 
 interface CollectionsProps {
     dictionary: {
@@ -18,20 +21,24 @@ interface CollectionsProps {
     lang: "uz" | "ru" | "en";
 }
 
-export const Collections: FC<CollectionsProps> = ({dictionary, lang}) => {
+export async function  Collections ({dictionary, lang}:CollectionsProps){
+
+    // const SummerCollectionsData = await SummerCollectionService() 
+    console.log("summerCollections",summerCollectionsItems[0].products[0])
+
     return (
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 w-full mt-12">
-            <div className="w-full md:w-1/2 flex justify-center">
+            <div className="w-full md:w-[40%] flex justify-center">
                 <Image
                     src={CollectionImage.src}
                     alt="Collection Left Image"
                     width={500}
-                    height={500}
-                    className="object-contain w-full "
+                    height={50}
+                    className="object-contain w-full"
                 />
             </div>
-            <div className="w-full container  md:w-1/2">
-                <SectionTitle className={" mb-10 md:mb-[75px]"} text={dictionary.collections.title}/>
+            <div className="w-full container  md:w-[60%]">
+                <SectionTitle className={" mb-10 md:mb-[75px]"} text={"Летние коллекции"}/>
                 <Carousel
                     opts={{
                         align: "start",
@@ -41,7 +48,7 @@ export const Collections: FC<CollectionsProps> = ({dictionary, lang}) => {
                     className="m-0 p-0 relative w-full text-center"
                 >
                     <CarouselContent className="m-0 p-0 flex gap-8">
-                        {CollectionItem.map((item: CollectionType) => (
+                        {summerCollectionsItems[0].products.map((item: ProductDto) => (
                             <CarouselItem
                                 key={item.id}
                                 className="m-0 p-0 min-w-48 mb-16"

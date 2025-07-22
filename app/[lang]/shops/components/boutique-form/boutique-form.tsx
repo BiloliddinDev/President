@@ -45,7 +45,19 @@ export default function BoutiqueForm() {
             });
         }
     };
+// Имя
 
+// 
+
+// 
+
+// 
+
+// 
+
+// 
+
+// 
     return (
 
         <Form {...form} >
@@ -55,7 +67,7 @@ export default function BoutiqueForm() {
                     name="fullName"
                     render={({field}) => (
                         <FormItem>
-                            <FormLabel>Full name</FormLabel>
+                            <FormLabel>Имя </FormLabel>
                             <FormControl><Input {...field} /></FormControl>
                             <FormMessage/>
                         </FormItem>
@@ -66,7 +78,7 @@ export default function BoutiqueForm() {
                     name="phone"
                     render={({field}) => (
                         <FormItem>
-                            <FormLabel>Phone number</FormLabel>
+                            <FormLabel>Телефон</FormLabel>
                             <FormControl><Input {...field} /></FormControl>
                             <FormMessage/>
                         </FormItem>
@@ -88,7 +100,7 @@ export default function BoutiqueForm() {
                     name="location"
                     render={({field}) => (
                         <FormItem>
-                            <FormLabel>Location</FormLabel>
+                            <FormLabel>Город</FormLabel>
                             <FormControl><Input {...field} /></FormControl>
                             <FormMessage/>
                         </FormItem>
@@ -99,7 +111,7 @@ export default function BoutiqueForm() {
                     name="date"
                     render={({field}) => (
                         <FormItem>
-                            <FormLabel>Date</FormLabel>
+                            <FormLabel>Дата визита</FormLabel>
                             <FormControl><Input type="date" {...field} /></FormControl>
                             <FormMessage/>
                         </FormItem>
@@ -110,7 +122,7 @@ export default function BoutiqueForm() {
                     name="time"
                     render={({field}) => (
                         <FormItem>
-                            <FormLabel>Time</FormLabel>
+                            <FormLabel>Время визита</FormLabel>
                             <FormControl><Input type="time" {...field} /></FormControl>
                             <FormMessage/>
                         </FormItem>
@@ -122,26 +134,21 @@ export default function BoutiqueForm() {
                         name="comment"
                         render={({field}) => (
                             <FormItem>
-                                <FormLabel>Comment</FormLabel>
+                                <FormLabel>Комментарий</FormLabel>
                                 <FormControl><Textarea rows={4}
-                                                       placeholder="Type your message here" {...field} /></FormControl>
+                                                       placeholder="Введите ваше сообщение здесь" {...field} /></FormControl>
                                 <FormMessage/>
                             </FormItem>
                         )}
                     />
                     <div className={'mt-5 text-sm font-medium  leading-tight'}>
-                        We would like to keep you updated with our latest news and provide you with exclusive benefits.
-                        If you wish to opt-out of receiving marketing <br/> information, please check the box
-                        below. <br/> Your
-                        information is safe with Montblanc. Consult our <Link className={'underline'} href={"#"}>Privacy
-                        Policy</Link> for
-                        further information
+                    Мы можем информировать вас о новостях и специальных предложениях. Если вы не хотите получать такие уведомления, отметьте соответствующий пункт. Вся информация обрабатывается конфиденциально в соответствии с <Link className={'underline'} href={"#"}> Политикой конфиденциальности.</Link> 
                     </div>
                 </div>
 
                 <div className="md:col-span-2 mt-4">
                     <Button type="submit" variant={"default"}>
-                        Send
+                    Отправить
                     </Button>
                 </div>
             </form>
