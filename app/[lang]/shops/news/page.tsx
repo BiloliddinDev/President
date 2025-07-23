@@ -2,7 +2,6 @@ import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcru
 import SortAndViewToggleWrapper from "@/components/shared/sort-View-toggle/sort-viewtoggle";
 import Image from "next/image";
 import {productsItem} from "@/components/ui/product-items";
-import {ProductsCard} from "@/components/shared/products-cards/products-card";
 import {Button} from "@/components/ui/button";
 import Images from "@/public/images/shops.png"
 
@@ -19,12 +18,13 @@ export default function NewsPage() {
                     alpine-themed pouches and cool fragrances at President Business Gifts! Dive into our unique
                     collection and snag the perfect gift before you buy… Read more</p>
                 <SortAndViewToggleWrapper itemLength={productsItem.length}>
-                    {productsItem.map((product) => (
-                        <ProductsCard
-                            key={product.id}
-                            productData={product}
-                        />
-                    ))}
+                    {/*{productsItem.map((product) => (*/}
+                    {/*    <ProductsCard*/}
+                    {/*        key={product.id}*/}
+                    {/*        productData={product}*/}
+                    {/*    />*/}
+                    {/*))}*/}
+                    <div></div>
                 </SortAndViewToggleWrapper>
                 <div className={"flex justify-center mt-11"}>
                     <Button className={"border-primary"} variant={"outline"}>See more</Button>

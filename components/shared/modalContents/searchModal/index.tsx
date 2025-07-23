@@ -1,4 +1,4 @@
-import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious,} from "@/components/ui/carousel";
+import {Carousel, CarouselContent, CarouselNext, CarouselPrevious,} from "@/components/ui/carousel";
 import {Input} from "@/components/ui/input";
 import {FooterLogo} from "@/components/ui/logo";
 import {SheetClose} from "@/components/ui/sheet";
@@ -6,8 +6,6 @@ import {categoryModalItems} from "@/constants/category-item";
 import Link from "next/link";
 import React, {useEffect, useState} from "react";
 import {X} from "lucide-react";
-import {ProductsCard} from "@/components/shared/products-cards/products-card";
-import {productsItem} from "@/components/ui/product-items";
 
 const SearchModalData = () => {
     const [isDesktop, setIsDesktop] = useState(false);
@@ -53,18 +51,19 @@ const SearchModalData = () => {
                             className="w-full"
                         >
                             <CarouselContent className="m-0 p-0 relative">
-                                {productsItem.map((product) => (
-                                    <CarouselItem
-                                        key={product.id}
-                                        className="!w-[90%] sm:!basis-[80%] md:!basis-[50%] lg:!basis-[33.3%]"
-                                    >
-                                        <ProductsCard productData={product} />
-                                    </CarouselItem>
-                                ))}
+                                {/*{productsItem.map((product) => (*/}
+                                {/*    <CarouselItem*/}
+                                {/*        key={product.id}*/}
+                                {/*        className="!w-[90%] sm:!basis-[80%] md:!basis-[50%] lg:!basis-[33.3%]"*/}
+                                {/*    >*/}
+                                {/*        <ProductsCard productData={product} />*/}
+                                {/*    </CarouselItem>*/}
+                                {/*))}*/}
+                                <div></div>
                             </CarouselContent>
 
-                            <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 z-40" />
-                            <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 z-40" />
+                            <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 z-40"/>
+                            <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 z-40"/>
                         </Carousel>
 
                     </div>

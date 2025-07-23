@@ -9,7 +9,7 @@ interface WishlistStore {
     addToWishlist: (item: ProductsInterface) => void;
     removeFromWishlist: (itemId: number) => void;
     isInWishlist: (itemId: number) => boolean;
-    toggleWishlist: (item: { productData: ProductsInterface }) => void;
+    toggleWishlist: (item: ProductsInterface) => void;
 }
 
 export const useWishlistStore = create<WishlistStore>()(
