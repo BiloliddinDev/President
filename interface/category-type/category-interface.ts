@@ -3,6 +3,7 @@ export interface CategoryInterface {
     "parentId": number,
     "name": string
     "description": string,
+    "children": CategoryInterface[]
     "translation": [
         {
             "name": string
@@ -10,7 +11,6 @@ export interface CategoryInterface {
             "code": string
         }
     ],
-    "children": []
     "mediaFiles": [
         {
             "id": string

@@ -3,17 +3,16 @@
 import {useRef} from 'react'
 import {Button} from "@/components/ui/button"
 import {ChevronLeft, ChevronRight} from "lucide-react"
-import {CategoryCard} from '@/components/shared/category-card/category-card'
-// import {CategoryCardType} from "@/interface/category-type/category-model"
-// import { CategoryDataType } from '@/app/[lang]/(home)/components/category'
-import { CategoryInterface } from '@/interface/category-type/category-interface'
+
+import {CategoryInterface} from "@/interface/category-type/category-interface";
+import {CategoryCard} from "@/components/shared/category-card/category-card";
 
 interface CategoryCarouselProps {
-    categories: CategoryInterface[]
-    lang:"uz" | "ru" | "en"
+    categories: CategoryInterface
+    lang: "uz" | "ru" | "en" | 'tj' | "az"
 }
 
-export default function CategoryCarousel({categories,lang}: CategoryCarouselProps) {
+export default function CategoryCarousel({categories, lang}: CategoryCarouselProps) {
     const scrollRef = useRef<HTMLDivElement>(null)
 
     const scroll = (direction: 'left' | 'right') => {
@@ -25,11 +24,11 @@ export default function CategoryCarousel({categories,lang}: CategoryCarouselProp
             })
         }
     }
-    console.log("carousel",categories)
+
 
     return (
         <div className="w-full">
-            
+
             <div className="flex justify-between mb-5">
                 <h2 className="text-xl font-semibold mb-4">Categories</h2>
                 <div>
@@ -46,9 +45,10 @@ export default function CategoryCarousel({categories,lang}: CategoryCarouselProp
                     ref={scrollRef}
                     className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth"
                 >
-                    {categories.length > 0 && categories.map((item) => (
+                    {categories.children.map((item) => (
                         <div key={item.id} className="w-[200px] h-[200px] flex-shrink-0">
                             <CategoryCard category={item} lang={lang}/>
+                            <div></div>
                         </div>
                     ))}
                 </div>
