@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import {Heart} from "lucide-react";
-import {useWishlistStore} from "@/lib/set-wishlist.storage";
 import {ProductsInterface} from "@/interface/products-interface/products-interface";
 
 interface ProductsCardProps {
@@ -11,20 +10,17 @@ interface ProductsCardProps {
 }
 
 export const ProductsCard = ({productData, className}: ProductsCardProps) => {
-    const {toggleWishlist, isInWishlist} = useWishlistStore();
-    const isFavorite = isInWishlist(productData.id);
 
     return (
         <div
             className={`${className} group relative flex flex-col rounded-lg transition hover:shadow-md bg-white pb-2`}
         >
             <button
-                onClick={() => toggleWishlist({productData})}
                 className="absolute right-3 top-3 z-40 text-gray-500 cursor-pointer hover:text-primary transition"
             >
                 <Heart
                     className={`w-5 h-5 ${
-                        isFavorite ? "fill-primary text-primary" : ""
+                        "fill-primary text-primary"
                     }`}
                 />
             </button>
