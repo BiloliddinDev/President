@@ -36,6 +36,7 @@ type SupportFormValues = z.infer<typeof SupportSchema>
 
 
 
+
 export const SupportForm = ({dictionary}: SupportFormProps) => {
 
     const form = useForm<SupportFormValues>({

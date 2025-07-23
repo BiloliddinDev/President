@@ -3,8 +3,7 @@ import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious,
 import {SectionTitle} from "@/components/ui/sectionTitle";
 import {NewsCard} from "@/components/shared/news-card/news-card";
 import {newsItem} from "@/constants/news-item";
-import {FC, useEffect, useState} from "react";
-import { getNews } from "@/service/home-service/news.service";
+import {FC} from "react";
 
 interface NewsProps {
     dictionary?: {
@@ -18,18 +17,18 @@ interface NewsProps {
 
 
 export const News: FC<NewsProps> = ({ lang}) => {
-const [news,setNews] =useState()
+// const [news,setNews] =useState()
     
-    useEffect(() => {
-        const fetchNews = async () => {
-            const data = await getNews();
-          setNews(data);
-        };
-        fetchNews().then().catch().finally();
-    }, []);
+    // useEffect(() => {
+    //     const fetchNews = async () => {
+    //         const data = await getNews();
+    //       setNews(data);
+    //     };
+    //     fetchNews().then().catch().finally();
+    // }, []);
 
     //news olib kelindi
-console.log("news",news)
+// console.log("news",news)
     return (
         <div className={"relative "}>
             <SectionTitle className={"container"} text={`Новинки`}/>

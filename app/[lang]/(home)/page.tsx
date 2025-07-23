@@ -1,7 +1,7 @@
 import {Showcase} from "@/app/[lang]/(home)/components/showcase";
 import {News} from "@/app/[lang]/(home)/components/news";
 import {About} from "./components/about";
-import {Category} from "@/app/[lang]/(home)/components/category";
+// import {Category} from "@/app/[lang]/(home)/components/category";
 import {Collections} from "@/app/[lang]/(home)/components/collections";
 import {ProductVideos} from "./components/productVideos";
 import {SupportForm} from "@/app/[lang]/(home)/components/support-form";
@@ -9,6 +9,7 @@ import AnimatedSection from "@/components/animation-section/animation-section";
 import BusinessGifts from "@/app/[lang]/(home)/components/businessgifts";
 import Location from "@/app/[lang]/(home)/components/location";
 import {getDictionary} from "@/lib/get-dictionary";
+import React, {Suspense} from "react";
 
 
 interface HomePageProps {
@@ -38,7 +39,9 @@ export default async function Home({params}: HomePageProps) {
             </section>
             <section className={"mt-[100px]"}>
                 <AnimatedSection animation={"fade-left"}>
-                    {/* done */} <Category dictionary={dictionary} lang={HomePageParam.lang}/>
+                    <Suspense fallback={<div>Загрузка...</div>}>
+                        {/* <Category dictionary={dictionary} lang={HomePageParam.lang}/> */}
+                    </Suspense>
                 </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
@@ -51,7 +54,9 @@ export default async function Home({params}: HomePageProps) {
                 {/*<News />*/}
             </section>
             <section className="mt-[100px] bg-[#F6F6F6] py-8">
+
                 {/* done */} <SupportForm dictionary={dictionary}></SupportForm>
+
             </section>
             <section className="mt-[100px]  ">
                 {/* done */} <BusinessGifts/>

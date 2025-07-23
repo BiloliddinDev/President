@@ -1,7 +1,9 @@
 import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
-import image1 from '@/public/images/b2b-image1.png'
-import image2 from '@/public/images/b2b-image2.png'
-import image3 from '@/public/images/b2b-image3.png'
+
+import image3 from "@/public/images/soat.jpg";
+import image2 from "@/public/images/sumka.jpg";
+import image1 from "@/public/images/klatch.jpg";
+
 import {B2bCard} from "@/app/[lang]/discover/components/b2b-card/b2b-card";
 
 
@@ -22,15 +24,19 @@ export default function B2BPage() {
                     top={{base: 140, md: 210, lg: 180}}
                     right={{base: 150, md: 240, lg: 190}}
                     size={45}
-                    image={image2}
+                    image={image1}
                     className="mt-[100px] flex-col lg:flex-row gap-10"
+                    title="Клатч"
+                    desc="Хотите увидеть, как ваш логотип будет выглядеть на клатче? Тогда загрузите изображение логотипа и попробуйте прямо сейчас!"
                 />
                 <B2bCard
                     top={{base: 150, md: 200, lg: 180}}
                     right={{base: 90, md: 180, lg: 185}}
                     size={70}
-                    image={image1}
+                    image={image2}
                     className="mt-[100px] flex-col lg:flex-row-reverse gap-10"
+                     title="Сумка"
+                    desc="Представьте, как будет выглядеть сумка с логотипом вашего бренда. Хотите увидеть результат? Попробуйте прямо сейчас!"
                 />
                 <B2bCard
                     top={{base: 86, md: 135, lg: 130}}
@@ -38,8 +44,9 @@ export default function B2BPage() {
                     size={30}
                     image={image3}
                     className="mt-[100px] flex-col lg:flex-row gap-10"
+                     title="Часы"
+                    desc="Мы наносим логотип вашего бренда даже на внутреннюю часть наручных часов — это тонкая и точная работа. Обязательно попробуйте!"
                 />
-
             </div>
         </div>
     )

@@ -1,6 +1,7 @@
 import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import Image from "next/image";
-import ServicesImage from "@/public/images/Bag.jpg";
+import  images2 from  '@/public/images/souvenir.jpg'
+// import ServicesImage from "@/public/images/Bag.jpg";
 // import ServicesImage from "@/public/images/services4.png";
 import BoutiqueForm from "@/app/[lang]/shops/components/boutique-form/boutique-form";
 
@@ -10,7 +11,7 @@ export default function AppointmentPage() {
             <div className={"container md:!mt-26 !mt-42"}>
                 <BreadcrumbDynamic/>
             </div>
-            <Image width={1000} height={330} className={"w-full h-[330px] object-cover mt-10 mb-20"} src={ServicesImage}
+            <Image width={1000} height={1000} className={"w-full h-[500px] object-cover mt-10 mb-20"} src={images2}
                    alt={'ServicesImage'}/>
 
             <div className="container ">

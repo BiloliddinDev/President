@@ -27,7 +27,7 @@ type MediaUsageType = "IMAGE_CONTENT" | "VIDEO_CONTENT" | "DOCUMENT_CONTENT";
 type MediaType = "IMAGE" | "VIDEO" | "DOCUMENT";
 type AccessLevel = "PUBLIC" | "PRIVATE";
 
-interface MediaFile {
+export interface MediaFile {
     id: string;
     accessLevel: AccessLevel;
     contentType: string;

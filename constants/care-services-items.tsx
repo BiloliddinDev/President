@@ -14,11 +14,11 @@ export const careServicesItems = [
     serviceType: "Leather",
     iconName: "leather",
   },
-  {
-    id: 4,
-    serviceType: "Accessories",
-    iconName: "accessories",
-  },
+  // {
+  //   id: 4,
+  //   serviceType: "Accessories",
+  //   iconName: "accessories",
+  // },
 ];
 
 export const writingInstruments = [

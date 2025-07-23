@@ -1,14 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-        appDir: true,
-    },
+    // experimental: {
+    //     appDir: true,
+    // },
     output: 'standalone',
     images: {
         domains: [
             "www.facebook.com",
             "mc.yandex.ru",
-           "admin.presidentgift.com",
+            "admin.presidentgift.com",
         ],
     },
 };

@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Image, {StaticImageData} from "next/image";
 import {useWindowSize} from "@/hooks/use-window-size";
 import {getResponsiveValue, ResponsiveValue} from "@/hooks/get-responsive-value";
@@ -12,7 +13,7 @@ interface RightImageProps {
     right?: ResponsiveValue;
 }
 
-export default function RightImage({backgroundImage, image, size, top, right}: RightImageProps) {
+export default function RightImage({backgroundImage, image, size, top, right}: RightImageProps): React.ReactElement {
     const {width} = useWindowSize();
 
     const adjustedTop = getResponsiveValue(top, width);

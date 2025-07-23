@@ -36,9 +36,7 @@ export default async function News({params}: NewsPageProps) {
                 <h2 className={"mt-10 text-primary text-xl font-medium leading-loose"}>
                     {/* President Business Gifts news */}
                      {NewsText}</h2>
-                <p className="self-stretch justify-start text-zinc-700 text-sm font-normal font-['Inter'] leading-tight mb-9">Check
-                    out our awesome range of alpine-themed pouches and cool fragrances at President Business Gifts! Dive
-                    into our unique collection and snag the perfect gift before you buy. 
+                <p className="self-stretch justify-start text-zinc-700 text-sm font-normal font-['Inter'] leading-tight mb-9">{selectedNew?.description.ru}
                     {/* <br/><br/>Check out our awesome
                     range of alpine-themed pouches and cool fragrances at President Business Gifts! Dive into our unique
                     collection and snag the perfect gift before you buy. <br/><br/>Check out our awesome range of

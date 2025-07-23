@@ -3,6 +3,7 @@
 import {useRef} from 'react'
 import {Button} from "@/components/ui/button"
 import {ChevronLeft, ChevronRight} from "lucide-react"
+
 import {CategoryInterface} from "@/interface/category-type/category-interface";
 import {CategoryCard} from "@/components/shared/category-card/category-card";
 

@@ -25,11 +25,11 @@ const CommonHeader: FC<Props> = ({
         >
           {maintext}
         </p>
-        {contentLink && (
+        {/* {contentLink && (
           <a href="#" className="font-medium  leading-6 underline">
             Contact us for enquiries
           </a>
-        )}
+        )} */}
       </div>
     </div>
   );

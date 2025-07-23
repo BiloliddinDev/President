@@ -16,7 +16,7 @@ export default function DiscoverService() {
             <div className="-mx-[calc((100vw-100%)/2)] mt-10 w-screen mb-28">
                 <Image src={Pen2} alt="a pen"/>
             </div>
-            <p className="text-lg font-medium">Writing instruments</p>
+            <p className="text-lg font-medium">Часто задаваемые вопросы</p>
 
             <CustomTabs className="my-7" tabs={myTabs}/>
         </div>
