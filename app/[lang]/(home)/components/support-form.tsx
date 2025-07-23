@@ -14,7 +14,7 @@ import {SupportSchema} from "@/interface/support-schema/support-schema";
 
 type SupportFormValues = z.infer<typeof SupportSchema>
 
-export const SupportForm = () => {
+export const SupportForm = ({discription} : unknown) => {
     const form = useForm<SupportFormValues>({
         resolver: zodResolver(SupportSchema),
         defaultValues: {
