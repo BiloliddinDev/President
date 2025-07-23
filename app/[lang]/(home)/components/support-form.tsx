@@ -14,7 +14,8 @@ import {SupportSchema} from "@/interface/support-schema/support-schema";
 
 type SupportFormValues = z.infer<typeof SupportSchema>
 
-export const SupportForm = ({dictionary} : unknown) => {
+export const SupportForm = ({ dictionary }: { dictionary: any }) => {
+    const t = dictionary?.supportForm ?? {}; // fake it 'til you use it
     const form = useForm<SupportFormValues>({
         resolver: zodResolver(SupportSchema),
         defaultValues: {
