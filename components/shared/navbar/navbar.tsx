@@ -18,7 +18,7 @@ import {CountryType, LanguageType} from "@/interface/language&country-type/langu
 import {getAllCountry} from "@/service/navbar-service/country.service";
 import Cookies from "js-cookie";
 // import { ShopModalContent } from "../modalContents/shopModal";
-import  ShopModalContent  from "../modalContents/shopModal";
+import ShopModalContent from "../modalContents/shopModal";
 
 export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
     const [languages, setLanguages] = useState<LanguageType[]>([]);

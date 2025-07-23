@@ -63,8 +63,8 @@ export async function  Collections ({dictionary, lang}:CollectionsProps){
                     {/*</Button>*/}
                     <SupportFormModal lang={lang} btnText={dictionary.collections.newArrival}/>
                     <CarouselPrevious
-                        className="absolute right-[100px] top-1/2 -translate-y-1/2 translate-x-full z-40"/>
-                    <CarouselNext className="absolute right-[100px] top-1/2 -translate-y-1/2 translate-x-full z-40"/>
+                        className="absolute left-[-7%]  top-1/2 -translate-y-1/2 translate-x-full z-40"/>
+                    <CarouselNext className="absolute right-[4%]  top-1/2 -translate-y-1/2 translate-x-full z-40"/>
                 </Carousel>
             </div>
         </div>

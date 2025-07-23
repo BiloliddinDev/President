@@ -9,7 +9,7 @@ interface CountryCookie {
 }
 
 export async function CategoryService() {
-    
+
     const cookieStore = await cookies();
 
     const lang = cookieStore.get('lang')?.value.toUpperCase() || 'EN';
@@ -27,8 +27,8 @@ export async function CategoryService() {
         }
     }
 
-// const url=`/api/v1/category/all_by_language?languageCode=${lang}&countryCode=${countryCode}&withChildren=false`
-const url=`/api/v1/category/all_root_by_country?countryCode=${countryCode}&withChildren=false`
+
+    const url = `/api/v1/category/root_by_locale_with_media?languageCode=${lang}&countryCode=${countryCode}`
 
     return await fetcher(url);
 }
