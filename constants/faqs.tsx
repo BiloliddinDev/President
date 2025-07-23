@@ -4,7 +4,7 @@ export const myTabs = [
     {
         value: "Общая информация",
         label: "Общая информация",
-        content: <InstrumentAccordion/>,
+        // content: <InstrumentAccordion/>,
     },
     {
         value: "Мой аккаунт и заказы",

@@ -1,12 +1,12 @@
 import React from "react";
 
 import CustomAccordion from "@/components/shared/custom-accordion/custom-accordion";
-import { writingInstruments } from "@/constants/care-services-items";
-const InstrumentAccordion = () => {
+import { tabsType } from "@/constants/care-services-items";
+const InstrumentAccordion = ({ data }: { data: tabsType[] }) => {
   return (
     <>
       <p className="text-lg font-medium  mb-5">Writing instruments</p>
-      {writingInstruments.map((item) => (
+      {data.map((item) => (
         <CustomAccordion
           key={item.id}
           itemValue={item.value}

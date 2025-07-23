@@ -5,8 +5,12 @@ import leather from "@/public/images/Bag.jpg";
 import watch from "@/public/images/Watches1.png";
 import writing from "@/public/images/care-detail.png";
 import Image from "next/image";
-import CustomTabs from "@/components/shared/tabs/custom-tabs";
-import InstrumentAccordion from "../components/instrument-accordion";
+// import CustomTabs from "@/components/shared/tabs/custom-tabs";
+// import InstrumentAccordion from "../components/instrument-accordion";
+// import { WritingMode, services, writingInstruments,repair, tabsType } from "@/constants/care-services-items";
+import Writing from "../components/writing";
+import Leather from "../components/leatger";
+import Watches from "../components/watches";
 
 interface ServiceProps {
   params: Promise<{ 
@@ -24,34 +28,7 @@ export default async function DiscoverService ({params}:ServiceProps){
     } else if (service.service === "watches") {
       imageSrc = watch;
     }
-    
-  const myTabs = [
-    {
-      value: "care-use",
-      label: "Care & Use",
-      content: <InstrumentAccordion />,
-    },
-    {
-      value: "writing-modes",
-      label: "Writing Modes",
-      content: "Writing Modes content",
-    },
-    // {
-    //   value: "refills-link",
-    //   label: "Refills & Ink",
-    //   content: "Refills & Ink content",
-    // },
-    // { value: "nibs", label: "Nibs", content: "Nibs content" },
-    { value: "services", label: "Services", content: "Services content" },
-    {
-      value: "repair-warranty",
-      label: "Repair & Warranty",
-      content: "Repair & Warranty content",
-    },
-    { value: "faq", label: "FAQ", content: "Frequently Asked questions" },
-  ];
 
-  // "writing%20instrument" "leather"  "watches"
   
   return (
     <div className="container mx-auto px-2 md:px-4  md:!mt-26 !mt-42">
@@ -61,9 +38,9 @@ export default async function DiscoverService ({params}:ServiceProps){
       <div className="-mx-[calc((100vw-100%)/2)] w-screen mb-28">
         <Image src={imageSrc} alt="a pen" width={10000} height={1000}/>
       </div>
-      <p className="text-lg font-medium">Writing instruments</p>
+      <p className="text-lg font-medium">{imageSrc==writing ? "Письменный инструмент":imageSrc==leather ? "Кожа" :"Часы"}</p>
 
-            <CustomTabs className="!my-7 container" tabs={myTabs}/>
+      {imageSrc==writing ? <Writing/> :imageSrc==leather ? <Leather/> : <Watches/>} 
         </div>
     );
 };
