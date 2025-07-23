@@ -9,10 +9,18 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
+
 jobs:
   # Build job
   build-and-test:
     runs-on: ubuntu-latest
+    env:
+      AMOCRM_CLIENT_ID: ${{ secrets.AMOCRM_CLIENT_ID }}
+      AMOCRM_CLIENT_SECRET: ${{ secrets.AMOCRM_CLIENT_SECRET }}
+      AMOCRM_SUBDOMAIN: ${{ secrets.AMOCRM_SUBDOMAIN }}
+      AMOCRM_REDIRECT_URI: ${{ secrets.AMOCRM_REDIRECT_URI }}
+      AMOCRM_AUTHORIZATION_CODE: ${{ secrets.AMOCRM_AUTHORIZATION_CODE }}
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
