@@ -42,7 +42,7 @@
 // export default CareAndServices;
 import Image from "next/image";
 import React from "react";
-import Pen from "@/public/images/care-detail.png";
+import Pen from "@/public/images/care-and-services.jpg";
 import { BreadcrumbDynamic } from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import { careServicesItems } from "@/constants/care-services-items";
 import Link from "next/link";
@@ -61,8 +61,8 @@ const CareAndServices = () => {
           src={Pen}
           alt="a pen"
           width={2000}
-          height={2000}
-          className="w-full h-auto object-cover"
+          height={100}
+          className="w-full h-[500px] object-cover"
         />
       </div>
 

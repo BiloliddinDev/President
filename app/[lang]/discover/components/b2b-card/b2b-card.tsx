@@ -1,17 +1,17 @@
 "use client"
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import {useState} from "react";
 import Placeholder from "@/public/images/placeholder.png";
-import imageb2b from "@/public/images/b2b-image.png"
+// import imageb2b from "@/public/images/b2b-image.png"
 import {RadioGroup, RadioGroupItem} from "@/components/ui/radio-group";
 import RightImage from "@/app/[lang]/discover/components/b2b-card/right-image/right-image";
-import Logo from "@/public/backend-image/no-bg.png"
+// import Logo from "@/public/backend-image/no-bg.png"
 import {buttonVariants} from "@/components/ui/button";
 
 
 
-export const B2bCard = ({className}: { className?: string }) => {
+export const B2bCard = ({className,title,desc,image}: { className?: string,title:string,desc:string, image:StaticImageData }) => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const [uploading, setUploading] = useState(false);
     const [processedImage, setProcessedImage] = useState<string | null>(null);
@@ -50,9 +50,9 @@ export const B2bCard = ({className}: { className?: string }) => {
     return (
         <div className={`${className} flex justify-between items-center`}>
             <div>
-                <h2 className="text-primary text-lg font-medium mb-5">Personalization</h2>
+                <h2 className="text-primary text-lg font-medium mb-5">{title}</h2>
                 <p className="text-sm text-zinc-600 w-[300px] md:w-[450px]">
-                    Upload your logo, choose background color, and select its position on the product.
+                    {desc}
                 </p>
 
                 <div className="mt-6 flex items-center  gap-4 p-4 bg-white rounded border">
@@ -99,7 +99,7 @@ export const B2bCard = ({className}: { className?: string }) => {
                     </RadioGroup>
                 </div>
             </div>
-            <RightImage backgroundImage={imageb2b} image={Logo}/>
+            <RightImage image={image}/>
         </div>
     );
 };

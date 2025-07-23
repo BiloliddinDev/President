@@ -31,26 +31,50 @@ export const discoverAboutItems = [
   // },
 ];
 
+// export const contactInfo = [
+//   {
+//     id: 1,
+//     title: "Phone number",
+//     subtitle: "+998 - 33 - 333 - 33 - 33",
+//     href: "tel:+998333333333",
+//     icon: "phone",
+//   },
+//   {
+//     id: 2,
+//     title: "Location",
+//     subtitle: "Location",
+//     href: "https://maps.app.goo.gl/nqnzgWHuN1Sgrmna8",
+//     icon: "location",
+//   },
+//   {
+//     id: 3,
+//     title: "Email",
+//     subtitle: "PresidentBusinessGifts@gmail.com",
+//     href: "https://PresidentBusinessGifts@gmail.com",
+//     icon: "envelop",
+//   },
+// ];
 export const contactInfo = [
   {
     id: 1,
-    title: "Phone number",
+    title: "Телефон",
     subtitle: "+998 - 33 - 333 - 33 - 33",
     href: "tel:+998333333333",
     icon: "phone",
   },
   {
     id: 2,
-    title: "Location",
-    subtitle: "Location",
+    title: "Адрес",
+    subtitle: "Узнать местоположение",
     href: "https://maps.app.goo.gl/nqnzgWHuN1Sgrmna8",
     icon: "location",
   },
   {
     id: 3,
-    title: "Email",
+    title: "Электронная почта",
     subtitle: "PresidentBusinessGifts@gmail.com",
     href: "https://PresidentBusinessGifts@gmail.com",
     icon: "envelop",
   },
 ];
+

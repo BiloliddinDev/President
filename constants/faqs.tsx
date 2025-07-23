@@ -2,26 +2,20 @@ import InstrumentAccordion from "@/app/[lang]/service/faqs/components/instrument
 
 export const myTabs = [
     {
-        value: "care-use",
-        label: "Care & Use",
+        value: "Общая информация",
+        label: "Общая информация",
         content: <InstrumentAccordion/>,
     },
     {
-        value: "writing-modes",
-        label: "Writing Modes",
-        content: "Writing Modes content",
+        value: "Мой аккаунт и заказы",
+        label: "Мой аккаунт и заказы",
+        content: "Мой аккаунт и заказы",
     },
     {
-        value: "refills-link",
-        label: "Refills & Ink",
-        content: "Refills & Ink content",
+        value: "Консультации и ремонт по товарам",
+        label: "Консультации и ремонт по товарам",
+        content: "Консультации и ремонт по товарам",
     },
-    {value: "nibs", label: "Nibs", content: "Nibs content"},
-    {value: "services", label: "Services", content: "Services content"},
-    {
-        value: "repair-warranty",
-        label: "Repair & Warranty",
-        content: "Repair & Warranty content",
-    },
-    {value: "faq", label: "FAQ", content: "Frequently Asked questions"},
+   
+    {value: "Возврат и оплата", label: "Возврат и оплата", content: "Возврат и оплата"},
 ];

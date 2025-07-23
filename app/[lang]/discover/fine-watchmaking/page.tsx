@@ -26,20 +26,20 @@ const FineWatchmaking = () => {
         productType="Craftsmanship"
         description="Aesthetic and technical excellence"
         textInfo="From in-house movements to special finishings and traditional materials  Minerva, whose name comes from the goddess of craftsmanship, has conveyed, generation after generation, the best-kept know-how of Swiss watchmaking. Minerva watches embody the expertise of each watchmaker, placed at the service of exceptional timepieces in the purest horological tradition to inspire bold journeys."
-        videoSrc={"/videos/watch-video.mp4"}
+        videoSrc={"/videos/fin-watching.mp4"}
       />
       <WatchVsText
         reverse
         productType="Innovation"
         description="The calibre, revelated to the world"
         textInfo="From in-house movements to special finishings and traditional materials  Minerva, whose name comes from the goddess of craftsmanship, has conveyed, generation after generation, the best-kept know-how of Swiss watchmaking. Minerva watches embody the expertise of each watchmaker, placed at the service of exceptional timepieces in the purest horological tradition to inspire bold journeys."
-        videoSrc={"/videos/watch-video.mp4"}
+        videoSrc={"/videos/fin-watching.mp4"}
       />
       <CommonWatchSection
         productType="Innovation"
         description="The calibre, revelated to the world"
         textInfo="From in-house movements to special finishings and traditional materials  Minerva, whose name comes from the goddess of craftsmanship, has conveyed, generation after generation, the best-kept know-how of Swiss watchmaking. Minerva watches embody the expertise of each watchmaker, placed at the service of exceptional timepieces in the purest horological tradition to inspire bold journeys."
-        videoSrc={"/videos/watch-video.mp4"}
+        videoSrc={"/videos/fin-watching.mp4"}
       />
     </div>
   );

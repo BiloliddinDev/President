@@ -21,7 +21,7 @@ export default function ServicePage() {
             />
             <div className={"container !mt-10 !pb-20"}>
                 <div className="text-primary text-lg font-medium leading-7 mb-5">
-                    Customer Services
+                    {/* Customer Services */}Обслуживание клиентов
                 </div>
                 <div
                     className={"flex gap-5 justify-between flex-wrap md:flex-nowrap"}

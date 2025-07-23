@@ -1,7 +1,7 @@
 import {Showcase} from "@/app/[lang]/(home)/components/showcase";
 import {News} from "@/app/[lang]/(home)/components/news";
 import {About} from "./components/about";
-import {Category} from "@/app/[lang]/(home)/components/category";
+// import {Category} from "@/app/[lang]/(home)/components/category";
 import {Collections} from "@/app/[lang]/(home)/components/collections";
 import {ProductVideos} from "./components/productVideos";
 import {SupportForm} from "@/app/[lang]/(home)/components/support-form";
@@ -37,9 +37,9 @@ export default async function Home({params}: HomePageProps) {
                 </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
-                <AnimatedSection animation={"fade-left"}>
-{/* done */}        <Category dictionary={dictionary} lang={HomePageParam.lang}/>
-                </AnimatedSection>
+                {/* <AnimatedSection animation={"fade-left"}>
+      <Category dictionary={dictionary} lang={HomePageParam.lang}/>
+                </AnimatedSection> */}
             </section>
             <section className={"mt-[100px]"}>
                 <Collections dictionary={dictionary} lang={HomePageParam.lang}/>

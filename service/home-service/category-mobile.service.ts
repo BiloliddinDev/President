@@ -24,7 +24,7 @@ export const getCategoryModal = async () => {
 
     if (countryCode) {
         // return fetcherClient(`/api/v1/category/all_by_language?languageCode=${langString}&countryCode=${countryCode}&withChildren=false`);
-        return fetcherClient(`/api/v1/category/all_root_by_country?countryCode=${countryCode}&withChildren=false`);
+        return fetcherClient(`/api/v1/category/root_by_locale?countryCode=${countryCode}&withChildren=false`);
              }
             
 }

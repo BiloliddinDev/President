@@ -39,7 +39,7 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
         fetchCounty().then().catch().finally();
     }, [cookiescountry]);
 
-
+// https://api.presidentgift.com/api/v1/category/root_by_locale?languageCode=UZ&countryCode=UZ
     return (
         <nav
             className={`fixed top-0 left-0 w-full md:p-3 z-60 transition-colors duration-300 bg-neutral-100 shadow`}
