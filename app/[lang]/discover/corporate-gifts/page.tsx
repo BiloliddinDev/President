@@ -72,7 +72,7 @@ subtitle="Мы предлагаем тонкую и элегантную
       
       />
       <CommonWatchSection
-        videoSrc={"/videos/watch-video.mp4"}
+        videoSrc={"/videos/corporative-gifts.mp4"}
         description="Подарок как выражение благодарности"
         // description="Tokens of appreciation"
         // textInfo="Sometimes, the greatest gifts are the unexpected ones. Montblanc Accessories are ideal for such surprises. It doesn’t have to be a big event or milestone to show your business partners, colleagues or clients that they’re valued. Be it a corporate event, a small thank you to celebrate the signing of a contract, or simply no reason at all, Montblanc offers treasured items that act as small, heartfelt signs of appreciation."
