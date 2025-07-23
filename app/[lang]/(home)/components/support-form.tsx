@@ -11,10 +11,31 @@ import {SectionTitle} from "@/components/ui/sectionTitle"
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select"
 import {SupportSchema} from "@/interface/support-schema/support-schema";
 
+interface SupportFormProps {
+    dictionary: {
+        "support": {
+            "title": string
+            "supportform": string
+            "form": {
+                "name": {
+                    "label": string,
+                    "placeholder": string
+                },
+                "phone": {
+                    "label": string,
+                    "placeholder": string
+                },
+                "submit": string
+            },
+        };
+    }
+}
+
 
 type SupportFormValues = z.infer<typeof SupportSchema>
 
-export const SupportForm = ({dictionary} : unknown) => {
+
+export const SupportForm = ({dictionary}: SupportFormProps) => {
     const form = useForm<SupportFormValues>({
         resolver: zodResolver(SupportSchema),
         defaultValues: {
@@ -32,7 +53,7 @@ export const SupportForm = ({dictionary} : unknown) => {
 
     return (
         <div className="container py-12">
-            <SectionTitle className={"mb-[50px]"} text="We support you!"/>
+            <SectionTitle className={"mb-[50px]"} text={dictionary.support.title}/>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="grid md:grid-cols-3 gap-y-[30px] gap-x-[26px]">
                     <FormField
@@ -114,7 +135,8 @@ export const SupportForm = ({dictionary} : unknown) => {
                         )}
                     />
                     <div className="md:col-span-3 flex justify-between items-center mt-6">
-                        <div className="text-slate-900 text-md font-normal  leading-loose">«Остались вопросы? Оставьте заявку — мы скоро ответим.»
+                        <div className="text-slate-900 text-md font-normal  leading-loose">«Остались вопросы? Оставьте
+                            заявку — мы скоро ответим.»
                         </div>
                         <Button type="submit" variant={"default"}>
                             Send
