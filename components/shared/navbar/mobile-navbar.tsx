@@ -8,6 +8,8 @@ import DiscoverModalContent from "../modalContents/discoverModal";
 import ChangeLangModal from "../modalContents/changeLangModal";
 import { CountryType, LanguageType } from "@/interface/language&country-type/language-type";
 import ShopModalContent from "../modalContents/shopModal";
+import { Category } from "./navbar";
+import { getCategoryModal } from "@/service/home-service/category-mobile.service";
 
 const MobileNavbar = ({lang,languages, county} : 
     {lang : "uz" | "ru" | "en",
@@ -15,7 +17,16 @@ const MobileNavbar = ({lang,languages, county} :
     county: CountryType[]}) => {
     const [open, setOpen] = useState<boolean>(false);
     // const [searchInputOpen, setSearchInputOpen] = useState<boolean>(false);
+    const [category, setCategory] = useState<Category[]>([])
 
+    useEffect(() => {
+       
+        const fetchCategory = async () => {
+            const data:Category[] = await getCategoryModal() as Category[]
+           setCategory(data);
+        };
+        fetchCategory().then().catch().finally();
+    }, []);
     const mobileMenuRef = useRef<HTMLDivElement>(null);
     const handleOpen = () => setOpen(!open);
     useEffect(() => {
@@ -61,12 +72,12 @@ const MobileNavbar = ({lang,languages, county} :
             {open && (
                 <div className="mt-4 space-y-6">
                     <CustomTabs
-                        tabtriggerClasses="min-w-[168px]"
+                        identifier="min-w-[168px]"
                         tabs={[
                             {
                                 value: "shops",
                                 label: "Shops",
-                                content: <ShopModalContent lang={"ru"}/>,
+                                content: <ShopModalContent lang={"ru"} category={category}/>,
                             },
                             {
                                 value: "discover",

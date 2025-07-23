@@ -8,6 +8,7 @@ import CategoryCarousel from "@/app/[lang]/shops/components/category-carusel/cat
 import { CategoryDataType } from "../../(home)/components/category";
 import { CategoryService } from "@/service/home-service/category.service";
 import { CategoryChildService } from "@/service/category-service/category-child.service";
+import { CategoryInterface } from "@/interface/category-type/category-interface";
 // import ProductPage from "./components/Products";
 
 interface CategoryPageProps {
@@ -35,7 +36,7 @@ export default async function CategoryPage({params}: CategoryPageProps) {
       const categoryName=splitCategory(categoryParam.category).name
       const CategoryData:CategoryDataType[] = await CategoryService()  as CategoryDataType[]
     
-      const CategoryChildData:CategoryDataType[] = await CategoryChildService(parentId)  as CategoryDataType[]
+      const CategoryChildData:CategoryInterface[] = await CategoryChildService(parentId)  as CategoryInterface[]
       
       console.log("category",CategoryData, CategoryChildData)
     return (

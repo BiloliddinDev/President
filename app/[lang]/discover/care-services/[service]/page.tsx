@@ -1,4 +1,4 @@
-import { BreadcrumbDynamic } from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
+import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import React from "react";
 // import Pen2 from "@/public/images/pen3.png";
 import leather from "@/public/images/Bag.jpg";
@@ -63,9 +63,9 @@ export default async function DiscoverService ({params}:ServiceProps){
       </div>
       <p className="text-lg font-medium">Writing instruments</p>
 
-      <CustomTabs className="my-7" tabs={myTabs} />
-    </div>
-  );
+            <CustomTabs className="!my-7 container" tabs={myTabs}/>
+        </div>
+    );
 };
 
 // export default DiscoverService;

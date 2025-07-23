@@ -9,6 +9,7 @@ import AnimatedSection from "@/components/animation-section/animation-section";
 import BusinessGifts from "@/app/[lang]/(home)/components/businessgifts";
 import Location from "@/app/[lang]/(home)/components/location";
 import {getDictionary} from "@/lib/get-dictionary";
+import React, {Suspense} from "react";
 
 
 interface HomePageProps {
@@ -28,18 +29,20 @@ export default async function Home({params}: HomePageProps) {
             </section>
             <section className="mt-10 md:mt-[100px]">
                 <AnimatedSection animation={"fade-right"}>
-{/* done */}          <News dictionary={dictionary} lang={HomePageParam.lang}/>
+                    {/* done */} <News dictionary={dictionary} lang={HomePageParam.lang}/>
                 </AnimatedSection>
             </section>
             <section className="mt-[100px]">
                 <AnimatedSection animation={"fade-left"}>
-{/* done */}         <About/>
+                    {/* done */} <About/>
                 </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
-                {/* <AnimatedSection animation={"fade-left"}>
-      <Category dictionary={dictionary} lang={HomePageParam.lang}/>
-                </AnimatedSection> */}
+                <AnimatedSection animation={"fade-left"}>
+                    <Suspense fallback={<div>Загрузка...</div>}>
+                        {/* <Category dictionary={dictionary} lang={HomePageParam.lang}/> */}
+                    </Suspense>
+                </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
                 <Collections dictionary={dictionary} lang={HomePageParam.lang}/>
@@ -51,13 +54,13 @@ export default async function Home({params}: HomePageProps) {
                 {/*<News />*/}
             </section>
             <section className="mt-[100px] bg-[#F6F6F6] py-8">
-{/* done */}       <SupportForm dictionary={dictionary}/>
+                {/* done */} <SupportForm />
             </section>
             <section className="mt-[100px]  ">
-{/* done */}       <BusinessGifts />
+                {/* done */} <BusinessGifts/>
             </section>
             <section className="mt-[100px]  ">
-{/* done */}       <Location lang={HomePageParam.lang} dictionary={dictionary}/> 
+                {/* done */} <Location lang={HomePageParam.lang} dictionary={dictionary}/>
             </section>
 
         </>

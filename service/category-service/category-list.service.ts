@@ -1,8 +1,28 @@
 "use client";
 
 import {fetcherClient} from "@/lib/fetcher-client";
+import Cookies from "js-cookie";
 
-
-export const getAllCountry = async () => {
-    return fetcherClient(`https://api.presidentgift.com/api/v1/category/all_by_country?countryId=2&withChildren=false`);
+interface CountryCookie {
+    name: string;
+    code: string;
 }
+
+export const getNews = async () => {
+    const countryString = Cookies.get("country");
+    let countryCode = null;
+
+    if (countryString) {
+        try {
+            const parsed: CountryCookie = JSON.parse(countryString);
+            countryCode = parsed.code;
+        } catch (error) {
+            console.warn("country cookie parsing error:", error);
+        }
+    }
+
+    if (countryCode) {
+        return fetcherClient(`/api/v1/category/all_by_language?languageCode=${'UZ'}&countryCode=${countryCode}&withChildren=false`);
+    }
+}
+

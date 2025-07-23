@@ -5,10 +5,11 @@ import {Button} from "@/components/ui/button"
 import {ChevronLeft, ChevronRight} from "lucide-react"
 import {CategoryCard} from '@/components/shared/category-card/category-card'
 // import {CategoryCardType} from "@/interface/category-type/category-model"
-import { CategoryDataType } from '@/app/[lang]/(home)/components/category'
+// import { CategoryDataType } from '@/app/[lang]/(home)/components/category'
+import { CategoryInterface } from '@/interface/category-type/category-interface'
 
 interface CategoryCarouselProps {
-    categories: CategoryDataType[]
+    categories: CategoryInterface[]
     lang:"uz" | "ru" | "en"
 }
 

@@ -1,13 +1,11 @@
 import { NextResponse } from 'next/server';
 import AmoCRMService from '@/lib/amocrm';
 
-// Kiruvchi ma'lumot tipi
 interface RequestData {
     name?: string;
     phone?: string;
 }
 
-// AmoCRM dan keladigan kontakt va lead ma'lumotlari tipi
 interface AmoCRMContactResponse {
     _embedded: {
         contacts: {
@@ -30,11 +28,9 @@ interface AmoCRMLeadResponse {
 
 export async function POST(request: Request) {
     try {
-        // 1. JSON'dan kerakli ma'lumotlarni ajratib olish
         const { name, phone }: RequestData = await request.json();
         console.log('✅ Received form data:', { name, phone });
 
-        // 2. Minimal validatsiya
         if (!name || !phone) {
             return NextResponse.json(
                 {
@@ -45,7 +41,6 @@ export async function POST(request: Request) {
             );
         }
 
-        // 3. Kontaktni tayyorlash
         const contactData = {
             name,
             custom_fields_values: [
@@ -56,7 +51,6 @@ export async function POST(request: Request) {
             ],
         };
 
-        // 4. Kontaktni yaratish
         const contactResponse: AmoCRMContactResponse = await AmoCRMService.createContact(contactData);
         const contact = contactResponse._embedded.contacts[0];
 
@@ -64,7 +58,6 @@ export async function POST(request: Request) {
             throw new Error('Kontakt ID olinmadi');
         }
 
-        // 5. Leadni tayyorlash
         const leadData = {
             name: `Yangi murojaat: ${name}`,
             contacts: [
@@ -75,11 +68,9 @@ export async function POST(request: Request) {
             ],
         };
 
-        // 6. Lead yaratish
         const leadResponse: AmoCRMLeadResponse = await AmoCRMService.createLead(leadData);
         const lead = leadResponse._embedded.leads[0];
 
-        // 7. Javob qaytarish
         return NextResponse.json({
             success: true,
             message: "Ma'lumot AmoCRM ga yuborildi!",
