@@ -10,12 +10,13 @@ import {ProductsInterface} from "@/interface/products-interface/products-interfa
 import {useParams} from 'next/navigation'
 import {LeftImagesSection} from "@/app/[lang]/detail/components/left-image-section/left-image-section";
 
-
 export default function ProductDetailPage() {
     const {detail} = useParams();
-
     const [product, setProduct] = useState<ProductsInterface | null>();
     const [loading, setLoading] = useState(true);
+
+    const [addedToCart, setAddedToCart] = useState(false);
+    const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -30,12 +31,9 @@ export default function ProductDetailPage() {
             }
         };
 
-
         console.log(loading)
         fetchProduct().then().catch().finally();
-    }, [detail, loading]);
-
-    // const addToBasket = useBasketStore(state => state.addToBasket);
+    }, [detail]);
 
     const handleShare = () => {
         const shareData = {
@@ -51,6 +49,21 @@ export default function ProductDetailPage() {
         }
     };
 
+    const handleAddToCart = () => {
+        setAddedToCart(true);
+        setQuantity(1); 
+    };
+
+    const increaseQuantity = () => setQuantity(prev => prev + 1);
+    const decreaseQuantity = () => {
+        setQuantity(prev => {
+            const newQuantity = Math.max(0, prev - 1);
+            if (newQuantity === 0) {
+                setAddedToCart(false);
+            }
+            return newQuantity;
+        });
+    };
 
     return (
         <div className="container md:!mt-26 !mt-42">
@@ -60,19 +73,39 @@ export default function ProductDetailPage() {
                 <LeftImagesSection mediaData={product?.media}/>
 
                 <div className="w-1/2">
-                    <div className={'flex items-center justify-between gap-4 mb-4'}>
+                    <div className="flex items-center justify-between gap-4 mb-4">
                         <h1 className="text-2xl font-semibold">{product?.name}</h1>
-                        <div className={"flex items-center gap-5"}>
-                            <Heart className={"text-primary w-5 h-5 cursor-pointer"}/>
-                            <Share2 onClick={handleShare} className={"text-primary w-5 h-5 cursor-pointer"}/>
+                        <div className="flex items-center gap-5">
+                            <Heart className="text-primary w-5 h-5 cursor-pointer"/>
+                            <Share2 onClick={handleShare} className="text-primary w-5 h-5 cursor-pointer"/>
                         </div>
                     </div>
+
                     <p className="text-xl font-medium">${product?.prices[0].price}</p>
 
-                    <Button className="w-full mt-4">Add to cart</Button>
+                    {!addedToCart ? (
+                        <Button className="w-full mt-4" onClick={handleAddToCart}>
+                            Add to cart
+                        </Button>
+                    ) : (
+                        <div className="mt-4 flex items-center gap-2">
+                            <Button variant={"outline"} onClick={decreaseQuantity}>-</Button>
+                            <div
+                                className="px-4 py-2 border w-[100px] flex items-center justify-center rounded text-sm">
+                                <span className={'font-bold '}>{quantity}</span> шт
+                            </div>
+                            <Button className={"bg-primary"} onClick={increaseQuantity}>+</Button>
+                            <Button className="ml-2">
+                                Корзина →
+                            </Button>
+                        </div>
+                    )}
 
+                    <p className="text-gray-700 text-sm mt-7">
+                        Complimentary Express Shipping on all orders above €400. Free delivery and returns on all orders
+                        over €25.
+                    </p>
 
-                    <p className="text-gray-700 text-sm mt-7">{`Complimentary Express Shipping on all orders above €400. Shop now Free delivery and returns on all orders over €25`}</p>
                     <div className="mt-6">
                         <h2 className="text-lg font-semibold mt-12">Details</h2>
                         <p className="text-gray-700 text-sm mt-2">{product?.description}</p>
@@ -83,11 +116,11 @@ export default function ProductDetailPage() {
                     <Accordion type="single" collapsible className="w-full mt-4">
                         <AccordionItem value="material">
                             <AccordionTrigger>Material</AccordionTrigger>
-                            <AccordionContent>Lorem ipso dolor set </AccordionContent>
+                            <AccordionContent>Lorem ipsum dolor sit amet.</AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="dimensions">
                             <AccordionTrigger>Dimensions</AccordionTrigger>
-                            <AccordionContent>Lorem ipso dolor set </AccordionContent>
+                            <AccordionContent>Lorem ipsum dolor sit amet.</AccordionContent>
                         </AccordionItem>
                     </Accordion>
                 </div>
