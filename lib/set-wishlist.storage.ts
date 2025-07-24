@@ -1,15 +1,15 @@
 "use client"
 
-import {create} from 'zustand'
-import {persist} from 'zustand/middleware'
-import {ProductCardProps} from "@/interface/product-card-type";
+import {create} from "zustand";
+import {persist} from "zustand/middleware";
+import {ProductsInterface} from "@/interface/products-interface/products-interface";
 
 interface WishlistStore {
-    items: ProductCardProps[]
-    addToWishlist: (item: ProductCardProps) => void
-    removeFromWishlist: (itemId: number) => void
-    isInWishlist: (itemId: number) => boolean
-    toggleWishlist: (item: ProductCardProps) => void
+    items: ProductsInterface[];
+    addToWishlist: (item: ProductsInterface) => void;
+    removeFromWishlist: (itemId: number) => void;
+    isInWishlist: (itemId: number) => boolean;
+    toggleWishlist: (item: { productData: ProductsInterface }) => void;
 }
 
 export const useWishlistStore = create<WishlistStore>()(
@@ -18,32 +18,34 @@ export const useWishlistStore = create<WishlistStore>()(
             items: [],
 
             addToWishlist: (item) => {
-                set((state) => ({
-                    items: [...state.items, {...item, isFavorite: true}]
-                }))
+                if (!get().isInWishlist(item.id)) {
+                    set((state) => ({
+                        items: [...state.items, item],
+                    }));
+                }
             },
 
             removeFromWishlist: (itemId) => {
                 set((state) => ({
-                    items: state.items.filter((item) => item.id !== itemId)
-                }))
+                    items: state.items.filter((item) => item.id !== itemId),
+                }));
             },
 
             isInWishlist: (itemId) => {
-                return get().items.some((item) => item.id === itemId)
+                return get().items.some((item) => item.id === itemId);
             },
 
             toggleWishlist: (item) => {
-                const isItemInWishlist = get().isInWishlist(item.id)
-                if (isItemInWishlist) {
-                    get().removeFromWishlist(item.id)
+                const isFavorite = get().isInWishlist(item.productData.id);
+                if (isFavorite) {
+                    get().removeFromWishlist(item.productData.id);
                 } else {
-                    get().addToWishlist(item)
+                    get().addToWishlist(item.productData);
                 }
-            }
+            },
         }),
         {
-            name: 'wishlist-storage',
+            name: "wishlist-storage", // localStorage key nomi
         }
     )
-)
+);

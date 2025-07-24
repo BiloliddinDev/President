@@ -31,7 +31,7 @@ export const News: FC<NewsProps> = ({ lang}) => {
 // console.log("news",news)
     return (
         <div className={"relative "}>
-            <SectionTitle className={"container"} text={`Новинки`}/>
+            <SectionTitle className={"container"} text={`Новости`}/>
             {/* <SectionTitle className={"container"} text={`${dictionary.news.title}`}/> */}
             <Carousel
                 opts={{

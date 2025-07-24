@@ -6,6 +6,8 @@ import {Button} from "@/components/ui/button";
 import CategoryCarousel from "@/app/[lang]/shops/components/category-carusel/category-carusel";
 import {CategoryChildServiceUZ} from "@/service/category-service/category.shops.service";
 import {CategoryInterface} from "@/interface/category-type/category-interface";
+import {ProductChildService} from "@/service/products-service/products.service";
+import {ProductsInterface} from "@/interface/products-interface/products-interface";
 
 interface CategoryPageProps {
 
@@ -16,7 +18,9 @@ interface CategoryPageProps {
 export default async function CategoryPage({params}: CategoryPageProps) {
     const categoryParam: { lang: "uz" | "ru" | "en", category: string } = await params;
     const CategoryChildData: CategoryInterface = await CategoryChildServiceUZ(Number(categoryParam.category)) as CategoryInterface
-
+    const ProductList: { data: ProductsInterface[] } = await ProductChildService(Number(categoryParam.category)) as {
+        data: ProductsInterface[]
+    }
 
 
     return (
@@ -32,16 +36,16 @@ export default async function CategoryPage({params}: CategoryPageProps) {
                     Dive into our unique collection and snag the perfect gift before you buy… Read more
                 </p>
 
-                <CategoryCarousel categories={CategoryChildData} lang={categoryParam.lang}/>
+                {CategoryChildData.children.length > 0 &&
+                    <CategoryCarousel categories={CategoryChildData} lang={categoryParam.lang}/>}
                 <SortAndViewToggleWrapper itemLength={productsItem.length}>
-                    {productsItem.map((product) => (
+                    {ProductList.data.map((product) => (
                         <ProductsCard
                             key={product.id}
                             productData={product}
                         />
                     ))}
                 </SortAndViewToggleWrapper>
-                {/* <ProductPage parentId={splitCategory(categoryParam.category).id} lang={categoryParam.lang}/> */}
                 <div className="flex justify-center mt-11">
                     <Button className="border-primary" variant="outline">
                         See more

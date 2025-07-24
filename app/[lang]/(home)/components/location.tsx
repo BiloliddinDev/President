@@ -38,7 +38,7 @@ interface LocationType{
     "location.title":string
 }
 
-const branches: Branch[] = [
+export const branches: Branch[] = [
     {
         lat: 41.2667445,
         lng: 69.2483314,
@@ -102,13 +102,18 @@ export default function LocationPage({dictionary, lang}: LocationProps) {
                         <button
                             key={index}
                             onClick={() => handleGoTo(branch.lat, branch.lng)}
-                            className="flex items-center gap-1 font-inter text-[12px]  transition cursor-pointer"
+                            className="flex items-center font-inter text-[12px]  transition cursor-pointer"
                         >
                             <IconComponent name="mapLocation"/>
                             {branch.name[lang]}
                         </button>
                     ))}
                 </div>
+                <h3 className="text-[#5C5F6A] text-[12px] font-inter">
+  Скоро открытие в Таджикистане, Самарканде и Баку
+</h3>
+
+
             </div>
         </div>
     );

@@ -6,8 +6,8 @@
 // import CategoryCarousel from "@/app/[lang]/shops/components/category-carusel/category-carusel";
 // import {categoryItem} from "@/constants/category-item";
 // import { CategoryService } from "@/service/home-service/category.service";
-import { CategoryChildService } from "@/service/category-service/category-child.service";
-import { CategoryDataType } from "@/app/[lang]/(home)/components/category";
+// import { CategoryChildService } from "@/service/category-service/category-child.service";
+// import { CategoryDataType } from "@/app/[lang]/(home)/components/category";
 
 interface CategoryPageProps {
         parentId:string
@@ -16,9 +16,9 @@ interface CategoryPageProps {
 
 export default async function ProductPage({parentId}: CategoryPageProps) {
     
-      const CategoryChildData:CategoryDataType[] = await CategoryChildService(parentId)  as CategoryDataType[]
+    //   const CategoryChildData:CategoryDataType[] = await CategoryChildService(parentId)  as CategoryDataType[]
       
-      console.log("category", CategoryChildData)
+      console.log("category", parentId)
     return (
         <div className="container md:!mt-26 !mt-42">
                 {/* <SortAndViewToggleWrapper itemLength={CategoryChildData.length}>

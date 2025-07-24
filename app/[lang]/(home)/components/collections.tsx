@@ -7,9 +7,10 @@ import {CollectionCard} from "@/components/shared/collection-card/collection-car
 // import {CollectionType} from "@/interface/collection-type/collection-type";
 // import {CollectionItem} from "@/constants/colection-item";
 import {SectionTitle} from "@/components/ui/sectionTitle";
-import {SupportFormModal} from "@/components/shared/form-modal/form.modal";
-// import { SummerCollectionService } from "@/service/home-service/summer-collection.service";
+// import {SupportFormModal} from "@/components/shared/form-modal/form.modal";
 import {  ProductDto, summerCollectionsItems } from "@/constants/summer-collections-items";
+import { Button } from "@/components/ui/button";
+import { SummerCollectionService } from "@/service/home-service/summer-collection.service";
 
 interface CollectionsProps {
     dictionary: {
@@ -23,8 +24,8 @@ interface CollectionsProps {
 
 export async function  Collections ({dictionary, lang}:CollectionsProps){
 
-    // const SummerCollectionsData = await SummerCollectionService() 
-    console.log("summerCollections",summerCollectionsItems[0].products[0])
+    const SummerCollectionsData = await SummerCollectionService() 
+    console.log("summerCollections",SummerCollectionsData,dictionary)
 
     return (
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 w-full mt-12">
@@ -58,10 +59,10 @@ export async function  Collections ({dictionary, lang}:CollectionsProps){
                             </CarouselItem>
                         ))}
                     </CarouselContent>
-                    {/*<Button variant={"secondary"} className={"mt-16 w-full md:max-w-52"}>*/}
-                    {/*    {dictionary.collections.newArrival}*/}
-                    {/*</Button>*/}
-                    <SupportFormModal lang={lang} btnText={dictionary.collections.newArrival}/>
+                    <Button variant={"secondary"} className={"mt-16 w-full md:max-w-52"}>
+                       {/* {dictionary.collections.newArrival} */}Посмотреть коллекцию
+                    </Button>
+                    {/* <SupportFormModal lang={lang} btnText={dictionary.collections.newArrival}/> */}
                     <CarouselPrevious
                         className="absolute left-[-7%]  top-1/2 -translate-y-1/2 translate-x-full z-40"/>
                     <CarouselNext className="absolute right-[4%]  top-1/2 -translate-y-1/2 translate-x-full z-40"/>

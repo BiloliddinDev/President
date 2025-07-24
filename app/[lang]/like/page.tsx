@@ -24,9 +24,9 @@ export default function LikePage() {
                         {items.map((item) => (
                             <FavoriteCard
                                 key={item.id}
-                                text={item.title}
-                                image={item.imgUrl}
-                                onRemove={() => removeFromWishlist(item.id)}
+                                text={item.name}
+                                image={`${process.env.NEXT_PUBLIC_ADMIN_URL}${item.media[0].filePath}`}
+                                 onRemove={() => removeFromWishlist(item.id)}
                             />
                         ))}
                     </div>

@@ -5,10 +5,11 @@ import ImageWithText from "./image-with-text";
 // import Wallet from "@/public/images/wallet.png";
 // import Souviner from "@/public/images/souviner.png";
 // import PresidentWatch from "@/public/images/president-watch.png";
-import bag from "@/public/images/corporative-detail-bag.jpg";
+// import bag from "@/public/images/corporative-detail-bag.jpg";
 import box from "@/public/images/corporative-detail-box.jpg";
-// import medal from "@/public/images/corporative-detail-medal.jpg";
-import souvenir from "@/public/images/corporative-detail-souvenir.jpg";
+import horizontalphoto from "@/public/images/showcase-image.png";
+// import souvenir from "@/public/images/corporative-detail-souvenir.jpg";
+import souvenir from "@/public/images/koja-sumka.jpg";
 import CommonWatchSection from "../components/common-watch";
 const CorporateGifts = () => {
   return (
@@ -27,7 +28,7 @@ const CorporateGifts = () => {
       <ImageWithText
         orderText="order-1"
         orderImg="order-2"
-        imgSrc={bag}
+        video={"/videos/corporative-gifts.mp4"}
         alt="wallet"
         title="Персонализация: знак особого внимания"
         // title="Personalization options"
@@ -72,7 +73,7 @@ subtitle="Мы предлагаем тонкую и элегантную
       
       />
       <CommonWatchSection
-        videoSrc={"/videos/corporative-gifts.mp4"}
+        videoSrc={horizontalphoto}
         description="Подарок как выражение благодарности"
         // description="Tokens of appreciation"
         // textInfo="Sometimes, the greatest gifts are the unexpected ones. Montblanc Accessories are ideal for such surprises. It doesn’t have to be a big event or milestone to show your business partners, colleagues or clients that they’re valued. Be it a corporate event, a small thank you to celebrate the signing of a contract, or simply no reason at all, Montblanc offers treasured items that act as small, heartfelt signs of appreciation."

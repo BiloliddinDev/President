@@ -37,8 +37,8 @@ export default function FavoritePage() {
                     {items.map((item) => (
                         <FavoriteCard
                             key={item.id}
-                            text={item.title}
-                            image={item.imgUrl}
+                            text={item.name}
+                            image={`${process.env.NEXT_PUBLIC_ADMIN_URL}${item.media[0].filePath}`}
                             onRemove={() => removeFromWishlist(item.id)}
                         />
                     ))}

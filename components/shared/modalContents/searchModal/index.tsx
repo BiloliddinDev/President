@@ -1,3 +1,4 @@
+"use client"
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious,} from "@/components/ui/carousel";
 import {Input} from "@/components/ui/input";
 import {FooterLogo} from "@/components/ui/logo";
@@ -7,10 +8,25 @@ import Link from "next/link";
 import React, {useEffect, useState} from "react";
 import {X} from "lucide-react";
 import {ProductsCard} from "@/components/shared/products-cards/products-card";
-import {productsItem} from "@/components/ui/product-items";
+// import {productsItem} from "@/components/ui/product-items";
+import { ProductsInterface } from "@/interface/products-interface/products-interface";
+// import { NewProductService } from "@/service/products-service/new-products.service";
+import { getNewProducts } from "@/service/products-service/new-products-client.service";
 
-const SearchModalData = () => {
+export default function SearchModalData(){
     const [isDesktop, setIsDesktop] = useState(false);
+    const [products, setProducts] = useState<ProductsInterface[]>([]);
+
+    useEffect(() => {
+        const fetchLocation = async () => {
+            const data:ProductsInterface[] = await getNewProducts();
+            setProducts(data);
+        };
+        fetchLocation().then().catch().finally();
+
+       
+    }, []);
+    console.log("new products",products)
 
     useEffect(() => {
         const checkScreen = () => {
@@ -53,7 +69,7 @@ const SearchModalData = () => {
                             className="w-full"
                         >
                             <CarouselContent className="m-0 p-0 relative">
-                                {productsItem.map((product) => (
+                                {products.map((product) => (
                                     <CarouselItem
                                         key={product.id}
                                         className="!w-[90%] sm:!basis-[80%] md:!basis-[50%] lg:!basis-[33.3%]"
@@ -88,4 +104,3 @@ const SearchModalData = () => {
     );
 };
 
-export default SearchModalData;

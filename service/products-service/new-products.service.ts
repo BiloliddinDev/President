@@ -8,15 +8,15 @@ interface CountryCookie {
     code: string;
 }
 
-export async function SummerCollectionService() {
-    
+export async function NewProductService() {
+
     const cookieStore = await cookies();
 
-    const lang = cookieStore.get('lang')?.value.toUpperCase() || 'EN';
+    const lang = cookieStore.get('lang')?.value || 'en';
 
     let countryCode = 'UZ';
 
-    const countryRaw = cookieStore.get('country')?.value.toUpperCase();
+    const countryRaw = cookieStore.get('country')?.value;
 
     if (countryRaw) {
         try {
@@ -27,7 +27,6 @@ export async function SummerCollectionService() {
         }
     }
 
-const url=`/api/v1/collections/by_id_and_locale_with_media_and_products?collectionId=1&languageCode=${lang.toUpperCase()}&country_code=${countryCode}`
-
+    const url = `/api/v1/product/by_locale?language=${lang.toUpperCase()}&countryCode=${countryCode}`
     return await fetcher(url);
 }

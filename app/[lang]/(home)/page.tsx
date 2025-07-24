@@ -10,7 +10,7 @@ import BusinessGifts from "@/app/[lang]/(home)/components/businessgifts";
 import Location from "@/app/[lang]/(home)/components/location";
 import {getDictionary} from "@/lib/get-dictionary";
 import React, {Suspense} from "react";
-import { Category } from "./components/category";
+import {Category} from "@/app/[lang]/(home)/components/category";
 
 
 interface HomePageProps {
@@ -30,12 +30,12 @@ export default async function Home({params}: HomePageProps) {
             </section>
             <section className="mt-10 md:mt-[100px]">
                 <AnimatedSection animation={"fade-right"}>
-                    {/* done */} <News dictionary={dictionary} lang={HomePageParam.lang}/>
+                    <News dictionary={dictionary} lang={HomePageParam.lang}/>
                 </AnimatedSection>
             </section>
             <section className="mt-[100px]">
                 <AnimatedSection animation={"fade-left"}>
-                    {/* done */} <About/>
+                    <About/>
                 </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
