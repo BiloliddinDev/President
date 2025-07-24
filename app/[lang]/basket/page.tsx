@@ -1,7 +1,7 @@
 "use client"
 
 import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
-import BasketLeftSection from "@/app/[lang]/basket/components/basket-left-section";
+import {BasketLeftSection} from "@/app/[lang]/basket/components/basket-left-section";
 import BasketRightSection from "@/app/[lang]/basket/components/basket-right-section";
 
 export default function BasketPage() {

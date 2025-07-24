@@ -1,48 +1,38 @@
 "use client";
 
-import Image, {StaticImageData} from "next/image";
+import Image from "next/image";
 import {Trash2} from "lucide-react";
+import {ProductCardProps} from "@/interface/product-card-type";
 
-type Product = {
-    id: string;
-    title: string;
-    article: string;
-    description: string;
-    price: number;
-    image: StaticImageData;
-};
 
-type Props = {
-    products: Product[];
-};
+export default function OrderedProducts({products}: {
+    products: ProductCardProps[],
 
-export default function OrderedProducts({products}: Props) {
+}) {
     return (
         <div className="bg-white p-6 rounded-[4px] border mt-4">
             <h2 className="text-xl font-bold mb-4">Заказанные товары</h2>
 
             <div className="space-y-4">
-                {products.map((product) => (
+                {products.map((product: ProductCardProps) => (
                     <div
                         key={product.id}
                         className="flex items-center justify-between gap-4 border-b pb-4 last:border-b-0"
                     >
                         <div className="flex items-center gap-4">
                             <Image
-                                src={product.image}
-                                alt={product.title}
+                                src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${product.imgUrl}`}
+                                alt={product.name}
                                 width={64}
                                 height={64}
                                 className="rounded-md object-cover"
                             />
                             <div>
-                                <h3 className="font-semibold text-sm">{product.title}</h3>
+                                <h3 className="font-semibold text-sm">{product.name}</h3>
                                 <p className="text-xs text-muted-foreground">
-                                    Артикул: {product.article}
+                                    Артикул: {product.sku}
                                 </p>
-                                <p className="text-xs text-muted-foreground">
-                                    Продукт: {product.description}
-                                </p>
+
                             </div>
                         </div>
 
