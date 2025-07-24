@@ -1,11 +1,11 @@
 import {StaticImageData} from "next/image";
 
+
 export interface ProductCardProps {
-    id: number;
-    title: string;
-    price: number;
-    imgUrl: StaticImageData | string;
-    isNewArrival: boolean;
-    isFavorite: boolean;
+    id: number,
+    name: string,
+    price: number,
+    sku: string,
+    imgUrl: StaticImageData | string,
 }
 
