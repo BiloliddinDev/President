@@ -1,19 +1,4 @@
-// import {FC} from "react";
-// // import {CollectionType} from "@/interface/collection-type/collection-type";
-// import Image from "next/image";
-// import { ProductDto } from "@/constants/summer-collections-items";
 
-
-// export const CollectionCard: FC<{ newsItem: ProductDto, lang: 'uz' | 'ru' | 'en' }> = ({newsItem, lang}) => {
-//     return (
-//         <div className={"w-48"}>
-//             <Image src={`${newsItem.mediaFileDto[2].pathUrl}`} alt={newsItem.translationsNameAsMap.RU} width={1000} height={1000}
-//                    className={'w-[300] h-[300] object-contain'}/>
-//             <p className={" mt-11 text-primary text-sm font-normal"}>{newsItem.translationsNameAsMap.RU}</p>
-//             <p className={"text-gray-600 mt-9 text-sm font-normal"}>{newsItem.basePriceToUSD} $</p>
-//         </div>
-//     )
-// }
 "use client"
 import { FC, useEffect, useState } from "react";
 import Image from "next/image";

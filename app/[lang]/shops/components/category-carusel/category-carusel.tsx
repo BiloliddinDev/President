@@ -46,9 +46,8 @@ export default function CategoryCarousel({categories, lang}: CategoryCarouselPro
                     className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth"
                 >
                     {categories.children.map((item) => (
-                        <div key={item.id} className="w-[200px] h-[200px] flex-shrink-0">
+                        <div key={item.id} className="w-[300px] h-[300px] flex-shrink-0">
                             <CategoryCard category={item} lang={lang}/>
-                            <div></div>
                         </div>
                     ))}
                 </div>

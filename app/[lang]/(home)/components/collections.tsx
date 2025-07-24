@@ -1,6 +1,6 @@
 // import {FC} from "react";
 import Image from "next/image";
-import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious,} from "@/components/ui/carousel";
+import {Carousel,  CarouselItem, CarouselNext, CarouselPrevious,} from "@/components/ui/carousel";
 import CollectionImage from "@/public/images/collections-home-page.jpg";
 // import CollectionImage from "@/public/images/colection-left.png";
 import {CollectionCard} from "@/components/shared/collection-card/collection-card";
@@ -8,9 +8,11 @@ import {CollectionCard} from "@/components/shared/collection-card/collection-car
 // import {CollectionItem} from "@/constants/colection-item";
 import {SectionTitle} from "@/components/ui/sectionTitle";
 // import {SupportFormModal} from "@/components/shared/form-modal/form.modal";
-import {  ProductDto, summerCollectionsItems } from "@/constants/summer-collections-items";
+import {  ProductDto } from "@/constants/summer-collections-items";
 import { Button } from "@/components/ui/button";
 import { SummerCollectionService } from "@/service/home-service/summer-collection.service";
+import Link from "next/link";
+import { CollectionResponse } from "../../collections/type";
 
 interface CollectionsProps {
     dictionary: {
@@ -24,7 +26,7 @@ interface CollectionsProps {
 
 export async function  Collections ({dictionary, lang}:CollectionsProps){
 
-    const SummerCollectionsData = await SummerCollectionService() 
+    const SummerCollectionsData:CollectionResponse = await SummerCollectionService(3) as CollectionResponse
     console.log("summerCollections",SummerCollectionsData,dictionary)
 
     return (
@@ -48,20 +50,29 @@ export async function  Collections ({dictionary, lang}:CollectionsProps){
                     }}
                     className="m-0 p-0 relative w-full text-center"
                 >
-                    <CarouselContent className="m-0 p-0 flex gap-8">
-                        {summerCollectionsItems[0].products.map((item: ProductDto) => (
-                            <CarouselItem
-                                key={item.id}
+                    {/* <CarouselContent className="m-0 p-0 flex gap-8">
+                        {SummerCollectionsData.products.map((item: ProductDto) => (
+                           <Link key={item.id} href={`/collections/${item.id}`}>
+                             <CarouselItem
+                                
                                 className="m-0 p-0 min-w-48 mb-16"
                                 style={{flex: "0 0 40%"}}
                             >
                                 <CollectionCard lang={lang} newsItem={item}/>
-                            </CarouselItem>
+                            </CarouselItem></Link>
                         ))}
-                    </CarouselContent>
-                    <Button variant={"secondary"} className={"mt-16 w-full md:max-w-52"}>
-                       {/* {dictionary.collections.newArrival} */}Посмотреть коллекцию
-                    </Button>
+                    </CarouselContent> */}
+                    {SummerCollectionsData.products.map((item) => (
+  <Link key={item.id} href={`/collections/${item.id}`}>
+    <CarouselItem className="m-0 p-0 min-w-48 mb-16" style={{flex: "0 0 40%"}}>
+      <CollectionCard lang={lang} newsItem={item as ProductDto} />
+    </CarouselItem>
+  </Link>
+))}
+                    <Link href={"/collections"}> <Button variant={"secondary"} className={"mt-16 w-full md:max-w-52"}>
+                       {/* {dictionary.collections.newArrival} */} Посмотреть коллекцию
+                    </Button></Link>
+                   
                     {/* <SupportFormModal lang={lang} btnText={dictionary.collections.newArrival}/> */}
                     <CarouselPrevious
                         className="absolute left-[-7%]  top-1/2 -translate-y-1/2 translate-x-full z-40"/>
