@@ -36,10 +36,9 @@ export default function FavoritePage() {
                 <div className="mt-10 grid grid-cols-3 gap-4">
                     {items.map((item) => (
                         <FavoriteCard
-                            key={item.id}
-                            text={item.name}
-                            image={`${process.env.NEXT_PUBLIC_ADMIN_URL}${item.media[0].filePath}`}
-                            onRemove={() => removeFromWishlist(item.id)}
+                            key={item}
+                            itemID={item}
+                            onRemove={() => removeFromWishlist(item)}
                         />
                     ))}
                 </div>

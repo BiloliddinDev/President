@@ -3,7 +3,7 @@ import Images from  "@/public/images/product-image.png"
 export const productsItem = [
     {
         id: 1,
-        title: "Product name",
+        name: "Product name",
         price: 35.0,
         imgUrl: Images,
         isNewArrival: true,
@@ -11,7 +11,7 @@ export const productsItem = [
     },
     {
         id: 2,
-        title: "Product name",
+        name: "Product name",
         price: 35.0,
         imgUrl: Images,
         isNewArrival: true,
@@ -19,7 +19,7 @@ export const productsItem = [
     },
     {
         id: 3,
-        title: "Product name",
+        name: "Product name",
         price: 35.0,
         imgUrl: Images ,
         isNewArrival: true,
@@ -27,7 +27,7 @@ export const productsItem = [
     },
     {
         id: 4,
-        title: "Product name",
+        name: "Product name",
         price: 35.0,
         imgUrl: Images ,
         isNewArrival: true,
@@ -35,7 +35,7 @@ export const productsItem = [
     },
     {
         id: 5,
-        title: "Product name",
+        name: "Product name",
         price: 35.0,
         imgUrl: Images , 
         isNewArrival: true,
@@ -43,7 +43,7 @@ export const productsItem = [
     },
     {
         id: 6,
-        title: "Product name",
+        name: "Product name",
         price: 35.0,
         imgUrl: Images ,
         isNewArrival: true,
@@ -51,7 +51,7 @@ export const productsItem = [
     },
     {
         id: 7,
-        title: "Product name",
+        name: "Product name",
         price: 35.0,
         imgUrl: Images , 
         isNewArrival: true,
@@ -59,7 +59,7 @@ export const productsItem = [
     },
     {
         id: 8,
-        title: "Product name",
+        name: "Product name",
         price: 35.0,
         imgUrl: Images ,
         isNewArrival: true,
@@ -67,7 +67,7 @@ export const productsItem = [
     },
     {
         id: 9,
-        title: "Product name",
+        name: "Product name",
         price: 35.0,
         imgUrl: Images ,
         isNewArrival: true,
@@ -75,7 +75,7 @@ export const productsItem = [
     },
     {
         id: 10,
-        title: "Product name",
+        name: "Product name",
         price: 35.0,
         imgUrl: Images ,
         isNewArrival: true,
@@ -83,7 +83,7 @@ export const productsItem = [
     },
     {
         id: 11,
-        title: "Product name",
+        name: "Product name",
         price: 35.0,
         imgUrl: Images ,
         isNewArrival: true,
@@ -91,7 +91,7 @@ export const productsItem = [
     },
     {
         id: 12,
-        title: "Product name",
+        name: "Product name",
         price: 35.0,
         imgUrl: Images ,
         isNewArrival: true,

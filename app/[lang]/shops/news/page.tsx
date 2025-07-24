@@ -2,11 +2,11 @@ import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcru
 import SortAndViewToggleWrapper from "@/components/shared/sort-View-toggle/sort-viewtoggle";
 import Image from "next/image";
 import {productsItem} from "@/components/ui/product-items";
-import {ProductsCard} from "@/components/shared/products-cards/products-card";
 import {Button} from "@/components/ui/button";
 import Images from "@/public/images/shops.png"
 import { NewProductService } from "@/service/products-service/new-products.service";
 import { ProductsInterface } from "@/interface/products-interface/products-interface";
+import { ProductsCard } from "@/components/shared/products-cards/products-card";
 
 export default async function NewsPage() {
 
