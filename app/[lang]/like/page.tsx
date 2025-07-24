@@ -3,11 +3,12 @@
 import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import {SectionTitle} from "@/components/ui/sectionTitle";
 import {LikeNotFound} from "@/components/shared/like-not-found/like-not-found";
-import FavoriteCard from "@/components/shared/favorite-card/favorite-card";
 import {useWishlistStore} from "@/lib/set-wishlist.storage";
+import FavoriteCard from "@/components/shared/favorite-card/favorite-card";
 
 export default function LikePage() {
     const {items, removeFromWishlist} = useWishlistStore();
+
 
     return (
         <div>
@@ -23,10 +24,9 @@ export default function LikePage() {
                     <div className="container grid grid-cols-4 gap-4">
                         {items.map((item) => (
                             <FavoriteCard
-                                key={item.id}
-                                text={item.name}
-                                image={item.media[0].filePath}
-                                onRemove={() => removeFromWishlist(item.id)}
+                                itemID={item}
+                                key={item}
+                                onRemove={() => removeFromWishlist(item)}
                             />
                         ))}
                     </div>

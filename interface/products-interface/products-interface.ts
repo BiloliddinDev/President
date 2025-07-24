@@ -28,30 +28,31 @@ export interface ProductsInterface {
         "_new_product": boolean,
         "_frontal_page": boolean
     },
-    "media": [
-        {
-            "id": string
-            "fileName": string
-            "originalFileName": string
-            "filePath": "/uploads/db58fab8-6a7f-4e30-8c59-3729d693d79a-category5.png",
-            "metaData": {
-                "type": "image",
-                "order": 1,
-                "width": null,
-                "height": null
-            },
-            "ownerType": "PRODUCT",
-            "ownerId": 11,
-            "accessLevel": "PUBLIC",
-            "image": true,
-            "video": false
-        }
-    ],
+    "media": MediaInterface[],
     "createdAt": null,
     "updatedAt": null
 }
 
- 
+
+export interface MediaInterface {
+    "id": string
+    "fileName": string
+    "originalFileName": string
+    "filePath": "/uploads/db58fab8-6a7f-4e30-8c59-3729d693d79a-category5.png",
+    "metaData": {
+        "type": "image",
+        "order": 1,
+        "width": null,
+        "height": null
+    },
+    "ownerType": "PRODUCT",
+    "ownerId": 11,
+    "accessLevel": "PUBLIC",
+    "image": true,
+    "video": false
+    mediaType: string
+}
+
 export interface WishlistInterface {
     "id": number,
     "sku": string,

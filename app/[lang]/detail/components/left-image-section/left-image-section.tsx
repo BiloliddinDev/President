@@ -1,52 +1,58 @@
-import Image, {StaticImageData} from "next/image";
+"use client";
 
-type MediaType = {
-    type: "image" | "video";
-    src: StaticImageData | string;
-};
+import Image from "next/image";
+import {MediaInterface} from "@/interface/products-interface/products-interface";
 
-interface Props {
-    mediaData: MediaType[];
+interface LeftImagesSectionProps {
+    mediaData: MediaInterface[] | undefined;
 }
 
-export const LeftImagesSection = ({mediaData}: Props) => {
-    const video = mediaData.find((item) => item.type === "video");
-    const images = mediaData.filter((item) => item.type === "image");
+export const LeftImagesSection = ({mediaData}: LeftImagesSectionProps) => {
+    const images = mediaData?.filter((item) => item?.mediaType === "IMAGE") || [];
+    const videos = mediaData?.filter((item) => item?.mediaType === "VIDEO") || [];
 
-    const allItems: MediaType[] = video ? [video, ...images] : images;
+    const allItems = [...videos, ...images];
     const total = allItems.length;
 
     return (
-        <div className="flex flex-wrap w-1/2 overflow-scroll h-[1000px]">
-            {allItems.map((item, index) => {
-                let widthClass = "w-1/2";
+        <div className="h-[1000px] overflow-y-auto pr-1 custom-scroll lg:w-1/2 w-full">
+            <div className="flex flex-wrap">
+                {allItems.map((item, index) => {
+                    const src = `${process.env.NEXT_PUBLIC_ADMIN_URL}${item.filePath}`;
+                    const isVideo = item.mediaType === "VIDEO";
 
-                if (total % 2 === 0) {
-                    if (index === 0 || index === total - 1) widthClass = "w-full";
-                } else {
-                    if (index === 0) widthClass = "w-full";
-                }
+                    // Width logic
+                    let widthClass = "w-1/2";
+                    if (total % 2 === 0) {
+                        if (index === 0 || index === total - 1) widthClass = "w-full";
+                    } else {
+                        if (index === 0) widthClass = "w-full";
+                    }
 
-                return (
-                    <div key={index} className={`${widthClass} p-[1px]`}>
-                        {item.type === "image" ? (
-                            <Image
-                                src={item.src as StaticImageData}
-                                alt={`image-${index}`}
-                                width={600}
-                                height={500}
-                                className="w-full h-auto object-cover bg-neutral-100 rounded-[4px]"
-                            />
-                        ) : (
-                            <video
-                                src={item.src as string}
-                                controls
-                                className="w-full h-auto object-cover bg-neutral-100 rounded-[4px]"
-                            />
-                        )}
-                    </div>
-                );
-            })}
+                    return (
+                        <div key={item.id} className={`${widthClass} p-[1px]`}>
+                            {isVideo ? (
+                                <video
+                                    src={src}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="w-full h-[450px] object-cover bg-neutral-100 rounded-[4px]"
+                                />
+                            ) : (
+                                <Image
+                                    src={src}
+                                    alt={"Detail page image"}
+                                    width={600}
+                                    height={500}
+                                    className="w-full h-auto object-cover bg-neutral-100 rounded-[4px]"
+                                />
+                            )}
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 };

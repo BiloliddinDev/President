@@ -8,7 +8,7 @@ interface CountryCookie {
     code: string;
 }
 
-export const getProductIteam = async (itemID: string | number) => {
+export const getProductDetail = async (itemID: string | number) => {
     const countryString = Cookies.get("country");
     let countryCode = null;
     const langString = Cookies.get("lang");
@@ -23,7 +23,7 @@ export const getProductIteam = async (itemID: string | number) => {
     }
 
     if (countryCode) {
-        return fetcherClient(`/api/v1/category/all_by_language?languageCode=${langString?.toUpperCase()}&countryCode=${countryCode}&withChildren=false`);
+        return fetcherClient(`/api/v1/product/by_id_and_locale?productId=${itemID}&language=${langString?.toUpperCase()}&countryCode=${countryCode}`);
     }
 }
 
