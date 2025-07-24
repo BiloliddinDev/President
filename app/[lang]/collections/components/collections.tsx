@@ -161,14 +161,14 @@ console.log(lang)
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {CollectionsData.map((item: CollectionResponse) => (
-          <CollectionCard key={item.id}  newsItem={item} />
+          <div key={item.id} > <CollectionCard  newsItem={item} /></div>
         ))}
       </div>
       
 
 
       {/* Tanlangan ID orqali mahsulotlar */}
-      <CollectionItems  collection={CollectionsData} id={selectedId} />
+      <CollectionItems lang={lang} collection={CollectionsData} id={selectedId} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
-import  Images1 from  '@/public/images/news1.png'
-import  Images2 from  '@/public/images/news2.png'
-import  Images3 from  '@/public/images/news3.png'
-import  Images4 from  '@/public/images/news4.png'
+import  Images1 from  '@/public/images/UZB-limited-edition-2025.webp'
+import  Images2 from  '@/public/images/Ляган.webp'
+import  Images3 from  '@/public/images/Баку.webp'
+import  Images4 from  '@/public/images/50к.webp'
 import  Images5 from  '@/public/images/news5.png'
 
 // export const newsItem = [

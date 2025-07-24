@@ -7,9 +7,12 @@ import {imageLoader} from "@/lib/imageLoader";
 // import img2 from "@/public/images/showcase3.jpg";
 // import img3 from "@/public/images/showcase2.png";
 // import img4 from "@/public/images/showcase1.png";
-import images1 from "@/public/images/clock-show-case.jpg";
-import  images2 from  '@/public/images/souvenir.jpg'
-import  images3 from  '@/public/images/koja-sumka.jpg'
+import images1 from "@/public/images/1.webp";
+import images2 from "@/public/images/2.webp";
+import images3 from "@/public/images/3.webp";
+// import images1 from "@/public/images/clock-show-case.jpg";
+// import  images2 from  '@/public/images/souvenir.jpg'
+// import  images3 from  '@/public/images/koja-sumka.jpg'
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {ShowcaseDataFrom} from "@/interface/showcase-type/showcase-type";
@@ -64,10 +67,10 @@ console.log("showcase", DataLayer)
             <div className="relative z-10 h-full w-full flex flex-col justify-end py-8 px-4 md:pb-[90px]">
                 <div className="container">
                     <h1 className=" w-full md:w-[650px] mb-1.5 md:mb-3 text-white text-3xl md:text-6xl font-normal font-title showcase-title">
-                        {DataLayer["showcase.title"]}
+                        {/* {DataLayer["showcase.title"]} */}Добро пожаловать!
                     </h1>
                     <p className="w-64 md:w-[600px] mb-5 md:mb-12 text-white text-base font-normal tracking-wide">
-                        {DataLayer["showcase.description"]}
+                        {/* {DataLayer["showcase.description"]} */}В мир эксклюзивных подарков, где каждый предмет — это уважение, статус и безупречный вкус.
                     </p>
                     <Link href="#support">
                         <Button

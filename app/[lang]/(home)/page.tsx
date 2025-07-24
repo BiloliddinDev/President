@@ -51,7 +51,7 @@ export default async function Home({params}: HomePageProps) {
                 <ProductVideos dictionary={dictionary}/>
             </section>
             <section className="mt-[100px]">
-                {/*<News />*/}
+                {/* <News /> */}
             </section>
             <section className="mt-[100px] bg-[#F6F6F6] py-8">
                 {/* done */} <SupportForm dictionary={dictionary}></SupportForm>

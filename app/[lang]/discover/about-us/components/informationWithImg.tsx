@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import React, { FC } from "react";
 
 interface Props {
-  imgSource: string | StaticImageData;
+  imgSource?: string | StaticImageData;
   infoText: string;
   imgAlt: string;
   textStyles?: string;
@@ -19,11 +19,11 @@ const InformationWithImg: FC<Props> = ({
         {infoText}
       </p>
 
-      <Image
+     { imgSource &&   <Image
         src={imgSource}
         alt={imgAlt}
         className="w-full h-auto object-contain"
-      />
+      />}
     </>
   );
 };
