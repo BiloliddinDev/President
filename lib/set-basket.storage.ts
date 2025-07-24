@@ -1,8 +1,8 @@
 "use client"
 
-import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
-import { ProductCardProps } from "@/interface/product-card-type"
+import {create} from 'zustand'
+import {persist} from 'zustand/middleware'
+import {ProductCardProps} from "@/interface/product-card-type"
 
 interface BasketItem extends ProductCardProps {
     quantity: number
@@ -16,6 +16,7 @@ interface BasketStore {
     isInBasket: (itemId: number) => boolean
     increaseQuantity: (itemId: number) => void
     decreaseQuantity: (itemId: number) => void
+    getProductCountById: (itemId: number) => number
 }
 
 export const useBasketStore = create<BasketStore>()(
@@ -28,12 +29,12 @@ export const useBasketStore = create<BasketStore>()(
                 if (exists) {
                     set((state) => ({
                         items: state.items.map(i =>
-                            i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+                            i.id === item.id ? {...i, quantity: i.quantity + 1} : i
                         )
                     }))
                 } else {
                     set((state) => ({
-                        items: [...state.items, { ...item, quantity: 1 }]
+                        items: [...state.items, {...item, quantity: 1}]
                     }))
                 }
             },
@@ -45,7 +46,7 @@ export const useBasketStore = create<BasketStore>()(
             },
 
             clearBasket: () => {
-                set(() => ({ items: [] }))
+                set(() => ({items: []}))
             },
 
             isInBasket: (itemId) => {
@@ -55,7 +56,7 @@ export const useBasketStore = create<BasketStore>()(
             increaseQuantity: (itemId) => {
                 set((state) => ({
                     items: state.items.map(item =>
-                        item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
+                        item.id === itemId ? {...item, quantity: item.quantity + 1} : item
                     )
                 }))
             },
@@ -64,11 +65,16 @@ export const useBasketStore = create<BasketStore>()(
                 set((state) => ({
                     items: state.items
                         .map(item =>
-                            item.id === itemId ? { ...item, quantity: item.quantity - 1 } : item
+                            item.id === itemId ? {...item, quantity: item.quantity - 1} : item
                         )
                         .filter(item => item.quantity > 0)
                 }))
             },
+
+            getProductCountById: (itemId) => {
+                const item = get().items.find(i => i.id === itemId)
+                return item ? item.quantity : 0
+            }
         }),
         {
             name: 'basket-storage',
