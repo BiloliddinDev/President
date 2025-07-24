@@ -4,25 +4,26 @@ import React from "react";
 import Image, {StaticImageData} from "next/image";
 import {useWindowSize} from "@/hooks/use-window-size";
 import {getResponsiveValue, ResponsiveValue} from "@/hooks/get-responsive-value";
+import logo from "@/public/backend-image/no-bg.png"
 
 interface RightImageProps {
-    backgroundImage: StaticImageData;
+    // backgroundImage: StaticImageData;
     image: StaticImageData;
     size: number;
     top?: ResponsiveValue;
     right?: ResponsiveValue;
 }
 
-export default function RightImage({backgroundImage, image, size, top, right}: RightImageProps): React.ReactElement {
+export default function RightImage({ image, size, top, right}: RightImageProps): React.ReactElement {
     const {width} = useWindowSize();
 
     const adjustedTop = getResponsiveValue(top, width);
     const adjustedRight = getResponsiveValue(right, width);
 
-
+console.log(size)
     return (
         <div className="relative">
-            <Image src={backgroundImage} alt="b2b background image" width={500} height={500} className="relative"/>
+            <Image src={image} alt="b2b background image" width={500} height={500} className="relative"/>
             <div
                 style={{
                     position: "absolute",
@@ -31,7 +32,7 @@ export default function RightImage({backgroundImage, image, size, top, right}: R
                     transform: "translate(-50%, -50%)",
                 }}
             >
-                <Image src={image} alt="b2b image" width={size} height={size}/>
+                <Image src={logo} alt="b2b image" width={size} height={size}/>
             </div>
         </div>
     );

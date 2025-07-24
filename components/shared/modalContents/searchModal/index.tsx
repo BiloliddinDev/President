@@ -6,9 +6,23 @@ import {categoryModalItems} from "@/constants/category-item";
 import Link from "next/link";
 import React, {useEffect, useState} from "react";
 import {X} from "lucide-react";
+import { ProductsInterface } from "@/interface/products-interface/products-interface";
+import { getNewProducts } from "@/service/products-service/new-products-client.service";
 
-const SearchModalData = () => {
+export default function SearchModalData(){
     const [isDesktop, setIsDesktop] = useState(false);
+    const [products, setProducts] = useState<ProductsInterface[]>([]);
+
+    useEffect(() => {
+        const fetchLocation = async () => {
+            const data:ProductsInterface[] = await getNewProducts();
+            setProducts(data);
+        };
+        fetchLocation().then().catch().finally();
+
+       
+    }, []);
+    console.log("new products",products)
 
     useEffect(() => {
         const checkScreen = () => {
@@ -87,4 +101,3 @@ const SearchModalData = () => {
     );
 };
 
-export default SearchModalData;

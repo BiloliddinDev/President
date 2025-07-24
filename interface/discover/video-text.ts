@@ -1,5 +1,7 @@
+import { StaticImageData } from "next/image";
+
 export interface VideoWithTextProps {
-  videoSrc: string;
+  videoSrc: string | StaticImageData;
   productType?: string;
   description: string;
   textInfo: string;

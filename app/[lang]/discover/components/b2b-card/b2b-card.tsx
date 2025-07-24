@@ -101,7 +101,7 @@ export const B2bCard = ({className, image, top, right, size,title,desc,}: B2bCar
                 </div>
             </div>
 
-            <RightImage top={top} right={right} size={size} backgroundImage={image} image={image}/>
+            <RightImage top={top} right={right} size={size}  image={image}/>
         </div>
     );
 };
