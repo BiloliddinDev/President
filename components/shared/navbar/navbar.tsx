@@ -19,25 +19,25 @@ import {getAllCountry} from "@/service/navbar-service/country.service";
 import Cookies from "js-cookie";
 // import { ShopModalContent } from "../modalContents/shopModal";
 import ShopModalContent from "../modalContents/shopModal";
-import {  MediaFile } from "@/app/[lang]/(home)/components/category";
-import { getCategoryModal } from "@/service/home-service/category-mobile.service";
+import {MediaFile} from "@/app/[lang]/(home)/components/category";
+import {getCategoryModal} from "@/service/home-service/category-mobile.service";
 
 interface CategoryTranslation {
     name: string;
     description: string;
-    code: "RU" | "EN" | "UZ"; // yoki string bo‘lishi mumkin, agar kodlar o‘zgaruvchan bo‘lsa
-  }
-  
-  export interface Category {
+    code: "RU" | "EN" | "UZ";
+}
+
+export interface Category {
     id: number;
     parentId: number | null;
     name: string;
     description: string;
     translation: CategoryTranslation[];
     children: Category[] | null;
-    mediaFiles: MediaFile[]; // kerak bo‘lsa `MediaFile[]` deb aniqroq type ham qilamiz
-  }
-  
+    mediaFiles: MediaFile[];
+}
+
 export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
     const [languages, setLanguages] = useState<LanguageType[]>([]);
     const [county, setCountry] = useState<CountryType[]>([]);
@@ -57,13 +57,13 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
         };
         fetchCounty().then().catch().finally();
         const fetchCategory = async () => {
-            const data:Category[] = await getCategoryModal() as Category[]
-           setCategory(data);
+            const data: Category[] = await getCategoryModal() as Category[]
+            setCategory(data);
         };
         fetchCategory().then().catch().finally();
     }, [cookiescountry]);
 
-  
+
     return (
         <nav
             className={`fixed top-0 left-0 w-full md:p-3 z-60 transition-colors duration-300 bg-neutral-100 shadow`}
