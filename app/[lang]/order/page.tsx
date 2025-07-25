@@ -9,12 +9,12 @@ import {OrderFormData, OrderSchema} from "@/interface/order-schema/order-schema"
 import CheckoutForm from "@/app/[lang]/order/components/checkout-form";
 import OrderedProducts from "@/app/[lang]/order/components/order-produc-list";
 import {useBasketStore} from "@/lib/set-basket.storage";
+import {toast} from "sonner";
 
 
 export default function OrderPage() {
 
     const {items} = useBasketStore();
-
 
     const methods = useForm<OrderFormData>({
         resolver: zodResolver(OrderSchema),
@@ -28,7 +28,7 @@ export default function OrderPage() {
             },
             userInformation: {
                 name: "",
-                secondname: "",
+                secondment: "",
                 phone: "",
                 secondPhone: "",
             },
@@ -37,7 +37,8 @@ export default function OrderPage() {
 
 
     const onSubmit = (data: OrderFormData) => {
-        console.log('All form data:', data , items);
+        console.log('All form data:', data, items);
+        toast.success("your order successful created! We will contact you soon. Thank you for your order!")
     };
 
     return (
@@ -53,7 +54,7 @@ export default function OrderPage() {
 
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onSubmit)}>
-                    <div className="container flex justify-between gap-10 !mt-5">
+                    <div className="container flex flex-col-reverse md:flex-row justify-between gap-10 !mt-5">
                         <div className={'w-full'}>
                             <AddressForm/>
                             <OrderedProducts products={items}/>

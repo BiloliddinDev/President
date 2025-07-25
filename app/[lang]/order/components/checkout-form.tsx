@@ -25,7 +25,7 @@ export default function CheckoutForm() {
                 />
                 <FormField
                     control={control}
-                    name="userInformation.secondname"
+                    name="userInformation.secondment"
                     render={({field}) => (
                         <FormItem>
                             <FormLabel>Фамилия</FormLabel>
