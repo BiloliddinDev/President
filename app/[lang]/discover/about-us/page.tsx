@@ -4,10 +4,10 @@ import React from "react";
 // import DiscoverWatch from "@/public/images/discoverWatch.png";
 // import BackDiscoverWatch from "@/public/images/discoverWatchBack.png";
 // import BlackBags from "@/public/images/Bag.jpg";
-import BlackBags from "@/public/images/bags.png";
-import watch1 from "@/public/images/about-detail1.jpg";
-import watch2 from "@/public/images/about-detail2.png";
-import watch3 from "@/public/images/about-detail3.jpg";
+// import BlackBags from "@/public/images/bags.png";
+import watch1 from "@/public/images/TJK.webp";
+import watch2 from "@/public/images/TJK2.webp";
+import watch3 from "@/public/images/Bags (1).webp";
 // import map from "@/public/images/about-detail-map.jpg";
 // import watch2 from "@/public/images/watch2.png";
 import DiscoverAboutHeader from "./components/discover-aboutus-header";
@@ -38,22 +38,16 @@ const AboutUs = () => {
         </div>
       </div>
       <InformationWithImg
-        imgSource={BlackBags}
+        imgSource={watch3}
         imgAlt="black bags"
         // infoText="Be it writing instruments, leather, watches, accessories or our youngest
         // category of new technologies, our master craftsmen work diligently to
         // pour their hearts and souls into every step of the creation."
-     infoText="Сегодня у нас уже три фирменных шоурума в
-Центральной Азии: два из них расположены в
-самом сердце Ташкента (Узбекистан), а ещё
-один — в Душанбе, столице Таджикистана. В
-ближайших планах — открытие нового
-шоурума в Баку, столице Азербайджана."
+     infoText="Сегодня President Business Gift — это не просто магазин, а лидер в сфере премиальных подарков для бизнесменов и руководителей. Мы предлагаем богатый ассортимент: от эксклюзивных наручных часов и кожаных изделий ручной работы до подарочных наборов с фирменной гравировкой, VIP-аксессуаров, деловых блокнотов, перьевых ручек и сувениров с национальным акцентом."
      />
       <AccordionWithImg />
       <div className="pb-12 md:pb-24">
         <InformationWithImg
-          imgSource={watch3}
           textStyles="font-normal text-gray-800"
           imgAlt="a watch"
         //   infoText=" The international mentality of our 3 pioneering founders of the maison

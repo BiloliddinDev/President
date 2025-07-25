@@ -7,7 +7,6 @@ export default function OrderSummary() {
     const {items} = useBasketStore();
     const totalQuantity = items.reduce((acc, item) => acc + item.quantity, 0);
     const totalPrice = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
-    
 
     return (
         <div className="w-full  md:max-w-sm max-w-full border rounded-[4px] p-6 space-y-4 h-[350px]  text-gray-800 ">
@@ -36,10 +35,10 @@ export default function OrderSummary() {
                     <span>{totalPrice.toLocaleString()} сум</span>
                 </div>
             </div>
-
-            <Button variant="default" type="submit" className="w-full">
+ <Button variant="default" type="submit" className="w-full" >
                 Перейти к оплату
             </Button>
+           
 
             <div className="flex items-center gap-2 text-sm text-gray-600">
                 <span>Служба доставки в течение 2–3 дней.</span>

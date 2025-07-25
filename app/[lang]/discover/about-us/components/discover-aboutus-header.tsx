@@ -15,11 +15,7 @@ const DiscoverAboutHeader = () => {
           {/* From the beginning stages of assembling individual parts to presenting
           a truly alive and resplendent piece, our products are lifestyle
           companions that will accompany yours and future generations to come. */}
-          Мы начали свою деятельность в 2017 году, а
-уже с 2021 года активно заявили о себе на
-рынке. За короткий срок мы стали теми, к кому
-обращаются за качественными подарками для
-любых случаев.
+          Бренд President Business Gift начал свою деятельность в 2017 году и уже с 2021 года активно заявил о себе на рынке эксклюзивных корпоративных подарков. За считаные годы мы превратились в надёжного партнёра для компаний, государственных структур и частных клиентов, которые ценят статус, стиль и высокое качество.
         </p>
       </div>
     </div>
