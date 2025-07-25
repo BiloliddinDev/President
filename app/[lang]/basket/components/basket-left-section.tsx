@@ -16,19 +16,20 @@ export function BasketLeftSection() {
     return (
         <div className="w-full lg:w-[70%] pr-4 space-y-4">
             {items.length === 0 ? (
-                <div className="w-full flex flex-col items-center justify-center py-24 text-center">
+                <div className="w-full flex flex-col items-center justify-center py-5 md:py-24 text-center">
                     <ShoppingBasket className="w-20 h-20 text-gray-400 mb-4"/>
                     <h2 className="text-2xl font-semibold text-gray-600">Корзина пуста</h2>
                     <p className="text-gray-500 mt-2 text-sm">Вы еще не добавили товары в корзину.</p>
                 </div>
             ) : (
                 items.map((item) => (
-                    <div key={item.id} className="flex items-center justify-between gap-4 border rounded-[4px] p-4">
+                    <div key={item.id}
+                         className="flex flex-col sm:flex-row items-center justify-between gap-4 border rounded-[4px] p-4">
                         <div className="flex items-center gap-4">
                             <div className="relative w-24 h-24 shrink-0">
                                 <Image
                                     src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${item.imgUrl}`}
-                                    alt={item.name}
+                                    alt={'This is image for ' + item.name + ' product'}
                                     fill
                                     className="object-cover rounded-md"
                                 />
@@ -47,8 +48,8 @@ export function BasketLeftSection() {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex flex-col items-end gap-2">
-                            <div className="flex items-center gap-2">
+                        <div className="flex flex-row justify-start w-full  sm:flex-col  items-end gap-2">
+                            <div className="flex  items-center gap-2">
                                 <Button variant="outline" size="icon" onClick={() => decreaseQuantity(item.id)}>
                                     -
                                 </Button>

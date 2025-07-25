@@ -1,7 +1,7 @@
 "use client";
 
 import {useState} from "react";
-import {useFormContext} from "react-hook-form";
+import {useFormContext, useWatch} from "react-hook-form";
 import {FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import {Input} from "@/components/ui/input";
 import {
@@ -18,14 +18,20 @@ import dynamic from "next/dynamic";
 const LeafletMap = dynamic(() => import("./map-modal"), {ssr: false});
 
 const AddressForm = () => {
-    const {control, setValue, getValues} = useFormContext();
+    const {control, setValue} = useFormContext();
     const [isOpen, setIsOpen] = useState(false);
-    const [tempPosition, setTempPosition] = useState(getValues("address.location"));
+
+    const location = useWatch({name: "address.location", control});
+
+    const [tempPosition, setTempPosition] = useState(location);
 
     const handleSave = () => {
         if (tempPosition) {
-            setValue("address.location", tempPosition);
-            setIsOpen(false); 
+            setValue("address.location", tempPosition, {
+                shouldValidate: true,
+                shouldDirty: true
+            });
+            setIsOpen(false);
         }
     };
 
@@ -53,32 +59,44 @@ const AddressForm = () => {
                     )}
                 />
 
-                <Dialog open={isOpen} onOpenChange={setIsOpen}>
-                    <DialogTrigger asChild>
-                        <Button type="button" variant="outline" className="w-full">
-                            Обозначение по карте
-                        </Button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-4xl">
-                        <DialogHeader>
-                            <DialogTitle>Выберите точку на карте</DialogTitle>
-                            <DialogDescription>
-                                Нажмите на нужное место на карте для выбора адреса.
-                            </DialogDescription>
-                        </DialogHeader>
+                <FormField
+                    control={control}
+                    name="address.location.lat"
+                    render={() => (
+                        <FormItem>
+                            <FormLabel className="text-sm">Локация на карте</FormLabel>
+                            <FormControl>
+                                <Dialog open={isOpen} onOpenChange={setIsOpen}>
+                                    <DialogTrigger asChild>
+                                        <Button type="button" variant="outline" className="w-full">
+                                            Обозначение по карте
+                                        </Button>
+                                    </DialogTrigger>
+                                    <DialogContent className="max-w-4xl">
+                                        <DialogHeader>
+                                            <DialogTitle>Выберите точку на карте</DialogTitle>
+                                            <DialogDescription>
+                                                Нажмите на нужное место на карте для выбора адреса.
+                                            </DialogDescription>
+                                        </DialogHeader>
 
-                        <LeafletMap 
-                            position={tempPosition} 
-                            setPosition={setTempPosition}
-                        />
+                                        <LeafletMap
+                                            position={tempPosition}
+                                            setPosition={setTempPosition}
+                                        />
 
-                        <div className="flex justify-end pt-4">
-                            <Button onClick={handleSave} type="button">
-                                Save Location
-                            </Button>
-                        </div>
-                    </DialogContent>
-                </Dialog>
+                                        <div className="flex justify-end pt-4">
+                                            <Button onClick={handleSave} type="button">
+                                                Сохранить локацию
+                                            </Button>
+                                        </div>
+                                    </DialogContent>
+                                </Dialog>
+                            </FormControl>
+                            <FormMessage/>
+                        </FormItem>
+                    )}
+                />
             </div>
         </div>
     );
