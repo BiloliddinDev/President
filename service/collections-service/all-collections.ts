@@ -8,7 +8,7 @@ interface CountryCookie {
     code: string;
 }
 
-export async function SummerCollectionService(id:number) {
+export async function CollectionService() {
     
     const cookieStore = await cookies();
 
@@ -27,7 +27,7 @@ export async function SummerCollectionService(id:number) {
         }
     }
 
-const url=`/api/v1/collections/by_id_and_locale_with_media_and_products?collectionId=${id}&languageCode=${lang.toUpperCase()}&country_code=${countryCode}`
+const url=`/api/v1/collections/by_locale_with_media_and_products?languageCode=${lang.toUpperCase()}&country_code=${countryCode}`
 
     return await fetcher(url);
 }

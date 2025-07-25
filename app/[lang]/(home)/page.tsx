@@ -1,7 +1,6 @@
 import {Showcase} from "@/app/[lang]/(home)/components/showcase";
 import {News} from "@/app/[lang]/(home)/components/news";
 import {About} from "./components/about";
-// import {Category} from "@/app/[lang]/(home)/components/category";
 import {Collections} from "@/app/[lang]/(home)/components/collections";
 import {ProductVideos} from "./components/productVideos";
 import {SupportForm} from "@/app/[lang]/(home)/components/support-form";
@@ -52,7 +51,7 @@ export default async function Home({params}: HomePageProps) {
                 <ProductVideos dictionary={dictionary}/>
             </section>
             <section className="mt-[100px]">
-                {/*<News />*/}
+                {/* <News /> */}
             </section>
             <section className="mt-[100px] bg-[#F6F6F6] py-8">
                 {/* done */} <SupportForm dictionary={dictionary}></SupportForm>

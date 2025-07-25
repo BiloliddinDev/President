@@ -85,7 +85,7 @@ export default function ProductDetailPage() {
                         </div>
                     </div>
 
-                    <p className="text-xl font-medium">${product?.prices?.[0].price}</p>
+                    <p className="text-xl font-medium">{product?.prices?.[0].price} сум</p>
 
                     {quantity === 0 ? (
                         <Button className="w-full mt-4" onClick={handleAddToCart}>

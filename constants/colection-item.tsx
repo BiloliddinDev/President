@@ -15,7 +15,7 @@ export const CollectionItem = [
             "en": "UZB Watch"
         },
         price: "$450",
-        image: CollectionImage1
+        image: [CollectionImage1]
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ export const CollectionItem = [
             "en": "Bag"
         },
         price: "360$",
-        image: CollectionImage2
+        image: [CollectionImage2]
     },
     {
         id: 3,
@@ -37,7 +37,7 @@ export const CollectionItem = [
             "en": "Clutch"
         },
         price: "$140",
-        image: CollectionImage3
+        image: [CollectionImage3]
     },
 
     // {

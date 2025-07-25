@@ -31,7 +31,7 @@ export const ProductsCard = ({productData, className}: ProductsCardProps) => {
             </button>
 
             <Link href={`/detail/${productData.id}`}>
-                <div className="relative w-full pt-[100%] mb-4 bg-neutral-100 rounded-[4px] py-4">
+                {/* <div className="relative w-full pt-[100%] mb-4 bg-neutral-100 rounded-[4px] py-4">
                     <Image
                         src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${productData?.media[0]?.filePath}`}
                         alt={productData.name}
@@ -39,7 +39,17 @@ export const ProductsCard = ({productData, className}: ProductsCardProps) => {
                         className="object-contain"
                         sizes="(max-width: 768px) 100vw, 25vw"
                     />
-                </div>
+                </div> */}
+
+                <div className="relative w-full pt-[100%] mb-4 bg-neutral-100 rounded-[4px] py-4 overflow-hidden">
+          <Image
+            alt={productData.name}
+            src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${productData?.media[0]?.filePath}`}
+            fill
+             sizes="(max-width: 768px) 100vw, 25vw"
+            className="object-cover transition-transform duration-300 hover:scale-105 rounded"
+          />
+        </div>
             </Link>
 
             <div className="flex flex-col justify-between h-full p-3">

@@ -34,6 +34,8 @@ export interface ProductsInterface {
 }
 
 
+
+
 export interface MediaInterface {
     "id": string
     "fileName": string
