@@ -9,7 +9,7 @@ export default function OrderSummary() {
     const totalPrice = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
     return (
-        <div className="w-full max-w-sm border rounded-[4px] p-6 space-y-4 h-[350px]  text-gray-800 ">
+        <div className="w-full  md:max-w-sm max-w-full border rounded-[4px] p-6 space-y-4 h-[350px]  text-gray-800 ">
             <h2 className="text-lg font-semibold">Детали вашего заказа</h2>
 
             <div className="space-y-2">

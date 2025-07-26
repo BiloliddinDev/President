@@ -12,7 +12,7 @@ export default function BasketPage() {
                 <BreadcrumbDynamic/>
                 <h2 className="text-primary text-4xl font-medium leading-10 my-5">Shopping bag</h2>
             </div>
-            <div className={"container md:!mt-26 !mt-42 flex justify-between  gap-10 "}>
+            <div className={"container md:!mt-20  !mt-10 flex md:flex-row flex-col-reverse justify-between  gap-10 "}>
                 <BasketLeftSection/>
                 <BasketRightSection/>
             </div>
