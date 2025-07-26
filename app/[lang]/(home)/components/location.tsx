@@ -79,12 +79,11 @@ export default function LocationPage({dictionary, lang}: LocationProps) {
 
        
     }, []);
-    console.log(location)
+    // console.log(location)
     return (
         <div className="w-full h-auto flex flex-col gap-4 overflow-x-hidden container">
             <div className="w-full max-w-[1200px] m-auto ">
-                <SectionTitle text={dictionary.location.title}/>
-                {/* <SectionTitle text={location.title}/> */}
+                <SectionTitle text={dictionary.location.title || location.title}/>
             </div>
 
             <div className="w-full max-w-[1200px] h-[400px] m-auto rounded-md overflow-hidden">
@@ -93,8 +92,7 @@ export default function LocationPage({dictionary, lang}: LocationProps) {
 
             <div className="w-full max-w-[1200px] m-auto mt-3 flex flex-col gap-[20px]">
                 <h3 className="text-primary text-xl font-medium  capitalize">
-                    {dictionary.location.text}
-                    {/* {location.text} */}
+                    {dictionary.location.text || location.text}
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[#5C5F6A] w-full max-w-lg">

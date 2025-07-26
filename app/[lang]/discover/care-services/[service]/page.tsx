@@ -19,7 +19,7 @@ interface ServiceProps {
 }
 export default async function DiscoverService ({params}:ServiceProps){
   const service: { service: string } = await params;
-  console.log(service)
+  // console.log(service)
 
     // service ga mos rasmni tanlash
     let imageSrc = writing; // default

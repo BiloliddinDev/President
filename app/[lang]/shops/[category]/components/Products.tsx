@@ -9,16 +9,17 @@
 // import { CategoryChildService } from "@/service/category-service/category-child.service";
 // import { CategoryDataType } from "@/app/[lang]/(home)/components/category";
 
-interface CategoryPageProps {
+export interface CategoryPageProps {
         parentId:string
         lang?:"uz" | "ru" | "en"
 }
 
-export default async function ProductPage({parentId}: CategoryPageProps) {
+// export default async function ProductPage({parentId}: CategoryPageProps) {
+    export default async function ProductPage() {
     
     //   const CategoryChildData:CategoryDataType[] = await CategoryChildService(parentId)  as CategoryDataType[]
       
-      console.log("category", parentId)
+    //   console.log("category", parentId)
     return (
         <div className="container md:!mt-26 !mt-42">
                 {/* <SortAndViewToggleWrapper itemLength={CategoryChildData.length}>

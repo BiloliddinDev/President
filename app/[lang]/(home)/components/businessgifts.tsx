@@ -5,7 +5,7 @@ import { SectionTitle } from "@/components/ui/sectionTitle";
 // import { SupportFormModal } from "@/components/shared/form-modal/form.modal";
 import AutoplayCarousel from "@/components/shared/corporative-gifts/AutoplayCarousel";
 // import { LangType } from "@/interface/lang/lang-type";
-import { CorporateService } from "@/service/home-service/corporate-gifts.service";
+// import { CorporateService } from "@/service/home-service/corporate-gifts.service";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -29,8 +29,8 @@ export interface CorporativeGifts {
 
 export default async function BusinessGiftsCarousel() {
 
-    const CorporativeGiftsData:CorporativeGifts = await CorporateService() as CorporativeGifts
-    console.log("corporative gifts",CorporativeGiftsData)
+    // const CorporativeGiftsData:CorporativeGifts = await CorporateService() as CorporativeGifts
+    // console.log("corporative gifts",CorporativeGiftsData)
 
   return (
     <div className="w-full">

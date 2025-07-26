@@ -50,7 +50,8 @@ export default async function Home({params}: HomePageProps) {
                 </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
-                <Collections dictionary={dictionary} lang={HomePageParam.lang}/>
+                {/* <Collections dictionary={dictionary} lang={HomePageParam.lang}/> */}
+                <Collections />
             </section>
             <section className="mt-[100px]">
                 <ProductVideos dictionary={dictionary}/>

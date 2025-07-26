@@ -2,14 +2,15 @@ import { CollectionService } from "@/service/collections-service/all-collections
 import { CollectionResponse } from "../type";
 import { CollectionItems } from "./collectionItems";
 
-interface CollectionsProps {
+export interface CollectionsProps {
   lang: "uz" | "ru" | "en";
 }
 
-export async function Collections({ lang }: CollectionsProps) {
+// export async function Collections({ lang }: CollectionsProps) {
+  export async function Collections() {
   const CollectionsData: CollectionResponse[] =
     (await CollectionService()) as CollectionResponse[];
-  console.log(lang);
+  // console.log(lang);
   const ids=CollectionsData.map((item)=>item.id)
   return (
     <div className="container mx-auto mt-[100px] px-4">

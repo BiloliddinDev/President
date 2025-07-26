@@ -6,15 +6,16 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import CollectionImage from "@/public/images/collections-home-page.jpg";
+// import CollectionImage from "@/public/images/collections-home-page.jpg";
 import { SectionTitle } from "@/components/ui/sectionTitle";
 import { Button } from "@/components/ui/button";
-import { SummerCollectionService } from "@/service/home-service/summer-collection.service";
+// import { SummerCollectionService } from "@/service/home-service/summer-collection.service";
 import Link from "next/link";
 import { CollectionResponse } from "../../collections/type";
 import { CollectionCard } from "@/components/shared/collection-card/collection-card";
 import { ProductsInterface } from "@/interface/products-interface/products-interface";
-interface CollectionsProps {
+import { CollectionService } from "@/service/collections-service/all-collections";
+export interface CollectionsProps {
   dictionary: {
     collections: {
       title: string;
@@ -24,15 +25,20 @@ interface CollectionsProps {
   lang: "uz" | "ru" | "en";
 }
 
-export async function Collections({ dictionary, lang }: CollectionsProps) {
-  const SummerCollectionsData: CollectionResponse =
-    (await SummerCollectionService(3)) as CollectionResponse;
-  console.log("summerCollections", SummerCollectionsData, dictionary, lang);
+// export async function Collections({ dictionary, lang }: CollectionsProps) {
+  export async function Collections() {
+  const CollectionsData: CollectionResponse[] =
+    (await CollectionService()) as CollectionResponse[];
+
+  const Collection=CollectionsData.filter((item)=>item.isMainPage===true)[0]
+
+  // const SummerCollectionsData: CollectionResponse =
+  //   (await SummerCollectionService(3)) as CollectionResponse;
   return (
     <div className="flex flex-col md:flex-row justify-between items-center gap-8 w-full mt-12">
       <div className="w-full md:w-[40%] flex justify-center">
         <Image
-          src={CollectionImage.src}
+          src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${Collection.mediaFiles[0].filePath}`}
           alt="Collection Left Image"
           width={500}
           height={50}
@@ -42,7 +48,7 @@ export async function Collections({ dictionary, lang }: CollectionsProps) {
       <div className="w-full container  md:w-[60%]">
         <SectionTitle
           className={" mb-10 md:mb-[75px]"}
-          text={"Летние коллекции"}
+          text={`${Collection.name}`}
         />
         <Carousel
           opts={{
@@ -53,7 +59,7 @@ export async function Collections({ dictionary, lang }: CollectionsProps) {
           className="m-0 p-0 relative w-full text-center"
         >
           <CarouselContent className="m-0 p-0 flex gap-2">
-            {SummerCollectionsData.products.map((item: ProductsInterface) => (
+            {Collection.products.map((item: ProductsInterface) => (
               <CarouselItem
                 key={item.id}
                 className="m-0 p-0 min-w-48 mb-16"

@@ -29,7 +29,7 @@ const [news,setNews] =useState<NewsItem[]>([])
         fetchNews().then().catch().finally();
     }, []);
 
-console.log("news",news)
+// console.log("news",news)
     return (
         <div className={"relative "}>
             <SectionTitle className={"container"} text={`Новости`}/>

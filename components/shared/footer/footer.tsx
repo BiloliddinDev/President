@@ -21,7 +21,7 @@ export const Footer = async ({ lang }: FooterProps) => {
   const FooterData: FooterType = (await FooterService()) as FooterType;
   const CategoryData: CategoryInterface[] = await CategoryService() as CategoryInterface[]
 
-  console.log(CategoryData)
+  // console.log(CategoryData)
   return (
     <footer className={"container"}>
       <div

@@ -16,7 +16,7 @@ export async function About() {
 
     const AboutData: AboutType = await AboutService() as AboutType
     
-    console.log("ABOUT",AboutData)
+    // console.log("ABOUT",AboutData)
     return (
         <div className="bg-gradient-to-l from-neutral-100 to-white/0 py-10">
             <div className="container">
