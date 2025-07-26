@@ -10,6 +10,9 @@ import Location from "@/app/[lang]/(home)/components/location";
 import {getDictionary} from "@/lib/get-dictionary";
 import React, {Suspense} from "react";
 import {Category} from "@/app/[lang]/(home)/components/category";
+import { ShowcaseDataFrom, ShowcaseItem } from "@/interface/showcase-type/showcase-type";
+import { showcaseService } from "@/service/home-service/showcase.service";
+import { getshowCaseData } from "@/service/home-service/showcase-image.service";
 
 
 interface HomePageProps {
@@ -20,16 +23,18 @@ export default async function Home({params}: HomePageProps) {
 
     const HomePageParam: { lang: "uz" | "ru" | "en", category: string } = await params;
     const dictionary = await getDictionary(HomePageParam.lang);
-
+    const DataLayer: ShowcaseDataFrom = await showcaseService() as ShowcaseDataFrom
+    const ImagesData: ShowcaseItem[] = await getshowCaseData() as ShowcaseItem[]
+   
 
     return (
         <>
             <section>
-                <Showcase/>
+                <Showcase DataLayer={DataLayer} showcase={ImagesData}/>
             </section>
             <section className="mt-10 md:mt-[100px]">
                 <AnimatedSection animation={"fade-right"}>
-                    <News dictionary={dictionary} lang={HomePageParam.lang}/>
+                    <News />
                 </AnimatedSection>
             </section>
             <section className="mt-[100px]">
