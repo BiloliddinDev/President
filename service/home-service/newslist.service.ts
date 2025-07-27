@@ -8,7 +8,7 @@ interface CountryCookie {
     code: string;
 }
 
-export async function CategoryDetailService(parentId: string) {
+export async function NewsListService() {
 
     const cookieStore = await cookies();
 
@@ -27,6 +27,7 @@ export async function CategoryDetailService(parentId: string) {
         }
     }
 
-    const url = `/api/v1/category/by_id_and_locale_with_media?categoryId=${parentId}&languageCode=${lang.toUpperCase()}&countryCode=${countryCode}&withChildren=false`
-    return await fetcher(url);
+
+    return await fetcher(`/api/v1/news/by_locale?languageCode=${lang.toUpperCase()}&countryCode=${countryCode}&withMedia=true`);
+
 }

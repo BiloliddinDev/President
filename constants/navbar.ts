@@ -28,7 +28,7 @@ export const navbarContent = [
     },
     {
         id: 8,
-        linkSrc: "/service",
+        linkSrc: "discover/corporate-gifts",
         name: {
             uz: "Individual buyurtma",
             ru: "Индивидуальный заказ",

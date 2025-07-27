@@ -21,7 +21,7 @@ const ShopModalContent = ({lang, category}: shopModalProps) => {
                      ${item.id === 9 ? "mt-10" : "my-5"}`}
                     key={item.id}
                 >
-                    <Link href={`/shops/${item.id}`}>
+                    <Link href={`/shops/${item.name}id${item.id}`}>
                         {item.name}
                     </Link>
                 </div>

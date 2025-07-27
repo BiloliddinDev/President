@@ -40,7 +40,7 @@ export interface CountryDto {
     image?: MediaFile;
   }
   
-  export interface NewsItem {
+  export interface NewsItemInterface {
     id: number;
     countryDto: CountryDto;
     description: string;

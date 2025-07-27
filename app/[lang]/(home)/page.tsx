@@ -8,11 +8,11 @@ import AnimatedSection from "@/components/animation-section/animation-section";
 import BusinessGifts from "@/app/[lang]/(home)/components/businessgifts";
 import Location from "@/app/[lang]/(home)/components/location";
 import {getDictionary} from "@/lib/get-dictionary";
-import React, {Suspense} from "react";
+import React from "react";
 import {Category} from "@/app/[lang]/(home)/components/category";
-import { ShowcaseDataFrom, ShowcaseItem } from "@/interface/showcase-type/showcase-type";
-import { showcaseService } from "@/service/home-service/showcase.service";
-import { getshowCaseData } from "@/service/home-service/showcase-image.service";
+import {ShowcaseDataFrom, ShowcaseItem} from "@/interface/showcase-type/showcase-type";
+import {showcaseService} from "@/service/home-service/showcase.service";
+import {getshowCaseData} from "@/service/home-service/showcase-image.service";
 
 
 interface HomePageProps {
@@ -25,7 +25,7 @@ export default async function Home({params}: HomePageProps) {
     const dictionary = await getDictionary(HomePageParam.lang);
     const DataLayer: ShowcaseDataFrom = await showcaseService() as ShowcaseDataFrom
     const ImagesData: ShowcaseItem[] = await getshowCaseData() as ShowcaseItem[]
-   
+
 
     return (
         <>
@@ -34,7 +34,7 @@ export default async function Home({params}: HomePageProps) {
             </section>
             <section className="mt-10 md:mt-[100px]">
                 <AnimatedSection animation={"fade-right"}>
-                    <News />
+                    <News dictionary={dictionary} lang={HomePageParam.lang}/>
                 </AnimatedSection>
             </section>
             <section className="mt-[100px]">
@@ -44,14 +44,12 @@ export default async function Home({params}: HomePageProps) {
             </section>
             <section className={"mt-[100px]"}>
                 <AnimatedSection animation={"fade-left"}>
-                    <Suspense fallback={<div>Загрузка...</div>}>
-                        <Category dictionary={dictionary} lang={HomePageParam.lang}/>
-                    </Suspense>
+                    <Category dictionary={dictionary} lang={HomePageParam.lang}/>
                 </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
                 {/* <Collections dictionary={dictionary} lang={HomePageParam.lang}/> */}
-                <Collections />
+                <Collections/>
             </section>
             <section className="mt-[100px]">
                 <ProductVideos dictionary={dictionary}/>
