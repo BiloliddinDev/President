@@ -40,12 +40,11 @@ export const discoverModalItems = [
     },
     {
         id: 5,
-        linkSrc: "/discover/corporate-gifts",
+        linkSrc: "/discover/service",
         name: {
-            uz: "Korporativ sovg‘alar",
-            ru: "Корпоративные подарки" +
-                "и сервис",
-            en: "Corporate gifts"
+            uz: "Mijozlarga xizmat ko'rsatish",
+            ru: "Обслуживание клиентов",
+            en: "Services"
         }
     },
     {

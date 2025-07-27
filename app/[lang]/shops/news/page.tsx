@@ -4,16 +4,12 @@ import Image from "next/image";
 import {productsItem} from "@/components/ui/product-items";
 import {Button} from "@/components/ui/button";
 import Images from "@/public/images/shops.png"
-import { NewProductService } from "@/service/products-service/new-products.service";
-import { ProductsInterface } from "@/interface/products-interface/products-interface";
-import { ProductsCard } from "@/components/shared/products-cards/products-card";
+import {NewProductService} from "@/service/products-service/new-products.service";
+import {ProductsInterface} from "@/interface/products-interface/products-interface";
+import {ProductsCard} from "@/components/shared/products-cards/products-card";
 
 export default async function NewsPage() {
-
-
-    const newProducts: ProductsInterface[] = await NewProductService() as  ProductsInterface[]
-    
-    // console.log("new products", newProducts)
+    const newProducts: ProductsInterface[] = await NewProductService() as ProductsInterface[]
 
     return (
         <div className={"container md:!mt-26 !mt-42"}>
@@ -27,7 +23,7 @@ export default async function NewsPage() {
                     alpine-themed pouches and cool fragrances at President Business Gifts! Dive into our unique
                     collection and snag the perfect gift before you buy… Read more</p>
                 <SortAndViewToggleWrapper itemLength={productsItem.length}>
-                    {newProducts.filter((item)=>item.meta._new_product ===true).map((product) => (
+                    {newProducts.filter((item) => item.meta._new_product === true).map((product) => (
                         <ProductsCard
                             key={product.id}
                             productData={product}
