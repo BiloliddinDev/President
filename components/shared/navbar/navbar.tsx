@@ -56,13 +56,14 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
             setCountry(data);
         };
         fetchCounty().then().catch().finally();
+    }, [cookiescountry]);
+    useEffect(() => {
         const fetchCategory = async () => {
             const data: Category[] = await getCategoryModal() as Category[]
             setCategory(data);
         };
         fetchCategory().then().catch().finally();
-    }, [cookiescountry]);
-
+    }, []);
 
     return (
         <nav

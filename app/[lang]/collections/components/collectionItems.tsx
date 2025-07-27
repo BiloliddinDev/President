@@ -2,71 +2,80 @@
 import SortAndViewToggleWrapper from "@/components/shared/sort-View-toggle/sort-viewtoggle";
 import { CollectionResponse } from "../type";
 import { ProductsCard } from "@/components/shared/products-cards/products-card";
-import { SummerCollectionService } from "@/service/home-service/summer-collection.service";
 import { ProductsInterface } from "@/interface/products-interface/products-interface";
+import Image from "next/image";
 
 interface CollectionsProps {
-  lang: "uz" | "ru" | "en";
-  collection:CollectionResponse[] 
-  id:number
+  // lang: "uz" | "ru" | "en";
+  collection: CollectionResponse[];
+  id: number;
 }
 
-export async function CollectionItems({ lang,collection ,id}: CollectionsProps) {
-   
-let SummerCollectionsData
-if (id !== 0) {
-  collection = await SummerCollectionService(id) as CollectionResponse[];
-}
+export async function CollectionItems({
+  // lang,
+  collection,
+  id,
+}: CollectionsProps) {
+  const selectedCollection = collection.find((collect) => collect.id === id);
+  if (!selectedCollection) return null;
 
-console.log("summerCollections",SummerCollectionsData)
-const allProducts = collection.map(item => item.products).flat() as ProductsInterface[];
-console.log(allProducts,lang)
-return (
-    <div className="container mx-auto !mt-32 px-4 ">
-      
-<SortAndViewToggleWrapper itemLength={allProducts?.length}>
-{allProducts && allProducts.map((item:ProductsInterface) => (
-           <ProductsCard key={item.id} productData={item}/>
-        ))}
-                </SortAndViewToggleWrapper>
+  const products: ProductsInterface[] = selectedCollection.products || [];
+
+  // Rasmni qaysi indexda ko‘rsatish (dinamik qiymat) — bu qiymatni siz bazadan ham olib kelishingiz mumkin
+  const imageInsertIndex = id % 3 === 0 ? 1 : id % 3 === 1 ? 3 : 2;
+
+  // Media fayl
+  const collectionImage = selectedCollection.mediaFiles?.[0]?.filePath;
+
+  // Mahsulotlar va rasmni dinamik tartibda aralashtirish
+  const mergedItems: (ProductsInterface | { type: "image" })[] = [];
+
+  products.forEach((item, index) => {
+    if (index === imageInsertIndex && collectionImage) {
+      mergedItems.push({ type: "image" }); // rasmni shu joyga qo‘shamiz
+    }
+    mergedItems.push(item); // mahsulotni qo‘shamiz
+  });
+
+  return (
+    <div className="container mx-auto !mt-32 px-4">
+      {products.length > 0 && (
+        <>
+          <div className="text-center mb-12 max-w-2xl mx-auto">
+            <h3 className="text-xl sm:text-3xl font-semibold text-gray-800">
+              {selectedCollection.name}
+            </h3>
+            <p className="mt-4 text-gray-600 text-sm sm:text-base">
+              {selectedCollection.description}
+            </p>
+          </div>
+
+          <SortAndViewToggleWrapper itemLength={products.length}>
+            {mergedItems.map((item, index) => {
+              if ("type" in item && item.type === "image") {
+                return (
+                  <div className="col-span-1 my-8 w-full" key={`image-${index}`}>
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${collectionImage}`}
+                      alt="Collection Image"
+                      width={1200}
+                      height={600}
+                      className="w-full h-auto rounded-xl"
+                    />
+                  </div>
+                );
+              }
+
+              return (
+                <ProductsCard
+                  key={(item as ProductsInterface).id}
+                  productData={item as ProductsInterface}
+                />
+              );
+            })}
+          </SortAndViewToggleWrapper>
+        </>
+       )} 
     </div>
   );
 }
-// import { CollectionResponse } from "../type";
-// import { ProductsCard } from "@/components/shared/products-cards/products-card";
-
-// interface CollectionsProps {
-//   collection: CollectionResponse[];
-//   id: number;
-// }
-
-// export async function CollectionItems({  collection, id,}: CollectionsProps) {
-//   const allProducts = id
-//     ? collection.find((item) => item.id === String(id))?.products || []
-//     : collection.map((item) => item.products).flat();
-
-//   if (!allProducts.length) return null;
-
-//   return (
-//     <div className="container mx-auto mt-24 px-4">
-//       <div className="text-center max-w-3xl mx-auto mb-12">
-//         <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
-//           {id ? "Продукция выбранной коллекции" : "Вся продукция из коллекций"}
-//         </h3>
-//         <p className="text-gray-600 text-sm md:text-base">
-//           {id
-//             ? "Просмотрите продукцию выбранной коллекции, отражающую её уникальный стиль."
-//             : "Ознакомьтесь со всем ассортиментом, представленным в различных коллекциях."}
-//         </p>
-//       </div>
-
-//       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-//       {allProducts.map((item) =>
-//    (
-//     <ProductsCard key={item.id} productData={item} />
-//   )
-// )}
-//       </div>
-//     </div>
-//   );
-// }

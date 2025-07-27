@@ -1,3 +1,5 @@
+import { MediaFile } from "@/app/[lang]/collections/type";
+
 export interface ShowcaseProps {
     showcase: React.ReactNode | undefined;
     dictionary: {
@@ -27,3 +29,28 @@ export interface ShowcaseDataFrom {
     'product.image2':any
     'product.image3':any
 }
+
+
+
+export interface MediaMetaData {
+    type: string;
+    order: number;
+    width: number | null;
+    height: number | null;
+  }
+  
+  export interface PreviewImage extends MediaFile {}
+  
+  export interface ShowcaseItem {
+    contentType: string; // e.g. "MEDIA"
+    countryCode: string; // e.g. "UZ"
+    createdAt: string; // ISO format
+    info: string; // description
+    key: string; // e.g. "showcase.image"
+    languageContents: Record<string, any>; // bo'sh object
+    mediaFiles: MediaFile[];
+    order: number;
+    previewImage: PreviewImage;
+    updatedAt: string;
+  }
+  

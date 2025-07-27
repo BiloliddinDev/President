@@ -171,7 +171,6 @@ export async function Category({dictionary, lang}: CategoryProps) {
 
     const CategoryData: CategoryInterface[] = await CategoryService() as CategoryInterface[]
 
-
     return (
         <div className="container">
             <SectionTitle text={dictionary.category.title}/>

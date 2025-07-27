@@ -13,7 +13,7 @@ export default async function NewsPage() {
 
     const newProducts: ProductsInterface[] = await NewProductService() as  ProductsInterface[]
     
-    console.log("new products", newProducts)
+    // console.log("new products", newProducts)
 
     return (
         <div className={"container md:!mt-26 !mt-42"}>

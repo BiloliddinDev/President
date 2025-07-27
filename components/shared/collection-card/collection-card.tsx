@@ -1,12 +1,20 @@
-
-"use client"
+"use client";
 import { FC, useEffect, useState } from "react";
 import Image from "next/image";
-import { ProductDto } from "@/constants/summer-collections-items";
+import { ProductsInterface } from "@/interface/products-interface/products-interface";
+// import { useWishlistStore } from "@/lib/set-wishlist.storage";
+// import { Heart } from "lucide-react";
+import Link from "next/link";
 
-export const CollectionCard: FC<{ newsItem: ProductDto, lang: 'uz' | 'ru' | 'en' }> = ({ newsItem, lang }) => {
+export const CollectionCard: FC<{
+  newsItem: ProductsInterface;
+  lang?: "uz" | "ru" | "en";
+}> = ({ newsItem }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
+  // const { isInWishlist, toggleWishlist } = useWishlistStore();
+  // const isLiked = isInWishlist(newsItem.id);
+  // console.log(isLiked, "this is isLiked");
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -16,7 +24,7 @@ export const CollectionCard: FC<{ newsItem: ProductDto, lang: 'uz' | 'ru' | 'en'
       let next = 1;
       interval = setInterval(() => {
         setCurrentIndex(() => {
-          const nextIndex = next % newsItem.mediaFileDto.length;
+          const nextIndex = next % newsItem.media.length;
           next++;
           return nextIndex;
         });
@@ -26,34 +34,44 @@ export const CollectionCard: FC<{ newsItem: ProductDto, lang: 'uz' | 'ru' | 'en'
     }
 
     return () => clearInterval(interval);
-  }, [hovered, newsItem.mediaFileDto.length]);
+  }, [hovered, newsItem.media.length]);
 
   return (
     <div
-      className="w-48"
+      className="w-full group relative flex flex-col rounded-lg transition bg-white"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="relative w-[300px] h-[300px] overflow-hidden cursor-pointer">
-        {newsItem.mediaFileDto.map((img, index) => (
-          <Image
-            key={index}
-            src={img.pathUrl}
-            alt={newsItem.translationsNameAsMap[lang.toUpperCase() as keyof typeof newsItem.translationsNameAsMap]}
-            fill
-            className={`object-contain transition-opacity duration-700 ${
-              index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
-          />
-        ))}
-      </div>
+      {/* <button
+        onClick={() => toggleWishlist(newsItem.id)}
+        className="absolute right-5 top-3 z-40 cursor-pointer  transition"
+      >
+        <Heart
+          className={`w-5 h-5 ${isLiked ? "fill-primary text-primary" : ""}`}
+        />
+      </button> */}
+      <Link href={`/detail/${newsItem.id}`}>
+        <div className="relative w-[300px] h-[300px] overflow-hidden cursor-pointer">
+          {newsItem.media && newsItem.media.map((img, index) => (
+            <Image
+              key={index}
+              src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${img.filePath}`}
+              alt={newsItem.name}
+              fill
+              className={`object-contain transition-opacity duration-700 ${
+                index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
+            />
+          ))}
+        </div>
 
-      <p className="mt-4 text-primary text-sm font-normal text-center">
-        {newsItem.translationsNameAsMap[lang.toUpperCase() as keyof typeof newsItem.translationsNameAsMap]}
-      </p>
-      <p className="text-gray-600 mt-2 text-sm font-normal text-center">
-        {newsItem.basePriceToUSD} $
-      </p>
+        <p className="mt-4 text-primary text-sm font-normal text-center">
+          {newsItem.name}
+        </p>
+        <p className="text-gray-600 mt-2 text-sm font-normal text-center">
+          {newsItem.basePriceToUSD} $
+        </p>
+      </Link>
     </div>
   );
 };

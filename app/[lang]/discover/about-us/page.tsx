@@ -1,15 +1,9 @@
 import { BreadcrumbDynamic } from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import Image from "next/image";
 import React from "react";
-// import DiscoverWatch from "@/public/images/discoverWatch.png";
-// import BackDiscoverWatch from "@/public/images/discoverWatchBack.png";
-// import BlackBags from "@/public/images/Bag.jpg";
-// import BlackBags from "@/public/images/bags.png";
 import watch1 from "@/public/images/TJK.webp";
 import watch2 from "@/public/images/TJK2.webp";
 import watch3 from "@/public/images/Bags (1).webp";
-// import map from "@/public/images/about-detail-map.jpg";
-// import watch2 from "@/public/images/watch2.png";
 import DiscoverAboutHeader from "./components/discover-aboutus-header";
 import InformationWithImg from "./components/informationWithImg";
 import AccordionWithImg from "./components/accordion-with-img";
