@@ -22,7 +22,7 @@ const ImageWithText: FC<ImageWithTextProps> = ({
         {video ? 
         <VideoBox videoSrc={video} width={"full"} height="300px" />
 : imgSrc ? 
-        <Image width={1000} height={1000} src={imgSrc} alt={alt} className="w-full max-w-[550px] h-full rounded" />
+        <Image width={1000} height={1000} src={imgSrc} alt={alt} className="w-full max-w-[550px] h-[400px] object-cover rounded" />
 :<></>}
       </div>
     </div>

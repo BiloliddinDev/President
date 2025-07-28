@@ -18,7 +18,7 @@ interface NewsProps {
 
 export const News: FC<NewsProps> = async ({dictionary}) => {
 
-    const NewData: NewsItemInterface = await NewsListService() as NewsItemInterface
+    const NewData: NewsItemInterface[] = await NewsListService() as NewsItemInterface[]
 
 
     return (
@@ -33,7 +33,7 @@ export const News: FC<NewsProps> = async ({dictionary}) => {
                 className="m-0 p-0 mt-5 md:mt-12 relative"
             >
                 <CarouselContent className="m-0 p-0 relative">
-                    {NewData.map((newsItem) => (
+                    {NewData?.map((newsItem) => (
                         <CarouselItem
                             className={"m-0 p-0 min-w-96"}
                             key={newsItem.id}

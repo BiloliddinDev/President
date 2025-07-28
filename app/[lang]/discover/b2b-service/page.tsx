@@ -12,10 +12,10 @@ export default function B2BPage() {
         <div className={"container md:!mt-26 !mt-42"}>
             <BreadcrumbDynamic/>
             <div className={"md:flex  justify-between flex-col  mt-10 "}>
-                <h2 className={"text-lg whitespace-pre-wrap mb-5"}>Президент Бизнес Подарки B2B</h2>
+                <h2 className={"text-lg whitespace-pre-wrap mb-5"}>Попробуйте свой логотип на наших товарах</h2>
                 <div className={"md:w-1/2 w-full"}>
-                    <p className={"text-sm mb-5"}>Попробуйте, как ваш логотип будет выглядеть на различных продуктах.
-                        Загрузите изображение логотипа и посмотрите, как оно размещается на изделиях.</p>
+                    <p className={"text-sm mb-5"}>Загрузите логотип вашей компании и сразу увидьте, как он будет
+                        смотреться на премиальных подарках — клатчах, сумках, визитницах и других изделиях.</p>
                 </div>
             </div>
 
