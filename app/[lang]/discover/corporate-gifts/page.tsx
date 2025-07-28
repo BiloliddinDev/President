@@ -32,9 +32,9 @@ const CorporateGifts = () => {
         alt="wallet"
         title="Персонализация: знак особого внимания"
         // title="Personalization options"
-//         subtitle="Engrave the name of the recipient or your logo on a writing instrument, a watch or emboss our leather goods.
-// "
-subtitle="Мы предлагаем тонкую и элегантную
+        //         subtitle="Engrave the name of the recipient or your logo on a writing instrument, a watch or emboss our leather goods.
+        // "
+        subtitle="Мы предлагаем тонкую и элегантную
 персонализацию — от тиснения логотипа на
 кожаных изделиях до именной гравировки на
 металле. Каждый штрих усиливает ценность
@@ -70,7 +70,6 @@ subtitle="Мы предлагаем тонкую и элегантную
 надолго. Это могут быть медали, часы,
 коллекционные боксы или композиции с
 национальной символикой."
-      
       />
       <CommonWatchSection
         videoSrc={horizontalphoto}
