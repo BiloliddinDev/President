@@ -19,8 +19,9 @@ import {getAllCountry} from "@/service/navbar-service/country.service";
 import Cookies from "js-cookie";
 // import { ShopModalContent } from "../modalContents/shopModal";
 import ShopModalContent from "../modalContents/shopModal";
-import {MediaFile} from "@/app/[lang]/(home)/components/category";
+// import {MediaFile} from "@/app/[lang]/(home)/components/category";
 import {getCategoryModal} from "@/service/home-service/category-mobile.service";
+import { MediaFile } from "@/interface/news-home-page/news";
 
 interface CategoryTranslation {
     name: string;

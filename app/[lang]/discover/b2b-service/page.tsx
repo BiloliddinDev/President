@@ -35,7 +35,7 @@ export default function B2BPage() {
                     size={70}
                     image={image2}
                     className="mt-[100px] flex-col lg:flex-row-reverse gap-10"
-                     title="Сумка"
+                    title="Сумка"
                     desc="Представьте, как будет выглядеть сумка с логотипом вашего бренда. Хотите увидеть результат? Попробуйте прямо сейчас!"
                 />
                 <B2bCard
@@ -44,7 +44,7 @@ export default function B2BPage() {
                     size={30}
                     image={image3}
                     className="mt-[100px] flex-col lg:flex-row gap-10"
-                     title="Часы"
+                    title="Часы"
                     desc="Мы наносим логотип вашего бренда даже на внутреннюю часть наручных часов — это тонкая и точная работа. Обязательно попробуйте!"
                 />
             </div>

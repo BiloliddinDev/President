@@ -2,11 +2,11 @@
 
 import React from "react";
 
-export default function FormattedText({input}) {
+export default function FormattedText({input}: {input: string}) {
     const lines = input.split("\n");
 
-    const elements = [];
-    let currentList = [];
+    const elements: React.ReactNode[] = [];
+    let currentList: React.ReactNode[] = [];
 
     lines.forEach((line, index) => {
         const trimmed = line.trim();

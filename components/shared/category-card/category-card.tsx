@@ -1,4 +1,6 @@
+import { CategoryInterface } from "@/interface/category-type/category-interface";
 import Image from "next/image";
+import { FC } from "react";
 
 export const CategoryCard: FC<{
     category: CategoryInterface;
