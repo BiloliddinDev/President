@@ -46,7 +46,7 @@ const VideoBox: FC<VideoBoxProps> = ({
                     poster={poster}
                     autoPlay={true}
                 >
-                    <source src={videoSrc} type="video/mp4"/>
+                    <source src={typeof videoSrc === "string" ? videoSrc : videoSrc?.src} type="video/mp4"/>
                     Your browser does not support the video tag.
                 </video>
                 {!isPlaying && (

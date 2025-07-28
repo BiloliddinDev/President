@@ -40,7 +40,7 @@ export const discoverModalItems = [
     },
     {
         id: 5,
-        linkSrc: "/discover/service",
+        linkSrc: "/service",
         name: {
             uz: "Mijozlarga xizmat ko'rsatish",
             ru: "Обслуживание клиентов",

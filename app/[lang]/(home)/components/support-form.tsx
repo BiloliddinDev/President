@@ -40,7 +40,7 @@ interface SupportFormProps {
         };
     };
     lang?: 'uz' | 'ru' | 'en';
-    showtime: boolean
+    showtime?: boolean
 }
 
 export const SupportForm = ({dictionary, showtime}: SupportFormProps) => {
