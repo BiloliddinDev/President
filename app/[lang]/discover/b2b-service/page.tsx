@@ -12,10 +12,10 @@ export default function B2BPage() {
         <div className={"container md:!mt-26 !mt-42"}>
             <BreadcrumbDynamic/>
             <div className={"md:flex  justify-between flex-col  mt-10 "}>
-                <h2 className={"text-lg whitespace-pre-wrap mb-5"}>Президент Бизнес Подарки B2B</h2>
+                <h2 className={"text-lg whitespace-pre-wrap mb-5"}>Попробуйте свой логотип на наших товарах</h2>
                 <div className={"md:w-1/2 w-full"}>
-                    <p className={"text-sm mb-5"}>Попробуйте, как ваш логотип будет выглядеть на различных продуктах.
-                        Загрузите изображение логотипа и посмотрите, как оно размещается на изделиях.</p>
+                    <p className={"text-sm mb-5"}>Загрузите логотип вашей компании и сразу увидьте, как он будет
+                        смотреться на премиальных подарках — клатчах, сумках, визитницах и других изделиях.</p>
                 </div>
             </div>
 
@@ -35,7 +35,7 @@ export default function B2BPage() {
                     size={70}
                     image={image2}
                     className="mt-[100px] flex-col lg:flex-row-reverse gap-10"
-                     title="Сумка"
+                    title="Сумка"
                     desc="Представьте, как будет выглядеть сумка с логотипом вашего бренда. Хотите увидеть результат? Попробуйте прямо сейчас!"
                 />
                 <B2bCard
@@ -44,7 +44,7 @@ export default function B2BPage() {
                     size={30}
                     image={image3}
                     className="mt-[100px] flex-col lg:flex-row gap-10"
-                     title="Часы"
+                    title="Часы"
                     desc="Мы наносим логотип вашего бренда даже на внутреннюю часть наручных часов — это тонкая и точная работа. Обязательно попробуйте!"
                 />
             </div>

@@ -9,12 +9,13 @@ import {OrderFormData, OrderSchema} from "@/interface/order-schema/order-schema"
 import CheckoutForm from "@/app/[lang]/order/components/checkout-form";
 import OrderedProducts from "@/app/[lang]/order/components/order-produc-list";
 import {useBasketStore} from "@/lib/set-basket.storage";
-import {toast} from "sonner";
-
+import OrderSuccessModal from "@/components/shared/order-modal/Order-success-modal";
+import {useState} from "react";
 
 export default function OrderPage() {
-
     const {items} = useBasketStore();
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const methods = useForm<OrderFormData>({
         resolver: zodResolver(OrderSchema),
@@ -35,10 +36,9 @@ export default function OrderPage() {
         }
     });
 
-
     const onSubmit = (data: OrderFormData) => {
         console.log('All form data:', data, items);
-        toast.success("your order successful created! We will contact you soon. Thank you for your order!")
+        setIsModalOpen(true);
     };
 
     return (
@@ -64,6 +64,8 @@ export default function OrderPage() {
                     </div>
                 </form>
             </FormProvider>
+
+            <OrderSuccessModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}/>
         </div>
-    )
+    );
 }

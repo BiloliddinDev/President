@@ -32,7 +32,7 @@ const WatchVsText: FC<VideoWithTextProps> = ({
             <p className="text-sm text-[#474B57]">{textInfo}</p>
           </div>
           {/* <VideoBox videoSrc={videoSrc} width={"500px"} height={"500px"} /> */}
-          <VideoBox videoSrc={typeof videoSrc === "string" ? videoSrc : videoSrc.src} width={"500px"} height={"500px"} />
+          <VideoBox videoSrc={typeof videoSrc === "string" ? videoSrc : videoSrc.src}  width={"500px"} height={"500px"} />
         </>
       )}
     </div>
