@@ -12,9 +12,9 @@ export const discoverModalItems = [
         id: 2,
         linkSrc: "/discover/b2b-service",
         name: {
-            uz: "President Business gifts B2B",
-            ru: "President Business gifts B2B",
-            en: "President Business gifts B2B"
+            uz: "Sovg'ada sizning logotipingiz",
+            ru: "Ваш логотип на подарке",
+            en: "Your logo on the gift"
         }
     },
     {
@@ -40,7 +40,7 @@ export const discoverModalItems = [
     },
     {
         id: 5,
-        linkSrc: "/discover/service",
+        linkSrc: "/service",
         name: {
             uz: "Mijozlarga xizmat ko'rsatish",
             ru: "Обслуживание клиентов",

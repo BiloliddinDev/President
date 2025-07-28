@@ -33,7 +33,6 @@ const WatchVsText: FC<ImageWithTextProps> = ({
             <p className="text-sm text-[#474B57]">{textInfo}</p>
           </div>
          <Image  width={"500"} height={"500"} src={videoSrc} alt={"videoSrc"} className="w-full  h-full max-w-[500px] max-h-[500px] object-cover rounded" />
-
            {/* <VideoBox videoSrc={videoSrc} width={"500px"} height={"500px"} /> */}
         </>
       )}

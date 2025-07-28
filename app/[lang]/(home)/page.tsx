@@ -13,6 +13,7 @@ import {Category} from "@/app/[lang]/(home)/components/category";
 import {ShowcaseDataFrom, ShowcaseItem} from "@/interface/showcase-type/showcase-type";
 import {showcaseService} from "@/service/home-service/showcase.service";
 import {getshowCaseData} from "@/service/home-service/showcase-image.service";
+import {StorySection} from "@/app/[lang]/(home)/components/story";
 
 
 interface HomePageProps {
@@ -58,10 +59,13 @@ export default async function Home({params}: HomePageProps) {
                 {/* <News /> */}
             </section>
             <section className="mt-[100px] bg-[#F6F6F6] py-8">
-                {/* done */} <SupportForm dictionary={dictionary}></SupportForm>
+                {/* done */} <SupportForm showtime={true} dictionary={dictionary}></SupportForm>
             </section>
             <section className="mt-[100px]  ">
                 {/* done */} <BusinessGifts/>
+            </section>
+            <section className={'mt-[100px]'}>
+                <StorySection/>
             </section>
             <section className="mt-[100px]  ">
                 {/* done */} <Location lang={HomePageParam.lang} dictionary={dictionary}/>

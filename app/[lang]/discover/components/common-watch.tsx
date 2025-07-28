@@ -1,4 +1,3 @@
-// import VideoBox from "@/components/shared/video-box/video-box";
 import VideoBox from "@/components/shared/video-box/video-box";
 import { ImageWithTextProps } from "@/interface/discover/video-text";
 import Image from "next/image";

@@ -1,11 +1,10 @@
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious,} from "@/components/ui/carousel";
 import {SectionTitle} from "@/components/ui/sectionTitle";
-import {NewsCard} from "@/components/shared/news-card/news-card";
 import {FC} from "react";
-import {NewsItemInterface} from "@/interface/news-home-page/news";
-import {NewsListService} from "@/service/home-service/newslist.service";
+import {StoryCard} from "@/components/shared/story-card/story-card";
+import {storiesData} from "@/constants/story-static-data";
 
-interface NewsProps {
+interface StoryProps {
     dictionary?: {
         news: {
             title: string;
@@ -16,14 +15,12 @@ interface NewsProps {
 }
 
 
-export const News: FC<NewsProps> = async ({dictionary}) => {
+export const StorySection: FC<StoryProps> = async ({dictionary}) => {
 
-    const NewData: NewsItemInterface[] = await NewsListService() as NewsItemInterface[]
-
-
+    console.log(dictionary)
     return (
         <div className={"relative "}>
-            <SectionTitle className={"container"} text={`${dictionary?.news.title}`}/>
+            <SectionTitle className={"container"} text={`История`}/>
             <Carousel
                 opts={{
                     align: "start",
@@ -33,13 +30,13 @@ export const News: FC<NewsProps> = async ({dictionary}) => {
                 className="m-0 p-0 mt-5 md:mt-12 relative"
             >
                 <CarouselContent className="m-0 p-0 relative">
-                    {NewData?.map((newsItem) => (
+                    {storiesData?.map((storyline) => (
                         <CarouselItem
                             className={"m-0 p-0 min-w-96"}
-                            key={newsItem.id}
+                            key={storyline.id}
                             style={{flex: "0 0 35%"}}
                         >
-                            <NewsCard newsItem={newsItem}/>
+                            <StoryCard storyItem={storyline}/>
                         </CarouselItem>
                     ))}
                 </CarouselContent>
