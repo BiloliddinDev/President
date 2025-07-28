@@ -1,4 +1,4 @@
-import InstrumentAccordion from "@/app/[lang]/corporate-gifts/faqs/components/instrument-accordion";
+// import InstrumentAccordion from "@/app/[lang]/corporate-gifts/faqs/components/instrument-accordion";
 
 export const myTabs = [
     {

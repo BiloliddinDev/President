@@ -24,13 +24,13 @@ export default async function CategoryPage({params}: CategoryPageProps) {
     const ProductList: { data: ProductsInterface[] } = await ProductChildService(Number(categoryId.id)) as {
         data: ProductsInterface[]
     }
-    const CategoryDetailData2: CategoryInterface = await CategoryDetailService(Number(categoryId.id)) as CategoryInterface
+    const CategoryDetailData2: CategoryInterface = await CategoryDetailService(categoryId.id || '') as CategoryInterface
 
 
 
     return (
         <div className="container md:!mt-26 !mt-42">
-            <BreadcrumbDynamic url={categoryId?.name}/>
+            <BreadcrumbDynamic url={categoryId?.name || undefined}/>
             <div>
                 <h2 className="text-primary mt-10 text-xl font-medium leading-loose">
                     {CategoryDetailData2.name}

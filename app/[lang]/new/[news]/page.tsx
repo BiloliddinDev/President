@@ -20,12 +20,12 @@ export default async function News({params}: NewsPageProps) {
     const News = await params.then((params) => params);
     const NewsItem = splitNameAndIdFromParam(News.news)
     const NewData: NewsItemInterface = await NewsService(Number(NewsItem.id)) as NewsItemInterface
-    const NewList: NewsItemInterface = await NewsListService() as NewsItemInterface
+    const NewList: NewsItemInterface[] = await NewsListService() as NewsItemInterface[]
 
     return (
         <div>
             <div className={"container !mt-22"}>
-                <BreadcrumbDynamic url={NewsItem?.name}/>
+                <BreadcrumbDynamic url={NewsItem?.name || undefined}/>
             </div>
             <div className="container ">
                 {NewData.image_page?.filePath && (

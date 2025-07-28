@@ -18,7 +18,7 @@ interface NewsProps {
 
 export const News: FC<NewsProps> = async ({dictionary}) => {
 
-    const NewData: NewsItemInterface = await NewsListService() as NewsItemInterface
+    const NewData: NewsItemInterface []= await NewsListService() as NewsItemInterface[]
 
 
     return (
