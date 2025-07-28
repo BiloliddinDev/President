@@ -3,9 +3,10 @@ import {FC} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
-import {NewsItem} from "@/interface/news-home-page/news";
+import { NewsItemInterface } from "@/interface/news-home-page/news";
+// import {NewsItem} from "@/interface/news-home-page/news";
 
-export const NewsCard: FC<{ newsItem: NewsItem; }> = ({newsItem,}) => {
+export const NewsCard: FC<{ newsItem: NewsItemInterface; }> = ({newsItem,}) => {
 
     return (
         <div className={"w-[100%] h-[100%] text-center"}>

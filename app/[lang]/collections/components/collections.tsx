@@ -24,7 +24,6 @@ export interface CollectionsProps {
         </p>
       </div> */}
 
-      {/* Tanlangan ID orqali mahsulotlar */}
       {ids.map((id:number)=>
       <CollectionItems  collection={CollectionsData} id={id} key={id} />
     )}
