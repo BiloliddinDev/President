@@ -10,9 +10,7 @@ import {AlertTriangle} from "lucide-react";
 
 export default async function NewsPage() {
     const newProducts: ProductsInterface[] = await NewProductService() as ProductsInterface[];
-
-    // faqat yangi mahsulotlar
-    const filteredProducts = newProducts.filter(item => item.meta._new_product === true);
+    const filteredProducts = newProducts.filter(item => item?.meta?._new_product === true);
 
     return (
         <div className="container md:!mt-26 !mt-42">
@@ -28,11 +26,11 @@ export default async function NewsPage() {
 
             <div>
                 <h2 className="text-primary text-xl font-medium leading-loose">
-                    Эксклюзивные новинки от President Business Gifts
+                    Новые продукты
                 </h2>
                 <p className="text-zinc-700 text-sm font-normal leading-tight mt-4 mb-11">
-                    Ознакомьтесь с нашей потрясающей коллекцией альпийских сумочек и уникальных ароматов.
-                    Поторопитесь, чтобы приобрести идеальный подарок — прежде чем это сделает кто-то другой!
+                    Откройте для себя новинки President Business Gifts — эксклюзивные изделия, только поступившие в
+                    коллекцию. Статусные подарки, которые подчёркивают актуальность и вкус.
                 </p>
 
                 {filteredProducts.length === 0 ? (
