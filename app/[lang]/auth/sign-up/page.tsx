@@ -130,7 +130,7 @@ export default function RegisterForm() {
                             )}
                         />
                         <Button type="submit" className="w-full">Sign in</Button>
-                        <Button onClick={() => signIn("google", {callbackUrl: "/"})} variant="outline"
+                        <Button type={"button"} onClick={() => signIn("google", {callbackUrl: "/"})} variant="outline"
                                 className="w-full flex items-center justify-center gap-2">
                             <Image src={Google} alt={"Google Logo"} width={20} height={20} className="size-4"/>
                             Continue with Google
