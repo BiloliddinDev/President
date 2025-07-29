@@ -1,4 +1,4 @@
-import NextAuth, {AuthOptions} from "next-auth";
+import NextAuth, { AuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
 type ServerData = {
@@ -35,7 +35,7 @@ declare module "next-auth/jwt" {
     }
 }
 
-export const authOptions: AuthOptions = {
+const authOptions: AuthOptions = {
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -43,7 +43,7 @@ export const authOptions: AuthOptions = {
         }),
     ],
     callbacks: {
-        async signIn({user}) {
+        async signIn({ user }) {
             if (!user.email || !user.name) return false;
 
             const authString = Buffer.from(
@@ -63,7 +63,7 @@ export const authOptions: AuthOptions = {
                         body: JSON.stringify({
                             client_email: user.email,
                             client_full_name: user.name,
-                            country: {countryCode: "UZ", countryName: "Uzbekistan"}
+                            country: { countryCode: "UZ", countryName: "Uzbekistan" }
                         }),
                     }
                 );
@@ -78,12 +78,12 @@ export const authOptions: AuthOptions = {
             }
         },
 
-        async jwt({token, user}) {
+        async jwt({ token, user }) {
             if (user?.serverData) token.serverData = user.serverData;
             return token;
         },
 
-        async session({session, token}) {
+        async session({ session, token }) {
             if (token.serverData) session.user.serverData = token.serverData;
             return session;
         },
@@ -91,4 +91,4 @@ export const authOptions: AuthOptions = {
 };
 
 const handler = NextAuth(authOptions);
-export {handler as GET, handler as POST};
+export { handler as GET, handler as POST };
