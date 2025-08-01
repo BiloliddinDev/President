@@ -9,29 +9,25 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import {usePathname} from "next/navigation";
+import {useBreadcrumbTranslation} from "@/hooks/useBreadcrumbTranslation";
 
 const localePrefixes = ["uz", "en", "ru"];
 
 export function BreadcrumbDynamic({url}: { url?: string }) {
     const pathname = usePathname();
     const rawSegments = pathname.split("/").filter(Boolean);
-    const segments = rawSegments.filter(
-        (seg, i) => !(i === 0 && localePrefixes.includes(seg))
-    );
-
-
-    const fullPaths = segments.map(
-        (_, i) => "/" + segments.slice(0, i + 1).join("/")
-    );
-
+    const segments = rawSegments.filter((seg, i) => !(i === 0 && localePrefixes.includes(seg)));
+    const fullPaths = segments.map((_, i) => "/" + segments.slice(0, i + 1).join("/"));
     const breadcrumbSegments = url ? segments.slice(0, -1) : segments;
     const breadcrumbPaths = url ? fullPaths.slice(0, -1) : fullPaths;
+
+    const t = useBreadcrumbTranslation();
 
     return (
         <Breadcrumb>
             <BreadcrumbList>
                 <BreadcrumbItem>
-                    <BreadcrumbLink href="/">President business gifts</BreadcrumbLink>
+                    <BreadcrumbLink href="/">{t["home"] || "Home"}</BreadcrumbLink>
                 </BreadcrumbItem>
 
                 {breadcrumbSegments.map((segment, i) => (
@@ -39,7 +35,7 @@ export function BreadcrumbDynamic({url}: { url?: string }) {
                         <BreadcrumbSeparator/>
                         <BreadcrumbItem>
                             <BreadcrumbLink href={breadcrumbPaths[i]} className="capitalize">
-                                {decodeURIComponent(segment)}
+                                {t[segment] || decodeURIComponent(segment)}
                             </BreadcrumbLink>
                         </BreadcrumbItem>
                     </div>
@@ -50,7 +46,7 @@ export function BreadcrumbDynamic({url}: { url?: string }) {
                         <BreadcrumbSeparator/>
                         <BreadcrumbItem>
                             <BreadcrumbPage className="capitalize">
-                                {decodeURIComponent(url)}
+                                {t[url] || decodeURIComponent(url)}
                             </BreadcrumbPage>
                         </BreadcrumbItem>
                     </div>

@@ -57,7 +57,7 @@ const ChangeLangModal = ({lang, languages, county, currency}: {
         changeLanguage: {
             uz: "Tilni o'zgartirish",
             ru: "Изменить язык",
-            en: "Change language"
+            en: "Change dictionaries"
         },
         selectLocation: {
             uz: "Boshqa joyni tanlang",
