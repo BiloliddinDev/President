@@ -29,7 +29,7 @@ export default function ChangeEmailPage() {
 
     return (
         <div className={"w-full md:max-w-[500px]"}>
-            <AccountTitle text="Change Email"/>
+            <AccountTitle text=" Изменить адрес почты"/>
 
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 mt-7">
@@ -38,11 +38,11 @@ export default function ChangeEmailPage() {
                         name="currentEmail"
                         render={({field}) => (
                             <FormItem>
-                                <FormLabel>Current Email</FormLabel>
+                                <FormLabel>Текущий почты</FormLabel>
                                 <FormControl>
                                     <Input
                                         type="email"
-                                        placeholder="Enter your current email"
+                                        placeholder="Введите свой текущий почты"
                                         {...field}
                                     />
                                 </FormControl>
@@ -56,11 +56,11 @@ export default function ChangeEmailPage() {
                         name="newEmail"
                         render={({field}) => (
                             <FormItem>
-                                <FormLabel>New Email</FormLabel>
+                                <FormLabel>Новый почты</FormLabel>
                                 <FormControl>
                                     <Input
                                         type="email"
-                                        placeholder="Enter new email"
+                                        placeholder="Введите новый почты"
                                         {...field}
                                     />
                                 </FormControl>
@@ -74,11 +74,11 @@ export default function ChangeEmailPage() {
                         name="confirmEmail"
                         render={({field}) => (
                             <FormItem>
-                                <FormLabel>Confirm New Email</FormLabel>
+                                <FormLabel>Подтвердите новый почты</FormLabel>
                                 <FormControl>
                                     <Input
                                         type="email"
-                                        placeholder="Confirm your new email"
+                                        placeholder="Подтвердите ваш новый почты"
                                         {...field}
                                     />
                                 </FormControl>
@@ -89,7 +89,7 @@ export default function ChangeEmailPage() {
 
 
                     <Button type="submit" variant={"default"} className={"mt-10"}>
-                        Submit
+                        Сохранять
                     </Button>
                 </form>
             </Form>

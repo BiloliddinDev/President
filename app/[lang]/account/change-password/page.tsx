@@ -32,11 +32,11 @@ export default function ChangePasswordPage() {
                         name="currentPassword"
                         render={({field}) => (
                             <FormItem>
-                                <FormLabel>Current Password</FormLabel>
+                                <FormLabel> Текущий пароль </FormLabel>
                                 <FormControl>
                                     <Input
                                         type="password"
-                                        placeholder="Enter your current password"
+                                        placeholder="Введите текущий пароль"
                                         {...field}
                                     />
                                 </FormControl>
@@ -50,11 +50,11 @@ export default function ChangePasswordPage() {
                         name="newPassword"
                         render={({field}) => (
                             <FormItem>
-                                <FormLabel>New Password</FormLabel>
+                                <FormLabel> Новый пароль </FormLabel>
                                 <FormControl>
                                     <Input
                                         type="password"
-                                        placeholder="Enter new password"
+                                        placeholder=" Введите новый пароль "
                                         {...field}
                                     />
                                 </FormControl>
@@ -68,11 +68,11 @@ export default function ChangePasswordPage() {
                         name="confirmPassword"
                         render={({field}) => (
                             <FormItem>
-                                <FormLabel>Confirm New Password</FormLabel>
+                                <FormLabel> Подтвердите новый пароль</FormLabel>
                                 <FormControl>
                                     <Input
                                         type="password"
-                                        placeholder="Confirm your new password"
+                                        placeholder="Подтвердите ваш новый пароль"
                                         {...field}
                                     />
                                 </FormControl>
@@ -82,7 +82,7 @@ export default function ChangePasswordPage() {
                     />
 
                     <Button type="submit" variant={"default"} className={"mt-10"}>
-                        Submit
+                        Сохранять
                     </Button>
                 </form>
             </Form>

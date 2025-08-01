@@ -27,7 +27,7 @@ const CareAndServices = () => {
             <div className="container max-w-screen-xl mx-auto px-2 md:px-4 md:!mt-26 !mt-42">
                 <div className="mt-[100px] mb-[200px]">
                     <h5 className="text-gray-900 text-lg font-medium leading-7 mb-7">
-                        Care & Services
+                        Уход за изделиями и сервис
                     </h5>
                     <div className="flex gap-5 justify-between flex-wrap md:flex-nowrap">
                         {careServicesItems.map((item) => (

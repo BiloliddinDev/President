@@ -13,19 +13,7 @@ interface shopModalProps {
 const ShopModalContent = ({lang, category}: shopModalProps) => {
 
     return (
-        <div>
-            {category.map((item) => (
-                <div
-                    className={`text-sm
-                     font-normal leading-[1.5rem] cursor-pointer
-                     ${item.id === 9 ? "mt-10" : "my-5"}`}
-                    key={item.id}
-                >
-                    <Link href={`/shops/${item.name}id${item.id}`}>
-                        {item.name}
-                    </Link>
-                </div>
-            ))}
+        <div className="">
             {shopModalItems.filter((i) => i.custom).map((item) => (
                 <div
                     className={`text-sm
@@ -40,6 +28,19 @@ const ShopModalContent = ({lang, category}: shopModalProps) => {
                     </Link>
                 </div>
             ))}
+            {category.map((item) => (
+                <div
+                    className={`text-sm
+                     font-normal leading-[1.5rem] cursor-pointer
+                     ${item.id === 9 ? "mt-10" : "my-5"}`}
+                    key={item.id}
+                >
+                    <Link href={`/shops/${item.name}id${item.id}`}>
+                        {item.name}
+                    </Link>
+                </div>
+            ))}
+            
         </div>
     );
 };

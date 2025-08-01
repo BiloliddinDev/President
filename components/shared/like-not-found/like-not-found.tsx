@@ -14,17 +14,17 @@ export const LikeNotFound = () => {
                 <Heart size={100} className="text-primary" fill="#00093f"/>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">
-                You have no likes
+                У вас нет отметок «Нравится»
             </h2>
             <p className="text-primary">
-                Currently, you have no liked items. You can like products while browsing them.
+                В настоящее время у вас нет отметок «Нравится». Вы можете отмечать товары, просматривая их.
             </p>
             <Button
                 onClick={() => router.push("/shops/news")}
                 variant={"default"}
                 className={"mt-10"}
             >
-                View Products →
+                Смотреть товары →
             </Button>
         </div>
     )

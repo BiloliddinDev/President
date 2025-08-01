@@ -18,11 +18,6 @@ export default async function Writing() {
             content: <InstrumentAccordion data={WritingMode}/>,
         },
         {
-            value: "services",
-            label: "Услуги",
-            content: <InstrumentAccordion data={services}/>,
-        },
-        {
             value: "repair-warranty",
             label: "Ремонт и гарантия",
             content: <InstrumentAccordion data={repair}/>,

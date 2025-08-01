@@ -15,7 +15,7 @@ export const LeftImagesSection = ({mediaData}: LeftImagesSectionProps) => {
     const total = allItems.length;
 
     return (
-        <div className="h-[1000px] overflow-y-auto pr-1 custom-scroll lg:w-1/2 w-full">
+        <div className="h-auto overflow-y-auto pr-1 custom-scroll lg:w-1/2 w-full">
             <div className="flex flex-wrap">
                 {allItems.map((item, index) => {
                     const src = `${process.env.NEXT_PUBLIC_ADMIN_URL}${item.filePath}`;
