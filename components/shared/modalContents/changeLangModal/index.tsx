@@ -109,7 +109,7 @@ const ChangeLangModal = ({lang, languages, county, currency}: {
                             <li key={element.code}
                                 onClick={() => handleCurrencyChange(element.name, element.code, element?.default_currency)}
                                 className="px-4 md:px-0 md:w-[220px] flex items-center justify-between cursor-pointer">
-                                {element.name}
+                                {element.name} ({element.code})
                                 <span>{element?.default_currency && <Check/>}</span>
                             </li>
                         ))}

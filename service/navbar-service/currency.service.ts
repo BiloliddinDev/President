@@ -9,8 +9,6 @@ interface CountryCookie {
     code: string;
 }
 
-
-
 export const getAllCurrency = async () => {
     const countryString = Cookies.get("country");
     let countryCode = null;
