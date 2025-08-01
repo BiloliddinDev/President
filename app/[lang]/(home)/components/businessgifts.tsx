@@ -4,23 +4,23 @@ import Image1 from "@/public/images/home-page-corporative-box.jpg";
 import { SectionTitle } from "@/components/ui/sectionTitle";
 // import { SupportFormModal } from "@/components/shared/form-modal/form.modal";
 import AutoplayCarousel from "@/components/shared/corporative-gifts/AutoplayCarousel";
-// import { LangType } from "@/interface/lang/lang-type";
+import { LangType } from "@/interface/lang/lang-type";
 // import { CorporateService } from "@/service/home-service/corporate-gifts.service";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const images = [Image1];
 
-// interface BusinessGiftsCarouselProps {
-//   dictionary: {
-//     corporategifts: {
-//       title: string;
-//       text: string;
-//       btn: string;
-//     };
-//   };
-//   lang?: LangType
-// }
+interface BusinessGiftsCarouselProps {
+  dictionary: {
+    corporategifts: {
+      title: string;
+      text: string;
+      btn: string;
+    };
+  };
+  lang?: LangType
+}
 
 export interface CorporativeGifts {
     "corporate.gifts.btn":string,
