@@ -10,8 +10,7 @@ interface CountryCookie {
 
 export async function AboutService() {
     
-    const cookieStore = await cookies();
-
+    const cookieStore = await cookies()
     const lang = cookieStore.get('lang')?.value || 'en';
 
     let countryCode = 'UZ';

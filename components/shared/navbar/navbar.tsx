@@ -19,28 +19,16 @@ import {getAllCountry} from "@/service/navbar-service/country.service";
 import Cookies from "js-cookie";
 import ShopModalContent from "../modalContents/shopModal";
 import {getCategoryModal} from "@/service/home-service/category-mobile.service";
-import {MediaFile} from "@/interface/news-home-page/news";
+import {getAllCurrency} from "@/service/navbar-service/currency.service";
+import {Category} from "@/interface/category-type/category-interface";
+import {CurrencyType} from "@/interface/currency-type/currency-type";
 
-interface CategoryTranslation {
-    name: string;
-    description: string;
-    code: "RU" | "EN" | "UZ";
-}
-
-export interface Category {
-    id: number;
-    parentId: number | null;
-    name: string;
-    description: string;
-    translation: CategoryTranslation[];
-    children: Category[] | null;
-    mediaFiles: MediaFile[];
-}
 
 export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
     const [languages, setLanguages] = useState<LanguageType[]>([]);
     const [county, setCountry] = useState<CountryType[]>([]);
-    const cookiescountry = Cookies.get('country')
+    const cookiesCountry = Cookies.get('country')
+    const [currency, setCurrency] = useState<CurrencyType[] | undefined>();
     const [category, setCategory] = useState<Category[]>([])
 
     useEffect(() => {
@@ -50,12 +38,18 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
         };
         fetchLang().then().catch().finally();
 
+        const fetchCurrency = async () => {
+            const data = await getAllCurrency();
+            setCurrency(data);
+        };
+        fetchCurrency().then().catch().finally();
+
         const fetchCounty = async () => {
             const data = await getAllCountry();
             setCountry(data);
         };
         fetchCounty().then().catch().finally();
-    }, [cookiescountry]);
+    }, [cookiesCountry]);
     useEffect(() => {
         const fetchCategory = async () => {
             const data: Category[] = await getCategoryModal() as Category[]
@@ -81,6 +75,7 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
                                     side="left"
                                     sheetTitle={link.name["ru"]}
                                     lang={lang}
+                                    showing={link.showing}
                                 >
                                     {link.name.en === "Shop" ? (
                                         <ShopModalContent lang={lang} category={category}/>
@@ -120,21 +115,19 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
                             </p>
                         }
                     >
-                        <ChangeLangModal lang={lang} languages={languages} county={county}/>
+                        <ChangeLangModal currency={currency} lang={lang} languages={languages} county={county}/>
                     </NavbarModal>
-
                     <Link href={'/like'}>
                         <Heart width={24} height={24} className={`text-primary !hover:text-zinc-300 duration-200`}/>
                     </Link>
                     <Link href={"/basket"}>
-
                         <ShoppingCart width={24} height={24}
                                       className="text-primary !hover:text-zinc-300 duration-200"/>
                     </Link>
                     <UserDropdown/>
                 </div>
             </div>
-            <MobileNavbar lang={lang} languages={languages} county={county}/>
+            <MobileNavbar lang={lang} languages={languages} county={county} currency={currency} />
         </nav>
     );
 };

@@ -6,24 +6,28 @@ import IconComponent from "@/components/icon/icon-view";
 
 import DiscoverModalContent from "../modalContents/discoverModal";
 import ChangeLangModal from "../modalContents/changeLangModal";
-import { CountryType, LanguageType } from "@/interface/language&country-type/language-type";
+import {CountryType, LanguageType} from "@/interface/language&country-type/language-type";
 import ShopModalContent from "../modalContents/shopModal";
-import { Category } from "./navbar";
-import { getCategoryModal } from "@/service/home-service/category-mobile.service";
+import {getCategoryModal} from "@/service/home-service/category-mobile.service";
+import {Category} from "@/interface/category-type/category-interface";
+import {CurrencyType} from "@/interface/currency-type/currency-type";
 
-const MobileNavbar = ({lang,languages, county} : 
-    {lang : "uz" | "ru" | "en",
-    languages: LanguageType[],
-    county: CountryType[]}) => {
+const MobileNavbar = ({lang, languages, county, currency}:
+                      {
+                          lang: "uz" | "ru" | "en",
+                          languages: LanguageType[],
+                          county: CountryType[]
+                          currency: CurrencyType[] | undefined
+                      }) => {
     const [open, setOpen] = useState<boolean>(false);
     // const [searchInputOpen, setSearchInputOpen] = useState<boolean>(false);
     const [category, setCategory] = useState<Category[]>([])
 
     useEffect(() => {
-       
+
         const fetchCategory = async () => {
-            const data:Category[] = await getCategoryModal() as Category[]
-           setCategory(data);
+            const data: Category[] = await getCategoryModal() as Category[]
+            setCategory(data);
         };
         fetchCategory().then().catch().finally();
     }, []);
@@ -86,7 +90,7 @@ const MobileNavbar = ({lang,languages, county} :
                             },
                         ]}
                     />
-                    <ChangeLangModal lang={lang} languages={languages} county={county}/>
+                    <ChangeLangModal lang={lang} languages={languages} county={county} currency={currency}/>
                 </div>
             )}
         </div>

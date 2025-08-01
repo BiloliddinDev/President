@@ -1,11 +1,20 @@
-"use client"
-
 import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import {BasketLeftSection} from "@/app/[lang]/basket/components/basket-left-section";
 import BasketRightSection from "@/app/[lang]/basket/components/basket-right-section";
+import {getDictionary} from "@/lib/get-dictionary";
 
-export default function BasketPage() {
-    
+
+interface BasketPageProps {
+    params: Promise<{ lang: "uz" | "ru" | "en" | "tj" | 'az', category: string }>;
+}
+
+export default async function BasketPage({params}: BasketPageProps) {
+    const HomePageParam: { lang: "uz" | "ru" | "en" | 'tj' | "az", category: string } = await params;
+    const dictionary = await getDictionary(HomePageParam.lang);
+
+
+    console.log(dictionary)
+
     return (
         <div>
             <div className={"container md:!mt-26 !mt-42"}>

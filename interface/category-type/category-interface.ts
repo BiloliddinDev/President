@@ -11,18 +11,36 @@ export interface CategoryInterface {
             "code": string
         }
     ],
-    "mediaFiles": [
-        {
-            "id": string
-            "fileName": string
-            "originalFileName": string,
-            "filePath": string | undefined,
-            "fileSize": number
-            "ownerType": "PRODUCT",
-            "ownerId": 0,
-            "accessLevel": "PUBLIC",
-            "image": true,
-            "video": true
-        }
-    ]
+    "mediaFiles": mediaFiles []
+
+}
+
+interface mediaFiles {
+    id: number;
+    fileName: string;
+    originalFileName: string;
+    filePath: string;
+    metaData: {
+        type: string;
+        order: number;
+        width: number | null;
+        height: number | null;
+    }
+}
+
+interface CategoryTranslation {
+    name: string;
+    description: string;
+    code: "RU" | "EN" | "UZ";
+}
+
+
+export interface Category {
+    id: number;
+    parentId: number | null;
+    name: string;
+    description: string;
+    translation: CategoryTranslation[];
+    children: Category[] | null;
+    mediaFiles: mediaFiles[];
 }

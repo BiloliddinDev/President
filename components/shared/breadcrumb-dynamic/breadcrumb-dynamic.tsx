@@ -18,7 +18,7 @@ export function BreadcrumbDynamic({url}: { url?: string }) {
     const segments = rawSegments.filter(
         (seg, i) => !(i === 0 && localePrefixes.includes(seg))
     );
-    
+
 
     const fullPaths = segments.map(
         (_, i) => "/" + segments.slice(0, i + 1).join("/")
