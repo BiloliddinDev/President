@@ -127,7 +127,7 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
                     <UserDropdown/>
                 </div>
             </div>
-            <MobileNavbar lang={lang} languages={languages} county={county} currency={currency} />
+            <MobileNavbar lang={lang} languages={languages} county={county} currency={currency}/>
         </nav>
     );
 };
