@@ -12,7 +12,7 @@ export default function FavoritePage() {
 
     return (
         <div>
-            <AccountTitle text={"My favorite"}/>
+            <AccountTitle text={"Мой любимый"}/>
             {items.length > 0 && (<p className="text-primary text-sm font-medium leading-tight mt-3">
                 You have {items.length} {items.length === 1 ? 'item' : 'items'} in your Wishlist
             </p>)}
@@ -23,12 +23,12 @@ export default function FavoritePage() {
                         <Heart className="w-12 h-12 mx-auto text-gray-400"/>
                     </div>
                     <p className="text-gray-600 mb-6 max-w-md mx-auto">
-                        Click the Favourites icon beside an item to add the item to your Favourites.
-                        You can then review, shop and share your Favourites at any time.
+                        Нажмите на значок «Избранное» рядом с товаром, чтобы добавить его в избранное.
+                        Вы можете просматривать, покупать и делиться своим избранным в любое время.
                     </p>
                     <Link href="/shops/new">
                         <Button variant="default">
-                            Continue shopping
+                            Продолжить покупки
                         </Button>
                     </Link>
                 </div>

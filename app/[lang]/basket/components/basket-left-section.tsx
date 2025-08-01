@@ -25,7 +25,7 @@ export function BasketLeftSection() {
                 items.map((item) => (
                     <div key={item.id}
                          className="flex flex-col sm:flex-row items-center justify-between gap-4 border rounded-[4px] p-4">
-                        <div className="flex items-center gap-4">
+                        <div className="w-full flex items-center gap-4 ">
                             <div className="relative w-24 h-24 shrink-0">
                                 <Image
                                     src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${item.imgUrl}`}
@@ -39,7 +39,7 @@ export function BasketLeftSection() {
                                 <p className="text-sm text-gray-500">{item.sku || "Описание недоступно"}</p>
                                 <p className="text-sm text-gray-600 mt-1">Цена:
                                     <span
-                                        className="font-semibold"> {item.price} сум</span>
+                                        className="font-semibold"> {(item.price * item.quantity).toLocaleString()} сум</span>
                                 </p>
                                 <p className="text-sm text-gray-600">Общая сумма:
                                     <span className="font-semibold">

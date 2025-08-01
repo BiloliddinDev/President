@@ -4,4 +4,5 @@ export interface AboutType {
     "about.subtitle": string
     "about.title": string
     "about.image" : string
+    "about.btn" : string
 }

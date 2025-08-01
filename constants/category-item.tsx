@@ -63,13 +63,11 @@ export const categoryItem = [
 ];
 
 export const categoryModalItems = [
-  { id: 1, name: "Souviners" },
-  { id: 2, name: "Luxury Pens" },
-  { id: 3, name: "Leather" },
-  { id: 4, name: "Accessories" },
-  { id: 5, name: "Jewelery" },
-  { id: 6, name: "Bags" },
-  { id: 7, name: "Safes" },
-  { id: 8, name: "Accessories" },
-  { id: 9, name: "Watches" },
+  { id: 1, link:"/shops/Часыid47", name: "Часы" },
+  { id: 2, link:"/shops/Kоробкиid46", name: "Kоробки" },
+  { id: 3, link:"/shops/Сервизная%20посудаid53", name: "Сервизная посуда" },
+  { id: 4, link:"/shops/Сувенирыid52", name: "Сувениры" },
+  { id: 5, link:"/shops/Pучкиid51 ", name: "Pучки" },
+  { id: 6, link:"/shops/Кожаные%20изделияid49", name: "Кожаные изделия" },
+
 ];

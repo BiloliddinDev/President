@@ -87,13 +87,13 @@ export async function CollectionItems({ collection, id }: CollectionsProps) {
   const collectionImage = selectedCollection.mediaFiles?.[0]?.filePath;
 
   // Dynamic rasm joylashadigan index
-  let insertionIndex = 2; // default
+  let insertionIndex = 0; // default
   if (products.length === 4 || products.length ===6) {
-    insertionIndex = 2
+    insertionIndex = 0
   } else if (products.length === 5|| products.length ===6) {
     insertionIndex =0
   } else if (products.length >=8) {
-    insertionIndex =4
+    insertionIndex = 0
   }else if (products.length <= 2) {
     insertionIndex = 0
   }
@@ -109,10 +109,10 @@ export async function CollectionItems({ collection, id }: CollectionsProps) {
   });
 
   return (
-    <div className="container mx-auto !mt-32 px-4">
+    <div className=" mx-auto !mt-40">
       {products.length > 0 && (
         <>
-          <div className="text-center mb-12 max-w-2xl mx-auto">
+          <div className="text-center mb-12 mx-auto">
             <h3 className="text-xl sm:text-3xl font-semibold text-gray-800">
               {selectedCollection.name}
             </h3>
@@ -122,7 +122,7 @@ export async function CollectionItems({ collection, id }: CollectionsProps) {
           </div>
 
           {/* Grid system */}
-          <div className="grid grid-cols-4 auto-rows-[400px] gap-6">
+          <div className="grid grid-cols-5 auto-rows-[400px] gap-6">
             {mergedItems.map((item, index) => {
               if ("type" in item && item.type === "image") {
                 return (
@@ -135,7 +135,7 @@ export async function CollectionItems({ collection, id }: CollectionsProps) {
                       alt="Collection Image"
                       width={1200}
                       height={600}
-                      className="w-full h-full object-cover rounded-xl"
+                      className="w-full h-full object-cover "
                     />
                   </div>
                 );

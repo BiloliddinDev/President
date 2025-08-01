@@ -50,7 +50,7 @@ export default function SearchModalData(){
 
             {/* Main Content */}
             <div className="container mt-6">
-                <p className="text-sm sm:text-base md:text-lg mb-4 font-medium">Product suggestion</p>
+                <p className="text-sm sm:text-base md:text-lg mb-4 font-medium my-5">Предложение продукта</p>
 
                 {/* Product First, Category Below on mobile */}
                 <div className="flex flex-col md:flex-row gap-8">
@@ -84,14 +84,16 @@ export default function SearchModalData(){
 
                     <div className="w-full md:w-1/3 order-2 md:order-none">
                         <p className="text-gray-900 text-base sm:text-lg font-medium mb-2">
-                            Categories
+                            Типы продуктов
                         </p>
                         {categoryModalItems.map((item) => (
                             <div
                                 key={item.id}
                                 className="text-sm font-normal leading-[1.5rem] cursor-pointer my-2.5"
                             >
-                                <Link href="/">{item.name}</Link>
+                                <SheetClose className="cursor-pointer transition">
+                                    <Link href={item.link}>{item.name}</Link>
+                                </SheetClose>
                             </div>
                         ))}
                     </div>

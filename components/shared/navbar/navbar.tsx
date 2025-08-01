@@ -17,11 +17,9 @@ import {getAllLanguage} from "@/service/navbar-service/lang.service";
 import {CountryType, LanguageType} from "@/interface/language&country-type/language-type";
 import {getAllCountry} from "@/service/navbar-service/country.service";
 import Cookies from "js-cookie";
-// import { ShopModalContent } from "../modalContents/shopModal";
 import ShopModalContent from "../modalContents/shopModal";
-// import {MediaFile} from "@/app/[lang]/(home)/components/category";
 import {getCategoryModal} from "@/service/home-service/category-mobile.service";
-import { MediaFile } from "@/interface/news-home-page/news";
+import {MediaFile} from "@/interface/news-home-page/news";
 
 interface CategoryTranslation {
     name: string;
@@ -81,7 +79,7 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
                                 <NavbarModal
                                     title={link.name[lang]}
                                     side="left"
-                                    sheetTitle={link.name["en"]}
+                                    sheetTitle={link.name["ru"]}
                                     lang={lang}
                                 >
                                     {link.name.en === "Shop" ? (
@@ -118,7 +116,7 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
                             <p
                                 className={`text-primary !hover:text-zinc-300 text-lg font-normal transition-colors duration-200`}
                             >
-                                {`${lang.toUpperCase()}($)`}
+                                {`${lang.toUpperCase()}`}
                             </p>
                         }
                     >

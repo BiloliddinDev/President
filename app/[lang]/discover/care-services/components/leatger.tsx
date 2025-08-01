@@ -12,11 +12,6 @@ export default async function Leather (){
         content: <InstrumentAccordion data={writingInstruments} />,
       },
       {
-        value: "writing-modes",
-        label: "Услуги",
-        content: <InstrumentAccordion data={WritingMode} />,
-      },
-      {
         value: "services",
         label: "Ремонт и гарантия",
         content: <InstrumentAccordion data={services} />,

@@ -67,13 +67,13 @@ export default function ProductDetailPage() {
     };
 
     return (
-        <div className="container md:!mt-26 !mt-42">
+        <div className="container md:!mt-26 !mt-42 relative">
             <BreadcrumbDynamic/>
 
             <div className="w-full flex flex-col lg:flex-row items-start justify-center gap-12 mt-10">
                 <LeftImagesSection mediaData={product?.media}/>
 
-                <div className="w-full lg:w-1/2">
+                <div className="w-full lg:w-1/2 sticky top-20 right-0">
                     <div className="flex items-center justify-between gap-4 mb-4">
                         <h1 className="text-2xl font-semibold">{product?.name}</h1>
                         <div className="flex items-center gap-5">
@@ -85,11 +85,11 @@ export default function ProductDetailPage() {
                         </div>
                     </div>
 
-                    <p className="text-xl font-medium">{product?.prices?.[0].price} сум</p>
+                    <p className="text-xl font-medium">{product?.prices?.[0].price.toLocaleString()} сум</p>
 
                     {quantity === 0 ? (
                         <Button className="w-full mt-4" onClick={handleAddToCart}>
-                            Add to cart
+                            Добавить в корзину
                         </Button>
                     ) : (
                         <div className="mt-4 flex items-center gap-2 flex-wrap">
@@ -110,12 +110,11 @@ export default function ProductDetailPage() {
                     )}
 
                     <p className="text-gray-700 text-sm mt-7">
-                        Complimentary Express Shipping on all orders above €400. Free
-                        delivery and returns on all orders over €25.
+                       Мы стремимся доставить Ваш заказ максимально быстро и удобно.
                     </p>
 
                     <div className="mt-6">
-                        <h2 className="text-lg font-semibold mt-12">Details</h2>
+                        <h2 className="text-lg font-semibold mt-12">Подробности</h2>
                         <p className="text-gray-700 text-sm mt-2">{product?.description}</p>
                     </div>
 
@@ -123,12 +122,12 @@ export default function ProductDetailPage() {
 
                     <Accordion type="single" collapsible className="w-full mt-4">
                         <AccordionItem value="material">
-                            <AccordionTrigger>Material</AccordionTrigger>
-                            <AccordionContent>Lorem ipsum dolor sit amet.</AccordionContent>
+                            <AccordionTrigger>Материал</AccordionTrigger>
+                            <AccordionContent>{product?.sku}</AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="dimensions">
-                            <AccordionTrigger>Dimensions</AccordionTrigger>
-                            <AccordionContent>Lorem ipsum dolor sit amet.</AccordionContent>
+                            <AccordionTrigger>Размеры</AccordionTrigger>
+                            <AccordionContent>{product?.sku}</AccordionContent>
                         </AccordionItem>
                     </Accordion>
                 </div>

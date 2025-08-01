@@ -15,14 +15,13 @@ import {showcaseService} from "@/service/home-service/showcase.service";
 import {getshowCaseData} from "@/service/home-service/showcase-image.service";
 import {StorySection} from "@/app/[lang]/(home)/components/story";
 
-
 interface HomePageProps {
-    params: Promise<{ lang: "uz" | "ru" | "en", category: string }>;
+    params: Promise<{ lang: "uz" | "ru" | "en" | "tj" | 'az', category: string }>;
 }
 
 export default async function Home({params}: HomePageProps) {
 
-    const HomePageParam: { lang: "uz" | "ru" | "en", category: string } = await params;
+    const HomePageParam: { lang: "uz" | "ru" | "en" | 'tj' | "az", category: string } = await params;
     const dictionary = await getDictionary(HomePageParam.lang);
     const DataLayer: ShowcaseDataFrom = await showcaseService() as ShowcaseDataFrom
     const ImagesData: ShowcaseItem[] = await getshowCaseData() as ShowcaseItem[]
