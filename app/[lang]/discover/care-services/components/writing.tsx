@@ -1,7 +1,7 @@
 import React from "react";
 import CustomTabs from "@/components/shared/tabs/custom-tabs";
 import InstrumentAccordion from "../components/instrument-accordion";
-import {repair, services, writingInstruments, WritingMode} from "@/constants/care-services-items";
+import {repair, writingInstruments, WritingMode} from "@/constants/care-services-items";
 
 export default async function Writing() {
 

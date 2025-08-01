@@ -61,7 +61,7 @@ export default async function Home({params}: HomePageProps) {
                 {/* done */} <SupportForm showtime={true} dictionary={dictionary}></SupportForm>
             </section>
             <section className="mt-[100px]  ">
-                {/* done */} <BusinessGifts/>
+                {/* done */} <BusinessGifts dictionary={dictionary} />
             </section>
             <section className={'mt-[100px]'}>
                 <StorySection/>
