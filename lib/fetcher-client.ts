@@ -13,6 +13,7 @@ export const fetcherClient = async (url: string, options: RequestInit = {}) => {
             'Content-Type': 'application/json',
             'Authorization': `Basic ${authString}`,
             'Accept-Language': lang,
+            'currencysymbol': 'USD',
             ...options.headers,
         },
         cache: 'no-store',

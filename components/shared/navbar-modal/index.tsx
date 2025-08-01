@@ -7,7 +7,7 @@ import Link from "next/link";
 import {navbarContent} from "@/constants/navbar";
 
 
-const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, lang}) => {
+const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, lang, showing}) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -56,7 +56,7 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, l
                         <SheetTitle className="pb-1.5 pt-6">{sheetTitle}</SheetTitle>
                         <div className={'flex flex-col justify-between h-full pb-5'}>
                             {children}
-                            <div>
+                            {showing && <div>
                                 {navbarContent.map((item) => (
                                     <div
                                         className={`text-sm font-normal leading-[1.5rem] cursor-pointer ${
@@ -67,7 +67,7 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, l
                                         <Link href={item.linkSrc}>{item.name[lang]}</Link>
                                     </div>
                                 ))}
-                            </div>
+                            </div>}
                         </div>
                     </div>
                 </SheetContent>

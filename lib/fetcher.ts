@@ -19,6 +19,7 @@ export async function fetcher<T = unknown>(
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Basic ${authString}`,
+            'currencysymbol': 'USD',
             ...headers,
         },
         cache: 'no-store',
