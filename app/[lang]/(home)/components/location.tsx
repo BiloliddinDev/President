@@ -6,7 +6,7 @@ import {SectionTitle} from "@/components/ui/sectionTitle";
 import IconComponent from "@/components/icon/icon-view";
 // import {getAllLanguage} from "@/service/navbar-service/lang.service";
 // import {getAllCountry} from "@/service/navbar-service/country.service";
-import { getLocation } from "@/service/home-service/location.service";
+import {getLocation} from "@/service/home-service/location.service";
 
 const MapComponent = dynamic(
     () => import("@/components/shared/map-component/map-component"),
@@ -22,20 +22,24 @@ interface Branch {
         uz: string;
         ru: string;
         en: string;
+        tj: string;
+        az: string;
     };
 }
 
 interface LocationProps {
-    dictionary:{
+    dictionary: {
         location: {
             title: string;
             text: string
-        };}
-    lang: "uz" | "ru" | "en";
+        };
+    }
+    lang: "uz" | "ru" | "en" | 'tj' | 'az'
 }
-interface LocationType{
-    "location.text":string
-    "location.title":string
+
+interface LocationType {
+    "location.text": string
+    "location.title": string
 }
 
 export const branches: Branch[] = [
@@ -45,7 +49,9 @@ export const branches: Branch[] = [
         name: {
             uz: "Toshkent, Kichik halqa yo'li, 2/A",
             ru: "Ташкент, Малая кольцевая дорога, 2/A",
-            en: "Tashkent, Small Ring Road, 2/A"
+            en: "Tashkent, Small Ring Road, 2/A",
+            az: '',
+            tj: ''
         }
     },
     {
@@ -54,7 +60,9 @@ export const branches: Branch[] = [
         name: {
             uz: "Toshkent, TSUM, Islam Karimov ko'chasi, 17",
             ru: "Ташкент, ЦУМ, улица Ислама Каримова, 17",
-            en: "Tashkent, TSUM, Islam Karimov Street, 17"
+            en: "Tashkent, TSUM, Islam Karimov Street, 17",
+            az: '',
+            tj: ''
         }
     }
 ];
@@ -64,7 +72,7 @@ export default function LocationPage({dictionary, lang}: LocationProps) {
     const [selectedPosition, setSelectedPosition] = useState<
         [number, number] | null
     >(null);
-    const [location, setLocation] = useState<{ text: string; title: string }>({ text: "", title: "" });
+    const [location, setLocation] = useState<{ text: string; title: string }>({text: "", title: ""});
 
     const handleGoTo = (lat: number, lng: number) => {
         setSelectedPosition([lat, lng]);
@@ -72,12 +80,12 @@ export default function LocationPage({dictionary, lang}: LocationProps) {
 
     useEffect(() => {
         const fetchLocation = async () => {
-            const data:LocationType = await getLocation();
-            setLocation({text:data["location.text"], title:data["location.title"]});
+            const data: LocationType = await getLocation();
+            setLocation({text: data["location.text"], title: data["location.title"]});
         };
         fetchLocation().then().catch().finally();
 
-       
+
     }, []);
     // console.log(location)
     return (
@@ -108,8 +116,8 @@ export default function LocationPage({dictionary, lang}: LocationProps) {
                     ))}
                 </div>
                 <h3 className="text-[#5C5F6A] text-[12px] font-inter">
-  Скоро открытие в Таджикистане, Самарканде и Баку
-</h3>
+                    Скоро открытие в Таджикистане, Самарканде и Баку
+                </h3>
 
 
             </div>

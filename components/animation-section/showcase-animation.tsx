@@ -7,29 +7,38 @@ import images1 from "@/public/images/clock-show-case.jpg";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {ShowcaseDataFrom, ShowcaseItem} from "@/interface/showcase-type/showcase-type";
- 
-export default function ShowcaseAnimation({DataLayer,showcase}: {
+import {useSession} from "next-auth/react";
+
+export default function ShowcaseAnimation({DataLayer, showcase}: {
     DataLayer: ShowcaseDataFrom
-    showcase:ShowcaseItem[]
+    showcase: ShowcaseItem[]
 }) {
     const [current, setCurrent] = useState(0);
-    
-    const images= showcase.find((item)=>item.key=="showcase.image")?.mediaFiles.map((media)=>media.filePath)
-    
+
+
+    const {data: session, status} = useSession();
+
+    console.log(session?.user.serverData?.id, status, 'This is AUTH Login data')
+    const images = showcase.find((item) => item.key == "showcase.image")?.mediaFiles.map((media) => media.filePath)
+
     useEffect(() => {
-      if(images) { const interval = setInterval(() => {
-            setCurrent((prev) => (prev + 1) % images.length);
-        }, 3000);
-        return () => clearInterval(interval);}
+        if (images) {
+            const interval = setInterval(() => {
+                setCurrent((prev) => (prev + 1) % images.length);
+            }, 3000);
+            return () => clearInterval(interval);
+        }
     }, [images]);
 
     const backgroundImageUrl = useMemo(() => {
-      if(images) { return imageLoader({
-            src: images[current],
-            width: 1400,
-            quality: 100,
-        });}
-    }, [current,images]);
+        if (images) {
+            return imageLoader({
+                src: images[current],
+                width: 1400,
+                quality: 100,
+            });
+        }
+    }, [current, images]);
 
 
 // console.log("showcase", DataLayer,showcase)

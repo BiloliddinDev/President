@@ -11,11 +11,13 @@ import OrderedProducts from "@/app/[lang]/order/components/order-produc-list";
 import {useBasketStore} from "@/lib/set-basket.storage";
 import OrderSuccessModal from "@/components/shared/order-modal/Order-success-modal";
 import {useState} from "react";
+import {useSession} from "next-auth/react";
 
 export default function OrderPage() {
     const {items} = useBasketStore();
-
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const {data: session} = useSession();
+
 
     const methods = useForm<OrderFormData>({
         resolver: zodResolver(OrderSchema),
@@ -36,9 +38,50 @@ export default function OrderPage() {
         }
     });
 
-    const onSubmit = (data: OrderFormData) => {
-        console.log('All form data:', data, items);
-        setIsModalOpen(true);
+    const onSubmit = async (data: OrderFormData) => {
+        try {
+            const payload = {
+                customerId: session?.user.serverData?.id,
+                status: "CONFIRMED",
+                client_first_phone: data.userInformation.phone,
+                client_second_phone: data.userInformation.secondPhone,
+                address: {
+                    countryCode: "UZ",
+                    location: data.address.text,
+                    latitude: data.address.location.lat,
+                    longitude: data.address.location.lng,
+                },
+                totalAmount: items.reduce((total, item) => total + item.price * item.quantity, 0),
+                items: items.map((item) => ({
+                    productId: item.id,
+                    quantity: item.quantity,
+                    unitPrice: item.price,
+                    totalPrice: item.price * item.quantity,
+                }))
+            };
+
+            const authString = btoa(`${process.env.NEXT_PUBLIC_BASIC_ADMIN}:${process.env.NEXT_PUBLIC_BASIC_PASSWORD}`);
+
+            const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/orders/create`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    'Authorization': `Basic ${authString}`,
+                },
+                body: JSON.stringify(payload),
+            });
+
+            if (!res.ok) {
+                throw new Error("Xatolik yuz berdi: " + res.status);
+            }
+
+            const result = await res.json();
+            console.log("Buyurtma muvaffaqiyatli:", result);
+
+            setIsModalOpen(true);
+        } catch (error) {
+            console.error("Buyurtma yuborishda xatolik:", error);
+        }
     };
 
     return (
