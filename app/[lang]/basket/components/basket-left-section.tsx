@@ -4,6 +4,7 @@ import Image from "next/image";
 import {ShoppingBasket, Trash2} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {useBasketStore} from "@/lib/set-basket.storage";
+import Link from "next/link";
 
 export function BasketLeftSection() {
     const {
@@ -25,7 +26,7 @@ export function BasketLeftSection() {
                 items.map((item) => (
                     <div key={item.id}
                          className="flex flex-col sm:flex-row items-center justify-between gap-4 border rounded-[4px] p-4">
-                        <div className="w-full flex items-center gap-4 ">
+                        <Link href={`/detail/${item.id}`} className="w-full flex items-center gap-4 ">
                             <div className="relative w-24 h-24 shrink-0">
                                 <Image
                                     src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${item.imgUrl}`}
@@ -47,7 +48,7 @@ export function BasketLeftSection() {
                                     </span>
                                 </p>
                             </div>
-                        </div>
+                        </Link>
                         <div className="flex flex-row justify-start w-full  sm:flex-col  items-end gap-2">
                             <div className="flex  items-center gap-2">
                                 <Button variant="outline" size="icon" onClick={() => decreaseQuantity(item.id)}>

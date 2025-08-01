@@ -4,14 +4,16 @@ export const navbarLinks = [
             'en': "Shop",
             'ru': 'Коллекции',
             "uz": "Kolleksiyalar"
-        }
+        },
+        showing : true,
     },
     {
         id: 2, name: {
             "en": "Discover",
             "ru": "Узнать больше",
             'uz': 'Ko\'proq bilish\n'
-        }
+        },
+        showing : true,
     },
 ];
 

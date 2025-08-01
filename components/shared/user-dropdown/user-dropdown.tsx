@@ -9,10 +9,7 @@ import {LogOut, User} from "lucide-react";
 
 export default function UserDropdown() {
     const router = useRouter();
-    const {data: session, status} = useSession();
-
-
-    console.log(session, status, 'THis is if operator ')
+    const {data: session} = useSession();
 
     if (!session) {
         return (
@@ -47,7 +44,7 @@ export default function UserDropdown() {
         );
     }
 
-  
+
     return (
         <Popover>
             <PopoverTrigger asChild>

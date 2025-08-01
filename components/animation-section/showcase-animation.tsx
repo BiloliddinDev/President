@@ -7,7 +7,6 @@ import images1 from "@/public/images/clock-show-case.jpg";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {ShowcaseDataFrom, ShowcaseItem} from "@/interface/showcase-type/showcase-type";
-import {useSession} from "next-auth/react";
 
 export default function ShowcaseAnimation({DataLayer, showcase}: {
     DataLayer: ShowcaseDataFrom
@@ -16,9 +15,6 @@ export default function ShowcaseAnimation({DataLayer, showcase}: {
     const [current, setCurrent] = useState(0);
 
 
-    const {data: session, status} = useSession();
-
-    console.log(session?.user.serverData?.id, status, 'This is AUTH Login data')
     const images = showcase.find((item) => item.key == "showcase.image")?.mediaFiles.map((media) => media.filePath)
 
     useEffect(() => {
