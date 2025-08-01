@@ -13,6 +13,8 @@ interface Branch {
         uz: string,
         ru: string,
         en: string,
+        tj: string,
+        az: string
     };
 }
 
@@ -23,7 +25,9 @@ const branches: Branch[] = [
         name: {
             uz: "Toshkent, Kichik halqa yo'li, 2/A",
             ru: "Ташкент, Малая кольцевая дорога, 2/A",
-            en: "Tashkent, Small Ring Road, 2/A"
+            en: "Tashkent, Small Ring Road, 2/A",
+            az: "",
+            tj: ''
         }
     },
     {
@@ -32,7 +36,9 @@ const branches: Branch[] = [
         name: {
             uz: "Toshkent, TSUM, Islam Karimov ko'chasi, 17",
             ru: "Ташкент, ЦУМ, улица Ислама Каримова, 17",
-            en: "Tashkent, TSUM, Islam Karimov Street, 17"
+            en: "Tashkent, TSUM, Islam Karimov Street, 17",
+            az: '',
+            tj: ''
         }
     }
 ];
@@ -66,21 +72,23 @@ function FlyToLocation({position}: { position: [number, number] }) {
 }
 
 const translations = {
-  openInYandexMaps: {
-    uz: "Yandex xaritada ochish",
-    ru: "Открыть в Яндекс Картах",
-    en: "Open in Yandex Maps"
-  }
+    openInYandexMaps: {
+        uz: "Yandex xaritada ochish",
+        ru: "Открыть в Яндекс Картах",
+        en: "Open in Yandex Maps",
+        az: '',
+        tj: ''
+    }
 };
 
-export default function MapComponent({ 
-    selectedPosition,  
-    lang = "uz",  
-    zoom, 
-}: {
+export default function MapComponent({
+                                         selectedPosition,
+                                         lang = "uz",
+                                         zoom,
+                                     }: {
     selectedPosition: [number, number] | null;
     zoom?: number;
-    lang?: "uz" | "ru" | "en"
+    lang?: "uz" | "ru" | "en" | 'tj' | 'az'
 }) {
     return (
         <MapContainer

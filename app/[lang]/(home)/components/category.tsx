@@ -11,7 +11,7 @@ interface CategoryProps {
             title: string;
         };
     };
-    lang: "uz" | "ru" | "en";
+    lang: "uz" | "ru" | "en" | 'tj' | 'az'
 }
 
 export async function Category({dictionary, lang}: CategoryProps) {

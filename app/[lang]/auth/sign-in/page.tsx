@@ -12,13 +12,14 @@ import Link from "next/link"
 import Google from "@/public/svg/googole.svg"
 import {LoginSchema} from "@/interface/auth-schema/login-schema";
 import Image from "next/image";
-import { signIn } from "next-auth/react";
-
+import {signIn} from "next-auth/react";
 
 type LoginFormValues = z.infer<typeof LoginSchema>
 
 export default function LoginForm() {
     const [showPassword, setShowPassword] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
+    const [error, setError] = useState("")
 
     const form = useForm<LoginFormValues>({
         resolver: zodResolver(LoginSchema),
@@ -28,9 +29,30 @@ export default function LoginForm() {
         },
     })
 
-    const onSubmit = (data: LoginFormValues) => {
-        console.log("Login data:", data)
+    const onSubmit = async (data: LoginFormValues) => {
+        setIsLoading(true)
+        setError("")
+
+        try {
+            const result = await signIn('credentials', {
+                email: data.email,
+                password: data.password,
+                redirect: false,
+            })
+
+            if (result?.error) {
+                setError("Email yoki parol noto'g'ri")
+
+            } else if (result?.ok) {
+                window.location.href = "/"
+            }
+        } catch {
+            setError("Tarmoq xatosi yuz berdi",)
+        } finally {
+            setIsLoading(false)
+        }
     }
+
 
     return (
         <div className="min-h-screen flex items-center justify-center px-2 bg-white">
@@ -42,6 +64,12 @@ export default function LoginForm() {
 
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                        {error && (
+                            <div className="p-3 text-sm text-red-600 bg-red-50 border border-red-200 rounded-md">
+                                {error}
+                            </div>
+                        )}
+
                         <FormField
                             control={form.control}
                             name="email"
@@ -87,14 +115,20 @@ export default function LoginForm() {
                                 Forgot password?
                             </Link>
                         </div>
-                        <Button type="submit" variant={"default"} className={"w-full"}>
-                            Login
+                        <Button
+                            type="submit"
+                            variant={"default"}
+                            className={"w-full"}
+                            disabled={isLoading}
+                        >
+                            {isLoading ? "Yuklanmoqda..." : "Login"}
                         </Button>
                         <Button
                             variant="outline"
                             type="button"
                             onClick={() => signIn("google", {callbackUrl: "/"})}
                             className="w-full flex items-center justify-center gap-2"
+                            disabled={isLoading}
                         >
                             <Image src={Google} alt="Google Logo" width={20} height={20} className="size-4"/>
                             Continue with Google
