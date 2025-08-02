@@ -30,10 +30,10 @@ export default async function CategoryPage({params}: CategoryPageProps) {
             <BreadcrumbDynamic url={categoryId?.name || undefined}/>
             <div>
                 <h2 className="text-primary mt-10 text-xl font-medium leading-loose">
-                    {CategoryDetailData2.name}
+                    {CategoryDetailData2.name} 
                 </h2>
                 <p className="text-zinc-700 text-sm font-normal leading-tight mt-4 mb-11">
-                    {CategoryDetailData2.description}
+                    {CategoryDetailData2.description} 
                 </p>
 
                 {CategoryChildData.children.length > 0 &&
@@ -52,7 +52,7 @@ export default async function CategoryPage({params}: CategoryPageProps) {
                     <>
                         <SortAndViewToggleWrapper itemLength={ProductList.data.length}>
                             {ProductList.data.map((product) => (
-                                <ProductsCard key={product.id} productData={product}/>
+                                <ProductsCard key={product.id} productData={product}/> 
                             ))}
                         </SortAndViewToggleWrapper>
 

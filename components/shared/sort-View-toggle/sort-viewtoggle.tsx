@@ -12,22 +12,22 @@ type Props = {
 
 export default function SortAndViewToggleWrapper({itemLength, children}: Props) {
     const [view, setView] = useState<"grid" | "list">("grid");
-    const [sort, setSort] = useState("Newest");
+    const [sort, setSort] = useState("Новейший");
 
     return (
         <div>
             <div className="flex items-center justify-between w-full py-4">
-                <span className="text-sm text-muted-foreground">{itemLength} Items</span>
+                <span className="text-sm text-muted-foreground">{itemLength} Продукты</span>
 
                 <div className="flex items-center gap-4">
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <Button variant="outline" size="sm">
-                                Sort by: {sort}
+                            Сортировать по: {sort}
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
-                            {["Newest", "Price: Low to High", "Price: High to Low"].map((option) => (
+                            {["Новейший", "Цена: по возрастанию", "Price: High to Low"].map((option) => (
                                 <DropdownMenuItem key={option} onClick={() => setSort(option)}>
                                     {option}
                                 </DropdownMenuItem>
