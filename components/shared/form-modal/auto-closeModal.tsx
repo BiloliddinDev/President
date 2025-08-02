@@ -5,6 +5,7 @@ import {CheckCircle} from "lucide-react";
 import {useEffect} from "react";
 
 interface AutoCloseModalProps {
+    title: string;
     text: string;
     duration?: number;
     icon?: React.ReactNode;
@@ -13,6 +14,7 @@ interface AutoCloseModalProps {
 }
 
 export const AutoCloseModal = ({
+                                   title,
                                    text,
                                    duration = 3000,
                                    icon = <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4"/>,
@@ -30,10 +32,13 @@ export const AutoCloseModal = ({
 
     return (
         <Dialog open={open} onOpenChange={onClose}>
-            <DialogContent className="sm:max-w-xs text-center py-6">
+            <DialogContent className="sm:max-w-3xl text-center py-6">
                 {icon}
+                <h2 className="text-center text-3xl py-5 px-2 ">
+                    {title}
+                </h2>
                 <DialogHeader>
-                    <DialogTitle className="text-lg">{text}</DialogTitle>
+                    <DialogTitle className="text-lg text-center">{text}</DialogTitle>
                 </DialogHeader>
             </DialogContent>
         </Dialog>

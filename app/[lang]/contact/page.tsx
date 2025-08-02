@@ -2,8 +2,13 @@ import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcru
 import Image from "next/image";
 import ServicesImage from "@/public/images/services5.png";
 import FaqsForm from "@/app/[lang]/shops/components/faqs-form/faqs-form";
-
-export default function FaqsPage() {
+import {getDictionary} from "@/lib/get-dictionary";
+interface ContactPageProps {
+    params: Promise<{ lang: "uz" | "ru" | "en" | "tj" | 'az', category: string }>;
+}
+export default async function FaqsPage({params}: ContactPageProps) {
+    const ContactPageParam: { lang: "uz" | "ru" | "en" | 'tj' | "az", category: string } = await params;
+    const dictionary = await getDictionary(ContactPageParam.lang);
     return (
         <div>
             <div className={"container md:!mt-26 !mt-42"}>
@@ -28,7 +33,7 @@ export default function FaqsPage() {
 <p className="text-primary text-sm font-medium leading-tight">Мы готовы ответить вам в любое время. Обратите внимание, что обработка
 запроса может занять до 3 рабочих дней.</p>
                     </div>
-                    <FaqsForm/>
+                    <FaqsForm dictionary={dictionary} />
                 </div>
             </div>
         </div>

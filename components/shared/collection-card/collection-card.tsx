@@ -69,7 +69,7 @@ export const CollectionCard: FC<{
           {newsItem.name}
         </p>
         <p className="text-gray-600 mt-2 text-sm font-normal text-center">
-          {newsItem.basePriceToUSD} $
+          {newsItem.basePriceToUSD} USD
         </p>
       </Link>
     </div>

@@ -4,8 +4,14 @@ import  images2 from  '@/public/images/souvenir.jpg'
 // import ServicesImage from "@/public/images/Bag.jpg";
 // import ServicesImage from "@/public/images/services4.png";
 import BoutiqueForm from "@/app/[lang]/shops/components/boutique-form/boutique-form";
+import {getDictionary} from "@/lib/get-dictionary";
+interface AppointmentPageProps {
+    params: Promise<{ lang: "uz" | "ru" | "en" | "tj" | 'az', category: string }>;
+}
 
-export default function AppointmentPage() {
+export default async function AppointmentPage({params}: AppointmentPageProps) {
+    const AppointmentPageParam: { lang: "uz" | "ru" | "en" | 'tj' | "az", category: string } = await params;
+    const dictionary = await getDictionary(AppointmentPageParam.lang);
     return (
         <div>
             <div className={"container md:!mt-26 !mt-42"}>
@@ -26,10 +32,8 @@ Gifts”, и наш специалист свяжется с вами для о�
 
             <div className={"bg-neutral-100 py-7 mt-12"}>
                 <div className={'container'}>
-                    <div
-                        className="self-stretch justify-start text-gray-900 text-lg font-medium font-['Inter'] leading-7">Выберите шоурум
-                    </div>
-                    <BoutiqueForm/>
+                    
+                    <BoutiqueForm dictionary={dictionary} />
                 </div>
             </div>
         </div>

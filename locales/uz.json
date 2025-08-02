@@ -49,7 +49,9 @@
       "invalid": "Noto'g'ri format",
       "success": "✅ Xabaringiz muvaffaqiyatli yuborildi!",
       "error": "❌ Xabar yuborilmadi. Iltimos, qayta urinib ko'ring.",
-      "serverError": "⚠️ Xatolik yuz berdi. Keyinroq qayta urinib ko'ring!"
+      "serverError": "⚠️ Xatolik yuz berdi. Keyinroq qayta urinib ko'ring!",
+      "modalSuccessTitle": "Rahmat! Sizning so‘rovingiz muvaffaqiyatli yuborildi.",
+      "modalSuccessDescription": "Yaqin orada President Business Gifts jamoasi siz bilan bog‘lanadi. Biz sizga eng yaxshi xizmat ko‘rsatishdan mamnun bo‘lamiz!"
     }
   },
   "corporategifts": {
