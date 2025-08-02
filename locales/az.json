@@ -49,7 +49,9 @@
       "invalid": "Yanlış format",
       "success": "✅ Mesajınız uğurla göndərildi!",
       "error": "❌ Mesaj göndərilə bilmədi. Zəhmət olmasa, yenidən cəhd edin.",
-      "serverError": "⚠️ Xəta baş verdi. Zəhmət olmasa, sonra yenidən cəhd edin!"
+      "serverError": "⚠️ Xəta baş verdi. Zəhmət olmasa, sonra yenidən cəhd edin!",
+      "modalSuccessTitle": "Təşəkkür edirik! Sorğunuz uğurla göndərildi.",
+      "modalSuccessDescription": "President Business Gifts komandası qısa zamanda sizinlə əlaqə saxlayacaq. Sizə ən yüksək səviyyədə xidmət göstərməkdən məmnun olarıq!"
     }
   },
   "corporategifts": {

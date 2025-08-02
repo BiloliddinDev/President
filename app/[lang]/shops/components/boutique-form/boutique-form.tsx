@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react";
 import {useForm} from "react-hook-form"
 import {zodResolver} from "@hookform/resolvers/zod"
 import {BoutiqueSchema} from "@/interface/service-schema/boutique-schema"
@@ -10,10 +11,46 @@ import {Textarea} from "@/components/ui/textarea"
 import {Button} from "@/components/ui/button"
 import Link from "next/link";
 import {sendTelegramMessage} from "@/lib/send-telegram-message";
-
+import { LangType } from "@/interface/lang/lang-type";
+import { AutoCloseModal } from "@/components/shared/form-modal/auto-closeModal"
+import {CheckCircle} from "lucide-react";
+interface FaqsFormProps {
+    dictionary: {
+        support: {
+            title: string;
+            supportform: string;
+            form: {
+                name: {
+                    label: string;
+                    placeholder: string;
+                };
+                phone: {
+                    label: string;
+                    placeholder: string;
+                };
+                submit: string;
+            };
+            messages: {
+                required: string;
+                min: string;
+                max: string;
+                invalid: string;
+                success: string;
+                error: string;
+                serverError: string;
+                modalSuccessTitle: string;
+                modalSuccessDescription: string;
+            };
+        };
+    };
+    lang?: 'uz' | 'ru' | 'en';
+    showtime?: boolean
+}
 type FormValues = z.infer<typeof BoutiqueSchema>
 
-export default function BoutiqueForm() {
+export default function BoutiqueForm({dictionary}: FaqsFormProps) {
+
+    const [showModal, setShowModal] = useState(false);
     const form = useForm<FormValues>({
         resolver: zodResolver(BoutiqueSchema),
         defaultValues: {
@@ -34,6 +71,7 @@ export default function BoutiqueForm() {
         });
 
         if (success) {
+            setShowModal(true)
             form.reset({
                 fullName: "",
                 phone: "",
@@ -60,6 +98,7 @@ export default function BoutiqueForm() {
 // 
     return (
 
+        <>
         <Form {...form} >
             <form onSubmit={form.handleSubmit(onSubmit)} className="w-[80%] mt-7 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <FormField
@@ -153,6 +192,15 @@ export default function BoutiqueForm() {
                 </div>
             </form>
         </Form>
+        <AutoCloseModal 
+                title= {dictionary.support.messages.modalSuccessTitle}
+                text= {dictionary.support.messages.modalSuccessDescription}
+                duration={8000}
+                icon={<CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4"/>}
+                open={showModal}
+                onClose={() => setShowModal(false)}
+            />
+        </>
 
     )
 }
