@@ -11,7 +11,6 @@ import {Textarea} from "@/components/ui/textarea"
 import {Button} from "@/components/ui/button"
 import Link from "next/link";
 import {sendTelegramMessage} from "@/lib/send-telegram-message";
-import { LangType } from "@/interface/lang/lang-type";
 import { AutoCloseModal } from "@/components/shared/form-modal/auto-closeModal"
 import {CheckCircle} from "lucide-react";
 interface FaqsFormProps {
