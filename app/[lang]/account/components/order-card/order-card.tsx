@@ -1,40 +1,82 @@
-import Image from "next/image";
-import orderImage from "@/public/images/colection-item2.png"
+"use client";
+
+import {useState} from "react";
+import {Card, CardContent} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
-import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip";
+import {Tooltip, TooltipTrigger,} from "@/components/ui/tooltip";
+import {OrderCardItem} from "../order-item-card/order-item-card";
+import {AnimatePresence, motion} from "framer-motion";
+import {OrderDataInterface} from "@/interface/order-data/order-data";
+import {formatDate} from "@/hooks/format-data";
 
-export const OrderCard = () => {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = (now.getMonth() + 1).toString().padStart(2, "0");
-    const day = now.getDate().toString().padStart(2, "0");
-    const hours = now.getHours().toString().padStart(2, "0");
-    const minutes = now.getMinutes().toString().padStart(2, "0");
+export default function OrderCard({orderData}: { orderData: OrderDataInterface }) {
+    const [showAll, setShowAll] = useState(false);
+
     return (
-        <div className={"flex items-center justify-between w-full"}>
-            <div className={'flex gap-8'}>
-                <Image src={orderImage} alt={'Order image '} width={80} height={80}/>
-                <div className={"flex flex-col justify-start items-start gap-2"}>
-                    <h4 className="text-center justify-start text-primary text-sm font-medium leading-tight">Сумка для документов</h4>
-                    <p className="text-center justify-start text-gray-600 text-xs font-medium leading-none">
-                        Дата заказа:  {year}:{month}:{day} / {hours}:{minutes}
-                    </p>
-                    <p className="justify-start text-primary text-xs font-medium  leading-none">2 640 000 сум</p>  {/* .toLocaleString() */}
-                </div>
-            </div>
-            <div className={"flex gap-2"}>
-                <Tooltip>
-                    <TooltipTrigger asChild>
-                        <Button  className={'w-[66px]'} variant="link">Обработка</Button>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                        <h3>Обработка</h3>
-                        <p> В настоящее время Ваш заказ упаковывается и готовится к отправке. </p>
-                    </TooltipContent>
-                </Tooltip>
-                <Button className={""} variant={"secondary"}>Посмотреть элемент</Button>
-            </div>
-        </div>
-    )
-}
+        <Card className="mx-auto p-4 space-y-4 border border-amber-50">
+            <CardContent className="space-y-2 text-sm text-muted-foreground">
+                <p className="text-base font-semibold text-primary">
+                    Order ID: <span className="text-primary">{orderData.id}</span>
+                </p>
 
+                <div className="flex items-center justify-between">
+                    <span>Статус заказа</span>
+                    <Tooltip>
+                        <TooltipTrigger asChild>
+                            <Button className={"w-[90px] p-0"} variant="link">
+                                {orderData.status}
+                            </Button>
+                        </TooltipTrigger>
+                    </Tooltip>
+                </div>
+
+                <div className="flex justify-between">
+                    <span>Заказ создан</span>
+                    <span>{formatDate(orderData.createdAt, "ru")}</span>
+                </div>
+
+                <div className="flex justify-between">
+                    <span>Адрес</span>
+                    <span className="font-medium text-right max-w-[60%]">{orderData?.address?.location}</span>
+                </div>
+
+                <div className="flex justify-between">
+                    <span>Количество товара</span>
+                    <span>{orderData.items.length} шт.</span>
+                </div>
+
+                <div className="flex justify-between font-semibold mb-5 text-black">
+                    <span>Итого:</span>
+                    <span>{orderData.totalAmount}</span>
+                </div>
+
+                <AnimatePresence initial={false}>
+                    <motion.div
+                        key={showAll ? "open" : "closed"}
+                        initial={{height: 0, opacity: 0}}
+                        animate={{height: "auto", opacity: 1}}
+                        exit={{height: 0, opacity: 0}}
+                        transition={{duration: 0.3, ease: "easeInOut"}}
+                        className="overflow-hidden"
+                    >
+                        <div className="border-t border-gray-200 py-4 space-y-4">
+                            {orderData.items.map((element, index) => (
+                                <OrderCardItem key={index} elementID={element.productId}/>
+                            ))}
+                        </div>
+                    </motion.div>
+                </AnimatePresence>
+
+                <Button
+                    variant="outline"
+                    className="w-full mt-2"
+                    onClick={() => setShowAll(!showAll)}
+                >
+                    {showAll
+                        ? "Скрыть"
+                        : `Посмотреть ещё (${orderData?.items?.length - 1} продукты)`}
+                </Button>
+            </CardContent>
+        </Card>
+    );
+}
