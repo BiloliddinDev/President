@@ -24,7 +24,7 @@ export default function OrderPage() {
     useEffect(() => {
 
         const fetchLang = async () => {
-            const data = await UserOrderService("05bca496-ea1c-432c-b396-c432bf550dbf");
+            const data = await UserOrderService(session?.user.id);
             setOrderData(data);
         };
         fetchLang().then().catch().finally();
