@@ -32,7 +32,6 @@ export default function FavoriteCard({onRemove, itemID}: FavoriteCardProps) {
     }, [itemID]);
 
     if (!loading && !product) return null;
-    console.log(product)
     return (
         <div className="flex flex-col gap-5">
             <div className="relative">
