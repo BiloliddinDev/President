@@ -11,7 +11,7 @@ import {createSupportSchema, type SupportFormValues} from "@/interface/support-s
 import {sendTelegramMessage} from "@/lib/send-telegram-message"
 import {toast} from "sonner"
 import Image from "next/image"
-import supportImage from "@/public/images/news2.png"
+import supportImage from "@/public/images/support-form.jpg"
 import { AutoCloseModal } from "@/components/shared/form-modal/auto-closeModal"
 import {CheckCircle} from "lucide-react";
 
