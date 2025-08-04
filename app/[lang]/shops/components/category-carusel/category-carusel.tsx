@@ -30,7 +30,7 @@ export default function CategoryCarousel({categories, lang}: CategoryCarouselPro
         <div className="w-full">
 
             <div className="flex justify-between mb-5">
-                <h2 className="text-xl font-semibold mb-4">Categories</h2>
+                <h2 className="text-xl font-semibold mb-4">Категории</h2>
                 <div>
                     <Button variant="ghost" onClick={() => scroll('left')}>
                         <ChevronLeft className="h-5 w-5"/>

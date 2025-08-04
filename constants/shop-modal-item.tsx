@@ -12,12 +12,12 @@ export const shopModalItems = [
     {
         id: 2,
         name: {
-            uz: "Eng yaxshi sovg‘alar",
-            ru: "Лучшие Подарки",
-            en: "Best Gifts"
+            uz: "Mahsulotlar kolleksiyasi",
+            ru: "Коллекции продуктов",
+            en: "Collection products"
         },
-        link: "shops",
-        custom: false
+        link: "collections",
+        custom: true
     },
     {
         id: 3,

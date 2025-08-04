@@ -4,14 +4,16 @@ export const navbarLinks = [
             'en': "Shop",
             'ru': 'Коллекции',
             "uz": "Kolleksiyalar"
-        }
+        },
+        showing : true,
     },
     {
         id: 2, name: {
             "en": "Discover",
             "ru": "Узнать больше",
             'uz': 'Ko\'proq bilish\n'
-        }
+        },
+        showing : true,
     },
 ];
 
@@ -30,9 +32,9 @@ export const navbarContent = [
         id: 8,
         linkSrc: "/discover/corporate-gifts",
         name: {
-            uz: "Individual buyurtma",
-            ru: "Индивидуальный заказ",
-            en: "Custom service"
+            uz: "Korporativ sovg'alar",
+            ru: "Корпоративные подарки",
+            en: "Corporate gifts"
         }
     },
     {

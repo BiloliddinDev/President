@@ -1,5 +1,7 @@
 'use server';
 
+import Cookies from "js-cookie";
+
 export type FetchHeaders = HeadersInit;
 
 export async function fetcher<T = unknown>(
@@ -14,11 +16,24 @@ export async function fetcher<T = unknown>(
         `${process.env.NEXT_PUBLIC_BASIC_ADMIN}:${process.env.NEXT_PUBLIC_BASIC_PASSWORD}`
     ).toString('base64');
 
+    // Retrieve and parse 'currency' cookie
+    const currencyCookie = Cookies.get('currency');
+    let currency: { code: string; name: string } = {code: 'USD', name: 'US Dollar'}; // Default value
+
+    if (currencyCookie) {
+        try {
+            currency = JSON.parse(currencyCookie);
+        } catch (error) {
+            console.warn("Currency cookie parsing error:", error);
+        }
+    }
+
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${url}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Basic ${authString}`,
+            'currencyCode': currency.code,
             ...headers,
         },
         cache: 'no-store',

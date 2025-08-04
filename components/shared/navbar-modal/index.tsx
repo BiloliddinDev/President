@@ -7,7 +7,7 @@ import Link from "next/link";
 import {navbarContent} from "@/constants/navbar";
 
 
-const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, lang}) => {
+const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, lang, showing}) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -28,7 +28,7 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, l
             <div
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                className="relative z-40"
+                className="relative z-40 "
             >
                 <SheetTrigger
                     className="transition-all !outline-0 text-[17px] font-normal  font-description cursor-pointer flex flex-row-reverse items-center gap-2 group"
@@ -48,7 +48,7 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, l
 
                 <SheetContent
                     side={side}
-                    className={'w-[350px]'}
+                    className={'w-[400px] '}
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                 >
@@ -56,22 +56,18 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, l
                         <SheetTitle className="pb-1.5 pt-6">{sheetTitle}</SheetTitle>
                         <div className={'flex flex-col justify-between h-full pb-5'}>
                             {children}
-                            {
-                                sheetTitle === "Shop" || sheetTitle === "Discover" ? (
-                                    <div>
-                                        {navbarContent.map((item) => (
-                                            <div
-                                                className={`text-sm font-normal leading-[1.5rem] cursor-pointer ${
-                                                    item.id === 9 ? "mt-10" : "my-5"
-                                                }`}
-                                                key={item.id}
-                                            >
-                                                <Link href={item.linkSrc}>{item.name[lang]}</Link>
-                                            </div>
-                                        ))}
+                            {showing && <div>
+                                {navbarContent.map((item) => (
+                                    <div
+                                        className={`text-sm font-normal leading-[1.5rem] cursor-pointer ${
+                                            item.id === 9 ? "mt-10" : "my-5"
+                                        }`}
+                                        key={item.id}
+                                    >
+                                        <Link href={item.linkSrc}>{item.name[lang]}</Link>
                                     </div>
-                                ) : null
-                            }
+                                ))}
+                            </div>}
                         </div>
                     </div>
                 </SheetContent>

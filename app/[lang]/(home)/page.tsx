@@ -15,14 +15,13 @@ import {showcaseService} from "@/service/home-service/showcase.service";
 import {getshowCaseData} from "@/service/home-service/showcase-image.service";
 import {StorySection} from "@/app/[lang]/(home)/components/story";
 
-
 interface HomePageProps {
-    params: Promise<{ lang: "uz" | "ru" | "en", category: string }>;
+    params: Promise<{ lang: "uz" | "ru" | "en" | "tj" | 'az', category: string }>;
 }
 
 export default async function Home({params}: HomePageProps) {
 
-    const HomePageParam: { lang: "uz" | "ru" | "en", category: string } = await params;
+    const HomePageParam: { lang: "uz" | "ru" | "en" | 'tj' | "az", category: string } = await params;
     const dictionary = await getDictionary(HomePageParam.lang);
     const DataLayer: ShowcaseDataFrom = await showcaseService() as ShowcaseDataFrom
     const ImagesData: ShowcaseItem[] = await getshowCaseData() as ShowcaseItem[]
@@ -49,26 +48,22 @@ export default async function Home({params}: HomePageProps) {
                 </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
-                {/* <Collections dictionary={dictionary} lang={HomePageParam.lang}/> */}
                 <Collections/>
             </section>
             <section className="mt-[100px]">
                 <ProductVideos dictionary={dictionary}/>
             </section>
-            <section className="mt-[100px]">
-                {/* <News /> */}
-            </section>
             <section className="mt-[100px] bg-[#F6F6F6] py-8">
-                {/* done */} <SupportForm showtime={true} dictionary={dictionary}></SupportForm>
+                <SupportForm showtime={true} dictionary={dictionary}></SupportForm>
             </section>
             <section className="mt-[100px]  ">
-                {/* done */} <BusinessGifts/>
+                <BusinessGifts dictionary={dictionary}/>
             </section>
             <section className={'mt-[100px]'}>
                 <StorySection/>
             </section>
             <section className="mt-[100px]  ">
-                {/* done */} <Location lang={HomePageParam.lang} dictionary={dictionary}/>
+                <Location lang={HomePageParam.lang} dictionary={dictionary}/>
             </section>
         </>
     );

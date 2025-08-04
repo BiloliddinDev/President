@@ -66,7 +66,7 @@ export default function FavoriteCard({onRemove, itemID}: FavoriteCardProps) {
                             <h3 className="text-lg text-gray-900 font-inter">{product?.name}</h3>
                             {product?.prices[0]?.price && (
                                 <p className="text-sm text-gray-500 mt-1">
-                                    {product.prices[0].price} USD
+                                    {product.prices[0].price.toLocaleString()} сум
                                 </p>
                             )}
                         </>

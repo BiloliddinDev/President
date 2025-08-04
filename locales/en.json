@@ -60,7 +60,9 @@
       "invalid": "Invalid format",
       "success": "✅ Your message has been sent successfully!",
       "error": "❌ Failed to send the message. Please try again.",
-      "serverError": "⚠️ Something went wrong. Try again later!"
+      "serverError": "⚠️ Something went wrong. Try again later!",
+      "modalSuccessTitle": "Thank you! Your request has been successfully submitted.",
+      "modalSuccessDescription": "The President Business Gifts team will contact you shortly. We look forward to providing you with the best service."
     }
   },
   "corporategifts": {

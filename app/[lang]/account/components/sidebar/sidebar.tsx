@@ -16,11 +16,11 @@ import {
 import {signOut} from "next-auth/react"
 
 const links = [
-    {href: '/account', label: 'Account detail'},
-    {href: '/account/favorite', label: 'My favorite'},
-    {href: '/account/order', label: 'Order'},
-    {href: '/account/change-password', label: 'Change password'},
-    {href: '/account/change-email', label: 'Change email'},
+    {href: '/account', label: 'Детали аккаунта'},
+    {href: '/account/favorite', label: 'Мой любимый'},
+    {href: '/account/order', label: 'Заказ'},
+    {href: '/account/change-password', label: 'Изменить пароль'},
+    {href: '/account/change-email', label: 'Изменить почты'},
 ]
 
 export default function AccountSidebar({lang}: { lang: string | undefined }) {
@@ -56,14 +56,14 @@ export default function AccountSidebar({lang}: { lang: string | undefined }) {
                         'text-gray-600 hover:bg-gray-100 cursor-pointer'
                     )}
                 >
-                    Log out
+                    Выйти
                 </button>
             </div>
 
             <AlertDialog open={showLogoutModal} onOpenChange={setShowLogoutModal}>
                 <AlertDialogContent>
                     <AlertDialogHeader>
-                        <AlertDialogTitle>Are you sure you want to log out?</AlertDialogTitle>
+                        <AlertDialogTitle> Вы уверены, что хотите выйти?</AlertDialogTitle>
                     </AlertDialogHeader>
                     <AlertDialogFooter className={"w-full flex items-center justify-center mt-5"}>
                         <AlertDialogCancel className={"w-[50%]"}>No</AlertDialogCancel>

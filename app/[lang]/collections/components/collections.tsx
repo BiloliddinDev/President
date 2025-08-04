@@ -13,7 +13,7 @@ export interface CollectionsProps {
   // console.log(lang);
   const ids=CollectionsData.map((item)=>item.id)
   return (
-    <div className="container mx-auto mt-[100px] px-4">
+    <div className=" mx-auto mt-[100px]">
       {/* <div className="text-center mb-12 max-w-2xl mx-auto">
         <h3 className="text-2xl sm:text-3xl font-semibold text-gray-800">
           Вся коллекция President Business Gifts
@@ -26,6 +26,7 @@ export interface CollectionsProps {
 
       {ids.map((id:number)=>
       <CollectionItems  collection={CollectionsData} id={id} key={id} />
+      
     )}
     </div>
   );

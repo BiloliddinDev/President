@@ -8,10 +8,10 @@ interface CountryCookie {
     code: string;
 }
 
-export const getProductIteam = async (itemID: string | number) => {
+export const getSearchProducts = async (productName: string) => {
     const countryString = Cookies.get("country");
-    let countryCode = null;
     const langString = Cookies.get("lang");
+    let countryCode = null;
 
     if (countryString) {
         try {
@@ -23,7 +23,8 @@ export const getProductIteam = async (itemID: string | number) => {
     }
 
     if (countryCode) {
-        return fetcherClient(`/api/v1/category/all_by_language?languageCode=${langString?.toUpperCase()}&countryCode=${countryCode}&withChildren=false`);
+        const url = `/api/v1/product/page_by_locale_and_name?countryCode=${countryCode}&language=${langString?.toUpperCase()}&name=${productName}&page=0&size=10`
+        return fetcherClient(url);
     }
-}
 
+}

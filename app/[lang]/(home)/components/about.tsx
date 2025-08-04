@@ -31,7 +31,7 @@ export async function About() {
                             {AboutData["about.description"]}
                         </p>
                         <Link href={`/discover/about-us`}>
-                            <Button variant={"secondary"} className={"mt-5 w-full md:max-w-52"}>Подробнее</Button>
+                            <Button variant={"secondary"} className={"mt-5 w-full md:max-w-52"}>{AboutData["about.btn"]}</Button>
                         </Link>
                     </div>
                 </div>

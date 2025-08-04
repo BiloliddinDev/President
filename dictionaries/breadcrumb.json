@@ -1,0 +1,226 @@
+{
+  "home": {
+    "uz": "Asosiy",
+    "en": "Home",
+    "ru": "Главная",
+    "tj": "Асосӣ",
+    "az": "Əsas səhifə"
+  },
+  "account": {
+    "uz": "Hisob",
+    "en": "Account",
+    "ru": "Аккаунт",
+    "tj": "Ҳисоб",
+    "az": "Hesab"
+  },
+  "account-title": {
+    "uz": "Hisob sarlavhasi",
+    "en": "Account Title",
+    "ru": "Название аккаунта",
+    "tj": "Унвони ҳисоб",
+    "az": "Hesab başlığı"
+  },
+  "change-email": {
+    "uz": "Emailni o'zgartirish",
+    "en": "Change Email",
+    "ru": "Изменить почту",
+    "tj": "Тағйири имейл",
+    "az": "E-poçtu dəyiş"
+  },
+  "change-password": {
+    "uz": "Parolni o'zgartirish",
+    "en": "Change Password",
+    "ru": "Изменить пароль",
+    "tj": "Гузарвожаро иваз кардан",
+    "az": "Şifrəni dəyiş"
+  },
+  "favorite": {
+    "uz": "Sevimlilar",
+    "en": "Favorite",
+    "ru": "Избранное",
+    "tj": "Дӯстдоштаҳо",
+    "az": "Sevimlilər"
+  },
+  "order": {
+    "uz": "Buyurtma",
+    "en": "Order",
+    "ru": "Заказ",
+    "tj": "Фармоиш",
+    "az": "Sifariş"
+  },
+  "auth": {
+    "uz": "Kirish",
+    "en": "Auth",
+    "ru": "Авторизация",
+    "tj": "Воридшавӣ",
+    "az": "Giriş"
+  },
+  "forget-password": {
+    "uz": "Parolni unutdingizmi?",
+    "en": "Forget Password",
+    "ru": "Забыли пароль?",
+    "tj": "Гузарвожаро фаромӯш кардед?",
+    "az": "Şifrəni unutmusunuz?"
+  },
+  "sign-in": {
+    "uz": "Kirish",
+    "en": "Sign In",
+    "ru": "Войти",
+    "tj": "Вуруд",
+    "az": "Daxil ol"
+  },
+  "sign-up": {
+    "uz": "Ro‘yxatdan o‘tish",
+    "en": "Sign Up",
+    "ru": "Регистрация",
+    "tj": "Бақайдгирӣ",
+    "az": "Qeydiyyat"
+  },
+  "basket": {
+    "uz": "Savat",
+    "en": "Basket",
+    "ru": "Корзина",
+    "tj": "Сабад",
+    "az": "Səbət"
+  },
+  "collections": {
+    "uz": "To‘plamlar",
+    "en": "Collections",
+    "ru": "Коллекции",
+    "tj": "Маҷмуаҳо",
+    "az": "Kolleksiyalar"
+  },
+  "contact": {
+    "uz": "Bog‘lanish",
+    "en": "Contact",
+    "ru": "Контакты",
+    "tj": "Тамос",
+    "az": "Əlaqə"
+  },
+  "create": {
+    "uz": "Yaratish",
+    "en": "Create",
+    "ru": "Создать",
+    "tj": "Эҷод кардан",
+    "az": "Yarat"
+  },
+  "detail": {
+    "uz": "Tafsilot",
+    "en": "Detail",
+    "ru": "Детали",
+    "tj": "Тафсилот",
+    "az": "Təfərrüat"
+  },
+  "discover": {
+    "uz": "Kashf etish",
+    "en": "Discover",
+    "ru": "Узнать больше",
+    "tj": "Кашф кардан",
+    "az": "Kəşf et"
+  },
+  "about-us": {
+    "uz": "Biz haqimizda",
+    "en": "About Us",
+    "ru": "О нас",
+    "tj": "Дар бораи мо",
+    "az": "Haqqımızda"
+  },
+  "b2b-service": {
+    "uz": "B2B xizmatlar",
+    "en": "B2B Service",
+    "ru": "B2B сервис",
+    "tj": "Хизматрасонии B2B",
+    "az": "B2B xidməti"
+  },
+  "care-services": {
+    "uz": "Xizmat ko‘rsatish",
+    "en": "Care Services",
+    "ru": "Службы заботы",
+    "tj": "Хизматрасонии нигоҳубин",
+    "az": "Baxım xidmətləri"
+  },
+  "corporate-gifts": {
+    "uz": "Korporativ sovg‘alar",
+    "en": "Corporate Gifts",
+    "ru": "Корпоративные подарки",
+    "tj": "Тӯҳфаҳои корпоративӣ",
+    "az": "Korporativ hədiyyələr"
+  },
+  "fine-watchmaking": {
+    "uz": "Nozik soatsozlik",
+    "en": "Fine Watchmaking",
+    "ru": "Искусство часового дела",
+    "tj": "Соатсозии нозук",
+    "az": "İncə saat istehsalı"
+  },
+  "journal": {
+    "uz": "Jurnal",
+    "en": "Journal",
+    "ru": "Журнал",
+    "tj": "Маҷалла",
+    "az": "Jurnal"
+  },
+  "like": {
+    "uz": "Yoqtirganlar",
+    "en": "Liked",
+    "ru": "Понравившиеся",
+    "tj": "Хӯшдоштаҳо",
+    "az": "Bəyənilənlər"
+  },
+  "location": {
+    "uz": "Manzil",
+    "en": "Location",
+    "ru": "Местоположение",
+    "tj": "Макон",
+    "az": "Məkan"
+  },
+  "new": {
+    "uz": "Yangi",
+    "en": "New",
+    "ru": "Новое",
+    "tj": "Нав",
+    "az": "Yeni"
+  },
+  "service": {
+    "uz": "Xizmat",
+    "en": "Service",
+    "ru": "Сервис",
+    "tj": "Хизмат",
+    "az": "Xidmət"
+  },
+  "appointment": {
+    "uz": "Uchrashuv",
+    "en": "Appointment",
+    "ru": "Встреча",
+    "tj": "Мулоқот",
+    "az": "Görüş"
+  },
+  "faqs": {
+    "uz": "Savollar",
+    "en": "FAQs",
+    "ru": "Частые вопросы",
+    "tj": "Саволҳои маъмул",
+    "az": "Tez-tez verilən suallar"
+  },
+  "returns": {
+    "uz": "Qaytarishlar",
+    "en": "Returns",
+    "ru": "Возвраты",
+    "tj": "Бозгаштҳо",
+    "az": "Qayıdışlar"
+  },
+  "shipping": {
+    "uz": "Yetkazib berish",
+    "en": "Shipping",
+    "ru": "Доставка",
+    "tj": "Расондан",
+    "az": "Çatdırılma"
+  },
+  "shops": {
+    "uz": "Do‘konlar",
+    "en": "Shops",
+    "ru": "Магазины",
+    "tj": "Дӯконҳо",
+    "az": "Mağazalar"
+  }
+}

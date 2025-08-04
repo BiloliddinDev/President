@@ -47,13 +47,13 @@ class AmoCRMService {
     constructor() {
         const subdomain = process.env.AMOCRM_SUBDOMAIN;
         if (!subdomain) throw new Error('AMOCRM_SUBDOMAIN is not defined');
-        
+
         this.baseUrl = `https://${subdomain}.amocrm.ru/api/v4`;
         if (!process.env.AMOCRM_ACCESS_TOKEN) throw new Error('AMOCRM_ACCESS_TOKEN is not defined');
         if (!process.env.AMOCRM_REFRESH_TOKEN) throw new Error('AMOCRM_REFRESH_TOKEN is not defined');
         if (!process.env.AMOCRM_CLIENT_ID) throw new Error('AMOCRM_CLIENT_ID is not defined');
         if (!process.env.AMOCRM_CLIENT_SECRET) throw new Error('AMOCRM_CLIENT_SECRET is not defined');
-        
+
         this.accessToken = process.env.AMOCRM_ACCESS_TOKEN;
         this.refreshToken = process.env.AMOCRM_REFRESH_TOKEN;
         this.clientId = process.env.AMOCRM_CLIENT_ID;

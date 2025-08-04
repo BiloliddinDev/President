@@ -58,8 +58,8 @@ export const contactInfo = [
   {
     id: 1,
     title: "Телефон",
-    subtitle: "+998 - 33 - 333 - 33 - 33",
-    href: "tel:+998333333333",
+    subtitle: "+998 71 203 05 00",
+    href: "tel:+998712030500",
     icon: "phone",
   },
   {

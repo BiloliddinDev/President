@@ -16,7 +16,7 @@ export default function LikePage() {
                 <BreadcrumbDynamic/>
                 <SectionTitle
                     className={`mt-12 mb-10 !text-4xl !font-['Inter']`}
-                    text="My Favorite"
+                    text="Мой любимый"
                 />
             </div>
             <div className="bg-neutral-100 py-10">

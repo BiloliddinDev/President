@@ -8,19 +8,22 @@ import Link from "next/link"
 import {Eye, EyeOff} from "lucide-react"
 import {Input} from "@/components/ui/input"
 import {Button} from "@/components/ui/button"
-import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form"
+import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage,} from "@/components/ui/form"
 import {RegisterSchema} from "@/interface/auth-schema/register-schema"
-import Image from "next/image";
-import Google from "@/public/svg/googole.svg";
-import {signIn} from "next-auth/react";
-
+import Image from "next/image"
+import Google from "@/public/svg/googole.svg"
+import {signIn} from "next-auth/react"
+import {createUserAndSignIn} from "@/lib/auth"
+import {useRouter} from "next/navigation"
 
 type RegisterFormValues = z.infer<typeof RegisterSchema>
-
 
 export default function RegisterForm() {
     const [showPassword, setShowPassword] = useState(false)
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+    const [loading, setLoading] = useState(false)
+
+    const router = useRouter()
 
     const form = useForm<RegisterFormValues>({
         resolver: zodResolver(RegisterSchema),
@@ -32,8 +35,22 @@ export default function RegisterForm() {
         },
     })
 
-    const onSubmit = (data: RegisterFormValues) => {
-        console.log("Register data:", data)
+    const onSubmit = async (data: RegisterFormValues) => {
+        setLoading(true)
+
+        const res = await createUserAndSignIn({
+            email: data.email,
+            password: data.password,
+            fullName: data.fullName,
+        })
+
+        setLoading(false)
+
+        if (res?.success) {
+            router.push("/")
+        } else {
+            console.error("Register error:", res?.error || "Unknown error")
+        }
     }
 
     return (
@@ -129,14 +146,23 @@ export default function RegisterForm() {
                                 </FormItem>
                             )}
                         />
-                        <Button type="submit" className="w-full">Sign in</Button>
-                        <Button onClick={() => signIn("google", {callbackUrl: "/"})} variant="outline"
-                                className="w-full flex items-center justify-center gap-2">
+
+                        <Button type="submit" className="w-full" disabled={loading}>
+                            {loading ? "Creating..." : "Sign up"}
+                        </Button>
+
+                        <Button
+                            type="button"
+                            onClick={() => signIn("google", {callbackUrl: "/"})}
+                            variant="outline"
+                            className="w-full flex items-center justify-center gap-2"
+                        >
                             <Image src={Google} alt={"Google Logo"} width={20} height={20} className="size-4"/>
                             Continue with Google
                         </Button>
+
                         <div className="text-center text-sm text-gray-500">
-                            Already have an account ?
+                            Already have an account?
                             <Link href="/auth/sign-in" className="text-gray-800 hover:underline">
                                 Login
                             </Link>
@@ -147,4 +173,3 @@ export default function RegisterForm() {
         </div>
     )
 }
-

@@ -7,5 +7,6 @@ export interface ImageWithTextProps {
   alt: string;
   orderText: string;
   orderImg: string;
+  margin: string;
   video?:string
 }

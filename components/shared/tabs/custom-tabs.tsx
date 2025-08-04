@@ -6,6 +6,7 @@ interface TabItem {
     value: string;
     label: string;
     content: ReactNode;
+    defaultOpen?: boolean;
 }
 
 interface Props {
@@ -15,28 +16,32 @@ interface Props {
 }
 
 const CustomTabs: FC<Props> = ({tabs, className, identifier}) => {
+    const defaultTab = tabs.find((tab) => tab.defaultOpen);
+    const defaultValue = defaultTab?.value || tabs[0]?.value;
+
+
     return (
-        <Tabs defaultValue={""} className={`w-full overflow-scroll ${className}`}>
+        <Tabs defaultValue={defaultValue} className={`w-full overflow-scroll ${className}`}>
             <div className={'overflow-scroll'}>
                 <TabsList className="bg-transparent ">
                     {tabs.map((tab) => (
-                        tab.value=="faq" ? 
-                        <Link href="/service/faqs" key={tab.value}> 
+                        tab.value == "faq" ?
+                            <Link href="/service/faqs" key={tab.value}>
+                                <TabsTrigger
+
+                                    value={tab.value}
+                                    className={`bg-neutral-100 transition-all text-sm px-4 py-4 mr-2.5 data-[state=active]:bg-slate-900 data-[state=active]:text-white ${identifier}`}
+                                >
+                                    {tab.label}
+                                </TabsTrigger>
+                            </Link> :
                             <TabsTrigger
-                        
-                        value={tab.value}
-                        className={`bg-neutral-100 transition-all text-sm px-4 py-4 mr-2.5 data-[state=active]:bg-slate-900 data-[state=active]:text-white ${identifier}`}
-                    >
-                        {tab.label}
-                           </TabsTrigger>
-                     </Link> : 
-                        <TabsTrigger
-                            key={tab.value}
-                            value={tab.value}
-                            className={`bg-neutral-100 transition-all text-sm px-4 py-4 mr-2.5 data-[state=active]:bg-slate-900 data-[state=active]:text-white ${identifier}`}
-                        >
-                            {tab.label}
-                        </TabsTrigger>
+                                key={tab.value}
+                                value={tab.value}
+                                className={`bg-neutral-100 transition-all text-sm px-4 py-4 mr-2.5 data-[state=active]:bg-slate-900 data-[state=active]:text-white ${identifier}`}
+                            >
+                                {tab.label}
+                            </TabsTrigger>
                     ))}
                 </TabsList>
             </div>
