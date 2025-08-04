@@ -59,16 +59,16 @@ export const shopModalItems = [
         link: "shops",
         custom: false
     },
-    {
-        id: 7,
-        name: {
-            uz: "Kolleksiyalar",
-            ru: "Коллекции",
-            en: "Collections"
-        },
-        link: "collections",
-        custom: true
-    },
+    // {
+    //     id: 7,
+    //     name: {
+    //         uz: "Kolleksiyalar",
+    //         ru: "Коллекции",
+    //         en: "Collections"
+    //     },
+    //     link: "collections",
+    //     custom: true
+    // },
     {
         id: 8,
         name: {

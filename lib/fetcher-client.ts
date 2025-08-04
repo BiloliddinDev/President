@@ -8,7 +8,7 @@ export const fetcherClient = async (url: string, options: RequestInit = {}) => {
 
     // Parse 'currency' cookie
     const currencyCookie = Cookies.get('currency');
-    let currency: { code: string; name: string } = {code: 'USD', name: 'US Dollar'}; // Default value
+    let currency: { code: string; name: string } = {code: 'USD', name: 'US Dollar'};
 
     if (currencyCookie) {
         try {
