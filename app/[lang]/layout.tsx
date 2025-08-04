@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         title: "President",
         description:
             "President Business Gifts is not just a premium gift brand — it is a unique fusion of national identity and contemporary aesthetics...",
-        url: "https://president.io/",
+        url: "https://presidentgift.com",
         siteName: "President",
         locale: "en",
         type: "website",
@@ -128,8 +128,8 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
         <noscript>
             <div>
                 <Image
-                width="1"
-                height="1"
+                    width="1"
+                    height="1"
                     src="https://mc.yandex.ru/watch/103167645"
                     style={{position: 'absolute', left: '-9999px'}}
                     alt=""

@@ -13,7 +13,7 @@ export default function OrderCard({orderData}: { orderData: OrderDataInterface }
     const [showAll, setShowAll] = useState(false);
 
     return (
-        <Card className="mx-auto p-4 space-y-4 border border-amber-50">
+        <Card className="mx-auto p-4 space-y-4 border border-amber-50 mb-4">
             <CardContent className="space-y-2 text-sm text-muted-foreground">
                 <p className="text-base font-semibold text-primary">
                     Order ID: <span className="text-primary">{orderData.id}</span>
