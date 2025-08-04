@@ -4,7 +4,7 @@ import Pen2 from "@/public/images/pen3.png";
 import Image from "next/image";
 import CustomTabs from "@/components/shared/tabs/custom-tabs";
 import InstrumentAccordion from "./components/instrument-accordion";
-import { writingInstruments ,WritingMode,services,repair} from "@/constants/care-services-faqs";
+import { writingInstruments ,WritingMode,repair} from "@/constants/care-services-faqs";
  
 export default function DiscoverService() {
     const myTabs = [
@@ -18,11 +18,11 @@ export default function DiscoverService() {
           label: "Мой аккаунт и заказы",
           content: <InstrumentAccordion data={WritingMode} />,
         },
-        {
-          value: "consulting",
-          label: "Консультации и ремонт по товарам",
-          content: <InstrumentAccordion data={services} />,
-        },
+        // {
+        //   value: "consulting",
+        //   label: "Консультации и ремонт по товарам",
+        //   content: <InstrumentAccordion data={services} />,
+        // },
         {
             value: "cancel",
             label: "Возврат и оплата",
