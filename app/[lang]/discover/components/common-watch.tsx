@@ -2,6 +2,7 @@ import VideoBox from "@/components/shared/video-box/video-box";
 import { ImageWithTextProps } from "@/interface/discover/video-text";
 import Image from "next/image";
 import React, { FC } from "react";
+import DOMPurify from "isomorphic-dompurify";
 
 const CommonWatchSection: FC<ImageWithTextProps> = ({
   productType,
@@ -28,7 +29,13 @@ const CommonWatchSection: FC<ImageWithTextProps> = ({
           />
         )}
       </div>
-      <p className=" text-sm text-[#474B57]">{textInfo}</p>
+      <div className=" text-sm text-[#474B57]">
+        <div
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(textInfo),
+          }}
+        />
+      </div>
     </div>
   );
 };

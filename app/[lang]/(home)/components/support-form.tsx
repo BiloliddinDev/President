@@ -130,7 +130,6 @@ export const SupportForm = ({dictionary, showtime}: SupportFormProps) => {
                                         </FormItem>
                                     )}
                                 />
-
                                 <FormField
                                     control={form.control}
                                     name="phone"
@@ -150,7 +149,6 @@ export const SupportForm = ({dictionary, showtime}: SupportFormProps) => {
                                         </FormItem>
                                     )}
                                 />
-
                                 <Button type="submit" className="w-full md:w-auto">
                                     {dictionary.support.form.submit}
                                 </Button>

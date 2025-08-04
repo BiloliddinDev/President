@@ -28,7 +28,7 @@ export default async function DiscoverService({params}: ServiceProps) {
     return (
         <div className="container mx-auto px-2 md:px-4  md:!mt-26 !mt-42">
             <div className="mb-10">
-                <BreadcrumbDynamic/>
+                <BreadcrumbDynamic url={imageSrc == writing ? "Письменный инструмент" : imageSrc == leather ? "Кожа" : "Часы"} />
             </div>
             <div className="-mx-[calc((100vw-100%)/2)] w-screen mb-28">
                 <Image src={imageSrc} alt="a pen" width={10000} height={1000}/>

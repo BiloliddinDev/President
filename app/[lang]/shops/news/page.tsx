@@ -5,7 +5,7 @@ import {Button} from "@/components/ui/button";
 import {ProductsCard} from "@/components/shared/products-cards/products-card";
 import {NewProductService} from "@/service/products-service/new-products.service";
 import {ProductsInterface} from "@/interface/products-interface/products-interface";
-import ShopBanner from "@/public/images/shops.png";
+import ShopBanner from "@/public/images/shop-news.webp";
 import {AlertTriangle} from "lucide-react";
 
 export default async function NewsPage() {

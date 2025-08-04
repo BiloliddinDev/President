@@ -1,7 +1,7 @@
 import React from "react";
 import CustomTabs from "@/components/shared/tabs/custom-tabs";
 import InstrumentAccordion from "../components/instrument-accordion";
-import {repair, writingInstruments, WritingMode} from "@/constants/care-services-items";
+import {repair, writingInstruments} from "@/constants/care-services-items";
 
 export default async function Writing() {
 
@@ -12,11 +12,11 @@ export default async function Writing() {
             defaultOpen: true,
             content: <InstrumentAccordion data={writingInstruments}/>,
         },
-        {
-            value: "writing-modes",
-            label: "Режимы письма",
-            content: <InstrumentAccordion data={WritingMode}/>,
-        },
+        // {
+        //     value: "writing-modes",
+        //     label: "Режимы письма",
+        //     content: <InstrumentAccordion data={WritingMode}/>,
+        // },
         {
             value: "repair-warranty",
             label: "Ремонт и гарантия",

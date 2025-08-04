@@ -5,7 +5,6 @@ import { tabsType } from "@/constants/care-services-items";
 const InstrumentAccordion = ({ data }: { data: tabsType[] }) => {
   return (
     <>
-      <p className="text-lg font-medium  mb-5">Writing instruments</p>
       {data.map((item) => (
         <CustomAccordion
           key={item.id}
