@@ -15,7 +15,6 @@ export const ProductsCard = ({productData, className}: ProductsCardProps) => {
     const {isInWishlist, toggleWishlist} = useWishlistStore();
 
     const isLiked = isInWishlist(productData.id)
-    console.log(isLiked, 'this is isLiked')
 
     return (
         <div

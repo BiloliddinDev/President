@@ -21,7 +21,7 @@ export default function LikePage() {
             </div>
             <div className="bg-neutral-100 py-10">
                 {items.length > 0 ? (
-                    <div className="container grid grid-cols-4 gap-4">
+                    <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
                         {items.map((item) => (
                             <FavoriteCard
                                 itemID={item}
