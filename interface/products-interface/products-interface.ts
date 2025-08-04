@@ -8,16 +8,19 @@ export interface ProductsInterface {
         "name": "Uzbekistan",
         "code": "UZ"
     },
+
     "prices": [
         {
             "currency": {
                 "code": string
-                "name": string
+                "name": string,
                 "symbol": string,
+                "symbol_position": string,
+                "symbol_space": boolean
                 "price": number
-                "defaultCurrency": boolean
+                "default_currency": boolean
             },
-            "price": 3600000
+            "price": number
         }
     ],
 
@@ -32,8 +35,6 @@ export interface ProductsInterface {
     "createdAt": null,
     "updatedAt": null
 }
-
-
 
 
 export interface MediaInterface {
