@@ -1,8 +1,10 @@
 import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import Image from "next/image";
-import ServicesImage from "@/public/images/services1.png";
+// import ServicesImage from "@/public/images/services1.png";
 import {ServiceCard} from "@/app/[lang]/shops/components/service-card/service-card";
 import {serviceItems} from "@/constants/service";
+import Pen from "@/public/images/care-service.webp";
+
 
 export default function ServicePage() {
 
@@ -15,7 +17,7 @@ export default function ServicePage() {
             <Image
                 width={"1000"}
                 height={330}
-                src={ServicesImage.src}
+                src={Pen.src}
                 alt={"ServicesImage"}
                 className={"w-full mt-7"}
             />

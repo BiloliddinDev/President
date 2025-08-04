@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+import DOMPurify from "isomorphic-dompurify";
 import { AccordionProps } from "@/interface/custom-accordion/custom-accordion";
 const CustomAccordion: FC<AccordionProps> = ({
   className,
@@ -25,7 +26,15 @@ const CustomAccordion: FC<AccordionProps> = ({
           {accordionTrigger}
         </AccordionTrigger>
         <AccordionContent className={accordionContentStyles}>
-          {accordionContent}
+          {typeof accordionContent === "string" ? (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(accordionContent),
+              }}
+            />
+          ) : (
+            accordionContent
+          )}
         </AccordionContent>
       </AccordionItem>
     </Accordion>

@@ -64,6 +64,17 @@ export const branches: Branch[] = [
             az: '',
             tj: ''
         }
+    }, {
+        lat: 38.57212240653411,
+        lng:68.78859694232835,
+        name: {
+            uz: "Tojikiston, Dushanbe, Rudakiy ko‘chasi, 55/1",
+            ru: "Таджикистан, Душанбе, Рудаки, 55/1",
+            en: "Tajikistan, Dushanbe, Rudaki Street, 55/1",
+            az: "Tacikistan, Düşənbə, Rudaki küçəsi, 55/1",
+            tj: "Тоҷикистон, Душанбе, кӯчаи Рӯдакӣ, 55/1"
+        }
+        
     }
 ];
 
@@ -116,7 +127,7 @@ export default function LocationPage({dictionary, lang}: LocationProps) {
                     ))}
                 </div>
                 <h3 className="text-[#5C5F6A] text-[12px] font-inter">
-                    Скоро открытие в Таджикистане, Самарканде и Баку
+                    Скоро открытие в Самарканде и Баку
                 </h3>
 
 
