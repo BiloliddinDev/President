@@ -1,3 +1,18 @@
+// import { getDictionary } from "@/lib/get-dictionary";
+// import { AccountFormPage } from "./form/page";
+
+// interface AccountPageProps {
+//   params: { lang: "uz" | "ru" | "en"|"tj"|"az" };
+// }
+
+// export default async function AccountPage({ params }: AccountPageProps) {
+//   const dictionary = await getDictionary(params.lang);
+//   return (
+//     <div className="w-full md:max-w-[500px]">
+//       <AccountFormPage dictionary={dictionary} />
+//     </div>
+//   );
+// }
 "use client"
 
 import {AccountTitle} from "@/app/[lang]/account/account-title/account-title";

@@ -78,7 +78,15 @@
     "description": "Sizin üçün qeyri-adi bir şey hazırlayırıq. Saytımızın tam versiyası tezliklə istifadəyə veriləcək.",
     "returnMessage": "Hələlik ana səhifəmizə qayıdın.",
     "buttonText": "Ana səhifəyə keç"
+  },
+  "account":{
+    "accountTitle": "Hesab detalları",
+    "fullName": "Tam ad",
+    "email": "Elektron poçt",
+    "enterEmail": "Elektron poçtunuzu daxil edin",
+    "submit": "Təsdiqlə"
   }
+  
 }
 
 

@@ -68,7 +68,7 @@ export default function ProductDetailPage() {
 
     return (
         <div className="container md:!mt-26 !mt-42 relative">
-            <BreadcrumbDynamic/>
+            <BreadcrumbDynamic url={product?.name}/>
 
             <div className="w-full flex flex-col lg:flex-row items-start justify-center gap-12 mt-10">
                 <LeftImagesSection mediaData={product?.media}/>

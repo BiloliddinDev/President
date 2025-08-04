@@ -73,7 +73,7 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
                                 <NavbarModal
                                     title={link.name[lang]}
                                     side="left"
-                                    sheetTitle={link.name["ru"]}
+                                    sheetTitle={link.name[lang]}
                                     lang={lang}
                                     showing={link.showing}
                                 >
