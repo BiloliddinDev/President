@@ -2,6 +2,7 @@ import VideoBox from "@/components/shared/video-box/video-box";
 import { ImageWithTextProps } from "@/interface/discover/img-with-text";
 import Image from "next/image";
 import React, { FC } from "react";
+import DOMPurify from "isomorphic-dompurify";
 
 const ImageWithText: FC<ImageWithTextProps> = ({
   imgSrc,
@@ -17,7 +18,13 @@ const ImageWithText: FC<ImageWithTextProps> = ({
     <div className="flex flex-wrap md:flex-nowrap justify-between items-center mb-5  ">
       <div className={`max-w-[34rem]  ${orderText}`}>
         <h6 className="text-lg font-medium leading-7 mb-5 ">{title}</h6>
-        <p className="text-sm text-[#474B57]">{subtitle}</p>
+        <div className="text-sm text-[#474B57]">
+          <div
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(subtitle),
+          }}
+        />
+        </div>
       </div>
       <div className={`max-w-[800px]  ${orderImg}  ${margin}`}>
         {video ?
