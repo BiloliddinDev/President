@@ -14,7 +14,7 @@ export const CollectionItem = [
             "ru": "Часы UZB",
             "en": "UZB Watch"
         },
-        price: "$450",
+        price: "450 USD",
         image: [CollectionImage1]
     },
     {
@@ -25,7 +25,7 @@ export const CollectionItem = [
             "ru": "Сумка",
             "en": "Bag"
         },
-        price: "360$",
+        price: "360 USD",
         image: [CollectionImage2]
     },
     {
@@ -36,7 +36,7 @@ export const CollectionItem = [
             "ru": "Клатч",
             "en": "Clutch"
         },
-        price: "$140",
+        price: "140 USD",
         image: [CollectionImage3]
     },
 
@@ -47,7 +47,7 @@ export const CollectionItem = [
     //         "ru": "Шахматный набор",
     //         "en": "Chess set"
     //     },
-    //     price: "$1200",
+    //     price: "1200 USD",
     //     image: CollectionImage4
     // },
     // {
@@ -57,7 +57,7 @@ export const CollectionItem = [
     //         ru: "Новая табличка Узбекистана",
     //         en: "New Uzbekistan plaque",
     //     },
-    //     price: "$220",
+    //     price: "220 USD",
     //     image: CollectionImage5
     // },
     // {
@@ -67,7 +67,7 @@ export const CollectionItem = [
     //         ru: "Рамка Шердора",
     //         en: "Sherdor frame",
     //     },
-    //     price: "$425",
+    //     price: "425 USD",
     //     image: CollectionImage6
     // },
 ]

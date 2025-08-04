@@ -81,7 +81,7 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
                                 <NavbarModal
                                     title={link.name[lang]}
                                     side="left"
-                                    sheetTitle={link.name["en"]}
+                                    sheetTitle={link.name[lang]}
                                     lang={lang}
                                 >
                                     {link.name.en === "Shop" ? (
@@ -118,7 +118,7 @@ export const Navbar = ({lang}: { lang: 'uz' | "ru" | "en" }) => {
                             <p
                                 className={`text-primary !hover:text-zinc-300 text-lg font-normal transition-colors duration-200`}
                             >
-                                {`${lang.toUpperCase()}($)`}
+                                {`${lang.toUpperCase()}`}
                             </p>
                         }
                     >

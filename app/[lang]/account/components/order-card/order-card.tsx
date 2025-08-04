@@ -13,7 +13,7 @@ export const OrderCard = () => {
                         T-Shirt Lineup</h4>
                     <p className="text-center justify-start text-gray-600 text-xs font-medium leading-none">Ordered on:
                         27 July 2023</p>
-                    <p className="justify-start text-primary text-xs font-medium  leading-none">$70.00</p>
+                    <p className="justify-start text-primary text-xs font-medium  leading-none">70.00 USD</p>
                 </div>
             </div>
             <div className={"flex gap-2"}>

@@ -21,7 +21,7 @@ export const NewsCard: FC<{ newsItem: NewsItemInterface; }> = ({newsItem,}) => {
             )}
             <h4
                 className={
-                    "self-stretch justify-start text-gray-800 text-xl font-medium mt-2.5 leading-9"
+                    "self-stretch justify-start text-gray-800 text-xl font-medium mt-2.5 leading-9 h-14 2xl:h-10"
                 }
             >
                 {newsItem?.title}

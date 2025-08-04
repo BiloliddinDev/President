@@ -61,7 +61,7 @@ export const ProductsCard = ({productData, className}: ProductsCardProps) => {
                 <h3 className="text-sm font-medium mb-2 text-gray-900">
                     {productData.name}
                 </h3>
-                <p className="text-sm text-gray-500">${productData.basePriceToUSD}</p>
+                <p className="text-sm text-gray-500">{productData.basePriceToUSD} USD</p>
             </div>
         </div>
     );

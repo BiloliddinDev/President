@@ -56,7 +56,7 @@ export const CollectionCard: FC<{
             <Image
               key={index}
               src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${img.filePath}`}
-              alt={newsItem.name}
+              alt={newsItem.name || "COLLECTION IMAGE"}
               fill
               className={`object-contain transition-opacity duration-700 ${
                 index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
@@ -69,7 +69,7 @@ export const CollectionCard: FC<{
           {newsItem.name}
         </p>
         <p className="text-gray-600 mt-2 text-sm font-normal text-center">
-          {newsItem.basePriceToUSD} $
+          {newsItem.basePriceToUSD} USD
         </p>
       </Link>
     </div>
