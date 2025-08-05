@@ -27,7 +27,7 @@ export default async function CategoryPage({params}: CategoryPageProps) {
 
     return (
         <div className="container md:!mt-26 !mt-42">
-            <BreadcrumbDynamic url={categoryId?.name || undefined}/>
+            <BreadcrumbDynamic url={CategoryDetailData2.name || undefined}/>
             <div>
                 <h2 className="text-primary mt-10 text-xl font-medium leading-loose">
                     {CategoryDetailData2.name} 

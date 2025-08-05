@@ -1,4 +1,13 @@
 export const discoverModalItems = [
+     {
+        id: 8,
+        name: {
+            uz: "Yangiliklar",
+            ru: "Новости",
+            en: "News"
+        },
+        linkSrc: "new/UZB%20Limited%20Edition%202025id1",
+    },
     {
         id: 1,
         linkSrc: "/discover/about-us",

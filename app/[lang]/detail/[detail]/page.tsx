@@ -101,24 +101,25 @@ export default function ProductDetailPage() {
               Добавить в корзину
             </Button>
           ) : (
-            <div className="mt-4 flex items-center gap-2 flex-wrap">
+            <div className="w-full mt-4 flex items-center gap-[2%] flex-wrap">
               <Button
+              className="w-[32%]"
                 variant="outline"
                 onClick={() => decreaseQuantity(product!.id)}
               >
                 -
               </Button>
-              <div className="px-4 py-2 border w-[100px] flex items-center justify-center rounded text-sm">
+              <div className="px-4 py-2 border w-[32%] flex items-center justify-center rounded text-sm">
                 <span className="font-bold">{quantity}</span> шт
               </div>
               <Button
-                className="bg-primary"
+                className="bg-primary w-[32%]"
                 onClick={() => increaseQuantity(product!.id)}
               >
                 +
               </Button>
-              <Link href="/basket">
-                <Button className="ml-2">Корзина →</Button>
+              <Link href="/basket" className="!mt-3 w-[100%]">
+                <Button className="w-full">Корзина →</Button>
               </Link>
             </div>
           )}
