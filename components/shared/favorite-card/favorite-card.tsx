@@ -27,7 +27,6 @@ export default function FavoriteCard({onRemove, itemID}: FavoriteCardProps) {
                 setLoading(false);
             }
         };
-
         fetchProduct().then().catch().finally();
     }, [itemID]);
 
