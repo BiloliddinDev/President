@@ -2,8 +2,8 @@
 
 import React from "react";
 
-export default function FormattedText({input}: {input: string}) {
-    const lines = input.split("\n");
+export default function FormattedText({input}: {input: string |undefined}) {
+    const lines = (input ?? "").split("\n");
 
     const elements: React.ReactNode[] = [];
     let currentList: React.ReactNode[] = [];
