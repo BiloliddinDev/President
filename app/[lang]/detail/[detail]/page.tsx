@@ -129,11 +129,11 @@ export default function ProductDetailPage() {
 
           <div className="mt-6">
             <h2 className="text-lg font-semibold mt-12">Подробности</h2>
-            <p className="text-gray-700 text-sm mt-2">
+            <div className="text-gray-700 text-sm mt-2">
               {product?.description && (
                 <FormattedText input={product?.description} />
               )}
-            </p>
+            </div>
           </div>
 
           <p className="text-sm text-gray-600 mt-4">Ident No. {product?.sku}</p>
