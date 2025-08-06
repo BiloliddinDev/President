@@ -58,7 +58,7 @@ export const B2bCard = ({className, image, top, right, size, title, desc,}: B2bC
                     {desc}
                 </p>
 
-                <div className="mt-6 flex items-center gap-4 p-4 bg-white rounded border">
+                <div data-aos="fade-right" className="mt-6 flex items-center gap-4 p-4 bg-white rounded border">
                     <Image src={Placeholder} alt="placeholder" width={96} height={96}/>
                     <div className="w-full">
                         <p className="text-sm text-primary mb-2">

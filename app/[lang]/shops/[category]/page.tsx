@@ -27,8 +27,8 @@ export default async function CategoryPage({params}: CategoryPageProps) {
 
     return (
         <div className="container md:!mt-26 !mt-42">
-            <BreadcrumbDynamic url={categoryId?.name || undefined}/>
-            <div>
+            <BreadcrumbDynamic url={CategoryDetailData2.name || undefined}/>
+            <div >
                 <h2 className="text-primary mt-10 text-xl font-medium leading-loose">
                     {CategoryDetailData2.name} 
                 </h2>
@@ -51,8 +51,11 @@ export default async function CategoryPage({params}: CategoryPageProps) {
                 ) : (
                     <>
                         <SortAndViewToggleWrapper itemLength={ProductList.data.length}>
-                            {ProductList.data.map((product) => (
-                                <ProductsCard key={product.id} productData={product}/> 
+                            {ProductList.data.map((product, index) => (
+                                <span data-aos="fade-left" 
+                                    data-aos-delay={`${index * 300}`}>
+                                    <ProductsCard key={product.id} productData={product}/>
+                                </span> 
                             ))}
                         </SortAndViewToggleWrapper>
 

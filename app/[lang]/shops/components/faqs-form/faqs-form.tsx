@@ -92,7 +92,7 @@ export default function FaqsForm({dictionary}: FaqsFormProps) {
                     control={form.control}
                     name="fullName"
                     render={({field}) => (
-                        <FormItem>
+                        <FormItem data-aos="fade-left" data-aos-delay="0">
                             <FormLabel>Имя</FormLabel>
                             <FormControl><Input {...field} /></FormControl>
                             <FormMessage/>
@@ -103,7 +103,7 @@ export default function FaqsForm({dictionary}: FaqsFormProps) {
                     control={form.control}
                     name="phone"
                     render={({field}) => (
-                        <FormItem>
+                        <FormItem data-aos="fade-left" data-aos-delay="300">
                             <FormLabel>Телефон</FormLabel>
                             <FormControl><Input {...field} /></FormControl>
                             <FormMessage/>
@@ -114,7 +114,7 @@ export default function FaqsForm({dictionary}: FaqsFormProps) {
                     control={form.control}
                     name="email"
                     render={({field}) => (
-                        <FormItem>
+                        <FormItem data-aos="fade-left" data-aos-delay="600">
                             <FormLabel>Email</FormLabel>
                             <FormControl><Input type="email" {...field} /></FormControl>
                             <FormMessage/>
@@ -125,7 +125,7 @@ export default function FaqsForm({dictionary}: FaqsFormProps) {
                     control={form.control}
                     name="social"
                     render={({field}) => (
-                        <FormItem>
+                        <FormItem data-aos="fade-left" data-aos-delay="900">
                             <FormLabel>Контакт в мессенджерах (например, WhatsApp, Telegram)</FormLabel>
                             {/* <FormLabel>Location</FormLabel> */}
                             <FormControl><Input {...field} /></FormControl>
@@ -138,7 +138,7 @@ export default function FaqsForm({dictionary}: FaqsFormProps) {
                         control={form.control}
                         name="comment"
                         render={({field}) => (
-                            <FormItem>
+                            <FormItem data-aos="fade-left" data-aos-delay="1200">
                                 <FormLabel>Комментарий / Вопрос</FormLabel>
                                 <FormControl><Textarea rows={4}
                                                        placeholder="Введите ваше сообщение здесь" {...field} 
@@ -163,7 +163,7 @@ export default function FaqsForm({dictionary}: FaqsFormProps) {
                         control={form.control}
                         name="agree"
                         render={({field}) => (
-                            <FormItem className="flex items-start space-x-2">
+                            <FormItem data-aos="fade-left" data-aos-delay="1500" className="flex items-start space-x-2">
                                 <FormControl>
                                     <Checkbox
                                         checked={field.value}

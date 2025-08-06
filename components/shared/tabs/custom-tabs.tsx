@@ -23,7 +23,7 @@ const CustomTabs: FC<Props> = ({tabs, className, identifier}) => {
     return (
         <Tabs defaultValue={defaultValue} className={`w-full overflow-scroll ${className}`}>
             <div className={'overflow-scroll'}>
-                <TabsList className="bg-transparent ">
+                <TabsList data-aos="fade-up" className="bg-transparent ">
                     {tabs.map((tab) => (
                         tab.value == "faq" ?
                             <Link href="/service/faqs" key={tab.value}>

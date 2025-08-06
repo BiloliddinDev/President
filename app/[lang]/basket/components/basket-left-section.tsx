@@ -13,7 +13,7 @@ export function BasketLeftSection() {
         decreaseQuantity,
         removeFromBasket
     } = useBasketStore();
-
+console.log(items)
     return (
         <div className="w-full lg:w-[70%] pr-4 space-y-4">
             {items.length === 0 ? (
@@ -40,11 +40,11 @@ export function BasketLeftSection() {
                                 <p className="text-sm text-gray-500">{item.sku || "Описание недоступно"}</p>
                                 <p className="text-sm text-gray-600 mt-1">Цена:
                                     <span
-                                        className="font-semibold"> {(item.price * item.quantity).toLocaleString()} сум</span>
+                                        className="font-semibold"> {(item.price * item.quantity).toLocaleString()} USD</span>
                                 </p>
                                 <p className="text-sm text-gray-600">Общая сумма:
                                     <span className="font-semibold">
-                                        {(item.price * item.quantity).toLocaleString()} сум
+                                        {(item.price * item.quantity).toLocaleString()} USD
                                     </span>
                                 </p>
                             </div>

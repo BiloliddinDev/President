@@ -22,8 +22,10 @@ export async function Category({dictionary, lang}: CategoryProps) {
         <div className="container">
             <SectionTitle text={dictionary.category.title}/>
             <div className="grid mt-5 md:mt-14 grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-                {CategoryData.map((category) => (
+                {CategoryData.map((category, index) => (
                     <Link
+                        data-aos="fade-left" 
+                        data-aos-delay={`${index * 300}`}
                         key={category.id}
                         href={`/shops/${category.name}id${category.id}`}
                     > <CategoryCard

@@ -25,7 +25,7 @@ export const Footer = async ({lang}: FooterProps) => {
                     "flex flex-wrap md:flex-nowrap flex-col sm:flex-row justify-between mt-[100px] mb-4 items-start pb-11 border-b-[1px] border-gray-200"
                 }
             >
-                <div className={"flex flex-col items-start gap-6 mb-5"}>
+                <div data-aos="fade-left" data-aos-delay="0" className={"flex flex-col items-start gap-6 mb-5 -mt-2"}>
                     <FooterLogo/>
                     <p
                         className={
@@ -39,7 +39,7 @@ export const Footer = async ({lang}: FooterProps) => {
                     </Button>
                 </div>
 
-                <div className={"hidden md:flex flex-col items-start"}>
+                <div data-aos="fade-left" data-aos-delay="300" className={"hidden md:flex flex-col items-start"}>
                     <h2
                         className={
                             "text-gray-500 text-sm font-medium leading-normal mb-[40px]"
@@ -82,7 +82,7 @@ export const Footer = async ({lang}: FooterProps) => {
                     }
                 />
 
-                <div className={"hidden md:flex flex-col items-start"}>
+                <div data-aos="fade-left" data-aos-delay="600" className={"hidden md:flex flex-col items-start"}>
                     <h2
                         className={
                             "text-gray-500 text-sm font-medium leading-normal mb-[40px]"
@@ -125,10 +125,10 @@ export const Footer = async ({lang}: FooterProps) => {
                     }
                 />
 
-                <div className={"hidden md:flex flex-col items-start"}>
+                <div data-aos="fade-left" data-aos-delay="900" className={"hidden md:flex flex-col items-start"}>
                     <h2
                         className={
-                            "text-gray-500 text-sm font-medium leading-normal mb-[40px]"
+                            "text-gray-500 text-sm font-medium leading-normal mb-[40px] uppercase"
                         }
                     >
                         {FooterData["footer.new.products"]}
@@ -168,10 +168,10 @@ export const Footer = async ({lang}: FooterProps) => {
                     }
                 />
 
-                <div className={"flex flex-col items-start"}>
+                <div data-aos="fade-left" data-aos-delay="1200" className={"flex flex-col items-start"}>
                     <h2
                         className={
-                            "text-gray-500 text-sm font-medium leading-normal my-5 md:mb-[40px]"
+                            "text-gray-500 text-sm font-medium leading-normal mb-5 md:mb-[40px]"
                         }
                     >
                         {FooterData["footer.payments"]}
@@ -224,6 +224,10 @@ export const Footer = async ({lang}: FooterProps) => {
                 </div>
             </div>
             <p
+                data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="1200"
+                data-aos-offset="0"
                 className={
                     "text-gray-600 text-sm font-normal leading-normal text-center pb-6"
                 }

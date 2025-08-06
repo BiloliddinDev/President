@@ -16,8 +16,14 @@ const AboutUs = () => {
                 <BreadcrumbDynamic/>
             </div>
             <DiscoverAboutHeader/>
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 ">
-                <div className="w-full md:w-1/2">
+        
+            <div data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="0"
+                data-aos-offset="0" 
+                className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 ">
+                <div className="w-full md:w-1/2" 
+                >
                     <Image
                         src={watch1}
                         alt="Discover watch"
@@ -35,15 +41,14 @@ const AboutUs = () => {
             <InformationWithImg
                 imgSource={watch3}
                 imgAlt="black bags"
-
+                
                 infoText="Сегодня President Business Gift — это не просто магазин, а лидер в сфере премиальных подарков для бизнесменов и руководителей. Мы предлагаем богатый ассортимент: от эксклюзивных наручных часов и кожаных изделий ручной работы до подарочных наборов с фирменной гравировкой, VIP-аксессуаров, деловых блокнотов, перьевых ручек и сувениров с национальным акцентом."
             />
             <AccordionWithImg/>
-            <div className="pb-12 md:pb-24">
+            <div  data-aos-distance="20px" className="pb-12 md:pb-24">
                 <InformationWithImg
                     textStyles="font-normal text-gray-800"
                     imgAlt="a watch"
-
                     infoText="Мы стремительно расширяем своё присутствие
                     и уверенно выходим на новые рынки. Мы не
                     останавливаемся на достигнутом — с каждым
@@ -57,6 +62,10 @@ const AboutUs = () => {
                 src={afterimage}
                 alt={"footer image"}
                 className="w-full h-auto object-contain"
+                data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="0"
+                data-aos-offset="0"
             />
         </div>
     );

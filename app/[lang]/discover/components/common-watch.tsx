@@ -11,7 +11,7 @@ const CommonWatchSection: FC<ImageWithTextProps> = ({
   videoSrc,
 }) => {
   return (
-    <div className="flex flex-col justify-center  gap-7 mb-[150px]">
+    <div data-aos="fade-up" className="flex flex-col justify-center  gap-7 mb-[150px]">
       <div>
         {productType && <h5 className="font-medium">{productType}</h5>}
         <p className="leading-7 text-lg mt-2.5">{description}</p>

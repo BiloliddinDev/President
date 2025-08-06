@@ -22,7 +22,7 @@ export default function RightImage({ image, size, top, right}: RightImageProps):
 
 console.log(size)
     return (
-        <div className="relative">
+        <div className="relative" data-aos="fade-left">
             <Image src={image} alt="b2b background image" width={500} height={500} className="relative"/>
             <div
                 style={{

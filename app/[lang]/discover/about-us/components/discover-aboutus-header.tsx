@@ -2,7 +2,7 @@ import React from "react";
 
 const DiscoverAboutHeader = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-between mt-6 md:mt-8 gap-4 md:gap-8">
+    <div  data-aos="fade-left" className="flex flex-col lg:flex-row justify-between mt-6 md:mt-8 gap-4 md:gap-8">
       <h3 className="text-base md:text-lg font-semibold">
         {/* About President Business Gifts */}
         Наша история

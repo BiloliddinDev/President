@@ -3,7 +3,7 @@ import Image from "next/image";
 // import ServicesImage from "@/public/images/services1.png";
 import {ServiceCard} from "@/app/[lang]/shops/components/service-card/service-card";
 import {serviceItems} from "@/constants/service";
-import Pen from "@/public/images/care-service.webp";
+import Pen from "@/public/images/service.webp";
 
 
 export default function ServicePage() {
@@ -20,6 +20,10 @@ export default function ServicePage() {
                 src={Pen.src}
                 alt={"ServicesImage"}
                 className={"w-full mt-7"}
+                data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="0"
+                data-aos-offset="0"
             />
             <div className={"container !mt-10 !pb-20"}>
                 <div className="text-primary text-lg font-medium leading-7 mb-5">

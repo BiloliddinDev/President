@@ -69,14 +69,14 @@ export const shopModalItems = [
     //     link: "collections",
     //     custom: true
     // },
-    {
-        id: 8,
-        name: {
-            uz: "Yangiliklar",
-            ru: "Новости",
-            en: "News"
-        },
-        link: "new/UZB%20Limited%20Edition%202025id1",
-        custom: true
-    },
+    // {
+    //     id: 8,
+    //     name: {
+    //         uz: "Yangiliklar",
+    //         ru: "Новости",
+    //         en: "News"
+    //     },
+    //     link: "new/UZB%20Limited%20Edition%202025id1",
+    //     custom: true
+    // },
 ];

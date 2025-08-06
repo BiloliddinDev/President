@@ -41,6 +41,17 @@ const branches: Branch[] = [
       tj: "",
     },
   },
+  {
+    lat: 38.57207207815268,
+    lng: 68.78858621349255,
+    name: {
+      uz: "Tojikiston, Dushanbe, Rudakiy ko‘chasi, 55/1",
+      ru: "Таджикистан, Душанбе, Рудаки, 55/1",
+      en: "Tajikistan, Dushanbe, Rudaki Street, 55/1",
+      az: "Tacikistan, Düşənbə, Rudaki küçəsi, 55/1",
+      tj: "Тоҷикистон, Душанбе, кӯчаи Рӯдакӣ, 55/1",
+    },
+  },
 ];
 const customIcon = L.icon({
   iconUrl: Logo.src,

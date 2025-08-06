@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -17,43 +18,44 @@ export const ProductsCard = ({ productData, className }: ProductsCardProps) => {
   const isLiked = isInWishlist(productData.id);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [hovered, setHovered] = useState(false);
   const imageIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const images = productData.media?.map(media => `${process.env.NEXT_PUBLIC_ADMIN_URL}${media.filePath}`) || [];
-
- 
-  const startImageRotation = () => {
-    if (images.length < 2) return;
-  
-    // Dastlab darhol ikkinchi rasmga o‘tkazamiz (1-indeksga)
-    setCurrentImageIndex(1);
-  
-    // Keyin esa aylantirishni boshlaymiz
-    imageIntervalRef.current = setInterval(() => {
-      setCurrentImageIndex(prev => (prev + 1) % images.length);
-    }, 1500);
-  };
-  
-
-  const stopImageRotation = () => {
-    if (imageIntervalRef.current) {
-      clearInterval(imageIntervalRef.current);
-      imageIntervalRef.current = null;
-      setCurrentImageIndex(0);
-    }
-  };
+  const images =
+    productData.media?.map(
+      (media) => `${process.env.NEXT_PUBLIC_ADMIN_URL}${media.filePath}`
+    ) || [];
 
   useEffect(() => {
+    let next = 1;
+
+    if (hovered && images.length > 1) {
+      setCurrentImageIndex(1); // Birinchi hoverda 2-rasmga o'tadi
+      imageIntervalRef.current = setInterval(() => {
+        setCurrentImageIndex(() => {
+          const nextIndex = next % images.length;
+          next++;
+          return nextIndex;
+        });
+      }, 1500);
+    } else {
+      setCurrentImageIndex(0);
+    }
+
     return () => {
-      stopImageRotation();
+      if (imageIntervalRef.current) {
+        clearInterval(imageIntervalRef.current);
+        imageIntervalRef.current = null;
+      }
     };
-  }, []);
+  }, [hovered, images.length]);
 
   return (
     <div
+      
       className={`${className} group relative flex flex-col rounded-lg transition hover:shadow-md bg-white pb-2`}
-      onMouseEnter={startImageRotation}
-      onMouseLeave={stopImageRotation}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       <button
         onClick={() => toggleWishlist(productData.id)}
@@ -65,16 +67,19 @@ export const ProductsCard = ({ productData, className }: ProductsCardProps) => {
       </button>
 
       <Link href={`/detail/${productData.id}`}>
-        <div className="relative w-full pt-[100%] mb-4 bg-neutral-100 rounded-[4px] py-4 overflow-hidden">
-          {images.length > 0 && (
+        <div className="relative w-full pt-[100%] mb-4 bg-neutral-100 rounded-[4px] overflow-hidden">
+          {images.map((img, index) => (
             <Image
+              key={index}
               alt={productData.name}
-              src={images[currentImageIndex]}
+              src={img}
               fill
               sizes="(max-width: 768px) 100vw, 25vw"
-              className="object-cover transition-transform duration-300 hover:scale-105 rounded"
+              className={`object-cover absolute top-0 left-0 transition-opacity duration-700 rounded ${
+                index === currentImageIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
             />
-          )}
+          ))}
         </div>
       </Link>
 
@@ -87,7 +92,9 @@ export const ProductsCard = ({ productData, className }: ProductsCardProps) => {
         <h3 className="text-sm font-medium mb-2 text-gray-900">
           {productData.name}
         </h3>
-        <p className="text-sm text-gray-500">{productData.basePriceToUSD} USD</p>
+        <p className="text-sm text-gray-500">
+          {productData.basePriceToUSD} USD
+        </p>
       </div>
     </div>
   );

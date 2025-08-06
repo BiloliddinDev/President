@@ -19,14 +19,18 @@ const CareAndServices = () => {
                     src={Pen}
                     alt="a pen"
                     width={2000}
-                    height={2000}
-                    className="w-full h-[500px] object-cover"
+                    height={350}
+                    className="w-full  object-cover"
+                    data-aos="fade-zoom-in"
+                    data-aos-easing="ease-in-back"
+                    data-aos-delay="0"
+                    data-aos-offset="0"
                 />
             </div>
 
             <div className="container max-w-screen-xl mx-auto px-2 md:px-4 md:!mt-26 !mt-42">
                 <div className="mt-[100px] mb-[200px]">
-                    <h5 className="text-gray-900 text-lg font-medium leading-7 mb-7">
+                    <h5 data-aos="fade-up" className="text-gray-900 text-lg font-medium leading-7 mb-7">
                         Уход за изделиями и сервис
                     </h5>
                     <div className="flex gap-5 justify-between flex-wrap md:flex-nowrap">

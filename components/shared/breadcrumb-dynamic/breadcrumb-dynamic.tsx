@@ -24,7 +24,7 @@ export function BreadcrumbDynamic({url}: { url?: string }) {
     const t = useBreadcrumbTranslation();
 
     return (
-        <Breadcrumb>
+        <Breadcrumb >
             <BreadcrumbList>
                 <BreadcrumbItem>
                     <BreadcrumbLink href="/">{t["home"] || "Home"}</BreadcrumbLink>

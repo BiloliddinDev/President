@@ -2,8 +2,8 @@
 
 import React from "react";
 
-export default function FormattedText({input}: {input: string}) {
-    const lines = input.split("\n");
+export default function FormattedText({input}: {input: string |undefined}) {
+    const lines = (input ?? "").split("\n");
 
     const elements: React.ReactNode[] = [];
     let currentList: React.ReactNode[] = [];
@@ -22,7 +22,7 @@ export default function FormattedText({input}: {input: string}) {
 
         if (currentList.length > 0) {
             elements.push(
-                <ul key={`list-${index}`} className="list-disc list-inside space-y-1 mb-4">
+                <ul key={`list-${index}`} className="text-sm list-disc list-inside space-y-1 mb-4">
                     {currentList}
                 </ul>
             );
@@ -33,7 +33,7 @@ export default function FormattedText({input}: {input: string}) {
             elements.push(<div key={index} className="h-4"/>);
         } else {
             elements.push(
-                <p key={index} className="text-base leading-relaxed text-gray-800">
+                <p key={index} className="text-sm leading-relaxed text-gray-800">
                     {trimmed}
                 </p>
             );
