@@ -37,7 +37,6 @@ export default function ShowcaseAnimation({DataLayer, showcase}: {
     }, [current, images]);
 
 
-// console.log("showcase", DataLayer,showcase)
     return (
         <div className="relative h-screen shadow-2xl overflow-hidden">
             <AnimatePresence mode="sync">

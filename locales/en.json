@@ -1,4 +1,15 @@
 {
+  "breadcrumb": {
+    "president": "President business gifts",
+    "discover": "Discover",
+    "shop":"Shop",
+    "account":"Account",
+    "news":"News",
+    "about":"About us",
+    "category":"Category",
+    "collections":"Collections",
+    "corporategifts":"Corporate gifts"
+  },
   "navbar": {
     "changelangg": "Change language",
     "changelocale": "Select another location"
@@ -78,5 +89,12 @@
     "description": "We are building something extraordinary for you. Our full website experience is launching soon.",
     "returnMessage": "Please return to our homepage in the meantime.",
     "buttonText": "Visit our Homepage"
+  },
+  "account": {
+    "accountTitle": "Account detail",
+    "fullName": "Full name",
+    "email": "Email",
+    "enterEmail": "Enter your email",
+    "submit": "Submit"
   }
 }

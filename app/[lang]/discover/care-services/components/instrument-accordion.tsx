@@ -10,7 +10,7 @@ const InstrumentAccordion = ({ data }: { data: tabsType[] }) => {
           key={item.id}
           itemValue={item.value}
           accordionTrigger={item.accordionTrigger}
-          accordionContent={item.accordionContent}
+          accordionContent={ item.accordionContent}
           accordionContentStyles="text-sm font-normal"
           accordionTriggerStyles="font-medium"
           className="my-3 md:my-4 border-b"

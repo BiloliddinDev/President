@@ -162,7 +162,7 @@ export default function RegisterForm() {
                         </Button>
 
                         <div className="text-center text-sm text-gray-500">
-                            Already have an account?{" "}
+                            Already have an account?
                             <Link href="/auth/sign-in" className="text-gray-800 hover:underline">
                                 Login
                             </Link>

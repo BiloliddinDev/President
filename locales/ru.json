@@ -1,4 +1,7 @@
 {
+  "breadcrumb": {
+    "president": "Подарки для бизнеса President"
+  },
   "navbar": {
     "changelangg": "Изменить язык",
     "changelocale": "Выбрать другое местоположение"
@@ -79,11 +82,12 @@
     "returnMessage": "Пожалуйста, вернитесь на нашу главную страницу.",
     "buttonText": "Посетите нашу главную страницу"
   },
-  "shippingPage":{
-    "title":"fsdfvjbsdi",
-    "desc":"fsdfvjbsdi",
-    "subtitle":"fsdfvjbsdi",
-    "time":"fsdfvjbsdi"
+  "account":{
+    "accountTitle": "Детали аккаунта",
+    "fullName": "Полное имя",
+    "email": "Электронная почта",
+    "enterEmail": "Введите вашу почту",
+    "submit": "Отправить"
   }
-  
+
 }

@@ -9,22 +9,32 @@ import IconComponent from "@/components/icon/icon-view";
 import {CountryType, LanguageType} from "@/interface/language&country-type/language-type";
 import {CurrencyType} from "@/interface/currency-type/currency-type";
 
-
 const ChangeLangModal = ({lang, languages, county, currency}: {
     lang: 'uz' | 'ru' | 'en',
     languages: LanguageType[],
-    county: CountryType[]
+    county: CountryType[],
     currency: CurrencyType[] | undefined
 }) => {
     const [activeLocale, setActiveLocale] = useState<{ name: string; code: string } | null>(null);
     const [isMobile, setIsMobile] = useState<boolean>(false);
-    const {refresh} = useRouter()
+    const {refresh} = useRouter();
 
+    const [currencyCookie, setCurrencyCookie] = useState<{ code: string } | null>(null);
 
     useEffect(() => {
         const defaultLocation = Cookies.get("country");
         if (defaultLocation) {
             setActiveLocale(JSON.parse(defaultLocation));
+        }
+
+        const currencyFromCookie = Cookies.get("currency");
+        if (currencyFromCookie) {
+            try {
+                const parsed = JSON.parse(currencyFromCookie);
+                setCurrencyCookie(parsed);
+            } catch (e) {
+                console.error("Currency cookie parse error:", e);
+            }
         }
 
         const handleResize = () => {
@@ -39,12 +49,13 @@ const ChangeLangModal = ({lang, languages, county, currency}: {
         const newLocale = {name, code};
         Cookies.set("country", JSON.stringify(newLocale));
         setActiveLocale(newLocale);
-        refresh()
+        refresh();
     };
 
     const handleCurrencyChange = (name: string, code: string, isDefault: boolean) => {
         const newCurrency = {name, code, default_currency: isDefault};
         Cookies.set("currency", JSON.stringify(newCurrency));
+        setCurrencyCookie({code}); // Update local state for active check mark
     };
 
     const [open, setOpen] = useState<boolean>(false);
@@ -73,6 +84,7 @@ const ChangeLangModal = ({lang, languages, county, currency}: {
 
     return (
         <div className="flex flex-col gap-14 h-full text-primary text-base font-medium leading-normal">
+            {/* Language Section */}
             <div>
                 <h2 onClick={handleOpen} className={`mb-5 ${isMobile && "flex items-center justify-between"}`}>
                     {translations.changeLanguage[lang]}
@@ -81,16 +93,20 @@ const ChangeLangModal = ({lang, languages, county, currency}: {
                 {(open || !isMobile) && <LocaleSwitcher languages={languages}/>}
             </div>
 
+            {/* Location Section */}
             <div>
                 <h2 onClick={handleLocationOpen} className={`mb-5 ${isMobile && "flex items-center justify-between"}`}>
                     {translations.selectLocation[lang]}
                     {isMobile && <IconComponent name={openLocation ? "chevronUp" : "chevronDown"}/>}
                 </h2>
                 {(openLocation || !isMobile) && (
-                    <ul className={"flex flex-col w-full gap-7"}>
+                    <ul className="flex flex-col w-full gap-7">
                         {county.map((element) => (
-                            <li key={element.id} onClick={() => handleLocaleChange(element.name, element.code)}
-                                className="px-4 md:px-0 md:w-[220px] flex items-center justify-between cursor-pointer">
+                            <li
+                                key={element.id}
+                                onClick={() => handleLocaleChange(element.name, element.code)}
+                                className="px-4 md:px-0 md:w-[220px] flex items-center justify-between cursor-pointer"
+                            >
                                 {element.name}
                                 <span>{activeLocale?.code === element.code && <Check/>}</span>
                             </li>
@@ -98,19 +114,25 @@ const ChangeLangModal = ({lang, languages, county, currency}: {
                     </ul>
                 )}
             </div>
+
+            {/* Currency Section */}
             <div>
                 <h2 onClick={handleLocationOpen} className={`mb-5 ${isMobile && "flex items-center justify-between"}`}>
                     {translations.changeCurrency[lang]}
                     {isMobile && <IconComponent name={openLocation ? "chevronUp" : "chevronDown"}/>}
                 </h2>
                 {(openLocation || !isMobile) && (
-                    <ul className={"flex flex-col w-full gap-7"}>
+                    <ul className="flex flex-col w-full gap-7">
                         {currency?.map((element) => (
-                            <li key={element.code}
-                                onClick={() => handleCurrencyChange(element.name, element.code, element?.default_currency)}
-                                className="px-4 md:px-0 md:w-[220px] flex items-center justify-between cursor-pointer">
+                            <li
+                                key={element.code}
+                                onClick={() => handleCurrencyChange(element.name, element.code, element.default_currency)}
+                                className={`px-4 md:px-0 md:w-[220px] flex items-center justify-between cursor-pointer ${
+                                    currencyCookie?.code === element.code ? '' : ''
+                                }`}
+                            >
                                 {element.name} ({element.code})
-                                <span>{element?.default_currency && <Check/>}</span>
+                                <span>{currencyCookie?.code === element.code && <Check/>}</span>
                             </li>
                         ))}
                     </ul>

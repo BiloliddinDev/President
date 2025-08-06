@@ -11,11 +11,13 @@ import {Accordion, AccordionContent, AccordionItem, AccordionTrigger,} from "@/c
 import {LeftImagesSection} from "@/app/[lang]/detail/components/left-image-section/left-image-section";
 import {useBasketStore} from "@/lib/set-basket.storage";
 import Link from "next/link";
+import {useWishlistStore} from "@/lib/set-wishlist.storage";
 
 export default function ProductDetailPage() {
     const {detail} = useParams();
     const [product, setProduct] = useState<ProductsInterface | null>(null);
-
+    const {toggleWishlist, isInWishlist} = useWishlistStore();
+    const isLiked = isInWishlist(Number(product?.id))
 
     const {
         addToBasket,
@@ -59,6 +61,7 @@ export default function ProductDetailPage() {
             addToBasket({
                 id: product.id,
                 name: product.name,
+                basePriceToUSD: product.basePriceToUSD,
                 price: product.prices[0].price,
                 sku: product.sku,
                 imgUrl: product.media[0].filePath
@@ -68,7 +71,7 @@ export default function ProductDetailPage() {
 
     return (
         <div className="container md:!mt-26 !mt-42 relative">
-            <BreadcrumbDynamic/>
+            <BreadcrumbDynamic url={product?.name}/>
 
             <div className="w-full flex flex-col lg:flex-row items-start justify-center gap-12 mt-10">
                 <LeftImagesSection mediaData={product?.media}/>
@@ -77,7 +80,8 @@ export default function ProductDetailPage() {
                     <div className="flex items-center justify-between gap-4 mb-4">
                         <h1 className="text-2xl font-semibold">{product?.name}</h1>
                         <div className="flex items-center gap-5">
-                            <Heart className="text-primary w-5 h-5 cursor-pointer"/>
+                            <Heart onClick={() => toggleWishlist(Number(product?.id))}
+                                   className={`w-5 h-5 ${isLiked ? "fill-primary text-primary" : ""}`}/>
                             <Share2
                                 onClick={handleShare}
                                 className="text-primary w-5 h-5 cursor-pointer"
@@ -110,7 +114,7 @@ export default function ProductDetailPage() {
                     )}
 
                     <p className="text-gray-700 text-sm mt-7">
-                       Мы стремимся доставить Ваш заказ максимально быстро и удобно.
+                        Мы стремимся доставить Ваш заказ максимально быстро и удобно.
                     </p>
 
                     <div className="mt-6">

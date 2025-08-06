@@ -78,5 +78,13 @@
     "description": "Biz siz uchun ajoyib narsani yaratmoqdamiz. Bizning to'liq veb-sayt tajribamiz tez kunda ishga tushiriladi.",
     "returnMessage": "Vaqtincha bosh sahifamizga qaytib turing.",
     "buttonText": "Bosh sahifaga tashrif buyuring"
+  },
+  "account":{
+    "accountTitle": "Akkaunt tafsilotlari",
+    "fullName": "To‘liq ism",
+    "email": "Elektron pochta",
+    "enterEmail": "Emailingizni kiriting",
+    "submit": "Yuborish"
   }
+  
 }
