@@ -27,7 +27,7 @@ export default function SortAndViewToggleWrapper({itemLength, children}: Props) 
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
-                            {["Новейший", "Цена: по возрастанию", "Price: High to Low"].map((option) => (
+                            {["Новейший", "Цена: по возрастанию", "Цена: по убыванию"].map((option) => (
                                 <DropdownMenuItem key={option} onClick={() => setSort(option)}>
                                     {option}
                                 </DropdownMenuItem>
