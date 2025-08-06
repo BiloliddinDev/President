@@ -35,7 +35,7 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, l
                 >
                     {title}
 
-                    {(sheetTitle === 'Shop' || sheetTitle === 'Discover') && (
+                    {(sheetTitle === 'Shop' || sheetTitle === 'Discover'|| sheetTitle=="Коллекции"|| sheetTitle=="Узнать больше") && (
                         <span
                             className={`w-1.5 h-1.5 rounded-full bg-black transition-opacity ${
                                 isOpen ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
@@ -53,7 +53,7 @@ const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, l
                     onMouseLeave={handleMouseLeave}
                 >
                     <div className="ml-[3.75rem] mt-10 h-full py-10">
-                        <SheetTitle className="pb-1.5 pt-6">{sheetTitle}</SheetTitle>
+                        <SheetTitle className="pb-1.5 pt-6 ps-2">{sheetTitle}</SheetTitle>
                         <div className={'flex flex-col justify-between h-full pb-5'}>
                             {children}
                             {showing && <div>

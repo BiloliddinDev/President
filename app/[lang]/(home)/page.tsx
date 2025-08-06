@@ -62,7 +62,7 @@ export default async function Home({params}: HomePageProps) {
             <section className={'mt-[100px]'}>
                 <StorySection/>
             </section>
-            <section className="mt-[100px] py-8 ">
+            <section className="mt-[100px] py-10 ">
                 <Location lang={HomePageParam.lang} dictionary={dictionary}/>
             </section>
         </>
