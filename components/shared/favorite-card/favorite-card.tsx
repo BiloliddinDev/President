@@ -27,12 +27,10 @@ export default function FavoriteCard({onRemove, itemID}: FavoriteCardProps) {
                 setLoading(false);
             }
         };
-
         fetchProduct().then().catch().finally();
     }, [itemID]);
 
     if (!loading && !product) return null;
-
     return (
         <div className="flex flex-col gap-5">
             <div className="relative">
@@ -64,9 +62,9 @@ export default function FavoriteCard({onRemove, itemID}: FavoriteCardProps) {
                     ) : (
                         <>
                             <h3 className="text-lg text-gray-900 font-inter">{product?.name}</h3>
-                            {product?.prices[0]?.price && (
+                            {product?.prices.filter((price)=>price.currency.code==="UZS") && (
                                 <p className="text-sm text-gray-500 mt-1">
-                                    {product.prices[0].price.toLocaleString()} сум
+                                    {product?.prices.filter((price)=>price.currency.code==="UZS")[0].price.toLocaleString()} сум    
                                 </p>
                             )}
                         </>

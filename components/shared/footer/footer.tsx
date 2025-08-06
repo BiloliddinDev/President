@@ -25,7 +25,7 @@ export const Footer = async ({lang}: FooterProps) => {
                     "flex flex-wrap md:flex-nowrap flex-col sm:flex-row justify-between mt-[100px] mb-4 items-start pb-11 border-b-[1px] border-gray-200"
                 }
             >
-                <div className={"flex flex-col items-start gap-6 mb-5"}>
+                <div className={"flex flex-col items-start gap-6 mb-5 -mt-2"}>
                     <FooterLogo/>
                     <p
                         className={
@@ -128,7 +128,7 @@ export const Footer = async ({lang}: FooterProps) => {
                 <div className={"hidden md:flex flex-col items-start"}>
                     <h2
                         className={
-                            "text-gray-500 text-sm font-medium leading-normal mb-[40px]"
+                            "text-gray-500 text-sm font-medium leading-normal mb-[40px] uppercase"
                         }
                     >
                         {FooterData["footer.new.products"]}
@@ -171,7 +171,7 @@ export const Footer = async ({lang}: FooterProps) => {
                 <div className={"flex flex-col items-start"}>
                     <h2
                         className={
-                            "text-gray-500 text-sm font-medium leading-normal my-5 md:mb-[40px]"
+                            "text-gray-500 text-sm font-medium leading-normal mb-5 md:mb-[40px]"
                         }
                     >
                         {FooterData["footer.payments"]}

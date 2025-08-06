@@ -1,10 +1,10 @@
 import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import React from "react";
-import Pen2 from "@/public/images/pen3.png";
+import Pen2 from "@/public/images/service-faqs.webp";
 import Image from "next/image";
 import CustomTabs from "@/components/shared/tabs/custom-tabs";
 import InstrumentAccordion from "./components/instrument-accordion";
-import { writingInstruments ,WritingMode,services,repair} from "@/constants/care-services-faqs";
+import { writingInstruments ,WritingMode,repair} from "@/constants/care-services-faqs";
  
 export default function DiscoverService() {
     const myTabs = [
@@ -18,11 +18,11 @@ export default function DiscoverService() {
           label: "Мой аккаунт и заказы",
           content: <InstrumentAccordion data={WritingMode} />,
         },
-        {
-          value: "consulting",
-          label: "Консультации и ремонт по товарам",
-          content: <InstrumentAccordion data={services} />,
-        },
+        // {
+        //   value: "consulting",
+        //   label: "Консультации и ремонт по товарам",
+        //   content: <InstrumentAccordion data={services} />,
+        // },
         {
             value: "cancel",
             label: "Возврат и оплата",
@@ -39,7 +39,7 @@ export default function DiscoverService() {
                 <BreadcrumbDynamic/>
             </div>
             <div className="-mx-[calc((100vw-100%)/2)] mt-10 w-screen mb-28">
-                <Image src={Pen2} alt="a pen"/>
+                <Image src={Pen2} alt="a pen" width={1000} height={350} className="h-[400px] w-full"/>
             </div>
             <p className="text-lg font-medium">Часто задаваемые вопросы</p>
 

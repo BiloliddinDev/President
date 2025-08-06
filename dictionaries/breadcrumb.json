@@ -175,11 +175,18 @@
     "az": "Məkan"
   },
   "new": {
-    "uz": "Yangi",
-    "en": "New",
-    "ru": "Новое",
-    "tj": "Нав",
-    "az": "Yeni"
+    "uz": "Yangiliklar",
+    "en": "News",
+    "ru": "Новости",
+    "tj": "Хабарҳои нав",
+    "az": "Yeniliklər"
+  },
+  "news": {
+    "uz": "Yangi mahsulotlar",
+    "en": "New products",
+    "ru": "Новые продукты",
+    "tj": "Хабарҳои нав",
+    "az": "Yeniliklər"
   },
   "service": {
     "uz": "Xizmat",

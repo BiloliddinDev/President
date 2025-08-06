@@ -11,7 +11,6 @@ import {AlertTriangle} from "lucide-react";
 export default async function NewsPage() {
     const newProducts: ProductsInterface[] = await NewProductService() as ProductsInterface[];
     const filteredProducts = newProducts.filter(item => item?.meta?._new_product === true);
-
     return (
         <div className="container md:!mt-26 !mt-42">
             <BreadcrumbDynamic/>

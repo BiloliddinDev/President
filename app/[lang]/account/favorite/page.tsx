@@ -14,7 +14,8 @@ export default function FavoritePage() {
         <div>
             <AccountTitle text={"Мой любимый"}/>
             {items.length > 0 && (<p className="text-primary text-sm font-medium leading-tight mt-3">
-                You have {items.length} {items.length === 1 ? 'item' : 'items'} in your Wishlist
+                {/* You have {items.length} {items.length === 1 ? 'item' : 'items'} in your Wishlist */}
+                У вас {items.length} {items.length === 1 ? 'товар' : 'товара'} в списке желаемого.
             </p>)}
 
             {items.length === 0 ? (

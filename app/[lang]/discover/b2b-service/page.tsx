@@ -1,13 +1,12 @@
 import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
-
 import image3 from "@/public/images/soat.jpg";
 import image2 from "@/public/images/sumka.jpg";
 import image1 from "@/public/images/klatch.jpg";
-
 import {B2bCard} from "@/app/[lang]/discover/components/b2b-card/b2b-card";
 
 
 export default function B2BPage() {
+    
     return (
         <div className={"container md:!mt-26 !mt-42"}>
             <BreadcrumbDynamic/>

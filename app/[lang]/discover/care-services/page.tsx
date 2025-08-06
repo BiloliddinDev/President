@@ -19,8 +19,8 @@ const CareAndServices = () => {
                     src={Pen}
                     alt="a pen"
                     width={2000}
-                    height={2000}
-                    className="w-full h-[500px] object-cover"
+                    height={350}
+                    className="w-full  object-cover"
                 />
             </div>
 
