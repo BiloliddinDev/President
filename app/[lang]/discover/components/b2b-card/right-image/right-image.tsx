@@ -30,7 +30,6 @@ export default function RightImage({image, size, top, right,}: RightImageProps):
     useEffect(() => {
         const fetchImages = async () => {
             const response = await getB2bImages(`${session?.user.serverData?.id}`)
-            // const response = await getB2bImages(`a049f6e0-4162-4173-abd2-e74de8476c0e`)
 
             if (response && response.media_file && response.media_file.filePath) {
                 setImages(response);

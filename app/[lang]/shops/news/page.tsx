@@ -7,10 +7,18 @@ import {NewProductService} from "@/service/products-service/new-products.service
 import {ProductsInterface} from "@/interface/products-interface/products-interface";
 import ShopBanner from "@/public/images/shop-news.webp";
 import {AlertTriangle} from "lucide-react";
+import {getDictionary} from "@/lib/get-dictionary";
 
-export default async function NewsPage() {
+interface NewsPageProps {
+    params: Promise<{ lang: "uz" | "ru" | "en" | "tj" | 'az', category: string }>;
+}
+
+export default async function NewsPage({params}: NewsPageProps) {
+    const ShopsNewPageParam: { lang: "uz" | "ru" | "en" | 'tj' | "az", category: string } = await params;
     const newProducts: ProductsInterface[] = await NewProductService() as ProductsInterface[];
     const filteredProducts = newProducts.filter(item => item?.meta?._new_product === true);
+    const dictionary = await getDictionary(ShopsNewPageParam.lang);
+
     return (
         <div className="container md:!mt-26 !mt-42">
             <BreadcrumbDynamic/>
@@ -43,9 +51,9 @@ export default async function NewsPage() {
                     </div>
                 ) : (
                     <>
-                        <SortAndViewToggleWrapper itemLength={filteredProducts.length}>
+                        <SortAndViewToggleWrapper dictionary={dictionary} itemLength={filteredProducts.length}>
                             {filteredProducts.map(product => (
-                                <ProductsCard key={product.id} productData={product}/>
+                                <ProductsCard key={product.id} productData={product} dictionary={dictionary}/>
                             ))}
                         </SortAndViewToggleWrapper>
 

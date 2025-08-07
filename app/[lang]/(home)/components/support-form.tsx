@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import {useState} from "react";
 import {useForm} from "react-hook-form"
 import {zodResolver} from "@hookform/resolvers/zod"
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form"
@@ -12,8 +12,9 @@ import {sendTelegramMessage} from "@/lib/send-telegram-message"
 import {toast} from "sonner"
 import Image from "next/image"
 import supportImage from "@/public/images/support-form.jpg"
-import { AutoCloseModal } from "@/components/shared/form-modal/auto-closeModal"
+import {AutoCloseModal} from "@/components/shared/form-modal/auto-closeModal"
 import {CheckCircle} from "lucide-react";
+import {useSession} from "next-auth/react";
 
 interface SupportFormProps {
     dictionary: {
@@ -50,6 +51,8 @@ interface SupportFormProps {
 
 export const SupportForm = ({dictionary, showtime}: SupportFormProps) => {
     const supportSchema = createSupportSchema(dictionary.support.messages);
+    const {data: session} = useSession();
+
 
     const form = useForm<SupportFormValues>({
         resolver: zodResolver(supportSchema),
@@ -81,14 +84,16 @@ export const SupportForm = ({dictionary, showtime}: SupportFormProps) => {
         }
     }
     const [showModal, setShowModal] = useState(false);
-    
-    
+
+
+    console.log(session?.user)
+
     return (
         <>
             <div className="container py-16" id={"support"}>
                 {showtime && <SectionTitle className="mb-12" text={dictionary.support.title}/>}
                 <div className="grid md:grid-cols-2 gap-20 items-center bg-white rounded-[4px] p-8 md:p-12">
-                    <div data-aos="fade-right" className="text-center md:text-left" >
+                    <div data-aos="fade-right" className="text-center md:text-left">
                         <Image
                             src={supportImage}
                             alt="Support"
@@ -117,6 +122,11 @@ export const SupportForm = ({dictionary, showtime}: SupportFormProps) => {
                                                     placeholder={dictionary.support.form.name.placeholder}
                                                     className="w-full md:max-w-10/12"
                                                     {...field}
+                                                    defaultValue={
+                                                        (session?.user?.authType === "custom"
+                                                            ? session?.user?.serverData?.full_name
+                                                            : session?.user?.name) || ""
+                                                    }
                                                 />
                                             </FormControl>
                                             <FormMessage/>
@@ -150,9 +160,9 @@ export const SupportForm = ({dictionary, showtime}: SupportFormProps) => {
                     </div>
                 </div>
             </div>
-            <AutoCloseModal 
-                title= {dictionary.support.messages.modalSuccessTitle}
-                text= {dictionary.support.messages.modalSuccessDescription}
+            <AutoCloseModal
+                title={dictionary.support.messages.modalSuccessTitle}
+                text={dictionary.support.messages.modalSuccessDescription}
                 duration={8000}
                 icon={<CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4"/>}
                 open={showModal}
