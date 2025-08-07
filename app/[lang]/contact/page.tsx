@@ -1,6 +1,6 @@
 import { BreadcrumbDynamic } from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import Image from "next/image";
-import ServicesImage from "@/public/images/services5.png";
+import ServicesImage from "@/public/images/Контакты.webp";
 import FaqsForm from "@/app/[lang]/shops/components/faqs-form/faqs-form";
 import { getDictionary } from "@/lib/get-dictionary";
 interface ContactPageProps {
@@ -19,8 +19,8 @@ export default async function FaqsPage({ params }: ContactPageProps) {
       </div>
       <Image
         width={1000}
-        height={330}
-        className={"w-full h-[330px] object-cover mt-8 mb-20"}
+        height={350}
+        className={"w-full h-[400px] object-cover mt-8 mb-20"}
         src={ServicesImage}
         alt={"ServicesImage"}
         data-aos="fade-zoom-in"
