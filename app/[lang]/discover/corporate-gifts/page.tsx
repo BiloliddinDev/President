@@ -29,12 +29,14 @@ export default async function CorporateGifts({
         <BreadcrumbDynamic />
       </div>
       <CommonHeader
+
         contentLink
         title="Искусство корпоративного подарка"
         maintextColor="#0E1422"
         maintext="Корпоративные подарки с логотипом компании — это не просто формальность. Это мощный инструмент деловой коммуникации и укрепления имиджа. В President Business Gift мы создаём подарки для бизнесменов, руководителей и корпоративных клиентов, которые выражают уважение, внимание и статус от лица вашей компании."
       />
       <ImageWithText
+    
         orderText="order-1"
         orderImg="order-2"
         margin="-mr-20"

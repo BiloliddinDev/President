@@ -111,10 +111,10 @@ const CommonHeader: FC<Props> = ({
   imageUrl,
 }) => {
   return (
-    <div className="flex flex-col md:flex-row justify-between gap-8 mb-24">
+    <div className="flex flex-col md:flex-row justify-between gap-8 mb-24" >
       {/* Chap blok: Title + Rasm */}
       <div className="md:w-1/2 w-full">
-        <p className="text-lg font-medium mb-4">{title}</p>
+        <p data-aos="fade-up" className="text-lg font-medium mb-4">{title}</p>
 
         {imageUrl && (
           <Image

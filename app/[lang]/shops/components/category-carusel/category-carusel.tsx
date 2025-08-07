@@ -30,7 +30,7 @@ export default function CategoryCarousel({categories, lang}: CategoryCarouselPro
         <div className="w-full">
 
             <div className="flex justify-between mb-5">
-                <h2 className="text-xl font-semibold mb-4">Категории</h2>
+                <h2 data-aos="fade-up" className="text-xl font-semibold mb-4">Категории</h2>
                 <div>
                     <Button variant="ghost" onClick={() => scroll('left')}>
                         <ChevronLeft className="h-5 w-5"/>
@@ -46,7 +46,7 @@ export default function CategoryCarousel({categories, lang}: CategoryCarouselPro
                     className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth"
                 >
                     {categories.children.map((item) => (
-                        <div key={item.id} className="w-[300px] h-[300px] flex-shrink-0">
+                        <div  key={item.id} className="w-[300px] h-[300px] flex-shrink-0">
                             <CategoryCard category={item} lang={lang}/>
                         </div>
                     ))}

@@ -80,17 +80,21 @@ export default function shippingPage() {
                 className={"w-full h-[400px] object-cover mt-10 mb-20"}
                 src={ServicesImage}
                 alt={'ServicesImage'}
+                data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="0"
+                data-aos-offset="0"
             />
             <div className="container ">
                 <div className="w-[590px] flex flex-col justify-start items-start gap-5">
-                    <div className="text-primary text-lg font-medium leading-7">
+                    <div data-aos="fade-right" className="text-primary text-lg font-medium leading-7">
                          Доставка и Отправка
                     </div>
                     <div className="flex flex-col gap-3.5 mb-8">
                         <p className="text-zinc-700 text-base font-medium leading-normal">
                             Мы стремимся доставить Ваш заказ максимально быстро и удобно.
                         </p>
-                        <div className="p-6 bg-neutral-100 rounded flex flex-col gap-6 text-sm font-medium text-black leading-tight">
+                        <div data-aos="fade-up" className="p-6 bg-neutral-100 rounded flex flex-col gap-6 text-sm font-medium text-black leading-tight">
                             <div>
                                 <strong>По Ташкенту:</strong><br />
                                 Доставка осуществляется через Яндекс Доставку в день оформления заказа. 

@@ -76,7 +76,7 @@ const DiscoverLocation = () => {
                 <BreadcrumbDynamic/>
             </div>
             <div className="flex justify-between items-center gap-36 mb-32">
-                <div className="max-w-[553px]">
+                <div data-aos='fade-up' className="max-w-[553px]">
                     <p className="text-lg font-medium mb-5">President Business Gifts</p>
                     <p className="text-zinc-600 font-sm font-medium">
                     President Business Gifts  — это не просто демонстрация продукции, а настоящее погружение в мир эстетики, вдохновения и премиальных подарков. В нашем шоуруме вы сможете лично увидеть эксклюзивные изделия, сочетающие национальное наследие и современный дизайн, оценить их качество и подобрать идеальный подарок для себя или партнёров. Если вы хотите прочувствовать философию нашего бренда — обязательно посетите наш шоурум. Адрес и местоположение вы найдёте на этой странице.
@@ -89,13 +89,17 @@ const DiscoverLocation = () => {
                         className="w-[500px] h-[500px] rounded object-cover"
                         src={boutiqueImg}
                         alt="бутик"
+                        data-aos="fade-zoom-in"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="0"
+                        data-aos-offset="0"
                     />
                 </div>
             </div>
             <div
-                className="-mx-[calc((100vw-100%)/2)] w-screen bg-neutral-100 flex items-center justify-center gap-20 py-5">
-                {contactInfo.map((item) => (
-                    <a target="_blank" key={item.id} className="block" href={item.href}>
+                className="-mx-[calc((100vw-100%)/2)] w-screen bg-neutral-100 flex items-center justify-center gap-20 py-5 overflow-hidden">
+                {contactInfo.map((item, index) => (
+                    <a data-aos="fade-up" data-aos-delay={`${index*300}`} target="_blank" key={item.id} className="block" href={item.href}>
                         <div className="flex gap-4">
                             <IconComponent
                                 name={item.icon}

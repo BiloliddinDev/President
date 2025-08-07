@@ -18,10 +18,10 @@ export default function ReturnPage() {
             />
             <div className="container ">
                 <div className="w-[590px] flex flex-col justify-start items-start gap-5 mt-12">
-                    <div className="text-primary text-lg font-medium leading-7">
+                    <div data-aos="fade-right" className="text-primary text-lg font-medium leading-7">
                          Гарантия на продукцию
                     </div>
-                    <div className="p-6 bg-neutral-100 rounded flex flex-col gap-4 text-sm font-medium text-black leading-tight">
+                    <div data-aos="fade-up" className="p-6 bg-neutral-100 rounded flex flex-col gap-4 text-sm font-medium text-black leading-tight">
                         <p>
                             Мы уверены в качестве своей продукции и предоставляем гарантию на изделия.
                         </p>

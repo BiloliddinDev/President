@@ -8,7 +8,7 @@ const JournalPage = () => {
       <div className="mb-10">
         <BreadcrumbDynamic />
           
-         <div className={"mt-10"}>
+         <div data-aos="fade-up" className={"mt-10"}>
              <SectionTitle text={"Каталог"}/>
              <p className={"text-primary text-sm max-w-2xl mt-5"}>
               {/* President Business Gifts is not just a premium gift brand — it is a unique fusion of national identity and contemporary aesthetics. Inspired by the historical heritage, cultural richness, and artisanal traditions of the Uzbek people, we blend them seamlessly with modern design and the highest standards of quality. */}
@@ -17,7 +17,12 @@ const JournalPage = () => {
          </div>
       </div>
 
-      <div className="mt-16 mb-20">
+      <div className="mt-16 mb-20"
+        data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="0"
+        data-aos-offset="0"
+      >
         <Catalog />
       </div>
     </div>

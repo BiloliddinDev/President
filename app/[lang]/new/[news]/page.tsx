@@ -35,6 +35,10 @@ export default async function News({params}: NewsPageProps) {
                         width={"1000"}
                         height={"100"}
                         className={"w-full mt-7 h-[500px] object-cover "}
+                        data-aos="fade-zoom-in"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="0"
+                        data-aos-offset="0"
                     />
                 )}
             </div>

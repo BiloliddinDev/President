@@ -52,6 +52,7 @@ export const ProductsCard = ({ productData, className }: ProductsCardProps) => {
 
   return (
     <div
+      
       className={`${className} group relative flex flex-col rounded-lg transition hover:shadow-md bg-white pb-2`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

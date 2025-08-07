@@ -43,9 +43,9 @@ export default async function Home({params}: HomePageProps) {
                 </AnimatedSection>
             </section>
             <section className={"mt-[100px]"}>
-                <AnimatedSection animation={"fade-left"}>
+                {/* <AnimatedSection animation={"fade-left"}> */}
                     <Category dictionary={dictionary} lang={HomePageParam.lang}/>
-                </AnimatedSection>
+                {/* </AnimatedSection> */}
             </section>
             <section className={"mt-[100px]"}>
                 <Collections/>

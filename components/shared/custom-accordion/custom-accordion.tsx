@@ -26,6 +26,7 @@ const CustomAccordion: FC<AccordionProps> = ({
           {accordionTrigger}
         </AccordionTrigger>
         <AccordionContent className={accordionContentStyles}>
+          
           {typeof accordionContent === "string" ? (
             <div
               dangerouslySetInnerHTML={{

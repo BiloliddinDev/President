@@ -10,6 +10,7 @@ import {Toaster} from "@/components/ui/sonner";
 import AuthSessionProvider from "@/provider/auth-session-provider";
 import Script from "next/script";
 import Image from "next/image";
+import AOSProvider from "@/constants/AOSProvider";
 
 const microsoftHimalaya = localFont({
     src: "../fonts/microsoft-himalaya.ttf",
@@ -138,6 +139,7 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
         </noscript>
 
         <AuthSessionProvider>
+        <AOSProvider />
             <Suspense fallback={<LoadingComponent/>}>
                 <header>
                     <Navbar lang={language.lang}/>

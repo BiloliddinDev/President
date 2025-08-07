@@ -104,7 +104,10 @@ export default function BoutiqueForm({dictionary}: FaqsFormProps) {
                     control={form.control}
                     name="fullName"
                     render={({field}) => (
-                        <FormItem>
+                        <FormItem 
+                        data-aos="fade-left" 
+                        data-aos-delay="0"
+                        >
                             <FormLabel>Имя </FormLabel>
                             <FormControl><Input {...field} /></FormControl>
                             <FormMessage/>
@@ -115,7 +118,8 @@ export default function BoutiqueForm({dictionary}: FaqsFormProps) {
                     control={form.control}
                     name="phone"
                     render={({field}) => (
-                        <FormItem>
+                        <FormItem data-aos="fade-left" 
+                        data-aos-delay="200">
                             <FormLabel>Телефон</FormLabel>
                             <FormControl><Input {...field} /></FormControl>
                             <FormMessage/>
@@ -126,7 +130,8 @@ export default function BoutiqueForm({dictionary}: FaqsFormProps) {
                     control={form.control}
                     name="email"
                     render={({field}) => (
-                        <FormItem>
+                        <FormItem data-aos="fade-left" 
+                        data-aos-delay="400">
                             <FormLabel>Email</FormLabel>
                             <FormControl><Input type="email" {...field} /></FormControl>
                             <FormMessage/>
@@ -137,7 +142,8 @@ export default function BoutiqueForm({dictionary}: FaqsFormProps) {
                     control={form.control}
                     name="location"
                     render={({field}) => (
-                        <FormItem>
+                        <FormItem data-aos="fade-left" 
+                        data-aos-delay="600">
                             <FormLabel>Город</FormLabel>
                             <FormControl><Input {...field} /></FormControl>
                             <FormMessage/>
@@ -148,7 +154,8 @@ export default function BoutiqueForm({dictionary}: FaqsFormProps) {
                     control={form.control}
                     name="date"
                     render={({field}) => (
-                        <FormItem>
+                        <FormItem data-aos="fade-left" 
+                        data-aos-delay="800">
                             <FormLabel>Дата визита</FormLabel>
                             <FormControl><Input type="date" {...field} /></FormControl>
                             <FormMessage/>
@@ -159,7 +166,8 @@ export default function BoutiqueForm({dictionary}: FaqsFormProps) {
                     control={form.control}
                     name="time"
                     render={({field}) => (
-                        <FormItem>
+                        <FormItem data-aos="fade-left" 
+                        data-aos-delay="1000">
                             <FormLabel>Время визита</FormLabel>
                             <FormControl><Input type="time" {...field} /></FormControl>
                             <FormMessage/>
@@ -171,7 +179,8 @@ export default function BoutiqueForm({dictionary}: FaqsFormProps) {
                         control={form.control}
                         name="comment"
                         render={({field}) => (
-                            <FormItem>
+                            <FormItem data-aos="fade-left" 
+                            data-aos-delay="1200">
                                 <FormLabel>Комментарий</FormLabel>
                                 <FormControl><Textarea rows={4}
                                                        placeholder="Введите ваше сообщение здесь" {...field} /></FormControl>

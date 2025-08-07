@@ -95,7 +95,7 @@ export const SupportForm = ({dictionary, showtime}: SupportFormProps) => {
             <div className="container py-16" id={"support"}>
                 {showtime && <SectionTitle className="mb-12" text={dictionary.support.title}/>}
                 <div className="grid md:grid-cols-2 gap-20 items-center bg-white rounded-[4px] p-8 md:p-12">
-                    <div className="text-center md:text-left">
+                    <div data-aos="fade-right" className="text-center md:text-left" >
                         <Image
                             src={supportImage}
                             alt="Support"
@@ -108,7 +108,7 @@ export const SupportForm = ({dictionary, showtime}: SupportFormProps) => {
                         </p>
                     </div>
 
-                    <div>
+                    <div data-aos="fade-left">
                         <Form {...form}>
                             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                                 <FormField

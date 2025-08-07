@@ -15,7 +15,7 @@ const ImageWithText: FC<ImageWithTextProps> = ({
   video
 }) => {
   return (
-    <div className="flex flex-wrap md:flex-nowrap justify-between items-center mb-5  ">
+    <div data-aos="fade-right" className="flex flex-wrap md:flex-nowrap justify-between items-center mb-5  ">
       <div className={`max-w-[34rem]  ${orderText}`}>
         <h6 className="text-lg font-medium leading-7 mb-5 ">{title}</h6>
         <div className="text-sm text-[#474B57]">

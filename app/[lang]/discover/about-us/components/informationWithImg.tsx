@@ -15,7 +15,7 @@ const InformationWithImg: FC<Props> = ({
 }) => {
   return (
     <>
-      <p className={`text-sm font-medium my-8 md:my-12 ${textStyles}`}>
+      <p  data-aos="fade-up" className={`text-sm font-medium my-8 md:my-12 ${textStyles}`}>
         {infoText}
       </p>
 
