@@ -72,7 +72,7 @@ export default function SearchModalData() {
                     />
                     <SheetClose className="cursor-pointer opacity-70 hover:opacity-100 transition">
                         <X className="h-6 w-6"/>
-                        <span className="sr-only">Close</span>
+                        {/* <span className="sr-only">Close</span> */}
                     </SheetClose>
                 </div>
             )}
@@ -103,7 +103,6 @@ export default function SearchModalData() {
                                     <p className="text-center py-10 w-full">No products found</p>
                                 )}
                             </CarouselContent>
-
                             <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 z-40"/>
                             <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 z-40"/>
                         </Carousel>
@@ -118,9 +117,11 @@ export default function SearchModalData() {
                                 key={item.id}
                                 className="text-sm font-normal leading-[1.5rem] cursor-pointer my-2.5"
                             >
-                                <SheetClose className="cursor-pointer transition">
-                                    <Link href={item.link}>{item.name}</Link>
-                                </SheetClose>
+                                <Link href={item.link}>
+                                    <SheetClose className="cursor-pointer transition">
+                                        {item.name}
+                                    </SheetClose>
+                                </Link>
                             </div>
                         ))}
                     </div>

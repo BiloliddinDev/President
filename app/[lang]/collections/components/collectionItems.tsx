@@ -134,7 +134,7 @@ export async function CollectionItems({ collection, id }: CollectionsProps) {
                       src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${collectionImage}`}
                       alt="Collection Image"
                       width={1200}
-                      height={600}
+                      height={1200}
                       className="w-full h-full object-cover "
                     />
                   </div>

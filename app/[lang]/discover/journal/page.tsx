@@ -2,6 +2,8 @@ import { BreadcrumbDynamic } from "@/components/shared/breadcrumb-dynamic/breadc
 import React from "react";
 import Catalog from "../components/catalog";
 import {SectionTitle} from "@/components/ui/sectionTitle";
+import image from "@/public/images/Journal.jpg";
+
 const JournalPage = () => {
   return (
     <div className="container max-w-screen-xl mx-auto px-2 md:px-4  md:!mt-26 !mt-42 ">
@@ -25,6 +27,10 @@ const JournalPage = () => {
       >
         <Catalog />
       </div>
+      {/* <div>
+        <h2>Ushbu jurnalni o'zingiz uchun yuklab olishingiz mumkin!</h2><br />
+        <a href="public/images/Journal.jpg" download={"juornal.jpg"} className="underline cursor-pointer">Yuklab olish</a>
+      </div> */}
     </div>
   );
 };

@@ -96,7 +96,7 @@ export default function OrderPage() {
             <div className={"container md:!mt-26 !mt-42"}>
                 <BreadcrumbDynamic/>
                 <h2 className="text-primary text-4xl font-medium leading-10 my-5">Проверить</h2>
-                <h3 className="text-primary text-2xl font-medium leading-10 my-3">Оформить заказ ID: 3213321321</h3>
+                {/* <h3 className="text-primary text-2xl font-medium leading-10 my-3">Оформить заказ ID: 3213321321</h3> */}
                 <p className="text-gray-500 text-base font-medium leading-tight tracking-tight">
                     Создано: {year}:{month}:{day} / {hours}:{minutes}
                 </p>
