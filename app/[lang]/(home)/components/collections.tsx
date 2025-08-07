@@ -32,16 +32,14 @@ export interface CollectionsProps {
 
   const Collection=CollectionsData.filter((item)=>item.isMainPage===true)[0]
 
-  // const SummerCollectionsData: CollectionResponse =
-  //   (await SummerCollectionService(3)) as CollectionResponse;
   return (
     <div className="flex flex-col md:flex-row justify-between items-center gap-8 w-full mt-12">
       <div className="w-full md:w-[40%] flex justify-center">
         <Image
           src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${Collection.mediaFiles[0].filePath}`}
           alt="Collection Left Image"
-          width={500}
-          height={50}
+          width={1000}
+          height={500}
           className="object-contain w-full"
         />
       </div>

@@ -40,7 +40,7 @@ console.log(items)
                                 <p className="text-sm text-gray-500">{item.sku || "Описание недоступно"}</p>
                                 <p className="text-sm text-gray-600 mt-1">Цена:
                                     <span
-                                        className="font-semibold"> {(item.price * item.quantity).toLocaleString()} USD</span>
+                                        className="font-semibold"> {(item.price).toLocaleString()} USD</span>
                                 </p>
                                 <p className="text-sm text-gray-600">Общая сумма:
                                     <span className="font-semibold">

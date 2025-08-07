@@ -52,7 +52,7 @@ export default async function CategoryPage({params}: CategoryPageProps) {
                     <>
                         <SortAndViewToggleWrapper itemLength={ProductList.data.length}>
                             {ProductList.data.map((product, index) => (
-                                <span data-aos="fade-left" 
+                                <span data-aos="fade-left" key={product.id}
                                     data-aos-delay={`${index * 300}`}>
                                     <ProductsCard key={product.id} productData={product}/>
                                 </span> 

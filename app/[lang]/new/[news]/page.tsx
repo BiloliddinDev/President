@@ -25,7 +25,7 @@ export default async function News({params}: NewsPageProps) {
     return (
         <div>
             <div className={"container !mt-22"}>
-                <BreadcrumbDynamic url={NewsItem?.name || undefined}/>
+                <BreadcrumbDynamic url={NewData?.title || undefined}/>
             </div>
             <div className="container ">
                 {NewData.image_page?.filePath && (
