@@ -22,15 +22,15 @@ export interface CollectionsProps {
       newArrival: string;
     };
   };
-  lang: "uz" | "ru" | "en";
 }
 
-// export async function Collections({ dictionary, lang }: CollectionsProps) {
-  export async function Collections() {
+export async function Collections({ dictionary }: CollectionsProps) {
   const CollectionsData: CollectionResponse[] =
     (await CollectionService()) as CollectionResponse[];
 
-  const Collection=CollectionsData.filter((item)=>item.isMainPage===true)[0]
+  const Collection = CollectionsData.filter(
+    (item) => item.isMainPage === true
+  )[0];
 
   return (
     <div className="flex flex-col md:flex-row justify-between items-center gap-8 w-full mt-12">
@@ -63,7 +63,7 @@ export interface CollectionsProps {
                 className="m-0 p-0 min-w-48 mb-16"
                 style={{ flex: "0 0 40%" }}
               >
-                <CollectionCard  newsItem={item} />
+                <CollectionCard newsItem={item} />
               </CarouselItem>
             ))}
           </CarouselContent>
@@ -74,7 +74,7 @@ export interface CollectionsProps {
               variant={"secondary"}
               className={"mt-16 w-full md:max-w-52"}
             >
-              {/* {dictionary.collections.newArrival} */} Посмотреть коллекцию
+              {dictionary.collections.newArrival}
             </Button>
           </Link>
 

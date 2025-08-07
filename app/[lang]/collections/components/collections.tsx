@@ -4,14 +4,22 @@ import { CollectionItems } from "./collectionItems";
 
 export interface CollectionsProps {
   lang: "uz" | "ru" | "en";
+  dictionary: {
+    category: {
+      title: string;
+      new: string;
+      not_found: string;
+      unavailable: string;
+      show_more: string;
+    };
+  };
 }
 
-// export async function Collections({ lang }: CollectionsProps) {
-  export async function Collections() {
+export async function Collections({ lang ,dictionary}: CollectionsProps) {
   const CollectionsData: CollectionResponse[] =
     (await CollectionService()) as CollectionResponse[];
-  // console.log(lang);
-  const ids=CollectionsData.map((item)=>item.id)
+  console.log(lang);
+  const ids = CollectionsData.map((item) => item.id);
   return (
     <div className=" mx-auto mt-[100px]">
       {/* <div className="text-center mb-12 max-w-2xl mx-auto">
@@ -24,10 +32,14 @@ export interface CollectionsProps {
         </p>
       </div> */}
 
-      {ids.map((id:number)=>
-      <CollectionItems  collection={CollectionsData} id={id} key={id} />
-      
-    )}
+      {ids.map((id: number) => (
+        <CollectionItems
+          collection={CollectionsData}
+          id={id}
+          key={id}
+          dictionary={dictionary}
+        />
+      ))}
     </div>
   );
 }

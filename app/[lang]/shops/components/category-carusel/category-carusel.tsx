@@ -10,9 +10,24 @@ import {CategoryCard} from "@/components/shared/category-card/category-card";
 interface CategoryCarouselProps {
     categories: CategoryInterface
     lang: "uz" | "ru" | "en" | 'tj' | "az"
+    dictionary: {
+        category: {
+          title: string;
+          new: string;
+        };
+        sortAndView: {
+          productsLabel: string;
+          sortBy: string;
+          options: {
+            newest: string;
+            priceAsc: string;
+            priceDesc: string;
+          };
+        };
+      };
 }
 
-export default function CategoryCarousel({categories, lang}: CategoryCarouselProps) {
+export default function CategoryCarousel({categories, lang,dictionary}: CategoryCarouselProps) {
     const scrollRef = useRef<HTMLDivElement>(null)
 
     const scroll = (direction: 'left' | 'right') => {
@@ -30,7 +45,7 @@ export default function CategoryCarousel({categories, lang}: CategoryCarouselPro
         <div className="w-full">
 
             <div className="flex justify-between mb-5">
-                <h2 data-aos="fade-up" className="text-xl font-semibold mb-4">Категории</h2>
+                <h2 data-aos="fade-up" className="text-xl font-semibold mb-4">{dictionary.category.title}</h2>
                 <div>
                     <Button variant="ghost" onClick={() => scroll('left')}>
                         <ChevronLeft className="h-5 w-5"/>

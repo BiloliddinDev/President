@@ -5,22 +5,24 @@ import {StoryCard} from "@/components/shared/story-card/story-card";
 import {storiesData} from "@/constants/story-static-data";
 
 interface StoryProps {
-    dictionary?: {
-        news: {
-            title: string;
-            newArrival: string;
-        };
+    dictionary: {
+        homepage:{
+            more:string
+        }, 
+        story:{
+            story:string
+        }
     };
-    lang?: "uz" | "ru" | "en"
+    lang: "uz" | "ru" | "en" |"az"|"tj"
 }
 
 
-export const StorySection: FC<StoryProps> = async ({dictionary}) => {
+export const StorySection: FC<StoryProps> = async ({dictionary,lang}) => {
 
     console.log(dictionary)
     return (
         <div className={"relative "}>
-            <SectionTitle className={"container"} text={`История`}/>
+            <SectionTitle className={"container"} text={dictionary.story.story}/>
             <Carousel
                 opts={{
                     align: "start",
@@ -36,7 +38,7 @@ export const StorySection: FC<StoryProps> = async ({dictionary}) => {
                             key={storyline.id}
                             style={{flex: "0 0 35%"}}
                         >
-                            <StoryCard storyItem={storyline}/>
+                            <StoryCard storyItem={storyline} dictionary={dictionary} lang={lang}/>
                         </CarouselItem>
                     ))}
                 </CarouselContent>

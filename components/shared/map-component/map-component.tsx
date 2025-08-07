@@ -5,8 +5,9 @@ import { useEffect } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import Logo from "@/public/svg/PresidentLogo.svg";
+import { branches } from "@/app/[lang]/(home)/components/location";
 
-interface Branch {
+export interface Branch {
   lat: number;
   lng: number;
   name: {
@@ -18,41 +19,7 @@ interface Branch {
   };
 }
 
-const branches: Branch[] = [
-  {
-    lat: 41.2667445,
-    lng: 69.2483314,
-    name: {
-      uz: "Toshkent, Kichik halqa yo'li, 2/A",
-      ru: "Ташкент, Малая кольцевая дорога, 2/A",
-      en: "Tashkent, Small Ring Road, 2/A",
-      az: "",
-      tj: "",
-    },
-  },
-  {
-    lat: 41.30834,
-    lng: 69.269253,
-    name: {
-      uz: "Toshkent, TSUM, Islam Karimov ko'chasi, 17",
-      ru: "Ташкент, ЦУМ, улица Ислама Каримова, 17",
-      en: "Tashkent, TSUM, Islam Karimov Street, 17",
-      az: "",
-      tj: "",
-    },
-  },
-  {
-    lat: 38.57207207815268,
-    lng: 68.78858621349255,
-    name: {
-      uz: "Tojikiston, Dushanbe, Rudakiy ko‘chasi, 55/1",
-      ru: "Таджикистан, Душанбе, Рудаки, 55/1",
-      en: "Tajikistan, Dushanbe, Rudaki Street, 55/1",
-      az: "Tacikistan, Düşənbə, Rudaki küçəsi, 55/1",
-      tj: "Тоҷикистон, Душанбе, кӯчаи Рӯдакӣ, 55/1",
-    },
-  },
-];
+
 const customIcon = L.icon({
   iconUrl: Logo.src,
   iconSize: [30, 30],

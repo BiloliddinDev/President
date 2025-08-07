@@ -34,7 +34,7 @@ export default async function Home({params}: HomePageProps) {
             </section>
             <section className="mt-10 md:mt-[100px]">
                 <AnimatedSection animation={"fade-right"}>
-                    <News dictionary={dictionary} lang={HomePageParam.lang}/>
+                    <News dictionary={dictionary}/>
                 </AnimatedSection>
             </section>
             <section className="mt-[100px]">
@@ -48,7 +48,7 @@ export default async function Home({params}: HomePageProps) {
                 {/* </AnimatedSection> */}
             </section>
             <section className={"mt-[100px]"}>
-                <Collections/>
+                <Collections dictionary={dictionary}/>
             </section>
             <section className="mt-[100px]">
                 <ProductVideos dictionary={dictionary}/>
@@ -60,7 +60,7 @@ export default async function Home({params}: HomePageProps) {
                 <BusinessGifts dictionary={dictionary}/>
             </section>
             <section className={'mt-[100px]'}>
-                <StorySection/>
+                <StorySection dictionary={dictionary} lang={HomePageParam.lang}/>
             </section>
             <section className="mt-[100px] py-10 ">
                 <Location lang={HomePageParam.lang} dictionary={dictionary}/>
