@@ -2,13 +2,13 @@
   "breadcrumb": {
     "president": "President business gifts",
     "discover": "Discover",
-    "shop":"Shop",
-    "account":"Account",
-    "news":"News",
-    "about":"About us",
-    "category":"Category",
-    "collections":"Collections",
-    "corporategifts":"Corporate gifts"
+    "shop": "Shop",
+    "account": "Account",
+    "news": "News",
+    "about": "About us",
+    "category": "Category",
+    "collections": "Collections",
+    "corporategifts": "Corporate gifts"
   },
   "navbar": {
     "changelangg": "Change language",
@@ -23,19 +23,7 @@
     "title": "News",
     "newArrival": "coming soon"
   },
-  "about": {
-    "title": "About us",
-    "subtitle": "President Business Gifts — gifts that speak for you",
-    "description": "For almost 10 years, we have been creating gifts that express status, respect, and taste. Our assortment has everything for businessmen, executives, partners, and respected employees: from exclusive VIP sets to corporate solutions for the entire team. These are not just gifts — these are tokens of attention that remain in memory.",
-    "imageAlt": "President Business Gifts is not just a premium gift brand"
-  },
-  "category": {
-    "title": "Categories"
-  },
-  "collections": {
-    "title": "Collections",
-    "newArrival": "coming soon"
-  },
+
   "productVideos": {
     "title": "Product Videos"
   },
@@ -65,11 +53,7 @@
       "modalSuccessDescription": "The President Business Gifts team will contact you shortly. We look forward to providing you with the best service."
     }
   },
-  "corporategifts": {
-    "title": "Corporate gifts",
-    "text": "We also deal with corporate gifts with your logo - watches, leather sets, notebooks, pens and other souvenirs. We have already cooperated with banks, companies and government organizations - we select gifts according to their needs, carry out full branding and packaging",
-    "btn": "Read more"
-  },
+
   "location": {
     "title": "Branches",
     "text": "Addresses"
@@ -96,5 +80,103 @@
     "email": "Email",
     "enterEmail": "Enter your email",
     "submit": "Submit"
-  }
+  },
+  "homepage": {
+    "more": "More"
+  },
+  "collections": {
+    "title": "Collections",
+    "newArrival": "View collection"
+  },
+
+  "story": {
+    "story": "STORY"
+  },
+  "about": {
+    "title": "Our Story",
+    "subtitle": "President Business Gifts",
+    "description": "The President Business Gift brand started its journey in 2017 and by 2021 had firmly established itself in the market of exclusive corporate gifts. In just a few years, we have become a reliable partner for companies, government institutions, and private clients who value status, style, and high quality.",
+    "imageAlt": "President Business Gifts is not just a premium gift brand",
+    "infoText1": "Today, President Business Gift is not just a store, but a leader in the field of premium gifts for businessmen and executives. We offer a wide range of exclusive wristwatches, handcrafted leather goods, gift sets with custom engraving, VIP accessories, business notebooks, fountain pens, and souvenirs with a national touch.",
+    "infoText2": "We are rapidly expanding our presence and confidently entering new markets. We do not stop at what we have achieved — each day, the brand 'President Business Gifts' becomes more and more recognizable. Soon, the whole world will know about us."
+  },
+
+  "category": {
+    "title": "Categories",
+    "new": "New Arrival",
+    "not_found": "Product not found",
+    "unavailable": "Unfortunately, this product is currently unavailable. We will add it to the catalog soon. Please check back later.",
+    "show_more": "Show more"
+  },
+  "sortAndView": {
+    "productsLabel": "products",
+    "sortBy": "Sort by:",
+    "options": {
+      "newest": "Newest",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low"
+    }
+  },
+  "corporategifts": {
+    "title": "Corporate gifts",
+    "text": "We also deal with corporate gifts with your logo - watches, leather sets, notebooks, pens and other souvenirs. We have already cooperated with banks, companies and government organizations - we select gifts according to their needs, carry out full branding and packaging",
+    "btn": "Read more",
+    "desc": "President Business Gifts is not just a product showcase – it's a true immersion into the world of aesthetics, inspiration, and premium gifts. In our showroom, you can personally see exclusive items that combine national heritage and modern design, evaluate their quality, and find the perfect gift for yourself or your partners. If you want to feel the philosophy of our brand – be sure to visit our showroom. You can find the address and location on this page. If you have any questions or want to schedule a meeting in advance – feel free to contact us anytime.",
+    "headerTitle": "The Art of Corporate Gifting",
+    "headerText": "Corporate gifts with your company logo are not just a formality. They’re a powerful tool for business communication and brand reputation. At President Business Gift, we create gifts that show respect, care, and prestige from your company to executives, partners, and corporate clients.",
+    "block1": {
+      "title": "Branded gifts in your company style",
+      "subtitle": "<ul><li>Wristwatches with your logo or emblem</li><li>Leather goods (wallets, clutches, cardholders, bags) with embossed logos</li><li>Customized notebooks and engraved pens</li><li>Gift sets for executives and VIP guests</li><li>Plaques and souvenirs with national symbols</li></ul>"
+    },
+    "block2": {
+      "title": "Personalization and custom approach",
+      "subtitle": "Each gift can be tailored to your corporate identity. We use laser engraving, embossing, and gold foiling technologies. This gives your gift a premium and personal touch. Personalized corporate gifts show special attention to your partners, clients, or employees."
+    },
+    "block3": {
+      "title": "When to give corporate gifts?",
+      "subtitle": "<ul><li>On company anniversaries</li><li>After successful deals</li><li>On national and public holidays</li><li>To motivate key clients or employees</li><li>In honor of promotions, awards, or appointments</li></ul>"
+    },
+    "block4": {
+      "title": "Why choose President Business Gift?",
+      "subtitle": "<ul><li>Over 8 years of experience in premium B2B gifts</li><li>Trusted partner for banks, government entities, large corporations</li><li>Delivery across Central Asia and personal support</li><li>European production technologies and quality control</li><li>Gifts that inspire admiration, respect, and trust</li></ul>"
+    }
+  },
+  "catalog": {
+    "title": "Catalog",
+    "description": "President Business Gifts is not just a premium gift brand, but a unique blend of national identity and modern aesthetics. Inspired by the historical heritage, cultural richness, and craftsmanship traditions of the Uzbek people, we harmoniously combine them with modern design and the highest standards of quality."
+  },
+  "finewatch": {
+    "breadcrumb": "Honoring the Minerva Legacy",
+    "maintext": "At President Business Gifts, we don't just create gifts — we create values. Each product goes through a journey from idea to perfect execution under the supervision of our team.\nWe design everything ourselves, select premium materials, and control every step of production.",
+    "title": "Honoring the Minerva Legacy",
+    "rightSideTitle": "Craftsmanship in Every Detail",
+
+    "craftsmanship": {
+      "productType": "Craftsmanship",
+      "description": "Aesthetic and technical excellence",
+      "textInfo": "Our watches feature precise Japanese and Swiss movements, and for leather goods, we use only selected genuine leather with high durability. Every stitch, engraving, and detail is manually refined so that the final product reflects quality, prestige, and respect."
+    },
+    "engineering": {
+      "productType": "Engineering",
+      "description": "A mechanism presented to the world",
+      "textInfo": "We source parts from trusted suppliers, but all assembly, branding, and packaging is carried out according to our own unique standards. The result is a product that represents your attention and taste."
+    },
+    "innovation": {
+      "productType": "Innovation",
+      "description": "Advanced technology in every detail",
+      "textInfo": "We apply modern processing, testing, and branding technologies to ensure each item is not only beautiful but also durable. Thanks to precise engineering, integration of new solutions, and design expertise — you receive a product that combines tradition, style, and technology."
+    }
+  },
+  "careandservices": {
+    "title": "Product Care and Services"
+  },
+  "careServices": {
+  "writing": "Writing Instrument",
+  "leather": "Leather",
+  "watches": "Watches"
+},
+"service": {
+  "title": "Customer Service"
+}
+
 }

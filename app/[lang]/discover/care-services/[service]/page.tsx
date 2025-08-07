@@ -1,42 +1,51 @@
-import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
+import { BreadcrumbDynamic } from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import React from "react";
 import leather from "@/public/images/care-leather.webp";
 import watch from "@/public/images/care-watch.webp";
 import writing from "@/public/images/care-writing.webp";
 import Image from "next/image";
-import Writing from "../components/writing";
-import Leather from "../components/leatger";
-import Watches from "../components/watches";
+import {Leather} from "../components/leatger";
+import {Watches} from "../components/watches";
+import { getDictionary } from "@/lib/get-dictionary";
+import { Writing } from "../components/writing";
 
-interface ServiceProps {
-    params: Promise<{
-        service: string
-    }>
+interface DiscoverServiceProps {
+  params: Promise<{ lang: "uz" | "ru" | "en" | "tj" | "az"; service: string }>;
 }
 
-export default async function DiscoverService({params}: ServiceProps) {
-    const service: { service: string } = await params;
+export default async function DiscoverService({
+  params,
+}: DiscoverServiceProps) {
+  const param = await params;
+  const dictionary = await getDictionary(param.lang);
+  const t = dictionary.careServices;
 
-    let imageSrc = writing;
-    if (service.service === "leather") {
-        imageSrc = leather;
-    } else if (service.service === "watches") {
-        imageSrc = watch;
-    }
+  const serviceName = param.service === "writing%20instrument" ? "writing" :param.service ; // "writing", "leather", "watches"
+  console.log(serviceName);
+  let imageSrc = writing;
+  if (serviceName === "leather") {
+    imageSrc = leather;
+  } else if (serviceName === "watches") {
+    imageSrc = watch;
+  }
 
+  return (
+    <div className="container mx-auto px-2 md:px-4  md:!mt-26 !mt-42">
+      <div className="mb-10">
+        <BreadcrumbDynamic url={t[serviceName as keyof typeof t]} />
+      </div>
+      <div className="-mx-[calc((100vw-100%)/2)] w-screen mb-28">
+        <Image src={imageSrc} alt={t[serviceName as keyof typeof t]} width={10000} height={1000} />
+      </div>
+      <p className="text-lg font-medium">{t[serviceName as keyof typeof t]}</p>
 
-    return (
-        <div className="container mx-auto px-2 md:px-4  md:!mt-26 !mt-42">
-            <div className="mb-10">
-                <BreadcrumbDynamic url={imageSrc == writing ? "Письменный инструмент" : imageSrc == leather ? "Кожа" : "Часы"} />
-            </div>
-            <div className="-mx-[calc((100vw-100%)/2)] w-screen mb-28">
-                <Image src={imageSrc} alt="a pen" width={10000} height={1000}/>
-            </div>
-            <p className="text-lg font-medium">{imageSrc == writing ? "Письменный инструмент" : imageSrc == leather ? "Кожа" : "Часы"}</p>
-
-            {imageSrc == writing ? <Writing/> : imageSrc == leather ? <Leather/> : <Watches/>}
-        </div>
-    );
-};
-
+      {serviceName === "writing" ? (
+        <Writing lang={param.lang} dictionary={dictionary}/>
+      ) : serviceName === "leather" ? (
+        <Leather lang={param.lang} dictionary={dictionary}/>
+      ) : (
+        <Watches lang={param.lang} dictionary={dictionary}/>
+      )}
+    </div>
+  );
+}

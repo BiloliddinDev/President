@@ -64,7 +64,7 @@ export default function ProductDetailPage() {
       });
     }
   };
-
+console.log(product)
   return (
     <div className="container md:!mt-26 !mt-42 relative">
       <BreadcrumbDynamic url={product?.name} />

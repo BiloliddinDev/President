@@ -1,18 +1,18 @@
 import React from "react";
 import { Collections } from "./components/collections";
+import { getDictionary } from "@/lib/get-dictionary";
 
 export interface HomePageProps {
     params: Promise<{ lang: "uz" | "ru" | "en" }>;
 }
 
-// export default async function Home({ params }: HomePageProps) {
-    export default async function Home() {
+export default async function Home({ params }: HomePageProps) {
 
-    // const HomePageParam: { lang: "uz" | "ru" | "en" } = await params;
-    // const dictionary = await getDictionary(HomePageParam.lang);
+    const HomePageParam: { lang: "uz" | "ru" | "en" } = await params;
+    const dictionary = await getDictionary(HomePageParam.lang);
     return (
         <section className="mt-36">
-            <Collections  />
+            <Collections dictionary={dictionary} lang={HomePageParam.lang}/>
         </section>
     );
 }

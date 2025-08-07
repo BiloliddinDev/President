@@ -12,19 +12,7 @@
     "title": "Yangiliklar",
     "newArrival": "Hoziroq sotib olish"
   },
-  "about": {
-    "title": "Biz haqimizda",
-    "subtitle": "President Business Gifts — Sizning o'rningizda so'zlaydigan sovg'alar",
-    "description": "Biz deyarli 10 yildan beri maqom, hurmat va didni ifodalovchi sovg'alarni yaratib kelmoqdamiz. Bizning assortimentda biznesmenlar, rahbarlar, hamkorlar va hurmatli xodimlar uchun hamma narsa mavjud: eksklyuziv VIP to'plamlardan tortib butun jamoa uchun korporativ yechimlargacha. Bu shunchaki sovg'alar emas — bu xotirada qoladigan e'tibor belgilaridir.",
-    "imageAlt": "President Business Gifts bu shunchaki premium sovg'alar brendi emas"
-  },
-  "category": {
-    "title": "Kategoriyalar"
-  },
-  "collections": {
-    "title": "Toʻplamlar",
-    "newArrival": "Hoziroq sotib olish"
-  },
+
   "productVideos": {
     "title": "Mahsulot Videolari"
   },
@@ -54,11 +42,7 @@
       "modalSuccessDescription": "Yaqin orada President Business Gifts jamoasi siz bilan bog‘lanadi. Biz sizga eng yaxshi xizmat ko‘rsatishdan mamnun bo‘lamiz!"
     }
   },
-  "corporategifts": {
-    "title": "Korporativ sovg'alar",
-    "text": "Biz logotipingiz tushirilgan korporativ sovg‘alar bilan ham shug‘ullanamiz — soatlar,charm toʻplam, bloknotlar, ruchkalar va boshqa suvenirlar. Biz allaqachon banklar, kompaniyalar va davlat tashkilotlari bilan hamkorlik qilganmiz — sovg‘alarni ehtiyojga mos tanlab, brendlash va qadoqlashni to‘liq amalga oshiramiz",
-    "btn": "Batafsil ma’lumot"
-  },
+
   "location": {
     "title": "Filiallar",
     "text": "Manzillar"
@@ -79,12 +63,107 @@
     "returnMessage": "Vaqtincha bosh sahifamizga qaytib turing.",
     "buttonText": "Bosh sahifaga tashrif buyuring"
   },
-  "account":{
+  "account": {
     "accountTitle": "Akkaunt tafsilotlari",
     "fullName": "To‘liq ism",
     "email": "Elektron pochta",
     "enterEmail": "Emailingizni kiriting",
     "submit": "Yuborish"
-  }
-  
+  },
+  "homepage": {
+    "more": "Batafsil"
+  },
+  "collections": {
+    "title": "Kolleksiyalar",
+    "newArrival": "Kolleksiyani ko‘rish"
+  },
+
+  "story": {
+    "story": "HIKOYA"
+  },
+  "about": {
+    "title": "Bizning tariximiz",
+    "subtitle": "President Business Gifts",
+    "description": "President Business Gift brendi 2017-yilda o‘z faoliyatini boshlagan va 2021-yildan boshlab eksklyuziv korporativ sovg‘alar bozorida faol ravishda o‘z o‘rnini egalladi. Atigi bir necha yil ichida biz maqom, uslub va yuqori sifatni qadrlaydigan kompaniyalar, davlat muassasalari va xususiy mijozlar uchun ishonchli hamkor bo‘lib qoldik.",
+    "imageAlt": "President Business Gifts bu shunchaki premium sovg'alar brendi emas",
+    "infoText1": "President Business Gift – bu oddiy doʻkon emas, balki biznes va rahbarlar uchun moʻljallangan premium sovgʻalar sohasida yetakchi hisoblanadi. Bizda eksklyuziv soatlar, qoʻlda tayyorlangan charm buyumlar, brend gravirovkasi tushirilgan sovgʻa toʻplamlari, VIP aksessuarlar, ishchi daftarchalar, ruchkalar va milliy uslubdagi suvenirlar mavjud.",
+    "infoText2": "Biz o‘z faoliyatimizni jadal kengaytirmoqdamiz va yangi bozorlarni zabt etmoqdamiz. Har bir kun bilan “President Business Gifts” brendi yanada mashhur bo‘lib bormoqda. Tez orada butun dunyo biz haqimizda bilib oladi."
+  },
+  "category": {
+    "title": "Kategoriyalar",
+    "new": "Yangi mahsulot",
+    "not_found": "Mahsulot topilmadi",
+    "unavailable": "Kechirasiz, bu mahsulot hozircha mavjud emas. Tez orada uni katalogga qo‘shamiz. Iltimos, keyinroq yana kirib ko‘ring.",
+    "show_more": "Yana ko‘rsatish"
+  },
+  "sortAndView": {
+    "productsLabel": "ta mahsulot",
+    "sortBy": "Saralash:",
+    "options": {
+      "newest": "Eng yangilar",
+      "priceAsc": "Narx: o'sish bo'yicha",
+      "priceDesc": "Narx: kamayish bo'yicha"
+    }
+  },
+  "corporategifts": {
+    "title": "Korporativ sovg'alar",
+    "text": "Biz logotipingiz tushirilgan korporativ sovg‘alar bilan ham shug‘ullanamiz — soatlar,charm toʻplam, bloknotlar, ruchkalar va boshqa suvenirlar. Biz allaqachon banklar, kompaniyalar va davlat tashkilotlari bilan hamkorlik qilganmiz — sovg‘alarni ehtiyojga mos tanlab, brendlash va qadoqlashni to‘liq amalga oshiramiz",
+    "btn": "Batafsil ma’lumot",
+    "desc": "President Business Gifts — bu shunchaki mahsulotlarni namoyish qilish emas, bu estetika, ilhom va premium sovg'alar olamiga sho'ng'ishdir. Bizning shourumimizda siz eksklyuziv, milliy meros va zamonaviy dizayn uyg'unligidagi mahsulotlarni shaxsan ko'rishingiz, ularning sifatini baholashingiz va o'zingiz yoki hamkorlaringiz uchun mukammal sovg'ani tanlashingiz mumkin. Agar siz brendimiz falsafasini his qilmoqchi bo‘lsangiz — bizning shourumga tashrif buyuring. Manzil va joylashuvni ushbu sahifada topasiz. Agar savollaringiz bo‘lsa yoki oldindan uchrashuv belgilamoqchi bo‘lsangiz — biz bilan qulay vaqtda bog‘laning.",  
+    "headerTitle": "Korporativ sovg‘a san’ati",
+    "headerText": "Kompaniya logotipi tushirilgan korporativ sovg‘alar – bu shunchaki rasmiyatchilik emas. Bu biznes aloqalarni mustahkamlash va imidjni oshirishning kuchli vositasidir. President Business Gift kompaniyasida biz sizning nomingizdan hurmat, e’tibor va maqomni ifodalovchi sovg‘alarni yaratamiz.",
+    "block1": {
+      "title": "Kompaniyangiz uslubida brendlangan sovg‘alar",
+      "subtitle": "<ul><li>Tashkilot logotipi yoki gerbli bilak soatlari</li><li>Logotip tushirilgan charm buyumlar (hamyon, klatch, vizitkalar, sumkalar)</li><li>Shaxsiylashtirilgan daftarnomalar va o‘yib yozilgan ruchkalar</li><li>Rahbarlar va VIP mehmonlar uchun sovg‘a to‘plamlari</li><li>Milliy ramzlar tushirilgan plaketlar va suvenir buyumlar</li></ul>"
+    },
+    "block2": {
+      "title": "Individual yondashuv va shaxsiylashtirish",
+      "subtitle": "Har bir mahsulot kompaniyangizning korporativ uslubiga moslashtiriladi. Biz lazerli o‘yma, bosma va oltin bilan ishlov texnologiyalaridan foydalanamiz. Bu sovg‘ani eksklyuziv va shaxsiy qiladi. Dizayni shaxsiylashtirilgan korporativ sovg‘alar – bu hamkorlar, mijozlar yoki xodimlarga bo‘lgan e’tibor belgisi."
+    },
+    "block3": {
+      "title": "Qachon korporativ sovg‘alar beriladi?",
+      "subtitle": "<ul><li>Kompaniya yubileylari munosabati bilan</li><li>Muvaffaqiyatli bitimlardan so‘ng</li><li>Davlat va milliy bayramlar arafasida</li><li>Xodimlar va muhim mijozlarni rag‘batlantirish uchun</li><li>Yangi lavozimga tayinlash, mukofotlash munosabati bilan</li></ul>"
+    },
+    "block4": {
+      "title": "Nega aynan President Business Gift?",
+      "subtitle": "<ul><li>Premium B2B sovg‘alar sohasida 8 yildan ortiq tajriba</li><li>Banklar, davlat tashkilotlari va yirik kompaniyalar uchun ishonchli hamkor</li><li>Butun Markaziy Osiyo bo‘ylab yetkazib berish va individual yondashuv</li><li>Yevropa texnologiyalari asosida ishlab chiqarish va sifat nazorati</li><li>Hayrat, hurmat va ishonch uyg‘otuvchi sovg‘alar</li></ul>"
+    }
+  },
+  "catalog": {
+    "title": "Katalog",
+    "description": "President Business Gifts — bu shunchaki premium sovg'alar brendi emas, balki milliy o'zlik va zamonaviy estetikani noyob uyg'unligidir. O'zbek xalqining tarixiy merosi, madaniy boyligi va hunarmandchilik an'analaridan ilhomlanib, biz ularni zamonaviy dizayn va eng yuqori sifat standartlari bilan uyg'unlashtiramiz."
+  },
+  "finewatch": {
+    "breadcrumb": "Minerva merosiga hurmat",
+    "maintext": "President Business Gifts'da biz shunchaki sovg‘alar emas — biz qadriyatlar yaratamiz. Har bir mahsulot g‘oyadan mukammal ijrogacha bo‘lgan yo‘lni jamoamiz nazorati ostida bosib o‘tadi.\nBiz dizaynni o‘zimiz ishlab chiqamiz, premium darajadagi materiallarni tanlaymiz va ishlab chiqarishning har bir bosqichini nazorat qilamiz.",
+    "title": "Minerva merosiga hurmat",
+    "rightSideTitle": "Har bir detalda mahorat",
+
+    "craftsmanship": {
+      "productType": "Mahorat",
+      "description": "Estetik va texnik mukammallik",
+      "textInfo": "Soatlarimiz eng aniqlikdagi Yaponiya va Shveytsariya mexanizmlari bilan jihozlangan, charm buyumlar uchun esa yuqori sifatli tabiiy charm ishlatiladi. Har bir chok, har bir o‘yma, har bir detal qo‘lda ishlanadi, mahsulot esa sifat, obro‘ va hurmat timsoliga aylanadi."
+    },
+    "engineering": {
+      "productType": "Muhandislik",
+      "description": "Dunyo e’tiboriga taqdim etilgan mexanizm",
+      "textInfo": "Detallarni ishonchli yetkazib beruvchilardan olamiz, biroq yig‘ish, brendlash va qadoqlash to‘liq bizning standartlar asosida amalga oshiriladi. Natijada esa mahsulot — bu sizning e’tiboringiz va didingizni ifodalovchi vizitka."
+    },
+    "innovation": {
+      "productType": "Innovatsiya",
+      "description": "Yuqori texnologiyalar — har bir detalda",
+      "textInfo": "Biz zamonaviy ishlov berish, test va brendlash texnologiyalarini qo‘llaymiz, har bir mahsulot nafaqat chiroyli, balki mustahkam bo‘lishi uchun. Aniq muhandislik, yangi yechimlar va dizayn tajribasi bilan an’analar, uslub va texnologiyalar uyg‘unlashadi."
+    }
+  },
+  "careandservices": {
+    "title": "Mahsulotlarga g'amxo'rlik va xizmatlar"
+  },
+  "careServices": {
+  "writing": "Yozish quroli",
+  "leather": "Charm buyumlar",
+  "watches": "Soatlar"
+},
+"service": {
+  "title": "Mijozlarga xizmat ko‘rsatish"
+}
 }

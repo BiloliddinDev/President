@@ -77,9 +77,16 @@ import Image from "next/image";
 interface CollectionsProps {
   collection: CollectionResponse[];
   id: number;
+  dictionary:{    category: {
+    title: string;
+    new: string;
+    not_found: string;
+    unavailable: string;
+    show_more: string;
+  };}
 }
 
-export async function CollectionItems({ collection, id }: CollectionsProps) {
+export async function CollectionItems({ collection, id ,dictionary}: CollectionsProps) {
   const selectedCollection = collection.find((collect) => collect.id === id);
   if (!selectedCollection) return null;
 
@@ -132,7 +139,7 @@ export async function CollectionItems({ collection, id }: CollectionsProps) {
                   >
                     <Image
                       src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${collectionImage}`}
-                      alt="Collection Image"
+                      alt={`collection-image-${index}`}
                       width={1200}
                       height={1200}
                       className="w-full h-full object-cover "
@@ -143,7 +150,7 @@ export async function CollectionItems({ collection, id }: CollectionsProps) {
 
               return (
                 <div key={(item as ProductsInterface).id} className="col-span-1 row-span-1">
-                  <ProductsCard productData={item as ProductsInterface} />
+                  <ProductsCard productData={item as ProductsInterface} dictionary={dictionary}/>
                 </div>
               );
             })}

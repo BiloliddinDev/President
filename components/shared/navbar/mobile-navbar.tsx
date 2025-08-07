@@ -80,15 +80,28 @@ const MobileNavbar = ({lang, languages, county, currency}:
                         tabs={[
                             {
                                 value: "shops",
-                                label: "Shops",
+                                label: {
+                                    uz: "Yangiliklar",
+                                    ru: "Новости",
+                                    en: "News",
+                                    tj: "Хабарҳо",
+                                    az: "Xəbərlər",
+                                  },
                                 content: <ShopModalContent lang={"ru"} category={category}/>,
                             },
                             {
                                 value: "discover",
-                                label: "Discover",
+                                label: {
+                                    uz: "Yangiliklar",
+                                    ru: "Новости",
+                                    en: "News",
+                                    tj: "Хабарҳо",
+                                    az: "Xəbərlər",
+                                  },
                                 content: <DiscoverModalContent lang={'ru'}/>,
                             },
                         ]}
+                        lang={}
                     />
                     <ChangeLangModal lang={lang} languages={languages} county={county} currency={currency}/>
                 </div>

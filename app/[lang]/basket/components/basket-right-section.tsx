@@ -22,7 +22,7 @@ export default function BasketRightSection() {
                 </div>
                 <div className="flex justify-between">
                     <span>Цены продуктов</span>
-                    <span className="font-semibold">{totalPrice.toLocaleString()} сум</span>
+                    <span className="font-semibold">{totalPrice.toLocaleString()} USD</span>
                 </div>
                 {/*<div className="flex justify-between">*/}
                 {/*    <span>Стоимость доставки</span>*/}
@@ -35,7 +35,7 @@ export default function BasketRightSection() {
                 <hr/>
                 <div className="flex justify-between text-lg font-semibold">
                     <span>Итого:</span>
-                    <span>{totalPrice.toLocaleString()} сум</span>
+                    <span>{totalPrice.toLocaleString()} USD</span>
                 </div>
             </div>
 

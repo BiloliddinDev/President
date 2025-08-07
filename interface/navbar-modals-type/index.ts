@@ -7,5 +7,5 @@ export interface NavbarModalProps {
     side?: "top" | "bottom" | "right" | "left";
     sheetTitle?: string;
     textColorClass?: string;
-    lang: "uz" | "ru" | "en" | "tj" | "az"
+    lang: "uz" | "ru" | "en" 
 }

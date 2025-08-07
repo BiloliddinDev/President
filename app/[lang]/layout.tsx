@@ -11,6 +11,7 @@ import AuthSessionProvider from "@/provider/auth-session-provider";
 import Script from "next/script";
 import Image from "next/image";
 import AOSProvider from "@/constants/AOSProvider";
+import { getDictionary } from "@/lib/get-dictionary";
 
 const microsoftHimalaya = localFont({
     src: "../fonts/microsoft-himalaya.ttf",
@@ -44,6 +45,7 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({children, params}: RootLayoutProps) {
     const language: { lang: "en" | "ru" | "uz" } = await params;
+    const dictionary = await getDictionary(language.lang);
 
     return (
         <html suppressHydrationWarning={true} lang={language.lang}>
@@ -142,7 +144,7 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
         <AOSProvider />
             <Suspense fallback={<LoadingComponent/>}>
                 <header>
-                    <Navbar lang={language.lang}/>
+                    <Navbar lang={language.lang} dictionary={dictionary}/>
                 </header>
                 <main>{children}</main>
                 <Footer lang={language.lang}/>
