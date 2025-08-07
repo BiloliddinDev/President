@@ -21,7 +21,7 @@ export const NewsCard: FC<{ newsItem: NewsItemInterface; }> = ({newsItem,}) => {
             )}
             <h4
                 className={
-                    "self-stretch justify-start text-gray-800 text-xl font-medium mt-2.5 leading-7 line-clamp-2"
+                    "self-stretch justify-start text-gray-800 text-xl font-medium mt-2.5 leading-7 line-clamp-2 px-3"
                 }
             >
                 {newsItem?.title}
@@ -31,7 +31,7 @@ export const NewsCard: FC<{ newsItem: NewsItemInterface; }> = ({newsItem,}) => {
                 passHref={true}
                 className={` absolute -bottom-0  w-full`}
             >
-                <Button variant={"secondary"} className={" w-full mt-5 md:max-w-52"}>
+                <Button variant={"secondary"} className={" w-[90%] mt-5 md:max-w-52"}>
                     Подробнее
                 </Button>
             </Link>

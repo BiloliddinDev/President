@@ -1,6 +1,6 @@
 import { BreadcrumbDynamic } from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import Image from "next/image";
-import images2 from "@/public/images/service-appoinment.webp";
+import images2 from "@/public/images/Записаться_на_визит.png";
 import BoutiqueForm from "@/app/[lang]/shops/components/boutique-form/boutique-form";
 import { getDictionary } from "@/lib/get-dictionary";
 interface AppointmentPageProps {
@@ -22,8 +22,8 @@ export default async function AppointmentPage({
       </div>
       <Image
         width={1000}
-        height={350}
-        className={"w-full h-[400px] object-cover mt-10 mb-20"}
+        height={600}
+        className={"w-full h-[470px] object-cover mt-10 mb-20"}
         src={images2}
         alt={"ServicesImage"}
       />
