@@ -1,12 +1,7 @@
 import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
-import Image from "next/image";
-import Link from "next/link";
-import {Button} from "@/components/ui/button";
 import {NewsCard} from "@/components/shared/news-card/news-card";
 import {NewsItemInterface} from "@/interface/news-home-page/news";
-import {NewsService} from "@/service/news-service/news.service";
 import {NewsListService} from "@/service/home-service/newslist.service";
-import FormattedText from "@/components/shared/formatted-text/formatted-text";
 import {splitNameAndIdFromParam} from "@/hooks/get-breadcrumb";
 
 interface NewsPageProps {
@@ -27,7 +22,7 @@ export default async function News({params}: NewsPageProps) {
             <div className={"container !mt-22"}>
                 <BreadcrumbDynamic url={NewsItem?.name || undefined}/>
             </div>
-            
+
 
             <div className={"container grid grid-cols-3 gap-5 !mt-20 gap-y-10"}>
                 {NewList.map((newsItem) => (

@@ -6,6 +6,9 @@ import Placeholder from "@/public/images/placeholder.png";
 import RightImage from "@/app/[lang]/discover/components/b2b-card/right-image/right-image";
 import {buttonVariants} from "@/components/ui/button";
 import {ResponsiveValue} from "@/hooks/get-responsive-value";
+import {useSession} from "next-auth/react";
+import {toast} from "sonner";
+import {useRouter} from 'next/navigation';
 
 interface B2bCardProps {
     className?: string;
@@ -21,27 +24,44 @@ export const B2bCard = ({className, image, top, right, size, title, desc,}: B2bC
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const [uploading, setUploading] = useState(false);
     const [processedImage, setProcessedImage] = useState<string | null>(null);
+    const {data: session} = useSession();
+    const router = useRouter();
+
 
     const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+
+        if (!session?.user?.serverData?.id) {
+            toast.error("Ошибка авторизации", {
+                description: "Пожалуйста, войдите в систему перед загрузкой файла.",
+                className: "!bg-white !text-black",
+                descriptionClassName: "!text-black"
+            });
+            return;
+        }
+
         const file = e.target.files?.[0];
         if (!file || file.size > 3 * 1024 * 1024) return;
+
 
         setSelectedImage(file.name);
         const formData = new FormData();
         formData.append("file", file);
+        formData.append("userId", "a049f6e0-4162-4173-abd2-e74de8476c0e");
 
         try {
             setUploading(true);
             const res = await fetch("/api/remove-bg", {
                 method: "POST",
-                body: formData,
+                body: formData
             });
 
-            if (!res.ok)  new Error("Upload failed");
+            if (!res.ok) new Error("Upload failed");
 
             const blob = await res.blob();
             const imageUrl = URL.createObjectURL(blob);
             setProcessedImage(imageUrl);
+            router.refresh()
+
         } catch (error) {
             console.error("Upload error:", error);
             console.log(processedImage)

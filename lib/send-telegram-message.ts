@@ -4,7 +4,7 @@ type MessageType = "Contact Us" | "Booking" | "Support";
 
 interface SendTelegramMessageOptions {
     type: MessageType;
-    fields: Record<string, string | boolean >;
+    fields: Record<string, string | boolean>;
 }
 
 export const sendTelegramMessage = async ({type, fields,}: SendTelegramMessageOptions): Promise<boolean> => {
@@ -37,10 +37,10 @@ export const sendTelegramMessage = async ({type, fields,}: SendTelegramMessageOp
         const res = await response.json();
 
         if (res.ok) {
-            toast.success("✅ Your message has been sent successfully!");
+            // toast.success("✅ Your message has been sent successfully!");
             return true;
         } else {
-            toast.error("❌ Failed to send the message. Please try again.");
+            // toast.error("❌ Failed to send the message. Please try again.");
             return false;
         }
     } catch (error) {
