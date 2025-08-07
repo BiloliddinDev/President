@@ -19,6 +19,13 @@ interface Props {
   tabs: TabItem[];
   className?: string;
   identifier?: string;
+  label?:  {
+    uz: string;
+    ru: string;
+    en: string;
+    tj: string;
+    az: string;
+  };
   lang: "uz" | "ru" | "en" | "tj" | "az";
 }
 

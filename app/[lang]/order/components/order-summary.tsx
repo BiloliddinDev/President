@@ -35,14 +35,14 @@ export default function OrderSummary() {
                     <span>{totalPrice.toLocaleString()} сум</span>
                 </div>
             </div>
- <Button variant="default" type="submit" className="w-full" >
-                Перейти к оплату
+            <Button variant="default" type="submit" className="w-full" >
+                Перейти к оплатe
             </Button>
            
 
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            {/* <div className="flex items-center gap-2 text-sm text-gray-600">
                 <span>Служба доставки в течение 2–3 дней.</span>
-            </div>
+            </div> */}
         </div>
     );
 }

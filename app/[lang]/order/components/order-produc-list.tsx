@@ -1,16 +1,25 @@
 "use client";
 
 import Image from "next/image";
-import {Trash2} from "lucide-react";
-import {ProductCardProps} from "@/interface/product-card-type";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { Trash2 } from "lucide-react";
+import { ProductCardProps } from "@/interface/product-card-type";
+import { useBasketStore } from "@/lib/set-basket.storage";
 
-export default function OrderedProducts({products}: {
-    products: ProductCardProps[],
-}) {
+export default function OrderedProducts({ products }: { products: ProductCardProps[] }) {
+    const router = useRouter();
+    const { removeFromBasket } = useBasketStore();
+
+    useEffect(() => {
+        if (products.length === 0) {
+            router.push("/"); // home sahifaga redirect
+        }
+    }, [products.length, router]);
+
     return (
         <div className="bg-white p-4 sm:p-6 rounded-[4px] border mt-4">
             <h2 className="text-lg sm:text-xl font-bold mb-4">Заказанные товары</h2>
-
             <div className="space-y-4">
                 {products.map((product: ProductCardProps) => (
                     <div
@@ -34,16 +43,15 @@ export default function OrderedProducts({products}: {
                                 </p>
                             </div>
                         </div>
-
-                        <div
-                            className="flex items-center gap-2 sm:gap-4 w-full sm:w-auto justify-between sm:justify-end">
+                        <div className="flex items-center gap-2 sm:gap-4 w-full sm:w-auto justify-between sm:justify-end">
                             <p className="font-medium text-sm whitespace-nowrap">
                                 {product.price.toLocaleString("ru-RU")} сум
                             </p>
                             <button
                                 className="bg-red-100 hover:bg-red-200 text-red-600 p-2 rounded-full shrink-0"
+                                onClick={() => removeFromBasket(product.id)}
                             >
-                                <Trash2 className="w-4 h-4"/>
+                                <Trash2 className="w-4 h-4" />
                             </button>
                         </div>
                     </div>

@@ -137,7 +137,7 @@ console.log(product)
             </div>
           </div>
 
-          <p className="text-sm text-gray-600 mt-4">Ident No. {product?.sku}</p>
+          {/* <p className="text-sm text-gray-600 mt-4">Ident No. {product?.sku}</p> */}
 
           {/* <Accordion type="single" collapsible className="w-full mt-4">
             <AccordionItem value="material">

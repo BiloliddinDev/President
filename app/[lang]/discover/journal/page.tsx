@@ -34,6 +34,10 @@ export default async function JournalPage({ params }: JournalPageProps) {
       >
         <Catalog />
       </div>
+      {/* <div>
+        <h2>Ushbu jurnalni o'zingiz uchun yuklab olishingiz mumkin!</h2><br />
+        <a href="public/images/Journal.jpg" download={"juornal.jpg"} className="underline cursor-pointer">Yuklab olish</a>
+      </div> */}
     </div>
   );
 }
