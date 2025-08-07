@@ -1,22 +1,22 @@
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious,} from "@/components/ui/carousel";
 import {SectionTitle} from "@/components/ui/sectionTitle";
 import {NewsCard} from "@/components/shared/news-card/news-card";
-import {FC} from "react";
 import {NewsItemInterface} from "@/interface/news-home-page/news";
 import {NewsListService} from "@/service/home-service/newslist.service";
 
 interface NewsProps {
-    dictionary?: {
+    dictionary: {
         news: {
             title: string;
             newArrival: string;
         };
+        homepage: { more: string };
     };
     lang?: "uz" | "ru" | "en" | "az" | 'tj'
 }
 
 
-export const News: FC<NewsProps> = async ({dictionary}) => {
+export const News = async ({ dictionary }: NewsProps)  => {
 
     const NewData: NewsItemInterface[] = await NewsListService() as NewsItemInterface[]
 
@@ -39,7 +39,7 @@ export const News: FC<NewsProps> = async ({dictionary}) => {
                             key={newsItem.id}
                             style={{flex: "0 0 35%"}}
                         >
-                            <NewsCard newsItem={newsItem}/>
+                            <NewsCard newsItem={newsItem} dictionary={dictionary}/>
                         </CarouselItem>
                     ))}
                 </CarouselContent>

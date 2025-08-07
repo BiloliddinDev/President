@@ -1,10 +1,8 @@
-
 import Image1 from "@/public/images/home-page-corporative-box.jpg";
 
 import { SectionTitle } from "@/components/ui/sectionTitle";
 import AutoplayCarousel from "@/components/shared/corporative-gifts/AutoplayCarousel";
 import { LangType } from "@/interface/lang/lang-type";
-// import { CorporateService } from "@/service/home-service/corporate-gifts.service";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -18,17 +16,18 @@ interface BusinessGiftsCarouselProps {
       btn: string;
     };
   };
-  lang?: LangType
+  lang?: LangType;
 }
 
-
-export default async function BusinessGiftsCarousel({dictionary}: BusinessGiftsCarouselProps) {
-
-    // const CorporativeGiftsData:CorporativeGifts = await CorporateService() as CorporativeGifts
-
+export default async function BusinessGiftsCarousel({
+  dictionary,
+}: BusinessGiftsCarouselProps) {
   return (
     <div className="w-full">
-       <SectionTitle className={"container !mb-7"} text={dictionary.corporategifts.title} /> 
+      <SectionTitle
+        className={"container !mb-7"}
+        text={dictionary.corporategifts.title}
+      />
 
       <div className="flex md:flex-row flex-col md:gap-20 bg-neutral-100">
         {/* Carousel Component */}
@@ -40,20 +39,20 @@ export default async function BusinessGiftsCarousel({dictionary}: BusinessGiftsC
         <div className="w-full md:w-[50%] container">
           <div className="w-full">
             <h2 className="text-primary mb-5 text-lg md:text-5xl font-normal font-title mt-5 md:mt-[75px]">
-              {/* {dictionary.corporategifts.title} */}President Business Gifts
-            </h2> 
+              {dictionary.corporategifts.title}
+            </h2>
             <p className="text-gray-600 text-base md:text-xl max-w-[500px] md:w-[800] font-normal font-description mb-5">
-                {/* <p className="text-gray-600 text-base md:text-xl max-w-[353px] md:w-[500] font-normal font-description mb-5"> */}
-              {/* {dictionary.corporategifts.text} */}
-              {/* { CorporativeGiftsData["corporate.gifts.text"]} */}
-              “President Business Gifts” создаёт индивидуальные подарки, которые подчёркивают стиль и ценности вашей компании. Мы разрабатываем премиальные решения по вашему продукту или логотипу — от дизайна до упаковки Каждое изделие — это часть вашего имиджа, воплощённая в безупречном исполнении.
+              {dictionary.corporategifts.text}
             </p>
             <div className="mb-10 md:mb-0 max-w-44">
-            <Link href={`/discover/corporate-gifts`}>
-                    <Button variant={"secondary"} className={"mt-5 w-full md:max-w-52"}>Подробнее</Button>
-            </Link>
-              {/* <SupportFormModal btnText= { CorporativeGiftsData["corporate.gifts.btn"]} /> */}
-              {/* <SupportFormModal btnText={dictionary.corporategifts.btn} /> */}
+              <Link href={`/discover/corporate-gifts`}>
+                <Button
+                  variant={"secondary"}
+                  className={"mt-5 w-full md:max-w-52"}
+                >
+                 {dictionary.corporategifts.btn}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

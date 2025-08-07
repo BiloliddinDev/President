@@ -8,6 +8,7 @@ import {NewsService} from "@/service/news-service/news.service";
 import {NewsListService} from "@/service/home-service/newslist.service";
 import FormattedText from "@/components/shared/formatted-text/formatted-text";
 import {splitNameAndIdFromParam} from "@/hooks/get-breadcrumb";
+import { getDictionary } from "@/lib/get-dictionary";
 
 interface NewsPageProps {
     params: Promise<{
@@ -19,13 +20,14 @@ interface NewsPageProps {
 export default async function News({params}: NewsPageProps) {
     const News = await params.then((params) => params);
     const NewsItem = splitNameAndIdFromParam(News.news)
+    const dictionary = await getDictionary(News.lang);
     const NewData: NewsItemInterface = await NewsService(Number(NewsItem.id)) as NewsItemInterface
     const NewList: NewsItemInterface[] = await NewsListService() as NewsItemInterface[]
 
     return (
         <div>
             <div className={"container !mt-22"}>
-                <BreadcrumbDynamic url={NewsItem?.name || undefined}/>
+                <BreadcrumbDynamic url={NewData?.title || undefined}/>
             </div>
             <div className="container ">
                 {NewData.image_page?.filePath && (
@@ -48,17 +50,15 @@ export default async function News({params}: NewsPageProps) {
 
                     {NewData.title}
                 </h2>
-                {/*<p className="self-stretch justify-start text-zinc-700 text-sm font-normal font-['Inter'] leading-tight mb-9">*/}
                 <FormattedText input={NewData.description}/>
-                {/*</p>*/}
                 <Link href={`${NewData.instagramLink}`}>
-                    <Button variant={"default"} className={'mt-7'}>Подробнее</Button>
+                    <Button variant={"default"} className={'mt-7'}>{dictionary.homepage.more}</Button>
                 </Link>
             </div>
 
             <div className={"container grid grid-cols-3 gap-5 !mt-20 gap-y-10"}>
                 {NewList.map((newsItem) => (
-                    <NewsCard key={newsItem.id} newsItem={newsItem}/>
+                    <NewsCard key={newsItem.id} newsItem={newsItem} dictionary={dictionary}/>
                 ))}
             </div>
         </div>

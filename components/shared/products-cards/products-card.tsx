@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -11,9 +10,22 @@ import { useEffect, useRef, useState } from "react";
 interface ProductsCardProps {
   productData: ProductsInterface;
   className?: string;
+  dictionary: {
+    category: {
+      title: string;
+      new: string;
+      not_found: string;
+      unavailable: string;
+      show_more: string;
+    };
+  };
 }
 
-export const ProductsCard = ({ productData, className }: ProductsCardProps) => {
+export const ProductsCard = ({
+  productData,
+  className,
+  dictionary,
+}: ProductsCardProps) => {
   const { isInWishlist, toggleWishlist } = useWishlistStore();
   const isLiked = isInWishlist(productData.id);
 
@@ -52,7 +64,6 @@ export const ProductsCard = ({ productData, className }: ProductsCardProps) => {
 
   return (
     <div
-      
       className={`${className} group relative flex flex-col rounded-lg transition hover:shadow-md bg-white pb-2`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -71,12 +82,14 @@ export const ProductsCard = ({ productData, className }: ProductsCardProps) => {
           {images.map((img, index) => (
             <Image
               key={index}
-              alt={productData.name}
+              alt={`product-${productData.id}`}
               src={img}
               fill
               sizes="(max-width: 768px) 100vw, 25vw"
               className={`object-cover absolute top-0 left-0 transition-opacity duration-700 rounded ${
-                index === currentImageIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                index === currentImageIndex
+                  ? "opacity-100 z-10"
+                  : "opacity-0 z-0"
               }`}
             />
           ))}
@@ -86,7 +99,7 @@ export const ProductsCard = ({ productData, className }: ProductsCardProps) => {
       <div className="flex flex-col justify-between h-full p-3">
         {productData.meta._new_product && (
           <span className="mb-3 w-fit rounded border px-2 py-0.5 text-xs font-medium text-gray-700">
-            Новое поступление
+            {dictionary.category.new}
           </span>
         )}
         <h3 className="text-sm font-medium mb-2 text-gray-900">

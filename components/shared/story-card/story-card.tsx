@@ -11,14 +11,26 @@ interface StoryCardProps {
             uz: string;
             ru: string;
             en: string;
+            az: string;
+            tj: string;
+
         };
         link: string;
         image: StaticImageData;
     };
+    dictionary:{
+        homepage:{
+            more:string
+        },
+        story:{
+            story:string
+        }
+    },
+    lang: "uz" | "ru" | "en" | "tj" | 'az'
 }
 
 
-export const StoryCard: FC<StoryCardProps> = ({storyItem}) => {
+export const StoryCard: FC<StoryCardProps> = ({storyItem,dictionary,lang}) => {
 
     return (
         <div className={"w-[100%] h-[100%] text-center"}>
@@ -28,14 +40,14 @@ export const StoryCard: FC<StoryCardProps> = ({storyItem}) => {
                 width={1000}
                 height={1000}
                 className={"w-96 md:w-full h-[500px] object-cover"}
-                alt={`${storyItem.name["ru"]}`}
+                alt={`${storyItem.name[lang]}`}
             />
             <h4
                 className={
                     "self-stretch justify-start text-gray-800 text-xl font-medium mt-2.5 leading-9"
                 }
             >
-                {storyItem?.name.ru}
+                {storyItem?.name[lang]}
             </h4>
             <Link
                 href={storyItem.link}
@@ -43,7 +55,7 @@ export const StoryCard: FC<StoryCardProps> = ({storyItem}) => {
                 className={`self-stretch justify-start`}
             >
                 <Button variant={"secondary"} className={" w-full mt-5 md:max-w-52"}>
-                    Подробнее
+                    {dictionary.homepage.more}
                 </Button>
             </Link>
         </div>

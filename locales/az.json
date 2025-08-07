@@ -12,19 +12,7 @@
     "title": "Assortiment",
     "newArrival": "tezliklə"
   },
-  "about": {
-    "title": "Haqqımızda",
-    "subtitle": "President Business Gifts — sizin yerinizə danışan hədiyyələr",
-    "description": "Demək olar ki, 10 ildir ki, biz statusu, hörməti və zövqü ifadə edən hədiyyələr yaradırıq. Bizim assortimentdə biznesmenlər, rəhbərlər, tərəfdaşlar və dəyərli əməkdaşlar üçün hər şey var: eksklüziv VIP dəstlərdən tutmuş bütün komanda üçün korporativ həllərə qədər. Bunlar sadəcə hədiyyə deyil — bunlar yadda qalan diqqət simvollarıdır.",
-    "imageAlt": "President Business Gifts sadəcə premium hədiyyə brendi deyil"
-  },
-  "category": {
-    "title": "Kateqoriyalar"
-  },
-  "collections": {
-    "title": "Kolleksiyalar",
-    "newArrival": "tezliklə"
-  },
+
   "productVideos": {
     "title": "Məhsul videoları"
   },
@@ -54,11 +42,7 @@
       "modalSuccessDescription": "President Business Gifts komandası qısa zamanda sizinlə əlaqə saxlayacaq. Sizə ən yüksək səviyyədə xidmət göstərməkdən məmnun olarıq!"
     }
   },
-  "corporategifts": {
-    "title": "Korporativ hədiyyələr",
-    "text": "Biz həmçinin loqotipinizlə korporativ hədiyyələr — saatlar, dəri dəstləri, qeyd dəftərləri, qələmlər və digər suvenirlər təqdim edirik. Artıq banklar, şirkətlər və dövlət təşkilatları ilə əməkdaşlıq etmişik — onların ehtiyaclarına uyğun hədiyyələr seçir, tam brendləmə və qablaşdırma edirik",
-    "btn": "Daha ətraflı"
-  },
+
   "location": {
     "title": "Filiallar",
     "text": "Ünvanlar"
@@ -79,15 +63,109 @@
     "returnMessage": "Hələlik ana səhifəmizə qayıdın.",
     "buttonText": "Ana səhifəyə keç"
   },
-  "account":{
+  "account": {
     "accountTitle": "Hesab detalları",
     "fullName": "Tam ad",
     "email": "Elektron poçt",
     "enterEmail": "Elektron poçtunuzu daxil edin",
     "submit": "Təsdiqlə"
-  }
-  
+  },
+  "homepage": {
+    "more": "Ətraflı"
+  },
+  "collections": {
+    "title": "Kolleksiyalar",
+    "newArrival": "Kolleksiyaya bax"
+  },
+
+  "story": {
+    "story": "HEKAYƏ"
+  },
+  "about": {
+    "title": "Bizim tariximiz",
+    "subtitle": "President Business Gifts",
+    "description": "President Business Gift brendi fəaliyyətinə 2017-ci ildə başlayıb və artıq 2021-ci ildən eksklüziv korporativ hədiyyə bazarında fəal şəkildə tanınıb. Cəmi bir neçə il ərzində biz statusu, üslubu və yüksək keyfiyyəti qiymətləndirən şirkətlər, dövlət qurumları və özəl müştərilər üçün etibarlı tərəfdaşa çevrildik.",
+    "imageAlt": "President Business Gifts sadəcə premium hədiyyə brendi deyil",
+    "infoText1": "President Business Gift bu gün sadəcə bir mağaza deyil, iş adamları və rəhbərlər üçün premium hədiyyə sahəsində liderdir. Biz eksklüziv qol saatlarından əl işi olan dəri məhsullara, loqolu hədiyyə dəstlərindən VIP aksesuarlar, iş dəftərləri, qələm və milli motivli suvenirlərə qədər geniş çeşid təklif edirik.",
+    "infoText2": "Biz sürətlə fəaliyyət sahəmizi genişləndiririk və yeni bazarlara çıxırıq. Dayanmırıq — hər keçən gün 'President Business Gifts' markası daha da tanınır. Tezliklə bütün dünya bizi tanıyacaq."
+  },
+  "category": {
+    "title": "Kateqoriyalar",
+    "new": "Yeni gələnlər",
+    "not_found": "Məhsul tapılmadı",
+    "unavailable": "Təəssüf ki, bu məhsul hazırda mövcud deyil. Tezliklə kataloqa əlavə olunacaq. Zəhmət olmasa, bir az sonra yenidən yoxlayın.",
+    "show_more": "Daha çox göstər"
+  },
+  "sortAndView": {
+    "productsLabel": "məhsul",
+    "sortBy": "Sıralama:",
+    "options": {
+      "newest": "Ən yenilər",
+      "priceAsc": "Qiymət: artan",
+      "priceDesc": "Qiymət: azalan"
+    }
+  },
+  "corporategifts": {
+    "title": "Korporativ hədiyyələr",
+    "text": "Biz həmçinin loqotipinizlə korporativ hədiyyələr — saatlar, dəri dəstləri, qeyd dəftərləri, qələmlər və digər suvenirlər təqdim edirik. Artıq banklar, şirkətlər və dövlət təşkilatları ilə əməkdaşlıq etmişik — onların ehtiyaclarına uyğun hədiyyələr seçir, tam brendləmə və qablaşdırma edirik",
+    "btn": "Daha ətraflı",
+    "desc": "President Business Gifts – sadəcə məhsulların nümayişi deyil, estetikaya, ilhama və premium hədiyyələr dünyasına həqiqi bir səyahətdir. Şourumumuzda milli irsi və müasir dizaynı birləşdirən eksklüziv məhsulları şəxsən görə, onların keyfiyyətini qiymətləndirə və özünüz və ya tərəfdaşlarınız üçün ideal hədiyyəni seçə bilərsiniz. Brendimizin fəlsəfəsini hiss etmək istəyirsinizsə – mütləq şourumumuza baş çəkin. Ünvan və yerləşməni bu səhifədə tapa bilərsiniz. Əgər sualınız varsa və ya əvvəlcədən görüş təyin etmək istəyirsinizsə – bizimlə əlaqə saxlayın.",
+    "headerTitle": "Korporativ hədiyyə sənəti",
+    "headerText": "Şirkət loqolu korporativ hədiyyələr sadəcə formalıq deyil. Bu, biznes ünsiyyətini və şirkət imicini gücləndirmək üçün güclü bir vasitədir. President Business Gift olaraq, biz sizin adınızdan hörmət, diqqət və nüfuz göstərən hədiyyələr hazırlayırıq.",
+    "block1": {
+      "title": "Şirkət üslubuna uyğun brendli hədiyyələr",
+      "subtitle": "<ul><li>Loqolu və ya gerbli qol saatları</li><li>Loqolu dəri məhsulları (pulqabı, çantalar, vizitkart qabları)</li><li>Fərdi dəftərlər və həkk olunmuş qələmlər</li><li>Rəhbərlər və VIP qonaqlar üçün hədiyyə dəstləri</li><li>Milli simvollarla plaklar və suvenirlər</li></ul>"
+    },
+    "block2": {
+      "title": "Fərdi yanaşma və personalizasiya",
+      "subtitle": "Hər bir məhsul şirkət brendinizə uyğun şəkildə fərdiləşdirilə bilər. Biz lazer oyma, ştamplama və qızıl örtmə texnologiyalarından istifadə edirik. Bu, hədiyyəni eksklüziv və şəxsi edir. Fərdi dizayna malik korporativ hədiyyələr tərəfdaşlarınıza, müştərilərinizə və ya əməkdaşlarınıza xüsusi diqqətin göstəricisidir."
+    },
+    "block3": {
+      "title": "Korporativ hədiyyələr nə zaman verilir?",
+      "subtitle": "<ul><li>Şirkət ildönümlərində</li><li>Uğurlu müqavilələrdən sonra</li><li>Dövlət və milli bayramlarda</li><li>Əməkdaşların və əsas müştərilərin motivasiyası üçün</li><li>Yeni vəzifəyə təyin, mükafatlandırma münasibətilə</li></ul>"
+    },
+    "block4": {
+      "title": "Niyə President Business Gift?",
+      "subtitle": "<ul><li>Premium B2B hədiyyələr sahəsində 8 ildən çox təcrübə</li><li>Banklar, dövlət qurumları və iri şirkətlər üçün etibarlı tərəfdaş</li><li>Mərkəzi Asiya üzrə çatdırılma və fərdi yanaşma</li><li>Avropa texnologiyaları ilə istehsal və keyfiyyətə nəzarət</li><li>Hörmət, heyranlıq və etimad doğuran hədiyyələr</li></ul>"
+    }
+  },
+  "catalog": {
+    "title": "Kataloq",
+    "description": "President Business Gifts təkcə premium hədiyyə brendi deyil, həm də milli kimlik və müasir estetik anlayışının unikal birləşməsidir. Özbək xalqının tarixi irsi, mədəni zənginliyi və sənətkarlıq ənənələrindən ilhamlanaraq, biz onları müasir dizayn və ən yüksək keyfiyyət standartları ilə birləşdiririk."
+  },
+  "finewatch": {
+    "breadcrumb": "Minerva irsinə hörmət",
+    "maintext": "President Business Gifts-də biz sadəcə hədiyyə deyil — dəyər yaradırıq. Hər bir məhsul fikirdən mükəmməl icraya qədər komandamızın nəzarəti altında keçilir.\nDizaynı özümüz hazırlayır, premium materiallar seçir və istehsalın hər mərhələsinə nəzarət edirik.",
+    "title": "Minerva irsinə hörmət",
+    "rightSideTitle": "Hər detalda ustalıq",
+
+    "craftsmanship": {
+      "productType": "Ustalıq",
+      "description": "Estetik və texniki mükəmməllik",
+      "textInfo": "Saatlarımız ən dəqiq Yaponiya və İsveçrə mexanizmləri ilə təchiz olunub, dəri məmulatları üçün isə yalnız yüksək keyfiyyətli təbii dəridən istifadə olunur. Hər tikiş, hər oyma, hər detal əllə tamamlanır ki, nəticədə məhsul keyfiyyət, nüfuz və hörmətin simvolu olsun."
+    },
+    "engineering": {
+      "productType": "Mühəndislik",
+      "description": "Dünyaya təqdim olunan mexanizm",
+      "textInfo": "Detalları etibarlı təchizatçılardan alırıq, lakin yığma, markalama və qablaşdırma tam bizim standartlarımıza uyğun həyata keçirilir. Nəticədə isə məhsul sizin diqqətinizi və zövqünüzü əks etdirir."
+    },
+    "innovation": {
+      "productType": "Yenilik",
+      "description": "Hər bir detalda yüksək texnologiyalar",
+      "textInfo": "Müasir emal, test və markalama texnologiyalarını tətbiq edirik ki, hər bir məhsul yalnız gözəl deyil, həm də davamlı olsun. Dəqiq mühəndislik, yeni həllərin inteqrasiyası və dizayn təcrübəsi ilə sizə ənənə, üslub və texnologiyanın vəhdətində məhsul təqdim edirik."
+    }
+  },
+  "careandservices": {
+    "title": "Məhsullara qulluq və xidmətlər"
+  },
+  "careServices": {
+  "writing": "Yazı aləti",
+  "leather": "Dəri məmulatları",
+  "watches": "Saatlar"
+},
+"service": {
+  "title": "Müştəri Xidməti"
 }
 
 
-
+}
