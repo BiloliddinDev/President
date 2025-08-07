@@ -96,7 +96,9 @@ export default function SearchModalData() {
                                             key={product.id}
                                             className="!w-[90%] sm:!basis-[80%] md:!basis-[50%] lg:!basis-[33.3%]"
                                         >
-                                            <ProductsCard className={"w-[200px]"} productData={product}/>
+                                            <SheetClose className="cursor-pointer transition">
+                                                <ProductsCard className={"w-[200px]"} productData={product}/>
+                                            </SheetClose>
                                         </div>
                                     ))
                                 ) : (
