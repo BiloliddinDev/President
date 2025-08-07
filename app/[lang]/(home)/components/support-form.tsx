@@ -81,14 +81,7 @@ export const SupportForm = ({dictionary, showtime}: SupportFormProps) => {
         }
     }
     const [showModal, setShowModal] = useState(false);
-    // const handleSubmit = async (e: React.FormEvent) => {
-    //     e.preventDefault();
     
-    //     // Simulate successful form submit
-    //     setTimeout(() => {
-    //       setShowModal(true);
-    //     }, 500);
-    //   };
     
     return (
         <>
