@@ -33,16 +33,16 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     categoryId.id || ""
   )) as CategoryInterface;
 
-  return (
-    <div className="container md:!mt-26 !mt-42">
-      <BreadcrumbDynamic url={CategoryDetailData2.name || undefined} />
-      <div>
-        <h2 className="text-primary mt-10 text-xl font-medium leading-loose">
-          {CategoryDetailData2.name}
-        </h2>
-        <p className="text-zinc-700 text-sm font-normal leading-tight mt-4 mb-11">
-          {CategoryDetailData2.description}
-        </p>
+    return (
+        <div className="container md:!mt-26 !mt-42">
+            <BreadcrumbDynamic url={CategoryDetailData2.name || undefined}/>
+            <div>
+                <h2 className="text-primary mt-10 text-xl font-medium leading-loose">
+                    {CategoryDetailData2.name}
+                </h2>
+                <p className="text-zinc-700 text-sm font-normal leading-tight mt-4 mb-11">
+                    {CategoryDetailData2.description}
+                </p>
 
         {CategoryChildData.children.length > 0 && (
           <CategoryCarousel

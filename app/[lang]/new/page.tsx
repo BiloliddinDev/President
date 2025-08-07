@@ -23,7 +23,7 @@ export default async function News({params}: NewsPageProps) {
             <div className={"container !mt-22"}>
                 <BreadcrumbDynamic url={NewsItem?.name || undefined}/>
             </div>
-            
+
 
             <div className={"container grid grid-cols-3 gap-5 !mt-20 gap-y-10"}>
                 {NewList.map((newsItem) => (
