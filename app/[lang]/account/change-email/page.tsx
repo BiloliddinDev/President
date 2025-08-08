@@ -29,8 +29,8 @@ export default function ChangeEmailPage() {
 
     const sessionEmail =
       // agar sizning auth tizimingizda serverData.email bo'lsa — ishlatamiz, aks holda session.user.email
-      (session.user as any)?.serverData?.email ??
-      (session.user as any)?.email ??
+      (session.user )?.serverData?.email ??
+      (session.user )?.email ??
       "";
 
     // setValue yoki reset dan foydalanishingiz mumkin; reset bilan validatsiya ham yangilanadi

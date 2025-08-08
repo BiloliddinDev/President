@@ -159,13 +159,151 @@
     "title": "Məhsullara qulluq və xidmətlər"
   },
   "careServices": {
-  "writing": "Yazı aləti",
-  "leather": "Dəri məmulatları",
-  "watches": "Saatlar"
-},
-"service": {
-  "title": "Müştəri Xidməti"
-}
-
-
+    "writing": "Yazı aləti",
+    "leather": "Dəri məmulatları",
+    "watches": "Saatlar"
+  },
+  "service": {
+    "title": "Müştəri Xidməti",
+    "shipping": {
+      "title": "Çatdırılma və göndərmə",
+      "description": "Sifarişinizi mümkün qədər tez və rahat çatdırmağa çalışırıq.",
+      "delivery_tashkent_title": "Daşkənd üzrə:",
+      "delivery_tashkent_text": "Çatdırılma sifarişin edildiyi gün Yandex Delivery vasitəsilə həyata keçirilir. Təsdiqdən bir neçə saat sonra hədiyyənizi alırsınız.",
+      "delivery_regions_title": "Özbəkistan bölgələri üzrə:",
+      "delivery_regions_text": "Sifarişlər BTS çatdırılma xidməti ilə göndərilir. Çatdırılma müddəti şəhərə və çatdırılma nöqtəsinin məsafəsinə görə 2–7 iş günü təşkil edir.",
+      "contact_text": "Çatdırılma ilə bağlı bütün suallar üçün vahid çağrı mərkəzimizə müraciət edə bilərsiniz:",
+      "contact_phone": "+998 71 203 05 00"
+    },
+    "return": {
+      "title": "Məhsul zəmanəti",
+      "text1": "Biz məhsullarımızın keyfiyyətinə inanırıq və onlara zəmanət veririk.",
+      "text2": "Zəmanəti olan hər bir məhsula zəmanət kartı təqdim olunur.",
+      "text3": "Zəmanət xidmətindən istifadə etmək üçün zəmanət kartını və qəbzi saxlamaq vacibdir.",
+      "text4": "Zəmanət müddəti məhsulun növü və istifadə şərtlərinə görə 2 ildən 5 ilə qədər dəyişir."
+    },
+    "faqs": {
+      "questions": "Tez-tez verilən suallar"
+    },
+    "appointment": {
+      "title1": "Dəstək",
+      "supportform": "Əlaqə forması",
+      "title": "Səfərə yazılmaq",
+      "description": "“President Business Gifts” şourumuna əvvəlcədən qeydiyyatdan keçin və mütəxəssismiz sizinlə uyğun vaxtda şəxsi səfərin təşkil olunması üçün əlaqə saxlayacaq.",
+      "form": {
+        "name": {
+          "label": "Ad",
+          "placeholder": "Adınızı daxil edin"
+        },
+        "phone": {
+          "label": "Telefon",
+          "placeholder": "Telefon nömrənizi daxil edin"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Emailinizi daxil edin"
+        },
+        "location": {
+          "label": "Şəhər",
+          "placeholder": "Şəhərinizi daxil edin"
+        },
+        "date": {
+          "label": "Ziyarət tarixi"
+        },
+        "time": {
+          "label": "Ziyarət vaxtı"
+        },
+        "comment": {
+          "label": "Şərh",
+          "placeholder": "Mesajınızı bura yazın"
+        },
+        "submit": "Göndər",
+        "contact": {
+          "label": "Mesencerlərdə əlaqə (məsələn, WhatsApp, Telegram)",
+          "placeholder": "Mesencer əlaqənizi daxil edin"
+        },
+        "commentandques": {
+          "label": "Şərh / Sual",
+          "placeholder": "Mesajınızı buraya daxil edin"
+        },
+        "reposts": "Mən eksklüziv təkliflər və ya məhsul məlumatları almaq istəmirəm."
+      },
+      "messages": {
+        "required": "Mütləq doldurulmalıdır",
+        "min": "Çox qısa",
+        "max": "Çox uzun",
+        "invalid": "Yanlış format",
+        "success": "Uğurla göndərildi",
+        "error": "Xəta baş verdi",
+        "serverError": "Server xətası",
+        "modalSuccessTitle": "Uğur!",
+        "modalSuccessDescription": "Sorğunuz uğurla göndərildi"
+      },
+      "privacyNote": "Biz sizi xəbərlər və xüsusi təkliflər barədə məlumatlandıra bilərik. Əgər belə bildirişlər almaq istəmirsinizsə, müvafiq xanaya işarə qoyun.",
+      "privacyLink": " Bütün məlumatlar Məxfilik Siyasətinə uyğun olaraq məxfi şəkildə işlənir."
+    }
+  },
+  "contacts": {
+    "contactTitle": "Bizimlə əlaqə saxlayın",
+    "contactDescription": "Kömək lazımdır? Siz istənilən vaxt aşağıdakı formu dolduraraq bizə yaza bilərsiniz. Daha sürətli cavab üçün FAQ bölməsi, Məhsul Baxımı Bələdçisi ilə tanış olmağı və sifarişinizin və ya geri qaytarılmanın statusunu izləməyi tövsiyə edirik.",
+    "helpTitle": "Kömək lazımdır? Biz həmişə əlaqədəyik.",
+    "helpDescription": "Siz bizə istənilən vaxt müraciət edə bilərsiniz — məmnuniyyətlə məsləhət verəcəyik, hədiyyə və ya statuslu məhsul seçməyinizə kömək edəcəyik, sifariş qəbul edəcəyik və çatdırılma barədə məsləhət verəcəyik.",
+    "callCenter": "Çağrı mərkəzi",
+    "callCenterNumber": "+998 71 203 05 00",
+    "callCenterInfo": "Birləşmiş çağrı mərkəzi işləyir:",
+    "callCenterTime": "B.e–Şənbə 9:00–18:00",
+    "branches": "Filiallarımız",
+    "branchList": [
+      "Daşkənd, Kiçik halqa yolu, 2/A",
+      "Daşkənd, TSUM, İslam Kərimov küçəsi, 17",
+      "Düşənbə, Rudaki, 55/1"
+    ],
+    "formTitle": "Əlaqə forması",
+    "formDescription": "Biz sizə istənilən vaxt cavab verməyə hazırıq. Nəzərə alın ki, sorğunun işlənməsi 3 iş gününə qədər çəkə bilər."
+  },
+  "newproducts": {
+    "title": "Yeni Məhsullar",
+    "description": "President Business Gifts-in ən son gələn məhsullarını kəşf edin — kolleksiyaya yeni əlavə olunmuş eksklüziv əşyalar. Statuslu hədiyyələr sizin zövqünüzü və aktuallığınızı vurğulayır.",
+    "notfound": {
+      "title": "Məhsul tapılmadı",
+      "description": "Təəssüf ki, bu məhsul hazırda mövcud deyil. Tezliklə kataloqa əlavə olunacaq. Zəhmət olmasa, bir az sonra yenidən yoxlayın."
+    },
+    "showMore": "Daha çox göstər"
+  },
+  "like": {
+    "addToBasket": "Səbətə əlavə et"
+  },
+  "basket": {
+    "empty_title": "Səbət boşdur",
+    "empty_subtitle": "Səbətə hələ heç bir məhsul əlavə etməmisiniz.",
+    "price": "Qiymət",
+    "total": "Cəmi",
+    "description_unavailable": "Təsvir mövcud deyil",
+    "shoppingCart": "Alış-veriş səbəti",
+    "order_details": "Sifarişinizin detalları",
+    "product_quantity": "Məhsul miqdarı",
+    "product_prices": "Məhsul qiymətləri",
+    "total_checkout": "Cəmi:",
+    "checkout": "Sifariş et",
+    "delivery_info": "Çatdırılma xidməti 2–3 gün ərzində."
+  },
+  "servererror": {
+    "title": "500 Xəta",
+    "subtitle": "Müvəqqəti bir problem yaşayırıq.",
+    "desc": "Bizim tərəfdə nəsə səhv getdi. Bu yüksək trafik, server xətası və ya texniki xidmət səbəbindən ola bilər. Zəhmət olmasa bir az sonra yenidən cəhd edin və ya əsas səhifəmizə qayıdın.",
+    "home": "Əsas səhifəyə qayıt"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Bağışlayın, axtardığınız səhifəni tapa bilmədik.",
+    "desc": "Səhifə silinmiş, adı dəyişdirilmiş və ya müvəqqəti olaraq əlçatmaz ola bilər. Zəhmət olmasa əsas səhifəyə qayıdın və ya digər bölmələri kəşf edin.",
+    "home": "Əsas səhifəyə qayıt"
+  },
+  "search": {
+    "placeholder": "Axtar",
+    "product_suggestion": "Məhsul təklifi",
+    "no_products": "Məhsul tapılmadı",
+    "product_types": "Məhsul növləri",
+    "close": "Bağla"
+  }
 }

@@ -6,7 +6,7 @@ export const discoverModalItems = [
             ru: "Новости",
             en: "News"
         },
-        linkSrc: "new/",
+        linkSrc: "/new",
     },
     {
         id: 1,

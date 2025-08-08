@@ -1,49 +1,17 @@
-"use client"
+import { getDictionary } from "@/lib/get-dictionary";
+import FavoritePage from "./favorite";
 
-import {AccountTitle} from "@/app/[lang]/account/account-title/account-title";
-import {useWishlistStore} from "@/lib/set-wishlist.storage";
-import {Button} from "@/components/ui/button";
-import FavoriteCard from "@/components/shared/favorite-card/favorite-card";
-import Link from "next/link";
-import {Heart} from "lucide-react";
-
-export default function FavoritePage() {
-    const {items, removeFromWishlist} = useWishlistStore();
-
+interface FavoriteProps {
+    params: Promise<{
+      lang: "uz" | "ru" | "en" | "tj" | "az";
+    }>;
+  }
+  
+  export default async function Favorite({ params }: FavoriteProps) {
+    const param = await params.then((params) => params);
+    const dictionary = await getDictionary(param.lang);
+  
     return (
-        <div>
-            <AccountTitle text={"Мой любимый"}/>
-            {items.length > 0 && (<p className="text-primary text-sm font-medium leading-tight mt-3">
-                {/* You have {items.length} {items.length === 1 ? 'item' : 'items'} in your Wishlist */}
-                У вас {items.length} {items.length === 1 ? 'товар' : 'товара'} в списке желаемого.
-            </p>)}
-
-            {items.length === 0 ? (
-                <div className="mt-10 text-center">
-                    <div className="mb-4">
-                        <Heart className="w-12 h-12 mx-auto text-gray-400"/>
-                    </div>
-                    <p className="text-gray-600 mb-6 max-w-md mx-auto">
-                        Нажмите на значок «Избранное» рядом с товаром, чтобы добавить его в избранное.
-                        Вы можете просматривать, покупать и делиться своим избранным в любое время.
-                    </p>
-                    <Link href="/shops/new">
-                        <Button variant="default">
-                            Продолжить покупки
-                        </Button>
-                    </Link>
-                </div>
-            ) : (
-                <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {items.map((item) => (
-                        <FavoriteCard
-                            key={item}
-                            itemID={item}
-                            onRemove={() => removeFromWishlist(item)}
-                        />
-                    ))}
-                </div>
-            )}
-        </div>
+       <FavoritePage dictionary={dictionary}/>
     );
 }

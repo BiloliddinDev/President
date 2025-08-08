@@ -1,10 +1,17 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -22,8 +29,14 @@ interface FaqsFormProps {
       title: string;
       supportform: string;
       form: {
-        name: { label: string; placeholder: string };
-        phone: { label: string; placeholder: string };
+        name: {
+          label: string;
+          placeholder: string;
+        };
+        phone: {
+          label: string;
+          placeholder: string;
+        };
         submit: string;
       };
       messages: {
@@ -38,8 +51,67 @@ interface FaqsFormProps {
         modalSuccessDescription: string;
       };
     };
+    service: {
+      appointment: {
+        title1: string;
+        supportform: string;
+        title: string;
+        description: string;
+        form: {
+          name: {
+            label: string;
+            placeholder: string;
+          };
+          phone: {
+            label: string;
+            placeholder: string;
+          };
+          email: {
+            label: string;
+            placeholder: string;
+          };
+          location: {
+            label: string;
+            placeholder: string;
+          };
+          contact: {
+            label: string;
+            placeholder: string;
+          };
+          date: {
+            label: string;
+          };
+          time: {
+            label: string;
+          };
+          comment: {
+            label: string;
+            placeholder: string;
+          };
+          submit: string;
+          reposts: string;
+          commentandques: {
+            label: string;
+            placeholder: string;
+          };
+        };
+        messages: {
+          required: string;
+          min: string;
+          max: string;
+          invalid: string;
+          success: string;
+          error: string;
+          serverError: string;
+          modalSuccessTitle: string;
+          modalSuccessDescription: string;
+        };
+        privacyNote: string;
+        privacyLink: string;
+      };
+    };
   };
-  lang?: "uz" | "ru" | "en";
+  lang?: "uz" | "ru" | "en" | "az" | "tj";
   showtime?: boolean;
 }
 
@@ -52,20 +124,23 @@ export default function FaqsForm({ dictionary }: FaqsFormProps) {
   const form = useForm<FormValues>({
     resolver: zodResolver(FaqsSchema),
     defaultValues: {
-      fullName: "",
+      fullName: session?.user?.name || "",
       phone: "",
-      email: "",
+      email: session?.user?.email || "",
       comment: "",
       social: "",
       agree: false,
     },
   });
 
-  // Foydalanuvchi sessiyasi kelganda formani to‘ldirish
+  // Agar foydalanuvchi login bo‘lsa, defaultValues ni yangilash
   useEffect(() => {
     if (session?.user) {
-      form.setValue("fullName", session.user.name || "");
-      form.setValue("email", session.user.email || "");
+      form.reset({
+        ...form.getValues(),
+        fullName: session.user.name || "",
+        email: session.user.email || "",
+      });
     }
   }, [session, form]);
 
@@ -100,70 +175,87 @@ export default function FaqsForm({ dictionary }: FaqsFormProps) {
             name="fullName"
             render={({ field }) => (
               <FormItem data-aos="fade-left" data-aos-delay="0">
-                <FormLabel>Имя</FormLabel>
+                <FormLabel>{dictionary.service.appointment.form.name.label}</FormLabel>
                 <FormControl>
-                  <Input {...field} />
+                  <Input
+                    placeholder={dictionary.service.appointment.form.name.placeholder}
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-
           <FormField
             control={form.control}
             name="phone"
             render={({ field }) => (
               <FormItem data-aos="fade-left" data-aos-delay="300">
-                <FormLabel>Телефон</FormLabel>
+                <FormLabel>{dictionary.service.appointment.form.phone.label}</FormLabel>
                 <FormControl>
-                  <Input {...field} />
+                  <Input
+                    placeholder={dictionary.service.appointment.form.phone.placeholder}
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-
           <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
               <FormItem data-aos="fade-left" data-aos-delay="600">
-                <FormLabel>Email</FormLabel>
+                <FormLabel>
+                  {dictionary.service.appointment.form.email.label}
+                </FormLabel>
                 <FormControl>
-                  <Input type="email" {...field} />
+                  <Input
+                    type="email"
+                    placeholder={dictionary.service.appointment.form.email.placeholder}
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-
           <FormField
             control={form.control}
             name="social"
             render={({ field }) => (
               <FormItem data-aos="fade-left" data-aos-delay="900">
                 <FormLabel>
-                  Контакт в мессенджерах (например, WhatsApp, Telegram)
+                  {dictionary.service.appointment.form.contact.label}
                 </FormLabel>
                 <FormControl>
-                  <Input {...field} />
+                  <Input
+                    placeholder={
+                      dictionary.service.appointment.form.contact.placeholder
+                    }
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-
           <div className="md:col-span-2">
             <FormField
               control={form.control}
               name="comment"
               render={({ field }) => (
                 <FormItem data-aos="fade-left" data-aos-delay="1200">
-                  <FormLabel>Комментарий / Вопрос</FormLabel>
+                  <FormLabel>
+                    {dictionary.service.appointment.form.commentandques.label}
+                  </FormLabel>
                   <FormControl>
                     <Textarea
                       rows={4}
-                      placeholder="Введите ваше сообщение здесь"
+                      placeholder={
+                        dictionary.service.appointment.form.commentandques.placeholder
+                      }
                       {...field}
                     />
                   </FormControl>
@@ -171,20 +263,13 @@ export default function FaqsForm({ dictionary }: FaqsFormProps) {
                 </FormItem>
               )}
             />
-
-            <div className="mt-5 text-sm font-medium leading-tight">
-              Мы хотели бы держать вас в курсе наших последних новостей и
-              предоставлять вам эксклюзивные преимущества. Если вы хотите
-              отказаться от получения маркетинговой информации, пожалуйста,
-              установите флажок ниже. С Montblanc ваша информация в
-              безопасности. Для получения дополнительной информации ознакомьтесь
-              с нашей{" "}
-              <Link className="underline" href={"#"}>
-                Политикой конфиденциальности
+            <div className={"mt-5 text-sm font-medium leading-tight"}>
+              {dictionary.service.appointment.privacyNote}
+              <Link className={"underline"} href={"#"}>
+                {dictionary.service.appointment.privacyLink}
               </Link>
             </div>
           </div>
-
           <div className="md:col-span-2 flex items-start gap-2 mt-2">
             <FormField
               control={form.control}
@@ -202,8 +287,7 @@ export default function FaqsForm({ dictionary }: FaqsFormProps) {
                     />
                   </FormControl>
                   <div className="text-sm text-gray-600">
-                    Я не хочу получать эксклюзивные предложения или информацию
-                    о продуктах.
+                    {dictionary.service.appointment.form.reposts}
                   </div>
                 </FormItem>
               )}
@@ -212,19 +296,16 @@ export default function FaqsForm({ dictionary }: FaqsFormProps) {
 
           <div className="md:col-span-2 mt-4">
             <Button type="submit" variant={"default"}>
-              Отправить
+              {dictionary.service.appointment.form.submit}
             </Button>
           </div>
         </form>
       </Form>
-
       <AutoCloseModal
         title={dictionary.support.messages.modalSuccessTitle}
         text={dictionary.support.messages.modalSuccessDescription}
         duration={8000}
-        icon={
-          <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
-        }
+        icon={<CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />}
         open={showModal}
         onClose={() => setShowModal(false)}
       />

@@ -104,7 +104,7 @@ export default function OrderPage() {
 
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onSubmit)}>
-                    <div className="container flex flex-col-reverse md:flex-row justify-between gap-10 !mt-5">
+                    <div className="container flex flex-col-reverse md:flex-row justify-between gap-10 !mt-5 relative">
                         <div className={'w-full'}>
                             <AddressForm/>
                             <OrderedProducts products={items}/>

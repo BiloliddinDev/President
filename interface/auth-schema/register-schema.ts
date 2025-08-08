@@ -6,9 +6,7 @@ export const RegisterSchema = z
       .string()
       .min(3, { message: "Ism kamida 3 ta belgidan iborat bo'lishi kerak" })
       .max(50, { message: "Ism 50 ta belgidan oshmasligi kerak" })
-      .regex(/^[A-Za-z\s]+$/, {
-        message: "Ism faqat harflar va bo'shliqdan iborat bo'lishi kerak",
-      }),
+      ,
 
     email: z
       .string()
@@ -20,18 +18,9 @@ export const RegisterSchema = z
 
     password: z
       .string()
-      .min(8, { message: "Parol kamida 8 ta belgidan iborat bo'lishi kerak" })
+      .min(4, { message: "Parol kamida 4 ta belgidan iborat bo'lishi kerak" })
       .max(100, { message: "Parol 100 ta belgidan oshmasligi kerak" })
-      .regex(/[A-Z]/, {
-        message: "Parolda kamida 1 ta katta harf bo'lishi kerak",
-      })
-      .regex(/[a-z]/, {
-        message: "Parolda kamida 1 ta kichik harf bo'lishi kerak",
-      })
-      .regex(/[0-9]/, { message: "Parolda kamida 1 ta raqam bo'lishi kerak" })
-      .regex(/[^A-Za-z0-9]/, {
-        message: "Parolda kamida 1 ta maxsus belgi bo'lishi kerak",
-      }),
+      ,
 
     confirmPassword: z
       .string()

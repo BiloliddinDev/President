@@ -43,12 +43,12 @@ export default function OrderedProducts({ products }: { products: ProductCardPro
                                 </p>
                             </div>
                         </div>
-                        <div className="flex items-center gap-2 sm:gap-4 w-full sm:w-auto justify-between sm:justify-end">
+                        <div className="flex items-center gap-2 sm:gap-10 w-full sm:w-auto justify-between sm:justify-end">
                             <p className="font-medium text-sm whitespace-nowrap">
                                 {product.price.toLocaleString("ru-RU")} сум
                             </p>
                             <button
-                                className="bg-red-100 hover:bg-red-200 text-red-600 p-2 rounded-full shrink-0"
+                                className="bg-[#f4f4f4] hover:bg-[#dfdfdf] text-primary p-2 rounded-full shrink-0 cursor-pointer"
                                 onClick={() => removeFromBasket(product.id)}
                             >
                                 <Trash2 className="w-4 h-4" />

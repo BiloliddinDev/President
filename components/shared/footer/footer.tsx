@@ -1,7 +1,7 @@
 import IconComponent from "@/components/icon/icon-view";
 import {Button} from "@/components/ui/button";
 import {FooterLogo} from "@/components/ui/logo";
-import {companyList, supportList,} from "@/constants/footer-lists";
+import {companyList, supportList} from "@/constants/footer-lists";
 import Link from "next/link";
 import CustomAccordion from "../custom-accordion/custom-accordion";
 import {FooterService} from "@/service/home-service/footer.service";
@@ -17,7 +17,6 @@ export const Footer = async ({lang}: FooterProps) => {
     const FooterData: FooterType = (await FooterService()) as FooterType;
     const CategoryData: CategoryInterface[] = await CategoryService() as CategoryInterface[]
 
-    // console.log(CategoryData)
     return (
         <footer className={"container"}>
             <div

@@ -3,7 +3,7 @@ import {Sheet, SheetContent, SheetTitle, SheetTrigger,} from "@/components/ui/sh
 import {NavbarModalProps} from "@/interface/navbar-modals-type";
 
 const SearchModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, lang,}) => {
-
+console.log(lang)
     return (
         <Sheet>
             <div className="relative z-60 ">
