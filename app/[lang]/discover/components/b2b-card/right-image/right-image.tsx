@@ -38,7 +38,7 @@ export default function RightImage({image, size, top, right,}: RightImageProps):
 
         fetchImages().then().catch().finally()
     }, [session?.user.serverData?.id])
-    
+
 
     let imageSrc = null;
     if (images?.media_file?.filePath) {

@@ -23,7 +23,7 @@ export default async function BasketPage({params}: BasketPageProps) {
             </div>
             <div className={"container md:!mt-20  !mt-10 flex md:flex-row flex-col-reverse justify-between  gap-10 "}>
                 <BasketLeftSection/>
-                <BasketRightSection/>
+                <BasketRightSection/> 
             </div>
         </div>
     );

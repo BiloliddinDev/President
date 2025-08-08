@@ -1,19 +1,16 @@
-type Currency = {
-    code: string;
-    default_currency: boolean;
-    name: string;
+import { ProductPriceInterface } from "@/interface/products-interface/products-interface";
+
+interface LocalePrice {
+    currency: ProductPriceInterface; 
     price: number;
-    symbol: string;
-    symbol_position: "BEFORE" | "AFTER";
-    symbol_space: boolean;
-};
+}
 
-export function formatPrice(price: number, currency: Currency): string {
-    const space = currency.symbol_space ? " " : "";
+export function formatCurrency({ currency, price }: LocalePrice): string {
+    const formatted = new Intl.NumberFormat("en-US", {
+        maximumFractionDigits: 0,
+    }).format(price ?? 0);
 
-    if (currency.symbol_position === "BEFORE") {
-        return `${currency.symbol}${space}${price}`;
-    } else {
-        return `${price}${space}${currency.symbol}`;
-    }
+    const code = currency?.code?.toUpperCase?.() || "";
+
+    return `${formatted} ${code}`;
 }

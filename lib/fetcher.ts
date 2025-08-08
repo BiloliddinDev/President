@@ -1,8 +1,9 @@
 'use server';
 
-import Cookies from "js-cookie";
+import { cookies } from 'next/headers';
 
 export type FetchHeaders = HeadersInit;
+type CurrencyCookie = { code: string; name?: string };
 
 export async function fetcher<T = unknown>(
     url: string,
@@ -11,22 +12,25 @@ export async function fetcher<T = unknown>(
     if (!process.env.NEXT_PUBLIC_BASIC_ADMIN) throw new Error('Missing BASIC_ADMIN');
     if (!process.env.NEXT_PUBLIC_BASIC_PASSWORD) throw new Error('Missing BASIC_PASSWORD');
     if (!process.env.NEXT_PUBLIC_BASE_URL) throw new Error('Missing NEXT_PUBLIC_BASE_URL');
-
+    
     const authString = Buffer.from(
         `${process.env.NEXT_PUBLIC_BASIC_ADMIN}:${process.env.NEXT_PUBLIC_BASIC_PASSWORD}`
     ).toString('base64');
 
-    // Retrieve and parse 'currency' cookie
-    const currencyCookie = Cookies.get('currency');
-    let currency: { code: string; name: string } = {code: 'USD', name: 'US Dollar'}; // Default value
+    
+    const cookieStore = await cookies();
+    const rawCurrency = cookieStore.get('currency')?.value;
 
-    if (currencyCookie) {
+    let currency: CurrencyCookie = { code: 'USD', name: 'US Dollar' };
+    if (rawCurrency) {
         try {
-            currency = JSON.parse(currencyCookie);
-        } catch (error) {
-            console.warn("Currency cookie parsing error:", error);
+            const parsed = JSON.parse(rawCurrency) as CurrencyCookie;
+            if (parsed?.code) currency = parsed;
+        } catch (e) {
+            console.warn('Currency cookie parsing error:', e);
         }
     }
+    
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${url}`, {
         method: 'GET',

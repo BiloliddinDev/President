@@ -2,9 +2,10 @@
 import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { ProductsInterface } from "@/interface/products-interface/products-interface";
-// import { useWishlistStore } from "@/lib/set-wishlist.storage";
-// import { Heart } from "lucide-react";
 import Link from "next/link";
+import {formatCurrency} from "@/hooks/formatPrice";
+import {Heart} from "lucide-react";
+import {useWishlistStore} from "@/lib/set-wishlist.storage";
 
 export const CollectionCard: FC<{
   newsItem: ProductsInterface;
@@ -12,15 +13,14 @@ export const CollectionCard: FC<{
 }> = ({ newsItem }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
-  // const { isInWishlist, toggleWishlist } = useWishlistStore();
-  // const isLiked = isInWishlist(newsItem.id);
-  // console.log(isLiked, "this is isLiked");
+  const { isInWishlist, toggleWishlist } = useWishlistStore();
+  const isLiked = isInWishlist(newsItem.id);
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
 
     if (hovered) {
-      setCurrentIndex(1); // hover bo'lishi bilan 0-rasmni darhol ko'rsatadi
+      setCurrentIndex(1); 
       let next = 1;
       interval = setInterval(() => {
         setCurrentIndex(() => {
@@ -28,7 +28,7 @@ export const CollectionCard: FC<{
           next++;
           return nextIndex;
         });
-      }, 1500); // keyingi rasm har 1.5 sekundda
+      }, 1500); 
     } else {
       setCurrentIndex(0);
     }
@@ -42,14 +42,14 @@ export const CollectionCard: FC<{
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* <button
+       <button
         onClick={() => toggleWishlist(newsItem.id)}
         className="absolute right-5 top-3 z-40 cursor-pointer  transition"
       >
         <Heart
           className={`w-5 h-5 ${isLiked ? "fill-primary text-primary" : ""}`}
         />
-      </button> */}
+      </button> 
       <Link href={`/detail/${newsItem.id}`}>
         <div className="relative w-[300px] h-[300px] overflow-hidden cursor-pointer">
           {newsItem.media && newsItem.media.map((img, index) => (
@@ -69,7 +69,7 @@ export const CollectionCard: FC<{
           {newsItem.name}
         </p>
         <p className="text-gray-600 mt-2 text-sm font-normal text-center">
-          {newsItem.basePriceToUSD} USD
+            {formatCurrency(newsItem.locale_price)}
         </p>
       </Link>
     </div>

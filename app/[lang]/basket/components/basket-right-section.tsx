@@ -4,15 +4,25 @@ import {buttonVariants} from "@/components/ui/button";
 import Link from "next/link";
 import {cn} from "@/lib/utils";
 import {useBasketStore} from "@/lib/set-basket.storage";
+import {getCurrencyCode, getPriceFor} from "@/hooks/price-helpers";
+import {formatCurrency} from "@/hooks/formatPrice";
 
 export default function BasketRightSection() {
     const {items} = useBasketStore();
 
-    const totalQuantity = items.reduce((acc, item) => acc + item.quantity, 0);
-    const totalPrice = items.reduce((acc, item) => acc + item.quantity * item.price, 0);
+    const code = getCurrencyCode();
+
+    const totalQuantity = items.reduce((acc, item) => acc + (item.quantity ?? 0), 0);
+
+    const subtotal = items.reduce((acc, item) => {
+        const row = getPriceFor(item.price, code);
+        return acc + ((row?.price ?? 0) * (item.quantity ?? 1));
+    }, 0);
+
+    const formattedSubtotal = formatCurrency({currency: {code} as never, price: subtotal});
 
     return (
-        <div className="w-full  md:max-w-sm max-w-full border rounded-[4px] p-6 space-y-4 text-gray-800">
+        <div className="w-full md:max-w-sm max-w-full border rounded-[4px] p-6 space-y-4 text-gray-800">
             <h2 className="text-lg font-semibold">Детали вашего заказа</h2>
 
             <div className="space-y-2">
@@ -20,26 +30,21 @@ export default function BasketRightSection() {
                     <span>Количество товара</span>
                     <span className="font-semibold">{totalQuantity} шт.</span>
                 </div>
+
                 <div className="flex justify-between">
                     <span>Цены продуктов</span>
-                    <span className="font-semibold">{totalPrice.toLocaleString()} USD</span>
+                    <span className="font-semibold">{formattedSubtotal}</span>
                 </div>
-                {/*<div className="flex justify-between">*/}
-                {/*    <span>Стоимость доставки</span>*/}
-                {/*    <span className="font-semibold">{deliveryFee.toLocaleString()} сум</span>*/}
-                {/*</div>*/}
-                {/*<div className="flex justify-between">*/}
-                {/*    <span>Скидка</span>*/}
-                {/*    <span className="font-semibold">{discount.toLocaleString()} сум</span>*/}
-                {/*</div>*/}
+
                 <hr/>
+
                 <div className="flex justify-between text-lg font-semibold">
                     <span>Итого:</span>
-                    <span>{totalPrice.toLocaleString()} USD</span>
+                    <span>{formattedSubtotal}</span>
                 </div>
             </div>
 
-            <Link className={cn(buttonVariants({variant: 'default'}), 'w-full')} href={"/order"}>
+            <Link className={cn(buttonVariants({variant: "default"}), "w-full")} href={"/order"}>
                 Оформить заказ
             </Link>
 

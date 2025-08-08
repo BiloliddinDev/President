@@ -25,9 +25,9 @@ export interface ShowcaseDataFrom {
     'collections.title': string,
     'category.title': string,
     'navbar.changeLanguage': string
-    'product.image1':any
-    'product.image2':any
-    'product.image3':any
+    'product.image1':unknown
+    'product.image2': unknown
+    'product.image3': unknown
 }
 
 
@@ -39,7 +39,7 @@ export interface MediaMetaData {
     height: number | null;
   }
   
-  export interface PreviewImage extends MediaFile {}
+  export type PreviewImage = MediaFile
   
   export interface ShowcaseItem {
     contentType: string; // e.g. "MEDIA"
@@ -47,7 +47,7 @@ export interface MediaMetaData {
     createdAt: string; // ISO format
     info: string; // description
     key: string; // e.g. "showcase.image"
-    languageContents: Record<string, any>; // bo'sh object
+    languageContents: Record<string, never>; // bo'sh object
     mediaFiles: MediaFile[];
     order: number;
     previewImage: PreviewImage;

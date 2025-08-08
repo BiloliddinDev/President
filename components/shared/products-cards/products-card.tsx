@@ -6,6 +6,7 @@ import { ProductsInterface } from "@/interface/products-interface/products-inter
 import { useWishlistStore } from "@/lib/set-wishlist.storage";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import {formatCurrency} from "@/hooks/formatPrice";
 
 interface ProductsCardProps {
   productData: ProductsInterface;
@@ -42,7 +43,7 @@ export const ProductsCard = ({
     let next = 1;
 
     if (hovered && images.length > 1) {
-      setCurrentImageIndex(1); // Birinchi hoverda 2-rasmga o'tadi
+      setCurrentImageIndex(1); 
       imageIntervalRef.current = setInterval(() => {
         setCurrentImageIndex(() => {
           const nextIndex = next % images.length;
@@ -106,7 +107,7 @@ export const ProductsCard = ({
           {productData.name}
         </h3>
         <p className="text-sm text-gray-500">
-          {productData.basePriceToUSD} USD
+            {formatCurrency(productData.locale_price)}
         </p>
       </div>
     </div>
