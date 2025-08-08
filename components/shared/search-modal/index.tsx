@@ -14,7 +14,7 @@ const SearchModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, l
                         <SheetTitle className="pb-1.5">{sheetTitle}</SheetTitle>
                         {children}
                     </div>
-                    <p className={"flex flex-none"}>{lang}</p>
+                    <p className={"flex flex-none"}>{" "}</p>
                 </SheetContent>
             </div>
         </Sheet>

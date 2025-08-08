@@ -162,6 +162,7 @@ export const Navbar = ({ lang, dictionary }: NavbarProps) => {
         languages={languages}
         county={county}
         currency={currency}
+        // dictionary=
       />
     </nav>
   );

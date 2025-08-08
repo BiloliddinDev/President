@@ -20,17 +20,11 @@ export default async function AppointmentPage({
       <div className={"container md:!mt-26 !mt-42"}>
         <BreadcrumbDynamic />
       </div>
-      <Image
-        width={1000}
-        height={600}
-        className={"w-full h-[470px] object-cover mt-10 mb-20"}
-        src={images2}
-        alt={"ServicesImage"}
-      />
+
 
       <div className="container ">
         <div data-aos="fade-right" className="w-[590px] flex flex-col justify-start items-start gap-7">
-          <h2 className="self-stretch justify-start text-primary text-lg font-medium  leading-7">
+          <h2 className="self-stretch justify-start text-primary text-lg font-medium mt-10 leading-7">
             Записаться на визит
           </h2>
           <p className=" justify-start text-primary text-sm font-medium leading-tight">
@@ -41,11 +35,18 @@ export default async function AppointmentPage({
         </div>
       </div>
 
-      <div className={"bg-neutral-100 py-7 mt-12"}>
+      <div className={"bg-neutral-100 pt-7 pb-16 mt-12"}>
         <div className={"container"}>
           <BoutiqueForm dictionary={dictionary} />
         </div>
       </div>
+      <Image
+        width={1000}
+        height={600}
+        className={"w-full h-[470px] object-cover mb-20"}
+        src={images2}
+        alt={"ServicesImage"}
+      />
     </div>
   );
 }

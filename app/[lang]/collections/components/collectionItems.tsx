@@ -141,7 +141,7 @@ export async function CollectionItems({ collection, id ,dictionary}: Collections
                       src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${collectionImage}`}
                       alt={`collection-image-${index}`}
                       width={1200}
-                      height={600}
+                      height={1200}
                       className="w-full h-full object-cover "
                     />
                   </div>
