@@ -10,7 +10,6 @@ interface ShippingProps {
   export default async function shippingPage({ params }: ShippingProps) {
     const News = await params.then((params) => params);
     const dictionary = await getDictionary(News.lang);
-    const lang = News.lang;
 
     return (
         <div>

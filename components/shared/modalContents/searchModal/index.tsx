@@ -21,12 +21,19 @@ import { ProductsCard } from "@/components/shared/products-cards/products-card";
 interface NewsProps {
   dictionary: {
     category: {
-        title: string;
-        new: string;
-        not_found: string;
-        unavailable: string;
-        show_more: string;
-      };
+      title: string;
+      new: string;
+      not_found: string;
+      unavailable: string;
+      show_more: string;
+    };
+    search: {
+      placeholder: string;
+      product_suggestion: string;
+      no_products: string;
+      product_types: string;
+      close: string;
+    };
   };
   lang?: "uz" | "ru" | "en" | "az" | "tj";
 }
@@ -84,20 +91,20 @@ export default function SearchModalData({ dictionary }: NewsProps) {
           <Input
             className="w-full md:w-[400px]"
             type="search"
-            placeholder="Search"
+            placeholder={dictionary.search.placeholder}
             value={searchTerm}
             onChange={handleSearchChange}
           />
           <SheetClose className="cursor-pointer opacity-70 hover:opacity-100 transition">
             <X className="h-6 w-6" />
-            <span className="sr-only">Close</span>
+            <span className="sr-only">{dictionary.search.close}</span>
           </SheetClose>
         </div>
       )}
 
       <div className="container mt-6">
         <p className="text-sm sm:text-base md:text-lg mb-4 font-medium my-5">
-          Предложение продукта
+          {dictionary.search.product_suggestion}
         </p>
 
         <div className="flex flex-col md:flex-row gap-28">
@@ -124,7 +131,9 @@ export default function SearchModalData({ dictionary }: NewsProps) {
                     </div>
                   ))
                 ) : (
-                  <p className="text-center py-10 w-full">No products found</p>
+                  <p className="text-center py-10 w-full">
+                    {dictionary.search.no_products}
+                  </p>
                 )}
               </CarouselContent>
 
@@ -135,7 +144,7 @@ export default function SearchModalData({ dictionary }: NewsProps) {
 
           <div className="w-full md:w-1/3 order-2 md:order-none">
             <p className="text-gray-900 text-base sm:text-lg font-medium mb-2">
-              Типы продуктов
+              {dictionary.search.product_types}
             </p>
             {categoryModalItems.map((item) => (
               <div

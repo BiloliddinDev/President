@@ -81,7 +81,7 @@ import { getDictionary } from "@/lib/get-dictionary";
             className="h-[400px] w-full"
             />
         </div>
-        <p className="text-lg font-medium">Часто задаваемые вопросы</p>
+        <p className="text-lg font-medium">{dictionary.service.faqs.questions}</p>
 
         <CustomTabs className="my-7" tabs={myTabs} lang={lang}/>
         </div>

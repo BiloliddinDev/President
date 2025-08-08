@@ -24,7 +24,6 @@ export default async function News({params}: NewsPageProps) {
                 <BreadcrumbDynamic url={NewsItem?.name || undefined}/>
             </div>
 
-
             <div className={"container grid grid-cols-3 gap-5 !mt-20 gap-y-10"}>
                 {NewList.map((newsItem) => (
                     <NewsCard key={newsItem.id} newsItem={newsItem} dictionary={dictionary}/>

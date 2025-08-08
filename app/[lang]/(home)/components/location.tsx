@@ -138,7 +138,7 @@ export default function LocationPage({dictionary, lang}: LocationProps) {
                     {dictionary.location.text || location.text}
                 </h3>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-[#5C5F6A] w-full max-w-[1000px]">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-[#5C5F6A] w-full max-w-5xl">
                     {branches.map((branch, index) => (
                         <button
                             key={index}

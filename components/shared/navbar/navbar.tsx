@@ -35,6 +35,13 @@ interface NavbarProps {
       unavailable: string;
       show_more: string;
     };
+    search: {
+      placeholder: string;
+      product_suggestion: string;
+      no_products: string;
+      product_types: string;
+      close: string;
+    };
   };
   lang: "uz" | "ru" | "en" 
 }

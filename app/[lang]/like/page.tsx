@@ -1,39 +1,17 @@
-"use client"
+import { getDictionary } from "@/lib/get-dictionary";
+import LikePage from "./like";
 
-import {BreadcrumbDynamic} from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
-import {SectionTitle} from "@/components/ui/sectionTitle";
-import {LikeNotFound} from "@/components/shared/like-not-found/like-not-found";
-import {useWishlistStore} from "@/lib/set-wishlist.storage";
-import FavoriteCard from "@/components/shared/favorite-card/favorite-card";
+interface LikeProps {
+  params: Promise<{
+    lang: "uz" | "ru" | "en" | "tj" | "az";
+  }>;
+}
 
-export default function LikePage() {
-    const {items, removeFromWishlist} = useWishlistStore();
+export default async function Like({ params }: LikeProps) {
+  const param = await params.then((params) => params);
+  const dictionary = await getDictionary(param.lang);
 
-
-    return (
-        <div>
-            <div className="container md:!mt-26 !mt-42">
-                <BreadcrumbDynamic/>
-                <SectionTitle
-                    className={`mt-12 mb-10 !text-4xl !font-['Inter']`}
-                    text="Мой любимый"
-                />
-            </div>
-            <div className="bg-neutral-100 py-10">
-                {items.length > 0 ? (
-                    <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-                        {items.map((item) => (
-                            <FavoriteCard
-                                itemID={item}
-                                key={item}
-                                onRemove={() => removeFromWishlist(item)}
-                            />
-                        ))}
-                    </div>
-                ) : (
-                    <LikeNotFound/>
-                )}
-            </div>
-        </div>
-    );
+  return (
+   <LikePage dictionary={dictionary} lang={param.lang}/>
+  );
 }

@@ -39,6 +39,24 @@
         "label": "Phone number",
         "placeholder": "Enter your phone number"
       },
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email"
+      },
+      "location": {
+        "label": "City",
+        "placeholder": "Enter your city"
+      },
+      "date": {
+        "label": "Visit date"
+      },
+      "time": {
+        "label": "Visit time"
+      },
+      "comment": {
+        "label": "Comment",
+        "placeholder": "Enter your message here"
+      },
       "submit": "Send request"
     },
     "messages": {
@@ -51,6 +69,10 @@
       "serverError": "⚠️ Something went wrong. Try again later!",
       "modalSuccessTitle": "Thank you! Your request has been successfully submitted.",
       "modalSuccessDescription": "The President Business Gifts team will contact you shortly. We look forward to providing you with the best service."
+    },
+    "privacy": {
+      "text": "We may inform you about news and special offers. If you do not want to receive such notifications, check the appropriate box. All information is processed confidentially in accordance with the Privacy Policy.",
+      "link": "Privacy Policy"
     }
   },
 
@@ -193,6 +215,130 @@
       "text2": "Each product with a warranty comes with a warranty card.",
       "text3": "To receive warranty service, you must keep the warranty card and the receipt.",
       "text4": "The warranty period ranges from 2 to 5 years, depending on the product type and operating conditions."
+    },
+    "faqs": {
+      "questions": "Frequently Asked Questions"
+    },
+    "appointment": {
+      "title1": "Support",
+      "supportform": "Contact Form",
+      "title": "Book a visit",
+      "description": "Make a preliminary booking to the “President Business Gifts” showroom, and our specialist will contact you to arrange a personal visit at a convenient time for you.",
+      "form": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Enter your name"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "Enter your phone number"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter your email"
+        },
+        "location": {
+          "label": "City",
+          "placeholder": "Enter your city"
+        },
+        "date": {
+          "label": "Visit Date"
+        },
+        "time": {
+          "label": "Visit Time"
+        },
+        "comment": {
+          "label": "Comment",
+          "placeholder": "Type your message here"
+        },
+        "submit": "Send",
+        "contact": {
+          "label": "Contact in messengers (e.g., WhatsApp, Telegram)",
+          "placeholder": "Enter your messenger contact"
+        },
+        "commentandques": {
+          "label": "Comment / Question",
+          "placeholder": "Enter your message here"
+        },
+        "reposts": "I do not want to receive exclusive offers or product information."
+      },
+      "messages": {
+        "required": "This field is required",
+        "min": "Too short",
+        "max": "Too long",
+        "invalid": "Invalid format",
+        "success": "Successfully sent",
+        "error": "An error occurred",
+        "serverError": "Server error",
+        "modalSuccessTitle": "Success!",
+        "modalSuccessDescription": "Your request has been successfully sent"
+      },
+      "privacyNote": "We may inform you about news and special offers. If you do not want to receive such notifications, check the appropriate box.",
+      "privacyLink": " All information is processed confidentially in accordance with the Privacy Policy."
     }
+  },
+  "contacts": {
+    "contactTitle": "Contact Us",
+    "contactDescription": "Need help? You can write to us at any time by filling out the form below. For quicker responses, we also recommend checking the FAQ section, the Product Care Guide, and tracking your order or return status via the link.",
+    "helpTitle": "Need help? We are always in touch.",
+    "helpDescription": "You can contact us at any time — we will gladly advise you, help you choose a gift or a premium product, place an order, and consult you on delivery.",
+    "callCenter": "Call Center",
+    "callCenterNumber": "+998 71 203 05 00",
+    "callCenterInfo": "Unified call center works:",
+    "callCenterTime": "Mon–Sat from 9:00 to 18:00",
+    "branches": "Our Branches",
+    "branchList": [
+      "Tashkent, Small Ring Road, 2/A",
+      "Tashkent, TSUM, Islam Karimov Street, 17",
+      "Dushanbe, Rudaki, 55/1"
+    ],
+    "formTitle": "Feedback Form",
+    "formDescription": "We are ready to respond to you at any time. Please note that processing your request may take up to 3 working days."
+  },
+  "newproducts": {
+    "title": "New Products",
+    "description": "Discover the latest arrivals from President Business Gifts — exclusive items newly added to the collection. Prestigious gifts that emphasize relevance and taste.",
+    "notfound": {
+      "title": "Product Not Found",
+      "description": "Unfortunately, this product is currently unavailable. We will add it to the catalog soon. Please check back later."
+    },
+    "showMore": "Show More"
+  },
+  "like": {
+    "addToBasket": "Add to basket"
+  },
+  "basket": {
+    "empty_title": "Cart is empty",
+    "empty_subtitle": "You haven't added any items to your cart yet.",
+    "price": "Price",
+    "total": "Total",
+    "description_unavailable": "Description unavailable",
+    "shoppingCart": "Shopping Cart",
+
+    "order_details": "Order details",
+    "product_quantity": "Product quantity",
+    "product_prices": "Product prices",
+    "total_checkout": "Total:",
+    "checkout": "Checkout",
+    "delivery_info": "Delivery service within 2–3 days."
+  },
+  "servererror": {
+    "title": "500 Error",
+    "subtitle": "We are experiencing a temporary issue.",
+    "desc": "Something went wrong on our end. This may be due to high traffic, a server glitch, or maintenance. Please try again shortly, or return to our home page to continue browsing.",
+    "home": "Visit our Homepage"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Sorry, we couldn’t find the page you were looking for.",
+    "desc": "It may have been removed, changed, or is temporarily unavailable. Please return to our homepage to continue browsing or discover other content.",
+    "home": "Visit our Homepage"
+  },
+  "search": {
+    "placeholder": "Search",
+    "product_suggestion": "Product suggestion",
+    "no_products": "No products found",
+    "product_types": "Product types",
+    "close": "Close"
   }
 }
