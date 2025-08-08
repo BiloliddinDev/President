@@ -9,6 +9,7 @@
     WritingMode,
     repair,
     } from "@/constants/care-services-faqs";
+import { getDictionary } from "@/lib/get-dictionary";
 
     interface NewsPageProps {
     params: Promise<{ lang: "uz" | "ru" | "en" | "tj" | "az" }>;
@@ -16,7 +17,7 @@
         
     export default async function DiscoverService({ params }: NewsPageProps) {
     const News = await params.then((params) => params);
-    // const dictionary = await getDictionary(News.lang);
+    const dictionary = await getDictionary(News.lang);
     const lang = News.lang;
     const myTabs = [
         {

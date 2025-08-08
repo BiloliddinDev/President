@@ -109,7 +109,7 @@
     "title": "Korporativ sovg'alar",
     "text": "Biz logotipingiz tushirilgan korporativ sovg‘alar bilan ham shug‘ullanamiz — soatlar,charm toʻplam, bloknotlar, ruchkalar va boshqa suvenirlar. Biz allaqachon banklar, kompaniyalar va davlat tashkilotlari bilan hamkorlik qilganmiz — sovg‘alarni ehtiyojga mos tanlab, brendlash va qadoqlashni to‘liq amalga oshiramiz",
     "btn": "Batafsil ma’lumot",
-    "desc": "President Business Gifts — bu shunchaki mahsulotlarni namoyish qilish emas, bu estetika, ilhom va premium sovg'alar olamiga sho'ng'ishdir. Bizning shourumimizda siz eksklyuziv, milliy meros va zamonaviy dizayn uyg'unligidagi mahsulotlarni shaxsan ko'rishingiz, ularning sifatini baholashingiz va o'zingiz yoki hamkorlaringiz uchun mukammal sovg'ani tanlashingiz mumkin. Agar siz brendimiz falsafasini his qilmoqchi bo‘lsangiz — bizning shourumga tashrif buyuring. Manzil va joylashuvni ushbu sahifada topasiz. Agar savollaringiz bo‘lsa yoki oldindan uchrashuv belgilamoqchi bo‘lsangiz — biz bilan qulay vaqtda bog‘laning.",  
+    "desc": "President Business Gifts — bu shunchaki mahsulotlarni namoyish qilish emas, bu estetika, ilhom va premium sovg'alar olamiga sho'ng'ishdir. Bizning shourumimizda siz eksklyuziv, milliy meros va zamonaviy dizayn uyg'unligidagi mahsulotlarni shaxsan ko'rishingiz, ularning sifatini baholashingiz va o'zingiz yoki hamkorlaringiz uchun mukammal sovg'ani tanlashingiz mumkin. Agar siz brendimiz falsafasini his qilmoqchi bo‘lsangiz — bizning shourumga tashrif buyuring. Manzil va joylashuvni ushbu sahifada topasiz. Agar savollaringiz bo‘lsa yoki oldindan uchrashuv belgilamoqchi bo‘lsangiz — biz bilan qulay vaqtda bog‘laning.",
     "headerTitle": "Korporativ sovg‘a san’ati",
     "headerText": "Kompaniya logotipi tushirilgan korporativ sovg‘alar – bu shunchaki rasmiyatchilik emas. Bu biznes aloqalarni mustahkamlash va imidjni oshirishning kuchli vositasidir. President Business Gift kompaniyasida biz sizning nomingizdan hurmat, e’tibor va maqomni ifodalovchi sovg‘alarni yaratamiz.",
     "block1": {
@@ -159,11 +159,28 @@
     "title": "Mahsulotlarga g'amxo'rlik va xizmatlar"
   },
   "careServices": {
-  "writing": "Yozish quroli",
-  "leather": "Charm buyumlar",
-  "watches": "Soatlar"
-},
-"service": {
-  "title": "Mijozlarga xizmat ko‘rsatish"
-}
+    "writing": "Yozish quroli",
+    "leather": "Charm buyumlar",
+    "watches": "Soatlar"
+  },
+  "service": {
+    "title": "Mijozlarga xizmat ko‘rsatish",
+    "shipping": {
+      "title": "Yetkazib berish va jo‘natish",
+      "description": "Biz buyurtmangizni imkon qadar tez va qulay yetkazib berishga intilamiz.",
+      "delivery_tashkent_title": "Toshkent bo‘yicha:",
+      "delivery_tashkent_text": "Buyurtma qilingan kuni Yandex Delivery orqali yetkazib beriladi. Tasdiqlanganidan so‘ng bir necha soat ichida sovg‘angizni olasiz.",
+      "delivery_regions_title": "O‘zbekiston viloyatlari bo‘yicha:",
+      "delivery_regions_text": "Buyurtmalar BTS yetkazib berish xizmati orqali yuboriladi. Yetkazib berish muddati — shaharga va yetkazish punktining masofasiga qarab 2–7 ish kuni.",
+      "contact_text": "Yetkazib berish bo‘yicha barcha savollar uchun yagona koll-markazimizga murojaat qilishingiz mumkin:",
+      "contact_phone": "+998 71 203 05 00"
+    },
+    "return": {
+      "title": "Mahsulot kafolati",
+      "text1": "Biz mahsulotlarimiz sifatiga ishonamiz va ularga kafolat beramiz.",
+      "text2": "Kafolatga ega har bir mahsulotga kafolat taloni beriladi.",
+      "text3": "Kafolatli xizmatdan foydalanish uchun kafolat taloni va chekni saqlash zarur.",
+      "text4": "Kafolat muddati mahsulot turi va foydalanish sharoitiga qarab 2 yildan 5 yilgacha bo‘lishi mumkin."
+    }
+  }
 }

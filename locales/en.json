@@ -171,12 +171,28 @@
     "title": "Product Care and Services"
   },
   "careServices": {
-  "writing": "Writing Instrument",
-  "leather": "Leather",
-  "watches": "Watches"
-},
-"service": {
-  "title": "Customer Service"
-}
-
+    "writing": "Writing Instrument",
+    "leather": "Leather",
+    "watches": "Watches"
+  },
+  "service": {
+    "title": "Customer Service",
+    "shipping": {
+      "title": "Delivery and Shipping",
+      "description": "We strive to deliver your order as quickly and conveniently as possible.",
+      "delivery_tashkent_title": "Within Tashkent:",
+      "delivery_tashkent_text": "Delivery is carried out via Yandex Delivery on the same day the order is placed. You will receive your gift within a few hours after confirmation.",
+      "delivery_regions_title": "Across the regions of Uzbekistan:",
+      "delivery_regions_text": "Orders are shipped via BTS delivery service. Delivery time is from 2 to 7 business days depending on the city and the remoteness of the pickup point.",
+      "contact_text": "For all delivery-related questions, you can contact our unified call center:",
+      "contact_phone": "+998 71 203 05 00"
+    },
+    "return": {
+      "title": "Product Warranty",
+      "text1": "We are confident in the quality of our products and provide a warranty for them.",
+      "text2": "Each product with a warranty comes with a warranty card.",
+      "text3": "To receive warranty service, you must keep the warranty card and the receipt.",
+      "text4": "The warranty period ranges from 2 to 5 years, depending on the product type and operating conditions."
+    }
+  }
 }
