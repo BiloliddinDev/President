@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Heart } from "lucide-react";
+import { Heart, ShoppingCart } from "lucide-react";
 import { ProductsInterface } from "@/interface/products-interface/products-interface";
 import { useWishlistStore } from "@/lib/set-wishlist.storage";
 import Link from "next/link";
@@ -96,7 +96,7 @@ export const ProductsCard = ({
         </div>
       </Link>
 
-      <div className="flex flex-col justify-between h-full p-3">
+      <Link  href={`/detail/${productData.id}`} className="flex flex-col justify-between h-full p-3">
         {productData.meta._new_product && (
           <span className="mb-3 w-fit rounded border px-2 py-0.5 text-xs font-medium text-gray-700">
             {dictionary.category.new}
@@ -105,10 +105,19 @@ export const ProductsCard = ({
         <h3 className="text-sm font-medium mb-2 text-gray-900">
           {productData.name}
         </h3>
-        <p className="text-sm text-gray-500">
-          {productData.basePriceToUSD} USD
-        </p>
-      </div>
+        <div className="flex justify-between items-center ">
+          <p className="text-sm text-gray-500">
+            {productData.basePriceToUSD} USD
+          </p>
+          <button className="cursor-pointer">
+            <ShoppingCart
+              width={24}
+              height={24}
+              className="text-primary !hover:text-zinc-300 duration-200 mr-1"
+            />
+          </button>
+        </div>
+      </Link>
     </div>
   );
 };

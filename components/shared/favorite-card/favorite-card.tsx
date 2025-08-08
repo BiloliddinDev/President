@@ -72,8 +72,13 @@ export default function FavoriteCard({ onRemove, itemID }: FavoriteCardProps) {
               />
             )
           )}
+
+          {/* Heart bosilganda ham favoritdan o‘chirish */}
           {!loading && (
-            <Heart className="absolute top-3 right-3 w-5 h-5 fill-primary text-primary cursor-pointer" />
+            <Heart
+              onClick={onRemove}
+              className="absolute top-3 right-3 w-5 h-5 fill-primary text-primary cursor-pointer hover:scale-110 transition-transform"
+            />
           )}
         </div>
 
@@ -89,9 +94,9 @@ export default function FavoriteCard({ onRemove, itemID }: FavoriteCardProps) {
               {product?.prices.filter((price) => price.currency.code === "UZS")[0] && (
                 <p className="text-sm text-gray-500 mt-1">
                   {product?.prices
-                    .filter((price) => price.currency.code === "UZS")[0]
+                    .filter((price) => price.currency.code === "USD")[0]
                     .price.toLocaleString()}{" "}
-                  сум
+                  USD
                 </p>
               )}
             </>

@@ -69,5 +69,4 @@ export const categoryModalItems = [
   { id: 4, link:"/shops/Сувенирыid52", name: "Сувениры" },
   { id: 5, link:"/shops/Pучкиid51 ", name: "Pучки" },
   { id: 6, link:"/shops/Кожаные%20изделияid49", name: "Кожаные изделия" },
-
 ];

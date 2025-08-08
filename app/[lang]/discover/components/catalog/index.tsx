@@ -3,18 +3,18 @@
 
 import Image from "next/image";
 import React from "react";
-// import {bookItems} from "@/constants/books-items";
+import {bookItems} from "@/constants/books-items";
 import MyFlipBook from "@/components/shared/my-flip-book/flip-book";
 import image from "@/public/images/Journal.jpg";
 
 const Catalog = () => {
     return (
-        <MyFlipBook className="mx-auto" startPage={0} width={1000} height={590}>
-            {/* {bookItems.map((item) => (
-                <div key={item.id} className="demoPage"> */}
-                    <Image src={image.src} alt={"journal"} width={1000} height={790}/>
-                {/* </div> */}
-            {/* ))} */}
+        <MyFlipBook className="mx-auto" startPage={0} width={1000} height={700}>
+            {bookItems.map((item) => (
+                <div key={item.id} className="demoPage">
+                    <Image src={image.src} alt={"journal"} width={1000} height={1000} className="h-full object-cover"/>
+                </div>
+            ))}
         </MyFlipBook>
     );
 };

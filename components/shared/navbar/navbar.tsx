@@ -9,7 +9,7 @@ import DiscoverModalContent from "../modalContents/discoverModal";
 import ChangeLangModal from "../modalContents/changeLangModal";
 import SearchModal from "@/components/shared/search-modal";
 import SearchModalData from "@/components/shared/modalContents/searchModal";
-import { Heart, Search, ShoppingCart } from "lucide-react";
+import { Heart, Search, ShoppingCart, Globe } from "lucide-react";
 import MobileNavbar from "./mobile-navbar";
 import UserDropdown from "@/components/shared/user-dropdown/user-dropdown";
 import { useEffect, useState } from "react";
@@ -115,11 +115,11 @@ export const Navbar = ({ lang, dictionary }: NavbarProps) => {
               <Search
                 width={24}
                 height={24}
-                className={`text-primary !hover:text-zinc-300 mt-2.5 transition-colors duration-200`}
+                className={`text-primary !hover:text-zinc-300 mt-2.5 transition-colors duration-200 cursor-pointer`}
               />
             }
           >
-            <SearchModalData dictionary={dictionary} />
+            <SearchModalData category={category} dictionary={dictionary} />
           </SearchModal>
 
           <NavbarModal
@@ -129,7 +129,12 @@ export const Navbar = ({ lang, dictionary }: NavbarProps) => {
               <p
                 className={`text-primary !hover:text-zinc-300 text-lg font-normal transition-colors duration-200`}
               >
-                {`${lang.toUpperCase()}`}
+                {/* {`${lang.toUpperCase()}`}  */}
+                <Globe 
+                    width={24}
+                    height={24}
+                    className={`text-primary !hover:text-zinc-300 duration-200`}
+                 />
               </p>
             }
           >
