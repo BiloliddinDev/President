@@ -8,18 +8,14 @@ export interface ProductsInterface {
         "name": "Uzbekistan",
         "code": "UZ"
     },
+    "locale_price": {
+        currency : ProductPriceInterface
+        "price": number
+    },
 
     "prices": [
         {
-            "currency": {
-                "code": string
-                "name": string,
-                "symbol": string,
-                "symbol_position": string,
-                "symbol_space": boolean
-                "price": number
-                "default_currency": boolean
-            },
+            "currency": ProductPriceInterface
             "price": number
         }
     ],
@@ -56,14 +52,15 @@ export interface MediaInterface {
     mediaType: string
 }
 
-export interface WishlistInterface {
-    "id": number,
-    "sku": string,
-    "name": string,
-    "description": string,
-    "basePriceToUSD": number,
-    "country": {
-        "name": "Uzbekistan",
-        "code": "UZ"
-    },
-} 
+
+
+export interface ProductPriceInterface {
+    currency: ProductPriceInterface;
+        "code": string,
+        "name": string,
+        "symbol": string,
+        "symbol_position": string ,
+        "symbol_space": boolean,
+        "price": number,
+        "default_currency": boolean
+}

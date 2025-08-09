@@ -31,3 +31,5 @@ const url=`/api/v1/collections/by_locale_with_media_and_products?languageCode=${
 
     return await fetcher(url);
 }
+
+

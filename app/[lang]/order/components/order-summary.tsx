@@ -1,12 +1,26 @@
-'use client';
+"use client";
 
 import {Button} from "@/components/ui/button";
 import {useBasketStore} from "@/lib/set-basket.storage";
+import {getCurrencyCode, getPriceFor} from "@/hooks/price-helpers";
+import {formatCurrency} from "@/hooks/formatPrice";
 
 export default function OrderSummary() {
     const {items} = useBasketStore();
-    const totalQuantity = items.reduce((acc, item) => acc + item.quantity, 0);
-    const totalPrice = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+    const code = getCurrencyCode();
+
+    const totalQuantity = items.reduce((acc, item) => acc + (item.quantity ?? 0), 0);
+
+    const subtotal = items.reduce((acc, item) => {
+        const row = getPriceFor(item.price as never, code);
+        return acc + ((row?.price ?? 0) * (item.quantity ?? 1));
+    }, 0);
+
+    const formattedSubtotal = formatCurrency({
+        currency: {code} as never,
+        price: subtotal,
+    });
 
     return (
         <div className="w-full  md:max-w-sm max-w-full border rounded-[4px] p-6 space-y-4 h-[350px]  text-gray-800 sticky top-20 right-0">
@@ -17,32 +31,23 @@ export default function OrderSummary() {
                     <span>Количество товара</span>
                     <span className="font-semibold">{totalQuantity} шт.</span>
                 </div>
+
                 <div className="flex justify-between">
                     <span>Цены продуктов</span>
-                    <span className="font-semibold">{totalPrice.toLocaleString()} сум</span>
+                    <span className="font-semibold">{formattedSubtotal}</span>
                 </div>
-                {/*<div className="flex justify-between">*/}
-                {/*    <span>Стоимость доставки</span>*/}
-                {/*    <span className="font-semibold">{deliveryFee.toLocaleString()} сум</span>*/}
-                {/*</div>*/}
-                {/*<div className="flex justify-between">*/}
-                {/*    <span>Скидка</span>*/}
-                {/*    <span className="font-semibold">{discount.toLocaleString()} сум</span>*/}
-                {/*</div>*/}
+
                 <hr/>
+
                 <div className="flex justify-between text-lg font-semibold">
                     <span>Итого:</span>
-                    <span>{totalPrice.toLocaleString()} сум</span>
+                    <span>{formattedSubtotal}</span>
                 </div>
             </div>
-            <Button variant="default" type="submit" className="w-full" >
+
+            <Button variant="default" type="submit" className="w-full">
                 Перейти к оплатe
             </Button>
-           
-
-            {/* <div className="flex items-center gap-2 text-sm text-gray-600">
-                <span>Служба доставки в течение 2–3 дней.</span>
-            </div> */}
         </div>
     );
 }

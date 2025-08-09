@@ -27,5 +27,5 @@ export async function ProductDetailService(parentId: number) {
         }
     }
 
-    return await fetcher(`https://api.presidentgift.com/api/v1/product/by_id_and_locale?productId=${parentId}&language=${lang.toUpperCase()}&countryCode=${countryCode}`);
+    return await fetcher(`/api/v1/product/by_id_and_locale?productId=${parentId}&language=${lang.toUpperCase()}&countryCode=${countryCode}`);
 }
