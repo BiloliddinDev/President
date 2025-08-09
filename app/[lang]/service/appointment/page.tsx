@@ -25,12 +25,11 @@ export default async function AppointmentPage({
       <div className="container ">
         <div data-aos="fade-right" className="w-[590px] flex flex-col justify-start items-start gap-7">
           <h2 className="self-stretch justify-start text-primary text-lg font-medium mt-10 leading-7">
-            Записаться на визит
+            {dictionary.service.appointment.title}
           </h2>
           <p className=" justify-start text-primary text-sm font-medium leading-tight">
-            Оформите предварительную запись в шоурум “President Business Gifts”,
-            и наш специалист свяжется с вами для организации персонального
-            визита в удобное для вас время.
+          {dictionary.service.appointment.description}
+
           </p>
         </div>
       </div>

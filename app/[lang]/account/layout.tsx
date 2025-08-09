@@ -10,7 +10,7 @@ interface RootLayoutProps {
 
 
 export default async function RootLayout({children, params}: RootLayoutProps) {
-    const lang = await params?.then(res => res.lang);
+    const lang = await params?.then(res => res.lang) || "uz";
     return (
         <div >
             <div className={"container md:!mt-26 !mt-42"}>
@@ -20,7 +20,7 @@ export default async function RootLayout({children, params}: RootLayoutProps) {
             <div className={'bg-neutral-100 py-10'}>
                 <div className={"flex flex-col md:flex-row container gap-25"}>
                     <AccountSidebar lang={lang}/>
-                    <div className={"w-full"}>{children}</div>
+                    <div className={"w-full"}>{children }</div>
                 </div>
             </div>
         </div>

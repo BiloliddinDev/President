@@ -3,6 +3,7 @@ import React from "react";
 import Catalog from "../components/catalog";
 import { SectionTitle } from "@/components/ui/sectionTitle";
 import { getDictionary } from "@/lib/get-dictionary";
+// import pdf from "@/public/images/"
 
 interface JournalPageProps {
   params: Promise<{ lang: "uz" | "ru" | "en" | "tj" | "az" }>;
@@ -33,6 +34,7 @@ export default async function JournalPage({ params }: JournalPageProps) {
         data-aos-offset="0"
       >
         <Catalog />
+        {/* <Catalog fileUrl="@/public/images/Каталог продукции PBG 2025-2026.pdf" /> */}
       </div>
       {/* <div>
         <h2>Ushbu jurnalni o'zingiz uchun yuklab olishingiz mumkin!</h2><br />

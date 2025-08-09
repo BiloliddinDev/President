@@ -40,11 +40,9 @@ export interface MediaFile {
     id: number;
     name: string;
     description: string;
-    products:ProductsInterface[]; 
-    isMainPage: boolean;
+    products:ProductsInterface[];
+    is_main_page: boolean;
     country: Country;
     mediaFiles: MediaFile[];
     translations: Translation[];
   }
-  
-

@@ -68,7 +68,7 @@ const AddressForm = () => {
                             <FormControl>
                                 <Dialog open={isOpen} onOpenChange={setIsOpen}>
                                     <DialogTrigger asChild>
-                                        <Button type="button" variant="outline" className="w-full">
+                                        <Button type="button" variant="default" className="w-full">
                                             Обозначение по карте
                                         </Button>
                                     </DialogTrigger>

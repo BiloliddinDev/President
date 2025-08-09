@@ -32,6 +32,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const CategoryDetailData2: CategoryInterface = (await CategoryDetailService(
     categoryId.id || ""
   )) as CategoryInterface;
+  
 
     return (
         <div className="container md:!mt-26 !mt-42">

@@ -51,12 +51,12 @@ export default function OrderPage() {
                     latitude: data.address.location.lat,
                     longitude: data.address.location.lng,
                 },
-                totalAmount: items.reduce((total, item) => total + item.price * item.quantity, 0),
+                totalAmount: items.reduce((total, item) => total + item.basePriceToUSD * item.quantity, 0),
                 items: items.map((item) => ({
                     productId: item.id,
                     quantity: item.quantity,
                     unitPrice: item.price,
-                    totalPrice: item.price * item.quantity,
+                    totalPrice: item.basePriceToUSD * item.quantity,
                 }))
             };
 
@@ -104,7 +104,7 @@ export default function OrderPage() {
 
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onSubmit)}>
-                    <div className="container flex flex-col-reverse md:flex-row justify-between gap-10 !mt-5">
+                    <div className="container flex flex-col-reverse md:flex-row justify-between gap-10 !mt-5 relative">
                         <div className={'w-full'}>
                             <AddressForm/>
                             <OrderedProducts products={items}/>

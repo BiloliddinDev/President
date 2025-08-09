@@ -2,7 +2,7 @@ import React, {FC} from "react";
 import {Sheet, SheetContent, SheetTitle, SheetTrigger,} from "@/components/ui/sheet";
 import {NavbarModalProps} from "@/interface/navbar-modals-type";
 
-const SearchModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, lang,}) => {
+const SearchModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children,}) => {
 
     return (
         <Sheet>

@@ -55,7 +55,8 @@ const ChangeLangModal = ({lang, languages, county, currency}: {
     const handleCurrencyChange = (name: string, code: string, isDefault: boolean) => {
         const newCurrency = {name, code, default_currency: isDefault};
         Cookies.set("currency", JSON.stringify(newCurrency));
-        setCurrencyCookie({code}); // Update local state for active check mark
+        setCurrencyCookie({code}); 
+        refresh();
     };
 
     const [open, setOpen] = useState<boolean>(false);

@@ -9,42 +9,49 @@ import {
 import { Input } from "@/components/ui/input";
 import { FooterLogo } from "@/components/ui/logo";
 import { SheetClose } from "@/components/ui/sheet";
-import { categoryModalItems } from "@/constants/category-item";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { ProductsInterface } from "@/interface/products-interface/products-interface";
 import { getNewProducts } from "@/service/products-service/new-products-client.service";
-import { getSearchProducts } from "@/service/products-service/product-search.service";
 import { ProductsCard } from "@/components/shared/products-cards/products-card";
+import { Category } from "@/interface/category-type/category-interface";
 
 interface NewsProps {
   dictionary: {
     category: {
-        title: string;
-        new: string;
-        not_found: string;
-        unavailable: string;
-        show_more: string;
-      };
+      title: string;
+      new: string;
+      not_found: string;
+      unavailable: string;
+      show_more: string;
+    };
+    search: {
+      placeholder: string;
+      product_suggestion: string;
+      no_products: string;
+      product_types: string;
+      close: string;
+    };
   };
+  category: Category[]; // yangi qo‘shildi
   lang?: "uz" | "ru" | "en" | "az" | "tj";
 }
 
-export default function SearchModalData({ dictionary }: NewsProps) {
+export default function SearchModalData({ dictionary, category }: NewsProps) {
   const [isDesktop, setIsDesktop] = useState(false);
+  const [allProducts, setAllProducts] = useState<ProductsInterface[]>([]);
   const [products, setProducts] = useState<ProductsInterface[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
-
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const fetchInitial = async () => {
       const res = await getNewProducts();
+      setAllProducts(res);
       setProducts(res);
     };
     fetchInitial();
-  }, [searchTerm, setSearchTerm]);
+  }, []);
 
   useEffect(() => {
     const checkScreen = () => {
@@ -59,21 +66,14 @@ export default function SearchModalData({ dictionary }: NewsProps) {
     const value = e.target.value;
     setSearchTerm(value);
 
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
+    if (value.trim() === "") {
+      setProducts(allProducts);
+    } else {
+      const filtered = allProducts.filter((product) =>
+        product.name.toLowerCase().includes(value.toLowerCase())
+      );
+      setProducts(filtered);
     }
-
-    timerRef.current = setTimeout(async () => {
-      if (value.trim() === "") return;
-      try {
-        const res = await getSearchProducts(value);
-        if (res?.data?.content) {
-          setProducts(res.data.content);
-        }
-      } catch (err) {
-        console.error("Search error:", err);
-      }
-    }, 1000);
   };
 
   return (
@@ -84,20 +84,20 @@ export default function SearchModalData({ dictionary }: NewsProps) {
           <Input
             className="w-full md:w-[400px]"
             type="search"
-            placeholder="Search"
+            placeholder={dictionary.search.placeholder}
             value={searchTerm}
             onChange={handleSearchChange}
           />
           <SheetClose className="cursor-pointer opacity-70 hover:opacity-100 transition">
             <X className="h-6 w-6" />
-            <span className="sr-only">Close</span>
+            <span className="sr-only">{dictionary.search.close}</span>
           </SheetClose>
         </div>
       )}
 
       <div className="container mt-6">
         <p className="text-sm sm:text-base md:text-lg mb-4 font-medium my-5">
-          Предложение продукта
+          {dictionary.search.product_suggestion}
         </p>
 
         <div className="flex flex-col md:flex-row gap-28">
@@ -124,7 +124,10 @@ export default function SearchModalData({ dictionary }: NewsProps) {
                     </div>
                   ))
                 ) : (
-                  <p className="text-center py-10 w-full">No products found</p>
+                  <p className="text-center py-10 w-full">
+                    {dictionary.category.not_found}
+                    {dictionary.search.no_products}
+                  </p>
                 )}
               </CarouselContent>
 
@@ -135,15 +138,16 @@ export default function SearchModalData({ dictionary }: NewsProps) {
 
           <div className="w-full md:w-1/3 order-2 md:order-none">
             <p className="text-gray-900 text-base sm:text-lg font-medium mb-2">
-              Типы продуктов
+              {dictionary.search.product_types}
             </p>
-            {categoryModalItems.map((item) => (
+
+            {category.map((item) => (
               <div
                 key={item.id}
                 className="text-sm font-normal leading-[1.5rem] cursor-pointer my-2.5"
               >
                 <SheetClose className="cursor-pointer transition">
-                  <Link href={item.link}>
+                  <Link href={`/shops/${item.name}id${item.id}`}>
                     <SheetClose className="cursor-pointer transition">
                       {item.name}
                     </SheetClose>

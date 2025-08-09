@@ -6,10 +6,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-// import CollectionImage from "@/public/images/collections-home-page.jpg";
 import { SectionTitle } from "@/components/ui/sectionTitle";
 import { Button } from "@/components/ui/button";
-// import { SummerCollectionService } from "@/service/home-service/summer-collection.service";
 import Link from "next/link";
 import { CollectionResponse } from "../../collections/type";
 import { CollectionCard } from "@/components/shared/collection-card/collection-card";
@@ -25,13 +23,15 @@ export interface CollectionsProps {
 }
 
 export async function Collections({ dictionary }: CollectionsProps) {
-  const CollectionsData: CollectionResponse[] =
-    (await CollectionService()) as CollectionResponse[];
+  const CollectionsData: CollectionResponse[] =  (await CollectionService()) as CollectionResponse[];
+   
 
   const Collection = CollectionsData.filter(
-    (item) => item.isMainPage === true
+    (item) => item.is_main_page
   )[0];
 
+  
+  
   return (
     <div className="flex flex-col md:flex-row justify-between items-center gap-8 w-full mt-12">
       <div className="w-full md:w-[40%] flex justify-center">

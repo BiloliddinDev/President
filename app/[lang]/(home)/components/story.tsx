@@ -19,7 +19,6 @@ interface StoryProps {
 
 export const StorySection: FC<StoryProps> = async ({dictionary,lang}) => {
 
-    console.log(dictionary)
     return (
         <div className={"relative "}>
             <SectionTitle className={"container"} text={dictionary.story.story}/>

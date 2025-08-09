@@ -109,7 +109,7 @@
     "title": "Korporativ sovg'alar",
     "text": "Biz logotipingiz tushirilgan korporativ sovg‘alar bilan ham shug‘ullanamiz — soatlar,charm toʻplam, bloknotlar, ruchkalar va boshqa suvenirlar. Biz allaqachon banklar, kompaniyalar va davlat tashkilotlari bilan hamkorlik qilganmiz — sovg‘alarni ehtiyojga mos tanlab, brendlash va qadoqlashni to‘liq amalga oshiramiz",
     "btn": "Batafsil ma’lumot",
-    "desc": "President Business Gifts — bu shunchaki mahsulotlarni namoyish qilish emas, bu estetika, ilhom va premium sovg'alar olamiga sho'ng'ishdir. Bizning shourumimizda siz eksklyuziv, milliy meros va zamonaviy dizayn uyg'unligidagi mahsulotlarni shaxsan ko'rishingiz, ularning sifatini baholashingiz va o'zingiz yoki hamkorlaringiz uchun mukammal sovg'ani tanlashingiz mumkin. Agar siz brendimiz falsafasini his qilmoqchi bo‘lsangiz — bizning shourumga tashrif buyuring. Manzil va joylashuvni ushbu sahifada topasiz. Agar savollaringiz bo‘lsa yoki oldindan uchrashuv belgilamoqchi bo‘lsangiz — biz bilan qulay vaqtda bog‘laning.",  
+    "desc": "President Business Gifts — bu shunchaki mahsulotlarni namoyish qilish emas, bu estetika, ilhom va premium sovg'alar olamiga sho'ng'ishdir. Bizning shourumimizda siz eksklyuziv, milliy meros va zamonaviy dizayn uyg'unligidagi mahsulotlarni shaxsan ko'rishingiz, ularning sifatini baholashingiz va o'zingiz yoki hamkorlaringiz uchun mukammal sovg'ani tanlashingiz mumkin. Agar siz brendimiz falsafasini his qilmoqchi bo‘lsangiz — bizning shourumga tashrif buyuring. Manzil va joylashuvni ushbu sahifada topasiz. Agar savollaringiz bo‘lsa yoki oldindan uchrashuv belgilamoqchi bo‘lsangiz — biz bilan qulay vaqtda bog‘laning.",
     "headerTitle": "Korporativ sovg‘a san’ati",
     "headerText": "Kompaniya logotipi tushirilgan korporativ sovg‘alar – bu shunchaki rasmiyatchilik emas. Bu biznes aloqalarni mustahkamlash va imidjni oshirishning kuchli vositasidir. President Business Gift kompaniyasida biz sizning nomingizdan hurmat, e’tibor va maqomni ifodalovchi sovg‘alarni yaratamiz.",
     "block1": {
@@ -159,11 +159,151 @@
     "title": "Mahsulotlarga g'amxo'rlik va xizmatlar"
   },
   "careServices": {
-  "writing": "Yozish quroli",
-  "leather": "Charm buyumlar",
-  "watches": "Soatlar"
-},
-"service": {
-  "title": "Mijozlarga xizmat ko‘rsatish"
-}
+    "writing": "Yozish quroli",
+    "leather": "Charm buyumlar",
+    "watches": "Soatlar"
+  },
+  "service": {
+    "title": "Mijozlarga xizmat ko‘rsatish",
+    "shipping": {
+      "title": "Yetkazib berish va jo‘natish",
+      "description": "Biz buyurtmangizni imkon qadar tez va qulay yetkazib berishga intilamiz.",
+      "delivery_tashkent_title": "Toshkent bo‘yicha:",
+      "delivery_tashkent_text": "Buyurtma qilingan kuni Yandex Delivery orqali yetkazib beriladi. Tasdiqlanganidan so‘ng bir necha soat ichida sovg‘angizni olasiz.",
+      "delivery_regions_title": "O‘zbekiston viloyatlari bo‘yicha:",
+      "delivery_regions_text": "Buyurtmalar BTS yetkazib berish xizmati orqali yuboriladi. Yetkazib berish muddati — shaharga va yetkazish punktining masofasiga qarab 2–7 ish kuni.",
+      "contact_text": "Yetkazib berish bo‘yicha barcha savollar uchun yagona koll-markazimizga murojaat qilishingiz mumkin:",
+      "contact_phone": "+998 71 203 05 00"
+    },
+    "return": {
+      "title": "Mahsulot kafolati",
+      "text1": "Biz mahsulotlarimiz sifatiga ishonamiz va ularga kafolat beramiz.",
+      "text2": "Kafolatga ega har bir mahsulotga kafolat taloni beriladi.",
+      "text3": "Kafolatli xizmatdan foydalanish uchun kafolat taloni va chekni saqlash zarur.",
+      "text4": "Kafolat muddati mahsulot turi va foydalanish sharoitiga qarab 2 yildan 5 yilgacha bo‘lishi mumkin."
+    },
+    "faqs": {
+      "questions": "Tez-tez so‘raladigan savollar"
+    },
+    "appointment": {
+      "title1": "Qo‘llab-quvvatlash",
+      "supportform": "Aloqa shakli",
+      "title": "Tashrifga yozilish",
+      "description": "“President Business Gifts” shourumiga oldindan yoziling va bizning mutaxassisimiz siz bilan qulay vaqtda shaxsiy tashrifni tashkil qilish uchun bog‘lanadi.",
+      "form": {
+        "name": {
+          "label": "Ism",
+          "placeholder": "Ismingizni kiriting"
+        },
+        "phone": {
+          "label": "Telefon",
+          "placeholder": "Telefon raqamingizni kiriting"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Elektron pochtangizni kiriting"
+        },
+        "location": {
+          "label": "Shahar",
+          "placeholder": "Shaharingizni kiriting"
+        },
+        "date": {
+          "label": "Tashrif sanasi"
+        },
+        "time": {
+          "label": "Tashrif vaqti"
+        },
+        "comment": {
+          "label": "Izoh",
+          "placeholder": "Xabaringizni shu yerga yozing"
+        },
+        "submit": "Yuborish",
+        "contact": {
+          "label": "Messengerlarda kontakt (masalan, WhatsApp, Telegram)",
+          "placeholder": "Messengerlardagi kontaktingizni kiriting"
+        },
+        "commentandques": {
+          "label": "Izoh / Savol",
+          "placeholder": "Xabaringizni shu yerga kiriting"
+        },
+        "reposts": "Men eksklyuziv takliflar yoki mahsulotlar haqidagi ma'lumotlarni olishni xohlamayman."
+      },
+      "messages": {
+        "required": "Majburiy maydon",
+        "min": "Juda qisqa",
+        "max": "Juda uzun",
+        "invalid": "Noto‘g‘ri format",
+        "success": "Muvaffaqiyatli yuborildi",
+        "error": "Xatolik yuz berdi",
+        "serverError": "Server xatosi",
+        "modalSuccessTitle": "Muvaffaqiyat!",
+        "modalSuccessDescription": "So‘rovingiz muvaffaqiyatli yuborildi"
+      },
+      "privacyNote": "Biz sizni yangiliklar va maxsus takliflar haqida xabardor qilishimiz mumkin. Agar bunday xabarnomalarni olishni istamasangiz, mos bandni belgilang.",
+      "privacyLink": " Barcha ma'lumotlar maxfiy ravishda, Maxfiylik siyosatiga muvofiq qayta ishlanadi."
+    }
+  },
+  "contacts": {
+    "contactTitle": "Biz bilan bog‘laning",
+    "contactDescription": "Yordam kerakmi? Siz istalgan vaqtda quyidagi formani to‘ldirib bizga yozishingiz mumkin. Tezkor javoblar uchun FAQ bo‘limi, Mahsulotga g‘amxo‘rlik bo‘yicha qo‘llanma va buyurtma yoki qaytarish holatini kuzatish bo‘limlariga ham murojaat qilishingizni tavsiya qilamiz.",
+    "helpTitle": "Yordam kerakmi? Biz doim aloqadamiz.",
+    "helpDescription": "Siz bizga istalgan vaqtda murojaat qilishingiz mumkin — biz mamnuniyat bilan maslahat beramiz, sovg‘a yoki maqomli mahsulot tanlashda yordam beramiz, buyurtmani rasmiylashtiramiz va yetkazib berish bo‘yicha maslahat beramiz.",
+    "callCenter": "Call-markaz",
+    "callCenterNumber": "+998 71 203 05 00",
+    "callCenterInfo": "Yagona call-markaz ishlash vaqti:",
+    "callCenterTime": "Dush–Shan 9:00 dan 18:00 gacha",
+    "branches": "Bizning filiallar",
+    "branchList": [
+      "Toshkent, Kichik halqa yo‘li, 2/A",
+      "Toshkent, TSUM, Islom Karimov ko‘chasi, 17",
+      "Dushanbe, Rudaki, 55/1"
+    ],
+    "formTitle": "Aloqa formasi",
+    "formDescription": "Biz sizga istalgan vaqtda javob berishga tayyormiz. E'tibor bering, so‘rovni ko‘rib chiqish jarayoni 3 ish kunigacha davom etishi mumkin."
+  },
+  "newproducts": {
+    "title": "Yangi mahsulotlar",
+    "description": "President Business Gifts’ning yangi kelgan mahsulotlarini kashf eting — kolleksiyaga endigina qo‘shilgan eksklyuziv buyumlar. Statusli sovg‘alar sizning didingiz va yangiligingizni ta’kidlaydi.",
+    "notfound": {
+      "title": "Mahsulot topilmadi",
+      "description": "Afsuski, ushbu mahsulot hozircha mavjud emas. Tez orada uni katalogga qo‘shamiz. Iltimos, keyinroq qayta tekshirib ko‘ring."
+    },
+    "showMore": "Yana ko‘rsatish"
+  },
+  "like": {
+    "addToBasket": "Savatchaga qo‘shish"
+  },
+  "basket": {
+    "empty_title": "Savat bo‘sh",
+    "empty_subtitle": "Savatga hali hech qanday mahsulot qo‘shmadingiz.",
+    "price": "Narx",
+    "total": "Jami",
+    "description_unavailable": "Tavsif mavjud emas",
+    "shoppingCart": "Xarid savati",
+    "order_details": "Buyurtma tafsilotlari",
+    "product_quantity": "Mahsulot soni",
+    "product_prices": "Mahsulot narxlari",
+    "total_checkout": "Jami:",
+    "checkout": "Buyurtma berish",
+    "delivery_info": "Yetkazib berish xizmati 2–3 kun ichida."
+  },
+  "servererror": {
+    "title": "500 Xatolik",
+    "subtitle": "Biz vaqtinchalik muammo yuzaga keldi.",
+    "desc": "Bizning tizimimizda qandaydir nosozlik yuz berdi. Bu yuqori yuklama, serverdagi xatolik yoki texnik xizmat sababli bo‘lishi mumkin. Iltimos, birozdan keyin yana urinib ko‘ring yoki bosh sahifaga qaytib davom eting.",
+    "home": "Bosh sahifaga qaytish"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Kechirasiz, siz qidirgan sahifa topilmadi.",
+    "desc": "Sahifa olib tashlangan, nomi o‘zgartirilgan yoki vaqtincha mavjud emas bo‘lishi mumkin. Davom etish uchun bosh sahifaga qayting yoki boshqa sahifalarni ko‘rib chiqing.",
+    "home": "Bosh sahifaga qaytish"
+  },
+  "search": {
+    "placeholder": "Qidirish",
+    "product_suggestion": "Mahsulot taklifi",
+    "no_products": "Mahsulotlar topilmadi",
+    "product_types": "Mahsulot turlari",
+    "close": "Yopish"
+  }
 }
