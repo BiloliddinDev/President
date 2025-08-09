@@ -20,7 +20,7 @@ export default function RightImage({image, size, top, right}: RightImageProps) {
     const adjustedRight = getResponsiveValue(right, width);
     const {data: session} = useSession();
 
-    const userId = session?.user?.serverData?.id || "a049f6e0-4162-4173-abd2-e74de8476c0e";
+    const userId = session?.user?.serverData?.id;
     const {imageUrl} = useB2bImage(userId);
 
     return (
