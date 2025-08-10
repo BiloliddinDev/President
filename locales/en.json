@@ -165,7 +165,12 @@
   },
   "catalog": {
     "title": "Catalog",
-    "description": "President Business Gifts is not just a premium gift brand, but a unique blend of national identity and modern aesthetics. Inspired by the historical heritage, cultural richness, and craftsmanship traditions of the Uzbek people, we harmoniously combine them with modern design and the highest standards of quality."
+    "description": "President Business Gifts is not just a premium gift brand, but a unique blend of national identity and modern aesthetics. Inspired by the historical heritage, cultural richness, and craftsmanship traditions of the Uzbek people, we harmoniously combine them with modern design and the highest standards of quality.",
+    "aboutJournalDesc1": "Here you can explore the President Business Gifts magazine!",
+    "aboutJournalDesc2": "To do so, swipe the magazine from right to left or click once on the images.",
+    "aboutJournalDesc3": "If the magazine images do not appear, please wait a little!",
+    "aboutJournalDesc4": "Thank you :)",
+    "download": "Here you can download all parts of the magazine!"
   },
   "finewatch": {
     "breadcrumb": "Honoring the Minerva Legacy",
