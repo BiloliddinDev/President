@@ -1,7 +1,7 @@
 "use client";
 import HTMLFlipBook from "react-pageflip";
-import {cn} from "@/lib/utils";
-import React from "react";
+import { cn } from "@/lib/utils";
+import React, { useEffect, useState } from "react"; // ✅ useState, useEffect qo‘shildi
 
 interface FlipBookProps {
     children: React.ReactNode;
@@ -15,8 +15,20 @@ interface FlipBookProps {
 }
 
 const MyFlipBook = (props: FlipBookProps) => {
+    const [isPortrait, setIsPortrait] = useState(false); // ✅ mobil yoki desktop rejim holati
+
+    useEffect(() => {
+        const updateMode = () => {
+            // Agar ekran 768px dan kichik bo‘lsa → portret rejim (bitta sahifa)
+            setIsPortrait(window.innerWidth < 768);
+        };
+        updateMode(); // sahifa yuklanganda tekshiradi
+        window.addEventListener("resize", updateMode);
+        return () => window.removeEventListener("resize", updateMode);
+    }, []);
+
     return (
-        <div className="relative">
+        <div className="relative z-50 ml-0 xl:-ml-28 overflow-hidden py-4">
             <HTMLFlipBook
                 className={cn("book-content", props.className)}
                 startPage={props.startPage || 0}
@@ -28,14 +40,14 @@ const MyFlipBook = (props: FlipBookProps) => {
                 maxWidth={1000}
                 maxHeight={1500}
                 swipeDistance={30}
-                style={{}}
+                style={{ backgroundColor: "transparent" }}
                 drawShadow={true}
                 flippingTime={1000}
-                usePortrait={true}
+                usePortrait={isPortrait} // ✅ mobilga moslash
                 startZIndex={100}
                 autoSize={true}
                 maxShadowOpacity={0.5}
-                showCover={false}
+                showCover={!isPortrait} // ✅ mobilga cover bermaymiz
                 mobileScrollSupport={true}
                 clickEventForward={true}
                 useMouseEvents={true}

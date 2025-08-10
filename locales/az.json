@@ -131,7 +131,12 @@
   },
   "catalog": {
     "title": "Kataloq",
-    "description": "President Business Gifts təkcə premium hədiyyə brendi deyil, həm də milli kimlik və müasir estetik anlayışının unikal birləşməsidir. Özbək xalqının tarixi irsi, mədəni zənginliyi və sənətkarlıq ənənələrindən ilhamlanaraq, biz onları müasir dizayn və ən yüksək keyfiyyət standartları ilə birləşdiririk."
+    "description": "President Business Gifts təkcə premium hədiyyə brendi deyil, həm də milli kimlik və müasir estetik anlayışının unikal birləşməsidir. Özbək xalqının tarixi irsi, mədəni zənginliyi və sənətkarlıq ənənələrindən ilhamlanaraq, biz onları müasir dizayn və ən yüksək keyfiyyət standartları ilə birləşdiririk.",
+    "aboutJournalDesc1": "Burada President Business Gifts jurnalını tanıya bilərsiniz!",
+    "aboutJournalDesc2": "Bunu etmək üçün jurnalı sağdan sola sürüşdürün və ya şəkillərin üzərinə bir dəfə klikləyin.",
+    "aboutJournalDesc3": "Əgər jurnal şəkilləri görünmürsə, zəhmət olmasa bir az gözləyin! ",
+    "aboutJournalDesc4": "Təşəkkürlər :)",
+    "download": "Burada jurnalın bütün hissələrini yükləyə bilərsiniz!"
   },
   "finewatch": {
     "breadcrumb": "Minerva irsinə hörmət",
