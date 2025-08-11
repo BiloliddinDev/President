@@ -5,10 +5,38 @@ import { useRouter } from "next/navigation";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { LogOut, User } from "lucide-react";
-import { NavbarProps } from "../navbar/navbar";
 
+interface NavbarProps{
+  dictionary: {
+    category: {
+      title: string;
+      new: string;
+      not_found: string;
+      unavailable: string;
+      show_more: string;
+    };
+    search: {
+      placeholder: string;
+      product_suggestion: string;
+      no_products: string;
+      product_types: string;
+      close: string;
+    };
+    userDropdown: {
+      guest: {
+        title: string;
+        signUp: string;
+        logIn: string;
+      };
+      profile: {
+        profileBtn: string;
+        logoutBtn: string;
+      };
+    };
+  };
+}
 
-export default function UserDropdown({dictionary,lang}:NavbarProps) {
+export default function UserDropdown({dictionary}:NavbarProps) {
   const router = useRouter();
   const { data: session } = useSession();
 
