@@ -33,7 +33,7 @@ export const ProductsCard = ({
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
-  const [productCategory, setProductCategory] = useState<ProductsInterface>();
+  const [productCategory, setProductCategory] = useState<ProductsInterface>({} as ProductsInterface);
   const imageIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const images =
@@ -97,7 +97,7 @@ export const ProductsCard = ({
         />
       </button>
 
-      <Link href={`/shops/${productCategory?.categories[0].name}id${productCategory?.categories[0].id}/${productData.id}`}>
+      <Link href={`/shops/${productCategory.categories[0].name}id${productCategory.categories[0].id}/${productData.id}`}>
         <div className="relative w-full pt-[100%] mb-4 bg-neutral-100 rounded-[4px] overflow-hidden">
           {images.map((img, index) => (
             <Image
@@ -116,7 +116,8 @@ export const ProductsCard = ({
         </div>
       </Link>
 
-      <Link  href={`/shops/${productCategory?.categories[0].name}id${productCategory?.categories[0].id}/${productData.id}`} className="flex flex-col justify-between h-full p-3">
+      <Link  href={`/shops/${productCategory?.categories[0].name}id${productCategory?.categories[0].id}/$
+      {productData.id}`} className="flex flex-col justify-between h-full p-3">
         {productData.meta._new_product && (
           <span className="mb-3 w-fit rounded border px-2 py-0.5 text-xs font-medium text-gray-700">
             {dictionary.category.new}
