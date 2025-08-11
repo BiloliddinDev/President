@@ -340,5 +340,86 @@
     "no_products": "No products found",
     "product_types": "Product types",
     "close": "Close"
+  },
+  "b2bpage": {
+    "title": "Try your logo on our products",
+    "subtitle": "Upload your company logo and instantly see how it will look on premium gifts — clutches, bags, business card holders, and more.",
+    "cards": {
+      "clutch": {
+        "title": "Clutch",
+        "desc": "Want to see how your logo will look on a clutch? Upload your logo image and try it right now!"
+      },
+      "bag": {
+        "title": "Bag",
+        "desc": "Imagine how a bag with your brand's logo will look. Want to see the result? Try it right now!"
+      },
+      "watch": {
+        "title": "Watch",
+        "desc": "We even place your brand's logo on the inside of wristwatches — it's a delicate and precise job. Be sure to try it!"
+      }
+    },
+    "uploadSection": {
+      "placeholderText": "Please upload your logo, size must be less than 3MB.",
+      "maxSizeError": "File is too large. Maximum 3MB.",
+      "authRequiredTitle": "Authorization required",
+      "authRequiredDesc": "Please log in before uploading a file.",
+      "fileTooBigTitle": "File is too large",
+      "fileTooBigDesc": "Maximum file size is 3MB",
+      "fileLabel": "Upload logo",
+      "chooseFile": "Choose file",
+      "noFile": "No file selected",
+      "uploading": "Uploading...",
+      "onlyForAuth": "Only for authorized users",
+      "success": "File uploaded successfully",
+      "error": "Upload failed"
+    }
+  },
+  "auth": {
+    "signUp": {
+      "title": "Create an Account",
+      "subtitle": "Please fill in the form to register",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "signUpBtn": "Sign up",
+      "creating": "Creating...",
+      "continueGoogle": "Continue with Google",
+      "alreadyAccount": "Already have an account?",
+      "login": "Login"
+    },
+    "signIn": {
+      "title": "Sign In",
+      "welcome": "Welcome back! Please sign in to your account",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "continueWithGoogle": "Continue with Google",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign Up",
+      "loading": "Loading...",
+      "invalidCredentials": "Invalid email or password",
+      "networkError": "A network error occurred"
+    },
+    "forgetPassword": {
+      "title": "Forgot your password?",
+      "description": "To create a new password, please enter the email address associated with your Montblanc account. A reset password link will be sent to you by email. The link will be available for 24h.",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Enter your email",
+      "submit": "Submit"
+    }
+  },
+  "detail": {
+    "addToCart": "Add to cart",
+    "inBasket": "In basket",
+    "quantity": "pcs",
+    "basket": "Basket →",
+    "deliveryInfo": "We aim to deliver your order as quickly and conveniently as possible.",
+    "details": "Details",
+    "shareTitle": "Check out this product!",
+    "shareText": "The Extreme 3.0 pouch is awesome!",
+    "shareUnsupported": "Sharing is not supported on this device."
   }
 }

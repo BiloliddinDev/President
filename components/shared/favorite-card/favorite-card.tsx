@@ -22,7 +22,11 @@ interface FavoriteCardProps {
   };
 }
 
-export default function FavoriteCard({ onRemove, itemID, dictionary }: FavoriteCardProps) {
+export default function FavoriteCard({
+  onRemove,
+  itemID,
+  dictionary,
+}: FavoriteCardProps) {
   const [product, setProduct] = useState<ProductsInterface | null>(null);
   const [loading, setLoading] = useState(true);
   const [hovered, setHovered] = useState(false);
@@ -47,9 +51,12 @@ export default function FavoriteCard({ onRemove, itemID, dictionary }: FavoriteC
   }, [itemID]);
 
   // Rasm massivini tayyorlash
-  const images = product?.media
-    ?.filter((media) => media.filePath)
-    .map((media) => `${process.env.NEXT_PUBLIC_ADMIN_URL}${media.filePath}`) || [];
+  const images =
+    product?.media
+      ?.filter((media) => media.filePath)
+      .map(
+        (media) => `${process.env.NEXT_PUBLIC_ADMIN_URL}${media.filePath}`
+      ) || [];
 
   // Rasm almashish uchun interval
   useEffect(() => {
@@ -75,7 +82,7 @@ export default function FavoriteCard({ onRemove, itemID, dictionary }: FavoriteC
       name: product.name,
       basePriceToUSD: product.basePriceToUSD,
       price: product.prices, // Birinchi branchdan: to‘liq prices massivi
-    //   priceSingle: product.prices[0]?.price || 0, // Ikkinchi branchdan: birinchi narx
+      //   priceSingle: product.prices[0]?.price || 0, // Ikkinchi branchdan: birinchi narx
       sku: product.sku,
       imgUrl: product.media?.[0]?.filePath || "",
     });
@@ -103,7 +110,9 @@ export default function FavoriteCard({ onRemove, itemID, dictionary }: FavoriteC
                 fill
                 sizes="(max-width: 768px) 100vw, 25vw"
                 className={`object-cover absolute top-0 left-0 transition-opacity duration-700 ${
-                  index === currentImageIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                  index === currentImageIndex
+                    ? "opacity-100 z-10"
+                    : "opacity-0 z-0"
                 }`}
               />
             ))
@@ -125,10 +134,16 @@ export default function FavoriteCard({ onRemove, itemID, dictionary }: FavoriteC
             </>
           ) : (
             <>
-              <h3 className="text-lg text-gray-900 font-inter">{product?.name}</h3>
+              <h3 className="text-lg text-gray-900 font-inter">
+                {product?.name}
+              </h3>
               <p className="text-sm text-gray-500 mt-1">
-                {row ? formatCurrency({ currency: row.currency, price: row.price }) : "-"}
-                {product?.prices?.filter((price) => price.currency.code === "USD")[0] && (
+                {row
+                  ? formatCurrency({ currency: row.currency, price: row.price })
+                  : "-"}
+                {product?.prices?.filter(
+                  (price) => price.currency.code === "USD"
+                )[0] && (
                   <span className="ml-2">
                     {product.prices
                       .filter((price) => price.currency.code === "USD")[0]
@@ -149,8 +164,12 @@ export default function FavoriteCard({ onRemove, itemID, dictionary }: FavoriteC
             <Skeleton className="w-10 h-10" />
           </>
         ) : (
-          <>
-            <Button variant="secondary" onClick={handleAddToCart} className="h-10">
+          <div className="w-full flex flex-row gap-4">
+            <Button
+              variant="secondary"
+              onClick={handleAddToCart}
+              className="h-10 w-[80%]"
+            >
               {dictionary.like.addToBasket}
             </Button>
             <Button
@@ -160,7 +179,7 @@ export default function FavoriteCard({ onRemove, itemID, dictionary }: FavoriteC
             >
               <Trash className="w-5 h-5" />
             </Button>
-          </>
+          </div>
         )}
       </div>
     </div>

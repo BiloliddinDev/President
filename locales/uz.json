@@ -305,5 +305,86 @@
     "no_products": "Mahsulotlar topilmadi",
     "product_types": "Mahsulot turlari",
     "close": "Yopish"
+  },
+  "b2bpage": {
+    "title": "Logotipingizni mahsulotlarimizda sinab ko‘ring",
+    "subtitle": "Kompaniyangiz logotipini yuklang va darhol u premium sovg‘alarda — klatchlar, sumkalar, vizitkalar va boshqa buyumlarda qanday ko‘rinishini ko‘ring.",
+    "cards": {
+      "clutch": {
+        "title": "Klatch",
+        "desc": "Logotipingiz klatchda qanday ko‘rinishini ko‘rishni xohlaysizmi? Unda logotip rasmini yuklang va hoziroq sinab ko‘ring!"
+      },
+      "bag": {
+        "title": "Sumka",
+        "desc": "Brendingiz logotipi tushirilgan sumka qanday ko‘rinishini tasavvur qiling. Natijani ko‘rishni xohlaysizmi? Hoziroq sinab ko‘ring!"
+      },
+      "watch": {
+        "title": "Soat",
+        "desc": "Biz logotipingizni hatto qo‘l soatlarining ichki qismiga ham tushiramiz — bu nozik va aniq ish. Albatta sinab ko‘ring!"
+      }
+    },
+    "uploadSection": {
+      "placeholderText": "Iltimos, logotipingizni yuklang, hajmi 3MB dan kichik bo‘lishi kerak.",
+      "maxSizeError": "Fayl juda katta. Maksimal hajm 3MB.",
+      "authRequiredTitle": "Avtorizatsiya talab qilinadi",
+      "authRequiredDesc": "Fayl yuklashdan oldin tizimga kiring.",
+      "fileTooBigTitle": "Fayl juda katta",
+      "fileTooBigDesc": "Maksimal fayl hajmi 3MB",
+      "fileLabel": "Logotip yuklash",
+      "chooseFile": "Fayl tanlash",
+      "noFile": "Fayl tanlanmagan",
+      "uploading": "Yuklanmoqda...",
+      "onlyForAuth": "Faqat avtorizatsiyadan o'tgan foydalanuvchilar uchun",
+      "success": "Fayl muvaffaqiyatli yuklandi",
+      "error": "Yuklashda xatolik"
+    }
+  },
+  "auth": {
+    "signUp": {
+      "title": "Hisob yaratish",
+      "subtitle": "Ro‘yxatdan o‘tish uchun formani to‘ldiring",
+      "fullName": "To‘liq ism",
+      "fullNamePlaceholder": "Ismingiz va familiyangiz",
+      "email": "Email",
+      "emailPlaceholder": "siz@example.com",
+      "password": "Parol",
+      "confirmPassword": "Parolni tasdiqlang",
+      "signUpBtn": "Ro‘yxatdan o‘tish",
+      "creating": "Yaratilmoqda...",
+      "continueGoogle": "Google orqali davom etish",
+      "alreadyAccount": "Hisobingiz bormi?",
+      "login": "Kirish"
+    },
+    "signIn": {
+      "title": "Kirish",
+      "welcome": "Xush kelibsiz! Iltimos, akkauntingizga kiring",
+      "email": "Email",
+      "password": "Parol",
+      "forgotPassword": "Parolni unutdingizmi?",
+      "continueWithGoogle": "Google orqali davom etish",
+      "noAccount": "Hisobingiz yo'qmi?",
+      "signUp": "Ro‘yxatdan o‘tish",
+      "loading": "Yuklanmoqda...",
+      "invalidCredentials": "Email yoki parol noto‘g‘ri",
+      "networkError": "Tarmoq xatosi yuz berdi"
+    },
+    "forgetPassword": {
+      "title": "Parolingizni unutdingizmi?",
+      "description": "Yangi parol yaratish uchun Montblanc akkauntingizga bog'langan elektron pochta manzilini kiriting. Parolni tiklash havolasi sizga elektron pochta orqali yuboriladi va 24 soat davomida amal qiladi.",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Email manzilingizni kiriting",
+      "submit": "Yuborish"
+    }
+  },
+  "detail": {
+    "addToCart": "Savatga qo‘shish",
+    "inBasket": "Savatda",
+    "quantity": "dona",
+    "basket": "Savat →",
+    "deliveryInfo": "Buyurtmangizni iloji boricha tez va qulay yetkazib berishga harakat qilamiz.",
+    "details": "Batafsil",
+    "shareTitle": "Ushbu mahsulotga qarang!",
+    "shareText": "Extreme 3.0 sumka juda ajoyib!",
+    "shareUnsupported": "Ulashish ushbu qurilmada qo‘llab-quvvatlanmaydi."
   }
 }

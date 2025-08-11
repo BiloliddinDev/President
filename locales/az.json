@@ -305,5 +305,86 @@
     "no_products": "Məhsul tapılmadı",
     "product_types": "Məhsul növləri",
     "close": "Bağla"
+  },
+  "b2bpage": {
+    "title": "Loqotipinizi məhsullarımızda sınayın",
+    "subtitle": "Şirkət loqotipinizi yükləyin və onun premium hədiyyələrdə — klatçlarda, çantalarda, vizitkart qablarında və digər məhsullarda necə görünəcəyini dərhal görün.",
+    "cards": {
+      "clutch": {
+        "title": "Klatç",
+        "desc": "Loqotipinizin klatçda necə görünəcəyini görmək istəyirsiniz? O zaman loqotip şəklinizi yükləyin və indi sınayın!"
+      },
+      "bag": {
+        "title": "Çanta",
+        "desc": "Brend loqotipiniz olan çantanın necə görünəcəyini təsəvvür edin. Nəticəni görmək istəyirsiniz? İndi sınayın!"
+      },
+      "watch": {
+        "title": "Saat",
+        "desc": "Brend loqotipinizi hətta bilək saatlarının daxili hissəsinə belə yerləşdiririk — bu incə və dəqiq işdir. Mütləq sınayın!"
+      }
+    },
+    "uploadSection": {
+      "placeholderText": "Zəhmət olmasa loqotipinizi yükləyin, ölçüsü 3MB-dan az olmalıdır.",
+      "maxSizeError": "Fayl çox böyükdır. Maksimum 3MB.",
+      "authRequiredTitle": "Avtorizasiya tələb olunur",
+      "authRequiredDesc": "Fayl yükləməzdən əvvəl sistemə daxil olun.",
+      "fileTooBigTitle": "Fayl çox böyükdür",
+      "fileTooBigDesc": "Maksimum fayl ölçüsü 3MB",
+      "fileLabel": "Loqotip yüklə",
+      "chooseFile": "Fayl seçin",
+      "noFile": "Fayl seçilməyib",
+      "uploading": "Yüklənir...",
+      "onlyForAuth": "Yalnız avtorizasiya olunmuş istifadəçilər üçün",
+      "success": "Fayl uğurla yükləndi",
+      "error": "Yükləmə xətası"
+    }
+  },
+  "auth": {
+    "signUp": {
+      "title": "Hesab yaradın",
+      "subtitle": "Qeydiyyat üçün formu doldurun",
+      "fullName": "Tam ad",
+      "fullNamePlaceholder": "Tam adınız",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "password": "Şifrə",
+      "confirmPassword": "Şifrəni təsdiqləyin",
+      "signUpBtn": "Qeydiyyatdan keç",
+      "creating": "Yaradılır...",
+      "continueGoogle": "Google ilə davam et",
+      "alreadyAccount": "Artıq hesabınız var?",
+      "login": "Daxil ol"
+    },
+    "signIn": {
+      "title": "Daxil ol",
+      "welcome": "Xoş gəldiniz! Zəhmət olmasa hesabınıza daxil olun",
+      "email": "Email",
+      "password": "Şifrə",
+      "forgotPassword": "Şifrəni unutmusunuz?",
+      "continueWithGoogle": "Google ilə davam et",
+      "noAccount": "Hesabınız yoxdur?",
+      "signUp": "Qeydiyyatdan keçin",
+      "loading": "Yüklənir...",
+      "invalidCredentials": "Email və ya şifrə səhvdir",
+      "networkError": "Şəbəkə xətası baş verdi"
+    },
+    "forgetPassword": {
+      "title": "Şifrənizi unutmusunuz?",
+      "description": "Yeni şifrə yaratmaq üçün Montblanc hesabınıza bağlı olan e-poçt ünvanınızı daxil edin. Şifrəni sıfırlamaq üçün keçid sizə e-poçt vasitəsilə göndəriləcək və 24 saat ərzində aktiv olacaq.",
+      "emailLabel": "E-poçt",
+      "emailPlaceholder": "E-poçtunuzu daxil edin",
+      "submit": "Göndər"
+    }
+  },
+  "detail": {
+    "addToCart": "Səbətə əlavə et",
+    "inBasket": "Səbətdə",
+    "quantity": "ədəd",
+    "basket": "Səbət →",
+    "deliveryInfo": "Sifarişinizi mümkün qədər tez və rahat çatdırmağa çalışırıq.",
+    "details": "Ətraflı",
+    "shareTitle": "Bu məhsula baxın!",
+    "shareText": "Extreme 3.0 çantası əladır!",
+    "shareUnsupported": "Paylaşma bu cihazda dəstəklənmir."
   }
 }
