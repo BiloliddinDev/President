@@ -515,5 +515,16 @@
       "successMessage": "Почтаи электронӣ бомуваффақият тағйир дода шуд",
       "errorMessage": "Ҳангоми тағйир додани почтаи электронӣ хатогӣ рӯй дод"
     }
+  },
+  "userDropdown": {
+    "guest": {
+      "title": "Имтиёзҳои President Business Gifts -ро кушоед",
+      "signUp": "Ҳисоб эҷод кунед",
+      "logIn": "Ворид шудан"
+    },
+    "profile": {
+      "profileBtn": "Профил",
+      "logoutBtn": "Баромадан"
+    }
   }
 }

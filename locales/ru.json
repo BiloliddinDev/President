@@ -519,5 +519,16 @@
         "successMessage": "Email успешно изменен",
         "errorMessage": "Произошла ошибка при изменении email"
       }
+  },
+  "userDropdown": {
+    "guest": {
+      "title": "Откройте свои преимущества President Business Gifts",
+      "signUp": "Создать аккаунт",
+      "logIn": "Войти"
+    },
+    "profile": {
+      "profileBtn": "Профиль",
+      "logoutBtn": "Выйти"
+    }
   }
 }

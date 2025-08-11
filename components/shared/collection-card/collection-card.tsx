@@ -66,7 +66,7 @@ export const CollectionCard: FC<{
           className={`w-5 h-5 ${isLiked ? "fill-primary text-primary" : ""}`}
         />
       </button> 
-      <Link href={`/shops${productCategory?.categories[0].name}id${productCategory?.categories[0].id}/${newsItem.id}`}>
+      <Link href={`/shops/${productCategory?.categories[0].name}id${productCategory?.categories[0].id}/${newsItem.id}`}>
         <div className="relative w-[300px] h-[300px] overflow-hidden cursor-pointer">
           {newsItem.media && newsItem.media.map((img, index) => (
             <Image

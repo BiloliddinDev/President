@@ -26,11 +26,10 @@ export function BreadcrumbDynamic({url}: { url?: string }) {
     : item
 );
 
-const fullPaths = segments.map((_, i) => "/" + segments.slice(0, i + 1).join("/"));
+const fullPaths = segm.map((_, i) => "/" + segm.slice(0, i + 1).join("/"));
 const breadcrumbSegments = url ? segments.slice(0, -1) : segments;
 const breadcrumbPaths = url ? fullPaths.slice(0, -1) : fullPaths;
 
-console.log(breadcrumbSegments,segments,segm)
 
     const t = useBreadcrumbTranslation();
 

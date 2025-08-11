@@ -131,7 +131,7 @@ export default function FavoriteCard({
           {!loading && (
             <Heart
               onClick={onRemove}
-              className="absolute top-3 right-3 w-5 h-5 fill-primary text-primary cursor-pointer hover:scale-110 transition-transform"
+              className="absolute top-3 right-3 w-5 h-5 fill-primary text-primary cursor-pointer hover:scale-110 transition-transform z-10"
             />
           )}
         </div>

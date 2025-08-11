@@ -5,8 +5,10 @@ import { useRouter } from "next/navigation";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { LogOut, User } from "lucide-react";
+import { NavbarProps } from "../navbar/navbar";
 
-export default function UserDropdown() {
+
+export default function UserDropdown({dictionary,lang}:NavbarProps) {
   const router = useRouter();
   const { data: session } = useSession();
 
@@ -33,21 +35,21 @@ export default function UserDropdown() {
           className="z-[100] mt-6 w-full p-6 rounded-[4px] bg-white space-y-5"
         >
           <div className="uppercase text-xs font-semibold text-gray-700 tracking-wide">
-            Unlock your President benefits
+            {dictionary.userDropdown.guest.title}
           </div>
           <div className="flex gap-2">
             <Button
               variant={"default"}
               onClick={() => router.push("/auth/sign-up")}
             >
-              Create an account
+            {dictionary.userDropdown.guest.signUp}
             </Button>
             <Button
               variant="secondary"
               className="flex-1"
               onClick={() => router.push("/auth/sign-in")}
             >
-              Log in
+              {dictionary.userDropdown.guest.logIn}
             </Button>
           </div>
         </PopoverContent>
@@ -89,7 +91,7 @@ export default function UserDropdown() {
             onClick={() => router.push("/account")}
           >
             <User className="w-4 h-4 mr-2" />
-            Profil
+            {dictionary.userDropdown.profile.profileBtn}
           </Button>
           <Button
             variant="secondary"
@@ -97,7 +99,8 @@ export default function UserDropdown() {
             onClick={() => signOut()}
           >
             <LogOut className="w-4 h-4 mr-2" />
-            Chiqish
+            {dictionary.userDropdown.profile.logoutBtn}
+
           </Button>
         </div>
       </PopoverContent>

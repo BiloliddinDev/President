@@ -513,5 +513,16 @@
       "successMessage": "E-poçt uğurla dəyişdirildi",
       "errorMessage": "E-poçt dəyişdirilərkən xəta baş verdi"
     }
+  },
+  "userDropdown": {
+    "guest": {
+      "title": "President Business Gifts üstünlüklərinizi açın",
+      "signUp": "Hesab yaradın",
+      "logIn": "Daxil ol"
+    },
+    "profile": {
+      "profileBtn": "Profil",
+      "logoutBtn": "Çıxış"
+    }
   }
 }

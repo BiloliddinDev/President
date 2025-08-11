@@ -513,5 +513,16 @@
       "successMessage": "Email muvaffaqiyatli o‘zgartirildi",
       "errorMessage": "Emailni o‘zgartirishda xatolik yuz berdi"
     }
+  },
+  "userDropdown": {
+    "guest": {
+      "title": "President Business Gifts imtiyozlarini oching",
+      "signUp": "Ro'yxatdan o'tish",
+      "logIn": "Kirish"
+    },
+    "profile": {
+      "profileBtn": "Profil",
+      "logoutBtn": "Chiqish"
+    }
   }
 }

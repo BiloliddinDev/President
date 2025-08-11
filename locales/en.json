@@ -548,5 +548,17 @@
         "successMessage": "Email successfully changed",
         "errorMessage": "An error occurred while changing email"
       }
+  },
+  "userDropdown": {
+    "guest": {
+      "title": "Unlock your President Business Gifts benefits",
+      "signUp": "Create an account",
+      "logIn": "Log in"
+    },
+    "profile": {
+      "profileBtn": "Profile",
+      "logoutBtn": "Sign out"
+    }
   }
+
 }
