@@ -131,7 +131,12 @@
   },
   "catalog": {
     "title": "Katalog",
-    "description": "President Business Gifts — bu shunchaki premium sovg'alar brendi emas, balki milliy o'zlik va zamonaviy estetikani noyob uyg'unligidir. O'zbek xalqining tarixiy merosi, madaniy boyligi va hunarmandchilik an'analaridan ilhomlanib, biz ularni zamonaviy dizayn va eng yuqori sifat standartlari bilan uyg'unlashtiramiz."
+    "description": "President Business Gifts — bu shunchaki premium sovg'alar brendi emas, balki milliy o'zlik va zamonaviy estetikani noyob uyg'unligidir. O'zbek xalqining tarixiy merosi, madaniy boyligi va hunarmandchilik an'analaridan ilhomlanib, biz ularni zamonaviy dizayn va eng yuqori sifat standartlari bilan uyg'unlashtiramiz.",
+    "aboutJournalDesc1": "Siz bu yerda President Business Gifts jurnali bilan tanishib chiqasiz!",
+    "aboutJournalDesc2": "Buni amalga oshirish uchun jurnalni o‘ngdan chapga suring yoki rasmlar ustiga bir marta bosing.",
+    "aboutJournalDesc3": "Agar jurnal rasmlari sizda ko‘rinmasa, biroz kuting! ",
+    "aboutJournalDesc4": "Rahmat :)",
+    "download":" Bu yerda jurnalning barcha qismlarini yuklab olishingiz mumkin!"
   },
   "finewatch": {
     "breadcrumb": "Minerva merosiga hurmat",

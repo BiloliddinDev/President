@@ -2,12 +2,203 @@ import firtPage from "@/public/images/bookPage1.png";
 import secondPage from "@/public/images/bookPage2.png";
 import image from "@/public/images/Journal.jpg";
 import image2 from "@/public/images/CorporateGifts2.jpg";
+import journal1 from "@/public/pdf/journalImages/journal1-1.webp";
+import journal2 from "@/public/pdf/journalImages/journal1-2.webp";
+import journal3 from "@/public/pdf/journalImages/journal1-3.webp";
+import journal4 from "@/public/pdf/journalImages/journal1-4.webp";
+import journal5 from "@/public/pdf/journalImages/journal1-5.webp";
+import journal6 from "@/public/pdf/journalImages/journal1-6.webp";
+import journal7 from "@/public/pdf/journalImages/journal1-7.webp";
+import journal8 from "@/public/pdf/journalImages/journal1-8.webp";
+import journal9 from "@/public/pdf/journalImages/journal1-9.webp";
+import journal10 from "@/public/pdf/journalImages/journal1-10.webp";
+import journal11 from "@/public/pdf/journalImages/journal1-11.webp";
+import journal12 from "@/public/pdf/journalImages/journal1-12.webp";
+import journal13 from "@/public/pdf/journalImages/journal1-13.webp";
+import journal14 from "@/public/pdf/journalImages/journal1-14.webp";
+import journal15 from "@/public/pdf/journalImages/journal1-15.webp";
+import journal16 from "@/public/pdf/journalImages/journal1-16.webp";
+import journal17 from "@/public/pdf/journalImages/journal1-17.webp";
+import journal18 from "@/public/pdf/journalImages/journal1-18.webp";
+import journal19 from "@/public/pdf/journalImages/journal1-19.webp";
+import journal20 from "@/public/pdf/journalImages/journal1-20.webp";
+import journal21 from "@/public/pdf/journalImages/journal1-21.webp";
+import journal22 from "@/public/pdf/journalImages/journal1-22.webp";
+import journal23 from "@/public/pdf/journalImages/journal1-23.webp";
+import journal24 from "@/public/pdf/journalImages/journal1-24.webp";
+import journal25 from "@/public/pdf/journalImages/journal1-25.webp";
+import journal26 from "@/public/pdf/journalImages/journal1-26.webp";
+import journal27 from "@/public/pdf/journalImages/journal1-27.webp";
+import journal28 from "@/public/pdf/journalImages/journal1-28.webp";
+import journal29 from "@/public/pdf/journalImages/journal1-29.webp";
+import journal30 from "@/public/pdf/journalImages/journal1-30.webp";
+import journal31 from "@/public/pdf/journalImages/journal1-31.webp";
+import journal32 from "@/public/pdf/journalImages/journal1-32.webp";
+import journal33 from "@/public/pdf/journalImages/journal1-33.webp";
+import journal34 from "@/public/pdf/journalImages/journal1-34.webp";
+import journal35 from "@/public/pdf/journalImages/journal1-35.webp";
+import journal36 from "@/public/pdf/journalImages/journal1-36.webp";
+import journal37 from "@/public/pdf/journalImages/journal1-37.webp";
+import journal38 from "@/public/pdf/journalImages/journal1-38.webp";
+import journal39 from "@/public/pdf/journalImages/journal1-39.webp";
+import journal40 from "@/public/pdf/journalImages/journal1-40.webp";
+import journal41 from "@/public/pdf/journalImages/journal1-41.webp";
+import journal42 from "@/public/pdf/journalImages/journal1-42.webp";
+import journal43 from "@/public/pdf/journalImages/journal1-43.webp";
+import journal44 from "@/public/pdf/journalImages/journal1-44.webp";
+import journal45 from "@/public/pdf/journalImages/journal1-45.webp";
+import journal46 from "@/public/pdf/journalImages/journal1-46.webp";
+import journal47 from "@/public/pdf/journalImages/journal1-47.webp";
+import journal48 from "@/public/pdf/journalImages/journal1-48.webp";
+import journal49 from "@/public/pdf/journalImages/journal1-49.webp";
+import journal50 from "@/public/pdf/journalImages/journal1-50.webp";
+import journal51 from "@/public/pdf/journalImages/journal1-51.webp";
+import journal52 from "@/public/pdf/journalImages/journal1-52.webp";
+import journal53 from "@/public/pdf/journalImages/journal1-53.webp";
+import journal54 from "@/public/pdf/journalImages/journal1-54.webp";
+import journal55 from "@/public/pdf/journalImages/journal1-55.webp";
+import journal56 from "@/public/pdf/journalImages/journal1-56.webp";
+import journal57 from "@/public/pdf/journalImages/journal1-57.webp";
+import journal58 from "@/public/pdf/journalImages/journal1-58.webp";
+import journal59 from "@/public/pdf/journalImages/journal1-59.webp";
+import journal60 from "@/public/pdf/journalImages/journal1-60.webp";
+import journal61 from "@/public/pdf/journalImages/journal1-61.webp";
+import journal62 from "@/public/pdf/journalImages/journal1-62.webp";
+import journal63 from "@/public/pdf/journalImages/journal1-63.webp";
+import journal64 from "@/public/pdf/journalImages/journal1-64.webp";
+import journal65 from "@/public/pdf/journalImages/journal1-65.webp";
+import journal66 from "@/public/pdf/journalImages/journal1-66.webp";
+import journal67 from "@/public/pdf/journalImages/journal1-67.webp";
+import journal68 from "@/public/pdf/journalImages/journal1-68.webp";
+import journal69 from "@/public/pdf/journalImages/journal1-69.webp";
+import journal70 from "@/public/pdf/journalImages/journal1-70.webp";
+import journal71 from "@/public/pdf/journalImages/journal1-71.webp";
+import journal72 from "@/public/pdf/journalImages/journal1-72.webp";
+import journal73 from "@/public/pdf/journalImages/journal1-73.webp";
+import journal74 from "@/public/pdf/journalImages/journal1-74.webp";
+import journal75 from "@/public/pdf/journalImages/journal1-75.webp";
+import journal76 from "@/public/pdf/journalImages/journal1-76.webp";
+import journal77 from "@/public/pdf/journalImages/journal1-77.webp";
+import journal78 from "@/public/pdf/journalImages/journal1-78.webp";
+import journal79 from "@/public/pdf/journalImages/journal1-79.webp";
+import journal80 from "@/public/pdf/journalImages/journal1-80.webp";
+import journal81 from "@/public/pdf/journalImages/journal1-81.webp";
+import journal82 from "@/public/pdf/journalImages/journal1-82.webp";
+import journal83 from "@/public/pdf/journalImages/journal1-83.webp";
+import journal84 from "@/public/pdf/journalImages/journal1-84.webp";
+import journal85 from "@/public/pdf/journalImages/journal1-85.webp";
+import journal86 from "@/public/pdf/journalImages/journal1-86.webp";
+import journal87 from "@/public/pdf/journalImages/journal1-87.webp";
+import journal88 from "@/public/pdf/journalImages/journal1-88.webp";
+import journal89 from "@/public/pdf/journalImages/journal1-89.webp";
+import journal90 from "@/public/pdf/journalImages/journal1-90.webp";
+import journal91 from "@/public/pdf/journalImages/journal1-91.webp";
+import journal92 from "@/public/pdf/journalImages/journal1-92.webp";
+import journal93 from "@/public/pdf/journalImages/journal1-93.webp";
+import journal94 from "@/public/pdf/journalImages/journal1-94.webp";
+import journal95 from "@/public/pdf/journalImages/journal1-95.webp";
+import journal96 from "@/public/pdf/journalImages/journal1-96.webp";
+import journal97 from "@/public/pdf/journalImages/journal1-97.webp";
+
+
 
 export const bookItems = [
-    {id: 1, pageImg: image, alt: "a page of the book"},
-    {id: 2, pageImg: secondPage, alt: "a page of the book"},
-    {id: 3, pageImg: image, alt: "a page of the book"},
-    {id: 4, pageImg: image2, alt: "a page of the book"},
-    {id: 5, pageImg: firtPage, alt: "a page of the book"},
-    {id: 6, pageImg: secondPage, alt: "a page of the book"},
-];
+    {id: 1, pageImg: journal1},
+    {id: 2, pageImg: journal2},
+    {id: 3, pageImg: journal3},
+    {id: 4, pageImg: journal4},
+    {id: 5, pageImg: journal5},
+    {id: 6, pageImg: journal6},
+    {id: 7, pageImg: journal7},
+    {id: 8, pageImg: journal8},
+    {id: 9, pageImg: journal9},
+    {id: 10, pageImg: journal10},
+    {id: 11, pageImg: journal11},
+    {id: 12, pageImg: journal12},
+    {id: 13, pageImg: journal13},
+    {id: 14, pageImg: journal14},
+    {id: 15, pageImg: journal15},
+    {id: 16, pageImg: journal16},
+    {id: 17, pageImg: journal17},
+    {id: 18, pageImg: journal18},
+    {id: 19, pageImg: journal19},
+    {id: 20, pageImg: journal20},
+    {id: 21, pageImg: journal21},
+    {id: 22, pageImg: journal22},
+    {id: 23, pageImg: journal23},
+    {id: 24, pageImg: journal24},
+    {id: 25, pageImg: journal25},
+    {id: 26, pageImg: journal26},
+    {id: 27, pageImg: journal27},
+    {id: 28, pageImg: journal28},
+    {id: 29, pageImg: journal29},
+    {id: 30, pageImg: journal30},
+    {id: 31, pageImg: journal31},
+    {id: 32, pageImg: journal32},
+    {id: 33, pageImg: journal33},
+    {id: 34, pageImg: journal34},
+    {id: 35, pageImg: journal35},
+    {id: 36, pageImg: journal36},
+    {id: 37, pageImg: journal37},
+    {id: 38, pageImg: journal38},
+    {id: 39, pageImg: journal39},
+    {id: 40, pageImg: journal40},
+    {id: 41, pageImg: journal41},
+    {id: 42, pageImg: journal42},
+    {id: 43, pageImg: journal43},
+    {id: 44, pageImg: journal44},
+    {id: 45, pageImg: journal45},
+    {id: 46, pageImg: journal46},
+    {id: 47, pageImg: journal47},
+    {id: 48, pageImg: journal48},
+    {id: 49, pageImg: journal49},
+    {id: 50, pageImg: journal50},
+    {id: 51, pageImg: journal51},
+    {id: 52, pageImg: journal52},
+    {id: 53, pageImg: journal53},
+    {id: 54, pageImg: journal54},
+    {id: 55, pageImg: journal55},
+    {id: 56, pageImg: journal56},
+    {id: 57, pageImg: journal57},
+    {id: 58, pageImg: journal58},
+    {id: 59, pageImg: journal59},
+    {id: 60, pageImg: journal60},
+    {id: 61, pageImg: journal61},
+    {id: 62, pageImg: journal62},
+    {id: 63, pageImg: journal63},
+    {id: 64, pageImg: journal64},
+    {id: 65, pageImg: journal65},
+    {id: 66, pageImg: journal66},
+    {id: 67, pageImg: journal67},
+    {id: 68, pageImg: journal68},
+    {id: 69, pageImg: journal69},
+    {id: 70, pageImg: journal70},
+    {id: 71, pageImg: journal71},
+    {id: 72, pageImg: journal72},
+    {id: 73, pageImg: journal73},
+    {id: 74, pageImg: journal74},
+    {id: 75, pageImg: journal75},
+    {id: 76, pageImg: journal76},
+    {id: 77, pageImg: journal77},
+    {id: 78, pageImg: journal78},
+    {id: 79, pageImg: journal79},
+    {id: 80, pageImg: journal80},
+    {id: 81, pageImg: journal81},
+    {id: 82, pageImg: journal82},
+    {id: 83, pageImg: journal83},
+    {id: 84, pageImg: journal84},
+    {id: 85, pageImg: journal85},
+    {id: 86, pageImg: journal86},
+    {id: 87, pageImg: journal87},
+    {id: 88, pageImg: journal88},
+    {id: 89, pageImg: journal89},
+    {id: 90, pageImg: journal90},
+    {id: 91, pageImg: journal91},
+    {id: 92, pageImg: journal92},
+    {id: 93, pageImg: journal93},
+    {id: 94, pageImg: journal94},
+    {id: 95, pageImg: journal95},
+    {id: 96, pageImg: journal96},
+    {id: 97, pageImg: journal97}
+  ];
+  
