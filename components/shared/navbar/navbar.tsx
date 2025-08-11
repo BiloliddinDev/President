@@ -177,7 +177,7 @@ export const Navbar = ({ lang, dictionary }: NavbarProps) => {
               className="text-primary !hover:text-zinc-300 duration-200"
             />
           </Link>
-          <UserDropdown dictionary={dictionary} lang={lang} />
+          <UserDropdown dictionary={dictionary} />
         </div>
       </div>
       <MobileNavbar
