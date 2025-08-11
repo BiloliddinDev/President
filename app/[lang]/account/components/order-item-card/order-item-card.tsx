@@ -42,7 +42,7 @@ export const OrderCardItem = ({elementID,dictionary}: { elementID: number,dictio
     }, [elementID]);
 
 
-    console.log(productDetail, "this is product detail")
+    // console.log(productDetail, "this is product detail")
 
     return (
         <div className={"flex items-center justify-between w-full"}>
@@ -71,7 +71,7 @@ export const OrderCardItem = ({elementID,dictionary}: { elementID: number,dictio
                 </div>
             </div>
             {productDetail?.id && (
-                <Link href={`/detail/${productDetail.id}`}>{dictionary.account.order.viewMore}</Link>
+                <Link href={`/shops/${productDetail.categories[0].name}id${productDetail.categories[0].id}/${productDetail.id}`}>{dictionary.account.order.viewMore}</Link>
             )}
         </div>
     )

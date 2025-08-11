@@ -7,6 +7,7 @@ import { useWishlistStore } from "@/lib/set-wishlist.storage";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {formatCurrency} from "@/hooks/formatPrice";
+import { getProductDetail } from "@/service/products-service/product-item.service";
 
 interface ProductsCardProps {
   productData: ProductsInterface;
@@ -32,6 +33,7 @@ export const ProductsCard = ({
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
+  const [productCategory, setProductCategory] = useState<ProductsInterface>();
   const imageIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const images =
@@ -63,6 +65,23 @@ export const ProductsCard = ({
     };
   }, [hovered, images.length]);
 
+  // console.log("product data category:",productData)
+
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+        try {
+            const data = await getProductDetail(productData.id);
+            setProductCategory(data);
+        } catch (error) {
+            console.error("Error fetching product:", error);
+        } finally {
+        }
+    };
+
+    fetchProduct().then().catch().finally();
+}, [productData.id]);
+
   return (
     <div
       className={`${className} group relative flex flex-col rounded-lg transition hover:shadow-md bg-white pb-2`}
@@ -78,7 +97,7 @@ export const ProductsCard = ({
         />
       </button>
 
-      <Link href={`/detail/${productData.id}`}>
+      <Link href={`/shops/${productCategory?.categories[0].name}id${productCategory?.categories[0].id}/${productData.id}`}>
         <div className="relative w-full pt-[100%] mb-4 bg-neutral-100 rounded-[4px] overflow-hidden">
           {images.map((img, index) => (
             <Image
@@ -97,7 +116,7 @@ export const ProductsCard = ({
         </div>
       </Link>
 
-      <Link  href={`/detail/${productData.id}`} className="flex flex-col justify-between h-full p-3">
+      <Link  href={`/shops/${productCategory?.categories[0].name}id${productCategory?.categories[0].id}/${productData.id}`} className="flex flex-col justify-between h-full p-3">
         {productData.meta._new_product && (
           <span className="mb-3 w-fit rounded border px-2 py-0.5 text-xs font-medium text-gray-700">
             {dictionary.category.new}

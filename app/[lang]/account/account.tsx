@@ -55,6 +55,7 @@ export interface AccountProps {
     };
   };
 }
+  
 
 export default function AccountPage({ dictionary }: AccountProps) {
   const { data: session } = useSession();

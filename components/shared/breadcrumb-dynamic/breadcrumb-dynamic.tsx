@@ -10,16 +10,27 @@ import {
 } from "@/components/ui/breadcrumb";
 import {usePathname} from "next/navigation";
 import {useBreadcrumbTranslation} from "@/hooks/useBreadcrumbTranslation";
+import { splitNameAndIdFromParam } from "@/hooks/get-breadcrumb";
 
 const localePrefixes = ["uz", "en", "ru"];
 
 export function BreadcrumbDynamic({url}: { url?: string }) {
     const pathname = usePathname();
     const rawSegments = pathname.split("/").filter(Boolean);
-    const segments = rawSegments.filter((seg, i) => !(i === 0 && localePrefixes.includes(seg)));
-    const fullPaths = segments.map((_, i) => "/" + segments.slice(0, i + 1).join("/"));
-    const breadcrumbSegments = url ? segments.slice(0, -1) : segments;
-    const breadcrumbPaths = url ? fullPaths.slice(0, -1) : fullPaths;
+    const segm = rawSegments.filter((seg, i) => !(i === 0 && localePrefixes.includes(seg)));
+   
+
+    const segments = segm.map((item) =>
+        item.includes("id") 
+    ? splitNameAndIdFromParam(item).name 
+    : item
+);
+
+const fullPaths = segments.map((_, i) => "/" + segments.slice(0, i + 1).join("/"));
+const breadcrumbSegments = url ? segments.slice(0, -1) : segments;
+const breadcrumbPaths = url ? fullPaths.slice(0, -1) : fullPaths;
+
+console.log(breadcrumbSegments,segments,segm)
 
     const t = useBreadcrumbTranslation();
 
@@ -35,7 +46,7 @@ export function BreadcrumbDynamic({url}: { url?: string }) {
                         <BreadcrumbSeparator/>
                         <BreadcrumbItem>
                             <BreadcrumbLink href={breadcrumbPaths[i]} className="capitalize">
-                                {t[segment] || decodeURIComponent(segment)}
+                                {t[segment as string] || decodeURIComponent(segment as string)}
                             </BreadcrumbLink>
                         </BreadcrumbItem>
                     </div>
