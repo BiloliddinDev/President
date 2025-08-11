@@ -6,7 +6,25 @@ import Link from "next/link";
 import {formatCurrency} from "@/hooks/formatPrice";
 
 
-export const OrderCardItem = ({elementID}: { elementID: number }) => {
+interface DictionaryProps {
+    account: {
+      order: {
+        title: string;
+        emptyMessage: string;
+        orderId: string;
+        status: string;
+        createdAt: string;
+        address: string;
+        productCount: string;
+        total: string;
+        hide: string;
+        viewMore: string;
+        productsSuffix: string;
+      };
+    };
+  }
+
+export const OrderCardItem = ({elementID,dictionary}: { elementID: number,dictionary :DictionaryProps}) => {
     const [productDetail, setProductDetail] = useState<ProductsInterface>()
 
     useEffect(() => {
@@ -24,7 +42,7 @@ export const OrderCardItem = ({elementID}: { elementID: number }) => {
     }, [elementID]);
 
 
-    console.log(productDetail, "this is product detail")
+    // console.log(productDetail, "this is product detail")
 
     return (
         <div className={"flex items-center justify-between w-full"}>
@@ -53,7 +71,7 @@ export const OrderCardItem = ({elementID}: { elementID: number }) => {
                 </div>
             </div>
             {productDetail?.id && (
-                <Link href={`/detail/${productDetail.id}`}>Посмотреть элемент</Link>
+                <Link href={`/shops/${productDetail.categories[0].name}id${productDetail.categories[0].id}/${productDetail.id}`}>{dictionary.account.order.viewMore}</Link>
             )}
         </div>
     )

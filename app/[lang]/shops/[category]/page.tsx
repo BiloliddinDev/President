@@ -33,7 +33,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     categoryId.id || ""
   )) as CategoryInterface;
   
-
     return (
         <div className="container md:!mt-26 !mt-42">
             <BreadcrumbDynamic url={CategoryDetailData2.name || undefined}/>
