@@ -10,6 +10,7 @@ import ShopModalContent from "../modalContents/shopModal";
 import { getCategoryModal } from "@/service/home-service/category-mobile.service";
 import { Category } from "@/interface/category-type/category-interface";
 import { CurrencyType } from "@/interface/currency-type/currency-type";
+import { CountryType, LanguageType } from "@/interface/language&country-type/language-type";
 
 const MobileNavbar = ({
   lang,
@@ -18,8 +19,8 @@ const MobileNavbar = ({
   currency,
 }: {
   lang: "uz" | "ru" | "en" ;
-  languages: any[];
-  county: any[];
+  languages: LanguageType[];
+  county: CountryType[];
   currency: CurrencyType[] | undefined;
 }) => {
   const [open, setOpen] = useState<boolean>(false);
@@ -68,9 +69,9 @@ const MobileNavbar = ({
               {
                 value: "shops",
                 label: {
-                  "uz": "Do‘konlar",
+                  "uz": "Kolleksiyalar",
                   "en": "Shops",
-                  "ru": "Магазины",
+                  "ru": "Коллекции",
                   "tj": "Дӯконҳо",
                   "az": "Mağazalar"
                 },
