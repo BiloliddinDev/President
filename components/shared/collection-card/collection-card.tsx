@@ -6,6 +6,7 @@ import Link from "next/link";
 import {formatCurrency} from "@/hooks/formatPrice";
 import {Heart} from "lucide-react";
 import {useWishlistStore} from "@/lib/set-wishlist.storage";
+import { getProductDetail } from "@/service/products-service/product-item.service";
 
 export const CollectionCard: FC<{
   newsItem: ProductsInterface;
@@ -13,6 +14,7 @@ export const CollectionCard: FC<{
 }> = ({ newsItem }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
+  const [productCategory, setProductCategory] = useState<ProductsInterface>();
   const { isInWishlist, toggleWishlist } = useWishlistStore();
   const isLiked = isInWishlist(newsItem.id);
 
@@ -36,6 +38,20 @@ export const CollectionCard: FC<{
     return () => clearInterval(interval);
   }, [hovered, newsItem.media.length]);
 
+  useEffect(() => {
+    const fetchProduct = async () => {
+        try {
+            const data = await getProductDetail(newsItem.id);
+            setProductCategory(data);
+        } catch (error) {
+            console.error("Error fetching product:", error);
+        } finally {
+        }
+    };
+
+    fetchProduct().then().catch().finally();
+}, [newsItem.id]);
+
   return (
     <div
       className="w-full group relative flex flex-col rounded-lg transition bg-white"
@@ -50,7 +66,7 @@ export const CollectionCard: FC<{
           className={`w-5 h-5 ${isLiked ? "fill-primary text-primary" : ""}`}
         />
       </button> 
-      <Link href={`/detail/${newsItem.id}`}>
+      <Link href={`/shops/${productCategory?.categories[0].name}id${productCategory?.categories[0].id}/${newsItem.id}`}>
         <div className="relative w-[300px] h-[300px] overflow-hidden cursor-pointer">
           {newsItem.media && newsItem.media.map((img, index) => (
             <Image

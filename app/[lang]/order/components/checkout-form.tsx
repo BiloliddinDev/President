@@ -5,8 +5,9 @@ import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/comp
 import { Input } from "@/components/ui/input";
 import { useFormContext } from "react-hook-form";
 import { useSession } from "next-auth/react";
+import { OrderProps } from "./order";
 
-export default function CheckoutForm() {
+export default function CheckoutForm({ dictionary }: OrderProps) {
   const { control, resetField } = useFormContext();
   const { data: session } = useSession();
 
@@ -31,7 +32,9 @@ export default function CheckoutForm() {
 
   return (
     <div className="p-6 rounded-[4px] border mt-4">
-      <h2 className="text-lg font-semibold mb-4">Информация о получателе</h2>
+      <h2 className="text-lg font-semibold mb-4">
+        {dictionary.order.checkoutForm.title}
+      </h2>
 
       <div className="space-y-5">
         <FormField
@@ -39,9 +42,9 @@ export default function CheckoutForm() {
           name="userInformation.name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Имя</FormLabel>
+              <FormLabel>{dictionary.order.checkoutForm.name.title}</FormLabel>
               <FormControl>
-                <Input placeholder="Введите имя" {...field} />
+                <Input placeholder={dictionary.order.checkoutForm.name.placeholder} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -52,9 +55,9 @@ export default function CheckoutForm() {
           name="userInformation.secondment"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Фамилия</FormLabel>
+              <FormLabel>{dictionary.order.checkoutForm.surname.title}</FormLabel>
               <FormControl>
-                <Input placeholder="Введите фамилию" {...field} />
+                <Input placeholder={dictionary.order.checkoutForm.surname.placeholder} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -65,9 +68,9 @@ export default function CheckoutForm() {
           name="userInformation.phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Номер телефона</FormLabel>
+              <FormLabel>{dictionary.order.checkoutForm.phone.title}</FormLabel>
               <FormControl>
-                <Input placeholder="Enter your number.." {...field} />
+                <Input placeholder={dictionary.order.checkoutForm.phone.placeholder} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -78,9 +81,9 @@ export default function CheckoutForm() {
           name="userInformation.secondPhone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Дополнительный номер (необязательно)</FormLabel>
+              <FormLabel>{dictionary.order.checkoutForm.secondPhone.title}</FormLabel>
               <FormControl>
-                <Input placeholder="Enter your second number.." {...field} />
+                <Input placeholder={dictionary.order.checkoutForm.secondPhone.placeholder} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

@@ -1,125 +1,184 @@
 "use client";
 
-import Image, {StaticImageData} from "next/image";
-import React, {useState} from "react";
+import Image, { StaticImageData } from "next/image";
+import React, { useState } from "react";
 import Placeholder from "@/public/images/placeholder.png";
 import RightImage from "@/app/[lang]/discover/components/b2b-card/right-image/right-image";
-import {buttonVariants} from "@/components/ui/button";
-import {ResponsiveValue} from "@/hooks/get-responsive-value";
-import {useSession} from "next-auth/react";
-import {toast} from "sonner";
-import {useRouter} from 'next/navigation';
+import { buttonVariants } from "@/components/ui/button";
+import { ResponsiveValue } from "@/hooks/get-responsive-value";
+import { useSession } from "next-auth/react";
+import { mutateB2bImage } from "@/hooks/useB2bImage";
+import { toast } from "sonner";
 
 interface B2bCardProps {
-    className?: string;
-    image: StaticImageData;
-    top: ResponsiveValue;
-    right: ResponsiveValue;
-    size: number;
-    title: string;
-    desc: string,
+  className?: string;
+  image: StaticImageData;
+  top: ResponsiveValue;
+  right: ResponsiveValue;
+  size: number;
+  title: string;
+  desc: string;
+  dictionary: {
+    b2bpage: {
+      title: string;
+      subtitle: string;
+      cards: {
+        clutch: {
+          title: string;
+          desc: string;
+        };
+        bag: {
+          title: string;
+          desc: string;
+        };
+        watch: {
+          title: string;
+          desc: string;
+        };
+      };
+
+      uploadSection: {
+        authRequiredTitle: string;
+        authRequiredDesc: string;
+        fileTooBigTitle: string;
+        fileTooBigDesc: string;
+        fileLabel: string;
+        chooseFile: string;
+        noFile: string;
+        uploading: string;
+        onlyForAuth: string;
+        success: string;
+        error: string;
+      };
+    };
+  };
 }
 
-export const B2bCard = ({className, image, top, right, size, title, desc,}: B2bCardProps) => {
-    const [selectedImage, setSelectedImage] = useState<string | null>(null);
-    const [uploading, setUploading] = useState(false);
-    const [processedImage, setProcessedImage] = useState<string | null>(null);
-    const {data: session} = useSession();
-    const router = useRouter();
+export const B2bCard = ({
+  className,
+  image,
+  top,
+  right,
+  size,
+  title,
+  desc,
+  dictionary,
+}: B2bCardProps) => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const { data: session, status } = useSession();
 
+  const userId = session?.user?.serverData?.id;
 
-    const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleBlocked = () => {
+    toast.error(dictionary.b2bpage.uploadSection.authRequiredTitle, {
+      description: dictionary.b2bpage.uploadSection.authRequiredDesc,
+      className: "!bg-white !text-black",
+      descriptionClassName: "!text-black",
+    });
+  };
 
-        if (!session?.user?.serverData?.id) {
-            toast.error("Ошибка авторизации", {
-                description: "Пожалуйста, войдите в систему перед загрузкой файла.",
-                className: "!bg-white !text-black",
-                descriptionClassName: "!text-black"
-            });
-            return;
-        }
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
 
-        const file = e.target.files?.[0];
-        if (!file || file.size > 3 * 1024 * 1024) return;
+    if (!userId) {
+      handleBlocked();
+      e.currentTarget.value = "";
+      return;
+    }
 
+    if (file.size > 3 * 1024 * 1024) {
+      toast.error(dictionary.b2bpage.uploadSection.fileTooBigTitle, {
+        description: dictionary.b2bpage.uploadSection.fileTooBigDesc,
+      });
+      e.currentTarget.value = "";
+      return;
+    }
 
-        setSelectedImage(file.name);
-        const formData = new FormData();
-        formData.append("file", file);
-        formData.append("userId", "a049f6e0-4162-4173-abd2-e74de8476c0e");
+    setSelectedImage(file.name);
 
-        try {
-            setUploading(true);
-            const res = await fetch("/api/remove-bg", {
-                method: "POST",
-                body: formData
-            });
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("userId", userId);
 
-            if (!res.ok) new Error("Upload failed");
+    try {
+      setUploading(true);
+      const res = await fetch("/api/remove-bg", {
+        method: "POST",
+        body: formData,
+      });
+      if (!res.ok) throw new Error("Upload failed");
 
-            const blob = await res.blob();
-            const imageUrl = URL.createObjectURL(blob);
-            setProcessedImage(imageUrl);
-            router.refresh()
+      await mutateB2bImage(userId);
+      toast.success(dictionary.b2bpage.uploadSection.success);
+    } catch (error) {
+      console.error("Upload error:", error);
+      toast.error(dictionary.b2bpage.uploadSection.error);
+    } finally {
+      setUploading(false);
+    }
+  };
 
-        } catch (error) {
-            console.error("Upload error:", error);
-            console.log(processedImage)
-        } finally {
-            setUploading(false);
-        }
-    };
+  const disabled = uploading || !userId || status === "loading";
 
-    return (
-        <div className={`${className} flex justify-between items-center`}>
-            <div>
-                <h2 className="text-primary text-lg font-medium mb-5">{title}</h2>
-                <p className="text-sm text-zinc-600 w-[300px] md:w-[450px]">
-                    {desc}
-                </p>
+  return (
+    <div className={`${className} flex justify-between items-center`}>
+      <div>
+        <h2 className="text-primary text-lg font-medium mb-5">{title}</h2>
+        <p className="text-sm text-zinc-600 w-[300px] md:w-[450px]">{desc}</p>
 
-                <div data-aos="fade-right" className="mt-6 flex items-center gap-4 p-4 bg-white rounded border">
-                    <Image src={Placeholder} alt="placeholder" width={96} height={96}/>
-                    <div className="w-full">
-                        <p className="text-sm text-primary mb-2">
-                            Пожалуйста, загрузите свой логотип, размер должен быть меньше <br/> 3MB.
-                        </p>
-                        <input id="image" type="file" accept="image/png" className="hidden"
-                               onChange={handleImageChange}/>
-                        <div className="w-full flex gap-2 items-center justify-between">
-                            <div>{uploading ? "Uploading..." : selectedImage || "Нет выбора файла"}</div>
-                            <label htmlFor="image"
-                                   className={`${buttonVariants({variant: "secondary"})} w-[30px] cursor-pointer`}>
-                                Выбрать файл
-                            </label>
-                        </div>
-                    </div>
-                </div>
+        <div
+          data-aos="fade-right"
+          className="mt-6 flex items-center gap-4 p-4 bg-white rounded border"
+        >
+          <Image src={Placeholder} alt="placeholder" width={96} height={96} />
+          <div className="w-full">
+            <p className="text-sm text-primary mb-2">
+              {dictionary.b2bpage.uploadSection.fileLabel}
+            </p>
 
-                {/*<div className="mt-6">*/}
-                {/*    <p className="mb-4 text-zinc-700 text-sm font-normal leading-tight">Choose a color</p>*/}
-                {/*    <RadioGroup defaultValue="indigo" className="flex gap-2">*/}
-                {/*        {[*/}
-                {/*            {color: "indigo", bg: "bg-indigo-300", ring: "ring-indigo-500"},*/}
-                {/*            {color: "amber", bg: "bg-amber-400", ring: "ring-amber-500"},*/}
-                {/*            {color: "green", bg: "bg-green-400", ring: "ring-green-500"},*/}
-                {/*        ].map(({color, bg, ring}) => (*/}
-                {/*            <div key={color} className="flex items-center">*/}
-                {/*                <RadioGroupItem*/}
-                {/*                    value={color}*/}
-                {/*                    id={color}*/}
-                {/*                    className={`w-6 h-6 rounded-full border-transparent cursor-pointer ${bg} */}
-                {/*                    data-[state=checked]:ring-2 */}
-                {/*                    data-[state=checked]:ring-offset-2 */}
-                {/*                    data-[state=checked]:${ring}`}*/}
-                {/*                />*/}
-                {/*            </div>*/}
-                {/*        ))}*/}
-                {/*    </RadioGroup>*/}
-                {/*</div>*/}
+            <input
+              id="image"
+              type="file"
+              accept="image/png"
+              className="hidden"
+              onChange={handleImageChange}
+              disabled={disabled}
+            />
+
+            <div className="w-full flex gap-2 items-center justify-between">
+              <div>
+                {uploading
+                  ? dictionary.b2bpage.uploadSection.uploading
+                  : selectedImage || dictionary.b2bpage.uploadSection.noFile}
+              </div>
+
+              <label
+                htmlFor="image"
+                onClick={() => {
+                  if (!userId) handleBlocked();
+                }}
+                className={`${buttonVariants({
+                  variant: "secondary",
+                })} w-[30px] ${
+                  disabled ? "pointer-events-none opacity-60" : "cursor-pointer"
+                }`}
+              >
+                {dictionary.b2bpage.uploadSection.chooseFile}
+              </label>
             </div>
 
-            <RightImage top={top} right={right} size={size} image={image}/>
+            {!userId && status !== "loading" && (
+              <p className="text-xs text-red-500 mt-2">
+                {dictionary.b2bpage.uploadSection.onlyForAuth}
+              </p>
+            )}
+          </div>
         </div>
-    );
+      </div>
+
+      <RightImage top={top} right={right} size={size} image={image} />
+    </div>
+  );
 };

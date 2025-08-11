@@ -26,7 +26,7 @@ import { getAllCurrency } from "@/service/navbar-service/currency.service";
 import { Category } from "@/interface/category-type/category-interface";
 import { CurrencyType } from "@/interface/currency-type/currency-type";
 
-interface NavbarProps {
+export interface NavbarProps {
   dictionary: {
     category: {
       title: string;
@@ -42,8 +42,19 @@ interface NavbarProps {
       product_types: string;
       close: string;
     };
+    userDropdown: {
+      guest: {
+        title: string;
+        signUp: string;
+        logIn: string;
+      };
+      profile: {
+        profileBtn: string;
+        logoutBtn: string;
+      };
+    };
   };
-  lang: "uz" | "ru" | "en" 
+  lang: "uz" | "ru" | "en";
 }
 
 export const Navbar = ({ lang, dictionary }: NavbarProps) => {
@@ -137,11 +148,11 @@ export const Navbar = ({ lang, dictionary }: NavbarProps) => {
                 className={`text-primary !hover:text-zinc-300 text-lg font-normal transition-colors duration-200`}
               >
                 {/* {`${lang.toUpperCase()}`}  */}
-                <Globe 
-                    width={24}
-                    height={24}
-                    className={`text-primary !hover:text-zinc-300 duration-200`}
-                 />
+                <Globe
+                  width={24}
+                  height={24}
+                  className={`text-primary !hover:text-zinc-300 duration-200`}
+                />
               </p>
             }
           >
@@ -166,7 +177,7 @@ export const Navbar = ({ lang, dictionary }: NavbarProps) => {
               className="text-primary !hover:text-zinc-300 duration-200"
             />
           </Link>
-          <UserDropdown />
+          <UserDropdown dictionary={dictionary} lang={lang} />
         </div>
       </div>
       <MobileNavbar
