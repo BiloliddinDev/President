@@ -63,13 +63,6 @@
     "returnMessage": "Vaqtincha bosh sahifamizga qaytib turing.",
     "buttonText": "Bosh sahifaga tashrif buyuring"
   },
-  "account": {
-    "accountTitle": "Akkaunt tafsilotlari",
-    "fullName": "To‘liq ism",
-    "email": "Elektron pochta",
-    "enterEmail": "Emailingizni kiriting",
-    "submit": "Yuborish"
-  },
   "homepage": {
     "more": "Batafsil"
   },
@@ -136,7 +129,7 @@
     "aboutJournalDesc2": "Buni amalga oshirish uchun jurnalni o‘ngdan chapga suring yoki rasmlar ustiga bir marta bosing.",
     "aboutJournalDesc3": "Agar jurnal rasmlari sizda ko‘rinmasa, biroz kuting! ",
     "aboutJournalDesc4": "Rahmat :)",
-    "download":" Bu yerda jurnalning barcha qismlarini yuklab olishingiz mumkin!"
+    "download": " Bu yerda jurnalning barcha qismlarini yuklab olishingiz mumkin!"
   },
   "finewatch": {
     "breadcrumb": "Minerva merosiga hurmat",
@@ -391,5 +384,134 @@
     "shareTitle": "Ushbu mahsulotga qarang!",
     "shareText": "Extreme 3.0 sumka juda ajoyib!",
     "shareUnsupported": "Ulashish ushbu qurilmada qo‘llab-quvvatlanmaydi."
+  },
+  "order": {
+    "created": "Yaratildi",
+    "check": "Tekshirish",
+    "addressForm": {
+      "title": "Yetkazib berish usuli va manzil:",
+      "addressLabel": "Buyurtmani qayerga yetkazamiz?",
+      "addressPlaceholder": "Manzil",
+      "addressHint": "Manzilni xaritada belgilang yoki qidiruvdan foydalaning",
+      "locationLabel": "Xaritadagi joylashuv",
+      "mapButton": "Xaritada belgilash",
+      "mapModalTitle": "Xaritadan nuqta tanlang",
+      "mapModalDescription": "Manzilni tanlash uchun xaritada kerakli joyga bosing.",
+      "saveLocationButton": "Joylashuvni saqlash"
+    },
+    "productList": {
+      "article": "Artikul",
+      "orderedProducts": "Buyurtma qilingan mahsulotlar"
+    },
+    "checkoutForm": {
+      "title": "Qabul qiluvchi haqida ma'lumot",
+      "name": {
+        "title": "Ism",
+        "placeholder": "Ismingizni kiriting"
+      },
+      "surname": {
+        "title": "Familiya",
+        "placeholder": "Familiyangizni kiriting"
+      },
+      "phone": {
+        "title": "Telefon raqam",
+        "placeholder": "Telefon raqamingizni kiriting"
+      },
+      "secondPhone": {
+        "title": "Qo‘shimcha raqam (majburiy emas)",
+        "placeholder": "Ikkinchi raqamingizni kiriting"
+      }
+    },
+    "summary": {
+      "title": "Buyurtma tafsilotlari",
+      "totalProducts": "Mahsulot soni",
+      "unit": "dona",
+      "productPrices": "Mahsulot narxlari",
+      "total": "Jami:",
+      "checkoutButton": "Toʻlovga oʻtish"
+    },
+    "successModal": {
+      "title": "Buyurtma muvaffaqiyatli rasmiylashtirildi!",
+      "description": "Buyurtmangiz uchun rahmat! Tafsilotlarni aniqlash va tasdiqlash uchun tez orada siz bilan bog‘lanamiz.",
+      "goHome": "Bosh sahifaga",
+      "goAccount": "Shaxsiy kabinetga"
+    }
+  },
+  "account": {
+    "detail": {
+      "title": "Hisob ma'lumotlari",
+      "form": {
+        "name": {
+          "label": "To'liq ism",
+          "placeholder": "Ismingizni kiriting",
+          "error": "Ism kamida 2 ta belgidan iborat bo‘lishi kerak"
+        },
+        "email": {
+          "label": "Elektron pochta",
+          "placeholder": "Email manzilingizni kiriting",
+          "error": "Yaroqli email kiriting"
+        },
+        "submit": "Saqlash"
+      },
+      "toast": {
+        "success": "Ma'lumotlar muvaffaqiyatli saqlandi",
+        "error": "Ma'lumotlarni saqlashda xatolik yuz berdi"
+      }
+    },
+    "favorite": {
+      "title": "Sevimlilarim",
+      "itemCount_one": "ta mahsulot sevimlilaringizda",
+      "itemCount_few": "ta mahsulot sevimlilaringizda",
+      "emptyMessage": "Sevimlilaringiz bo‘sh",
+      "emptyDescription": "Mahsulot yonidagi «Sevimli» belgisini bosing va uni sevimlilarga qo‘shing. Siz sevimlilaringizni istalgan vaqtda ko‘rishingiz, xarid qilishingiz va ulashishingiz mumkin.",
+      "continueShopping": "Xaridni davom ettirish"
+    },
+    "order": {
+      "title": "Buyurtmalarim",
+      "emptyMessage": "Siz ro‘yxatdan o‘tgan foydalanuvchi sifatida hali buyurtma qilmagansiz.",
+      "orderId": "Buyurtma ID",
+      "status": "Buyurtma holati",
+      "createdAt": "Buyurtma yaratilgan",
+      "address": "Manzil",
+      "productCount": "Mahsulotlar soni",
+      "total": "Jami",
+      "hide": "Yashirish",
+      "viewMore": "Yana ko‘rish",
+      "productsSuffix": "ta mahsulot",
+      "viewItem": "Elementni ko‘rish"
+    },
+    "sidebar": {
+      "accountDetails": "Akkount tafsilotlari",
+      "favorite": "Mening sevimlilarim",
+      "order": "Buyurtma",
+      "changePassword": "Parolni o‘zgartirish",
+      "changeEmail": "Elektron pochtani o‘zgartirish",
+      "logout": "Chiqish",
+      "logoutConfirm": "Chiqishni xohlaysizmi?",
+      "no": "Yo‘q",
+      "yes": "Ha"
+    },
+    "changePassword": {
+      "title": "Parolni o‘zgartirish",
+      "currentPasswordLabel": "Joriy parol",
+      "currentPasswordPlaceholder": "Joriy parolni kiriting",
+      "newPasswordLabel": "Yangi parol",
+      "newPasswordPlaceholder": "Yangi parolni kiriting",
+      "confirmPasswordLabel": "Yangi parolni tasdiqlang",
+      "confirmPasswordPlaceholder": "Yangi parolingizni tasdiqlang",
+      "submit": "Saqlash"
+    },
+    "changeEmail": {
+      "title": "Elektron pochtani o‘zgartirish",
+      "currentEmailLabel": "Joriy email",
+      "currentEmailPlaceholder": "Joriy emailingizni kiriting",
+      "newEmailLabel": "Yangi email",
+      "newEmailPlaceholder": "Yangi emailingizni kiriting",
+      "confirmEmailLabel": "Yangi emailni tasdiqlang",
+      "confirmEmailPlaceholder": "Yangi emailingizni tasdiqlang",
+      "submit": "Saqlash",
+      "successMessage": "Email muvaffaqiyatli o‘zgartirildi",
+      "errorMessage": "Emailni o‘zgartirishda xatolik yuz berdi"
+    }
   }
 }

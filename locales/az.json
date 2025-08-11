@@ -63,13 +63,6 @@
     "returnMessage": "Hələlik ana səhifəmizə qayıdın.",
     "buttonText": "Ana səhifəyə keç"
   },
-  "account": {
-    "accountTitle": "Hesab detalları",
-    "fullName": "Tam ad",
-    "email": "Elektron poçt",
-    "enterEmail": "Elektron poçtunuzu daxil edin",
-    "submit": "Təsdiqlə"
-  },
   "homepage": {
     "more": "Ətraflı"
   },
@@ -391,5 +384,134 @@
     "shareTitle": "Bu məhsula baxın!",
     "shareText": "Extreme 3.0 çantası əladır!",
     "shareUnsupported": "Paylaşma bu cihazda dəstəklənmir."
+  },
+  "order": {
+    "created": "Yaradıldı",
+    "check": "Yoxlamaq",
+    "addressForm": {
+      "title": "Çatdırılma üsulu və ünvan:",
+      "addressLabel": "Sifarişi hara çatdıraq?",
+      "addressPlaceholder": "Ünvan",
+      "addressHint": "Ünvanı xəritədə işarələyin və ya axtarışdan istifadə edin",
+      "locationLabel": "Xəritədə yerləşmə",
+      "mapButton": "Xəritədə işarələ",
+      "mapModalTitle": "Xəritədə nöqtə seçin",
+      "mapModalDescription": "Ünvanı seçmək üçün xəritədə lazım olan yerə klikləyin.",
+      "saveLocationButton": "Yerləşməni yadda saxla"
+    },
+    "productList": {
+      "article": "Məhsul kodu",
+      "orderedProducts": "Sifariş edilmiş məhsullar"
+    },
+    "checkoutForm": {
+      "title": "Alıcının məlumatları",
+      "name": {
+        "title": "Ad",
+        "placeholder": "Adınızı daxil edin"
+      },
+      "surname": {
+        "title": "Soyad",
+        "placeholder": "Soyadınızı daxil edin"
+      },
+      "phone": {
+        "title": "Telefon nömrəsi",
+        "placeholder": "Telefon nömrənizi daxil edin"
+      },
+      "secondPhone": {
+        "title": "Əlavə nömrə (vacib deyil)",
+        "placeholder": "İkinci nömrənizi daxil edin"
+      }
+    },
+    "summary": {
+      "title": "Sifarişinizin detalları",
+      "totalProducts": "Məhsul sayı",
+      "unit": "ədəd",
+      "productPrices": "Məhsul qiymətləri",
+      "total": "Cəmi:",
+      "checkoutButton": "Ödənişə keçin"
+    },
+    "successModal": {
+      "title": "Sifariş uğurla tamamlandı!",
+      "description": "Sifarişiniz üçün təşəkkür edirik! Təfərrüatları təsdiqləmək və dəqiqləşdirmək üçün tezliklə sizinlə əlaqə saxlayacağıq.",
+      "goHome": "Ana səhifəyə",
+      "goAccount": "Şəxsi kabinetə"
+    }
+  },
+  "account": {
+    "detail": {
+      "title": "Hesab məlumatları",
+      "form": {
+        "name": {
+          "label": "Tam ad",
+          "placeholder": "Adınızı daxil edin",
+          "error": "Ad ən azı 2 simvoldan ibarət olmalıdır"
+        },
+        "email": {
+          "label": "Elektron poçt",
+          "placeholder": "E-poçt ünvanınızı daxil edin",
+          "error": "Etibarlı e-poçt daxil edin"
+        },
+        "submit": "Yadda saxla"
+      },
+      "toast": {
+        "success": "Məlumatlar uğurla yadda saxlanıldı",
+        "error": "Məlumatların yadda saxlanmasında xəta baş verdi"
+      }
+    },
+    "favorite": {
+      "title": "Sevimlilərim",
+      "itemCount_one": "məhsul sevimlilər siyahısında",
+      "itemCount_few": "məhsul sevimlilər siyahısında",
+      "emptyMessage": "Sevimlilər siyahınız boşdur",
+      "emptyDescription": "Məhsulun yanındakı «Sevimli» ikonuna klikləyin və onu sevimlilərə əlavə edin. Sevimlilərinizi istənilən vaxt görə, ala və paylaşa bilərsiniz.",
+      "continueShopping": "Alış-verişə davam et"
+    },
+    "order": {
+      "title": "Sifarişlərim",
+      "emptyMessage": "Qeydiyyatdan keçmiş istifadəçi kimi hələ sifariş verməmisiniz.",
+      "orderId": "Sifariş ID",
+      "status": "Sifariş statusu",
+      "createdAt": "Sifariş yaradılıb",
+      "address": "Ünvan",
+      "productCount": "Məhsul sayı",
+      "total": "Cəmi",
+      "hide": "Gizlət",
+      "viewMore": "Daha çox bax",
+      "productsSuffix": "məhsul",
+      "viewItem": "Elementə bax"
+    },
+    "sidebar": {
+      "accountDetails": "Hesab detalları",
+      "favorite": "Mənim sevimlilərim",
+      "order": "Sifariş",
+      "changePassword": "Şifrəni dəyişmək",
+      "changeEmail": "E-poçtu dəyişmək",
+      "logout": "Çıxış",
+      "logoutConfirm": "Çıxmaq istədiyinizə əminsiniz?",
+      "no": "Xeyr",
+      "yes": "Bəli"
+    },
+    "changePassword": {
+      "title": "Şifrəni Dəyişdir",
+      "currentPasswordLabel": "Cari Şifrə",
+      "currentPasswordPlaceholder": "Cari şifrənizi daxil edin",
+      "newPasswordLabel": "Yeni Şifrə",
+      "newPasswordPlaceholder": "Yeni şifrənizi daxil edin",
+      "confirmPasswordLabel": "Yeni Şifrəni Təsdiqləyin",
+      "confirmPasswordPlaceholder": "Yeni şifrənizi təsdiqləyin",
+      "submit": "Yadda saxla"
+    },
+    "changeEmail": {
+      "title": "E-poçt ünvanını dəyiş",
+      "currentEmailLabel": "Cari e-poçt",
+      "currentEmailPlaceholder": "Cari e-poçtunuzu daxil edin",
+      "newEmailLabel": "Yeni e-poçt",
+      "newEmailPlaceholder": "Yeni e-poçtunuzu daxil edin",
+      "confirmEmailLabel": "Yeni e-poçtu təsdiqləyin",
+      "confirmEmailPlaceholder": "Yeni e-poçtunuzu təsdiqləyin",
+      "submit": "Yadda saxla",
+      "successMessage": "E-poçt uğurla dəyişdirildi",
+      "errorMessage": "E-poçt dəyişdirilərkən xəta baş verdi"
+    }
   }
 }

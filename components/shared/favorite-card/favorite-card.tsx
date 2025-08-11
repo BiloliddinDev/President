@@ -19,6 +19,16 @@ interface FavoriteCardProps {
     like: {
       addToBasket: string;
     };
+    account: {
+      favorite: {
+        title: string;
+        itemCount_one: string;
+        itemCount_few: string;
+        emptyMessage: string;
+        emptyDescription: string;
+        continueShopping: string;
+      };
+    };
   };
 }
 

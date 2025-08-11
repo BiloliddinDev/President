@@ -96,13 +96,6 @@
     "returnMessage": "Please return to our homepage in the meantime.",
     "buttonText": "Visit our Homepage"
   },
-  "account": {
-    "accountTitle": "Account detail",
-    "fullName": "Full name",
-    "email": "Email",
-    "enterEmail": "Enter your email",
-    "submit": "Submit"
-  },
   "homepage": {
     "more": "More"
   },
@@ -426,5 +419,134 @@
     "shareTitle": "Check out this product!",
     "shareText": "The Extreme 3.0 pouch is awesome!",
     "shareUnsupported": "Sharing is not supported on this device."
+  },
+  "order": {
+    "created": "Created",
+    "check": "Check",
+    "addressForm": {
+      "title": "Delivery method and address:",
+      "addressLabel": "Where should we deliver your order?",
+      "addressPlaceholder": "Address",
+      "addressHint": "Mark the address on the map or use search",
+      "locationLabel": "Location on the map",
+      "mapButton": "Mark on map",
+      "mapModalTitle": "Select a point on the map",
+      "mapModalDescription": "Click on the desired location on the map to select an address.",
+      "saveLocationButton": "Save location"
+    },
+    "productList": {
+      "article": "Article",
+      "orderedProducts": "Ordered products"
+    },
+    "checkoutForm": {
+      "title": "Recipient information",
+      "name": {
+        "title": "First name",
+        "placeholder": "Enter first name"
+      },
+      "surname": {
+        "title": "Last name",
+        "placeholder": "Enter last name"
+      },
+      "phone": {
+        "title": "Phone number",
+        "placeholder": "Enter your phone number"
+      },
+      "secondPhone": {
+        "title": "Additional phone number (optional)",
+        "placeholder": "Enter your second phone number"
+      }
+    },
+    "summary": {
+      "title": "Order details",
+      "totalProducts": "Total products",
+      "unit": "pcs.",
+      "productPrices": "Product prices",
+      "total": "Total:",
+      "checkoutButton": "Proceed to payment"
+    },
+    "successModal": {
+      "title": "Order placed successfully!",
+      "description": "Thank you for your order! We will contact you shortly to confirm and clarify the details.",
+      "goHome": "Go to homepage",
+      "goAccount": "Go to account"
+    }
+  },
+  "account": {
+    "detail": {
+      "title": "Account details",
+      "form": {
+        "name": {
+          "label": "Full name",
+          "placeholder": "Enter your name",
+          "error": "Name must be at least 2 characters"
+        },
+        "email": {
+          "label": "Email address",
+          "placeholder": "Enter your email address",
+          "error": "Enter a valid email address"
+        },
+        "submit": "Save"
+      },
+      "toast": {
+        "success": "Data saved successfully",
+        "error": "An error occurred while saving data"
+      }
+    },
+    "favorite": {
+      "title": "My Favorites",
+      "itemCount_one": "item in your wishlist",
+      "itemCount_few": "items in your wishlist",
+      "emptyMessage": "Your wishlist is empty",
+      "emptyDescription": "Click the 'Favorite' icon next to a product to add it to your wishlist. You can view, purchase, and share your favorites anytime.",
+      "continueShopping": "Continue shopping"
+    },
+    "order": {
+        "title": "My Orders",
+        "emptyMessage": "You have not placed any orders as a registered user.",
+        "orderId": "Order ID",
+        "status": "Order Status",
+        "createdAt": "Order Created",
+        "address": "Address",
+        "productCount": "Number of Items",
+        "total": "Total",
+        "hide": "Hide",
+        "viewMore": "View More",
+        "productsSuffix": "products",
+         "viewItem": "View item"
+      },
+      "sidebar": {
+        "accountDetails": "Account details",
+        "favorite": "My favorite",
+        "order": "Order",
+        "changePassword": "Change password",
+        "changeEmail": "Change email",
+        "logout": "Log out",
+        "logoutConfirm": "Are you sure you want to log out?",
+        "no": "No",
+        "yes": "Yes"
+      },
+      "changePassword": {
+        "title": "Change Password",
+        "currentPasswordLabel": "Current Password",
+        "currentPasswordPlaceholder": "Enter current password",
+        "newPasswordLabel": "New Password",
+        "newPasswordPlaceholder": "Enter new password",
+        "confirmPasswordLabel": "Confirm New Password",
+        "confirmPasswordPlaceholder": "Confirm your new password",
+        "submit": "Save"
+      },
+      "changeEmail": {
+        "title": "Change Email Address",
+        "currentEmailLabel": "Current Email",
+        "currentEmailPlaceholder": "Enter your current email",
+        "newEmailLabel": "New Email",
+        "newEmailPlaceholder": "Enter your new email",
+        "confirmEmailLabel": "Confirm New Email",
+        "confirmEmailPlaceholder": "Confirm your new email",
+        "submit": "Save",
+        "successMessage": "Email successfully changed",
+        "errorMessage": "An error occurred while changing email"
+      }
   }
 }
