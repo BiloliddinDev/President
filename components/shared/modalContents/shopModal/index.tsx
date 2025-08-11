@@ -5,14 +5,15 @@ import Link from "next/link";
 import React from "react";
 import { Category } from "@/interface/category-type/category-interface";
 
-interface shopModalProps {
-  lang: "uz" | "ru" | "en";
+interface ShopModalProps {
+  lang: "uz" | "ru" | "en" ;
   category: Category[];
+  onItemClick?: () => void; // onItemClick opsional prop sifatida qo'shildi
 }
 
-const ShopModalContent = ({ lang, category }: shopModalProps) => {
+const ShopModalContent = ({ lang, category, onItemClick }: ShopModalProps) => {
   return (
-    <div className="">
+    <div>
       {shopModalItems
         .filter((i) => i.custom)
         .map((item) => (
@@ -21,11 +22,12 @@ const ShopModalContent = ({ lang, category }: shopModalProps) => {
               item.id === 9 ? "mt-10" : "my-5"
             }`}
             key={item.id}
+            onClick={() => {
+              if (onItemClick) onItemClick();
+            }}
           >
             <Link
-              href={`/${item.link}/${
-                item.custom ? "" : item.name[lang].toLowerCase()
-              }`}
+              href={`/${item.link}/${item.custom ? "" : item.name[lang].toLowerCase()}`}
               className="group inline-flex items-center gap-1"
             >
               <span
@@ -42,6 +44,9 @@ const ShopModalContent = ({ lang, category }: shopModalProps) => {
             item.id === 9 ? "mt-10" : "my-5"
           }`}
           key={item.id}
+          onClick={() => {
+            if (onItemClick) onItemClick();
+          }}
         >
           <Link
             href={`/shops/${item.name}id${item.id}`}
@@ -57,4 +62,5 @@ const ShopModalContent = ({ lang, category }: shopModalProps) => {
     </div>
   );
 };
+
 export default ShopModalContent;

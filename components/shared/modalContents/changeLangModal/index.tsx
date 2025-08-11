@@ -84,7 +84,7 @@ const ChangeLangModal = ({lang, languages, county, currency}: {
     };
 
     return (
-        <div className="flex flex-col gap-14 h-full text-primary text-base font-medium leading-normal">
+        <div className="flex flex-col gap-4 mx-2 h-full text-primary text-sm font-medium leading-normal">
             {/* Language Section */}
             <div>
                 <h2 onClick={handleOpen} className={`mb-5 ${isMobile && "flex items-center justify-between"}`}>
