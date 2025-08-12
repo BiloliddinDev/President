@@ -109,7 +109,7 @@ export const SupportForm = ({dictionary, showtime}: SupportFormProps) => {
                 {showtime && <SectionTitle className="mb-12" text={dictionary.support.title}/>}
 
                 <div className="grid md:grid-cols-2 gap-20 items-center bg-white rounded-[4px] p-8 md:p-12">
-                    <div data-aos="fade-right" className="text-center md:text-left">
+                    <div data-aos="fade-right" className="text-center md:text-left" suppressHydrationWarning>
                         <Image
                             src={supportImage}
                             alt="Support"
