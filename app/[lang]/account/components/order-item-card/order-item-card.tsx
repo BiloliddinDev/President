@@ -75,7 +75,7 @@ export const OrderCardItem = ({
       </div>
       {productDetail?.id && productDetail.categories.length > 0 && (
         <Link
-          href={`/shops/${productDetail.categories[0].name}id${productDetail.categories[0].id}/${productDetail.id}`}
+          href={`/shops/${productDetail?.categories[0]?.name}id${productDetail?.categories[0]?.id}/${productDetail?.id}`}
         >
           {dictionary.account.order.viewMore}
         </Link>

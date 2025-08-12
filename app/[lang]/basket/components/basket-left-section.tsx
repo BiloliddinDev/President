@@ -27,7 +27,7 @@ export function BasketLeftSection({ dictionary }: DictionaryType) {
   const handleProductClick = async (id: number) => {
     try {
       const product :ProductsInterface= await getProductDetail(id);
-      router.push(`/shops/${product.categories[0].name}id${product.categories[0].id}/${product.id}`);
+      router.push(`/shops/${product?.categories[0]?.name}id${product?.categories[0]?.id}/${product.id}`);
     } catch (error) {
       console.error("Error fetching product:", error);
     }
