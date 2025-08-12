@@ -6,7 +6,7 @@ import { ProductsInterface } from "@/interface/products-interface/products-inter
 import { useWishlistStore } from "@/lib/set-wishlist.storage";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import {formatCurrency} from "@/hooks/formatPrice";
+import { formatCurrency } from "@/hooks/formatPrice";
 import { getProductDetail } from "@/service/products-service/product-item.service";
 
 interface ProductsCardProps {
@@ -33,9 +33,12 @@ export const ProductsCard = ({
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
-  const [productCategory, setProductCategory] = useState<ProductsInterface>({} as ProductsInterface);
+  const [productCategory, setProductCategory] = useState<ProductsInterface>(
+    {} as ProductsInterface
+  );
   const imageIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
+  console.log(productCategory);
   const images =
     productData.media?.map(
       (media) => `${process.env.NEXT_PUBLIC_ADMIN_URL}${media.filePath}`
@@ -45,7 +48,7 @@ export const ProductsCard = ({
     let next = 1;
 
     if (hovered && images.length > 1) {
-      setCurrentImageIndex(1); 
+      setCurrentImageIndex(1);
       imageIntervalRef.current = setInterval(() => {
         setCurrentImageIndex(() => {
           const nextIndex = next % images.length;
@@ -67,20 +70,19 @@ export const ProductsCard = ({
 
   // console.log("product data category:",productData)
 
-
   useEffect(() => {
     const fetchProduct = async () => {
-        try {
-            const data = await getProductDetail(productData.id);
-            setProductCategory(data);
-        } catch (error) {
-            console.error("Error fetching product:", error);
-        } finally {
-        }
+      try {
+        const data = await getProductDetail(productData.id);
+        setProductCategory(data);
+      } catch (error) {
+        console.error("Error fetching product:", error);
+      } finally {
+      }
     };
 
     fetchProduct().then().catch().finally();
-}, [productData.id]);
+  }, [productData.id]);
 
   return (
     <div
@@ -97,48 +99,57 @@ export const ProductsCard = ({
         />
       </button>
 
-      <Link href={`/shops/${productCategory.categories[0].name}id${productCategory.categories[0].id}/${productData.id}`}>
-        <div className="relative w-full pt-[100%] mb-4 bg-neutral-100 rounded-[4px] overflow-hidden">
-          {images.map((img, index) => (
-            <Image
-              key={index}
-              alt={`product-${productData.id}`}
-              src={img}
-              fill
-              sizes="(max-width: 768px) 100vw, 25vw"
-              className={`object-cover absolute top-0 left-0 transition-opacity duration-700 rounded ${
-                index === currentImageIndex
-                  ? "opacity-100 z-10"
-                  : "opacity-0 z-0"
-              }`}
-            />
-          ))}
-        </div>
-      </Link>
+      {productCategory?.categories?.length > 0 && (
+        <Link
+          href={`/shops/${productCategory.categories[0].name}id${productCategory.categories[0].id}/${productData.id}`}
+        >
+          <div className="relative w-full pt-[100%] mb-4 bg-neutral-100 rounded-[4px] overflow-hidden">
+            {images.map((img, index) => (
+              <Image
+                key={index}
+                alt={`product-${productData.id}`}
+                src={img}
+                fill
+                sizes="(max-width: 768px) 100vw, 25vw"
+                className={`object-cover absolute top-0 left-0 transition-opacity duration-700 rounded ${
+                  index === currentImageIndex
+                    ? "opacity-100 z-10"
+                    : "opacity-0 z-0"
+                }`}
+              />
+            ))}
+          </div>
+        </Link>
+      )}
 
-      <Link  href={`/shops/${productCategory?.categories[0].name}id${productCategory?.categories[0].id}/$
-      {productData.id}`} className="flex flex-col justify-between h-full p-3">
-        {productData.meta._new_product && (
-          <span className="mb-3 w-fit rounded border px-2 py-0.5 text-xs font-medium text-gray-700">
-            {dictionary.category.new}
-          </span>
-        )}
-        <h3 className="text-sm font-medium mb-2 text-gray-900">
-          {productData.name}
-        </h3>
-        <div className="flex justify-between items-center ">
-          <p className="text-sm text-gray-500">
-            {formatCurrency(productData.locale_price)}
-          </p>
-          <button className="cursor-pointer">
-            <ShoppingCart
-              width={24}
-              height={24}
-              className="text-primary !hover:text-zinc-300 duration-200 mr-1"
-            />
-          </button>
-        </div>
-      </Link>
+      {productCategory?.categories?.length > 0 && (
+        <Link
+          href={`/shops/${productCategory?.categories[0].name}id${productCategory?.categories[0].id}/$
+       {productData.id}`}
+          className="flex flex-col justify-between h-full p-3"
+        >
+          {productData.meta._new_product && (
+            <span className="mb-3 w-fit rounded border px-2 py-0.5 text-xs font-medium text-gray-700">
+              {dictionary.category.new}
+            </span>
+          )}
+          <h3 className="text-sm font-medium mb-2 text-gray-900">
+            {productData.name}
+          </h3>
+          <div className="flex justify-between items-center ">
+            <p className="text-sm text-gray-500">
+              {formatCurrency(productData.locale_price)}
+            </p>
+            <button className="cursor-pointer">
+              <ShoppingCart
+                width={24}
+                height={24}
+                className="text-primary !hover:text-zinc-300 duration-200 mr-1"
+              />
+            </button>
+          </div>
+        </Link>
+      )}
     </div>
   );
 };
