@@ -151,7 +151,7 @@ export default function FavoriteCard({
                 {row
                   ? formatCurrency({ currency: row.currency, price: row.price })
                   : "-"}
-                {product?.prices?.filter(
+                {/* {product?.prices?.filter(
                   (price) => price.currency.code === "USD"
                 )[0] && (
                   <span className="ml-2">
@@ -160,7 +160,7 @@ export default function FavoriteCard({
                       .price.toLocaleString()}{" "}
                     USD
                   </span>
-                )}
+                )} */}
               </p>
             </>
           )}

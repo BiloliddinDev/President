@@ -11,10 +11,45 @@ import { splitNameAndIdFromParam } from "@/hooks/get-breadcrumb";
 import { CategoryDetailService } from "@/service/category-service/category-child.service";
 import { AlertTriangle } from "lucide-react";
 import { getDictionary } from "@/lib/get-dictionary";
+import { Metadata } from "next";
 
 interface CategoryPageProps {
   params: Promise<{ lang: "uz" | "ru" | "en"; category: string }>;
 }
+
+
+export async function generateMetadata(
+  { params }: CategoryPageProps
+): Promise<Metadata> {
+  const categoryParam = await params;
+  const categoryId = splitNameAndIdFromParam(categoryParam.category);
+
+  const CategoryDetailData2: CategoryInterface = await CategoryDetailService(
+    categoryId.id || ""
+  ) as CategoryInterface;
+
+  return {
+    title: CategoryDetailData2.name,
+    description: CategoryDetailData2.description,
+    openGraph: {
+      title: CategoryDetailData2.name,
+      description: CategoryDetailData2.description,
+      url: `https://presidentgift.com/shops/${categoryParam.category}`,
+      siteName: "President Business Gifts",
+      locale: categoryParam.lang,
+      type: "website",
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_ADMIN_URL}${CategoryDetailData2?.mediaFiles?.[0]?.filePath}`,
+          width: 1200,
+          height: 630,
+          alt: CategoryDetailData2.name || "President Business Gifts",
+        },
+      ],
+    },
+  };
+}
+
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const categoryParam = await params;
@@ -32,17 +67,17 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const CategoryDetailData2: CategoryInterface = (await CategoryDetailService(
     categoryId.id || ""
   )) as CategoryInterface;
-  
-    return (
-        <div className="container md:!mt-26 !mt-42">
-            <BreadcrumbDynamic url={CategoryDetailData2.name || undefined}/>
-            <div>
-                <h2 className="text-primary mt-10 text-xl font-medium leading-loose">
-                    {CategoryDetailData2.name}
-                </h2>
-                <p className="text-zinc-700 text-sm font-normal leading-tight mt-4 mb-11">
-                    {CategoryDetailData2.description}
-                </p>
+
+  return (
+    <div className="container md:!mt-26 !mt-42">
+      <BreadcrumbDynamic url={CategoryDetailData2.name || undefined} />
+      <div>
+        <h2 className="text-primary mt-10 text-xl font-medium leading-loose">
+          {CategoryDetailData2.name}
+        </h2>
+        <p className="text-zinc-700 text-sm font-normal leading-tight mt-4 mb-11">
+          {CategoryDetailData2.description}
+        </p>
 
         {CategoryChildData.children.length > 0 && (
           <CategoryCarousel
@@ -86,7 +121,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             <div className="flex justify-center mt-11">
               {CategoryChildData.children.length > 0 && (
                 <Button className="border-primary" variant="outline">
-                {dictionary.category.show_more}
+                  {dictionary.category.show_more}
                 </Button>
               )}
             </div>

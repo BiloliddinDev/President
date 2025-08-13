@@ -1,81 +1,96 @@
-"use client"
+"use client";
 
-import React, {FC, useRef, useState} from "react";
-import {Sheet, SheetContent, SheetTitle, SheetTrigger,} from "@/components/ui/sheet";
-import {NavbarModalProps} from "@/interface/navbar-modals-type";
+import React, { FC, useRef, useState } from "react";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { NavbarModalProps } from "@/interface/navbar-modals-type";
 import Link from "next/link";
-import {navbarContent} from "@/constants/navbar";
+import { navbarContent } from "@/constants/navbar";
 
+const NavbarModal: FC<NavbarModalProps> = ({
+  title,
+  side,
+  sheetTitle,
+  children,
+  lang,
+  showing,
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-const NavbarModal: FC<NavbarModalProps> = ({title, side, sheetTitle, children, lang, showing}) => {
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setIsOpen(true);
+  };
 
-    const [isOpen, setIsOpen] = useState(false);
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 300);
+  };
 
-    const handleMouseEnter = () => {
-        if (timeoutRef.current) clearTimeout(timeoutRef.current);
-        setIsOpen(true);
-    };
+  return (
+    <Sheet modal={false} open={isOpen}>
+      <div
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className="relative z-40 "
+      >
+        <SheetTrigger className="transition-all !outline-0 text-[17px] font-normal  font-description cursor-pointer flex flex-row-reverse items-center gap-2 group">
+          {title}
 
-    const handleMouseLeave = () => {
-        timeoutRef.current = setTimeout(() => {
-            setIsOpen(false);
-        }, 300);
-    };
+          {(sheetTitle === "Shop" ||
+            sheetTitle === "Discover" ||
+            sheetTitle == "Коллекции" ||
+            sheetTitle == "Узнать больше") && (
+            <span
+              className={`w-1.5 h-1.5 rounded-full bg-black transition-opacity ${
+                isOpen ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+              }`}
+            />
+          )}
+        </SheetTrigger>
 
-    return (
-        <Sheet modal={false} open={isOpen}>
-            <div
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                className="relative z-40 "
-            >
-                <SheetTrigger
-                    className="transition-all !outline-0 text-[17px] font-normal  font-description cursor-pointer flex flex-row-reverse items-center gap-2 group"
-                >
-                    {title}
-
-                    {(sheetTitle === 'Shop' || sheetTitle === 'Discover'|| sheetTitle=="Коллекции"|| sheetTitle=="Узнать больше") && (
-                        <span
-                            className={`w-1.5 h-1.5 rounded-full bg-black transition-opacity ${
-                                isOpen ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-                            }`}
-                        />
-                    )}
-
-                </SheetTrigger>
-
-
-                <SheetContent
-                    side={side}
-                    className={'w-[400px] '}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    <div className="ml-[3.75rem] mt-10 h-full py-10">
-                        <SheetTitle className="pb-1.5 pt-6 ps-2">{sheetTitle}</SheetTitle>
-                        <div className={'flex flex-col justify-between h-full pb-5'}>
-                            {children}
-                            {showing && <div>
-                                {navbarContent.map((item) => (
-                                    <div
-                                        className={`text-sm font-normal leading-[1.5rem] cursor-pointer ${
-                                            item.id === 9 ? "mt-10" : "my-5"
-                                        }`}
-                                        key={item.id}
-                                    >
-                                        <Link href={item.linkSrc}>{item.name[lang]}</Link>
-                                    </div>
-                                ))}
-                            </div>}
-                        </div>
+        <SheetContent
+          side={side}
+          className={"w-[400px] "}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="ml-[3.75rem] mt-10 h-full py-10">
+            <SheetTitle className="pb-1.5 pt-6 ps-2">{sheetTitle}</SheetTitle>
+            <div className="flex flex-col justify-between h-full pb-5">
+              {children}
+              {showing && (
+                <div>
+                  {navbarContent.map((item) => (
+                    <div
+                      className={`text-sm font-normal leading-[1.5rem] cursor-pointer ${
+                        item.id === 9 ? "mt-10" : "my-5"
+                      }`}
+                      key={item.id}
+                    >
+                      <Link
+                        href={item.linkSrc}
+                        className="group inline-flex items-center gap-1"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-black opacity-0 transition-opacity group-hover:opacity-100" />
+                        {item.name[lang]}
+                      </Link>
                     </div>
-                </SheetContent>
+                  ))}
+                </div>
+              )}
             </div>
-        </Sheet>
-    )
-        ;
+          </div>
+        </SheetContent>
+      </div>
+    </Sheet>
+  );
 };
 
 export default NavbarModal;
-
