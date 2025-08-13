@@ -2,11 +2,15 @@
 
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { LogOut, User } from "lucide-react";
 
-interface NavbarProps{
+interface NavbarProps {
   dictionary: {
     category: {
       title: string;
@@ -36,13 +40,19 @@ interface NavbarProps{
   };
 }
 
-export default function UserDropdown({dictionary}:NavbarProps) {
+export default function UserDropdown({ dictionary }: NavbarProps) {
   const router = useRouter();
   const { data: session } = useSession();
 
   // Foydalanuvchi ismining bosh harfini olish
-  const getInitial = () => {
-    if (session?.user) {
+  const getInitial = (name?: "name") => {
+    if (session?.user && name) {
+      const name =
+        session.user.authType === "custom"
+          ? session.user.serverData?.full_name
+          : session.user.name;
+      return name;
+    } else if (session?.user) {
       const name =
         session.user.authType === "custom"
           ? session.user.serverData?.full_name
@@ -70,7 +80,7 @@ export default function UserDropdown({dictionary}:NavbarProps) {
               variant={"default"}
               onClick={() => router.push("/auth/sign-up")}
             >
-            {dictionary.userDropdown.guest.signUp}
+              {dictionary.userDropdown.guest.signUp}
             </Button>
             <Button
               variant="secondary"
@@ -89,8 +99,12 @@ export default function UserDropdown({dictionary}:NavbarProps) {
     <Popover>
       <PopoverTrigger asChild>
         {getInitial() ? (
-          <div className="w-8 h-8 flex items-center justify-center rounded-full border-2 border-primary text-primary font-semibold cursor-pointer">
-            {getInitial()}
+          <div className="flex felx-col gap-2 justify-center">
+            <p className="transition-all !outline-0 text-[17px] font-normal font-description flex flex-row-reverse items-center gap-2 group"> {getInitial("name")}</p>
+            {/* <div className="w-8 h-8 flex items-center justify-center rounded-full border-2 border-primary text-primary font-semibold cursor-pointer">
+              {getInitial()}
+            </div> */}
+
           </div>
         ) : (
           <User className="text-primary cursor-pointer" />
@@ -128,7 +142,6 @@ export default function UserDropdown({dictionary}:NavbarProps) {
           >
             <LogOut className="w-4 h-4 mr-2" />
             {dictionary.userDropdown.profile.logoutBtn}
-
           </Button>
         </div>
       </PopoverContent>

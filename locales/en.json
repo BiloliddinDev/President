@@ -285,10 +285,10 @@
     "callCenterInfo": "Unified call center works:",
     "callCenterTime": "Mon–Sat from 9:00 to 18:00",
     "branches": "Our Branches",
-    "branchList": [
-      "Tashkent, Small Ring Road, 2/A",
-      "Tashkent, TSUM, Islam Karimov Street, 17",
-      "Dushanbe, Rudaki, 55/1"
+    "branchList":  [
+      "Uzbekistan, Tashkent, Small Ring Road, 2/A",
+      "Uzbekistan, Tashkent, TSUM, Islam Karimov Street, 17",
+      "Tajikistan, Dushanbe, Rudaki, 55/1"
     ],
     "formTitle": "Feedback Form",
     "formDescription": "We are ready to respond to you at any time. Please note that processing your request may take up to 3 working days."

@@ -2,9 +2,11 @@ import React from "react";
 import { Collections } from "./components/collections";
 import { getDictionary } from "@/lib/get-dictionary";
 
+
 export interface HomePageProps {
     params: Promise<{ lang: "uz" | "ru" | "en" }>;
 }
+  
 
 export default async function Home({ params }: HomePageProps) {
 

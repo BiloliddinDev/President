@@ -44,8 +44,6 @@ export async function CollectionItems({ collection, id ,dictionary}: Collections
     mergedItems.push(product);
   });
 
-
-  console.log(mergedItems)
   return (
     <div className=" mx-auto !mt-40">
       {products.length > 0 && (
