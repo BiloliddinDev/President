@@ -5,16 +5,13 @@ import Image from "next/image";
 import {useSession} from "next-auth/react";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
-
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
 import {SectionTitle} from "@/components/ui/sectionTitle";
 import {AutoCloseModal} from "@/components/shared/form-modal/auto-closeModal";
 import {CheckCircle} from "lucide-react";
-
 import supportImage from "@/public/images/support-form.jpg";
-
 import {createSupportSchema, type SupportFormValues} from "@/interface/support-schema/support-schema";
 import {sendTelegramMessage} from "@/lib/send-telegram-message";
 import {toast} from "sonner";

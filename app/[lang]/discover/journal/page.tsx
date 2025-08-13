@@ -3,7 +3,6 @@ import React from "react";
 import Catalog from "../components/catalog";
 import { SectionTitle } from "@/components/ui/sectionTitle";
 import { getDictionary } from "@/lib/get-dictionary";
-// import pdf from "@/public/images/"
 
 interface JournalPageProps {
   params: Promise<{ lang: "uz" | "ru" | "en" | "tj" | "az" }>;

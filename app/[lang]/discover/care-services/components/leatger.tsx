@@ -60,4 +60,3 @@ export const Leather: FC<LeatherProps> = ({ dictionary, lang }) => {
   return <CustomTabs className="!my-7 container" tabs={myTabs} lang={lang}/>;
 };
 
-// export default DiscoverService;
