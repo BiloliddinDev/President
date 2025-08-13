@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import Logo from "@/public/svg/PresidentLogo.svg";
-import { branches } from "@/app/[lang]/(home)/components/location";
+import { branches } from "@/constants/locationsData";
 
 export interface Branch {
   lat: number;

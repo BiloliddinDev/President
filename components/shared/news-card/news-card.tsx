@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { NewsItemInterface } from "@/interface/news-home-page/news";
-// import {NewsItem} from "@/interface/news-home-page/news";
 
 interface DictionaryProps {
   homepage: { more: string };

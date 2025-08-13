@@ -10,7 +10,6 @@ import {Button} from "@/components/ui/button"
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form"
 import {toast} from "sonner"
 import {sendTelegramMessage} from "@/lib/send-telegram-message"
-// ...existing imports
 import {useModalStore} from "@/lib/modal-state"
 
 type Lang = 'uz' | 'ru' | 'en'
@@ -75,7 +74,6 @@ export function SupportFormModal({
     const {hasShown, setHasShown} = useModalStore()
     const t = texts[lang]
 
-    // ...existing form setup code
 
     const schema = z.object({
         username: z.string().min(2, {message: t.min}).nonempty({message: t.required}),

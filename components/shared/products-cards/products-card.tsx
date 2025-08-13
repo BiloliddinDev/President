@@ -38,7 +38,6 @@ export const ProductsCard = ({
   );
   const imageIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  // console.log(productCategory);
   const images =
     productData.media?.map(
       (media) => `${process.env.NEXT_PUBLIC_ADMIN_URL}${media.filePath}`

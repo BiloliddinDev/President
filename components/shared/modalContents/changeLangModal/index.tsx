@@ -101,7 +101,7 @@ const ChangeLangModal = ({
   };
 
   return (
-    <div className="flex flex-col gap-4 mx-2 h-full text-primary text-sm font-medium leading-normal">
+    <div className="flex flex-col gap-10 mx-2 h-full text-primary text-sm font-medium leading-normal">
       {/* Language Section */}
       <div>
         <h2

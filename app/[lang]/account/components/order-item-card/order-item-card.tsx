@@ -46,7 +46,6 @@ export const OrderCardItem = ({
     fetchProduct().then().catch().finally();
   }, [elementID]);
 
-  // console.log(productDetail, "this is product detail")
 
   return (
     <div className={"flex items-center justify-between w-full"}>
