@@ -6,16 +6,22 @@ import Image from "next/image";
 interface CollectionsProps {
   collection: CollectionResponse[];
   id: number;
-  dictionary:{    category: {
-    title: string;
-    new: string;
-    not_found: string;
-    unavailable: string;
-    show_more: string;
-  };}
+  dictionary: {
+    category: {
+      title: string;
+      new: string;
+      not_found: string;
+      unavailable: string;
+      show_more: string;
+    };
+  };
 }
 
-export async function CollectionItems({ collection, id ,dictionary}: CollectionsProps) {
+export async function CollectionItems({
+  collection,
+  id,
+  dictionary,
+}: CollectionsProps) {
   const selectedCollection = collection.find((collect) => collect.id === id);
   if (!selectedCollection) return null;
 
@@ -24,14 +30,14 @@ export async function CollectionItems({ collection, id ,dictionary}: Collections
 
   // Dynamic rasm joylashadigan index
   let insertionIndex = 0; // default
-  if (products.length === 4 || products.length ===6) {
-    insertionIndex = 0
-  } else if (products.length === 5|| products.length ===6) {
-    insertionIndex =0
-  } else if (products.length >=8) {
-    insertionIndex = 0
-  }else if (products.length <= 2) {
-    insertionIndex = 0
+  if (products.length === 4 || products.length === 6) {
+    insertionIndex = 0;
+  } else if (products.length === 5 || products.length === 6) {
+    insertionIndex = 0;
+  } else if (products.length >= 8) {
+    insertionIndex = 0;
+  } else if (products.length <= 2) {
+    insertionIndex = 0;
   }
 
   // Productlar va image ni birlashtirib chiqamiz
@@ -78,8 +84,14 @@ export async function CollectionItems({ collection, id ,dictionary}: Collections
               }
 
               return (
-                <div key={(item as ProductsInterface).id} className="col-span-1 row-span-1">
-                  <ProductsCard productData={item as ProductsInterface} dictionary={dictionary}/>
+                <div
+                  key={(item as ProductsInterface).id}
+                  className="col-span-1 row-span-1"
+                >
+                  <ProductsCard
+                    productData={item as ProductsInterface}
+                    dictionary={dictionary}
+                  />
                 </div>
               );
             })}

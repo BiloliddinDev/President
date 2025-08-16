@@ -16,9 +16,18 @@ interface ProductsCardProps {
     category: {
       title: string;
       new: string;
-      not_found: string;
-      unavailable: string;
-      show_more: string;
+      not_found?: string;
+      unavailable?: string;
+      show_more?: string;
+    };
+    sortAndView?: {
+      productsLabel: string;
+      sortBy: string;
+      options: {
+        newest: string;
+        priceAsc: string;
+        priceDesc: string;
+      };
     };
   };
 }
@@ -66,7 +75,6 @@ export const ProductsCard = ({
       }
     };
   }, [hovered, images.length]);
-
 
   useEffect(() => {
     const fetchProduct = async () => {

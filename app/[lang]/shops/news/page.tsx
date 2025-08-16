@@ -2,7 +2,6 @@ import { BreadcrumbDynamic } from "@/components/shared/breadcrumb-dynamic/breadc
 import SortAndViewToggleWrapper from "@/components/shared/sort-View-toggle/sort-viewtoggle";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ProductsCard } from "@/components/shared/products-cards/products-card";
 import { NewProductService } from "@/service/products-service/new-products.service";
 import { ProductsInterface } from "@/interface/products-interface/products-interface";
 import ShopBanner from "@/public/images/shop-news.webp";
@@ -23,7 +22,7 @@ export default async function NewsPage({ params }: NewsPageProps) {
   const filteredProducts = newProducts.filter(
     (item) => item?.meta?._new_product === true
   );
-  const dictionary= await getDictionary(ShopsNewPageParam.lang) 
+  const dictionary = await getDictionary(ShopsNewPageParam.lang);
 
   return (
     <div className="container md:!mt-26 !mt-42">
@@ -57,7 +56,7 @@ export default async function NewsPage({ params }: NewsPageProps) {
           </div>
         ) : (
           <>
-            <SortAndViewToggleWrapper
+            {/* <SortAndViewToggleWrapper
               dictionary={dictionary}
               itemLength={filteredProducts.length}
             >
@@ -68,7 +67,11 @@ export default async function NewsPage({ params }: NewsPageProps) {
                   dictionary={dictionary}
                 />
               ))}
-            </SortAndViewToggleWrapper>
+            </SortAndViewToggleWrapper> */}
+          <SortAndViewToggleWrapper
+  initialItems={filteredProducts}
+  dictionary={dictionary}
+/>
 
             <div className="flex justify-center mt-11">
               <Button className="border-primary" variant="outline">

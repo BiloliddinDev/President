@@ -1,6 +1,5 @@
 import { BreadcrumbDynamic } from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import SortAndViewToggleWrapper from "@/components/shared/sort-View-toggle/sort-viewtoggle";
-import { ProductsCard } from "@/components/shared/products-cards/products-card";
 import { Button } from "@/components/ui/button";
 import CategoryCarousel from "@/app/[lang]/shops/components/category-carusel/category-carusel";
 import { CategoryChildServiceUZ } from "@/service/category-service/category.shops.service";
@@ -17,16 +16,15 @@ interface CategoryPageProps {
   params: Promise<{ lang: "uz" | "ru" | "en"; category: string }>;
 }
 
-
-export async function generateMetadata(
-  { params }: CategoryPageProps
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: CategoryPageProps): Promise<Metadata> {
   const categoryParam = await params;
   const categoryId = splitNameAndIdFromParam(categoryParam.category);
 
-  const CategoryDetailData2: CategoryInterface = await CategoryDetailService(
+  const CategoryDetailData2: CategoryInterface = (await CategoryDetailService(
     categoryId.id || ""
-  ) as CategoryInterface;
+  )) as CategoryInterface;
 
   return {
     title: CategoryDetailData2.name,
@@ -49,7 +47,6 @@ export async function generateMetadata(
     },
   };
 }
-
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const categoryParam = await params;
@@ -99,7 +96,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           </div>
         ) : (
           <>
-            <SortAndViewToggleWrapper
+            {/* <SortAndViewToggleWrapper
               itemLength={ProductList.data.length}
               dictionary={dictionary}
             >
@@ -116,7 +113,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   />
                 </span>
               ))}
-            </SortAndViewToggleWrapper>
+            </SortAndViewToggleWrapper> */}
+            <SortAndViewToggleWrapper
+              initialItems={ProductList.data}
+              dictionary={dictionary}
+            />
 
             <div className="flex justify-center mt-11">
               {CategoryChildData.children.length > 0 && (
