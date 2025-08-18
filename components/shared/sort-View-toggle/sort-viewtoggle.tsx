@@ -445,7 +445,7 @@ export default function SortAndViewToggleWrapper({
     },
   ];
 
-
+console.log(initialItems)
   const sortedItems = useMemo(() => {
     const sorted = [...initialItems];
 

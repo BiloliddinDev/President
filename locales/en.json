@@ -121,7 +121,8 @@
     "new": "New Arrival",
     "not_found": "Product not found",
     "unavailable": "Unfortunately, this product is currently unavailable. We will add it to the catalog soon. Please check back later.",
-    "show_more": "Show more"
+    "show_more": "Show more",
+    "recomendationProds": "Recommended Products"
   },
   "sortAndView": {
     "productsLabel": "products",
@@ -473,6 +474,7 @@
     }
   },
   "account": {
+    "title": "My Profile",
     "detail": {
       "title": "Account details",
       "form": {

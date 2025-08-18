@@ -87,7 +87,8 @@
     "new": "Yeni gələnlər",
     "not_found": "Məhsul tapılmadı",
     "unavailable": "Təəssüf ki, bu məhsul hazırda mövcud deyil. Tezliklə kataloqa əlavə olunacaq. Zəhmət olmasa, bir az sonra yenidən yoxlayın.",
-    "show_more": "Daha çox göstər"
+    "show_more": "Daha çox göstər",
+    "recomendationProds": "Tövsiyə olunan məhsullar"
   },
   "sortAndView": {
     "productsLabel": "məhsul",
@@ -438,6 +439,7 @@
     }
   },
   "account": {
+    "title": "Mənim profilim",
     "detail": {
       "title": "Hesab məlumatları",
       "form": {
@@ -459,7 +461,7 @@
       }
     },
     "favorite": {
-      "title": "Sevimlilərim",
+      "title": "Mənim sevimlilərim",
       "itemCount_one": "məhsul sevimlilər siyahısında",
       "itemCount_few": "məhsul sevimlilər siyahısında",
       "emptyMessage": "Sevimlilər siyahınız boşdur",

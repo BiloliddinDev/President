@@ -33,6 +33,8 @@ export function BasketLeftSection({ dictionary }: DictionaryType) {
     }
   };
 
+  console.log(items)
+
   return (
     <div className="w-full lg:w-[70%] pr-4 space-y-4">
       {items.length === 0 ? (

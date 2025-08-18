@@ -68,10 +68,10 @@ export default async function NewsPage({ params }: NewsPageProps) {
                 />
               ))}
             </SortAndViewToggleWrapper> */}
-          <SortAndViewToggleWrapper
-  initialItems={filteredProducts}
-  dictionary={dictionary}
-/>
+            <SortAndViewToggleWrapper
+              initialItems={filteredProducts}
+              dictionary={dictionary}
+            />
 
             <div className="flex justify-center mt-11">
               <Button className="border-primary" variant="outline">
