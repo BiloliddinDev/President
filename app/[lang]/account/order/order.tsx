@@ -20,7 +20,7 @@ interface OrderInterface {
 
 
 
-export default function OrderPage({ dictionary }: AccountProps) {
+export default function OrderPage({ dictionary,lang }: AccountProps) {
   const [orderData, setOrderData] = useState<OrderInterface>();
   const { data: session } = useSession();
 
@@ -44,7 +44,7 @@ export default function OrderPage({ dictionary }: AccountProps) {
 
       <div className={"mt-10"}>
         {orderData?.content?.map((item: OrderDataInterface) => (
-          <OrderCard key={item.id} orderData={item} dictionary={dictionary}/>
+          <OrderCard key={item.id} orderData={item} dictionary={dictionary} lang={lang}/>
         ))}
       </div>
     </div>
