@@ -10,9 +10,11 @@ import Link from "next/link";
 import { useWishlistStore } from "@/lib/set-wishlist.storage";
 import FormattedText from "@/components/shared/formatted-text/formatted-text";
 import { formatCurrency } from "@/hooks/formatPrice";
+import RecomendationProductDetailPage from "./recomendationProds";
 
 interface DetailProps {
   product: ProductsInterface;
+  category: string;
   dictionary: {
     detail: {
       addToCart: string;
@@ -25,12 +27,21 @@ interface DetailProps {
       shareText: string;
       shareUnsupported: string;
     };
+    category: {
+      title: string;
+      new: string;
+      not_found?: string;
+      unavailable?: string;
+      show_more?: string;
+      recomendationProds:string
+    };
   };
 }
 
 export default function ProductDetailPage({
   product,
   dictionary,
+  category,
 }: DetailProps) {
   const { toggleWishlist, isInWishlist } = useWishlistStore();
   const isLiked = isInWishlist(Number(product?.id));
@@ -142,6 +153,10 @@ export default function ProductDetailPage({
           </div>
         </div>
       </div>
+      <RecomendationProductDetailPage
+        dictionary={dictionary}
+        category={category}
+      />
     </div>
   );
 }

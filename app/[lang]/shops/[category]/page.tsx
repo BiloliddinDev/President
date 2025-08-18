@@ -96,29 +96,10 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           </div>
         ) : (
           <>
-            {/* <SortAndViewToggleWrapper
-              itemLength={ProductList.data.length}
-              dictionary={dictionary}
-            >
-              {ProductList.data.map((product, index) => (
-                <span
-                  data-aos="fade-left"
-                  key={product.id}
-                  data-aos-delay={`${index * 300}`}
-                >
-                  <ProductsCard
-                    key={product.id}
-                    productData={product}
-                    dictionary={dictionary}
-                  />
-                </span>
-              ))}
-            </SortAndViewToggleWrapper> */}
             <SortAndViewToggleWrapper
               initialItems={ProductList.data}
               dictionary={dictionary}
             />
-
             <div className="flex justify-center mt-11">
               {CategoryChildData.children.length > 0 && (
                 <Button className="border-primary" variant="outline">

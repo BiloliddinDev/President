@@ -97,6 +97,7 @@ export default function OrderPage({ dictionary }: OrderProps) {
     },
   });
 
+
   const onSubmit = async (data: OrderFormData) => {
     try {
       const payload = {
@@ -106,7 +107,7 @@ export default function OrderPage({ dictionary }: OrderProps) {
         client_second_phone: data.userInformation.secondPhone,
         address: {
           countryCode: "UZ",
-          location: data.address.text,
+          location:` ${data.address.text}`,
           latitude: data.address.location.lat,
           longitude: data.address.location.lng,
         },
@@ -117,10 +118,11 @@ export default function OrderPage({ dictionary }: OrderProps) {
         items: items.map((item) => ({
           productId: item.id,
           quantity: item.quantity,
-          unitPrice: item.price,
+          unitPrice: item.basePriceToUSD,
           totalPrice: item.basePriceToUSD * item.quantity,
         })),
       };
+      console.log(payload)
 
       const authString = btoa(
         `${process.env.NEXT_PUBLIC_BASIC_ADMIN}:${process.env.NEXT_PUBLIC_BASIC_PASSWORD}`

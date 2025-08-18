@@ -50,26 +50,29 @@ export interface AccountProps {
         hide: string;
         viewMore: string;
         productsSuffix: string;
-        viewItem:string
+        viewItem: string;
       };
     };
+    detail: { quantity: string };
   };
+  lang?:"uz" | "ru" | "en" | "tj" | "az";
 }
-  
 
 export default function AccountPage({ dictionary }: AccountProps) {
   const { data: session } = useSession();
-// Validation matnlarini dictionarydan olish
-const AccountDetailSchemaWithMessages = z.object({
-  name: z
-    .string()
-    .min(2, { message: dictionary.account.detail.form.name.error }),
-  email: z
-    .string()
-    .email({ message: dictionary.account.detail.form.email.error }),
-});
+  // Validation matnlarini dictionarydan olish
+  const AccountDetailSchemaWithMessages = z.object({
+    name: z
+      .string()
+      .min(2, { message: dictionary.account.detail.form.name.error }),
+    email: z
+      .string()
+      .email({ message: dictionary.account.detail.form.email.error }),
+  });
 
-  type AccountDetailFormValues = z.infer<typeof AccountDetailSchemaWithMessages>;
+  type AccountDetailFormValues = z.infer<
+    typeof AccountDetailSchemaWithMessages
+  >;
 
   const form = useForm<AccountDetailFormValues>({
     resolver: zodResolver(AccountDetailSchemaWithMessages),

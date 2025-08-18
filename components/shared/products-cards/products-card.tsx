@@ -130,8 +130,7 @@ export const ProductsCard = ({
 
       {productCategory?.categories?.length > 0 && (
         <Link
-          href={`/shops/${productCategory?.categories[0].name}id${productCategory?.categories[0].id}/$
-       {productData.id}`}
+          href={`/shops/${productCategory?.categories[0].name}id${productCategory?.categories[0].id}/${productData.id}`}
           className="flex flex-col justify-between h-full p-3"
         >
           {productData.meta._new_product && (

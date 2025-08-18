@@ -23,17 +23,20 @@ interface DictionaryProps {
       hide: string;
       viewMore: string;
       productsSuffix: string;
-      viewItem:string
+      viewItem: string;
     };
   };
+  detail: { quantity: string };
 }
 
 export default function OrderCard({
   orderData,
   dictionary,
+  lang,
 }: {
   orderData: OrderDataInterface;
   dictionary: DictionaryProps;
+  lang?: "uz" | "ru" | "en" | "tj" | "az";
 }) {
   const [showAll, setShowAll] = useState(false);
 
@@ -61,7 +64,7 @@ export default function OrderCard({
         {/* Created */}
         <div className="flex justify-between">
           <span>{dictionary.account.order.createdAt}</span>
-          <span>{formatDate(orderData.createdAt, "ru")}</span>
+          <span>{lang  ? formatDate(orderData.createdAt, lang) : formatDate(orderData.createdAt, "en")}</span>
         </div>
 
         {/* Address */}
@@ -75,12 +78,14 @@ export default function OrderCard({
         {/* productCount */}
         <div className="flex justify-between">
           <span>{dictionary.account.order.productCount}</span>
-          <span>{orderData.items.length} шт.</span>
+          <span>
+            {orderData.items.length} {dictionary.detail.quantity}
+          </span>
         </div>
 
         {/* Total */}
         <div className="flex justify-between font-semibold mb-5 text-black">
-          <span>{dictionary.account.order.total}</span>
+          <span>{dictionary.account.order.total} </span>
           <span>{orderData.totalAmount}</span>
         </div>
 
@@ -96,23 +101,33 @@ export default function OrderCard({
           >
             <div className="border-t border-gray-200 py-4 space-y-4">
               {orderData.items.map((element, index) => (
-                <OrderCardItem key={index} elementID={element.productId} dictionary={dictionary}/>
+                <>
+                  {index < 3 && (
+                    <OrderCardItem
+                      key={index}
+                      elementID={element.productId}
+                      dictionary={dictionary}
+                    />
+                  )}
+                </>
               ))}
             </div>
           </motion.div>
         </AnimatePresence>
 
-        <Button
-          variant="outline"
-          className="w-full mt-2"
-          onClick={() => setShowAll(!showAll)}
-        >
-          {showAll
-            ? dictionary.account.order.hide
-            : `${dictionary.account.order.viewMore} (${
-                orderData?.items?.length - 1
-              } ${dictionary.account.order.productsSuffix})`}
-        </Button>
+        {orderData.items.length - 3 > 0 && (
+          <Button
+            variant="outline"
+            className="w-full mt-2"
+            onClick={() => setShowAll(!showAll)}
+          >
+            {showAll
+              ? dictionary.account.order.hide
+              : `${dictionary.account.order.viewMore} (${
+                  orderData?.items?.length - 3
+                } ${dictionary.account.order.productsSuffix})`}
+          </Button>
+        )}
       </CardContent>
     </Card>
   );

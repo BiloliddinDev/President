@@ -20,7 +20,7 @@ export default async function RootLayout({
     <div>
       <div className={"container md:!mt-26 !mt-42"}>
         <BreadcrumbDynamic />
-        <SectionTitle className={"mt-10 mb-20"} text={"Мой счет"} />
+        <SectionTitle className={"mt-10 mb-16"} text={dictionary.account.title} />
       </div>
       <div className={"bg-neutral-100 py-10"}>
         <div className={"flex flex-col md:flex-row container gap-25"}>
