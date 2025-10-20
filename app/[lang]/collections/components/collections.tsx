@@ -2,6 +2,7 @@ import {CollectionService} from "@/service/collections-service/all-collections";
 import {CollectionResponse} from "../type";
 import {CollectionItems} from "./collectionItems";
 
+
 export interface CollectionsProps {
     lang: "uz" | "ru" | "en";
     dictionary: {
@@ -31,6 +32,7 @@ export async function Collections({lang, dictionary}: CollectionsProps) {
           сочетающих в себе традиции и современные тенденции.
         </p>
       </div> */}
+
 
             {ids.map((id: number) => (
                 <CollectionItems

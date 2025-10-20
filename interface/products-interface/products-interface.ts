@@ -4,6 +4,7 @@ export interface ProductsInterface {
     "name": string,
     "description": string,
     "basePriceToUSD": number,
+    "categories":ProductCategory[],
     "country": {
         "name": "Uzbekistan",
         "code": "UZ"
@@ -32,6 +33,23 @@ export interface ProductsInterface {
     "updatedAt": null
 }
 
+
+export type ProductCategory = {
+    id: number;
+    name: string;
+    description: string;
+    nameMap: {
+      RU: string;
+      UZ: string;
+      EN: string;
+    };
+    descriptionMap: {
+      RU: string;
+      UZ: string;
+      EN: string;
+    };
+  };
+  
 
 export interface MediaInterface {
     "id": string

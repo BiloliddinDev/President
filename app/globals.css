@@ -126,6 +126,7 @@ html[lang="ru"] .section-title {
 
 /* Base Body Font */
 body {
+    overflow-x: hidden;
 }
 
 

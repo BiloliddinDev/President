@@ -5,16 +5,13 @@ import Image from "next/image";
 import {useSession} from "next-auth/react";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
-
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
 import {SectionTitle} from "@/components/ui/sectionTitle";
 import {AutoCloseModal} from "@/components/shared/form-modal/auto-closeModal";
 import {CheckCircle} from "lucide-react";
-
 import supportImage from "@/public/images/support-form.jpg";
-
 import {createSupportSchema, type SupportFormValues} from "@/interface/support-schema/support-schema";
 import {sendTelegramMessage} from "@/lib/send-telegram-message";
 import {toast} from "sonner";
@@ -109,7 +106,7 @@ export const SupportForm = ({dictionary, showtime}: SupportFormProps) => {
                 {showtime && <SectionTitle className="mb-12" text={dictionary.support.title}/>}
 
                 <div className="grid md:grid-cols-2 gap-20 items-center bg-white rounded-[4px] p-8 md:p-12">
-                    <div data-aos="fade-right" className="text-center md:text-left">
+                    <div data-aos="fade-right" className="text-center md:text-left" suppressHydrationWarning>
                         <Image
                             src={supportImage}
                             alt="Support"

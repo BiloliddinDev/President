@@ -146,13 +146,13 @@ export default function SearchModalData({ dictionary, category }: NewsProps) {
                 key={item.id}
                 className="text-sm font-normal leading-[1.5rem] cursor-pointer my-2.5"
               >
-                <SheetClose className="cursor-pointer transition">
+                {/* <SheetClose className="cursor-pointer transition"> */}
                   <Link href={`/shops/${item.name}id${item.id}`}>
                     <SheetClose className="cursor-pointer transition">
                       {item.name}
                     </SheetClose>
                   </Link>
-                </SheetClose>
+                {/* </SheetClose> */}
               </div>
             ))}
           </div>

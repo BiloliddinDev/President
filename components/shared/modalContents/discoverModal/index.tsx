@@ -1,12 +1,15 @@
+"use client";
+
 import { discoverModalItems } from "@/constants/discover-modal-item";
 import Link from "next/link";
 import React from "react";
 
 interface DiscoverModalProps {
-  lang: "uz" | "ru" | "en";
+  lang: "uz" | "ru" | "en" ;
+  onItemClick?: () => void; // onItemClick opsional prop
 }
 
-const DiscoverModalContent = ({ lang }: DiscoverModalProps) => {
+const DiscoverModalContent = ({ lang, onItemClick }: DiscoverModalProps) => {
   return (
     <div>
       {discoverModalItems.map((item) => (
@@ -15,17 +18,13 @@ const DiscoverModalContent = ({ lang }: DiscoverModalProps) => {
             item.id === 9 ? "mt-10" : "my-5"
           }`}
           key={item.id}
+          onClick={() => {
+            if (onItemClick) onItemClick();
+          }}
         >
-          <Link
-            href={item.linkSrc}
-            className="group inline-flex items-center gap-1"
-          >
+          <Link href={item.linkSrc} className="group inline-flex items-center gap-1">
             <span
-              className={`
-          w-1.5 h-1.5 rounded-full bg-black 
-          opacity-0 transition-opacity 
-          group-hover:opacity-100
-        `}
+              className="w-1.5 h-1.5 rounded-full bg-black opacity-0 transition-opacity group-hover:opacity-100"
             />
             {item.name[lang]}
           </Link>

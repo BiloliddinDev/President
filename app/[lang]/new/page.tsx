@@ -15,7 +15,6 @@ interface NewsPageProps {
 export default async function News({params}: NewsPageProps) {
     const News = await params.then((params) => params);
     const NewsItem = splitNameAndIdFromParam(News.news)
-    // const NewData: NewsItemInterface = await NewsService(Number(NewsItem.id)) as NewsItemInterface
     const NewList: NewsItemInterface[] = await NewsListService() as NewsItemInterface[]
     const dictionary = await getDictionary(News.lang);
     return (

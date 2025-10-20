@@ -1,6 +1,5 @@
 import { BreadcrumbDynamic } from "@/components/shared/breadcrumb-dynamic/breadcrumb-dynamic";
 import SortAndViewToggleWrapper from "@/components/shared/sort-View-toggle/sort-viewtoggle";
-import { ProductsCard } from "@/components/shared/products-cards/products-card";
 import { Button } from "@/components/ui/button";
 import CategoryCarousel from "@/app/[lang]/shops/components/category-carusel/category-carusel";
 import { CategoryChildServiceUZ } from "@/service/category-service/category.shops.service";
@@ -11,9 +10,42 @@ import { splitNameAndIdFromParam } from "@/hooks/get-breadcrumb";
 import { CategoryDetailService } from "@/service/category-service/category-child.service";
 import { AlertTriangle } from "lucide-react";
 import { getDictionary } from "@/lib/get-dictionary";
+import { Metadata } from "next";
 
 interface CategoryPageProps {
   params: Promise<{ lang: "uz" | "ru" | "en"; category: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: CategoryPageProps): Promise<Metadata> {
+  const categoryParam = await params;
+  const categoryId = splitNameAndIdFromParam(categoryParam.category);
+
+  const CategoryDetailData2: CategoryInterface = (await CategoryDetailService(
+    categoryId.id || ""
+  )) as CategoryInterface;
+
+  return {
+    title: CategoryDetailData2.name,
+    description: CategoryDetailData2.description,
+    openGraph: {
+      title: CategoryDetailData2.name,
+      description: CategoryDetailData2.description,
+      url: `https://presidentgift.com/shops/${categoryParam.category}`,
+      siteName: "President Business Gifts",
+      locale: categoryParam.lang,
+      type: "website",
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_ADMIN_URL}${CategoryDetailData2?.mediaFiles?.[0]?.filePath}`,
+          width: 1200,
+          height: 630,
+          alt: CategoryDetailData2.name || "President Business Gifts",
+        },
+      ],
+    },
+  };
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
@@ -32,18 +64,17 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const CategoryDetailData2: CategoryInterface = (await CategoryDetailService(
     categoryId.id || ""
   )) as CategoryInterface;
-  
 
-    return (
-        <div className="container md:!mt-26 !mt-42">
-            <BreadcrumbDynamic url={CategoryDetailData2.name || undefined}/>
-            <div>
-                <h2 className="text-primary mt-10 text-xl font-medium leading-loose">
-                    {CategoryDetailData2.name}
-                </h2>
-                <p className="text-zinc-700 text-sm font-normal leading-tight mt-4 mb-11">
-                    {CategoryDetailData2.description}
-                </p>
+  return (
+    <div className="container md:!mt-26 !mt-42">
+      <BreadcrumbDynamic url={CategoryDetailData2.name || undefined} />
+      <div>
+        <h2 className="text-primary mt-10 text-xl font-medium leading-loose">
+          {CategoryDetailData2.name}
+        </h2>
+        <p className="text-zinc-700 text-sm font-normal leading-tight mt-4 mb-11">
+          {CategoryDetailData2.description}
+        </p>
 
         {CategoryChildData.children.length > 0 && (
           <CategoryCarousel
@@ -66,28 +97,13 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         ) : (
           <>
             <SortAndViewToggleWrapper
-              itemLength={ProductList.data.length}
+              initialItems={ProductList.data}
               dictionary={dictionary}
-            >
-              {ProductList.data.map((product, index) => (
-                <span
-                  data-aos="fade-left"
-                  key={product.id}
-                  data-aos-delay={`${index * 300}`}
-                >
-                  <ProductsCard
-                    key={product.id}
-                    productData={product}
-                    dictionary={dictionary}
-                  />
-                </span>
-              ))}
-            </SortAndViewToggleWrapper>
-
+            />
             <div className="flex justify-center mt-11">
               {CategoryChildData.children.length > 0 && (
                 <Button className="border-primary" variant="outline">
-                {dictionary.category.show_more}
+                  {dictionary.category.show_more}
                 </Button>
               )}
             </div>

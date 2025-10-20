@@ -42,17 +42,6 @@ import { getDictionary } from "@/lib/get-dictionary";
           },
           content: <InstrumentAccordion data={WritingMode} lang={lang} />,
         },
-        // {
-        //   value: "consulting",
-        //   label: {
-        //     uz: "Maslahatlar va mahsulotlarni ta'mirlash",
-        //     ru: "Консультации и ремонт по товарам",
-        //     en: "Consulting and Product Repair",
-        //     tj: "Маслиҳат ва таъмири молҳо",
-        //     az: "Məsləhət və məhsul təmiri"
-        //   },
-        //   content: <InstrumentAccordion data={services} />,
-        // },
         {
           value: "cancel",
           label: {

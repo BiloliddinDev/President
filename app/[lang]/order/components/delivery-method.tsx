@@ -14,15 +14,15 @@ import {
 } from "@/components/ui/dialog";
 import {Button} from "@/components/ui/button";
 import dynamic from "next/dynamic";
+import { OrderProps } from "./order";
 
 const LeafletMap = dynamic(() => import("./map-modal"), {ssr: false});
 
-const AddressForm = () => {
+const AddressForm = ({dictionary}: OrderProps) => {
     const {control, setValue} = useFormContext();
     const [isOpen, setIsOpen] = useState(false);
 
     const location = useWatch({name: "address.location", control});
-
     const [tempPosition, setTempPosition] = useState(location);
 
     const handleSave = () => {
@@ -38,7 +38,7 @@ const AddressForm = () => {
     return (
         <div className="p-6 rounded-[4px] border">
             <h2 className="text-lg font-semibold mb-4">
-                Способ получения и адрес доставки:
+                {dictionary.order.addressForm.title}
             </h2>
 
             <div className="space-y-5">
@@ -47,12 +47,14 @@ const AddressForm = () => {
                     name="address.text"
                     render={({field}) => (
                         <FormItem>
-                            <FormLabel className="text-sm">Куда доставить заказ?</FormLabel>
+                            <FormLabel className="text-sm">
+                                {dictionary.order.addressForm.addressLabel}
+                            </FormLabel>
                             <FormControl>
-                                <Input placeholder="Адрес" {...field} />
+                                <Input placeholder={dictionary.order.addressForm.addressPlaceholder} {...field} />
                             </FormControl>
                             <p className="text-sm text-muted-foreground">
-                                Укажите адрес на карте или используйте поиск
+                                {dictionary.order.addressForm.addressHint}
                             </p>
                             <FormMessage/>
                         </FormItem>
@@ -64,19 +66,23 @@ const AddressForm = () => {
                     name="address.location.lat"
                     render={() => (
                         <FormItem>
-                            <FormLabel className="text-sm">Локация на карте</FormLabel>
+                            <FormLabel className="text-sm">
+                                {dictionary.order.addressForm.locationLabel}
+                            </FormLabel>
                             <FormControl>
                                 <Dialog open={isOpen} onOpenChange={setIsOpen}>
                                     <DialogTrigger asChild>
                                         <Button type="button" variant="default" className="w-full">
-                                            Обозначение по карте
+                                            {dictionary.order.addressForm.mapButton}
                                         </Button>
                                     </DialogTrigger>
                                     <DialogContent className="max-w-4xl">
                                         <DialogHeader>
-                                            <DialogTitle>Выберите точку на карте</DialogTitle>
+                                            <DialogTitle>
+                                                {dictionary.order.addressForm.mapModalTitle}
+                                            </DialogTitle>
                                             <DialogDescription>
-                                                Нажмите на нужное место на карте для выбора адреса.
+                                                {dictionary.order.addressForm.mapModalDescription}
                                             </DialogDescription>
                                         </DialogHeader>
 
@@ -87,7 +93,7 @@ const AddressForm = () => {
 
                                         <div className="flex justify-end pt-4">
                                             <Button onClick={handleSave} type="button">
-                                                Сохранить локацию
+                                                {dictionary.order.addressForm.saveLocationButton}
                                             </Button>
                                         </div>
                                     </DialogContent>
