@@ -9,7 +9,6 @@ import {useBasketStore} from "@/lib/set-basket.storage";
 import Link from "next/link";
 import {useWishlistStore} from "@/lib/set-wishlist.storage";
 import FormattedText from "@/components/shared/formatted-text/formatted-text";
-import {formatCurrency} from "@/hooks/formatPrice";
 
 export default function ProductDetailPage({product}: { product: ProductsInterface }) {
 
@@ -23,7 +22,7 @@ export default function ProductDetailPage({product}: { product: ProductsInterfac
     const quantity = basketItem?.quantity || 0;
 
 
-    const price = product?.locale_price ?? product?.prices?.[0]?.price ?? null;
+    // const price = product?.locale_price ?? product?.prices?.[0]?.price ?? null;
 
 
     const handleShare = () => {
@@ -73,9 +72,9 @@ export default function ProductDetailPage({product}: { product: ProductsInterfac
                             />
                         </div>
                     </div>
-                    <p className="text-xl font-medium">
-                        {price != null ? formatCurrency(price) : "—"}
-                    </p>
+                    {/*<p className="text-xl font-medium">*/}
+                    {/*    {price != null ? formatCurrency(price) : "—"}*/}
+                    {/*</p>*/}
                     {quantity === 0 ? (
                         <Button className="w-full mt-4" onClick={handleAddToCart}>
                             Добавить в корзину

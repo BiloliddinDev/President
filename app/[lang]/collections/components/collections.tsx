@@ -1,28 +1,28 @@
-import { CollectionService } from "@/service/collections-service/all-collections";
-import { CollectionResponse } from "../type";
-import { CollectionItems } from "./collectionItems";
+import {CollectionService} from "@/service/collections-service/all-collections";
+import {CollectionResponse} from "../type";
+import {CollectionItems} from "./collectionItems";
 
 export interface CollectionsProps {
-  lang: "uz" | "ru" | "en";
-  dictionary: {
-    category: {
-      title: string;
-      new: string;
-      not_found: string;
-      unavailable: string;
-      show_more: string;
+    lang: "uz" | "ru" | "en";
+    dictionary: {
+        category: {
+            title: string;
+            new: string;
+            not_found: string;
+            unavailable: string;
+            show_more: string;
+        };
     };
-  };
 }
 
-export async function Collections({ lang ,dictionary}: CollectionsProps) {
-  const CollectionsData: CollectionResponse[] =
-    (await CollectionService()) as CollectionResponse[];
-  console.log(lang);
-  const ids = CollectionsData.map((item) => item.id);
-  return (
-    <div className=" mx-auto mt-[100px]">
-      {/* <div className="text-center mb-12 max-w-2xl mx-auto">
+export async function Collections({lang, dictionary}: CollectionsProps) {
+    const CollectionsData: CollectionResponse[] =
+        (await CollectionService()) as CollectionResponse[];
+    console.log(lang);
+    const ids = CollectionsData.map((item) => item.id);
+    return (
+        <div className=" mx-auto mt-[100px]">
+            {/* <div className="text-center mb-12 max-w-2xl mx-auto">
         <h3 className="text-2xl sm:text-3xl font-semibold text-gray-800">
           Вся коллекция President Business Gifts
         </h3>
@@ -32,14 +32,14 @@ export async function Collections({ lang ,dictionary}: CollectionsProps) {
         </p>
       </div> */}
 
-      {ids.map((id: number) => (
-        <CollectionItems
-          collection={CollectionsData}
-          id={id}
-          key={id}
-          dictionary={dictionary}
-        />
-      ))}
-    </div>
-  );
+            {ids.map((id: number) => (
+                <CollectionItems
+                    collection={CollectionsData}
+                    id={id}
+                    key={id}
+                    dictionary={dictionary}
+                />
+            ))}
+        </div>
+    );
 }

@@ -1,15 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { ShoppingBasket, Trash2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useBasketStore } from "@/lib/set-basket.storage";
+import {ShoppingBasket, Trash2} from "lucide-react";
+import {Button} from "@/components/ui/button";
+import {useBasketStore} from "@/lib/set-basket.storage";
 import Link from "next/link";
-import {getCurrencyCode, getPriceFor} from "@/hooks/price-helpers";
-import {formatCurrency} from "@/hooks/formatPrice";
-import { DictionaryType } from "./basket-right-section";
+import {DictionaryType} from "./basket-right-section";
 
-export function BasketLeftSection({ dictionary }: DictionaryType) {
+export function BasketLeftSection({dictionary}: DictionaryType) {
     const {
         items,
         increaseQuantity,
@@ -17,7 +15,7 @@ export function BasketLeftSection({ dictionary }: DictionaryType) {
         removeFromBasket
     } = useBasketStore();
     // console.log(items)
-    const code = getCurrencyCode();
+    // const code = getCurrencyCode();
     return (
         <div className="w-full lg:w-[70%] pr-4 space-y-4">
             {items.length === 0 ? (
@@ -28,8 +26,8 @@ export function BasketLeftSection({ dictionary }: DictionaryType) {
                 </div>
             ) : (
                 items.map((item) => {
-                        const p = getPriceFor(item.price, code);
-                        const total = (p?.price ?? 0) * (item.quantity ?? 1);
+                        // const p = getPriceFor(item.price, code);
+                        // const total = (p?.price ?? 0) * (item.quantity ?? 1);
                         return (
                             <div key={item.id}
                                  className="flex flex-col sm:flex-row items-center justify-between gap-4 border rounded-[4px] p-4">
@@ -45,16 +43,16 @@ export function BasketLeftSection({ dictionary }: DictionaryType) {
                                     <div>
                                         <h3 className="text-lg font-semibold">{item.name}</h3>
                                         <p className="text-sm text-gray-500"> {item.sku || dictionary.basket.description_unavailable}</p>
-                                        <p className="text-sm text-gray-600 mt-1">{dictionary.basket.price}:
-                                            <span> {p ? formatCurrency({currency: p.currency, price: p.price}) : "-"}</span>
-                                        </p>
-                                        <p className="text-sm text-gray-600">
-                                          {dictionary.basket.total}:{" "}
-                                            <span className="font-semibold">   {p ? formatCurrency({
-                                                currency: p.currency,
-                                                price: total
-                                            }) : "-"}</span>
-                                        </p>
+                                        {/*<p className="text-sm text-gray-600 mt-1">{dictionary.basket.price}:*/}
+                                        {/*    <span> {p ? formatCurrency({currency: p.currency, price: p.price}) : "-"}</span>*/}
+                                        {/*</p>*/}
+                                        {/*<p className="text-sm text-gray-600">*/}
+                                        {/*  {dictionary.basket.total}:{" "}*/}
+                                        {/*    <span className="font-semibold">   {p ? formatCurrency({*/}
+                                        {/*        currency: p.currency,*/}
+                                        {/*        price: total*/}
+                                        {/*    }) : "-"}</span>*/}
+                                        {/*</p>*/}
                                     </div>
                                 </Link>
                                 <div className="flex flex-row justify-start w-full  sm:flex-col  items-end gap-2">
@@ -78,5 +76,5 @@ export function BasketLeftSection({ dictionary }: DictionaryType) {
                 )
             )}
         </div>
-  );
+    );
 }
