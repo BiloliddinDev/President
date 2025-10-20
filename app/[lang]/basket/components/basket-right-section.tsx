@@ -15,7 +15,6 @@ export interface DictionaryType {
             total: string;
             description_unavailable: string;
             shoppingCart: string;
-
             order_details: string;
             product_quantity: string;
             product_prices: string;
@@ -24,16 +23,10 @@ export interface DictionaryType {
             delivery_info: string;
         };
     };
-// <<<<<<< biloliddin/home-page
-// =======
-//     detail: {
-//       quantity: string;
-//     };
-//   };
-// >>>>>>> main
-// }
+}
 
 export function BasketRightSection({dictionary}: DictionaryType) {
+
     const {items} = useBasketStore();
 
     // const totalQuantity = items.reduce((acc, item) => acc + item.quantity, 0);
@@ -70,7 +63,7 @@ export function BasketRightSection({dictionary}: DictionaryType) {
                 </div>
 
 
-        <hr />
+                <hr/>
 
                 <div className="flex justify-between text-lg font-semibold">
                     <span>{dictionary.basket.total_checkout}:</span>
@@ -83,9 +76,9 @@ export function BasketRightSection({dictionary}: DictionaryType) {
             </Link>
 
 
-      {/* <div className="flex items-center gap-2 text-sm text-gray-600">
+            {/* <div className="flex items-center gap-2 text-sm text-gray-600">
                 <span>{dictionary.basket.delivery_info}</span>
             </div> */}
-    </div>
-  );
+        </div>
+    );
 }
