@@ -26,10 +26,14 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 RUN \
-  if [ -f yarn.lock ]; then yarn build; \
-  elif [ -f package-lock.json ]; then npm run build; \
-  elif [ -f pnpm-lock.yaml ]; then pnpm run build; \
-  else echo "❌ Lockfile not found." && exit 1; \
+  if [ -f yarn.lock ]; then \
+    yarn install --frozen-lockfile --network-timeout 600000 --no-progress; \
+  elif [ -f package-lock.json ]; then \
+    npm ci --no-audit --no-fund --prefer-offline; \
+  elif [ -f pnpm-lock.yaml ]; then \
+    corepack enable pnpm && pnpm install --frozen-lockfile; \
+  else \
+    echo "❌ Lockfile not found." && exit 1; \
   fi
 
 FROM base AS runner
