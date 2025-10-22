@@ -36,6 +36,8 @@ RUN \
     echo "❌ Lockfile not found." && exit 1; \
   fi
 
+RUN npm run build
+
 FROM base AS runner
 WORKDIR /app
 
