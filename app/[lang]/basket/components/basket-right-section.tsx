@@ -66,7 +66,7 @@ export function BasketRightSection({dictionary}: DictionaryType) {
                 <hr/>
 
                 <div className="flex justify-between text-lg font-semibold">
-                    <span>{dictionary.basket.total_checkout}:</span>
+                    {/*<span>{dictionary.basket.total_checkout}:</span>*/}
                     {/*<span>{formattedSubtotal}</span>*/}
                 </div>
             </div>
