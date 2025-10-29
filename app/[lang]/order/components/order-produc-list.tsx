@@ -79,14 +79,14 @@ export default function OrderedProducts({
               </div>
 
               <div className="flex items-center gap-2 sm:gap-10 w-full sm:w-auto justify-between sm:justify-end">
-                <p className="font-medium text-sm whitespace-nowrap">
-                  {row
-                    ? formatCurrency({
-                        currency: row.currency,
-                        price: row.price,
-                      })
-                    : "-"}
-                </p>
+                {/*<p className="font-medium text-sm whitespace-nowrap">*/}
+                {/*  {row*/}
+                {/*    ? formatCurrency({*/}
+                {/*        currency: row.currency,*/}
+                {/*        price: row.price,*/}
+                {/*      })*/}
+                {/*    : "-"}*/}
+                {/*</p>*/}
 
                 <button
                   className="bg-[#f4f4f4] hover:bg-[#dfdfdf] text-primary p-2 rounded-full shrink-0 cursor-pointer"
