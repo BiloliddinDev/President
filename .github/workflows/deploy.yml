@@ -58,7 +58,7 @@ jobs:
       - name: 🔧 Clean install deps and rebuild native modules
         run: |
           rm -rf node_modules package-lock.json .next
-          ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.installer }} --include=optional
+          ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.installer }} --legacy-peer-deps
           npm rebuild sharp lightningcss
 
       - name: 🚧 Build Next.js app
