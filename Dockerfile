@@ -11,7 +11,7 @@ COPY yarn.lock* package-lock.json* pnpm-lock.yaml* .npmrc* ./
 # 👇 Install deps based on lockfile
 RUN \
   if [ -f yarn.lock ]; then yarn install --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then rm -rf node_modules && rm package-lock.json && npm install; \
+  elif [ -f package-lock.json ]; then rm -rf node_modules && rm package-lock.json && npm install --legacy-peer-deps; \
   elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm install --frozen-lockfile; \
   else echo "❌ Lockfile not found." && exit 1; \
   fi
