@@ -17,8 +17,8 @@ export const getAllCurrency = async () => {
         try {
             const parsed: CountryCookie = JSON.parse(countryString);
             countryCode = parsed.code;
-        } catch (error) {
-            console.warn("country cookie parsing error:", error);
+        } catch {
+            // Invalid cookie format, use default
         }
     }
 
@@ -26,7 +26,9 @@ export const getAllCurrency = async () => {
         const currencies: CurrencyType[] = await fetcherClient(`/api/v1/currency/by_country?countryCode=${countryCode}`);
         const defaultCurrency = currencies.find((currency) => currency.default_currency);
 
-        if (defaultCurrency) {
+        // Only set cookie if not already set to avoid infinite re-fetches
+        const existingCurrency = Cookies.get("currency");
+        if (defaultCurrency && !existingCurrency) {
             Cookies.set("currency", JSON.stringify({
                 code: defaultCurrency.code,
                 name: defaultCurrency.name,
@@ -35,4 +37,6 @@ export const getAllCurrency = async () => {
 
         return currencies;
     }
+
+    return [];
 };

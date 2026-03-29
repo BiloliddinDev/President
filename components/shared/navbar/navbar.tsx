@@ -60,36 +60,33 @@ export interface NavbarProps {
 export const Navbar = ({ lang, dictionary }: NavbarProps) => {
   const [languages, setLanguages] = useState<LanguageType[]>([]);
   const [county, setCountry] = useState<CountryType[]>([]);
-  const cookiesCountry = Cookies.get("country");
   const [currency, setCurrency] = useState<CurrencyType[] | undefined>();
   const [category, setCategory] = useState<Category[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const fetchLang = async () => {
-      const data = await getAllLanguage();
-      setLanguages(data);
-    };
-    fetchLang().then().catch().finally();
+    if (isLoaded) return;
 
-    const fetchCurrency = async () => {
-      const data = await getAllCurrency();
-      setCurrency(data);
+    const fetchData = async () => {
+      try {
+        const [langData, currencyData, countryData, categoryData] = await Promise.all([
+          getAllLanguage(),
+          getAllCurrency(),
+          getAllCountry(),
+          getCategoryModal() as Promise<Category[]>,
+        ]);
+        setLanguages(langData);
+        setCurrency(currencyData);
+        setCountry(countryData);
+        setCategory(categoryData);
+        setIsLoaded(true);
+      } catch (error) {
+        // Silent fail - data will be empty
+      }
     };
-    fetchCurrency().then().catch().finally();
 
-    const fetchCounty = async () => {
-      const data = await getAllCountry();
-      setCountry(data);
-    };
-    fetchCounty().then().catch().finally();
-  }, [cookiesCountry]);
-  useEffect(() => {
-    const fetchCategory = async () => {
-      const data: Category[] = (await getCategoryModal()) as Category[];
-      setCategory(data);
-    };
-    fetchCategory().then().catch().finally();
-  }, []);
+    fetchData();
+  }, [isLoaded]);
 
   return (
     <nav

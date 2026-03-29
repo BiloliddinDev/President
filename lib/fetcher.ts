@@ -40,7 +40,7 @@ export async function fetcher<T = unknown>(
             'currencyCode': currency.code,
             ...headers,
         },
-        cache: 'no-store',
+        next: { revalidate: 60 }, // Cache for 60 seconds
     });
 
     if (!res.ok) {

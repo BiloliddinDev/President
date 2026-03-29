@@ -16,9 +16,8 @@ interface LikeProps {
     };
 }
 
-export default function LikePage({dictionary, lang}: LikeProps) {
+export default function LikePage({dictionary}: LikeProps) {
     const {items, removeFromWishlist} = useWishlistStore();
-    console.log(lang)
     return (
         <div>
             <div className="container md:!mt-26 !mt-42">

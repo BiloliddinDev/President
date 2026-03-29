@@ -1,31 +1,33 @@
 'use client'
 
-import {ReactNode, useCallback, useEffect, useState} from "react";
+import {ReactNode, useEffect, useRef, useState} from "react";
 import {motion} from "framer-motion";
 
 export const Headroom = ({children}: { children: ReactNode }) => {
     const [show, setShow] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
-
-    const controlNavbar = useCallback(() => {
-        if (typeof window !== "undefined") {
-            if (window.scrollY > lastScrollY) {
-                setShow(false);
-            } else {
-                setShow(true);
-            }
-            setLastScrollY(window.scrollY);
-        }
-    }, [lastScrollY]);
+    const lastScrollY = useRef(0);
+    const ticking = useRef(false);
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            window.addEventListener("scroll", controlNavbar);
-            return () => {
-                window.removeEventListener("scroll", controlNavbar);
-            };
-        }
-    }, [controlNavbar]);
+        const controlNavbar = () => {
+            if (ticking.current) return;
+
+            ticking.current = true;
+            requestAnimationFrame(() => {
+                const currentScrollY = window.scrollY;
+                if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+                    setShow(false);
+                } else {
+                    setShow(true);
+                }
+                lastScrollY.current = currentScrollY;
+                ticking.current = false;
+            });
+        };
+
+        window.addEventListener("scroll", controlNavbar, { passive: true });
+        return () => window.removeEventListener("scroll", controlNavbar);
+    }, []);
 
     return (
         <motion.div

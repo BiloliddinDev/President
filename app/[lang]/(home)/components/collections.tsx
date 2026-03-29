@@ -30,7 +30,7 @@ export async function Collections({dictionary}: CollectionsProps) {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 w-full mt-12">
             <div className="w-full md:w-[40%] flex justify-center">
                 <Image
-                    src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${Collection.mediaFiles[0].filePath}`}
+                    src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${Collection?.mediaFiles[0].filePath}`}
                     alt="Collection Left Image"
                     width={1000}
                     height={500}
@@ -40,7 +40,7 @@ export async function Collections({dictionary}: CollectionsProps) {
             <div className="w-full container  md:w-[60%]">
                 <SectionTitle
                     className={" mb-10 md:mb-[75px]"}
-                    text={`${Collection.name}`}
+                    text={`${Collection?.name}`}
                 />
                 <Carousel
                     opts={{

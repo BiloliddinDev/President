@@ -16,10 +16,9 @@ export interface CollectionsProps {
     };
 }
 
-export async function Collections({lang, dictionary}: CollectionsProps) {
+export async function Collections({dictionary}: CollectionsProps) {
     const CollectionsData: CollectionResponse[] =
         (await CollectionService()) as CollectionResponse[];
-    console.log(lang);
     const ids = CollectionsData.map((item) => item.id);
     return (
         <div className=" mx-auto mt-[100px]">
