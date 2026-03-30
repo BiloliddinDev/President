@@ -16,8 +16,8 @@ export const getAllLanguage = async () => {
         try {
             const parsed: CountryCookie = JSON.parse(countryString);
             countryCode = parsed.code;
-        } catch (error) {
-            console.warn("country cookie parsing error:", error);
+        } catch {
+            // Invalid cookie format
         }
     }
 
@@ -25,4 +25,5 @@ export const getAllLanguage = async () => {
         return fetcherClient(`/api/v1/language/all_active_by_country?countryCode=${countryCode}`);
     }
 
-}
+    return [];
+};

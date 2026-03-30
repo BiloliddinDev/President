@@ -1,13 +1,17 @@
 'use client';
 
-import {useEffect} from 'react';
+import {useEffect, useRef} from 'react';
 
 export function InitGeoCookie() {
+    const hasFetched = useRef(false);
+
     useEffect(() => {
+        if (hasFetched.current) return;
+
         const hasCountryCookie = document.cookie.includes('country');
-        console.log(hasCountryCookie)
         if (!hasCountryCookie) {
-            fetch('/api/user-country').then(res => res.json());
+            hasFetched.current = true;
+            fetch('/api/user-country').catch(() => {});
         }
     }, []);
 

@@ -3,16 +3,31 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: president-container # Specify the container name here
+    container_name: president-container
     environment:
       - NODE_ENV=production
+      - NODE_OPTIONS=--max-old-space-size=1024
     env_file:
       - .env.local
     ports:
-      - "3000:3000" # Expose port 3000
+      - "3000:3000"
     networks:
       - president-network
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 1536M
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
 networks:
   president-network:

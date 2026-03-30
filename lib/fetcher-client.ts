@@ -32,7 +32,6 @@ export const fetcherClient = async (
             'currencyCode': currencyCode,
             ...(options.headers || {}),
         },
-        cache: 'no-store',
     });
 
     if (!res.ok) throw new Error('Request failed');
