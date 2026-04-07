@@ -94,16 +94,17 @@ jobs:
             echo "🔐 Connected to production server"
 
             # Clone or pull repo
-            if [ -d "\$DEPLOY_DIR" ]; then
+            if [ -d "$DEPLOY_DIR" ] && [ -d "$DEPLOY_DIR/.git" ]; then
               echo "📥 Pulling latest repository..."
-              cd \$DEPLOY_DIR
+              cd $DEPLOY_DIR
               git pull origin main
             else
               echo "📦 Cloning repository... $GIT_REPO"
-              git clone $GIT_REPO \$DEPLOY_DIR
+              rm -rf $DEPLOY_DIR  # Remove incomplete directory if it exists
+              git clone $GIT_REPO $DEPLOY_DIR
             fi
 
-            cd \$DEPLOY_DIR
+            cd $DEPLOY_DIR
 
             # Install Docker if missing
             if ! command -v docker &> /dev/null; then
