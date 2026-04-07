@@ -79,7 +79,7 @@ jobs:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
           DEPLOY_LOCATION: ${{ secrets.DEPLOY_LOCATION }}
-          GIT_REPO: ${{ github.repository }}
+          GIT_REPO: git@github.com:${{ github.repository }}.git
         run: |
 
           mkdir -p ~/.ssh
@@ -87,7 +87,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
 
-          ssh $SERVER_USER@$SERVER_IP << 'EOF'
+          ssh $SERVER_USER@$SERVER_IP << EOF
             set -euo pipefail
             export DEPLOY_DIR="/var/www/president"
             
@@ -100,7 +100,7 @@ jobs:
               git pull origin main
             else
               echo "📦 Cloning repository... $GIT_REPO"
-              git clone git@github-front.com:BiloliddinDev/President.git $DEPLOY_DIR
+              git clone $GIT_REPO $DEPLOY_DIR
             fi
 
             cd $DEPLOY_DIR
