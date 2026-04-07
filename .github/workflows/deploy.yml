@@ -115,7 +115,7 @@ jobs:
             echo "✅ Docker is installed"
 
             # Install Docker Compose if missing
-            if ! command -v docker-compose &> /dev/null; then
+            if ! command -v docker compose &> /dev/null; then
               echo "🧩 Installing Docker Compose..."
               sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
               sudo chmod +x /usr/local/bin/docker-compose
@@ -124,19 +124,19 @@ jobs:
             echo "✅ Docker Compose is installed"
 
             echo "🛑 Stopping old containers (if running)..."
-            docker-compose down || true
+            docker compose down || true
             
             echo "🧱 Building containers..."
-            docker-compose build
+            docker compose build
 
             echo "🚀 Starting containers..."
-            docker-compose up -d --remove-orphans  
+            docker compose up -d --remove-orphans  
 
             echo "🧹 Optional cleanup of dangling images..."
             docker image prune -f
 
             echo "📊 Deployment status:"
-            docker-compose ps
+            docker compose ps
            
             echo "✅ Production deployment complete at \$(date)"
           EOF
