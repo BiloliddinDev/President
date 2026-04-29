@@ -1,5 +1,6 @@
 services:
   president-app:
+    image: orzutraveluser/president_container:${TAG:-latest}
     build:
       context: .
       dockerfile: Dockerfile
