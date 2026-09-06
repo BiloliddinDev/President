@@ -18,29 +18,38 @@ export interface CollectionsProps {
 }
 
 export async function Collections({dictionary}: CollectionsProps) {
-    const CollectionsData: CollectionResponse[] = (await CollectionService()) as CollectionResponse[];
+    let CollectionsData: CollectionResponse[] = [];
+    try {
+        CollectionsData = ((await CollectionService()) as CollectionResponse[]) || [];
+    } catch (err) {
+        console.warn('Failed to fetch collections:', err);
+    }
 
+    const Collection = CollectionsData.find((item) => item.is_main_page);
 
-    const Collection = CollectionsData.filter(
-        (item) => item.is_main_page
-    )[0];
+    if (!Collection || !Collection.products?.length) {
+        return null;
+    }
 
+    const coverImage = Collection.mediaFiles?.[0]?.filePath;
 
     return (
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 w-full mt-12">
-            <div className="w-full md:w-[40%] flex justify-center">
-                <Image
-                    src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${Collection?.mediaFiles[0].filePath}`}
-                    alt="Collection Left Image"
-                    width={1000}
-                    height={500}
-                    className="object-contain w-full"
-                />
-            </div>
-            <div className="w-full container  md:w-[60%]">
+            {coverImage && (
+                <div className="w-full md:w-[40%] flex justify-center">
+                    <Image
+                        src={`${process.env.NEXT_PUBLIC_ADMIN_URL}${coverImage}`}
+                        alt="Collection Left Image"
+                        width={1000}
+                        height={500}
+                        className="object-contain w-full"
+                    />
+                </div>
+            )}
+            <div className={`w-full container ${coverImage ? 'md:w-[60%]' : ''}`}>
                 <SectionTitle
                     className={" mb-10 md:mb-[75px]"}
-                    text={`${Collection?.name}`}
+                    text={Collection.name || ''}
                 />
                 <Carousel
                     opts={{

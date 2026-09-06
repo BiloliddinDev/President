@@ -9,7 +9,13 @@ import Link from "next/link";
 
 export async function About() {
 
-    const AboutData: AboutType = await AboutService() as AboutType
+    let AboutData: AboutType = {} as AboutType;
+    try {
+        const result = await AboutService();
+        if (result) AboutData = result as AboutType;
+    } catch (err) {
+        console.warn('Failed to fetch about data:', err);
+    }
 
     return (
         <div className="bg-gradient-to-l from-neutral-100 to-white/0 py-10">

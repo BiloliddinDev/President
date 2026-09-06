@@ -14,9 +14,31 @@ interface FooterProps {
 }
 
 export const Footer = async ({ lang }: FooterProps) => {
-  const FooterData: FooterType = (await FooterService()) as FooterType;
-  const CategoryData: CategoryInterface[] =
-    (await CategoryService()) as CategoryInterface[];
+  let FooterData: FooterType = {
+    "footer.copyright": "© 2025 President Business Gifts. All rights reserved.",
+    "footer.description": "",
+    "footer.social": "SOCIAL MEDIA",
+    "footer.payments": "ACCEPTED PAYMENTS",
+    "footer.new.products": "New Products",
+    "footer.company": "COMPANY",
+    "footer.support": "SUPPORT",
+    "footer.signup": "Sign up",
+  };
+  let CategoryData: CategoryInterface[] = [];
+
+  try {
+    const footerResult = await FooterService();
+    if (footerResult) FooterData = footerResult as FooterType;
+  } catch (err) {
+    console.warn("Failed to fetch footer data, using defaults:", err);
+  }
+
+  try {
+    const categoryResult = await CategoryService();
+    if (Array.isArray(categoryResult)) CategoryData = categoryResult as CategoryInterface[];
+  } catch (err) {
+    console.warn("Failed to fetch category data for footer:", err);
+  }
 
   return (
     <footer className={"container"}>
@@ -153,7 +175,7 @@ export const Footer = async ({ lang }: FooterProps) => {
             {FooterData["footer.new.products"]}
           </h2>
           <ul>
-            {CategoryData.map((item) => (
+            {CategoryData?.map((item) => (
               <li
                 key={item.id}
                 className={
@@ -175,7 +197,7 @@ export const Footer = async ({ lang }: FooterProps) => {
           itemValue="item"
           accordionContent={
             <ul>
-              {CategoryData.map((item) => (
+              {CategoryData?.map((item) => (
                 <li
                   key={item.id}
                   className={

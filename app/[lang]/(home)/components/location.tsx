@@ -45,12 +45,19 @@ export default function LocationPage({dictionary, lang}: LocationProps) {
 
     useEffect(() => {
         const fetchLocation = async () => {
-            const data: LocationType = await getLocation();
-            setLocation({text: data["location.text"], title: data["location.title"]});
+            try {
+                const data: LocationType | null = await getLocation();
+                if (data && (data["location.text"] || data["location.title"])) {
+                    setLocation({
+                        text: data["location.text"] || "",
+                        title: data["location.title"] || ""
+                    });
+                }
+            } catch (err) {
+                console.warn("Location component fetch error:", err);
+            }
         };
-        fetchLocation().then().catch().finally();
-
-
+        fetchLocation();
     }, []);
     return (
         <div className="w-full h-auto flex flex-col gap-4 overflow-x-hidden container">

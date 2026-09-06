@@ -128,8 +128,9 @@ export default function OrderPage({ dictionary }: OrderProps) {
         `${process.env.NEXT_PUBLIC_BASIC_ADMIN}:${process.env.NEXT_PUBLIC_BASIC_PASSWORD}`
       );
 
+      const baseUrl = typeof window !== 'undefined' ? '' : (process.env.NEXT_PUBLIC_BASE_URL || 'https://api.presidentgift.com');
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/orders/create`,
+        `${baseUrl}/api/v1/orders/create`,
         {
           method: "POST",
           headers: {

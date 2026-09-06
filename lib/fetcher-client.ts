@@ -22,7 +22,11 @@ export const fetcherClient = async (
     }
     const currencyCode = currencyOverride || currency.code;
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${url}`, {
+    // Use relative URL in the browser to route through the Next.js API proxy and eliminate CORS
+    const baseUrl = typeof window !== 'undefined' ? '' : (process.env.NEXT_PUBLIC_BASE_URL || 'https://api.presidentgift.com');
+    const finalUrl = url.startsWith('http') ? url : `${baseUrl}${url}`;
+
+    const res = await fetch(finalUrl, {
         ...options,
         method: options.method ?? 'GET',
         headers: {
@@ -34,6 +38,9 @@ export const fetcherClient = async (
         },
     });
 
-    if (!res.ok) throw new Error('Request failed');
+    if (!res.ok) {
+        const errorText = await res.text().catch(() => 'Request failed');
+        throw new Error(errorText || `Request failed with status ${res.status}`);
+    }
     return res.json();
 };

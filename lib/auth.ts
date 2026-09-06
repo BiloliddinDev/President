@@ -13,9 +13,10 @@ export async function createUserAndSignIn({
         `${process.env.NEXT_PUBLIC_BASIC_ADMIN}:${process.env.NEXT_PUBLIC_BASIC_PASSWORD}`
     );
 
+    const baseUrl = typeof window !== 'undefined' ? '' : (process.env.NEXT_PUBLIC_BASE_URL || 'https://api.presidentgift.com');
     try {
         const res = await fetch(
-            `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/clients/form/create`,
+            `${baseUrl}/api/v1/clients/form/create`,
             {
                 method: "POST",
                 headers: {

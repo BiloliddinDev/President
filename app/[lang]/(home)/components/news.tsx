@@ -18,7 +18,13 @@ interface NewsProps {
 
 export const News = async ({ dictionary }: NewsProps)  => {
 
-    const NewData: NewsItemInterface[] = await NewsListService() as NewsItemInterface[]
+    let NewData: NewsItemInterface[] = [];
+    try {
+        const result = await NewsListService();
+        if (Array.isArray(result)) NewData = result as NewsItemInterface[];
+    } catch (err) {
+        console.warn('Failed to fetch news:', err);
+    }
 
 
     return (

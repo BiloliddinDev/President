@@ -11,20 +11,21 @@ interface CountryCookie {
 export const getCategoryModal = async () => {
     const countryString = Cookies.get("country");
     const langString = Cookies.get("lang")?.toUpperCase() || "EN";
-    let countryCode = null;
+    let countryCode = "UZ";
 
     if (countryString) {
         try {
             const parsed: CountryCookie = JSON.parse(countryString);
-            countryCode = parsed.code;
+            if (parsed.code) countryCode = parsed.code;
         } catch {
             // Invalid cookie format
         }
     }
 
-    if (countryCode) {
-        return fetcherClient(`/api/v1/category/root_by_locale?languageCode=${langString}&countryCode=${countryCode}`);
+    try {
+        return await fetcherClient(`/api/v1/category/root_by_locale?languageCode=${langString}&countryCode=${countryCode}`);
+    } catch (err) {
+        console.warn("Failed to fetch categories for mobile navbar, using empty fallback", err);
+        return [];
     }
-
-    return [];
 };

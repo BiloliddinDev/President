@@ -11,32 +11,46 @@ interface CountryCookie {
 
 export const getAllCurrency = async () => {
     const countryString = Cookies.get("country");
-    let countryCode = null;
+    let countryCode = "UZ";
 
     if (countryString) {
         try {
             const parsed: CountryCookie = JSON.parse(countryString);
-            countryCode = parsed.code;
+            if (parsed.code) countryCode = parsed.code;
         } catch {
             // Invalid cookie format, use default
         }
     }
 
-    if (countryCode) {
+    try {
         const currencies: CurrencyType[] = await fetcherClient(`/api/v1/currency/by_country?countryCode=${countryCode}`);
-        const defaultCurrency = currencies.find((currency) => currency.default_currency);
-
-        // Only set cookie if not already set to avoid infinite re-fetches
-        const existingCurrency = Cookies.get("currency");
-        if (defaultCurrency && !existingCurrency) {
-            Cookies.set("currency", JSON.stringify({
-                code: defaultCurrency.code,
-                name: defaultCurrency.name,
-            }));
+        if (Array.isArray(currencies) && currencies.length > 0) {
+            const defaultCurrency = currencies.find((currency) => currency.default_currency);
+            const existingCurrency = Cookies.get("currency");
+            if (defaultCurrency && !existingCurrency) {
+                Cookies.set("currency", JSON.stringify({
+                    code: defaultCurrency.code,
+                    name: defaultCurrency.name,
+                }));
+            }
+            return currencies;
         }
-
-        return currencies;
+    } catch (err) {
+        console.warn("Failed to fetch currencies from backend, using fallback", err);
     }
 
-    return [];
+    // Default fallback currencies
+    const fallbacks: CurrencyType[] = [
+        { code: "UZS", name: "O'zbek so'mi", symbol: "so'm", symbol_position: "AFTER", symbol_space: true, price: 1, default_currency: true },
+        { code: "USD", name: "US Dollar", symbol: "$", symbol_position: "BEFORE", symbol_space: false, price: 1, default_currency: false },
+        { code: "EUR", name: "Euro", symbol: "€", symbol_position: "BEFORE", symbol_space: false, price: 1, default_currency: false },
+        { code: "RUB", name: "Рубль", symbol: "₽", symbol_position: "AFTER", symbol_space: true, price: 1, default_currency: false },
+    ];
+
+    const existingCurrency = Cookies.get("currency");
+    if (!existingCurrency) {
+        Cookies.set("currency", JSON.stringify({ code: "UZS", name: "O'zbek so'mi" }));
+    }
+
+    return fallbacks;
 };

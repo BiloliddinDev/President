@@ -15,7 +15,13 @@ interface CategoryProps {
 }
 
 export async function Category({dictionary, lang}: CategoryProps) {
-    const CategoryData: CategoryInterface[] = await CategoryService() as CategoryInterface[]
+    let CategoryData: CategoryInterface[] = [];
+    try {
+        const result = await CategoryService();
+        if (Array.isArray(result)) CategoryData = result as CategoryInterface[];
+    } catch (err) {
+        console.warn('Failed to fetch categories:', err);
+    }
 
 
     return (

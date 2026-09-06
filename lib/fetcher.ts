@@ -32,21 +32,58 @@ export async function fetcher<T = unknown>(
     }
     
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${url}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Basic ${authString}`,
-            'currencyCode': currency.code,
-            ...headers,
-        },
-        next: { revalidate: 60 }, // Cache for 60 seconds
-    });
+    const fullUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${url}`;
+    const requestHeaders: HeadersInit = {
+        'Content-Type': 'application/json',
+        'Authorization': `Basic ${authString}`,
+        'currencyCode': currency.code,
+        ...headers,
+    };
 
-    if (!res.ok) {
-        const message = await res.text().catch(() => 'Something went wrong');
-        throw new Error(message);
+    let lastError: any = null;
+    const maxRetries = 2;
+
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+        try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 15000);
+
+            const res = await fetch(fullUrl, {
+                method: 'GET',
+                headers: requestHeaders,
+                next: { revalidate: 60 },
+                signal: controller.signal,
+            });
+            clearTimeout(timeoutId);
+
+            if (!res.ok) {
+                const message = await res.text().catch(() => 'Something went wrong');
+                throw new Error(message);
+            }
+
+            return await res.json() as T;
+        } catch (err: any) {
+            lastError = err;
+            const isAbortedOrNetwork =
+                err?.name === 'AbortError' ||
+                err?.code === 'ECONNABORTED' ||
+                err?.code === 'ECONNRESET' ||
+                err?.code === 'ETIMEDOUT' ||
+                err?.cause?.code === 'ECONNABORTED' ||
+                err?.cause?.code === 'ECONNRESET' ||
+                err?.cause?.code === 'ETIMEDOUT' ||
+                (typeof err?.message === 'string' && err.message.includes('fetch failed'));
+
+            if (attempt < maxRetries && isAbortedOrNetwork) {
+                const delay = 400 * Math.pow(2, attempt);
+                console.warn(`[fetcher] Request to ${url} failed with ${err?.cause?.code || err?.code || err?.message}. Retrying in ${delay}ms (attempt ${attempt + 1}/${maxRetries})...`);
+                await new Promise((resolve) => setTimeout(resolve, delay));
+                continue;
+            }
+
+            throw err;
+        }
     }
 
-    return await res.json() as Promise<T>;
+    throw lastError || new Error(`Request to ${url} failed`);
 }

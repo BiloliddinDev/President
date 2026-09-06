@@ -3,6 +3,6 @@ export interface AboutType {
     "about.imageAlt": string
     "about.subtitle": string
     "about.title": string
-    "about.image" : string
-    "about.btn" : string
+    "about.image"?: string
+    "about.btn": string
 }

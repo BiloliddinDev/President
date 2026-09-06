@@ -9,22 +9,24 @@ interface CountryCookie {
 }
 
 export const getLocation = async () => {
-    const countryString = Cookies.get("country");
-    const langString = Cookies.get("lang");
-    let countryCode = null;
+    try {
+        const countryString = Cookies.get("country");
+        const langString = Cookies.get("lang") || "en";
+        let countryCode = "UZ";
 
-    if (countryString) {
-        try {
-            const parsed: CountryCookie = JSON.parse(countryString);
-            countryCode = parsed.code;
-        } catch (error) {
-            console.warn("country cookie parsing error:", error);
+        if (countryString) {
+            try {
+                const parsed: CountryCookie = JSON.parse(countryString);
+                if (parsed?.code) countryCode = parsed.code;
+            } catch (error) {
+                console.warn("country cookie parsing error:", error);
+            }
         }
+
+        return await fetcherClient(`/api/v1/translations/page/LOCATION?language=${langString.toUpperCase()}&country=${countryCode}`);
+    } catch (err) {
+        console.warn("Failed to fetch location translation:", err);
+        return null;
     }
-
-    if (countryCode) {
-        return fetcherClient(`/api/v1/translations/page/LOCATION?language=${langString?.toUpperCase()}&country=${countryCode}`);
-             }
-
-}
+};
 

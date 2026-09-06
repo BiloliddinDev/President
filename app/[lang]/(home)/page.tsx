@@ -23,8 +23,21 @@ export default async function Home({params}: HomePageProps) {
 
     const HomePageParam: { lang: "uz" | "ru" | "en" | 'tj' | "az", category: string } = await params;
     const dictionary = await getDictionary(HomePageParam.lang);
-    const DataLayer: ShowcaseDataFrom = await showcaseService() as ShowcaseDataFrom
-    const ImagesData: ShowcaseItem[] = await getshowCaseData() as ShowcaseItem[]
+
+    let DataLayer: ShowcaseDataFrom = {} as ShowcaseDataFrom;
+    let ImagesData: ShowcaseItem[] = [];
+
+    try {
+        DataLayer = (await showcaseService()) as ShowcaseDataFrom || {} as ShowcaseDataFrom;
+    } catch (err) {
+        console.warn('Failed to fetch showcase data:', err);
+    }
+
+    try {
+        ImagesData = (await getshowCaseData()) as ShowcaseItem[] || [];
+    } catch (err) {
+        console.warn('Failed to fetch showcase images:', err);
+    }
 
 
     return (

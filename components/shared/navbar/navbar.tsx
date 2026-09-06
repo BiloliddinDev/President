@@ -69,19 +69,19 @@ export const Navbar = ({ lang, dictionary }: NavbarProps) => {
 
     const fetchData = async () => {
       try {
-        const [langData, currencyData, countryData, categoryData] = await Promise.all([
+        const [langRes, currencyRes, countryRes, categoryRes] = await Promise.allSettled([
           getAllLanguage(),
           getAllCurrency(),
           getAllCountry(),
           getCategoryModal() as Promise<Category[]>,
         ]);
-        setLanguages(langData);
-        setCurrency(currencyData);
-        setCountry(countryData);
-        setCategory(categoryData);
+        if (langRes.status === "fulfilled" && langRes.value) setLanguages(langRes.value);
+        if (currencyRes.status === "fulfilled" && currencyRes.value) setCurrency(currencyRes.value);
+        if (countryRes.status === "fulfilled" && countryRes.value) setCountry(countryRes.value);
+        if (categoryRes.status === "fulfilled" && categoryRes.value) setCategory(categoryRes.value);
         setIsLoaded(true);
       } catch (error) {
-        // Silent fail - data will be empty
+        setIsLoaded(true);
       }
     };
 
