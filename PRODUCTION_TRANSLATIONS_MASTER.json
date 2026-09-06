@@ -1,0 +1,1014 @@
+{
+  "_instructions": {
+    "purpose": "Master file containing ALL dynamic translation keys for the President platform across 5 languages (uz, ru, en, tj, az).",
+    "howToEdit": "Edit the texts inside languageContents (uz, ru, en, tj, az) directly. The field uiLocationAndExplanation tells you exactly where each text appears on the website.",
+    "supportedLanguages": {
+      "uz": "O'zbekcha",
+      "ru": "Русский",
+      "en": "English",
+      "tj": "Тоҷикӣ",
+      "az": "Azərbaycan"
+    },
+    "defaultCountry": "UZ",
+    "totalKeys": 73
+  },
+  "pages": {
+    "HOME": {
+      "pageKey": "HOME",
+      "totalKeys": 13,
+      "keys": [
+        {
+          "key": "navbar.changeLanguage",
+          "uiLocationAndExplanation": "Navbar language dropdown toggle / title. Appears in header when selecting language.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Tilni o'zgartirish",
+            "ru": "Изменить язык",
+            "en": "Change language",
+            "tj": "Иваз кардани забон",
+            "az": "Dili dəyiş"
+          }
+        },
+        {
+          "key": "navbar.changeLocale",
+          "uiLocationAndExplanation": "Navbar country/region selector prompt. Appears in header when switching country.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Boshqa joyni tanlang",
+            "ru": "Выбрать другое местоположение",
+            "en": "Select another location",
+            "tj": "Интихоби ҷойи дигар",
+            "az": "Başqa yer seçin"
+          }
+        },
+        {
+          "key": "showcase.title",
+          "uiLocationAndExplanation": "Main Hero banner heading at top of homepage.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Premium va eksklyuziv sovg'alar",
+            "ru": "Премиум и эксклюзивные подарки",
+            "en": "Premium and exclusive gifts",
+            "tj": "Тӯҳфаҳои истисноӣ ва дараҷаи олӣ",
+            "az": "Premium və eksklüziv hədiyyələr"
+          }
+        },
+        {
+          "key": "showcase.description",
+          "uiLocationAndExplanation": "Main Hero banner subtitle/paragraph describing the brand.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Gerbli soatlar, charm buyumlar, aksessuarlar va milliy suvenirlar — cheklangan va brendlangan variantlarda",
+            "ru": "Гербовые часы, кожаные изделия, аксессуары и национальные сувениры — в лимитированных и брендированных вариантах",
+            "en": "Heraldic watches, leather goods, accessories and national souvenirs — in limited and branded versions",
+            "tj": "Соатҳои гербдор, маҳсулоти чармӣ, лавозимот ва тӯҳфаҳои миллӣ — дар шаклҳои маҳдуд ва брендидашуда",
+            "az": "Heraldik saatlar, dəri məmulatları, aksesuarlar və milli suvenirlər — məhdud və markalı versiyalarda"
+          }
+        },
+        {
+          "key": "showcase.button",
+          "uiLocationAndExplanation": "Hero banner CTA button (e.g. \"Submit request\" / \"Explore\").",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "So'rov qoldirish",
+            "ru": "Оставить заявку",
+            "en": "Submit request",
+            "tj": "Фиристодани дархост",
+            "az": "Sorğu göndər"
+          }
+        },
+        {
+          "key": "news.title",
+          "uiLocationAndExplanation": "Section title for the News / Latest updates on homepage.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Yangiliklar",
+            "ru": "Новости",
+            "en": "News",
+            "tj": "Маҳсулоти нав",
+            "az": "Assortiment"
+          }
+        },
+        {
+          "key": "news.newArrival",
+          "uiLocationAndExplanation": "Badge or sub-heading for \"New arrivals\" in the news section.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Hoziroq sotib olish",
+            "ru": "Заказать сейчас",
+            "en": "coming soon",
+            "tj": "ба зудӣ",
+            "az": "tezliklə"
+          }
+        },
+        {
+          "key": "category.title",
+          "uiLocationAndExplanation": "Category showcase section heading on homepage (e.g. \"Categories\").",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Kategoriyalar",
+            "ru": "Категории",
+            "en": "Categories",
+            "tj": "Категорияҳо",
+            "az": "Kateqoriyalar"
+          }
+        },
+        {
+          "key": "collections.title",
+          "uiLocationAndExplanation": "Featured Collections section heading on homepage.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Kolleksiyalar",
+            "ru": "Коллекции",
+            "en": "Collections",
+            "tj": "Маҷмӯаҳо",
+            "az": "Kolleksiyalar"
+          }
+        },
+        {
+          "key": "collections.newArrival",
+          "uiLocationAndExplanation": "Badge or tag for \"New collection / New arrival\" on collections.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Kolleksiyani ko‘rish",
+            "ru": "Посмотреть коллекцию",
+            "en": "View collection",
+            "tj": "Маҷмӯаро дидан",
+            "az": "Kolleksiyaya bax"
+          }
+        },
+        {
+          "key": "product.videos.title",
+          "uiLocationAndExplanation": "Section title for product video reviews or promo clips.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Mahsulot Videolari",
+            "ru": "Видеоролики о продуктах",
+            "en": "Product Videos",
+            "tj": "Наворҳои маҳсулот",
+            "az": "Məhsul videoları"
+          }
+        },
+        {
+          "key": "story.title",
+          "uiLocationAndExplanation": "Brand Story / Heritage section title on homepage.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "HIKOYA",
+            "ru": "ИСТОРИЯ",
+            "en": "STORY",
+            "tj": "ҚИССА",
+            "az": "HEKAYƏ"
+          }
+        },
+        {
+          "key": "homepage.more",
+          "uiLocationAndExplanation": "General \"View more\" / \"Learn more\" button on homepage sections.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Batafsil",
+            "ru": "Подробнее",
+            "en": "More",
+            "tj": "Муфассал",
+            "az": "Ətraflı"
+          }
+        }
+      ]
+    },
+    "ABOUT_US": {
+      "pageKey": "ABOUT_US",
+      "totalKeys": 7,
+      "keys": [
+        {
+          "key": "about.title",
+          "uiLocationAndExplanation": "About Us page main title / headline.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Bizning tariximiz",
+            "ru": "Наша история",
+            "en": "Our Story",
+            "tj": "Таърихи мо",
+            "az": "Bizim tariximiz"
+          }
+        },
+        {
+          "key": "about.subtitle",
+          "uiLocationAndExplanation": "About Us page subtitle under main title.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "President Business Gifts",
+            "ru": "President Business Gifts",
+            "en": "President Business Gifts",
+            "tj": "President Business Gifts",
+            "az": "President Business Gifts"
+          }
+        },
+        {
+          "key": "about.description",
+          "uiLocationAndExplanation": "About Us main introductory paragraph describing the brand history.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "President Business Gift brendi 2017-yilda o‘z faoliyatini boshlagan va 2021-yildan boshlab eksklyuziv korporativ sovg‘alar bozorida faol ravishda o‘z o‘rnini egalladi. Atigi bir necha yil ichida biz maqom, uslub va yuqori sifatni qadrlaydigan kompaniyalar, davlat muassasalari va xususiy mijozlar uchun ishonchli hamkor bo‘lib qoldik.",
+            "ru": "Бренд President Business Gift начал свою деятельность в 2017 году и уже с 2021 года активно заявил о себе на рынке эксклюзивных корпоративных подарков. За считаные годы мы превратились в надёжного партнёра для компаний, государственных структур и частных клиентов, которые ценят статус, стиль и высокое качество.",
+            "en": "The President Business Gift brand started its journey in 2017 and by 2021 had firmly established itself in the market of exclusive corporate gifts. In just a few years, we have become a reliable partner for companies, government institutions, and private clients who value status, style, and high quality.",
+            "tj": "Бренди President Business Gift фаъолияти худро соли 2017 оғоз намуд ва аллакай аз соли 2021 худро дар бозори тӯҳфаҳои корпоративии истисноӣ фаъолона муаррифӣ кард. Дар муддати кӯтоҳ мо ба шарики боэътимод барои ширкатҳо, сохторҳои давлатӣ ва мизоҷони хусусие табдил ёфтем, ки мақом, услуб ва сифати баландро қадр мекунанд.",
+            "az": "President Business Gift brendi fəaliyyətinə 2017-ci ildə başlayıb və artıq 2021-ci ildən eksklüziv korporativ hədiyyə bazarında fəal şəkildə tanınıb. Cəmi bir neçə il ərzində biz statusu, üslubu və yüksək keyfiyyəti qiymətləndirən şirkətlər, dövlət qurumları və özəl müştərilər üçün etibarlı tərəfdaşa çevrildik."
+          }
+        },
+        {
+          "key": "about.imageAlt",
+          "uiLocationAndExplanation": "Alternative text / caption for the brand history hero image.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "President Business Gifts bu shunchaki premium sovg'alar brendi emas",
+            "ru": "President Business Gifts — это не просто бренд премиальных подарков",
+            "en": "President Business Gifts is not just a premium gift brand",
+            "tj": "President Business Gifts танҳо як бренди тӯҳфаҳои дараҷаи олӣ нест",
+            "az": "President Business Gifts sadəcə premium hədiyyə brendi deyil"
+          }
+        },
+        {
+          "key": "about.btn",
+          "uiLocationAndExplanation": "Call to action button on About Us page (e.g. \"Learn more\" / \"Contact us\").",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Batafsil ma’lumot",
+            "ru": "Подробнее",
+            "en": "Read more",
+            "tj": "Бештар хонед",
+            "az": "Daha ətraflı"
+          }
+        },
+        {
+          "key": "about.infoText1",
+          "uiLocationAndExplanation": "First highlighted informational block / mission statement block.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "President Business Gift – bu oddiy doʻkon emas, balki biznes va rahbarlar uchun moʻljallangan premium sovgʻalar sohasida yetakchi hisoblanadi. Bizda eksklyuziv soatlar, qoʻlda tayyorlangan charm buyumlar, brend gravirovkasi tushirilgan sovgʻa toʻplamlari, VIP aksessuarlar, ishchi daftarchalar, ruchkalar va milliy uslubdagi suvenirlar mavjud.",
+            "ru": "Сегодня President Business Gift — это не просто магазин, а лидер в сфере премиальных подарков для бизнесменов и руководителей. Мы предлагаем богатый ассортимент: от эксклюзивных наручных часов и кожаных изделий ручной работы до подарочных наборов с фирменной гравировкой, VIP-аксессуаров, деловых блокнотов, перьевых ручек и сувениров с национальным акцентом.",
+            "en": "Today, President Business Gift is not just a store, but a leader in the field of premium gifts for businessmen and executives. We offer a wide range of exclusive wristwatches, handcrafted leather goods, gift sets with custom engraving, VIP accessories, business notebooks, fountain pens, and souvenirs with a national touch.",
+            "tj": "President Business Gift — на танҳо як мағоза, балки пешсаф дар соҳаи тӯҳфаҳои премиум барои соҳибкорон ва роҳбарон мебошад. Мо маҷмӯи васеи соатҳои дасти истисноӣ, ашёи чармии дастӣ, маҷмӯаҳои тӯҳфавӣ бо кандакорӣ, лавозимоти VIP, дафтари корӣ, қаламҳои нависанда ва тӯҳфаҳои дорои унсурҳои миллӣ пешниҳод мекунем.",
+            "az": "President Business Gift bu gün sadəcə bir mağaza deyil, iş adamları və rəhbərlər üçün premium hədiyyə sahəsində liderdir. Biz eksklüziv qol saatlarından əl işi olan dəri məhsullara, loqolu hədiyyə dəstlərindən VIP aksesuarlar, iş dəftərləri, qələm və milli motivli suvenirlərə qədər geniş çeşid təklif edirik."
+          }
+        },
+        {
+          "key": "about.infoText2",
+          "uiLocationAndExplanation": "Second highlighted informational block / values & craftsmanship block.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Biz o‘z faoliyatimizni jadal kengaytirmoqdamiz va yangi bozorlarni zabt etmoqdamiz. Har bir kun bilan “President Business Gifts” brendi yanada mashhur bo‘lib bormoqda. Tez orada butun dunyo biz haqimizda bilib oladi.",
+            "ru": "Мы стремительно расширяем своё присутствие и уверенно выходим на новые рынки. Мы не останавливаемся на достигнутом — с каждым днём бренд “President Business Gifts” становится всё более узнаваемым. Совсем скоро о нас узнает весь мир.",
+            "en": "We are rapidly expanding our presence and confidently entering new markets. We do not stop at what we have achieved — each day, the brand 'President Business Gifts' becomes more and more recognizable. Soon, the whole world will know about us.",
+            "tj": "Мо бо суръат ҳузури худро васеъ намуда, бо эътимод ба бозорҳои нав ворид мешавем. Мо ба дастовардҳо қонеъ нестем — ҳар рӯз бренди “President Business Gifts” бештар шинохта мешавад. Ба наздикӣ тамоми ҷаҳон дар бораи мо хоҳад донист.",
+            "az": "Biz sürətlə fəaliyyət sahəmizi genişləndiririk və yeni bazarlara çıxırıq. Dayanmırıq — hər keçən gün 'President Business Gifts' markası daha da tanınır. Tezliklə bütün dünya bizi tanıyacaq."
+          }
+        }
+      ]
+    },
+    "CORPORATE_GIFTS": {
+      "pageKey": "CORPORATE_GIFTS",
+      "totalKeys": 6,
+      "keys": [
+        {
+          "key": "corporate.gifts.title",
+          "uiLocationAndExplanation": "Corporate gifts section main hero title.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Korporativ sovg'alar",
+            "ru": "Корпоративные подарки",
+            "en": "Corporate gifts",
+            "tj": "Тӯҳфаҳои корпоративӣ",
+            "az": "Korporativ hədiyyələr"
+          }
+        },
+        {
+          "key": "corporate.gifts.text",
+          "uiLocationAndExplanation": "Corporate gifts introductory description explaining business offerings.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Biz logotipingiz tushirilgan korporativ sovg‘alar bilan ham shug‘ullanamiz — soatlar,charm toʻplam, bloknotlar, ruchkalar va boshqa suvenirlar. Biz allaqachon banklar, kompaniyalar va davlat tashkilotlari bilan hamkorlik qilganmiz — sovg‘alarni ehtiyojga mos tanlab, brendlash va qadoqlashni to‘liq amalga oshiramiz",
+            "ru": "Мы также занимаемся корпоративными подарками с вашим логотипом - часы, кожаные наборы, блокноты, ручки и другие сувениры. Мы уже сотрудничаем с банками, компаниями и государственными организациями - подбираем подарки под их потребности, осуществляем полное брендирование и упаковку.",
+            "en": "We also deal with corporate gifts with your logo - watches, leather sets, notebooks, pens and other souvenirs. We have already cooperated with banks, companies and government organizations - we select gifts according to their needs, carry out full branding and packaging",
+            "tj": "Мо инчунин тӯҳфаҳои корпоративиро бо логотипи шумо пешниҳод мекунем — соатҳо, маҷмӯаҳои чармӣ, дафтарчаҳо, қаламҳо ва дигар тӯҳфаҳои ёдгорӣ. Мо бо бонкҳо, ширкатҳо ва ташкилотҳои давлатӣ ҳамкорӣ кардем — мо тӯҳфаҳоро мувофиқи ниёзҳояшон интихоб мекунем, пурра брендинг ва бастабандӣ мекунем",
+            "az": "Biz həmçinin loqotipinizlə korporativ hədiyyələr — saatlar, dəri dəstləri, qeyd dəftərləri, qələmlər və digər suvenirlər təqdim edirik. Artıq banklar, şirkətlər və dövlət təşkilatları ilə əməkdaşlıq etmişik — onların ehtiyaclarına uyğun hədiyyələr seçir, tam brendləmə və qablaşdırma edirik"
+          }
+        },
+        {
+          "key": "corporate.gifts.btn",
+          "uiLocationAndExplanation": "Corporate order / Request quote CTA button.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Batafsil ma’lumot",
+            "ru": "Подробнее",
+            "en": "Read more",
+            "tj": "Бештар хонед",
+            "az": "Daha ətraflı"
+          }
+        },
+        {
+          "key": "corporate.gifts.desc",
+          "uiLocationAndExplanation": "Detailed corporate gift catalog & personalization options description.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "President Business Gifts — bu shunchaki mahsulotlarni namoyish qilish emas, bu estetika, ilhom va premium sovg'alar olamiga sho'ng'ishdir. Bizning shourumimizda siz eksklyuziv, milliy meros va zamonaviy dizayn uyg'unligidagi mahsulotlarni shaxsan ko'rishingiz, ularning sifatini baholashingiz va o'zingiz yoki hamkorlaringiz uchun mukammal sovg'ani tanlashingiz mumkin. Agar siz brendimiz falsafasini his qilmoqchi bo‘lsangiz — bizning shourumga tashrif buyuring. Manzil va joylashuvni ushbu sahifada topasiz. Agar savollaringiz bo‘lsa yoki oldindan uchrashuv belgilamoqchi bo‘lsangiz — biz bilan qulay vaqtda bog‘laning.",
+            "ru": "President Business Gifts — это не просто демонстрация продукции, а настоящее погружение в мир эстетики, вдохновения и премиальных подарков. В нашем шоуруме вы сможете лично увидеть эксклюзивные изделия, сочетающие национальное наследие и современный дизайн, оценить их качество и подобрать идеальный подарок для себя или партнёров. Если вы хотите прочувствовать философию нашего бренда — обязательно посетите наш шоурум. Адрес и местоположение вы найдёте на этой странице. Если у вас возникнут вопросы или вы хотите заранее назначить встречу — свяжитесь с нами в любое удобное время.",
+            "en": "President Business Gifts is not just a product showcase – it's a true immersion into the world of aesthetics, inspiration, and premium gifts. In our showroom, you can personally see exclusive items that combine national heritage and modern design, evaluate their quality, and find the perfect gift for yourself or your partners. If you want to feel the philosophy of our brand – be sure to visit our showroom. You can find the address and location on this page. If you have any questions or want to schedule a meeting in advance – feel free to contact us anytime.",
+            "tj": "President Business Gifts на танҳо намоиши маҳсулот аст, балки воридшавӣ ба ҷаҳони эстетика, илҳом ва тӯҳфаҳои баландсифат мебошад. Дар намоишгоҳи мо шумо метавонед ашёҳои нодирро бинед, ки мероси миллӣ ва дизайни муосирро муттаҳид мекунанд, сифати онҳоро арзёбӣ кунед ва тӯҳфаи беҳтаринро барои худ ё шариконатон интихоб намоед. Агар хоҳед, ки фалсафаи бренди моро эҳсос кунед — ҳатман ба намоишгоҳи мо ташриф оред. Суроға ва маконро дар ҳамин саҳифа пайдо мекунед. Агар саволе дошта бошед ё хоҳед, ки вохӯриро қаблан таъин кунед — дар вақти мувофиқ бо мо тамос гиред.",
+            "az": "President Business Gifts – sadəcə məhsulların nümayişi deyil, estetikaya, ilhama və premium hədiyyələr dünyasına həqiqi bir səyahətdir. Şourumumuzda milli irsi və müasir dizaynı birləşdirən eksklüziv məhsulları şəxsən görə, onların keyfiyyətini qiymətləndirə və özünüz və ya tərəfdaşlarınız üçün ideal hədiyyəni seçə bilərsiniz. Brendimizin fəlsəfəsini hiss etmək istəyirsinizsə – mütləq şourumumuza baş çəkin. Ünvan və yerləşməni bu səhifədə tapa bilərsiniz. Əgər sualınız varsa və ya əvvəlcədən görüş təyin etmək istəyirsinizsə – bizimlə əlaqə saxlayın."
+          }
+        },
+        {
+          "key": "corporate.gifts.headerTitle",
+          "uiLocationAndExplanation": "Header banner title for corporate services section.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Korporativ sovg‘a san’ati",
+            "ru": "Искусство корпоративного подарка",
+            "en": "The Art of Corporate Gifting",
+            "tj": "Ҳунари тӯҳфаҳои корпоративӣ",
+            "az": "Korporativ hədiyyə sənəti"
+          }
+        },
+        {
+          "key": "corporate.gifts.headerText",
+          "uiLocationAndExplanation": "Header banner subtitle for corporate services section.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Kompaniya logotipi tushirilgan korporativ sovg‘alar – bu shunchaki rasmiyatchilik emas. Bu biznes aloqalarni mustahkamlash va imidjni oshirishning kuchli vositasidir. President Business Gift kompaniyasida biz sizning nomingizdan hurmat, e’tibor va maqomni ifodalovchi sovg‘alarni yaratamiz.",
+            "ru": "Корпоративные подарки с логотипом компании — это не просто формальность. Это мощный инструмент деловой коммуникации и укрепления имиджа. В President Business Gift мы создаём подарки для бизнесменов, руководителей и корпоративных клиентов, которые выражают уважение, внимание и статус от лица вашей компании.",
+            "en": "Corporate gifts with your company logo are not just a formality. They’re a powerful tool for business communication and brand reputation. At President Business Gift, we create gifts that show respect, care, and prestige from your company to executives, partners, and corporate clients.",
+            "tj": "Тӯҳфаҳои корпоративӣ бо логотипи ширкат — на танҳо расмият. Ин воситаи пуриқтидори муоширати тиҷоратӣ ва таҳкими имиҷи бренд аст. Дар President Business Gift мо тӯҳфаҳое эҷод мекунем, ки аз номи ширкати шумо эҳтиром, ғамхорӣ ва нуфузро нишон медиҳанд.",
+            "az": "Şirkət loqolu korporativ hədiyyələr sadəcə formalıq deyil. Bu, biznes ünsiyyətini və şirkət imicini gücləndirmək üçün güclü bir vasitədir. President Business Gift olaraq, biz sizin adınızdan hörmət, diqqət və nüfuz göstərən hədiyyələr hazırlayırıq."
+          }
+        }
+      ]
+    },
+    "SUPPORT": {
+      "pageKey": "SUPPORT",
+      "totalKeys": 26,
+      "keys": [
+        {
+          "key": "support.title",
+          "uiLocationAndExplanation": "Customer Support / Contact Us page headline.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "So'rov qoldiring",
+            "ru": "Оставьте заявку",
+            "en": "Leave a request",
+            "tj": "Гузоштани дархост",
+            "az": "Sorğu göndərin"
+          }
+        },
+        {
+          "key": "support.form.intro",
+          "uiLocationAndExplanation": "Introductory text above the contact and appointment booking form.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "So'rov qoldiring va menejerimiz barcha tafsilotlarni aniqlashtirish va mukammal sovg'ani tanlash uchun tez orada siz bilan bog'lanadi.",
+            "ru": "Оставьте заявку — и наш менеджер свяжется с вами в ближайшее время, чтобы уточнить все детали и подобрать идеальный подарок.",
+            "en": "Leave a request and our manager will contact you shortly to clarify all the details and select the perfect gift.",
+            "tj": "Менеҷери мо ба шумо занг мезанад ва маҳсулотро муфассал мефаҳмонад",
+            "az": "Menecerimiz sizə zəng edəcək və məhsullarımızı ətraflı izah edəcək"
+          }
+        },
+        {
+          "key": "form.name.label",
+          "uiLocationAndExplanation": "Contact form field label: Full Name.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Ism",
+            "ru": "Имя",
+            "en": "Name",
+            "tj": "Ном",
+            "az": "Ad"
+          }
+        },
+        {
+          "key": "form.name.placeholder",
+          "uiLocationAndExplanation": "Contact form field placeholder: Enter your full name.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Ismingizni yozing",
+            "ru": "Введите ваше имя",
+            "en": "Enter your name",
+            "tj": "Номи худро ворид кунед",
+            "az": "Adınızı daxil edin"
+          }
+        },
+        {
+          "key": "form.phone.label",
+          "uiLocationAndExplanation": "Contact form field label: Phone Number.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Telefon raqam",
+            "ru": "Номер телефона",
+            "en": "Phone number",
+            "tj": "Рақами телефон",
+            "az": "Telefon nömrəsi"
+          }
+        },
+        {
+          "key": "form.phone.placeholder",
+          "uiLocationAndExplanation": "Contact form field placeholder: +998 (__) ___-__-__.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Telefon raqamingizni kiriting",
+            "ru": "Введите ваш номер телефона",
+            "en": "Enter your phone number",
+            "tj": "Рақами телефони худро ворид кунед",
+            "az": "Telefon nömrənizi daxil edin"
+          }
+        },
+        {
+          "key": "form.email.label",
+          "uiLocationAndExplanation": "Contact form field label: Email Address.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Email",
+            "ru": "Email",
+            "en": "Email",
+            "tj": "Email",
+            "az": "Email"
+          }
+        },
+        {
+          "key": "form.email.placeholder",
+          "uiLocationAndExplanation": "Contact form field placeholder: example@domain.com.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Enter email",
+            "ru": "Enter email",
+            "en": "Enter your email",
+            "tj": "Enter email",
+            "az": "Enter email"
+          }
+        },
+        {
+          "key": "form.location.label",
+          "uiLocationAndExplanation": "Contact form field label: Preferred Boutique / City location.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "City",
+            "ru": "City",
+            "en": "City",
+            "tj": "City",
+            "az": "City"
+          }
+        },
+        {
+          "key": "form.location.placeholder",
+          "uiLocationAndExplanation": "Contact form dropdown placeholder: Select boutique location.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Enter city",
+            "ru": "Enter city",
+            "en": "Enter your city",
+            "tj": "Enter city",
+            "az": "Enter city"
+          }
+        },
+        {
+          "key": "form.date.label",
+          "uiLocationAndExplanation": "Contact form field label: Preferred Date for consultation/visit.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Date",
+            "ru": "Date",
+            "en": "Visit date",
+            "tj": "Date",
+            "az": "Date"
+          }
+        },
+        {
+          "key": "form.time.label",
+          "uiLocationAndExplanation": "Contact form field label: Preferred Time for consultation/visit.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Time",
+            "ru": "Time",
+            "en": "Visit time",
+            "tj": "Time",
+            "az": "Time"
+          }
+        },
+        {
+          "key": "form.comment.label",
+          "uiLocationAndExplanation": "Contact form field label: Message / Comments / Inquiries.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Comment",
+            "ru": "Comment",
+            "en": "Comment",
+            "tj": "Comment",
+            "az": "Comment"
+          }
+        },
+        {
+          "key": "form.comment.placeholder",
+          "uiLocationAndExplanation": "Contact form field placeholder: Type your message or requirements here...",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Enter comment",
+            "ru": "Enter comment",
+            "en": "Enter your message here",
+            "tj": "Enter comment",
+            "az": "Enter comment"
+          }
+        },
+        {
+          "key": "form.submit",
+          "uiLocationAndExplanation": "Contact form submit button text (e.g. \"Submit Request\").",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "So'rovni yuborish",
+            "ru": "Отправить запрос",
+            "en": "Send request",
+            "tj": "Фиристодани дархост",
+            "az": "Sorğu göndər"
+          }
+        },
+        {
+          "key": "form.messages.required",
+          "uiLocationAndExplanation": "Validation error message shown when a required form field is empty.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Bu maydon to'ldirilishi shart",
+            "ru": "Это поле обязательно для заполнения",
+            "en": "This field is required",
+            "tj": "Ин майдон бояд пур карда шавад",
+            "az": "Bu sahə mütləq doldurulmalıdır"
+          }
+        },
+        {
+          "key": "form.messages.min",
+          "uiLocationAndExplanation": "Validation error message when input is too short.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Kamida {min} ta belgi bo'lishi kerak",
+            "ru": "Минимум {min} символов",
+            "en": "Must be at least {min} characters",
+            "tj": "Бояд на камтар аз {min} аломат бошад",
+            "az": "Ən azı {min} simvol olmalıdır"
+          }
+        },
+        {
+          "key": "form.messages.max",
+          "uiLocationAndExplanation": "Validation error message when input exceeds maximum allowed length.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "{max} ta belgidan oshmasligi kerak",
+            "ru": "Максимум {max} символов",
+            "en": "Must be less than {max} characters",
+            "tj": "Бояд на зиёда аз {max} аломат бошад",
+            "az": "Ən çox {max} simvol olmalıdır"
+          }
+        },
+        {
+          "key": "form.messages.invalid",
+          "uiLocationAndExplanation": "Validation error message when input format is invalid (e.g. invalid phone/email).",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Noto'g'ri format",
+            "ru": "Неверный формат",
+            "en": "Invalid format",
+            "tj": "Формати нодуруст",
+            "az": "Yanlış format"
+          }
+        },
+        {
+          "key": "form.messages.success",
+          "uiLocationAndExplanation": "Success toast/notification message after submitting form.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "✅ Xabaringiz muvaffaqiyatli yuborildi!",
+            "ru": "✅ Ваше сообщение успешно отправлено!",
+            "en": "✅ Your message has been sent successfully!",
+            "tj": "✅ Паёми шумо бомуваффақият фиристода шуд!",
+            "az": "✅ Mesajınız uğurla göndərildi!"
+          }
+        },
+        {
+          "key": "form.messages.error",
+          "uiLocationAndExplanation": "General error toast/notification message if form submission fails.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "❌ Xabar yuborilmadi. Iltimos, qayta urinib ko'ring.",
+            "ru": "❌ Не удалось отправить сообщение. Пожалуйста, попробуйте еще раз.",
+            "en": "❌ Failed to send the message. Please try again.",
+            "tj": "❌ Паём фиристода нашуд. Лутфан дубора кӯшиш кунед.",
+            "az": "❌ Mesaj göndərilə bilmədi. Zəhmət olmasa, yenidən cəhd edin."
+          }
+        },
+        {
+          "key": "form.messages.serverError",
+          "uiLocationAndExplanation": "Server error message if backend API is unreachable.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "⚠️ Xatolik yuz berdi. Keyinroq qayta urinib ko'ring!",
+            "ru": "⚠️ Что-то пошло не так. Попробуйте позже!",
+            "en": "⚠️ Something went wrong. Try again later!",
+            "tj": "⚠️ Хато рух дод. Баъдтар кӯшиш кунед!",
+            "az": "⚠️ Xəta baş verdi. Zəhmət olmasa, sonra yenidən cəhd edin!"
+          }
+        },
+        {
+          "key": "form.messages.modalSuccessTitle",
+          "uiLocationAndExplanation": "Title inside the confirmation modal after successful form submission.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Rahmat! Sizning so‘rovingiz muvaffaqiyatli yuborildi.",
+            "ru": "Спасибо! Ваша заявка успешно отправлена.",
+            "en": "Thank you! Your request has been successfully submitted.",
+            "tj": "Ташаккур! Дархости шумо бо муваффақият ирсол шуд.",
+            "az": "Təşəkkür edirik! Sorğunuz uğurla göndərildi."
+          }
+        },
+        {
+          "key": "form.messages.modalSuccessDescription",
+          "uiLocationAndExplanation": "Description inside confirmation modal (e.g. \"Our manager will contact you soon\").",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Yaqin orada President Business Gifts jamoasi siz bilan bog‘lanadi. Biz sizga eng yaxshi xizmat ko‘rsatishdan mamnun bo‘lamiz!",
+            "ru": "В ближайшее время с вами свяжется команда President Business Gifts. Мы рады предоставить вам лучшее обслуживание!",
+            "en": "The President Business Gifts team will contact you shortly. We look forward to providing you with the best service.",
+            "tj": "Дастаи President Business Gifts дар фурсатҳои наздик бо шумо тамос мегирад. Мо омодаем ба шумо хидмати сатҳи баланд расонем!",
+            "az": "President Business Gifts komandası qısa zamanda sizinlə əlaqə saxlayacaq. Sizə ən yüksək səviyyədə xidmət göstərməkdən məmnun olarıq!"
+          }
+        },
+        {
+          "key": "support.privacy.text",
+          "uiLocationAndExplanation": "Privacy agreement disclaimer text beneath the contact form.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "",
+            "ru": "",
+            "en": "We may inform you about news and special offers. If you do not want to receive such notifications, check the appropriate box. All information is processed confidentially in accordance with the Privacy Policy.",
+            "tj": "",
+            "az": ""
+          }
+        },
+        {
+          "key": "support.privacy.link",
+          "uiLocationAndExplanation": "Privacy Policy clickable link text inside the disclaimer.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "",
+            "ru": "",
+            "en": "Privacy Policy",
+            "tj": "",
+            "az": ""
+          }
+        }
+      ]
+    },
+    "LOCATION": {
+      "pageKey": "LOCATION",
+      "totalKeys": 2,
+      "keys": [
+        {
+          "key": "location.title",
+          "uiLocationAndExplanation": "Boutiques / Showrooms page main headline.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Filiallar",
+            "ru": "Филиалы",
+            "en": "Branches",
+            "tj": "Филиалҳо",
+            "az": "Filiallar"
+          }
+        },
+        {
+          "key": "location.text",
+          "uiLocationAndExplanation": "Showrooms description and invitation text to visit physical boutiques.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Manzillar",
+            "ru": "Адреса",
+            "en": "Addresses",
+            "tj": "Суроғаҳо",
+            "az": "Ünvanlar"
+          }
+        }
+      ]
+    },
+    "FOOTER": {
+      "pageKey": "FOOTER",
+      "totalKeys": 8,
+      "keys": [
+        {
+          "key": "footer.description",
+          "uiLocationAndExplanation": "Brand bio blurb shown at the bottom of every page in the footer.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "President Business Gifts — bu\nshunchaki brend emas. Bu — e’tibor\nva obro‘ni namoyon etadigan sovg‘a\nsan’ati. Har bir mahsulot — bu\nmaqom va detallarga bo‘lgan\nhurmat.\n",
+            "ru": "President Business Gifts — это\nне просто бренд. Это искусство\nдарить с достоинством. Всё, что\nподчеркивает статус и внимание\nк деталям.\n",
+            "en": "President Business Gifts is not just a brand. It is the art of gift giving that reflects attention and prestige. Each product is a symbol of status and respect for detail.",
+            "tj": "President Business Gifts танҳо як бренд нест. Ин санъати тӯҳфадиҳист, ки диққат ва нуфузро инъикос мекунад. Ҳар як маҳсулот рамзи мақом ва эҳтиром ба ҷузъиёти хурд аст.",
+            "az": "President Business Gifts sadəcə bir brend deyil. Bu, diqqət və nüfuzu əks etdirən hədiyyəvermə sənətidir. Hər bir məhsul status və detallara hörmətin simvoludur."
+          }
+        },
+        {
+          "key": "footer.signup",
+          "uiLocationAndExplanation": "Newsletter subscription box title / placeholder in footer.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Ro'yxatdan o'tish",
+            "ru": "Регистрация",
+            "en": "Sign up",
+            "tj": "Обуна шавед",
+            "az": "Abunə ol"
+          }
+        },
+        {
+          "key": "footer.support",
+          "uiLocationAndExplanation": "Customer support section title in footer navigation.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "QO'LLAB-QUVVATLASH",
+            "ru": "ПОДДЕРЖКА",
+            "en": "SUPPORT",
+            "tj": "ДАСТГИРӢ",
+            "az": "DƏSTƏK"
+          }
+        },
+        {
+          "key": "footer.company",
+          "uiLocationAndExplanation": "Company / About section title in footer navigation.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "KOMPANIYA",
+            "ru": "КОМПАНИЯ",
+            "en": "COMPANY",
+            "tj": "ШИРКАТ",
+            "az": "ŞİRKƏT"
+          }
+        },
+        {
+          "key": "footer.new.products",
+          "uiLocationAndExplanation": "New arrivals link or section header in footer.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Yangi mahsulotlar",
+            "ru": "Новые продукты",
+            "en": "New Products",
+            "tj": "Маҳсулоти нав",
+            "az": "Yeni məhsullar"
+          }
+        },
+        {
+          "key": "footer.payments",
+          "uiLocationAndExplanation": "Accepted payment methods header / text in footer.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "QABUL QILINADIGAN TO'LOVLAR",
+            "ru": "ПРИНИМАЕМЫЕ ПЛАТЕЖИ",
+            "en": "ACCEPTED PAYMENTS",
+            "tj": "УСУЛҲОИ ПАРДОХТИ ҚАБУЛШУДА",
+            "az": "QƏBUL OLUNAN ÖDƏMƏLƏR"
+          }
+        },
+        {
+          "key": "footer.social",
+          "uiLocationAndExplanation": "Social media channels section header in footer.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "IJTIMOIY TARMOQLAR",
+            "ru": "СОЦИАЛЬНЫЕ СЕТИ",
+            "en": "SOCIAL MEDIA",
+            "tj": "ШАБАКАҲОИ ИҶТИМОӢ",
+            "az": "SOSİAL ŞƏBƏKƏLƏR"
+          }
+        },
+        {
+          "key": "footer.copyright",
+          "uiLocationAndExplanation": "Copyright notice text at bottom of footer.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "© 2025 President Business Gifts. Barcha huquqlar himoyalangan.",
+            "ru": "© 2025 President Business Gifts. Все права защищены.",
+            "en": "© 2025 President Business Gifts. All rights reserved.",
+            "tj": "© 2025 President Business Gifts. Ҳамаи ҳуқуқҳо ҳифз шудаанд.",
+            "az": "© 2025 President Business Gifts. Bütün hüquqlar qorunur."
+          }
+        }
+      ]
+    },
+    "CREATE_PAGE": {
+      "pageKey": "CREATE_PAGE",
+      "totalKeys": 4,
+      "keys": [
+        {
+          "key": "create.page.title",
+          "uiLocationAndExplanation": "Custom gift creator / bespoke order page main title.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Tez kunda",
+            "ru": "Скоро открытие",
+            "en": "Coming Soon",
+            "tj": "Ба зудӣ",
+            "az": "Tezliklə"
+          }
+        },
+        {
+          "key": "create.page.description",
+          "uiLocationAndExplanation": "Instructions and description for custom engraving / individualized gift builder.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Biz siz uchun ajoyib narsani yaratmoqdamiz. Bizning to'liq veb-sayt tajribamiz tez kunda ishga tushiriladi.",
+            "ru": "Мы создаем что-то необыкновенное для вас. Наш полноценный веб-сайт скоро запустится.",
+            "en": "We are building something extraordinary for you. Our full website experience is launching soon.",
+            "tj": "Мо барои шумо чизе ғайриоддиро омода мекунем. Сомонаи пурраи мо ба зудӣ ба кор медарояд.",
+            "az": "Sizin üçün qeyri-adi bir şey hazırlayırıq. Saytımızın tam versiyası tezliklə istifadəyə veriləcək."
+          }
+        },
+        {
+          "key": "create.page.return",
+          "uiLocationAndExplanation": "Back button / return to previous page label.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Vaqtincha bosh sahifamizga qaytib turing.",
+            "ru": "Пожалуйста, вернитесь на нашу главную страницу.",
+            "en": "Please return to our homepage in the meantime.",
+            "tj": "То он замон ба саҳифаи асосии мо бозгардед.",
+            "az": "Hələlik ana səhifəmizə qayıdın."
+          }
+        },
+        {
+          "key": "create.page.button",
+          "uiLocationAndExplanation": "Submit custom gift order button.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Bosh sahifaga tashrif buyuring",
+            "ru": "Посетите нашу главную страницу",
+            "en": "Visit our Homepage",
+            "tj": "Ба саҳифаи асосӣ гузаред",
+            "az": "Ana səhifəyə keç"
+          }
+        }
+      ]
+    },
+    "JOURNAL": {
+      "pageKey": "JOURNAL",
+      "totalKeys": 7,
+      "keys": [
+        {
+          "key": "journal.title",
+          "uiLocationAndExplanation": "Journal / Blog main page headline.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Katalog",
+            "ru": "Каталог",
+            "en": "Catalog",
+            "tj": "Каталог",
+            "az": "Kataloq"
+          }
+        },
+        {
+          "key": "journal.description",
+          "uiLocationAndExplanation": "Journal introductory paragraph about brand articles, heritage and events.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "President Business Gifts — bu shunchaki premium sovg'alar brendi emas, balki milliy o'zlik va zamonaviy estetikani noyob uyg'unligidir. O'zbek xalqining tarixiy merosi, madaniy boyligi va hunarmandchilik an'analaridan ilhomlanib, biz ularni zamonaviy dizayn va eng yuqori sifat standartlari bilan uyg'unlashtiramiz.",
+            "ru": "President Business Gifts — это не просто бренд премиальных подарков, а уникальное сочетание национальной идентичности и совремённой эстетики. Вдохновляясь историческим наследием, культурным богатством и ремесленными традициями узбекского народа, мы гармонично объединяем их с современным дизайном и высочайшими стандартами качества.",
+            "en": "President Business Gifts is not just a premium gift brand, but a unique blend of national identity and modern aesthetics. Inspired by the historical heritage, cultural richness, and craftsmanship traditions of the Uzbek people, we harmoniously combine them with modern design and the highest standards of quality.",
+            "tj": "President Business Gifts танҳо як тамғаи тӯҳфаҳои боҳашамат нест, балки омезиши беназири ҳувияти миллӣ ва эстетикаи муосир аст. Аз мероси таърихӣ, ғановати фарҳангӣ ва ҳунармандии мардуми ӯзбек илҳом гирифта, мо онҳоро бо тарроҳии муосир ва баландтарин стандартҳои сифат муттаҳид месозем.",
+            "az": "President Business Gifts təkcə premium hədiyyə brendi deyil, həm də milli kimlik və müasir estetik anlayışının unikal birləşməsidir. Özbək xalqının tarixi irsi, mədəni zənginliyi və sənətkarlıq ənənələrindən ilhamlanaraq, biz onları müasir dizayn və ən yüksək keyfiyyət standartları ilə birləşdiririk."
+          }
+        },
+        {
+          "key": "journal.aboutJournalDesc1",
+          "uiLocationAndExplanation": "First article / editorial intro paragraph in Journal section.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Siz bu yerda President Business Gifts jurnali bilan tanishib chiqasiz!",
+            "ru": "Вы здесь сможете ознакомиться с журналом President Business Gifts!",
+            "en": "Here you can explore the President Business Gifts magazine!",
+            "tj": "Дар ин ҷо шумо метавонед бо маҷаллаи President Business Gifts шинос шавед!",
+            "az": "Burada President Business Gifts jurnalını tanıya bilərsiniz!"
+          }
+        },
+        {
+          "key": "journal.aboutJournalDesc2",
+          "uiLocationAndExplanation": "Second article / craftsmanship spotlight paragraph.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Buni amalga oshirish uchun jurnalni o‘ngdan chapga suring yoki rasmlar ustiga bir marta bosing.",
+            "ru": "Чтобы это сделать, пролистайте журнал справа налево или нажмите один раз на изображения.",
+            "en": "To do so, swipe the magazine from right to left or click once on the images.",
+            "tj": "Барои иҷрои ин, маҷалларо аз рост ба чап гардонед ё як бор рӯи тасвирҳо зер кунед.",
+            "az": "Bunu etmək üçün jurnalı sağdan sola sürüşdürün və ya şəkillərin üzərinə bir dəfə klikləyin."
+          }
+        },
+        {
+          "key": "journal.aboutJournalDesc3",
+          "uiLocationAndExplanation": "Third article / state gifts and diplomacy traditions paragraph.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Agar jurnal rasmlari sizda ko‘rinmasa, biroz kuting! ",
+            "ru": "Если изображения журнала у вас не отображаются, пожалуйста, подождите немного!",
+            "en": "If the magazine images do not appear, please wait a little!",
+            "tj": "Агар тасвирҳои маҷалла ба шумо намоён нашаванд, каме интизор шавед! ",
+            "az": "Əgər jurnal şəkilləri görünmürsə, zəhmət olmasa bir az gözləyin! "
+          }
+        },
+        {
+          "key": "journal.aboutJournalDesc4",
+          "uiLocationAndExplanation": "Fourth article / bespoke design process description.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": "Rahmat :)",
+            "ru": "Спасибо :)",
+            "en": "Thank you :)",
+            "tj": "Ташаккур :)",
+            "az": "Təşəkkürlər :)"
+          }
+        },
+        {
+          "key": "journal.download",
+          "uiLocationAndExplanation": "Download catalog / PDF brochure button label.",
+          "contentType": "TEXT",
+          "countryCode": "UZ",
+          "languageContents": {
+            "uz": " Bu yerda jurnalning barcha qismlarini yuklab olishingiz mumkin!",
+            "ru": "Здесь вы можете скачать все части журнала!",
+            "en": "Here you can download all parts of the magazine!",
+            "tj": "Дар ин ҷо шумо метавонед ҳамаи қисмҳои маҷалларо боргирӣ кунед!",
+            "az": "Burada jurnalın bütün hissələrini yükləyə bilərsiniz!"
+          }
+        }
+      ]
+    }
+  }
+}
